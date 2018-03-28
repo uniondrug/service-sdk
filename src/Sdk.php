@@ -5,6 +5,8 @@
  */
 namespace Uniondrug\ServiceSdk;
 
+use Phalcon\Di;
+
 /**
  * @package Uniondrug\ServiceSdk
  */
@@ -31,15 +33,21 @@ abstract class Sdk
     protected $serviceName;
 
     /**
-     * @param string $method
-     * @param string $route
-     * @param        $post
-     * @param array  $query
-     * @return array
-     * @since 1.0
+     * 发起Restful请求
+     * @param string            $method 请求方式, 如: GET、POST等
+     * @param string            $route  路由地址, 如: /site/index
+     * @param null|array|object $post   POST数据
+     * @param null|array|object $query  Query数据
+     * @param null|array|object $extra  配置参数
+     * @return mixed
+     * @throws Exception
      */
-    final protected function restful(string $method, string $route, $post, $query = [])
+    final protected function restful(string $method, string $route, $post = null, $query = null, $extra = null)
     {
-        return [];
+        if ($this->serviceName === null || $this->serviceName === ''){
+            $message = sprintf("请在类'%s'中未覆盖定义'protected \$%s'定义服务名称", get_class($this), 'serviceName');
+            throw new Exception($message);
+        }
+        return Di::getDefault()->getShared('serviceClient')->$method($this->serviceName, $route, $query, $post, $extra);
     }
 }
