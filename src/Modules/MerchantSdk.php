@@ -18,13 +18,23 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 读取商户资料
-     * @link
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.merchant.info.md
      * @param array $body
-     * @param array $query
      * @return array
      */
-    public function getMerchantInfo($body, $query = [])
+    public function getMerchantInfo($body)
     {
-        return $this->restful(static::METHOD_POST, "/merchant/info", $body, $query);
+        return $this->restful(static::METHOD_POST, "/merchant/info", $body);
+    }
+
+    /**
+     * 读取商户资料
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.merchant.list.md
+     * @param array $body
+     * @return array
+     */
+    public function getMerchantList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/info", $body);
     }
 }

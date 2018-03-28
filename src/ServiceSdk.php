@@ -37,7 +37,7 @@ class ServiceSdk
             return self::$_modules[$key];
         }
         // 2. 检查定义
-        $class = __NAMESPACE__.'\\'.ucfirst($name).self::$_modulesExtensionName;
+        $class = __NAMESPACE__.'\\Modules\\'.ucfirst($name).self::$_modulesExtensionName;
         try {
             $instance = new $class();
             self::$_modules[$key] = $instance;
