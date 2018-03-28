@@ -5,6 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
+use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
@@ -20,7 +21,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      * 读取商户资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.merchant.info.md
      * @param array $body
-     * @return array
+     * @return ClientResponseInterface
      */
     public function getMerchantInfo($body)
     {
@@ -31,7 +32,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      * 读取商户资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.merchant.list.md
      * @param array $body
-     * @return array
+     * @return ClientResponseInterface
      */
     public function getMerchantList($body)
     {
