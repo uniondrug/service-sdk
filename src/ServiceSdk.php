@@ -6,8 +6,13 @@
 namespace Uniondrug\ServiceSdk;
 
 /**
- * @property Modules\MerchantSdk $common   公共服务
- * @property Modules\MerchantSdk $merchant 商户服务
+ * @property Modules\MerchantSdk $common     公共服务
+ * @property Modules\CustomerSdk $customer   客户服务
+ * @property Modules\GoodsSdk    $goods      商品服务
+ * @property Modules\MerchantSdk $merchant   商户服务
+ * @property Modules\ProductSdk  $product    产品服务
+ * @property Modules\ProjectSdk  $project    项目服务
+ * @property Modules\UserSdk     $user       用户服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
@@ -42,7 +47,7 @@ class ServiceSdk
             $instance = new $class();
             self::$_modules[$key] = $instance;
             return self::$_modules[$key];
-        } catch(\Exception $e) {
+        } catch(\Throwable $e) {
         }
         // 3. 未定义的SDK服务
         throw new Exception("SDK包中未找到'{$name}'定义");
