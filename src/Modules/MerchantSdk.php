@@ -18,6 +18,28 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'merchant';
 
     /**
+     * 添加商户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/add.merchant.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addMerchant($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/add", $body);
+    }
+
+    /**
+     * 编辑商户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/edit.merchant.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editMerchant($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/edit", $body);
+    }
+
+    /**
      * 读取商户资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.merchant.info.md
      * @param array $body
