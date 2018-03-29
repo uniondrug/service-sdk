@@ -29,6 +29,39 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 添加组织架构
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/add.organization.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addOrganization($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organization/add", $body);
+    }
+
+    /**
+     * 删除商户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/del.merchant.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delMerchant($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/del", $body);
+    }
+
+    /**
+     * 删除组织架构
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/del.organization.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delOrganization($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organization/del", $body);
+    }
+
+    /**
      * 编辑商户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/edit.merchant.md
      * @param array $body
@@ -37,6 +70,17 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     public function editMerchant($body)
     {
         return $this->restful(static::METHOD_POST, "/merchant/edit", $body);
+    }
+
+    /**
+     * 编辑组织架构
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/edit.organization.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editOrganization($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organization/edit", $body);
     }
 
     /**
@@ -59,5 +103,16 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     public function getMerchantList($body)
     {
         return $this->restful(static::METHOD_POST, "/merchant/info", $body);
+    }
+
+    /**
+     * 读取组织架构树
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.organization.tree.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getOrganizationTree($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organization/tree", $body);
     }
 }
