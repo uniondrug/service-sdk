@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk;
 
 use Phalcon\Di;
+use Uniondrug\Service\ClientResponseInterface;
 
 /**
  * @package Uniondrug\ServiceSdk
@@ -39,7 +40,7 @@ abstract class Sdk
      * @param null|array|object $post   POST数据
      * @param null|array|object $query  Query数据
      * @param null|array|object $extra  配置参数
-     * @return mixed
+     * @return ClientResponseInterface
      * @throws Exception
      */
     final protected function restful(string $method, string $route, $post = null, $query = null, $extra = null)
