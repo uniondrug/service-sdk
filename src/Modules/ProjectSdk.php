@@ -15,9 +15,11 @@ use Uniondrug\ServiceSdk\ServiceSdkInterface;
  */
 class ProjectSdk extends Sdk implements ServiceSdkInterface
 {
+    protected $serviceName = 'project';
+
     /**
      * 提交项目审批
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/approval.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/approval.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -28,7 +30,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 取消项目审批
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/cancel.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/cancel.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -39,7 +41,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 接受(通过)项目审批
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/accept.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/accept.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -50,7 +52,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 拒绝(驳回)项目审批
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/refuse.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/refuse.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -61,7 +63,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 设置项目状态为: 执行中
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/start.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/start.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -72,7 +74,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 设置项目状态为: 已暂停
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/pause.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/pause.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -83,7 +85,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 添加项目
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/add.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/add.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -94,7 +96,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 编辑项目
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/edit.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/edit.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -105,7 +107,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 删除项目(状态为: 草稿、已驳回)
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/delete.project.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/delete.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -116,7 +118,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 读取项目分页列表
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/get.project.paging.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/get.paging.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -127,7 +129,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 添加用户
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/add.user.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/add.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -138,7 +140,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 添加用户
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/active.user.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/active.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -149,7 +151,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 编辑用户
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/edit.user.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/edit.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -160,7 +162,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 用户分页列表
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/get.user.paging.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/get.paging.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -171,7 +173,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 启用分组
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/enable.group.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/enable.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -182,7 +184,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 禁用分组
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/disable.group.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/disable.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -193,7 +195,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 添加分组
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/add.group.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/add.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -204,7 +206,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 编辑分组
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/edit.group.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/edit.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -215,7 +217,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 分组列表
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/get.group.list.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/get.list.md
      * @param array $body
      * @return ClientResponseInterface
      */
