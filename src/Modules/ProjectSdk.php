@@ -84,6 +84,17 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 重建统计
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/pause.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function statisticProject($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/statistic", $body);
+    }
+
+    /**
      * 添加项目
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/add.md
      * @param array $body
@@ -139,7 +150,18 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 添加用户
+     * 批量添加用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/adds.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addsUser($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/adds", $body);
+    }
+
+    /**
+     * 用户激活
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/active.md
      * @param array $body
      * @return ClientResponseInterface
@@ -158,6 +180,28 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     public function editUser($body)
     {
         return $this->restful(static::METHOD_POST, "/user/edit", $body);
+    }
+
+    /**
+     * 冻结用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/disable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function disableUser($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/disable", $body);
+    }
+
+    /**
+     * 解冻用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/enable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function enableUser($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/enable", $body);
     }
 
     /**
