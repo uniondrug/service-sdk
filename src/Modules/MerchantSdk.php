@@ -19,7 +19,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 添加商户
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/add.merchant.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/add.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -30,7 +30,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 添加组织架构
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/add.organization.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/add.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -41,7 +41,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 删除商户
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/del.merchant.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/del.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -52,7 +52,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 删除组织架构
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/del.organization.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/del.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -63,7 +63,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 编辑商户
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/edit.merchant.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/edit.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -74,7 +74,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 编辑组织架构
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/edit.organization.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/edit.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -85,7 +85,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 读取商户资料
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.merchant.info.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/get.info.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -96,7 +96,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 读取商户资料
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.merchant.list.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/get.list.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -107,7 +107,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 读取组织架构树
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/get.organization.tree.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/get.tree.md
      * @param array $body
      * @return ClientResponseInterface
      */
