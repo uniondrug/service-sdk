@@ -73,6 +73,17 @@ class CommonSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 读取角色详情
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/role/get.info.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getRoleInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/role/info", $body);
+    }
+
+    /**
      * 读取角色分页
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/role/get.paging.md
      * @param array $body
