@@ -168,6 +168,6 @@ class CommonSdk extends Sdk implements ServiceSdkInterface
      */
     public function getAccessList($body)
     {
-        return $this->restful(static::METHOD_POST, "/access/add", $body);
+        return $this->restful(static::METHOD_POST, "/access/list", $body);
     }
 }
