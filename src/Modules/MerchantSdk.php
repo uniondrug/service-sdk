@@ -84,6 +84,17 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 读取单个组织架构详情
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/get.info.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getOrganizationInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organization/info", $body);
+    }
+
+    /**
      * 读取商户资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/get.info.md
      * @param array $body
