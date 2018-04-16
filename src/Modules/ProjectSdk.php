@@ -139,6 +139,17 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 按ID读取项目基础详情
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/get.info.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getProjectInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/info", $body);
+    }
+
+    /**
      * 添加用户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/user/add.md
      * @param array $body
