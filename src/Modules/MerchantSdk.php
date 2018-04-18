@@ -192,4 +192,15 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/worker/paging", $body);
     }
+
+    /**
+     * 员工简易资料
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/info.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getWorkerInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/info", $body);
+    }
 }
