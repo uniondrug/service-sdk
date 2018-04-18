@@ -126,4 +126,59 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/organization/tree", $body);
     }
+
+    /**
+     * 员工登录
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/login.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function login($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/login", $body);
+    }
+
+    /**
+     * 添加员工
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/add.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addWorker($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/add", $body);
+    }
+
+    /**
+     * 编辑员工
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/edit.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editWorker($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/edit", $body);
+    }
+
+    /**
+     * 停用员工
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/disable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function disableWorker($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/disable", $body);
+    }
+
+    /**
+     * 启用员工
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/enable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function enableWorker($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/enable", $body);
+    }
 }
