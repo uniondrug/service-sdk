@@ -61,6 +61,17 @@ class CustomerSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 按ids读取客户资料
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/customer/customer/get.ids.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getCustomerByIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/customer/ids", $body);
+    }
+
+    /**
      * 读取客户分页
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/customer/customer/get.paging.md
      * @param array $body
@@ -114,6 +125,17 @@ class CustomerSdk extends Sdk implements ServiceSdkInterface
     public function getEmployeeInfo($body)
     {
         return $this->restful(static::METHOD_POST, "/employee/info", $body);
+    }
+
+    /**
+     * 按ids读取雇员资料
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/customer/employee/get.ids.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getEmployeeByIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/employee/ids", $body);
     }
 
     /**
