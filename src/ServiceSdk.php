@@ -13,6 +13,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\ProductSdk  $product    产品服务
  * @property Modules\ProjectSdk  $project    项目服务
  * @property Modules\UserSdk     $user       用户服务
+ * @property Modules\DataSdk     $data       数据服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
