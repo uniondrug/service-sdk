@@ -14,6 +14,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\ProjectSdk  $project    项目服务
  * @property Modules\UserSdk     $user       用户服务
  * @property Modules\DataSdk     $data       数据服务
+ * @property Modules\MbsSdk      $mbs        消息总线服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
