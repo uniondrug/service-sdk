@@ -204,4 +204,15 @@ class CustomerSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/employeeTag/paging", $body);
     }
 
+    /**
+     * 获取对应merchantId和时间段新增的客户数量
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/customer/customer/get.number.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getCustomerNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/customer/number", $body);
+    }
+
 }

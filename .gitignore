@@ -1,2 +1,10 @@
-/cache/
-/config/development/
+# Created by .ignore support plugin (hsz.mobi)
+/.idea
+/log/*
+/tmp/*
+/composer.lock
+/vendor
+!**/.gitkeep
+php_errors.log
+/server
+/console
