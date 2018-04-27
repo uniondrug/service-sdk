@@ -302,4 +302,48 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/group/info", $body);
     }
+
+    /**
+     * 读取增量报表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/delta.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportDelta($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/delta", $body);
+    }
+
+    /**
+     * 最近N天的消费记录报表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/days.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportDays($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/days", $body);
+    }
+
+    /**
+     * 日期范围内的消费记录报表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/scope.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportScope($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/scope", $body);
+    }
+
+    /**
+     * 项目维度报表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/project.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportProject($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/project", $body);
+    }
 }
