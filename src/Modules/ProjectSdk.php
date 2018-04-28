@@ -346,4 +346,48 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/export/project", $body);
     }
+
+    /**
+     * 城市维度报表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/city.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportCity($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/city", $body);
+    }
+
+    /**
+     * 排行榜
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/rank.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportRank($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/rank", $body);
+    }
+
+    /**
+     * 趋势报表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/tendency.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportTendency($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/tendency", $body);
+    }
+
+    /**
+     * 项目金额报表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/money.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExportMoney($body)
+    {
+        return $this->restful(static::METHOD_POST, "/export/meon", $body);
+    }
 }
