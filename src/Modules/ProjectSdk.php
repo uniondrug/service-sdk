@@ -388,6 +388,6 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      */
     public function getExportMoney($body)
     {
-        return $this->restful(static::METHOD_POST, "/export/meon", $body);
+        return $this->restful(static::METHOD_POST, "/export/money", $body);
     }
 }
