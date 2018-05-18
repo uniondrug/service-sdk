@@ -282,6 +282,17 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 删除分组
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/del.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, "/group/del", $body);
+    }
+
+    /**
      * 分组列表
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/get.list.md
      * @param array $body
