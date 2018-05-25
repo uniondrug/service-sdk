@@ -315,6 +315,17 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 权益验证接口
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/checkAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function checkVerify($body)
+    {
+        return $this->restful(static::METHOD_POST, "/verify/check", $body);
+    }
+
+    /**
      * 读取增量报表
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/export/delta.md
      * @param array $body
