@@ -6,15 +6,18 @@
 namespace Uniondrug\ServiceSdk;
 
 /**
- * @property Modules\MerchantSdk $common     公共服务
- * @property Modules\CustomerSdk $customer   客户服务
- * @property Modules\GoodsSdk    $goods      商品服务
- * @property Modules\MerchantSdk $merchant   商户服务
- * @property Modules\ProductSdk  $product    产品服务
- * @property Modules\ProjectSdk  $project    项目服务
- * @property Modules\UserSdk     $user       用户服务
- * @property Modules\DataSdk     $data       数据服务
- * @property Modules\MbsSdk      $mbs        消息总线服务
+ * SDK分发调度
+ * @property Modules\MerchantSdk $common   公共服务
+ * @property Modules\CustomerSdk $customer 客户服务
+ * @property Modules\DataSdk     $data     数据服务
+ * @property Modules\EquitySdk   $equity   权益服务
+ * @property Modules\GoodsSdk    $goods    商品服务
+ * @property Modules\MbsSdk      $mbs      消息总线服务
+ * @property Modules\MerchantSdk $merchant 商户服务
+ * @property Modules\ProductSdk  $product  产品服务
+ * @property Modules\ProjectSdk  $project  项目服务
+ * @property Modules\RuleSdk     $rule     规则中心/规则引擎
+ * @property Modules\UserSdk     $user     用户服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
@@ -24,7 +27,6 @@ class ServiceSdk
      * @var array
      */
     private static $_modules = [];
-
     /**
      * SDK命名规则
      * @var string
