@@ -194,6 +194,17 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 员工列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/listAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getWorkerList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/list", $body);
+    }
+
+    /**
      * 员工简易资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/info.md
      * @param array $body
