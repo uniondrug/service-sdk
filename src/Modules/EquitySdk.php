@@ -31,4 +31,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/add', $body);
     }
+
+    /**
+     * 添加分组权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/AddAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addGroupEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/group/add', $body);
+    }
 }
