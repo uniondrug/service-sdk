@@ -71,4 +71,15 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/member/view", $body);
     }
+
+    /**
+     * 添加用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/create.info.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function create($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/create", $body);
+    }
 }
