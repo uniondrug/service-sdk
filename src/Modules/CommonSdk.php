@@ -95,6 +95,28 @@ class CommonSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 设置权限可用
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/role/enable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function enable($body)
+    {
+        return $this->restful(static::METHOD_POST, "/role/enable", $body);
+    }
+
+    /**
+     * 设置权限不可用
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/role/disable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function disbale($body)
+    {
+        return $this->restful(static::METHOD_POST, "/role/disbale", $body);
+    }
+
+    /**
      * 添加菜单
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/menu/add.md
      * @param array $body
