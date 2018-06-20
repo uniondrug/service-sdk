@@ -95,6 +95,17 @@ class CommonSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 读取权限菜单列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/roleSetting/get.list.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getRoleSettingList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/roleSetting/list", $body);
+    }
+
+    /**
      * 设置权限可用
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/role/enable.md
      * @param array $body
