@@ -214,4 +214,16 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/worker/info", $body);
     }
+
+    /**
+     * 获取权限下员工数量
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/roleCount.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getRoleCount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/worker/roleCount", $body);
+    }
+
 }
