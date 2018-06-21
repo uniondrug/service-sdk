@@ -124,7 +124,7 @@ class CommonSdk extends Sdk implements ServiceSdkInterface
      */
     public function disbale($body)
     {
-        return $this->restful(static::METHOD_POST, "/role/disbale", $body);
+        return $this->restful(static::METHOD_POST, "/role/disable", $body);
     }
 
     /**
