@@ -29,6 +29,18 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取审批列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/getApprovalList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getApprovalList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/approval/list", $body);
+    }
+
+
+    /**
      * 取消项目审批
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/cancel.md
      * @param array $body
