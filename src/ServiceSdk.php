@@ -18,6 +18,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\ProjectSdk  $project  项目服务
  * @property Modules\RuleSdk     $rule     规则中心/规则引擎
  * @property Modules\UserSdk     $user     用户服务
+ * @property Modules\MessageSdk  $message  消息中心
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
