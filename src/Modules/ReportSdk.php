@@ -84,6 +84,17 @@ class ReportSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 读取客户统计明细
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/CustomerController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getCustomerInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/customer/info", $body);
+    }
+
+    /**
      * 读取客户下的权益, 消费时应用场景(线上/线下)分布
      * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartitionController/customerSceneAction.md
      * @param array $body
@@ -191,6 +202,17 @@ class ReportSdk extends Sdk implements ServiceSdkInterface
     public function getProjectDrugsPartition($body)
     {
         return $this->restful(static::METHOD_POST, "/partition/project/drugs", $body);
+    }
+
+    /**
+     * 读取项目统计明细
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/ProjectController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getProjectInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/info", $body);
     }
 
     /**
