@@ -62,6 +62,17 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 设置新密码
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/password.new.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function newPassword($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/newpwd", $body);
+    }
+
+    /**
      * 用户详情
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/get.info.md
      * @param array $body
