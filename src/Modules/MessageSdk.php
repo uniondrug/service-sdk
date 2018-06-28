@@ -54,7 +54,7 @@ class MessageSdk extends Sdk implements ServiceSdkInterface
     /**
      * 所有消息分页列表
      * 包含未读消息和己读消息
-     * @link https://uniondrug.coding.net/p/module.message/git/blob/development/docs/api/MessageController/pagingAction.md
+     * @link https://uniondrug.coding.net/p/module.message/git/blob/development/docs/api/MessageController/pagingAllAction.md
      * @param array|StructInterface $body
      * @return ClientResponseInterface
      */
