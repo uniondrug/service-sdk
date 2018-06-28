@@ -73,7 +73,7 @@ class ReportSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 读取客户下的权益, 消费时药口类型分布
+     * 读取客户下的权益, 消费时药品类型分布
      * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartitionController/customerDrugsAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -128,7 +128,7 @@ class ReportSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 读取商户下的权益, 消费时药口类型分布
+     * 读取商户下的权益, 消费时药品类型分布
      * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartitionController/merchantDrugsAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -183,7 +183,7 @@ class ReportSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 读取项目下的权益, 消费时药口类型分布
+     * 读取项目下的权益, 消费时药品类型分布
      * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartitionController/projectDrugsAction.md
      * @param array $body
      * @return ClientResponseInterface
