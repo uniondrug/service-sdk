@@ -52,13 +52,25 @@ class MessageSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 消息分页列表
+     * 所有消息分页列表
+     * 包含未读消息和己读消息
+     * @link https://uniondrug.coding.net/p/module.message/git/blob/development/docs/api/MessageController/pagingAllAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function messagePagingAll($body)
+    {
+        return $this->restful(static::METHOD_POST, "/message/pagingAll", $body);
+    }
+
+    /**
+     * 消息详情
      * @link https://uniondrug.coding.net/p/module.message/git/blob/development/docs/api/MessageController/detailAction.md
      * @param array|StructInterface $body
      * @return ClientResponseInterface
      */
     public function messageDetail($body)
     {
-        return $this->restful(static::METHOD_POST, "/message/paging", $body);
+        return $this->restful(static::METHOD_POST, "/message/detail", $body);
     }
 }
