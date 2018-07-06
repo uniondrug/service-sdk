@@ -183,6 +183,17 @@ class CommonSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 读取菜单结构树
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/menu/menuWithRole.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function menuWithRole($body)
+    {
+        return $this->restful(static::METHOD_POST, "/menu/menuWithRole", $body);
+    }
+
+    /**
      * 添加菜单权限
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/common/access/add.md
      * @param array $body
