@@ -150,6 +150,18 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/project/paging", $body);
     }
 
+
+    /**
+     * 根据多种状态查询项目分页列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/get.pagingByStatus.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingByStatus($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/pagingByStatus", $body);
+    }
+
     /**
      * 按ID读取项目基础详情
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/get.info.md
