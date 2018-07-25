@@ -1,9 +1,7 @@
 <?php
 /**
  * MbsSdk.php
- *
  */
-
 namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\ServiceSdk\Sdk;
@@ -14,12 +12,19 @@ class MbsSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'mbs';
 
     /**
-     * 发送消息
-     *
-     * @param $body
-     *
+     * 发送批量消息
+     * @param array $body
      * @return \Uniondrug\Service\ClientResponseInterface
-     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function batch($body)
+    {
+        return $this->restful(static::METHOD_POST, '/topic/batch', $body);
+    }
+
+    /**
+     * 发送消息
+     * @param array $body
+     * @return \Uniondrug\Service\ClientResponseInterface
      */
     public function publish($body)
     {
@@ -28,11 +33,8 @@ class MbsSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订阅消息
-     *
-     * @param $body
-     *
+     * @param array $body
      * @return \Uniondrug\Service\ClientResponseInterface
-     * @throws \Uniondrug\ServiceSdk\Exception
      */
     public function subscribe($body)
     {
@@ -41,11 +43,8 @@ class MbsSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 退订消息
-     *
-     * @param $body
-     *
+     * @param array $body
      * @return \Uniondrug\Service\ClientResponseInterface
-     * @throws \Uniondrug\ServiceSdk\Exception
      */
     public function unsubscribe($body)
     {
