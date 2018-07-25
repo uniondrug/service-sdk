@@ -20,6 +20,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\RuleSdk     $rule       规则中心/规则引擎
  * @property Modules\UserSdk     $user       用户服务
  * @property Modules\MessageSdk  $message    消息中心
+ * @property Modules\OrderSdk    $order      订单中心
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
