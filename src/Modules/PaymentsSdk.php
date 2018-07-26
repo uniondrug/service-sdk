@@ -17,7 +17,7 @@ class PaymentsSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function OrderInfo($body)
+    public function PaymentsList($body)
     {
         return $this->restful(static::METHOD_POST, "/payments/list", $body);
     }
