@@ -21,7 +21,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\UserSdk     $user          用户服务
  * @property Modules\MessageSdk  $message       消息中心
  * @property Modules\OrderSdk    $order         订单中心
- * @property Modules\PaymentsSdk $payments      订单中心
+ * @property Modules\PaymentsSdk $payments      支付中心
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
