@@ -31,7 +31,7 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function orederEdit($body)
+    public function orderEdit($body)
     {
         return $this->restful(static::METHOD_POST, "/order/edit", $body);
     }
