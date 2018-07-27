@@ -259,4 +259,194 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/worker/relation", $body);
     }
 
+    /**
+     * 添加组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/add", $body);
+    }
+
+    /**
+     * 修改组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/edit", $body);
+    }
+
+    /**
+     * 删除商户组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/delAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/del", $body);
+    }
+
+
+    /**
+     * 读取商户组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/info", $body);
+    }
+
+    /**
+     * 读取商户组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/listAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/list", $body);
+    }
+
+    /**
+     * 读取组织架构树
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/treeAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function treeOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/tree", $body);
+    }
+
+    /**
+     * ids读取商户信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/idsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function idsOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/ids", $body);
+    }
+
+    /**
+     * 添加员工
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/add", $body);
+    }
+
+    /**
+     * 编辑员工
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/edit", $body);
+    }
+
+    /**
+     * 读取员工列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/listAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/list", $body);
+    }
+
+    /**
+     * 读取员工分页列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/paging", $body);
+    }
+
+    /**
+     * 读取员工信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/info", $body);
+    }
+
+    /**
+     * 停用员工
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/disableAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function disableWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/disable", $body);
+    }
+
+    /**
+     * 启用员工
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/enableAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function enableWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/enable", $body);
+    }
+
+    /**
+     * 获取权限下用户数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/roleCountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function roleCountWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/roleCount", $body);
+    }
+
+
+    /**
+     * 删除权限
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/removeAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function removeWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/remove", $body);
+    }
+
+    /**
+     * 用户关联权限
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/relationAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function relationWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/relation", $body);
+    }
+
+
 }
