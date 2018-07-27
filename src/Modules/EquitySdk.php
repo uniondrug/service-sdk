@@ -137,4 +137,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/group/paging', $body);
     }
+
+    /**
+     * 权益退款
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/RefundController/refundAction.md
+     *
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     */
+    public function refund($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/refund', $body);
+    }
 }
