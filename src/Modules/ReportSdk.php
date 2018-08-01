@@ -236,4 +236,15 @@ class ReportSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/tendency/project", $body);
     }
+
+    /**
+     * 读取项目统计明细
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/GroupController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getGroupInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/group/info", $body);
+    }
 }
