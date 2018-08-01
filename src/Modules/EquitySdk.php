@@ -24,9 +24,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/addAction.md
-     *
      * @param array $body
-     *
      * @return ClientResponseInterface
      */
     public function addEquity($body)
@@ -36,9 +34,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据订单号查询权益详情
-     *
      * @param $body
-     *
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/getDetailByOutOrderNoAction.md
      * @return ClientResponseInterface
      */
@@ -49,9 +45,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据权益卡号查询权益详情
-     *
      * @param $body
-     *
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailAction.md
      * @return ClientResponseInterface
      */
@@ -62,9 +56,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据权益ID 获取权益详情
-     *
      * @param $body
-     *
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailAction.md
      * @return ClientResponseInterface
      */
@@ -76,9 +68,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取权益列表
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/getListsAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function getEquityPaging($body)
@@ -89,9 +79,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加分组权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/AddAction.md
-     *
      * @param array $body
-     *
      * @return ClientResponseInterface
      */
     public function addGroupEquity($body)
@@ -102,9 +90,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据分组权益ID 获取权益信息
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/detailAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function getGroupEquityById($body)
@@ -115,9 +101,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据AI智赔分组ID 获取权益信息
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/detailAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function getGroupEquityByGroupId($body)
@@ -128,9 +112,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取分组权益列表
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/pagingAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function getGroupEquityPaging($body)
@@ -141,13 +123,22 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 权益退款
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/RefundController/refundAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function refund($body)
     {
         return $this->restful(static::METHOD_POST, '/equity/refund', $body);
+    }
+
+    /**
+     * 用orderNos获取权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/RefundController/refundAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function getByOrderNos($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/orderNos', $body);
     }
 }
