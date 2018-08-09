@@ -436,4 +436,26 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/export/money", $body);
     }
+
+    /**
+     * 用ids获取分组信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/group/ids.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getGroupByIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/group/ids", $body);
+    }
+
+    /**
+     * 用ids获取项目信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/ids.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getProjectByIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/ids", $body);
+    }
 }
