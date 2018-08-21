@@ -166,6 +166,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/equity/consume/detail/orderNo', $body);
     }
 
-
+    /**
+     * 权益激活
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/active.md
+     *
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     */
+    public function active($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/active', $body);
+    }
 
 }
