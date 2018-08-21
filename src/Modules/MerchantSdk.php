@@ -292,7 +292,6 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/organizebase/del", $body);
     }
 
-
     /**
      * 读取商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/infoAction.md
@@ -425,7 +424,6 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/workerman/roleCount", $body);
     }
 
-
     /**
      * 删除权限
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/removeAction.md
@@ -446,6 +444,397 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     public function relationWorkerMan($body)
     {
         return $this->restful(static::METHOD_POST, "/workerman/relation", $body);
+    }
+
+    /**
+     * 财务账号添加
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addAccountNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountnumber/add", $body);
+    }
+
+    /**
+     * 财务账号查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoAccountNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountnumber/info", $body);
+    }
+
+    /**
+     * 财务账号修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editAccountNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountnumber/edit", $body);
+    }
+
+    /**
+     * 财务账号列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingAccountNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountnumber/paging", $body);
+    }
+
+    /**
+     * 财务账号停用
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editStatusEndAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEndAccountNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountnumber/editstatusend", $body);
+    }
+
+    /**
+     * 财务账号启用
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editStatusStartAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStartAccountNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountnumber/editstatusstart", $body);
+    }
+
+    /**
+     * 原始用户添加
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/add", $body);
+    }
+
+    /**
+     * 原始用户查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/info", $body);
+    }
+
+    /**
+     * 原始用户修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/edit", $body);
+    }
+
+    /**
+     * 查询用户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/paging", $body);
+    }
+
+    /**
+     * 用户停用
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusEndAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEndAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/editstatusend", $body);
+    }
+
+    /**
+     * 用户启用
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusStartAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStartAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/editstatusstart", $body);
+    }
+
+    /**
+     * 用户批量停用
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusEndAllAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEndAllAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/editstatusendall", $body);
+    }
+
+    /**
+     * 用户批量启用
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusStartAllAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStartAllAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/editstatusstartall", $body);
+    }
+
+
+
+    /**
+     * 添加费率
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/add", $body);
+    }
+
+    /**
+     * 费率查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/info", $body);
+    }
+
+    /**
+     * 费率修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/edit", $body);
+    }
+
+    /**
+     * 查询费率列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/paging", $body);
+    }
+
+
+
+    /**
+     * 添加开票配置
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addInvoice($body)
+    {
+        return $this->restful(static::METHOD_POST, "/invoice/add", $body);
+    }
+
+    /**
+     * 开票配置查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoInvoice($body)
+    {
+        return $this->restful(static::METHOD_POST, "/invoice/info", $body);
+    }
+
+    /**
+     * 开票配置修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editInvoice($body)
+    {
+        return $this->restful(static::METHOD_POST, "/invoice/edit", $body);
+    }
+
+    /**
+     * 开票配置列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingInvoice($body)
+    {
+        return $this->restful(static::METHOD_POST, "/invoice/paging", $body);
+    }
+
+
+    /**
+     * 添加原始商户中心
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addPartners($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/add", $body);
+    }
+
+    /**
+     * 原始商户中心查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoPartners($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/info", $body);
+    }
+
+    /**
+     * 原始商户中心修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editPartners($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/edit", $body);
+    }
+
+    /**
+     * 原始商户中心列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingPartners($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/paging", $body);
+    }
+
+    /**
+     * 原始商户中心列表树
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/treeAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function treePartners($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/tree", $body);
+    }
+
+    /**
+     * 原始商户中心关闭
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editStatusEndAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEndPartners($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/editstatusend", $body);
+    }
+
+    /**
+     * 原始商户中心开启
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editStatusStartAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStartPartners($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/editstatusstart", $body);
+    }
+
+
+    /**
+     * 添加原始连锁门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addStores($body)
+    {
+        return $this->restful(static::METHOD_POST, "/stores/add", $body);
+    }
+
+    /**
+     * 原始连锁门店查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoStores($body)
+    {
+        return $this->restful(static::METHOD_POST, "/stores/info", $body);
+    }
+
+    /**
+     * 原始连锁门店修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStores($body)
+    {
+        return $this->restful(static::METHOD_POST, "/stores/edit", $body);
+    }
+
+    /**
+     * 原始连锁门店列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingStores($body)
+    {
+        return $this->restful(static::METHOD_POST, "/stores/paging", $body);
+    }
+
+    /**
+     * 原始连锁门店关闭
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editStatusEndAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEndStores($body)
+    {
+        return $this->restful(static::METHOD_POST, "/stores/editstatusend", $body);
+    }
+
+    /**
+     * 原始连锁门店开启
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editStatusStartAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStartStores($body)
+    {
+        return $this->restful(static::METHOD_POST, "/stores/editstatusstart", $body);
     }
 
 
