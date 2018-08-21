@@ -132,6 +132,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取分组金额
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/group/nominalValue.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function groupNominalValue($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/group/nominalValue', $body);
+    }
+
+    /**
      * 用orderNos获取权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/RefundController/refundAction.md
      * @param $body
