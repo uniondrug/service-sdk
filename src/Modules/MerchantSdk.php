@@ -600,7 +600,16 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/assistants/editstatusstartall", $body);
     }
 
-
+    /**
+     * 用户批量启用
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/memberIdInfoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function memberIdInfoAssistants($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/memberidinfo", $body);
+    }
 
     /**
      * 添加费率
@@ -646,8 +655,6 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/balance/paging", $body);
     }
 
-
-
     /**
      * 添加开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/addAction.md
@@ -691,7 +698,6 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/invoice/paging", $body);
     }
-
 
     /**
      * 添加原始商户中心
@@ -770,7 +776,6 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/partners/editstatusstart", $body);
     }
 
-
     /**
      * 添加原始连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/addAction.md
@@ -836,6 +841,4 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/stores/editstatusstart", $body);
     }
-
-
 }
