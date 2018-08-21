@@ -39,7 +39,6 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/approval/list", $body);
     }
 
-
     /**
      * 取消项目审批
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/cancel.md
@@ -149,7 +148,6 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/project/paging", $body);
     }
-
 
     /**
      * 根据多种状态查询项目分页列表
@@ -457,5 +455,16 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     public function getProjectByIds($body)
     {
         return $this->restful(static::METHOD_POST, "/project/ids", $body);
+    }
+
+    /**
+     * 自由金额添加用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/freeAddUser.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function freeAddUser($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/free/add", $body);
     }
 }
