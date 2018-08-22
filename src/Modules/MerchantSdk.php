@@ -841,4 +841,81 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/stores/editstatusstart", $body);
     }
+
+    /**
+     * 添加门店图片
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storesimages/add", $body);
+    }
+
+    /**
+     * 门店图片查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storesimages/info", $body);
+    }
+
+    /**
+     * 门店图片修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storesimages/edit", $body);
+    }
+
+    /**
+     * 门店图片列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storesimages/paging", $body);
+    }
+
+    /**
+     * 门店图片列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storesimages/paging", $body);
+    }
+
+    /**
+     * 门店图片集合
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/ListsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listsStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storesimages/lists", $body);
+    }
+
+    /**
+     * 门店图片删除
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/DelAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storesimages/del", $body);
+    }
 }
