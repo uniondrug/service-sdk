@@ -886,16 +886,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/storesimages/paging", $body);
     }
 
-    /**
-     * 门店图片列表
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/pagingAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function pagingStoreImages($body)
-    {
-        return $this->restful(static::METHOD_POST, "/storesimages/paging", $body);
-    }
+
 
     /**
      * 门店图片集合
@@ -908,14 +899,5 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/storesimages/lists", $body);
     }
 
-    /**
-     * 门店图片删除
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/DelAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function delStoreImages($body)
-    {
-        return $this->restful(static::METHOD_POST, "/storesimages/del", $body);
-    }
+    
 }
