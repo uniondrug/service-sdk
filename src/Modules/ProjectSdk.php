@@ -467,4 +467,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/user/free/add", $body);
     }
+
+    /**
+     * 检查订单号是否重复
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/checkOrderNo.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function checkOrderNo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/check/orderNo", $body);
+    }
 }
