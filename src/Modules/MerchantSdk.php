@@ -447,6 +447,28 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 批量停用用户
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/editStatusEndAllAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEndAllWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/editstatusendall", $body);
+    }
+
+    /**
+     * 批量开启用户
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/editStatusStartAllAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStartAllWorkerMan($body)
+    {
+        return $this->restful(static::METHOD_POST, "/workerman/editstatusstartall", $body);
+    }
+
+    /**
      * 财务账号添加
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/addAction.md
      * @param array $body
@@ -899,5 +921,5 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/storesimages/lists", $body);
     }
 
-    
+
 }
