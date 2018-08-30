@@ -921,5 +921,29 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/storesimages/lists", $body);
     }
 
+    /**
+     * 获取rootid下所有组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ListsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listRootidOrganizeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listrootid", $body);
+    }
+
+    /**
+     * 获取所有银行
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/bankListAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function bankListAccountNumber($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountnumber/bankList", $body);
+    }
+
+
+
 
 }
