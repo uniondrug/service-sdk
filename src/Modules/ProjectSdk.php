@@ -478,4 +478,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/user/check/orderNo", $body);
     }
+
+    /**
+     * 创建操作日志
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/saveLog.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function saveLog($body)
+    {
+        return $this->restful(static::METHOD_POST, "/log/save", $body);
+    }
 }
