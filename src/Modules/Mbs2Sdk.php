@@ -27,11 +27,12 @@ class Mbs2Sdk extends Sdk implements ServiceSdkInterface
     /**
      * 发送批量消息
      * @param array $body
+     * @param array $options
      * @return \Uniondrug\Service\ClientResponseInterface
      */
-    public function batch($body)
+    public function batch($body, array $options = [])
     {
-        return $this->restful(static::METHOD_POST, '/topic/batch', $body);
+        return $this->restful(static::METHOD_POST, '/topic/batch', $body, null, $options);
     }
 
     /**
