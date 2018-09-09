@@ -104,4 +104,70 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/member/smsLogin", $body);
     }
+
+    /**
+     * 添加用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/create.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createWxMembers($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/create", $body);
+    }
+
+    /**
+     * 登录用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/sign.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function signWxMembers($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/sign", $body);
+    }
+
+    /**
+     * 查询用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/info.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoWxMembers($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/info", $body);
+    }
+
+    /**
+     * 修改用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/edit.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editWxMembers($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/edit", $body);
+    }
+
+    /**
+     * 查询用户列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/paging.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingWxMembers($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/paging", $body);
+    }
+
+    /**
+     * 修改用户密码
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/editpwd.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editpwdWxMembers($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/editpwd", $body);
+    }
 }
