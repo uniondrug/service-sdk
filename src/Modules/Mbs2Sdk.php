@@ -38,10 +38,11 @@ class Mbs2Sdk extends Sdk implements ServiceSdkInterface
     /**
      * 发送消息
      * @param array $body
+     * @param array $options
      * @return \Uniondrug\Service\ClientResponseInterface
      */
-    public function publish($body)
+    public function publish($body, array $options = [])
     {
-        return $this->restful(static::METHOD_POST, '/topic/publish', $body);
+        return $this->restful(static::METHOD_POST, '/topic/publish', $body, null, $options);
     }
 }
