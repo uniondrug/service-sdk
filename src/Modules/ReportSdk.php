@@ -247,4 +247,173 @@ class ReportSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/group/info", $body);
     }
+
+    //-------------------------------药联市场数据展示平台Start-------------------------------
+    /**
+     * 读取店员今日活跃度
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/AssistantsController/activeDailyAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getAssistantActiveDaily($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/activeDaily", $body);
+    }
+
+    /**
+     * 读取会员今日活跃度
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/MemberController/activeDailyAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getMemberActiveDaily($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/activeDaily", $body);
+    }
+
+    /**
+     * 读取今日订单各时段销售量
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/OrderController/hourSaleAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getOrderHourSale($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/hourSale", $body);
+    }
+
+    /**
+     * 读取今日订单总销售量
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/OrderController/daySaleAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getOrderDaySale($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/daySale", $body);
+    }
+
+    /**
+     * 读取今日订单产品分类占比
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/OrderController/dayProductPercentAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getOrderDayProductPercent($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/dayProductPercent", $body);
+    }
+
+    /**
+     * 读取门店省级分布列表
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/StoreController/provincePartitionAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getStoreProvincePartition($body)
+    {
+        return $this->restful(static::METHOD_POST, "/store/provincePartition", $body);
+    }
+
+    /**
+     * 读取门店省级覆盖率
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/StoreController/provincePartitionCoverAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getStoreProvincePartitionCover($body)
+    {
+        return $this->restful(static::METHOD_POST, "/store/provincePartitionCover", $body);
+    }
+
+    /**
+     * 读取门店市级覆盖率
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/StoreController/provincePartitionCoverAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getStoreCityPartitionCover($body)
+    {
+        return $this->restful(static::METHOD_POST, "/store/cityPartitionCover", $body);
+    }
+
+    /**
+     * 读取分类门店总数量
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/StoreController/categoryCountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getStoreCategoryCount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/store/categoryCount", $body);
+    }
+
+    /**
+     * 读取合作连锁
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartnerController/cooperationAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getPartnerCooperation($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partner/cooperation", $body);
+    }
+
+    /**
+     * 读取本月新增店员统计
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/AssistantsController/staticsMonthlyAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getAssistantStaticsMonthly($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/staticsMonthly", $body);
+    }
+
+    /**
+     * 读取连锁30天内销售额排行
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartnerController/thirtyDaysSaleAmountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getPartnerThirtyDaysSaleAmount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partner/thirtyDaysSaleAmount", $body);
+    }
+
+    /**
+     * 读取连锁30天内销售量排行
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartnerController/thirtyDaysSaleCountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getPartnerThirtyDaysSaleCount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partner/thirtyDaysSaleCount", $body);
+    }
+
+    /**
+     * 读取区域30天内销售额占比
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartitionController/saleAmountPercentAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getPartitionSaleAmountPercent($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partition/saleAmountPercent", $body);
+    }
+
+    /**
+     * 读取区域30天内销售量占比
+     * @link https://uniondrug.coding.net/p/module.report/git/blob/development/docs/api/PartitionController/saleCountPercentAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getPartitionSaleCountPercent($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partition/saleCountPercent", $body);
+    }
+
+    //-------------------------------药联市场数据展示平台End-------------------------------
+
 }
