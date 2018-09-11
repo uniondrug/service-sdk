@@ -170,4 +170,39 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/wxmember/editpwd", $body);
     }
+
+    /**
+     * 用户添加积分记录
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/accountrecords/add.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addAccountRecords($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountrecords/add", $body);
+    }
+
+    /**
+     * 用户查看积分记录
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/accountrecords/info.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoAccountRecords($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountrecords/info", $body);
+    }
+
+    /**
+     * 积分记录列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/accountrecords/paging.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function pagingAccountRecords($body)
+    {
+        return $this->restful(static::METHOD_POST, "/accountrecords/paging", $body);
+    }
+
+
 }
