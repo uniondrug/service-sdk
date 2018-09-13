@@ -15,7 +15,7 @@ use Uniondrug\ServiceSdk\ServiceSdkInterface;
  */
 class PromotionUserSdk extends Sdk implements ServiceSdkInterface
 {
-    protected $serviceName = 'promotion.user';
+    protected $serviceName = 'promotionUser';
 
     /**
      * 查询代理人
