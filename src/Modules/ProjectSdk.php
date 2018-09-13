@@ -489,4 +489,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/log/save", $body);
     }
+
+    /**
+     * 导入用户时创建用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/importAddUser.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function importAddUser($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user//import/add", $body);
+    }
 }
