@@ -23,6 +23,9 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\MessageSdk  $message        消息中心
  * @property Modules\OrderSdk    $order          订单中心
  * @property Modules\PaymentsSdk $payments       支付中心
+ * @property Modules\PromotionUserSdk     $promotionUser           智推用户服务
+ * @property Modules\PromotionBiddingSdk  $promotionBidding        智推竞价服务
+ * @property Modules\PromotionFinanceSdk  $promotionFinance        智推财务服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
