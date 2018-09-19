@@ -19,68 +19,68 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 查看工业商品数量
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/count.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/countDrug.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function count($body)
+    public function countDrug($body)
     {
-        return $this->restful(static::METHOD_POST, "/drug/count", $body);
+        return $this->restful(static::METHOD_POST, "/drug/countDrug", $body);
     }
 
     /**
      * 工业维度的商品列表
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/byMerchantList.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/getDrugList.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function byMerchantList($body)
+    public function getDrugList($body)
     {
-        return $this->restful(static::METHOD_POST, "/drug/byMerchantList", $body);
+        return $this->restful(static::METHOD_POST, "/drug/getDrugList", $body);
     }
 
     /**
      * 工业维度的商品新增
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/add.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/addDrug.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function add($body)
+    public function addDrug($body)
     {
-        return $this->restful(static::METHOD_POST, "/drug/add", $body);
+        return $this->restful(static::METHOD_POST, "/drug/addDrug", $body);
     }
 
     /**
      * 工业维度的商品编辑
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/edit.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/editDrug.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function edit($body)
+    public function editDrug($body)
     {
-        return $this->restful(static::METHOD_POST, "/drug/edit", $body);
+        return $this->restful(static::METHOD_POST, "/drug/editDrug", $body);
     }
 
     /**
      * 查看当前商品
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/getMerchantDrug.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/getDrug.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function getMerchantDrug($body)
+    public function getDrug($body)
     {
-        return $this->restful(static::METHOD_POST, "/drug/getMerchantDrug", $body);
+        return $this->restful(static::METHOD_POST, "/drug/getDrug", $body);
     }
 
     /**
      * 工业商品停产,启用
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/changeStatus.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/changeDrugStatus.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function changeStatus($body)
+    public function changeDrugStatus($body)
     {
-        return $this->restful(static::METHOD_POST, "/drug/changeStatus", $body);
+        return $this->restful(static::METHOD_POST, "/drug/changeDrugStatus", $body);
     }
 
 }
