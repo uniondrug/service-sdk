@@ -60,4 +60,15 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/fund/consume", $body);
     }
+
+    /**
+     * 添加充值记录
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance/recharge/addRecharge.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addRecharge($body)
+    {
+        return $this->restful(static::METHOD_POST, "/recharge/addRecharge", $body);
+    }
 }
