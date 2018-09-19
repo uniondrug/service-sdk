@@ -83,4 +83,59 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/drug/changeDrugStatus", $body);
     }
 
+    /**
+     * 智推推广服务
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/service/getPromotion.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getPromotion($body)
+    {
+        return $this->restful(static::METHOD_POST, "/service/getPromotion", $body);
+    }
+
+    /**
+     * 创建项目
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/project/add.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addProject($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/add", $body);
+    }
+
+    /**
+     * 修改项目名称
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/project/editName.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editProjectName($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/editName", $body);
+    }
+
+    /**
+     * 开启、关闭项目
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/project/editStatus.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editProjectStatus($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/editStatus", $body);
+    }
+
+    /**
+     * 项目列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/project/getList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function geProjectList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/getList", $body);
+    }
+
 }
