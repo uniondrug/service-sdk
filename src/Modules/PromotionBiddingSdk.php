@@ -138,4 +138,58 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/project/getList", $body);
     }
 
+    /**
+     * 创建方案
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/add.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function add($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/add", $body);
+    }
+
+    /**
+     * 关联商品
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/relateDrug.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function relateDrug($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/relateDrug", $body);
+    }
+
+    /**
+     * 移除关联商品
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/deleteDrug.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function deleteDrug($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/deleteDrug", $body);
+    }
+
+    /**
+     * 查询关联商品
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/getList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/getList", $body);
+    }
+
+    /**
+     * 投放预估
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/predict.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function predict($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/predict", $body);
+    }
 }
