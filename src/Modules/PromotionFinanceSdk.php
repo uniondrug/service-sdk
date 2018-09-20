@@ -19,13 +19,13 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 创建资金池
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance/fund/createFundPool.md
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance/fund/addFundPool.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function createFundPool($body)
+    public function addFundPool($body)
     {
-        return $this->restful(static::METHOD_POST, "/fund/createFundPool", $body);
+        return $this->restful(static::METHOD_POST, "/fund/addFundPool", $body);
     }
 
     /**
@@ -70,5 +70,16 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     public function addRecharge($body)
     {
         return $this->restful(static::METHOD_POST, "/recharge/addRecharge", $body);
+    }
+
+    /**
+     * 生成命中匹配记录
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance//bills/addHits.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addHits($body)
+    {
+        return $this->restful(static::METHOD_POST, "/bills/addHits", $body);
     }
 }
