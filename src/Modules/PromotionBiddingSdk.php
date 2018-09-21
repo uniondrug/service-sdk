@@ -144,7 +144,7 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function add($body)
+    public function addScheme($body)
     {
         return $this->restful(static::METHOD_POST, "/scheme/add", $body);
     }
@@ -155,7 +155,7 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function relateDrug($body)
+    public function relateSchemeDrug($body)
     {
         return $this->restful(static::METHOD_POST, "/scheme/relateDrug", $body);
     }
@@ -166,7 +166,7 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function deleteDrug($body)
+    public function deleteSchemeDrug($body)
     {
         return $this->restful(static::METHOD_POST, "/scheme/deleteDrug", $body);
     }
@@ -177,7 +177,7 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function getList($body)
+    public function getSchemeList($body)
     {
         return $this->restful(static::METHOD_POST, "/scheme/getList", $body);
     }
@@ -188,7 +188,7 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function predict($body)
+    public function predictScheme($body)
     {
         return $this->restful(static::METHOD_POST, "/scheme/predict", $body);
     }
