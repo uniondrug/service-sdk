@@ -191,4 +191,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/group/detailByGroupId', $body);
     }
+
+    /**
+     * 试算接口
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/precheck.md
+     *
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     */
+    public function precheck($body)
+    {
+        return $this->restful(static::METHOD_POST, '/precheck/check', $body);
+    }
 }
