@@ -8,6 +8,7 @@ namespace Uniondrug\ServiceSdk;
 /**
  * SDK分发调度
  * @property Modules\CommonSdk   $common         公共服务
+ * @property Modules\HealthSdk   $health         公共服务
  * @property Modules\CustomerSdk $customer       客户服务
  * @property Modules\DataSdk     $data           数据服务
  * @property Modules\EquitySdk   $equity         权益服务
