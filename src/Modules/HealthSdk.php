@@ -49,4 +49,15 @@ class HealthSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/health/orders', $body);
     }
+
+    /**
+     * 商品编辑
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/HealthController/goodEditAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function goodEdit($body)
+    {
+        return $this->restful(static::METHOD_POST, '/health/good/edit', $body);
+    }
 }
