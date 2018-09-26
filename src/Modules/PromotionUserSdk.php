@@ -82,4 +82,15 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/merchant/approve", $body);
     }
+
+    /**
+     * userToken
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/login/userToken.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function userToken($body)
+    {
+        return $this->restful(static::METHOD_POST, "/login/userToken", $body);
+    }
 }
