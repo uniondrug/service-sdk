@@ -72,4 +72,14 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/login/login", $body);
     }
 
+    /**
+     * 工业审核
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/merchant/approve.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function merchantApprove($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/approve", $body);
+    }
 }
