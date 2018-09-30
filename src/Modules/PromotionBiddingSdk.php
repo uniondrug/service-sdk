@@ -236,4 +236,26 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/scheme/get", $body);
     }
+
+    /**
+     * 方案启用
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/enable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function enable($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/enable", $body);
+    }
+
+    /**
+     * 方案停用
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/disable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function disable($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/disable", $body);
+    }
 }
