@@ -205,6 +205,17 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 商品项目维度列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/getProjectDrugList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getProjectDrugList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/getProjectDrugList", $body);
+    }
+
+    /**
      * 方案审核
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/approve.md
      * @param array $body
