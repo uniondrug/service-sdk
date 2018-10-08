@@ -192,4 +192,81 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/scheme/predict", $body);
     }
+
+    /**
+     * 商品方案维度列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/getDrugList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getSchemeDrugList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/getDrugList", $body);
+    }
+
+    /**
+     * 商品项目维度列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/getProjectDrugList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getProjectDrugList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/getProjectDrugList", $body);
+    }
+
+    /**
+     * 方案审核
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/approve.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function approveScheme($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/approve", $body);
+    }
+
+    /**
+     * 工业商品关联项目
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/relateProject.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function relateProject($body)
+    {
+        return $this->restful(static::METHOD_POST, "/drug/relateProject", $body);
+    }
+
+    /**
+     * 工业商品关联项目
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/get.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getScheme($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/get", $body);
+    }
+
+    /**
+     * 方案启用
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/enable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function enable($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/enable", $body);
+    }
+
+    /**
+     * 方案停用
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/disable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function disable($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/disable", $body);
+    }
 }

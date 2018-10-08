@@ -93,4 +93,37 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/bills/getBillsList", $body);
     }
+
+    /**
+     * 充值金额审核
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance/recharge/approve.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function rechargeApprove($body)
+    {
+        return $this->restful(static::METHOD_POST, "/recharge/approve", $body);
+    }
+
+    /**
+     * 积分回调
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance/bills/points.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function billsPoints($body)
+    {
+        return $this->restful(static::METHOD_POST, "/bills/points", $body);
+    }
+
+    /**
+     * 药品统计信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance/bills/drugInfo.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function billsDrugInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/bills/drugInfo", $body);
+    }
 }
