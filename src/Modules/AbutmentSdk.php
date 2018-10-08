@@ -13,9 +13,9 @@ use Uniondrug\ServiceSdk\ServiceSdkInterface;
  * 公共服务
  * @package Uniondrug\ServiceSdk\Modules
  */
-class HealthSdk extends Sdk implements ServiceSdkInterface
+class AbutmentSdk extends Sdk implements ServiceSdkInterface
 {
-    protected $serviceName = 'health';
+    protected $serviceName = 'abutment';
 
     /**
      * 添加体检数据
@@ -25,7 +25,7 @@ class HealthSdk extends Sdk implements ServiceSdkInterface
      */
     public function create($body)
     {
-        return $this->restful(static::METHOD_POST, '/health/create', $body);
+        return $this->restful(static::METHOD_POST, '/order/create', $body);
     }
 
     /**
@@ -36,7 +36,7 @@ class HealthSdk extends Sdk implements ServiceSdkInterface
      */
     public function edit($body)
     {
-        return $this->restful(static::METHOD_POST, '/health/create', $body);
+        return $this->restful(static::METHOD_POST, '/order/edit', $body);
     }
 
     /**
@@ -47,7 +47,7 @@ class HealthSdk extends Sdk implements ServiceSdkInterface
      */
     public function orders($body)
     {
-        return $this->restful(static::METHOD_POST, '/health/orders', $body);
+        return $this->restful(static::METHOD_POST, '/order/orders', $body);
     }
 
     /**
@@ -58,6 +58,6 @@ class HealthSdk extends Sdk implements ServiceSdkInterface
      */
     public function goodEdit($body)
     {
-        return $this->restful(static::METHOD_POST, '/health/good/edit', $body);
+        return $this->restful(static::METHOD_POST, '/good/edit', $body);
     }
 }
