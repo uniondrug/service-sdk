@@ -280,4 +280,15 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/scheme/disable", $body);
     }
+
+    /**
+     * 工业维度停用方案
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/scheme/merchantDisable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function disableMerchantSchemes($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/merchantDisable", $body);
+    }
 }
