@@ -14,6 +14,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\DataSdk             $data                    数据服务
  * @property Modules\EquitySdk           $equity                  权益服务
  * @property Modules\GoodsSdk            $goods                   商品服务
+ * @property Modules\TagSdk              $tag                     标签服务
  * @property Modules\MbsSdk              $mbs                     消息总线服务
  * @property Modules\Mbs2Sdk             $mbs2                    新版MBS消息服务
  * @property Modules\MerchantSdk         $merchant                商户服务

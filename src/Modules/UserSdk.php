@@ -269,8 +269,4 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/member/address/setStatus", $body);
     }
-
-
-
-
 }
