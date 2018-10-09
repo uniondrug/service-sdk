@@ -117,14 +117,25 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 开启、关闭项目
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/project/editStatus.md
+     * 开启项目
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/project/enable.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function editProjectStatus($body)
+    public function projectEnable($body)
     {
-        return $this->restful(static::METHOD_POST, "/project/editStatus", $body);
+        return $this->restful(static::METHOD_POST, "/project/enable", $body);
+    }
+
+    /**
+     * 关闭项目
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/project/disable.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function projectDisable($body)
+    {
+        return $this->restful(static::METHOD_POST, "/project/disable", $body);
     }
 
     /**
