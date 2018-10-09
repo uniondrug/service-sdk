@@ -204,5 +204,69 @@ class UserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/accountrecords/paging", $body);
     }
 
+    /**
+     * 获取用户默认地址
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/getDefaultAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getDefaultAddress($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/getDefault", $body);
+    }
 
+    /**
+     * 设置用户默认地址
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/setDefaultAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function setDefaultAddress($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/setDefault", $body);
+    }
+
+    /**
+     * 获取用户地址列表
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getAddressPaging($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/paging", $body);
+    }
+
+    /**
+     * 添加地址
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/addAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addAddress($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/add", $body);
+    }
+
+    /**
+     * 修改地址
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editAddress($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/edit", $body);
+    }
+
+    /**
+     * 修改地址
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/setStatusAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function setAddressStatus($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/setStatus", $body);
+    }
 }
