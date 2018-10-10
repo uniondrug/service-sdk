@@ -19,7 +19,7 @@ class AbutmentSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 添加体检数据
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/HealthController/createAction.md
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -30,7 +30,7 @@ class AbutmentSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 编辑体检数据
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/HealthController/editAction.md
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/editAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -41,7 +41,7 @@ class AbutmentSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 用订单号查询
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/HealthController/ordersAction.md
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/ordersAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -51,8 +51,19 @@ class AbutmentSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 订单详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/detailAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function detail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/detail', $body);
+    }
+
+    /**
      * 商品编辑
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/HealthController/goodEditAction.md
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/GoodController/goodEditAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
