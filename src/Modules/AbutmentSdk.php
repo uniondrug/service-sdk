@@ -104,4 +104,16 @@ class AbutmentSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/notify/create', $body);
     }
+
+
+    /**
+     * 编辑回调记录
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/NotifyController/editAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editNotify($body)
+    {
+        return $this->restful(static::METHOD_POST, '/notify/edit', $body);
+    }
 }
