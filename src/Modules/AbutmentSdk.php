@@ -71,4 +71,37 @@ class AbutmentSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/good/edit', $body);
     }
+
+    /**
+     * 支付详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/PayController/detailAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function payDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/pay/detail', $body);
+    }
+
+    /**
+     * 添加支付记录
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/PayController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createPay($body)
+    {
+        return $this->restful(static::METHOD_POST, '/pay/create', $body);
+    }
+
+    /**
+     * 添加回调记录
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/NotifyController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createNotify($body)
+    {
+        return $this->restful(static::METHOD_POST, '/notify/create', $body);
+    }
 }
