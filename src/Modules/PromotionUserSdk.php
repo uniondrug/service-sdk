@@ -61,4 +61,47 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/login/complete", $body);
     }
 
+    /**
+     * 登陆
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/login/login.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function login($body)
+    {
+        return $this->restful(static::METHOD_POST, "/login/login", $body);
+    }
+
+    /**
+     * 工业审核
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/merchant/approve.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function merchantApprove($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/approve", $body);
+    }
+
+    /**
+     * userToken
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/login/userToken.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function userToken($body)
+    {
+        return $this->restful(static::METHOD_POST, "/login/userToken", $body);
+    }
+
+    /**
+     * tokenLogin
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/login/tokenLogin.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function tokenLogin($body)
+    {
+        return $this->restful(static::METHOD_POST, "/login/tokenLogin", $body);
+    }
 }
