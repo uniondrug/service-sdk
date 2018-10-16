@@ -7,14 +7,12 @@ namespace Uniondrug\ServiceSdk;
 
 /**
  * SDK分发调度
+ * @property Modules\AbutmentSdk         $abutment                对接模块
  * @property Modules\CommonSdk           $common                  公共服务
- * @property Modules\AbutmentSdk         $abutment                公共服务
- * @property Modules\TokenSdk            $token                   公共服务
  * @property Modules\CustomerSdk         $customer                客户服务
  * @property Modules\DataSdk             $data                    数据服务
  * @property Modules\EquitySdk           $equity                  权益服务
  * @property Modules\GoodsSdk            $goods                   商品服务
- * @property Modules\TagSdk              $tag                     标签服务
  * @property Modules\MbsSdk              $mbs                     消息总线服务
  * @property Modules\Mbs2Sdk             $mbs2                    新版MBS消息服务
  * @property Modules\MerchantSdk         $merchant                商户服务
@@ -29,6 +27,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\PromotionUserSdk    $promotionUser           智推用户服务
  * @property Modules\PromotionBiddingSdk $promotionBidding        智推竞价服务
  * @property Modules\PromotionFinanceSdk $promotionFinance        智推财务服务
+ * @property Modules\SmsSdk              $sms                     短信服务
  * @property Modules\DrugsSdk            $drugs                   药品中心
  * @package Uniondrug\ServiceSdk
  */

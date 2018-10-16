@@ -73,4 +73,15 @@ class MessageSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/message/detail", $body);
     }
+
+    /**
+     * 发送微信消息
+     * @link https://uniondrug.coding.net/p/module.message/git/blob/development/docs/api/WxMessageController/sendAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function wxMessageSend($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wx/message/send", $body);
+    }
 }
