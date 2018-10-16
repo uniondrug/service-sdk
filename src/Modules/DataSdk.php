@@ -61,4 +61,14 @@ class DataSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/sms/validateCaptcha", $body);
     }
 
+    /**
+     * 地区模糊模询
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/data/sms/validateCaptcha.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function areasSearch($body)
+    {
+        return $this->restful(static::METHOD_POST, "/areas/search", $body);
+    }
 }
