@@ -29,6 +29,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\PromotionFinanceSdk $promotionFinance        智推财务服务
  * @property Modules\SmsSdk              $sms                     短信服务
  * @property Modules\DrugsSdk            $drugs                   药品中心
+ * @property Modules\MapSdk              $map                     高德云图服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
