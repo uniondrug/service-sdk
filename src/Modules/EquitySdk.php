@@ -216,4 +216,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/consume', $body);
     }
+
+    /**
+     * 创建权益消费限制
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityOrganController/createAction.md
+     *
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     */
+    public function organCreate($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/organ/create', $body);
+    }
 }
