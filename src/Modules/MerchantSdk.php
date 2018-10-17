@@ -944,6 +944,14 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
 
-
-
+    /**
+     * 用连锁id获取组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/getByPartnerAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getOrganByPartnerId($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/getbypartner", $body);
+    }
 }
