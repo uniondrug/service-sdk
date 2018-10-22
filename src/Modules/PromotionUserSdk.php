@@ -84,6 +84,39 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 变更工业阶段
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/merchant/changeStage.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function changeStage($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/changeStage", $body);
+    }
+
+    /**
+     * 获取工业用户
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/merchant/getInfo.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/getInfo", $body);
+    }
+
+    /**
+     * 获取工业名称列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/merchant/getNameList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getNameList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/getNameList", $body);
+    }
+
+    /**
      * userToken
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/login/userToken.md
      * @param array $body
@@ -104,4 +137,5 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/login/tokenLogin", $body);
     }
+
 }

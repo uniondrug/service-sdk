@@ -242,4 +242,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/member/count', $body);
     }
+
+    /**
+     * 获取用户是否消费过
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityConsumeController/memberAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function getMemberIsConsume($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/consume/member', $body);
+    }
 }
