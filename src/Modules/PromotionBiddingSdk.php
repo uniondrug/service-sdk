@@ -291,4 +291,15 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/scheme/merchantDisable", $body);
     }
+
+    /**
+     * 工业商品初始化
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/bidding/drug/initDrug.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function initDrug($body)
+    {
+        return $this->restful(static::METHOD_POST, "/drug/initDrug", $body);
+    }
 }
