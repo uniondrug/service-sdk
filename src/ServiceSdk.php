@@ -31,6 +31,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\SmsSdk              $sms                     短信服务
  * @property Modules\DrugsSdk            $drugs                   药品中心
  * @property Modules\MapSdk              $map                     高德云图服务
+ * @property Modules\FinanceSdk          $finance                 结算中心服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
