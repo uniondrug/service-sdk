@@ -5,6 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
+use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
