@@ -1,19 +1,18 @@
 <?php
 /**
  * @author wsfuyibing <websearch@163.com>
- * @date   2018-03-27
+ * @date   2018-10-25
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
-use Uniondrug\ServiceSdk\Sdk;
-use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * 用户服务
+ * 从v1迁移到V2
  * @package Uniondrug\ServiceSdk\Modules
  */
-class UserSdk extends Sdk implements ServiceSdkInterface
+class UserSdk extends Abstracts\SdkBase
 {
     protected $serviceName = 'user';
 
@@ -21,7 +20,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 会员登录(手机号+密码)
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/login.password.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function memberLogin($body)
     {
@@ -32,7 +31,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 微信登录
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/login.weixin.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function memberWeixinLogin($body)
     {
@@ -43,7 +42,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 绑定微信
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/bind.weixin.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function bindWeixin($body)
     {
@@ -54,7 +53,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 修改密码
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/password.change.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function changePassword($body)
     {
@@ -65,7 +64,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 设置新密码
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/password.new.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function newPassword($body)
     {
@@ -76,7 +75,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 用户详情
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/get.info.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getMemberInfo($body)
     {
@@ -87,7 +86,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 添加用户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/create.info.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function create($body)
     {
@@ -98,7 +97,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 验证码登录
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/smsLogin.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function smsLogin($body)
     {
@@ -109,7 +108,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 添加用户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/create.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function createWxMembers($body)
     {
@@ -120,7 +119,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 登录用户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/sign.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function signWxMembers($body)
     {
@@ -131,7 +130,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 查询用户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/info.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function infoWxMembers($body)
     {
@@ -142,7 +141,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 修改用户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/edit.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function editWxMembers($body)
     {
@@ -153,7 +152,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 查询用户列表
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/paging.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function pagingWxMembers($body)
     {
@@ -164,7 +163,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 修改用户密码
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/wxmember/editpwd.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function editpwdWxMembers($body)
     {
@@ -175,7 +174,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 用户添加积分记录
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/accountrecords/add.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function addAccountRecords($body)
     {
@@ -186,7 +185,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 用户查看积分记录
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/accountrecords/info.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function infoAccountRecords($body)
     {
@@ -197,7 +196,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 积分记录列表
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/accountrecords/paging.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function pagingAccountRecords($body)
     {
@@ -208,7 +207,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 获取用户默认地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/getDefaultAction.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getDefaultAddress($body)
     {
@@ -219,7 +218,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 设置用户默认地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/setDefaultAction.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function setDefaultAddress($body)
     {
@@ -230,7 +229,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 获取用户地址列表
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/pagingAction.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getAddressPaging($body)
     {
@@ -241,7 +240,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 添加地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/addAction.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function addAddress($body)
     {
@@ -252,7 +251,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 修改地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/editAction.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function editAddress($body)
     {
@@ -263,7 +262,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      * 修改地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/setStatusAction.md
      * @param array $body
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function setAddressStatus($body)
     {
