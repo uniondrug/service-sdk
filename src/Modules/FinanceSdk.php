@@ -29,4 +29,14 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/statements/list", $body);
     }
 
+    /**
+     * 结算单结算数据汇总接口
+     * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/totalDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function total($body)
+    {
+        return $this->restful("POST", "/statements/total", $body);
+    }
 }
