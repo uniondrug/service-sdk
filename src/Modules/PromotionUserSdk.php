@@ -138,4 +138,69 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/login/tokenLogin", $body);
     }
 
+    /**
+     * 工业用户资料编辑
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/merchant/editInfo.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchant/editInfo", $body);
+    }
+
+    /**
+     * 获取代理人列表
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/proxy/getProxyList.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getProxyList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/proxy/getProxyList", $body);
+    }
+
+    /**
+     * 新增代理人
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/proxy/addProxy.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addProxy($body)
+    {
+        return $this->restful(static::METHOD_POST, "/proxy/addProxy", $body);
+    }
+
+    /**
+     * 获取代理人信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/proxy/getProxyInfo.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getProxyInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/proxy/getProxyInfo", $body);
+    }
+
+    /**
+     * 编辑代理人信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/proxy/editProxyInfo.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editProxyInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/proxy/editProxyInfo", $body);
+    }
+
+    /**
+     * 修改代理人状态
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/user/proxy/changeStatus.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function changeStatus($body)
+    {
+        return $this->restful(static::METHOD_POST, "/proxy/changeStatus", $body);
+    }
 }
