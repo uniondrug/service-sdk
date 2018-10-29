@@ -45,7 +45,7 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
      */
     public function getList($body)
     {
-        return $this->restful(static::METHOD_GET, "/order", $body);
+        return $this->restful(static::METHOD_POST, "/order", $body);
     }
 
     /**
@@ -56,7 +56,7 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
      */
     public function getDetail($body)
     {
-        return $this->restful(static::METHOD_GET, "/order/detail", $body);
+        return $this->restful(static::METHOD_POST, "/order/detail", $body);
     }
 
     /**
