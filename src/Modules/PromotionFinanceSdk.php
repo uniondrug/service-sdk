@@ -153,7 +153,7 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
      * 智推报告图表
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/promotion/finance/report/quota.md
      * @param array $body
-     * @return quota
+     * @return ClientResponseInterface
      */
     public function quota($body)
     {
