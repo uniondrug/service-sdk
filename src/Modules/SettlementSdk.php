@@ -19,6 +19,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'settlement';
 
     /**
+     * 初始化生成对账单订单数据
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/initStatementOrdersAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function initStatementOrders($body)
+    {
+        return $this->restful("POST", "/settlement/initStatementOrders", $body);
+    }
+
+    /**
      * 获取指定订单内商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/orderGoodsAction.md
      * @param array $body 入参类型
