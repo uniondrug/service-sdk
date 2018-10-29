@@ -961,7 +961,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function PartnerIdInfoOrganizeBase($body)
+    public function partnerIdInfoOrganizeBase($body)
     {
         return $this->restful(static::METHOD_POST, "/organizebase/partneridinfo", $body);
     }
@@ -972,7 +972,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function ListIsIndependent($body)
+    public function listIsIndependent($body)
     {
         return $this->restful(static::METHOD_POST, "/organizebase/listIsIndependent", $body);
     }
@@ -983,9 +983,9 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function InfoIndependent($body)
+    public function infoIndependent($body)
     {
-        return $this->restful(static::METHOD_POST, "/organizebase/InfoIndependentAction", $body);
+        return $this->restful(static::METHOD_POST, "/organizebase/infoIndependentAction", $body);
     }
 
 }
