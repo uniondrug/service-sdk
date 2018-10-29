@@ -17,4 +17,37 @@ use Uniondrug\Structs\StructInterface;
 class SettlementLogSdk extends Sdk implements ServiceSdkInterface
 {
     protected $serviceName = 'settlementLog';
+
+    /**
+     * 添加对账单操作日志
+     * @link https://uniondrug.coding.net/p/module.settlementlog/git/blob/development/docs/api/LogController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function add($body)
+    {
+        return $this->restful("POST", "/log/add", $body);
+    }
+
+    /**
+     * 对账单操作日志详情
+     * @link https://uniondrug.coding.net/p/module.settlementlog/git/blob/development/docs/api/LogController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function detail($body)
+    {
+        return $this->restful("POST", "/log/detail", $body);
+    }
+
+    /**
+     * 对账单操作日志列表
+     * @link https://uniondrug.coding.net/p/module.settlementlog/git/blob/development/docs/api/LogController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function list($body)
+    {
+        return $this->restful("POST", "/log/list", $body);
+    }
 }
