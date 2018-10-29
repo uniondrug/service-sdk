@@ -954,4 +954,38 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/organizebase/getbypartner", $body);
     }
+
+    /**
+     * 通过partnerId获取组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/PartnerIdInfoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function PartnerIdInfoOrganizeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/partneridinfo", $body);
+    }
+
+    /**
+     * ROOT下独立结算组织查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ListIsIndependentAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function ListIsIndependent($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listIsIndependent", $body);
+    }
+
+    /**
+     * 最近上级独立结算组织查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/InfoIndependentAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function InfoIndependent($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/InfoIndependentAction", $body);
+    }
+
 }
