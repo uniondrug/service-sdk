@@ -32,6 +32,9 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\DrugsSdk            $drugs                   药品中心
  * @property Modules\MapSdk              $map                     高德云图服务
  * @property Modules\FinanceSdk          $finance                 结算中心服务
+ * @property Modules\SettlementSdk       $settlement              财务结算计算模块
+ * @property Modules\SettlementSheetSdk  $settlementSheet         财务结算单管理模块
+ * @property Modules\SettlementLogSdk    $settlementLog           财务结算日志管理模块
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
