@@ -678,6 +678,18 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 查询顶级组织费率接口
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/infochainAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoChainBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/infochain", $body);
+    }
+
+
+    /**
      * 添加开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/addAction.md
      * @param array $body
