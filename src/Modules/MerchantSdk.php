@@ -986,7 +986,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function listIsIndependent($body)
     {
-        return $this->restful(static::METHOD_POST, "/organizebase/listIsIndependent", $body);
+        return $this->restful(static::METHOD_POST, "/organizebase/listisindependent", $body);
     }
 
     /**
@@ -997,7 +997,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function infoIndependent($body)
     {
-        return $this->restful(static::METHOD_POST, "/organizebase/infoIndependentAction", $body);
+        return $this->restful(static::METHOD_POST, "/organizebase/infoindependent", $body);
     }
 
 }
