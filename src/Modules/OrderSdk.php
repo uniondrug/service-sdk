@@ -91,4 +91,15 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/order/create", $body);
     }
+
+    /**
+     * 订单回调
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/login.password.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function notify($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/notify", $body);
+    }
 }
