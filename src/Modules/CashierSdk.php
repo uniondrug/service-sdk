@@ -40,4 +40,15 @@ class CashierSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/cashier/consume", $body);
     }
+
+    /**
+     * 获取订单允许的结算方式
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/login.password.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getModes($body)
+    {
+        return $this->restful(static::METHOD_POST, "/cashier/mode", $body);
+    }
 }
