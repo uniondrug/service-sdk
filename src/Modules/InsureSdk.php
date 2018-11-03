@@ -13,13 +13,16 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Sdk;
+use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\Structs\StructInterface;
 
 /**
  * InsureSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class InsureSdk extends Abstracts\SdkBase
+class InsureSdk extends Sdk implements ServiceSdkInterface
 {
     /**
      * 服务名称
@@ -32,7 +35,7 @@ class InsureSdk extends Abstracts\SdkBase
      * 新增一个投保记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/addAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function add($body)
     {
@@ -43,7 +46,7 @@ class InsureSdk extends Abstracts\SdkBase
      * 查看投保详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/detailAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function detail($body)
     {
@@ -54,7 +57,7 @@ class InsureSdk extends Abstracts\SdkBase
      * 查询显示投保的列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/getPagingAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function paging($body)
     {
@@ -65,7 +68,7 @@ class InsureSdk extends Abstracts\SdkBase
      * 更新投保的记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/updateAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function update($body)
     {
