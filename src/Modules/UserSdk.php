@@ -278,7 +278,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      */
     public function editMobile($body)
     {
-        eturn $this->restful(static::METHOD_POST, "/wxmember/editmobile", $body);
+        return $this->restful(static::METHOD_POST, "/wxmember/editmobile", $body);
     }
 
     /**
@@ -289,7 +289,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      */
     public function editMemberCards($body)
     {
-        eturn $this->restful(static::METHOD_POST, "/wxmember/editmembercards", $body);
+        return $this->restful(static::METHOD_POST, "/wxmember/editmembercards", $body);
     }
 
     /**
@@ -300,6 +300,6 @@ class UserSdk extends Sdk implements ServiceSdkInterface
      */
     public function uniteOpenid($body)
     {
-        eturn $this->restful(static::METHOD_POST, "/wxmember/edituniteopenid", $body);
+        return $this->restful(static::METHOD_POST, "/wxmember/edituniteopenid", $body);
     }
 }
