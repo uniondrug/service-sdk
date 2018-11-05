@@ -45,7 +45,7 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
      */
     public function getList($body)
     {
-        return $this->restful(static::METHOD_GET, "/order", $body);
+        return $this->restful(static::METHOD_POST, "/order", $body);
     }
 
     /**
@@ -90,5 +90,16 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
     public function create($body)
     {
         return $this->restful(static::METHOD_POST, "/order/create", $body);
+    }
+
+    /**
+     * 订单回调
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/login.password.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function notify($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/notify", $body);
     }
 }
