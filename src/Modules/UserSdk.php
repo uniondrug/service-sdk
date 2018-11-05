@@ -260,7 +260,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 修改地址
+     * 修改地址状态
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/setStatusAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -268,5 +268,38 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     public function setAddressStatus($body)
     {
         return $this->restful(static::METHOD_POST, "/member/address/setStatus", $body);
+    }
+
+    /**
+     * 修改用户手机号
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/editMobileAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editMobile($body)
+    {
+        eturn $this->restful(static::METHOD_POST, "/wxmember/editmobile", $body);
+    }
+
+    /**
+     * 修改用户姓名和证件号
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/editMemberCardsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editMemberCards($body)
+    {
+        eturn $this->restful(static::METHOD_POST, "/wxmember/editmembercards", $body);
+    }
+
+    /**
+     * 清空用户openid 和 unionId
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/uniteOpenidAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function uniteOpenid($body)
+    {
+        eturn $this->restful(static::METHOD_POST, "/wxmember/edituniteopenid", $body);
     }
 }
