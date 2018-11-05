@@ -63,4 +63,14 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/getList", $body);
     }
+    /**
+     * 根据开票单获取发票的总和
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getInvoiceSumAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getInvoiceSum($body)
+    {
+        return $this->restful("POST", "/invoice/getInvoiceSum", $body);
+    }
 }
