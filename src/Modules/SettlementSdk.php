@@ -83,4 +83,15 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/statementPayMethod", $body);
     }
+
+    /**
+     * 更新对账单下订单的属性接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/updateSettlementAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateSettlement($body)
+    {
+        return $this->restful("POST", "/settlement/updateSettlement", $body);
+    }
 }
