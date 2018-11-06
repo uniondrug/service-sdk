@@ -15,7 +15,7 @@ use Uniondrug\ServiceSdk\ServiceSdkInterface;
  */
 class WxSdk extends Sdk implements ServiceSdkInterface
 {
-    protected $serviceName = 'wx';
+    protected $serviceName = 'weixin';
 
     /**
      *

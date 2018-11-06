@@ -7,7 +7,7 @@ namespace Uniondrug\ServiceSdk;
 
 /**
  * SDK分发调度
- * @property Modules\WxSdk               $wx                        微信模块
+ * @property Modules\WxSdk               $weixin                        微信模块
  * @property Modules\AbutmentSdk         $abutment                  对接模块
  * @property Modules\TokenSdk            $token                     token
  * @property Modules\CashierSdk          $cashier                   收银台服务
