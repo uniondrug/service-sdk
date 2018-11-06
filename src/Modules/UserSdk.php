@@ -227,6 +227,18 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 编辑用户身份证信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/membercards/edit.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editUnionOpen($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/editunionopen", $body);
+    }
+
+
+    /**
      * 获取用户默认地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/getDefaultAction.md
      * @param array $body
