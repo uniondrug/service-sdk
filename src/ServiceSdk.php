@@ -7,14 +7,14 @@ namespace Uniondrug\ServiceSdk;
 
 /**
  * SDK分发调度
- * @property Modules\WxSdk               $weixin                        微信模块
- * @property Modules\AbutmentSdk         $abutment                  对接模块
- * @property Modules\TokenSdk            $token                     token
- * @property Modules\CashierSdk          $cashier                   收银台服务
- * @property Modules\CommonSdk           $common                    公共服务
- * @property Modules\CustomerSdk         $customer                  客户服务
- * @property Modules\DataSdk             $data                      数据服务
- * @property Modules\EquitySdk           $equity                    权益服务
+ * @property Modules\WeixinSdk   $weixin                        微信模块
+ * @property Modules\AbutmentSdk $abutment                  对接模块
+ * @property Modules\TokenSdk    $token                     token
+ * @property Modules\CashierSdk  $cashier                   收银台服务
+ * @property Modules\CommonSdk   $common                    公共服务
+ * @property Modules\CustomerSdk $customer                  客户服务
+ * @property Modules\DataSdk     $data                      数据服务
+ * @property Modules\EquitySdk   $equity                    权益服务
  * @property Modules\GoodsSdk            $goods                     商品服务
  * @property Modules\MbsSdk              $mbs                       消息总线服务
  * @property Modules\Mbs2Sdk             $mbs2                      新版MBS消息服务

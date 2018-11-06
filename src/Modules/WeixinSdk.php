@@ -13,7 +13,7 @@ use Uniondrug\ServiceSdk\ServiceSdkInterface;
  * 公共服务
  * @package Uniondrug\ServiceSdk\Modules
  */
-class WxSdk extends Sdk implements ServiceSdkInterface
+class WeixinSdk extends Sdk implements ServiceSdkInterface
 {
     protected $serviceName = 'weixin';
 
