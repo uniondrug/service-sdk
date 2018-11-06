@@ -36,6 +36,6 @@ class WxSdk extends Sdk implements ServiceSdkInterface
      */
     public function getUserInfo($body)
     {
-        return $this->restful(static::METHOD_POST, '/wx/userinfo', $body);
+        return $this->restful(static::METHOD_POST, '/wx/info', $body);
     }
 }
