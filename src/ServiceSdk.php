@@ -40,6 +40,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\GuaranteeSdk        $guarantee                 保障服务
  * @property Modules\BillSdk             $bill                      开票服务
  * @property Modules\InvoiceSdk          $invoice                   发票服务
+ * @property Modules\GoodsReplaceSdk     $goodsReplace             财务中心.结算单商品替换服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
