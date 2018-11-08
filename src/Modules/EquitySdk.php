@@ -262,4 +262,26 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/totalfee', $body);
     }
+
+    /**
+     * 获取保障详情
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function guaranteeDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/guarantee/detail', $body);
+    }
+
+    /**
+     * 获取保障列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/pagingAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function guaranteeList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/guarantee/paging', $body);
+    }
 }
