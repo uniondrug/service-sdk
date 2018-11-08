@@ -156,9 +156,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 权益退款
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/consumeDetailAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function consumeDetail($body)
@@ -169,9 +167,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 权益激活
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/active.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function active($body)
@@ -182,9 +178,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 用分组id获取详情
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/active.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function detailByGroupId($body)
@@ -195,21 +189,18 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 试算接口
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/precheck.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function precheck($body)
     {
         return $this->restful(static::METHOD_POST, '/precheck/check', $body);
     }
+
     /**
      * 消费权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/consumeAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function consumeEquity($body)
@@ -220,9 +211,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 创建权益消费限制
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityOrganController/createAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function organCreate($body)
@@ -233,9 +222,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 创建权益消费限制
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/memberCountAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function getMemberEquityCount($body)
@@ -260,8 +247,19 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
      * @param $body
      * @return ClientResponseInterface
      */
-    public function unlockEquity($body){
+    public function unlockEquity($body)
+    {
         return $this->restful(static::METHOD_POST, '/equity/unlock', $body);
+    }
 
+    /**
+     * 获取用户多少权益和保障
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/totalFeeAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function totalFee($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/totalfee', $body);
     }
 }
