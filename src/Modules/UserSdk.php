@@ -336,4 +336,15 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/wxmember/edituniteopenid", $body);
     }
+
+    /**
+     * 获取120积分数量
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/aidAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function aidPointSum($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/aid", $body);
+    }
 }
