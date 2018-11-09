@@ -1000,4 +1000,26 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/organizebase/infoindependent", $body);
     }
 
+    /**
+     * 批量关闭状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusEndAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEnd($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editstatusend", $body);
+    }
+
+    /**
+     * 批量开启状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusStartAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStart($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editstatusstart", $body);
+    }
+
 }
