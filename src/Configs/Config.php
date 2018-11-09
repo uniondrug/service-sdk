@@ -45,7 +45,7 @@ class Config
      * @var bool
      */
     public $consulApiEnable = true;
-    public $consulApiAddress = 'http://127.0.0.1:8500/v1/catalog/service';
+    public $consulApiAddress = 'http://udsdk:8500/v1/catalog/service';
     public $consulApiTimeout = 3;
     public $consulUrlProtocol = 'http';
     public $consulUrlSuffix = 'service.consul';
