@@ -33,7 +33,62 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'bill';
 
     /**
-     * 开票单商品列表
+     * 订单商品列表
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderDetailAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderDetail($body)
+    {
+        return $this->restful("POST", "/bill/orderDetail", $body);
+    }
+
+    /**
+     * 更新开票单状态
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateBillStatusAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateBillStatus($body)
+    {
+        return $this->restful("POST", "/bill/updateBillStatus", $body);
+    }
+
+    /**
+     * 提交开票
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/submitBillAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function submitBill($body)
+    {
+        return $this->restful("POST", "/bill/submitBill", $body);
+    }
+
+    /**
+     * 更新开票单金额
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateBillAmountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateBillAmount($body)
+    {
+        return $this->restful("POST", "/bill/updateBillAmount", $body);
+    }
+
+    /**
+     * 订单商品列表
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderGoodsListAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderGoodsList($body)
+    {
+        return $this->restful("POST", "/bill/orderGoodsList", $body);
+    }
+
+    /**
+     * 开票单商品分页
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billGoodsListAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
