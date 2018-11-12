@@ -237,7 +237,6 @@ class UserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/wxmember/editunionopen", $body);
     }
 
-
     /**
      * 获取用户默认地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/getDefaultAction.md
@@ -346,5 +345,27 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     public function aidPointSum($body)
     {
         return $this->restful(static::METHOD_POST, "/wxmember/aid", $body);
+    }
+
+    /**
+     * 反馈列表
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/FeedbackController/listAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function feedbackList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/feedback/list", $body);
+    }
+
+    /**
+     * 提交反馈记录
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/FeedbackController/submitAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function submitFeedback($body)
+    {
+        return $this->restful(static::METHOD_POST, "/feedback/submit", $body);
     }
 }
