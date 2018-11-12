@@ -50,6 +50,7 @@ class Config
     public $consulUrlProtocol = 'http';
     public $consulUrlSuffix = 'service.consul';
 
+    public $compatiables = [];
     /**
      * @param PhalconConfig $sdkConfig
      * @param PhalconConfig $redisConfig
@@ -58,14 +59,15 @@ class Config
     {
         // 0. 环境变量
         // 1. SDKs配置
-        if ($redisConfig instanceof PhalconConfig) {
-            isset($redisConfig->timeout) && $this->timeout = $redisConfig->timeout;
-            isset($redisConfig->userAgent) && $this->userAgent = $redisConfig->userAgent;
-            isset($redisConfig->consulApiEnable) && $this->consulApiEnable = $redisConfig->consulApiEnable !== false;
-            isset($redisConfig->consulApiAddress) && $this->consulApiAddress = $redisConfig->consulApiAddress;
-            isset($redisConfig->consulApiTimeout) && $this->consulApiTimeout = $redisConfig->consulApiTimeout;
-            isset($redisConfig->consulUrlProtocol) && $this->consulUrlProtocol = $redisConfig->consulUrlProtocol;
-            isset($redisConfig->consulUrlSuffix) && $this->consulUrlSuffix = $redisConfig->consulUrlSuffix;
+        if ($sdkConfig instanceof PhalconConfig) {
+            isset($sdkConfig->timeout) && $this->timeout = $sdkConfig->timeout;
+            isset($sdkConfig->userAgent) && $this->userAgent = $sdkConfig->userAgent;
+            isset($sdkConfig->consulApiEnable) && $this->consulApiEnable = $sdkConfig->consulApiEnable !== false;
+            isset($sdkConfig->consulApiAddress) && $this->consulApiAddress = $sdkConfig->consulApiAddress;
+            isset($sdkConfig->consulApiTimeout) && $this->consulApiTimeout = $sdkConfig->consulApiTimeout;
+            isset($sdkConfig->consulUrlProtocol) && $this->consulUrlProtocol = $sdkConfig->consulUrlProtocol;
+            isset($sdkConfig->consulUrlSuffix) && $this->consulUrlSuffix = $sdkConfig->consulUrlSuffix;
+            isset($sdkConfig->compatiables) && is_array($sdkConfig->compatiables) && $this->compatiables = $redisConfig->compatiables;
         }
         // 2. Redis配置
         if ($redisConfig instanceof PhalconConfig) {

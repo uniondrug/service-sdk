@@ -7,13 +7,15 @@ namespace Uniondrug\ServiceSdk;
 
 use Phalcon\Logger\AdapterInterface;
 use Uniondrug\ServiceSdk\Configs\Config;
-use Uniondrug\ServiceSdk\Modules\Abstracts\SdkInterface;
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkInterface;
 use Uniondrug\ServiceSdk\Requests\Restful;
 use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * SDK入口
- * @property Modules\UserSdk $user
+ * @property Exports\Backend $backend 后端SDK入口
+ * @property Exports\Module  $module  模块SDK入口
+ * @property Exports\Union   $union   聚合SDK入口
  * @method Responses\Response delete(string $uri, array $body = null, array $extra = null)
  * @method Responses\Response get(string $uri, array $extra = null)
  * @method Responses\Response head(string $uri, array $extra = null)
@@ -45,6 +47,15 @@ class Sdk
      * @var int
      */
     private $retryTimes;
+    /**
+     * 历史Magic-Get
+     * @var array
+     */
+    private static $magicGetHistory = [];
+    /**
+     * SDK兼容复用
+     */
+    use SdkTrait;
 
     /**
      * Sdk注入
@@ -92,15 +103,26 @@ class Sdk
      */
     final public function __get($name)
     {
+        // 1. 使用历史
+        if (isset(self::$magicGetHistory[$name])) {
+            return self::$magicGetHistory[$name];
+        }
+        // 2. 使用类别
         try {
-            /**
-             * @var SdkInterface $sdk
-             */
-            $sdk = '\\Uniondrug\\ServiceSdk\\Modules\\'.ucfirst($name).'Sdk';
-            return $sdk::factory($this->logger, $this->config);
-        } catch(SdkException $e) {
-            throw $e;
+            $class = '\\Uniondrug\\ServiceSdk\\Exports\\'.ucfirst($name);
+            $object = new $class($this->logger, $this->config);
+            self::$magicGetHistory[$name] = $object;
+            return self::$magicGetHistory[$name];
         } catch(\Throwable $e) {
+            // 3. 读兼容SDK
+            if (method_exists($this, 'getCompatiable')) {
+                $object = $this->getCompatiable($name);
+                if ($object !== false){
+                    self::$magicGetHistory[$name] = $object;
+                    return self::$magicGetHistory[$name];
+                }
+            }
+            // 4. 出错
             throw new SdkException("can not load '{$name}' sdk by property call '\$this->serviceSdk->{$name}'.", $e->getCode(), $e->getPrevious());
         }
     }
