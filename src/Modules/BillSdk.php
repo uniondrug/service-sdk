@@ -33,7 +33,7 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'bill';
 
     /**
-     * 订单商品列表
+     * 订单详情
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderDetailAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
@@ -44,14 +44,14 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 订单商品列表
-     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderGoodsListAction.md
+     * 订单商品分页
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderGoodsPagingAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function orderGoodsList($body)
+    public function orderGoodsPaging($body)
     {
-        return $this->restful("POST", "/bill/orderGoodsList", $body);
+        return $this->restful("POST", "/bill/orderGoodsPaging", $body);
     }
 
     /**
