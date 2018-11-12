@@ -55,14 +55,14 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 提交开票
-     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/submitBillAction.md
+     * 开票单投保id分组信息
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureIdGroupAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function submitBill($body)
+    public function billInsureIdGroup($body)
     {
-        return $this->restful("POST", "/bill/submitBill", $body);
+        return $this->restful("POST", "/bill/billInsureIdGroup", $body);
     }
 
     /**
