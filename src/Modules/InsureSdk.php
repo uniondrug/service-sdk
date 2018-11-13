@@ -74,4 +74,14 @@ class InsureSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/insure/update", $body);
     }
+	/**
+     * 更新投保理赔金额
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/updateMoneyAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateMoney($body)
+    {
+        return $this->restful("POST", "/insure/updateMoney", $body);
+    }
 }

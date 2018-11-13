@@ -1022,4 +1022,37 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/organizebase/editstatusstart", $body);
     }
 
+    /**
+     * id查询费率
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/detailAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function detailBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/detail", $body);
+    }
+    /**
+     * 统计特定组织下的数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/CountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function countOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/count", $body);
+    }
+
+    /**
+     * 修改所属上级组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/EditParentIdAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editParentId($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editparentid", $body);
+    }
+
+
 }
