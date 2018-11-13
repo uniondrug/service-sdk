@@ -1022,4 +1022,26 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/organizebase/editstatusstart", $body);
     }
 
+    /**
+     * id查询费率
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/detailAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function detailBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/detail", $body);
+    }
+    /**
+     * id查询费率
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/CountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function CountOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/count", $body);
+    }
+
+
 }
