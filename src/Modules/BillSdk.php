@@ -163,4 +163,16 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/bill/update", $body);
     }
+
+    /**
+     *  更具投保id查询开票单已用多少投保金额
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureAmountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function billInsureAmount($body)
+    {
+        return $this->restful("POST", "/bill/billInsureAmount", $body);
+    }
+
 }
