@@ -33,7 +33,7 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'bill';
 
     /**
-     * 订单详情
+     * 导出关联订单
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillOrderListAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
@@ -41,6 +41,17 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     public function exportBillOrderList($body)
     {
         return $this->restful("POST", "/bill/exportBillOrderList", $body);
+    }
+
+    /**
+     * 导出商品清单
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillGoodsListAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function exportBillGoodsList($body)
+    {
+        return $this->restful("POST", "/bill/exportBillGoodsList", $body);
     }
 
     /**
