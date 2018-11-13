@@ -34,6 +34,17 @@ class BillSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单详情
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillOrderListAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function exportBillOrderList($body)
+    {
+        return $this->restful("POST", "/bill/exportBillOrderList", $body);
+    }
+
+    /**
+     * 订单详情
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderDetailAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
