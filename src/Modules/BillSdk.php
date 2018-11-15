@@ -176,7 +176,7 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     *  更具投保id查询开票单已用多少投保金额
+     *  开发票时更新开票单状态
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateBillStatusToInvoiceAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
