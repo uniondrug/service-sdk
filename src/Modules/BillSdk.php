@@ -33,7 +33,29 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'bill';
 
     /**
-     * 订单商品列表
+     * 导出关联订单
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillOrderListAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function exportBillOrderList($body)
+    {
+        return $this->restful("POST", "/bill/exportBillOrderList", $body);
+    }
+
+    /**
+     * 导出商品清单
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillGoodsListAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function exportBillGoodsList($body)
+    {
+        return $this->restful("POST", "/bill/exportBillGoodsList", $body);
+    }
+
+    /**
+     * 订单详情
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderDetailAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
@@ -152,4 +174,16 @@ class BillSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/bill/update", $body);
     }
+
+    /**
+     *  更具投保id查询开票单已用多少投保金额
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureAmountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function billInsureAmount($body)
+    {
+        return $this->restful("POST", "/bill/billInsureAmount", $body);
+    }
+
 }
