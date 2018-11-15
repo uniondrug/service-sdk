@@ -186,4 +186,26 @@ class BillSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/bill/billInsureAmount", $body);
     }
 
+    /**
+     *  开发票时更新开票单状态
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateBillStatusToInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateBillStatusToInvoice($body)
+    {
+        return $this->restful("POST", "/bill/updateBillStatusToInvoice", $body);
+    }
+
+    /**
+     *  提交开票
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/submitBillAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function submitBill($body)
+    {
+        return $this->restful("POST", "/bill/submitBill", $body);
+    }
+
 }
