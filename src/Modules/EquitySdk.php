@@ -284,4 +284,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/guarantee/paging', $body);
     }
+
+    /**
+     * 读取状态
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/readAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function read($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/read', $body);
+    }
 }
