@@ -368,4 +368,15 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/feedback/submit", $body);
     }
+
+    /**
+     * 用用户id获取用户信息
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberInfoController/idsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getMemberInfoByMemberIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/memberinfo/ids", $body);
+    }
 }
