@@ -884,7 +884,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function addStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/add", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/add", $body);
     }
 
     /**
@@ -895,7 +895,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function infoStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/info", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/info", $body);
     }
 
     /**
@@ -906,7 +906,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function editStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/edit", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/edit", $body);
     }
 
     /**
@@ -917,7 +917,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function pagingStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/paging", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/paging", $body);
     }
 
     /**
@@ -928,7 +928,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function delStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/del", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/del", $body);
     }
 
 
@@ -941,7 +941,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function listsStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/lists", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/lists", $body);
     }
 
     /**
