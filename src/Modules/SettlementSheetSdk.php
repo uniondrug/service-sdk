@@ -73,4 +73,15 @@ class SettlementSheetSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlementSheet/updateGoodsReplaceStatus", $body);
     }
+
+    /**
+     * 软删除对账单
+     * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function delete($body)
+    {
+        return $this->restful("POST", "/settlementSheet/delete", $body);
+    }
 }
