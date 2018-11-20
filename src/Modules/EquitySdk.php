@@ -264,4 +264,14 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/equity/unlock', $body);
 
     }
+    /**
+     * 根据试算流水号锁定权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/PrecheckController/lockAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function lockEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/precheck/lock', $body);
+    }
 }
