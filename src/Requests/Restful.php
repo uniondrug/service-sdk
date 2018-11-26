@@ -7,7 +7,7 @@ namespace Uniondrug\ServiceSdk\Requests;
 
 use Phalcon\Logger\AdapterInterface;
 use Uniondrug\ServiceSdk\Configs\Config;
-use Uniondrug\ServiceSdk\Modules\Abstracts\SdkBase;
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
@@ -110,6 +110,10 @@ class Restful
      */
     final public function post(string $uri, $body = null, $extra = null)
     {
+
+        print_r (func_get_args());
+        exit;
+
         return $this->restful(SdkBase::METHOD_POST, $uri, $extra, $body, null);
     }
 

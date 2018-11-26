@@ -59,10 +59,10 @@ class Sdk
 
     /**
      * Sdk注入
-     * @param        $logger
-     * @param        $sdkConfig
-     * @param        $redisConfig
-     * @param string $environment
+     * @param $logger
+     * @param $sdkConfig
+     * @param $redisConfig
+     * @param string $redisConfig
      */
     final public function __construct($logger, $sdkConfig = null, $redisConfig = null, $environment)
     {
