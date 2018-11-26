@@ -1,8 +1,22 @@
 # 升级SDK
 
 
-### 项目修改
+### 项目SDK升级
 
+1. 加入`composer.json`
+   ```text
+   {
+       .
+       .
+       .
+       "require" : {
+           .
+           .
+           .
+           "uniondrug/service-sdk" : "^2.0"
+       }
+   }
+   ```
 1. 修改依赖注入
     ```text
     <?php
@@ -54,8 +68,10 @@
    ```
 
 
-### SDK迁移
+### 模块SDK迁移
 
-
+1. postman.json配置
+2. 导出postman+SDK+markdown/依赖config/app.php
+3. 配置导出`@sdk`
 
  
