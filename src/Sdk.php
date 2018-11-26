@@ -59,14 +59,15 @@ class Sdk
 
     /**
      * Sdk注入
-     * @param $logger
-     * @param $sdkConfig
-     * @param $redisConfig
+     * @param        $logger
+     * @param        $sdkConfig
+     * @param        $redisConfig
+     * @param string $environment
      */
-    final public function __construct($logger, $sdkConfig = null, $redisConfig = null)
+    final public function __construct($logger, $sdkConfig = null, $redisConfig = null, $environment)
     {
         $this->logger = $logger;
-        $this->config = new Config($sdkConfig, $redisConfig);
+        $this->config = new Config($sdkConfig, $redisConfig, $environment);
         $this->cacheDeadline = Config::DEFAULT_CACHE_DEADLINE;
         $this->retryTimes = Config::DEFAULT_RETRY_TIMES;
     }

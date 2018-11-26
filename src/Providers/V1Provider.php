@@ -26,8 +26,8 @@ class V1Provider implements ServiceProviderInterface
         $logger = $container->getLogger();
         $sdkConfig = $container->getConfig('dbs', $environment);
         $redisConfig = $container->getConfig('redis', $environment);
-        $container->set('serviceSdk', function() use ($logger, $sdkConfig, $redisConfig){
-            return new Sdk($logger, $sdkConfig, $redisConfig);
+        $container->set('serviceSdk', function() use ($logger, $sdkConfig, $redisConfig, $environment){
+            return new Sdk($logger, $sdkConfig, $redisConfig, $environment);
         });
     }
 }

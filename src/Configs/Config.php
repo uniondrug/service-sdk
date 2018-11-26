@@ -28,6 +28,7 @@ class Config
      */
     const REQID_KEY = 'UDSDK-REQID';
     const REQID_NAME = 'HTTP_UDSDK_REQID';
+    public $environment;
     public $redisHost = '0.0.0.0';
     public $redisPort = 0;
     public $redisAuth = '';
@@ -45,18 +46,20 @@ class Config
      * @var bool
      */
     public $consulApiEnable = true;
-    public $consulApiAddress = 'http://udsdk:8500/v1/catalog/service';
+    public $consulApiAddress = '';
     public $consulApiTimeout = 3;
     public $consulUrlProtocol = 'http';
     public $consulUrlSuffix = 'service.consul';
-
     public $compatiables = [];
+
     /**
      * @param PhalconConfig $sdkConfig
      * @param PhalconConfig $redisConfig
      */
-    public function __construct(PhalconConfig $sdkConfig = null, PhalconConfig $redisConfig = null)
+    public function __construct(PhalconConfig $sdkConfig = null, PhalconConfig $redisConfig = null, $environment)
     {
+        $this->environment = $environment;
+        $this->consulApiAddress = "http://{$environment}.udsdk.uniondrug.cn/v1/catalog/service";
         // 0. 环境变量
         // 1. SDKs配置
         if ($sdkConfig instanceof PhalconConfig) {

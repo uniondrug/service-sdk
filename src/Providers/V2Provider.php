@@ -24,11 +24,12 @@ class V2Provider implements ServiceProviderInterface
          * @var Container $container ;
          */
         $container = $di;
+        $environment = $container->environment();
         $logger = $container->getLogger('sdk');
         $sdkConfig = $container->getConfig()->path('sdk');
         $redisConfig = $container->getConfig()->path('redis');
-        $container->setShared('serviceSdk', function() use ($logger, $sdkConfig, $redisConfig){
-            return new Sdk($logger, $sdkConfig, $redisConfig);
+        $container->setShared('serviceSdk', function() use ($logger, $sdkConfig, $redisConfig, $environment){
+            return new Sdk($logger, $sdkConfig, $redisConfig, $environment);
         });
     }
 }
