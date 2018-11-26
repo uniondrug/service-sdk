@@ -117,7 +117,7 @@ class Sdk
             // 3. 读兼容SDK
             if (method_exists($this, 'getCompatiable')) {
                 $object = $this->getCompatiable($name);
-                if ($object !== false){
+                if ($object !== false) {
                     self::$magicGetHistory[$name] = $object;
                     return self::$magicGetHistory[$name];
                 }

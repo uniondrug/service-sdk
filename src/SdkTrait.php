@@ -14,15 +14,55 @@ use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
  */
 trait SdkTrait
 {
+    private $compatiables = [
+        'order' => 'module',
+        'mbs' => 'module',
+        'audit' => 'module',
+        'pool' => 'module',
+        'wxapi' => 'module',
+        'merchant' => 'module',
+        'user' => 'module',
+        'product' => 'module',
+        'project' => 'module',
+        'common' => 'module',
+        'equity' => 'module',
+        'data' => 'module',
+        'customer' => 'module',
+        'rule' => 'module',
+        'token' => 'module',
+        'trace' => 'module',
+        'ns' => 'module',
+        'report' => 'module',
+        'message' => 'module',
+        'etl' => 'module',
+        'refund' => 'module',
+        'payments' => 'module',
+        'mbs2' => 'module',
+        'abutment' => 'module',
+        'promotionUser' => 'module',
+        'drugs' => 'module',
+        'promotionBidding' => 'module',
+        'promotionFinance' => 'module',
+        'settlement' => 'module',
+        'settlementSheet' => 'module',
+        'settlementLog' => 'module',
+        'cashier' => 'module',
+        'bill' => 'module',
+        'insure' => 'module',
+        'invoice' => 'module',
+        'finance' => 'union',
+        'goodsReplace' => 'union'
+    ];
+
     /**
      * @param string $name
      * @return bool
      */
-    public function getCompatiable($name)
+    private function getCompatiable($name)
     {
         // 兼容模式
-        if (in_array($name, $this->config->compatiables)) {
-            $catalog = $this->config->compatiables[$name];
+        if (isset($this->compatiables[$name])) {
+            $catalog = $this->compatiables[$name];
             return $this->{$catalog}->{$name};
         }
         return false;
