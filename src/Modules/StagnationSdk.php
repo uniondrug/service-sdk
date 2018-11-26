@@ -44,6 +44,17 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 更新权益码数据
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/CodeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function codeUpdate($body)
+    {
+        return $this->restful("POST", "/code/update", $body);
+    }
+
+    /**
      * 新增行驶证
      * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/LicenseController/addAction.md
      * @param array $body 入参类型
@@ -74,6 +85,17 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     public function recordAdd($body)
     {
         return $this->restful("POST", "/record/add", $body);
+    }
+
+    /**
+     * 权益查询接口
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/RecordController/detailAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function recordDetail($body)
+    {
+        return $this->restful("POST", "/record/detail", $body);
     }
 
     /**
