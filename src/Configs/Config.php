@@ -47,10 +47,17 @@ class Config
      */
     public $consulApiEnable = true;
     public $consulApiAddress = '';
-    public $consulApiTimeout = 3;
+    public $consulApiTimeout = 5;
     public $consulUrlProtocol = 'http';
-    public $consulUrlSuffix = 'service.consul';
+    public $consulUrlSuffix = 'service';
     public $compatiables = [];
+
+    private $sdkDomain = [
+        'production' => 'uniondrug.cn',
+        'release' => 'turboradio.cn',
+        'testing' => 'test.dovecot.cn',
+        'development' => 'dev.dovecot.cn',
+    ];
 
     /**
      * @param PhalconConfig $sdkConfig
@@ -59,7 +66,8 @@ class Config
     public function __construct(PhalconConfig $sdkConfig = null, PhalconConfig $redisConfig = null, $environment)
     {
         $this->environment = $environment;
-        $this->consulApiAddress = "http://{$environment}.udsdk.uniondrug.cn/v1/catalog/service";
+        $host = isset($this->sdkDomain[$environment]) ? $this->sdkDomain[$environment] : 'sdk.consul';
+        $this->consulApiAddress = "http://udsdk.{$host}/v1/catalog/service";
         // 0. 环境变量
         // 1. SDKs配置
         if ($sdkConfig instanceof PhalconConfig) {

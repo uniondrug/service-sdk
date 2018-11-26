@@ -78,14 +78,23 @@ class RequestConsul
                 // 4.2 fetch address
                 $offset = 0;
                 $limit = count($apiAddressData);
-                $limit > 1 && $offset = mt_rand(0, $limit-1);
+                $limit > 1 && $offset = mt_rand(0, $limit - 1);
                 $url = "{$apiAddressData[$offset]['ServiceAddress']}:{$apiAddressData[$offset]['ServicePort']}";
                 // 4.3 not found
                 if ($url === '') {
                     throw new SdkException("服务未注册");
                 }
                 // 4.4 return
-                $url = "http://{$url}/{$m[2]}";
+                //     http
+                //     https
+                //     ws
+                //     wss
+                //     tcp
+                //     udp
+                if (preg_match("/^([a-z]+):\/\//i", $url) === 0) {
+                    $url = "http://{$url}";
+                }
+                $url = "{$url}/{$m[2]}";
                 $duration = sprintf("%.06f", microtime(true) - $apiBegin);
                 $this->logger->info("[{$this->requestId}][consul={$apiAddress}][duration={$duration}]读取到服务地址 - {$url}");
                 return $url;
