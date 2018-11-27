@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2018-11-27
- * @time   Tue, 27 Nov 2018 15:49:30 +0800
+ * @time   Tue, 27 Nov 2018 17:30:18 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,15 +30,43 @@ class BillSdk extends SdkBase
     protected $serviceName = 'bill.module';
 
     /**
-     * 提交开票
-     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/submitBillAction.md
+     * 开票信息商品分页
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billGoodsListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function billGoodsList($body)
     {
-        return $this->restful("POST", "/bill/submitBill", $body);
+        return $this->restful("POST", "/bill/billGoodsList", $body);
     }
+
+    /**
+     * 更具投保id查询开票单已用多少投保金额
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function billInsureAmount($body)
+    {
+        return $this->restful("POST", "/bill/billInsureAmount", $body);
+    }
+
+
+
+    /**
+     * 开票单投保id分组信息
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureIdGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function billInsureIdGroup($body)
+    {
+        return $this->restful("POST", "/bill/billInsureIdGroup", $body);
+    }
+
+
+
+
 
     /**
      * 开票单
@@ -53,6 +81,10 @@ class BillSdk extends SdkBase
 
 
 
+
+
+
+
     /**
      * 订单列表
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billOrderListAction.md
@@ -63,6 +95,10 @@ class BillSdk extends SdkBase
     {
         return $this->restful("POST", "/bill/billOrderList", $body);
     }
+
+
+
+
 
 
 
@@ -85,6 +121,58 @@ class BillSdk extends SdkBase
 
 
 
+
+
+
+
+    /**
+     * exportBillGoodsListAction()
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillGoodsListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportBillGoodsList($body)
+    {
+        return $this->restful("POST", "/bill/exportBillGoodsList", $body);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * exportBillOrderListAction()
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillOrderListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportBillOrderList($body)
+    {
+        return $this->restful("POST", "/bill/exportBillOrderList", $body);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * 生成开票单
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/indexAction.md
@@ -95,6 +183,14 @@ class BillSdk extends SdkBase
     {
         return $this->restful("POST", "/bill/index", $body);
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -125,16 +221,100 @@ class BillSdk extends SdkBase
 
 
 
+
+
+
+
+
+
+
+
     /**
      * 订单详情
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderDetailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function orderGoodsList($body)
+    public function orderDetail($body)
     {
         return $this->restful("POST", "/bill/orderDetail", $body);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 订单信息商品列表
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderGoodsListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderGoodsList($body)
+    {
+        return $this->restful("POST", "/bill/orderGoodsList", $body);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 提交开票
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/submitBillAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function submitBill($body)
+    {
+        return $this->restful("POST", "/bill/submitBill", $body);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -157,5 +337,42 @@ class BillSdk extends SdkBase
     public function update($body)
     {
         return $this->restful("POST", "/bill/update", $body);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 开发票时更新开票单状态
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateBillStatusToInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateBillStatusToInvoice($body)
+    {
+        return $this->restful("POST", "/bill/updateBillStatusToInvoice", $body);
     }
 }
