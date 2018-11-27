@@ -51,7 +51,6 @@ class Config
     public $consulUrlProtocol = 'http';
     public $consulUrlSuffix = 'service';
     public $compatiables = [];
-
     private $sdkDomain = [
         'production' => 'uniondrug.cn',
         'release' => 'turboradio.cn',
@@ -66,7 +65,7 @@ class Config
     public function __construct(PhalconConfig $sdkConfig = null, PhalconConfig $redisConfig = null, $environment)
     {
         $this->environment = $environment;
-        $host = isset($this->sdkDomain[$environment]) ? $this->sdkDomain[$environment] : 'sdk.consul';
+        $host = isset($this->sdkDomain[$environment]) ? $this->sdkDomain[$environment] : 'sdk.register';
         $this->consulApiAddress = "http://udsdk.{$host}/v1/catalog/service";
         // 0. 环境变量
         // 1. SDKs配置

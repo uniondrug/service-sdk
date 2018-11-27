@@ -10,6 +10,6 @@ return [
         'consulApiTimeout' => 3,
         'consulApiAddress' => 'http://udsdk:8500/v1/catalog/service',
         'consulUrlProtocol' => 'http',
-        'consulUrlSuffix' => 'service.consul'
+        'consulUrlSuffix' => 'service.register'
     ]
 ];

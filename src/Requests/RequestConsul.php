@@ -78,11 +78,14 @@ class RequestConsul
                 // 4.2 fetch address
                 $offset = 0;
                 $limit = count($apiAddressData);
+                if ($limit < 1) {
+                    throw new SdkException("服务未注册");
+                }
                 $limit > 1 && $offset = mt_rand(0, $limit - 1);
                 $url = "{$apiAddressData[$offset]['ServiceAddress']}:{$apiAddressData[$offset]['ServicePort']}";
                 // 4.3 not found
                 if ($url === '') {
-                    throw new SdkException("服务未注册");
+                    throw new SdkException("注册服务不合法");
                 }
                 // 4.4 return
                 //     http
@@ -96,10 +99,10 @@ class RequestConsul
                 }
                 $url = "{$url}/{$m[2]}";
                 $duration = sprintf("%.06f", microtime(true) - $apiBegin);
-                $this->logger->info("[{$this->requestId}][consul={$apiAddress}][duration={$duration}]读取到服务地址 - {$url}");
+                $this->logger->info("[{$this->requestId}][register={$apiAddress}][duration={$duration}]读取到服务地址 - {$url}");
                 return $url;
             } catch(\Throwable $e) {
-                $this->logger->error("[{$this->requestId}][consul={$apiAddress}]读取服务失败 - {$e->getMessage()}");
+                $this->logger->error("[{$this->requestId}][register={$apiAddress}]读取服务失败 - {$e->getMessage()}");
             }
             return false;
         }

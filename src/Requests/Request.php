@@ -134,7 +134,7 @@ class Request
                     return;
                 }
             }
-            // 4. consul
+            // 4. register
             if (self::$consulRequest === null) {
                 self::$consulRequest = new RequestConsul($this->logger, $this->config, $this->requestId);
             }
