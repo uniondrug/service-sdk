@@ -379,4 +379,17 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/memberinfo/ids", $body);
     }
+
+    /**
+     * 获取地址
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getMemberAddressInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/info", $body);
+    }
+
+
 }
