@@ -44,6 +44,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\GoodsReplaceSdk     $goodsReplace                  财务中心.结算单商品替换服务
  * @property Modules\StagnationSdk       $stagnation                    驻店宝服务
  * @property Modules\PartnersSdk         $partnersSdk                   连锁服务
+ * @property Modules\ExpressSdk          $expressSdk                    物流服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
