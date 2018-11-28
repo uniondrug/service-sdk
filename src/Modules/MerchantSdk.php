@@ -1065,5 +1065,16 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/organizebase/editparentid", $body);
     }
 
+    /**
+    * partnerIds读取商户信息
+    * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/partnerIdsAction.md
+    * @param array $body
+    * @return ClientResponseInterface
+    */
+    public function partnerIdsOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/partnerids", $body);
+    }
+
 
 }
