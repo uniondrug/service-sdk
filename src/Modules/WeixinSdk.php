@@ -77,6 +77,16 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/tag/label', $body);
     }
 
+    /**
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/configAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getIdList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/tag/getIdList', $body);
+    }
+
     /*
      * 设置短链接
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/shortUrlAction.md
