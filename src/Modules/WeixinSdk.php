@@ -18,7 +18,6 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'weixin';
 
     /**
-     *
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/tokenAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -29,7 +28,6 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     *
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/userinfoAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -40,7 +38,6 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     *
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/configAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -48,5 +45,35 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
     public function config($body)
     {
         return $this->restful(static::METHOD_POST, '/wx/config', $body);
+    }
+
+    /**
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/configAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createTag($body)
+    {
+        return $this->restful(static::METHOD_POST, '/tag/createTag', $body);
+    }
+
+    /**
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/configAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getTags($body)
+    {
+        return $this->restful(static::METHOD_POST, '/tag/get', $body);
+    }
+
+    /**
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/configAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function labelTag($body)
+    {
+        return $this->restful(static::METHOD_POST, '/tag/label', $body);
     }
 }
