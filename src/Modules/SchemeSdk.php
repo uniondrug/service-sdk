@@ -40,7 +40,6 @@ class SchemeSdk extends Sdk implements ServiceSdkInterface
     }
 
 
-
     /**
      * 修改方案
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/SchemeController/editAction.md
@@ -73,4 +72,50 @@ class SchemeSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/scheme/stop", $body);
     }
+
+    /**
+     * 配置连锁
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/SchemeController/configPartnerAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function configPartner($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/configPartner", $body);
+    }
+
+    /**
+     * 删除关联
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/SchemeController/delconfigAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function delConfig($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/delConfig", $body);
+    }
+
+    /**
+     * 读取连锁配置
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/SchemeController/getConfigAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getConfig($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/getConfig", $body);
+    }
+
+    /**
+     * 读取连锁配置列表
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/SchemeController/getConfigListAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getConfigList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/getConfigList", $body);
+    }
+
+
 }
