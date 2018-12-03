@@ -45,6 +45,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\StagnationSdk       $stagnation                    驻店宝服务
  * @property Modules\PartnersSdk         $partners                      连锁服务
  * @property Modules\ExpressSdk          $express                       物流服务
+ * @property Modules\SchemeSdk           $scheme                        增值服务方案服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
