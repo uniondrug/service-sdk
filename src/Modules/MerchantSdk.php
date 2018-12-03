@@ -1045,7 +1045,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
     /**
      * 统计特定组织下的数量
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/CountAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ccountAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -1055,8 +1055,30 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 统计特定类型下的组织数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/countTypeAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function countTypeOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/counttype", $body);
+    }
+
+    /**
+     * 统计特定类型下组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listAllOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listall", $body);
+    }
+
+    /**
      * 修改所属上级组织
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/EditParentIdAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editParentIdAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
