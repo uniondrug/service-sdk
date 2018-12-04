@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2018-11-27
- * @time   Tue, 27 Nov 2018 16:14:05 +0800
+ * @date   2018-12-04
+ * @time   Tue, 04 Dec 2018 18:26:03 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -51,8 +51,6 @@ class InvoiceSdk extends SdkBase
         return $this->restful("POST", "/invoice/detail", $body);
     }
 
-
-
     /**
      * 删除一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deteleAction.md
@@ -64,10 +62,6 @@ class InvoiceSdk extends SdkBase
         return $this->restful("POST", "/invoice/detele", $body);
     }
 
-
-
-
-
     /**
      * 根据开票单号或对账单号获取发票的总和
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getInvoiceSumAction.md
@@ -78,12 +72,6 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/getInvoiceSum", $body);
     }
-
-
-
-
-
-
 
     /**
      * 获取发票分页列表

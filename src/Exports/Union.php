@@ -5,8 +5,11 @@
  */
 namespace Uniondrug\ServiceSdk\Exports;
 
+use Uniondrug\ServiceSdk\Exports\Unions\FinanceSdk;
+
 /**
  * 聚合类SDK入口
+ * @property FinanceSdk $finance
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Union extends Abstracts\SdkEntrypoint
