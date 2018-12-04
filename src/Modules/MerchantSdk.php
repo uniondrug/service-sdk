@@ -884,7 +884,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function addStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/add", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/add", $body);
     }
 
     /**
@@ -895,7 +895,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function infoStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/info", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/info", $body);
     }
 
     /**
@@ -906,7 +906,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function editStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/edit", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/edit", $body);
     }
 
     /**
@@ -917,7 +917,18 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function pagingStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/paging", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/paging", $body);
+    }
+
+    /**
+     * 门店图片删除
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/delAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storeimages/del", $body);
     }
 
 
@@ -930,7 +941,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function listsStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/lists", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/lists", $body);
     }
 
     /**
@@ -1034,7 +1045,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
     /**
      * 统计特定组织下的数量
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/CountAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ccountAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -1044,14 +1055,47 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 统计特定类型下的组织数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/countTypeAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function countTypeOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/counttype", $body);
+    }
+
+    /**
+     * 统计特定类型下组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listAllOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listall", $body);
+    }
+
+    /**
      * 修改所属上级组织
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/EditParentIdAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editParentIdAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
     public function editParentId($body)
     {
         return $this->restful(static::METHOD_POST, "/organizebase/editparentid", $body);
+    }
+
+    /**
+    * partnerIds读取商户信息
+    * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/partnerIdsAction.md
+    * @param array $body
+    * @return ClientResponseInterface
+    */
+    public function partnerIdsOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/partnerids", $body);
     }
 
 

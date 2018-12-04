@@ -24,7 +24,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/addAction.md
+     *
      * @param array $body
+     *
      * @return ClientResponseInterface
      */
     public function addEquity($body)
@@ -34,7 +36,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据订单号查询权益详情
+     *
      * @param $body
+     *
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/getDetailByOutOrderNoAction.md
      * @return ClientResponseInterface
      */
@@ -45,7 +49,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据权益卡号查询权益详情
+     *
      * @param $body
+     *
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailAction.md
      * @return ClientResponseInterface
      */
@@ -56,7 +62,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据权益ID 获取权益详情
+     *
      * @param $body
+     *
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailAction.md
      * @return ClientResponseInterface
      */
@@ -68,7 +76,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取权益列表
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/getListsAction.md
+     *
      * @param $body
+     *
      * @return ClientResponseInterface
      */
     public function getEquityPaging($body)
@@ -79,7 +89,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加分组权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/AddAction.md
+     *
      * @param array $body
+     *
      * @return ClientResponseInterface
      */
     public function addGroupEquity($body)
@@ -90,7 +102,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据分组权益ID 获取权益信息
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/detailAction.md
+     *
      * @param $body
+     *
      * @return ClientResponseInterface
      */
     public function getGroupEquityById($body)
@@ -101,7 +115,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据AI智赔分组ID 获取权益信息
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/detailAction.md
+     *
      * @param $body
+     *
      * @return ClientResponseInterface
      */
     public function getGroupEquityByGroupId($body)
@@ -112,7 +128,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取分组权益列表
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GroupEquityController/pagingAction.md
+     *
      * @param $body
+     *
      * @return ClientResponseInterface
      */
     public function getGroupEquityPaging($body)
@@ -123,7 +141,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 权益退款
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/RefundController/refundAction.md
+     *
      * @param $body
+     *
      * @return ClientResponseInterface
      */
     public function refund($body)
@@ -134,7 +154,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取分组金额
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/group/nominalValue.md
+     *
      * @param $body
+     *
      * @return ClientResponseInterface
      */
     public function groupNominalValue($body)
@@ -145,7 +167,9 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 用orderNos获取权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/RefundController/refundAction.md
+     *
      * @param $body
+     *
      * @return ClientResponseInterface
      */
     public function getByOrderNos($body)
@@ -156,9 +180,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 权益退款
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/consumeDetailAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function consumeDetail($body)
@@ -169,9 +191,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 权益激活
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/active.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function active($body)
@@ -182,9 +202,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 用分组id获取详情
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/active.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function detailByGroupId($body)
@@ -195,21 +213,18 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 试算接口
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/precheck.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function precheck($body)
     {
         return $this->restful(static::METHOD_POST, '/precheck/check', $body);
     }
+
     /**
      * 消费权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/consumeAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function consumeEquity($body)
@@ -220,9 +235,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 创建权益消费限制
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityOrganController/createAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function organCreate($body)
@@ -233,9 +246,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 创建权益消费限制
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/memberCountAction.md
-     *
      * @param $body
-     *
      * @return ClientResponseInterface
      */
     public function getMemberEquityCount($body)
@@ -246,8 +257,11 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取用户是否消费过
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityConsumeController/memberAction.md
+     *
      * @param $body
-     * @return ClientResponseInterface
+     *
+     * @return ClientResponseInterface>>>>>>> 98a58e93f8e2939e2fce413e30f71e1bafab7b9a
+
      */
     public function getMemberIsConsume($body)
     {
@@ -257,11 +271,174 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据试算流水号解锁权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/unlockAction.md
+     *
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     */
+    public function unlockEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/unlock', $body);
+    }
+
+    /**
+     * 新增保障
+     *
+     * @param $body
+     *
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/addAction.md
+     * @return ClientResponseInterface
+     */
+    public function addGuarantee($body)
+    {
+        return $this->restful(static::METHOD_POST, '/guarantee/add', $body);
+    }
+
+    /**
+     * 保障详情
+     *
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/detailAction.md
+     */
+    public function getGuaranteeDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/guarantee/detail', $body);
+    }
+
+    /**
+     * 保障列表
+     * @param $body
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/pagingAction.md
+     */
+    public function getGuaranteePaging($body){
+        return $this->restful(static::METHOD_POST, '/guarantee/paging', $body);
+    }
+
+    /**
+     * 赠送保障
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/giveAction.md
+     */
+    public function setGuaranteeGive($body){
+        return $this->restful(static::METHOD_POST, '/guarantee/give', $body);
+
+    }
+
+    /**
+     * 激活保障
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/activeAction.md
+     */
+
+    public function ActiveGuarantee($body){
+        return $this->restful(static::METHOD_POST, '/guarantee/active', $body);
+
+    }
+
+    /**
+     * 根据用户身份证号和产品ID检查是否购买过此保障
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/checkByIdCardAction.md
+     */
+    public function checkGuarantee($body)
+    {
+        return $this->restful(static::METHOD_POST, '/guarantee/check', $body);
+    }
+    /*
+     * 获取用户多少权益和保障
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/totalFeeAction.md
      * @param $body
      * @return ClientResponseInterface
      */
-    public function unlockEquity($body){
-        return $this->restful(static::METHOD_POST, '/equity/unlock', $body);
+    public function totalFee($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/totalfee', $body);
+    }
 
+    /**
+     * 获取保障详情
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function guaranteeDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/guarantee/detail', $body);
+    }
+
+    /**
+     * 获取保障列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/pagingAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function guaranteeList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/guarantee/paging', $body);
+    }
+
+    /**
+     * 读取状态
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/readAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function read($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/read', $body);
+    }
+
+    /**
+     * 根据保障ID禁用保障
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/disableAction.md
+     */
+    public function disableGuaranteeById($body){
+        return $this->restful(static::METHOD_POST, '/guarantee/disable', $body);
+    }
+
+    /**
+     * 根据权益禁用保障
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/disableByEquityAction.md
+     */
+    public function disableGuaranteeByEquityId($body){
+        return $this->restful(static::METHOD_POST, '/guarantee/disable/equityid', $body);
+
+    }
+
+    /**
+     * 设置保障为失效状态
+     * 入参只需要一个，使用优先级为 guaranteeId equityId 只有未激活和已激活状态的保障才可以设为失效状态
+     * @param $body
+     *
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/InvalidAction.md
+     */
+    public function invalidGuarantee($body){
+        return $this->restful(static::METHOD_POST, '/guarantee/invalid', $body);
+    }
+    /**
+     * 根据试算流水号锁定权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/PrecheckController/lockAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function lockEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/precheck/lock', $body);
     }
 }

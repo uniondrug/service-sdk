@@ -116,4 +116,15 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/updateSettlementsBillNo", $body);
     }
+
+    /**
+     * 根据对账单号把当指定账单下的订单重置为未绑定对账单的订单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/resetSettlementsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resetSettlements($body)
+    {
+        return $this->restful("POST", "/settlement/resetSettlements", $body);
+    }
 }
