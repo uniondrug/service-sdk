@@ -113,4 +113,63 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/order/checkErp", $body);
     }
+
+
+    /**
+     * 物流订单添加
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderLogisticsController/addAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function addOrderLogistics($body)
+    {
+        return $this->restful(static::METHOD_POST, "/orderlogistics/add", $body);
+    }
+
+    /**
+     * 订单号查询物流列表
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderLogisticsController/pagingAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function pagingOrderLogistics($body)
+    {
+        return $this->restful(static::METHOD_POST, "/orderlogistics/paging", $body);
+    }
+
+    /**
+     * 订单号查询物流列表
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/memberStatusCountAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function memberStatusCount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/memberstatuscount", $body);
+    }
+
+    /**
+     * 订单号查询物流列表
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/memberStatusListAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function memberStatusList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/memberstatuslist", $body);
+    }
+
+    /**
+     * 订单号退单
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/refundOrderAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function refundOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/refundOrder", $body);
+    }
+
+
+
 }
