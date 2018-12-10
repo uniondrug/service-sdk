@@ -110,10 +110,6 @@ class Restful
      */
     final public function post(string $uri, $body = null, $extra = null)
     {
-
-        print_r (func_get_args());
-        exit;
-
         return $this->restful(SdkBase::METHOD_POST, $uri, $extra, $body, null);
     }
 
