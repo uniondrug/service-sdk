@@ -125,6 +125,24 @@ class Restful
     }
 
     /**
+     * 生成URL
+     * @param string $uri
+     * @return string
+     */
+    final public function url(string $uri)
+    {
+        try {
+            $request = new RequestConsul($this->logger, $this->config, 'service');
+            $url = $request->buildUrl($uri);
+            if ($url !== false) {
+                return $url;
+            }
+        } catch(\Throwable $e) {
+        }
+        return $uri;
+    }
+
+    /**
      * 指定缓存时长
      * @param int $cacheDeadline
      * @return $this

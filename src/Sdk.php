@@ -23,6 +23,7 @@ use Uniondrug\ServiceSdk\Responses\ResponseInterface;
  * @method Responses\Response patch(string $uri, array $body = null, array $extra = null)
  * @method Responses\Response post(string $uri, array $body = null, array $extra = null)
  * @method Responses\Response put(string $uri, array $body = null, array $extra = null)
+ * @method string url(string $uri)
  * @package Uniondrug\ServiceSdk
  */
 class Sdk
@@ -59,9 +60,9 @@ class Sdk
 
     /**
      * Sdk注入
-     * @param $logger
-     * @param $sdkConfig
-     * @param $redisConfig
+     * @param        $logger
+     * @param        $sdkConfig
+     * @param        $redisConfig
      * @param string $redisConfig
      */
     final public function __construct($logger, $sdkConfig = null, $redisConfig = null, $environment)
