@@ -214,4 +214,29 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/merchant/getMerchantPaging", $body);
     }
+
+    /**
+     * 改变工业用户审核状态
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/changeMerchantStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeMerchantStatus($body)
+    {
+        return $this->restful("POST", "/merchant/changeMerchantStatus", $body);
+    }
+
+
+    /**
+     * 改变工业用户使用状态
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/changeUseStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeMerchantUseStatus($body)
+    {
+        return $this->restful("POST", "/merchant/changeMerchantUseStatus", $body);
+    }
+
+
 }
