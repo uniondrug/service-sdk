@@ -47,6 +47,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\PartnersSdk         $partners                      连锁服务
  * @property Modules\ExpressSdk          $express                       物流服务
  * @property Modules\SchemeSdk           $scheme                        增值服务方案服务
+ * @property Modules\RefundSdk           $refund                        退单服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk

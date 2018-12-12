@@ -18,7 +18,7 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'partners';
 
     /**
-     * 查看连锁商品库存
+     * O2O订单回推
      * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/callback.md
      * @param array $body
      * @return ClientResponseInterface
@@ -26,6 +26,61 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     public function callbackOrder($body)
     {
         return $this->restful(static::METHOD_POST, "/api/order/callback", $body);
+    }
+
+    /**
+     * 电商下预订单
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/preOrder.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function preOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, "/api/order/preOrder", $body);
+    }
+
+    /**
+     * 电商确认下单
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/payOrder.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function payOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, "/api/order/payOrder", $body);
+    }
+
+    /**
+     * 电商运费获取
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/getFreight.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getFreight($body)
+    {
+        return $this->restful(static::METHOD_POST, "/api/order/getFreight", $body);
+    }
+
+    /**
+     * 电商退单,支持单个商品退单
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/refundOrder.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function refundOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, "/api/order/refundOrder", $body);
+    }
+
+    /**
+     * 获取物流信息
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/getExpress.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getExpress($body)
+    {
+        return $this->restful(static::METHOD_POST, "/api/order/getExpress", $body);
     }
 
     /**
@@ -38,4 +93,6 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/api/stock/search", $body);
     }
+
+
 }

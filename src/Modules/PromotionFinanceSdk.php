@@ -159,4 +159,27 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/report/quota", $body);
     }
+
+    /**
+     * 查看成交次数
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/BillsController/dealTimesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dealTimes($body)
+    {
+        return $this->restful("POST", "/bills/dealTimes", $body);
+    }
+
+    /**
+     * 查看展示次数
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/BillsController/showTimesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function showTimes($body)
+    {
+        return $this->restful("POST", "/bills/showTimes", $body);
+    }
+
 }
