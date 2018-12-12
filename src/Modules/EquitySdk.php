@@ -222,6 +222,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 试算查询接口
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detail.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function precheckDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/precheck/detail', $body);
+    }
+
+    /**
      * 消费权益
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/consumeAction.md
      * @param $body
