@@ -314,4 +314,15 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/drug/getDrugPaging", $body);
     }
 
+    /**
+     * 审核药品
+     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/OperaBackController/approveDrugAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveDrug($body)
+    {
+        return $this->restful("POST", "/OperaBack/approveDrug", $body);
+    }
+
 }
