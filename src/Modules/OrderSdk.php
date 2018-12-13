@@ -170,6 +170,20 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/order/refundOrder", $body);
     }
 
+    /**
+     * 订单号查询支付记录
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/orderDetailAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function orderDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/orderdetail", $body);
+    }
+
+
+
+
 
 
 }
