@@ -302,4 +302,16 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/drug/initDrug", $body);
     }
+
+    /**
+     * 工业维度的商品列表(给后台使用的)
+     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/DrugController/getDrugPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDrugPaging($body)
+    {
+        return $this->restful("POST", "/drug/getDrugPaging", $body);
+    }
+
 }
