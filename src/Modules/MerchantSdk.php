@@ -1109,5 +1109,16 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/organizebase/listallstore", $body);
     }
 
+    /**
+     * 通过默认编码获取组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/internalCodeInfoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function internalCodeInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/internalcodeinfo", $body);
+    }
+
 
 }
