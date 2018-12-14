@@ -5,6 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
+use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
@@ -21,7 +22,7 @@ class RefundSdk extends Sdk implements ServiceSdkInterface
      */
     public function refundInfo($body)
     {
-        return $this->restful(static::METHOD_POST, "/refnud/info", $body);
+        return $this->restful(static::METHOD_POST, "/refund/info", $body);
     }
 
     /**
@@ -32,7 +33,7 @@ class RefundSdk extends Sdk implements ServiceSdkInterface
      */
     public function addRefund($body)
     {
-        return $this->restful(static::METHOD_POST, "/refnud/add", $body);
+        return $this->restful(static::METHOD_POST, "/refund/add", $body);
     }
 
     /**
@@ -43,6 +44,6 @@ class RefundSdk extends Sdk implements ServiceSdkInterface
      */
     public function editRefund($body)
     {
-        return $this->restful(static::METHOD_POST, "/refnud/edit", $body);
+        return $this->restful(static::METHOD_POST, "/refund/edit", $body);
     }
 }
