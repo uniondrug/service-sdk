@@ -7,6 +7,8 @@ namespace Uniondrug\ServiceSdk\Exports;
 
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementlogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
@@ -24,6 +26,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
  * @property SettlementSdk      $settlement
  * @property InvoiceSdk         $invoice
  * @property InsureSdk          $insure
+ * @property ProjectSdk         $project
+ * @property ProductSdk         $product
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
