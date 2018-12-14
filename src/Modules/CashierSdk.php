@@ -96,5 +96,16 @@ class CashierSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/cashier/outtradeno", $body);
     }
 
+    /**
+     * 订单号查询支付记录
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/orderDetailAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function orderDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, "/cashier/orderdetail", $body);
+    }
+
 
 }
