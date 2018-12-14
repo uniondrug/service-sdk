@@ -181,5 +181,38 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/bills/showTimes", $body);
     }
+    /**
+     * 查询工业资金信息
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getMerchantFundInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMerchantFundInfo($body)
+    {
+        return $this->restful("POST", "/fund/getMerchantFundInfo", $body);
+    }
+
+    /**
+     * 查询工业充值明细
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getMerchantRechargePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMerchantRechargePaging($body)
+    {
+        return $this->restful("POST", "/fund/getMerchantRechargePaging", $body);
+    }
+
+    /**
+     * 充值详情
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/RechargeController/rechargeDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeDetail($body)
+    {
+        return $this->restful("POST", "/recharge/rechargeDetail", $body);
+    }
+
 
 }
