@@ -167,7 +167,7 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
      */
     public function refundOrder($body)
     {
-        return $this->restful(static::METHOD_POST, "/order/refundOrder", $body);
+        return $this->restful(static::METHOD_POST, "/order/refundorder", $body);
     }
 
 
