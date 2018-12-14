@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2018-12-14
- * @time   Fri, 14 Dec 2018 13:38:48 +0800
+ * @time   Fri, 14 Dec 2018 17:39:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -35,7 +35,7 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function accept($body)
+    public function acceptProject($body)
     {
         return $this->restful("POST", "/project/accept", $body);
     }
@@ -46,31 +46,53 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function active($body)
+    public function activeUser($body)
     {
         return $this->restful("POST", "/user/active", $body);
     }
 
     /**
-     * 添加1条待验证记录
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/addAction.md
+     * 添加分组
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function add($body)
+    public function addGroup($body)
     {
-        return $this->restful("POST", "/verify/add", $body);
+        return $this->restful("POST", "/group/add", $body);
     }
 
     /**
-     * 待验证数据批量添加
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/addsAction.md
+     * 添加项目
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function adds($body)
+    public function addProject($body)
     {
-        return $this->restful("POST", "/verify/adds", $body);
+        return $this->restful("POST", "/project/add", $body);
+    }
+
+    /**
+     * 用户批量添加
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/addsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addsUser($body)
+    {
+        return $this->restful("POST", "/user/adds", $body);
+    }
+
+    /**
+     * 添加用户
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addUser($body)
+    {
+        return $this->restful("POST", "/user/add", $body);
     }
 
     /**
@@ -79,7 +101,7 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function approval($body)
+    public function approvalProject($body)
     {
         return $this->restful("POST", "/project/approval", $body);
     }
@@ -90,7 +112,7 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function cancel($body)
+    public function cancelProject($body)
     {
         return $this->restful("POST", "/project/cancel", $body);
     }
@@ -103,42 +125,9 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function check($body)
+    public function checkVerify($body)
     {
         return $this->restful("POST", "/verify/check", $body);
-    }
-
-    /**
-     * 项目分析报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/cityAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function city($body)
-    {
-        return $this->restful("POST", "/export/city", $body);
-    }
-
-    /**
-     * 最近消费报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/daysAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function days($body)
-    {
-        return $this->restful("POST", "/export/days", $body);
-    }
-
-    /**
-     * 删除分组
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/delAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function del($body)
-    {
-        return $this->restful("POST", "/group/del", $body);
     }
 
     /**
@@ -147,20 +136,20 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function delete($body)
+    public function deleteProject($body)
     {
         return $this->restful("POST", "/project/delete", $body);
     }
 
     /**
-     * 增量报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/deltaAction.md
+     * 删除分组
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/delAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function delta($body)
+    public function delGroup($body)
     {
-        return $this->restful("POST", "/export/delta", $body);
+        return $this->restful("POST", "/group/del", $body);
     }
 
     /**
@@ -169,9 +158,20 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function disable($body)
+    public function disableGroup($body)
     {
         return $this->restful("POST", "/group/disable", $body);
+    }
+
+    /**
+     * 冻结用户
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disableUser($body)
+    {
+        return $this->restful("POST", "/user/disable", $body);
     }
 
     /**
@@ -180,9 +180,31 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function edit($body)
+    public function editGroup($body)
     {
         return $this->restful("POST", "/group/edit", $body);
+    }
+
+    /**
+     * 编辑项目
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editProject($body)
+    {
+        return $this->restful("POST", "/project/edit", $body);
+    }
+
+    /**
+     * 编辑用户
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editUser($body)
+    {
+        return $this->restful("POST", "/user/edit", $body);
     }
 
     /**
@@ -191,9 +213,130 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function enable($body)
+    public function enableGroup($body)
     {
         return $this->restful("POST", "/group/enable", $body);
+    }
+
+    /**
+     * 解锁用户
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function enableUser($body)
+    {
+        return $this->restful("POST", "/user/enable", $body);
+    }
+
+    /**
+     * listAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ApprovalController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getApprovalList($body)
+    {
+        return $this->restful("POST", "/approval/list", $body);
+    }
+
+    /**
+     * 城市维度报表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/cityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportCity($body)
+    {
+        return $this->restful("POST", "/export/city", $body);
+    }
+
+    /**
+     * 最近N天的消费记录报表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/daysAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportDays($body)
+    {
+        return $this->restful("POST", "/export/days", $body);
+    }
+
+    /**
+     * 读取增量报表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/deltaAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportDelta($body)
+    {
+        return $this->restful("POST", "/export/delta", $body);
+    }
+
+    /**
+     * 项目金额报表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/moneyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportMoney($body)
+    {
+        return $this->restful("POST", "/export/money", $body);
+    }
+
+    /**
+     * 项目维度报表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/projectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportProject($body)
+    {
+        return $this->restful("POST", "/export/project", $body);
+    }
+
+    /**
+     * 排行榜
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/rankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportRank($body)
+    {
+        return $this->restful("POST", "/export/rank", $body);
+    }
+
+    /**
+     * 日期范围内的消费记录报表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/scopeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportScope($body)
+    {
+        return $this->restful("POST", "/export/scope", $body);
+    }
+
+    /**
+     * 趋势报表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/tendencyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getExportTendency($body)
+    {
+        return $this->restful("POST", "/export/tendency", $body);
+    }
+
+    /**
+     * 用ids获取分组
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/idsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupByIds($body)
+    {
+        return $this->restful("POST", "/group/ids", $body);
     }
 
     /**
@@ -202,7 +345,7 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function info($body)
+    public function getGroupInfo($body)
     {
         return $this->restful("POST", "/group/info", $body);
     }
@@ -213,20 +356,31 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function list($body)
+    public function getGroupList($body)
     {
         return $this->restful("POST", "/group/list", $body);
     }
 
     /**
-     * 金额报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/moneyAction.md
+     * 用ids获取项目
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/idsAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function money($body)
+    public function getProjectByIds($body)
     {
-        return $this->restful("POST", "/export/money", $body);
+        return $this->restful("POST", "/project/ids", $body);
+    }
+
+    /**
+     * 项目详情
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectInfo($body)
+    {
+        return $this->restful("POST", "/project/info", $body);
     }
 
     /**
@@ -235,9 +389,42 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function paging($body)
+    public function getProjectPaging($body)
     {
         return $this->restful("POST", "/project/paging", $body);
+    }
+
+    /**
+     * 读取用户资料
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserInfo($body)
+    {
+        return $this->restful("POST", "/user/info", $body);
+    }
+
+    /**
+     * 读取用户分页列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserPaging($body)
+    {
+        return $this->restful("POST", "/user/paging", $body);
+    }
+
+    /**
+     * 多种状态查询分页
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/pagingByStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pagingByStatus($body)
+    {
+        return $this->restful("POST", "/project/pagingByStatus", $body);
     }
 
     /**
@@ -246,53 +433,20 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function pause($body)
+    public function pauseProject($body)
     {
         return $this->restful("POST", "/project/pause", $body);
     }
 
     /**
-     * 项目分析报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/projectAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function project($body)
-    {
-        return $this->restful("POST", "/export/project", $body);
-    }
-
-    /**
-     * 项目分析报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/rankAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rank($body)
-    {
-        return $this->restful("POST", "/export/rank", $body);
-    }
-
-    /**
-     * 取消审批
+     * 拒绝审批
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/refuseAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function refuse($body)
+    public function refuseProject($body)
     {
         return $this->restful("POST", "/project/refuse", $body);
-    }
-
-    /**
-     * 日期范围报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/scopeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function scope($body)
-    {
-        return $this->restful("POST", "/export/scope", $body);
     }
 
     /**
@@ -301,7 +455,7 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function start($body)
+    public function startProject($body)
     {
         return $this->restful("POST", "/project/start", $body);
     }
@@ -312,19 +466,8 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function statistic($body)
+    public function statisticProject($body)
     {
         return $this->restful("POST", "/project/statistic", $body);
-    }
-
-    /**
-     * 项目趋势报表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/tendencyAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function tendency($body)
-    {
-        return $this->restful("POST", "/export/tendency", $body);
     }
 }

@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2018-12-14
- * @time   Fri, 14 Dec 2018 13:29:16 +0800
+ * @time   Fri, 14 Dec 2018 16:05:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -35,7 +35,7 @@ class ProductSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function add($body)
+    public function addProgram($body)
     {
         return $this->restful("POST", "/program/add", $body);
     }
@@ -46,20 +46,9 @@ class ProductSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function copy($body)
+    public function copyProgram($body)
     {
         return $this->restful("POST", "/program/copy", $body);
-    }
-
-    /**
-     * 方案基础明细
-     * @link https://uniondrug.coding.net/p/module.product/git/blob/development/docs/api/ProgramController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function detail($body)
-    {
-        return $this->restful("POST", "/program/detail", $body);
     }
 
     /**
@@ -68,7 +57,7 @@ class ProductSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function disable($body)
+    public function disableProgram($body)
     {
         return $this->restful("POST", "/program/disable", $body);
     }
@@ -79,7 +68,7 @@ class ProductSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function edit($body)
+    public function editProgram($body)
     {
         return $this->restful("POST", "/program/edit", $body);
     }
@@ -90,20 +79,20 @@ class ProductSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function enable($body)
+    public function enableProgram($body)
     {
         return $this->restful("POST", "/program/enable", $body);
     }
 
     /**
-     * 按ID读方案列表
-     * @link https://uniondrug.coding.net/p/module.product/git/blob/development/docs/api/ProgramController/idsAction.md
+     * 方案基础明细
+     * @link https://uniondrug.coding.net/p/module.product/git/blob/development/docs/api/ProgramController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function ids($body)
+    public function getProgramDetail($body)
     {
-        return $this->restful("POST", "/program/ids", $body);
+        return $this->restful("POST", "/program/detail", $body);
     }
 
     /**
@@ -112,8 +101,19 @@ class ProductSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function paging($body)
+    public function getProgramPaging($body)
     {
         return $this->restful("POST", "/program/paging", $body);
+    }
+
+    /**
+     * 按ID读方案列表
+     * @link https://uniondrug.coding.net/p/module.product/git/blob/development/docs/api/ProgramController/idsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProgramsByIds($body)
+    {
+        return $this->restful("POST", "/program/ids", $body);
     }
 }
