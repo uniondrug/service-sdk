@@ -211,13 +211,27 @@ class Response implements ResponseInterface
             $this->hasError() || $this->setError(self::ERROR_NOT_JSON_STRING, "服务返回的数据不是有效的JSON格式");
             return;
         }
-        // 3. required formatter
-        if (!isset($json->errno, $json->error, $json->data)) {
-            $this->hasError() || $this->setError(self::ERROR_NOT_ACCEPTED_JSON, "服务返回了非标准化的JSON格式");
+        // 3. 标准模式
+        //    {"errno":0,"error":"","data":{...}}
+        if (isset($json->errno, $json->error, $json->data)) {
+            $this->hasError() || $this->setError($json->errno, $json->error);
+            $this->data = $json->data;
             return;
         }
-        // 4. service status
-        $this->setError($json->errno, $json->error);
-        $this->data = $json->data;
+        // 4. 兼容模式
+        //    {"status":true,"message":"success","code":200,"data":{....}}
+        if (isset($json->status, $json->message, $json->data)) {
+            if ($json->status === true) {
+                $this->setError(0, "");
+            } else {
+                $errno = isset($json->code) ? $json->code : 1;
+                $errno || $errno = 1;
+                $this->hasError() || $this->setError($errno, $json->message);
+            }
+            $this->data = $json->data;
+            return;
+        }
+        // 5. required formatter
+        $this->hasError() || $this->setError(self::ERROR_NOT_ACCEPTED_JSON, "服务返回了非标准化的JSON格式");
     }
 }
