@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2018-12-04
- * @time   Tue, 04 Dec 2018 17:39:54 +0800
+ * @date   2018-12-17
+ * @time   Mon, 17 Dec 2018 13:30:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class SettlementSdk extends SdkBase
     public function orders($body)
     {
         return $this->restful("POST", "/settlement/orders", $body);
+    }
+
+    /**
+     * 导出算单订单列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/ordersExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ordersExport($body)
+    {
+        return $this->restful("POST", "/settlement/ordersExport", $body);
     }
 
     /**
