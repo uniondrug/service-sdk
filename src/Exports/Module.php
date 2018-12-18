@@ -15,6 +15,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 
 /**
  * 基础模块SDK入口
@@ -28,6 +29,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
  * @property InsureSdk          $insure
  * @property ProjectSdk         $project
  * @property ProductSdk         $product
+ * @property DeliverSdk         $deliver
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
