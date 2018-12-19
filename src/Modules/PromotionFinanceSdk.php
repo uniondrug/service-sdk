@@ -236,4 +236,15 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/makeInvoiceInfo", $body);
     }
+
+    /**
+     * 开票列表
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/invoicePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoicePaging($body)
+    {
+        return $this->restful("POST", "/invoice/invoicePaging", $body);
+    }
 }
