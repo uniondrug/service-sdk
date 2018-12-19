@@ -10,7 +10,7 @@ use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
 /**
- * 物流模块,快递鸟,达达配送
+ * 物流模块,快递鸟,快递100,达达配送
  * @package Uniondrug\ServiceSdk\Modules
  */
 class ExpressSdk extends Sdk implements ServiceSdkInterface
@@ -18,7 +18,7 @@ class ExpressSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'express';
 
     /**
-     * 查询物流轨迹
+     * 快递鸟查询物流轨迹
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/express/kdniao/search/expressTrack.md
      * @param array $body
      * @return ClientResponseInterface
@@ -26,6 +26,17 @@ class ExpressSdk extends Sdk implements ServiceSdkInterface
     public function expressTrack($body)
     {
         return $this->restful(static::METHOD_POST, "/kdniao/search/expressTrack", $body);
+    }
+
+    /**
+     * 快递100查询物流轨迹
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/express/kd100/logistics/searchTrack.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function searchTrack($body)
+    {
+        return $this->restful(static::METHOD_POST, "/kd100/logistics/searchTrack", $body);
     }
 
     /**
