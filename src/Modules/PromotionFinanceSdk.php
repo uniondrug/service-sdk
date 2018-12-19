@@ -247,4 +247,58 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/invoicePaging", $body);
     }
+    /**
+     * 审核开票
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/approveInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/approveInvoice", $body);
+    }
+    /**
+     * 确认开票
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/confirmInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function confirmInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/confirmInvoice", $body);
+    }
+
+    /**
+     * 获取开票金额详情
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/getInvoiceAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceAmount($body)
+    {
+        return $this->restful("POST", "/invoice/getInvoiceAmount", $body);
+    }
+    /**
+     * 获取开票详情
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/getInvoiceDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceDetail($body)
+    {
+        return $this->restful("POST", "/invoice/getInvoiceDetail", $body);
+    }
+
+    /**
+     * 设置开票金额
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/setInvoiceAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setInvoiceAmount($body)
+    {
+        return $this->restful("POST", "/invoice/setInvoiceAmount", $body);
+    }
+
+
 }
