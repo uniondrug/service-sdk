@@ -141,4 +141,15 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/record/get/record/paging", $body);
     }
+
+    /**
+     * 配置详情
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/RecordController/getRecordPagingAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function configDetail($body)
+    {
+        return $this->restful("POST", "/config/detail", $body);
+    }
 }
