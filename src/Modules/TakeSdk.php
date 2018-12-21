@@ -107,4 +107,61 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/order/take", $body);
     }
+
+    /**
+     * 关闭自动接单模式
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/closeAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function close($body)
+    {
+        return $this->restful("POST", "/user/take/close", $body);
+    }
+
+    /**
+     * 设置接单模式
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/configAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function config($body)
+    {
+        return $this->restful("POST", "/user/take/config", $body);
+    }
+
+    /**
+     * 确认开启接单模式的店员数量
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/CountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function count($body)
+    {
+        return $this->restful("POST", "/user/take/count", $body);
+    }
+
+
+    /**
+     * 查找所有该门店下的店员的id
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/FindAllAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function findAll($body)
+    {
+        return $this->restful("POST", "/user/take/findAll", $body);
+    }
+
+    /**
+     * 查看该店员是否接单
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/getDetailAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getDetail($body)
+    {
+        return $this->restful("POST", "/user/take/getDetail", $body);
+    }
+
 }
