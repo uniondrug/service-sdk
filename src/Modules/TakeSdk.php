@@ -35,7 +35,7 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
      * 店员拒绝
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/assistantRefuseAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function assistantRefuse($body)
     {
@@ -46,7 +46,7 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
      * 店员拒绝
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/cancelAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function cancel($body)
     {
@@ -57,7 +57,7 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
      * 创建订单
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/createAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function create($body)
     {
@@ -68,7 +68,7 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
      * 订单详情
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/detailAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function detail($body)
     {
@@ -79,7 +79,7 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
      * 用户拒绝
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/memberRefuseAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function memberRefuse($body)
     {
@@ -90,7 +90,7 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
      * 订单分页
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/pagingAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function paging($body)
     {
@@ -101,7 +101,7 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
      * 用户领取
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/takeAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function take($body)
     {
