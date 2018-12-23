@@ -316,13 +316,58 @@ class PromotionBiddingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 审核药品
-     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/OperaBackController/approveDrugAction.md
+     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/operaBackController/approveDrugAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function approveDrug($body)
     {
-        return $this->restful("POST", "/OperaBack/approveDrug", $body);
+        return $this->restful("POST", "/operaBack/approveDrug", $body);
     }
+
+    /**
+     * 获取商品关联方案和竞价方案详情
+     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/OperaBackController/drugsSchemeDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drugsSchemeDetail($body)
+    {
+        return $this->restful("POST", "/operaBack/drugsSchemeDetail", $body);
+    }
+
+    /**
+     * 投放方案管理
+     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/OperaBackController/drugsSchemePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drugsSchemePaging($body)
+    {
+        return $this->restful("POST", "/operaBack/drugsSchemePaging", $body);
+    }
+
+    /**
+     * 获取单个药品方案详情
+     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/OperaBackController/getSchemeDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getSchemeDetail($body)
+    {
+        return $this->restful("POST", "/operaBack/getSchemeDetail", $body);
+    }
+
+    /**
+     * 审核方案话术
+     * @link https://uniondrug.coding.net/p/module.bidding.promotion/git/blob/development/docs/api/OperaBackController/approveSchemeWordAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveSchemeWord($body)
+    {
+        return $this->restful("POST", "/operaBack/approveSchemeWord", $body);
+    }
+
 
 }

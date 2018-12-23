@@ -300,5 +300,15 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/invoice/setInvoiceAmount", $body);
     }
 
+    /**
+     * 查询上一个或者下一个充值
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getNearlyRechargeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getNearlyRecharge($body)
+    {
+        return $this->restful("POST", "/fund/getNearlyRecharge", $body);
+    }
 
 }
