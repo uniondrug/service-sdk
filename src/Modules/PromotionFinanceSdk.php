@@ -247,6 +247,7 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/invoicePaging", $body);
     }
+
     /**
      * 审核开票
      * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/approveInvoiceAction.md
@@ -257,6 +258,7 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/approveInvoice", $body);
     }
+
     /**
      * 确认开票
      * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/confirmInvoiceAction.md
@@ -278,6 +280,7 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/getInvoiceAmount", $body);
     }
+
     /**
      * 获取开票详情
      * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/getInvoiceDetailAction.md
@@ -311,4 +314,14 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/fund/getNearlyRecharge", $body);
     }
 
+    /**
+     * 获取开票流水
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/invoiceBillsListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceBillsList($body)
+    {
+        return $this->restful("POST", "/invoice/invoiceBillsList", $body);
+    }
 }
