@@ -511,4 +511,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/project/limit', $body);
     }
+
+    /**
+     * 获取项目的所有限制
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/project/projectLimitAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function projectLimits($body)
+    {
+        return $this->restful(static::METHOD_POST, '/project/limits', $body);
+    }
 }
