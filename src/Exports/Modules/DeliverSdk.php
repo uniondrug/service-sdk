@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2018-12-18
- * @time   Tue, 18 Dec 2018 14:00:14 +0800
+ * @date   2018-12-25
+ * @time   Tue, 25 Dec 2018 15:48:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -74,7 +74,7 @@ class DeliverSdk extends SdkBase
     }
 
     /**
-     * 批量关闭门店
+     * 查看信息
      * @link https://uniondrug.coding.net/p/module.deliver/git/tree/development/app/docs/api/PartnerSwitchController/getInfoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -93,5 +93,16 @@ class DeliverSdk extends SdkBase
     public function partnerSwitchList($body)
     {
         return $this->restful("POST", "/partner/switch/list", $body);
+    }
+
+    /**
+     * 连锁列表
+     * @link https://uniondrug.coding.net/p/module.deliver/git/tree/development/app/docs/api/PartnerSwitchController/partnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSwitchPartnerList($body)
+    {
+        return $this->restful("POST", "/partner/switch/partner/list", $body);
     }
 }
