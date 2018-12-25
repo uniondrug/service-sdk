@@ -83,4 +83,15 @@ class DeliverSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/partner/switch/list", $body);
     }
+
+    /**
+     * 连锁列表
+     * @link https://uniondrug.coding.net/p/module.deliver/git/tree/development/app/docs/api/PartnerSwitchController/partnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSwitchPartnerList($body)
+    {
+        return $this->restful("POST", "/partner/switch/partner/list", $body);
+    }
 }
