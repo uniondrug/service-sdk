@@ -49,6 +49,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\SchemeSdk           $scheme                        增值服务方案服务
  * @property Modules\RefundSdk           $refund                        退单服务
  * @property Modules\DeliverSdk          $deliver                       药联到家配置服务
+ * @property Modules\CarSdk              $car                           车辆服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
