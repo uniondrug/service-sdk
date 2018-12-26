@@ -38,4 +38,38 @@ class CarSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/search/byOcr", $body);
     }
+
+    /**
+     * 返回省市区三级联动数据
+     * @link https://uniondrug.coding.net/p/module.car/git/blob/release/docs/api/CarArea/CarAreaController/fullAreaAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function fullArea($body)
+    {
+        return $this->restful(static::METHOD_POST, "/full/area", $body);
+    }
+
+    /**
+     * 返回某级数据
+     * @link https://uniondrug.coding.net/p/module.car/git/blob/release/docs/api/CarArea/CarAreaController/levelAreaAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function levelArea($body)
+    {
+        return $this->restful(static::METHOD_POST, "/level/area", $body);
+    }
+
+    /**
+     * 返回某市车牌缩号
+     * @link https://uniondrug.coding.net/p/module.car/git/blob/release/docs/api/CarLicense/CarLicenseController/licenseListAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function licenseList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/license/list", $body);
+    }
+
 }
