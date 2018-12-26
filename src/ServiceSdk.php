@@ -50,6 +50,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\RefundSdk           $refund                        退单服务
  * @property Modules\DeliverSdk          $deliver                       药联到家配置服务
  * @property Modules\CarSdk              $car                           车辆服务
+ * @property Modules\IdCardSdk           $idCard                        身份证服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
