@@ -72,4 +72,14 @@ class CarSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/license/list", $body);
     }
 
+    /**
+     * 省-市-车牌
+     * @link https://uniondrug.coding.net/p/module.car/git/blob/release/docs/api/CarAreaLicense/CarAreaLicenseController/carAreaLicenseAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function areaLicense($body)
+    {
+        return $this->restful(static::METHOD_POST, "/area/license", $body);
+    }
 }
