@@ -28,4 +28,26 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/amap/search", $body);
     }
+
+    /**
+     * 经纬度转换
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ConvertController/convertAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function locationConvert($body)
+    {
+        return $this->restful(static::METHOD_POST, "/location/convert", $body);
+    }
+
+    /**
+     * 经纬度详情
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/DetailController/detailAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function locationDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, "/location/detail", $body);
+    }
 }
