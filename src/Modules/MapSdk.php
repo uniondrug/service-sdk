@@ -50,4 +50,37 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/location/detail", $body);
     }
+
+    /**
+     * 地址转为经纬度
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ByAddressController/byAddressAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function locationByAddress($body)
+    {
+        return $this->restful(static::METHOD_POST, "/location/byAddress", $body);
+    }
+
+    /**
+     * 行政区域查询
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/District/ByKeywordsController/byKeywordsAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function districtByKeywords($body)
+    {
+        return $this->restful(static::METHOD_POST, "/district/byKeyword", $body);
+    }
+
+    /**
+     * 获取两经纬度距离
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/GetDistanceController/distanceAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function locationDistance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/location/distance", $body);
+    }
 }
