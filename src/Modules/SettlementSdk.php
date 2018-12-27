@@ -138,4 +138,15 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/ordersExport", $body);
     }
+
+    /**
+     * 获取指定连锁订单列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/ordersAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerOrders($body)
+    {
+        return $this->restful("POST", "/partner/orders", $body);
+    }
 }
