@@ -324,4 +324,15 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/invoiceBillsList", $body);
     }
+
+    /**
+     * 获取状态符合的企业id
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getStatusMerchantIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStatusMerchantIds($body)
+    {
+        return $this->restful("POST", "/fund/getStatusMerchantIds", $body);
+    }
 }
