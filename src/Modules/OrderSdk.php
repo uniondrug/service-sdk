@@ -192,6 +192,28 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/order/editamount", $body);
     }
 
+    /**
+     * 获取orderno集合
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/orderNosAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function orderNos($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/ordernos", $body);
+    }
+
+    /**
+     * 已支付完成后进行撤单
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/cancelRefundAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function cancelRefund($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/cancelrefund", $body);
+    }
+
 
 
 
