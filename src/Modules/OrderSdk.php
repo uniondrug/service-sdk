@@ -138,7 +138,7 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 订单号查询物流列表
+     * 订单号查询物流数量
      * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/memberStatusCountAction.md
      * @param $body
      * @return ClientResponseInterface
@@ -149,7 +149,7 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 订单号查询物流列表
+     * 用户查询物流列表
      * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/memberStatusListAction.md
      * @param $body
      * @return ClientResponseInterface
@@ -169,6 +169,53 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/order/refundorder", $body);
     }
+
+    /**
+     * 订单号查询支付单号
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/getOrderNoAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function getOrderNo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/getorderno", $body);
+    }
+
+    /**
+     * 订单号跟新支付数据
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/editAmountAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function editAmount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/editamount", $body);
+    }
+
+    /**
+     * 获取orderno集合
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/orderNosAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function orderNos($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/ordernos", $body);
+    }
+
+    /**
+     * 已支付完成后进行撤单
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/cancelRefundAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function cancelRefund($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/cancelrefund", $body);
+    }
+
+
+
 
 
 
