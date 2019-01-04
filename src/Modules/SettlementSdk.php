@@ -171,4 +171,81 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/exportStatementGoods", $body);
     }
+
+    /**
+     * 读取开票单详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBillDetail($body)
+    {
+        return $this->restful("POST", "/bill/detail", $body);
+    }
+
+    /**
+     * 获取开票单分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBillPaging($body)
+    {
+        return $this->restful("POST", "/bill/paging", $body);
+    }
+
+    /**
+     * 开票单列表汇总信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/summaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBillSummary($body)
+    {
+        return $this->restful("POST", "/bill/summary", $body);
+    }
+
+    /**
+     * 创建开票单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addBill($body)
+    {
+        return $this->restful("POST", "/bill/add", $body);
+    }
+
+    /**
+     * 编辑开票单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editBill($body)
+    {
+        return $this->restful("POST", "/bill/edit", $body);
+    }
+
+    /**
+     * 获取对账单项目分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ProjectController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectPaging($body)
+    {
+        return $this->restful("POST", "/project/paging", $body);
+    }
+
+    /**
+     * 获取连锁订单统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/partnerCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerCount($body)
+    {
+        return $this->restful("POST", "/partner/partnerCount", $body);
+    }
 }
