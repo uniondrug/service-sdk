@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2018-12-27
- * @time   Thu, 27 Dec 2018 15:16:29 +0800
+ * @date   2019-01-03
+ * @time   Thu, 03 Jan 2019 15:51:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 导出指定对账单内商品列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/exportStatementGoodsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportStatementGoods($body)
+    {
+        return $this->restful("POST", "/settlement/exportStatementGoods", $body);
+    }
+
+    /**
      * 获取指定连锁订单的商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/goodsAction.md
      * @param array $body 入参类型
@@ -140,14 +151,14 @@ class SettlementSdk extends SdkBase
     }
 
     /**
-     * 生成开票单
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/indexAction.md
+     * 编辑开票单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/editAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function index($body)
     {
-        return $this->restful("POST", "/bill/index", $body);
+        return $this->restful("POST", "/bill/edit", $body);
     }
 
     /**
@@ -261,6 +272,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 获取连锁订单统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/partnerCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerCount($body)
+    {
+        return $this->restful("POST", "/partner/partnerCount", $body);
+    }
+
+    /**
      * 获取指定连锁订单列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/ordersAction.md
      * @param array $body 入参类型
@@ -269,6 +291,28 @@ class SettlementSdk extends SdkBase
     public function partnerOrders($body)
     {
         return $this->restful("POST", "/partner/orders", $body);
+    }
+
+    /**
+     * 预生成对账单下的项目列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ProjectController/buildAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectBuild($body)
+    {
+        return $this->restful("POST", "/project/build", $body);
+    }
+
+    /**
+     * 获取对账单项目分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ProjectController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectPaging($body)
+    {
+        return $this->restful("POST", "/project/paging", $body);
     }
 
     /**
@@ -381,14 +425,4 @@ class SettlementSdk extends SdkBase
         return $this->restful("POST", "/settlement/updateSettlementStatus", $body);
     }
 
-    /**
-     * 导出指定对账单内商品列表接口
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/exportStatementGoodsAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function exportStatementGoods($body)
-    {
-        return $this->restful("POST", "/settlement/exportStatementGoods", $body);
-    }
 }
