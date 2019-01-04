@@ -237,4 +237,15 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/project/paging", $body);
     }
+
+    /**
+     * 获取连锁订单统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/partnerCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerCount($body)
+    {
+        return $this->restful("POST", "/partner/partnerCount", $body);
+    }
 }
