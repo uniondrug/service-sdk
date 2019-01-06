@@ -107,7 +107,7 @@ class Request
         if ($this->response->hasError()) {
             $this->logger->error("[d={$this->response->getDuration()}]SDK请求失败 - {$this->response->getError()}");
         } else {
-            $this->logger->info("[d={$this->response->getDuration()}]SDK请求成功");
+            $this->logger->debug("[d={$this->response->getDuration()}]SDK请求成功");
         }
         return $this->response;
     }
@@ -125,7 +125,7 @@ class Request
         try {
             $options = $this->optionsBuilder($extra, $body, $query);
             // 1. logger
-            $this->logger->debug("SDK准备以{{$method}}请求{{$uri}} - ".json_encode($options, true));
+            $this->logger->debug("SDK准备以{{$method}}请求{{$uri}}");
             // 2. initialize
             $this->requestMethod = $method;
             $this->requestUri = $uri;

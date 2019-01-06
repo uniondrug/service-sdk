@@ -48,6 +48,7 @@ class RequestHttp
             self::$client = new Client();
         }
         // 3. 执行HTTP请求
+        $this->request->logger->info("SDK第{{$offset}}次请求{{$url}}");
         try {
             // 4. 标准请求
             $resp = self::$client->request($this->request->requestMethod, $url, $options);
