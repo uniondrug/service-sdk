@@ -26,8 +26,8 @@ class Config
     /**
      * Header定义
      */
-    const REQID_KEY = 'X-Requestid';
-    const REQID_NAME = 'HTTP_X_REQUESTID';
+    const REQID_KEY = 'X-Requested-Id';
+    const REQID_NAME = 'HTTP_X_REQUESTED_ID';
     public $environment;
     public $redisHost = '0.0.0.0';
     public $redisPort = 0;

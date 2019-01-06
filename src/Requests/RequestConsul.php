@@ -52,7 +52,7 @@ class RequestConsul
         // 1. 格式错误
         //    ^([_a-zA-Z0-9\-\.]+)://(\S+)$
         if (preg_match(self::$urlRegexp, $uri, $m) === 0) {
-            $this->logger->debug("请求URL{{$uri}}不合法,不可解析");
+            $this->logger->debug("SDK请求地址{{$uri}}不可解析");
             return false;
         }
         // 2. 完整地址
@@ -62,11 +62,13 @@ class RequestConsul
             'https'
         ];
         if (in_array($scheme, $schemes)) {
-            $this->logger->debug("已是完整URL");
+            $this->logger->debug("SDK以完整地址发起请求");
             return $uri;
         }
         // 3. 构建client
-        self::$urlClient || self::$urlClient = new Client(['timeout' => $this->config->consulApiTimeout]);
+        self::$urlClient || self::$urlClient = new Client([
+            'timeout' => $this->config->consulApiTimeout,
+        ]);
         // 4. 从ConsulApi提取
         if ($this->config->consulApiEnable) {
             $apiBegin = microtime(true);
@@ -85,7 +87,7 @@ class RequestConsul
                 $url = "{$apiAddressData[$offset]['ServiceAddress']}:{$apiAddressData[$offset]['ServicePort']}";
                 // 4.3 not found
                 if ($url === '') {
-                    throw new SdkException("注册服务不合法");
+                    throw new SdkException("无效的注册服务");
                 }
                 // 4.4 return
                 //     http
@@ -99,10 +101,10 @@ class RequestConsul
                 }
                 $url = "{$url}/{$m[2]}";
                 $duration = sprintf("%.06f", microtime(true) - $apiBegin);
-                $this->logger->debug("用时{{$duration}}秒获得{{$url}}地址");
+                $this->logger->debug("[d={$duration}]SDK获得{{$url}}地址");
                 return $url;
             } catch(\Throwable $e) {
-                $this->logger->error("通过{{$apiAddress}}获取地址服务地址失败 - {$e->getMessage()}");
+                $this->logger->error("SDK以{{$apiAddress}}获取服务地址失败 - {$e->getMessage()}");
             }
             return false;
         }

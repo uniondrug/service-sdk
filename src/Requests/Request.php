@@ -86,12 +86,15 @@ class Request
         $this->cacheDeadline = $cacheDeadline;
         $this->retryTimes = $retryTimes;
         // 2. request id
-        if (isset($_SERVER[Config::REQID_NAME]) && $_SERVER[Config::REQID_NAME] !== '') {
-            $this->requestId = $_SERVER[Config::REQID_NAME];
-        } else {
-            $this->requestId = uniqid();
-            $_SERVER[Config::REQID_NAME] = $this->requestId;
-        }
+        $reqKey = strtoupper(Config::REQID_KEY);
+        $reqName = strtoupper(Config::REQID_NAME);
+        $requestId = isset($_SERVER[$reqKey]) ? $_SERVER[$reqKey] : null;
+        $requestId || $requestId = isset($_SERVER[$reqName]) ? $_SERVER[$reqName] : null;
+        $requestId || $requestId = uniqid('req');
+        $this->requestId = $requestId;
+        // 3. assign server
+        $_SERVER[$reqKey] = $requestId;
+        $_SERVER[$reqName] = $requestId;
     }
 
     /**
@@ -102,9 +105,9 @@ class Request
     {
         $this->response->end();
         if ($this->response->hasError()) {
-            $this->logger->error("SDK用时{{$this->response->getDuration()}}秒完请求失败 - {$this->response->getError()}");
+            $this->logger->error("[d={$this->response->getDuration()}]SDK请求失败 - {$this->response->getError()}");
         } else {
-            $this->logger->info("SDK用时{{$this->response->getDuration()}}秒完成请求");
+            $this->logger->info("[d={$this->response->getDuration()}]SDK请求成功");
         }
         return $this->response;
     }
@@ -122,7 +125,7 @@ class Request
         try {
             $options = $this->optionsBuilder($extra, $body, $query);
             // 1. logger
-            $this->logger->debug("SDK准备以{{$method}}请求{{$uri}}");
+            $this->logger->debug("SDK准备以{{$method}}请求{{$uri}} - ".json_encode($options, true));
             // 2. initialize
             $this->requestMethod = $method;
             $this->requestUri = $uri;
@@ -197,9 +200,15 @@ class Request
         return $options;
     }
 
+    /**
+     * 透传Headers
+     * @param array $options
+     * @return array
+     */
     public function optionsMerger(array $options)
     {
         $options['headers'][Config::REQID_KEY] = $this->requestId;
+        $options['headers'][Config::REQID_NAME] = $this->requestId;
         return $options;
     }
 }
