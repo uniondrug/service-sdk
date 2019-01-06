@@ -250,6 +250,39 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取销售清单分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/saleGoodsPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getSaleGoodsPaging($body)
+    {
+        return $this->restful("POST", "/bill/saleGoodsPaging", $body);
+    }
+
+    /**
+     * 提交开票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/submitBillAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function submitBill($body)
+    {
+        return $this->restful("POST", "/bill/submitBill", $body);
+    }
+
+    /**
+     * 获取开票信息检测结果
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBillCheckResult($body)
+    {
+        return $this->restful("POST", "/bill/check", $body);
+    }
+
+    /**
      * 获取连锁订单统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/partnerCountAction.md
      * @param array $body 入参类型
