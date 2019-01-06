@@ -36,12 +36,12 @@ class RequestHttp
      */
     public function send(array $options, string $url, int $offset = 1)
     {
-        $this->request->logger->info("[{$this->request->requestId}][retry={$offset}]开始请求");
+        $this->request->logger->debug("SDK第{{$offset}}次请求");
         $this->request->response->setUrl($url);
         // 1. url allowed
         if (preg_match(self::$urlRegexp, $url) === 0) {
-            $this->request->response->setInvalidUrlError("地址'{$url}'无效");
-            $this->request->logger->error("[{$this->request->requestId}][retry={$offset}][url={$url}]URL地址无效, 退出请求");
+            $this->request->response->setInvalidUrlError("无效的SDK地址");
+            $this->request->logger->error("无效的SDK地址,退出请求");
             return self::RETRY_NO;
         }
         // 2. HTTP对象
@@ -65,12 +65,12 @@ class RequestHttp
             $contents = (string) $stream->getContents();
             $contents = preg_replace("/\r|\n/", "", $contents);
             $this->request->response->setContents($contents, false);
-            $this->request->logger->info("[{$this->request->requestId}][retry={$offset}][url={$url}]请求成功 - {$contents}");
+            $this->request->logger->info("SDK请求成功");
             return self::RETRY_NO;
         } catch(\Throwable $e) {
             $message = preg_replace("/\r|\n/", "", $e->getMessage());
             // 8. 失败
-            $this->request->logger->error("[{$this->request->requestId}][retry={$offset}][url={$url}]请求失败 - {$message}");
+            $this->request->logger->error("SDK第{{$offset}}次请求失败 - {$message}");
             // 9. 状态位
             $code = $e->getCode();
             $codes = [

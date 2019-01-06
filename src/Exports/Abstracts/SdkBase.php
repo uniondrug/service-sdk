@@ -60,7 +60,7 @@ abstract class SdkBase implements SdkInterface
      * @param Config           $config
      * @throws SdkException
      */
-    final public function __construct(AdapterInterface $logger, Config $config)
+    final public function __construct($logger, Config $config)
     {
         if ($this->serviceName === null) {
             throw new SdkException("property of '".get_class($this)."::\$serviceName' not defined.");
@@ -75,7 +75,7 @@ abstract class SdkBase implements SdkInterface
      * @param Config           $config
      * @return SdkInterface
      */
-    final public static function factory(AdapterInterface $logger, Config $config)
+    final public static function factory($logger, Config $config)
     {
         $key = static::class;
         if (!isset(self::$serviceFactories[$key])) {

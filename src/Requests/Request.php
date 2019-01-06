@@ -77,7 +77,7 @@ class Request
      * @param int              $cacheDeadline
      * @param int              $retryTimes
      */
-    public function __construct(AdapterInterface $logger, Config $config, int $cacheDeadline, int $retryTimes)
+    public function __construct($logger, Config $config, int $cacheDeadline, int $retryTimes)
     {
         // 1. initialize
         $this->response = new Response();
@@ -102,9 +102,9 @@ class Request
     {
         $this->response->end();
         if ($this->response->hasError()) {
-            $this->logger->error("[{$this->requestId}][duration={$this->response->getDuration()}]完成SDK请求 - {$this->response->getError()}.");
+            $this->logger->error("SDK用时{{$this->response->getDuration()}}秒完请求失败 - {$this->response->getError()}");
         } else {
-            $this->logger->info("[{$this->requestId}][duration={$this->response->getDuration()}]完成SDK请求.");
+            $this->logger->info("SDK用时{{$this->response->getDuration()}}秒完成请求");
         }
         return $this->response;
     }
@@ -122,7 +122,7 @@ class Request
         try {
             $options = $this->optionsBuilder($extra, $body, $query);
             // 1. logger
-            $this->logger->info("[{$this->requestId}][begin][{$method} {$uri}]准备SDK请求 - ".json_encode($options, JSON_UNESCAPED_UNICODE));
+            $this->logger->debug("SDK准备以{{$method}}请求{{$uri}}");
             // 2. initialize
             $this->requestMethod = $method;
             $this->requestUri = $uri;
@@ -140,7 +140,7 @@ class Request
             }
             $this->requestUrl = self::$consulRequest->buildUrl($this->requestUri);
             if ($this->requestUrl === false) {
-                $this->response->setInvalidUrlError("计算服务地址失败");
+                $this->response->setInvalidUrlError("SDK计算请求地址失败");
                 return;
             }
             // 5. from service
@@ -191,8 +191,8 @@ class Request
         $options['headers'] = isset($options['headers']) && is_array($options['headers']) ? $options['headers'] : [];
         // 5. user agents
         if (!isset($options['headers']['User-Agent'])) {
+            $options['headers']['User-Agent'] = $this->config->userAgent;
         }
-        $options['headers']['User-Agent'] = $this->config->userAgent;
         // n. return
         return $options;
     }

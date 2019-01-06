@@ -35,7 +35,7 @@ class RequestConsul
      * @param Config           $config
      * @param string           $requestId
      */
-    public function __construct(AdapterInterface $logger, Config $config, string $requestId)
+    public function __construct($logger, Config $config, string $requestId)
     {
         $this->logger = $logger;
         $this->config = $config;
@@ -52,7 +52,7 @@ class RequestConsul
         // 1. 格式错误
         //    ^([_a-zA-Z0-9\-\.]+)://(\S+)$
         if (preg_match(self::$urlRegexp, $uri, $m) === 0) {
-            $this->logger->error("[{$this->requestId}][uri={$uri}]请求地址不合法,不可解析服务地址");
+            $this->logger->debug("请求URL{{$uri}}不合法,不可解析");
             return false;
         }
         // 2. 完整地址
@@ -62,7 +62,7 @@ class RequestConsul
             'https'
         ];
         if (in_array($scheme, $schemes)) {
-            $this->logger->info("[{$this->requestId}][uri={$uri}]已是完整URL地址");
+            $this->logger->debug("已是完整URL");
             return $uri;
         }
         // 3. 构建client
@@ -99,17 +99,17 @@ class RequestConsul
                 }
                 $url = "{$url}/{$m[2]}";
                 $duration = sprintf("%.06f", microtime(true) - $apiBegin);
-                $this->logger->info("[{$this->requestId}][register={$apiAddress}][duration={$duration}]读取到服务地址 - {$url}");
+                $this->logger->debug("用时{{$duration}}秒获得{{$url}}地址");
                 return $url;
             } catch(\Throwable $e) {
-                $this->logger->error("[{$this->requestId}][register={$apiAddress}]读取服务失败 - {$e->getMessage()}");
+                $this->logger->error("通过{{$apiAddress}}获取地址服务地址失败 - {$e->getMessage()}");
             }
             return false;
         }
         // 5. 返回DNS
         $host = "{$m[1]}.{$this->config->consulUrlSuffix}";
         $url = "{$this->config->consulUrlProtocol}://{$host}/{$m[2]}";
-        $this->logger->info("[{$this->requestId}][host={$host}]生成用于DNS解析的地址 - ".$url);
+        $this->logger->debug("服务{{$host}}生成用于DNS解析的{{$url}}地址");
         return $url;
     }
 }

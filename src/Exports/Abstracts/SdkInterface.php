@@ -19,5 +19,5 @@ interface SdkInterface
      * @param Config           $config
      * @return SdkInterface
      */
-    public static function factory(AdapterInterface $logger, Config $config);
+    public static function factory($logger, Config $config);
 }

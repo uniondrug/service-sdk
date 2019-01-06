@@ -42,7 +42,7 @@ class Restful
      * @param AdapterInterface $logger
      * @param Config           $config
      */
-    final public function __construct(AdapterInterface $logger, Config $config)
+    final public function __construct($logger, Config $config)
     {
         $this->logger = $logger;
         $this->config = $config;

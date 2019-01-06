@@ -28,7 +28,7 @@ abstract class SdkEntrypoint
      */
     private $logger;
 
-    public function __construct(AdapterInterface $logger, Config $config)
+    public function __construct($logger, Config $config)
     {
         $this->logger = $logger;
         $this->config = $config;

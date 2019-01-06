@@ -26,8 +26,8 @@ class Config
     /**
      * Header定义
      */
-    const REQID_KEY = 'UDSDK-REQID';
-    const REQID_NAME = 'HTTP_UDSDK_REQID';
+    const REQID_KEY = 'X-Requestid';
+    const REQID_NAME = 'HTTP_X_REQUESTID';
     public $environment;
     public $redisHost = '0.0.0.0';
     public $redisPort = 0;
@@ -53,7 +53,7 @@ class Config
     public $compatiables = [];
     private $sdkDomain = [
         'production' => 'uniondrug.cn',
-        'release' => 'turboradio.cn',
+        'release' => 'uniondrug.net',
         'testing' => 'test.dovecot.cn',
         'development' => 'dev.dovecot.cn',
     ];

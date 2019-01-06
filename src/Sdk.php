@@ -124,6 +124,7 @@ class Sdk
                     return self::$magicGetHistory[$name];
                 }
             }
+            throw new SdkException($e->getMessage());
             // 4. 出错
             throw new SdkException("can not load '{$name}' sdk by property call '\$this->serviceSdk->{$name}'.", $e->getCode(), $e->getPrevious());
         }
