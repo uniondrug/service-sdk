@@ -63,6 +63,18 @@ class SchemeSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取连锁补贴金额
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/SchemeController/partnerAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function partner($body)
+    {
+        return $this->restful(static::METHOD_POST, "/scheme/partner", $body);
+    }
+
+
+    /**
      * 停用方案
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/SchemeController/stopAction.md
      * @param array $body
