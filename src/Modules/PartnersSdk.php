@@ -25,7 +25,7 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
      */
     public function callbackOrder($body)
     {
-        return $this->restful(static::METHOD_POST, "/order/callback", $body);
+        return $this->restful(static::METHOD_POST, "/order/orderInsert", $body);
     }
 
     /**
@@ -58,7 +58,7 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
      */
     public function getFreight($body)
     {
-        return $this->restful(static::METHOD_POST, "/order/getFreight", $body);
+        return $this->restful(static::METHOD_POST, "/Freight/getFreight", $body);
     }
 
     /**
@@ -80,7 +80,7 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
      */
     public function getExpress($body)
     {
-        return $this->restful(static::METHOD_POST, "/order/getExpress", $body);
+        return $this->restful(static::METHOD_POST, "/Express/getExpress", $body);
     }
 
     /**
