@@ -1089,7 +1089,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
     * partnerIds读取商户信息
-    * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/partnerIdsAction.md
+    * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/partnerIdsAction.md
     * @param array $body
     * @return ClientResponseInterface
     */
@@ -1100,7 +1100,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 通过partnerId读取下级商户集合
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/listAllStoreAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllStoreAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
@@ -1111,13 +1111,35 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 通过默认编码获取组织
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/internalCodeInfoAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalCodeInfoAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
     public function internalCodeInfo($body)
     {
         return $this->restful(static::METHOD_POST, "/organizebase/internalcodeinfo", $body);
+    }
+
+    /**
+     * 获取连锁集合的资金池
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/fundPoolsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function partnersFundPools($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/fundpools", $body);
+    }
+
+    /**
+     * 获取连锁集合的人员数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/sumMemberLogicAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function assistantsSumMember($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/summember", $body);
     }
 
 
