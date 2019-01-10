@@ -1142,5 +1142,16 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/assistants/summember", $body);
     }
 
+    /**
+     * ids查询费率集合
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/idsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function balanceIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/ids", $body);
+    }
+
 
 }
