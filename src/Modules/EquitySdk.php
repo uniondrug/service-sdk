@@ -452,4 +452,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/invalid', $body);
     }
+
+    /**
+     * 通过itemId获取对应的换药权益
+     * @param $body
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailItemAction.md
+     */
+    public function detailItem($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/detailitem', $body);
+    }
 }
