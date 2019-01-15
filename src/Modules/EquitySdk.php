@@ -473,6 +473,5 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     public function detailItem($body)
     {
         return $this->restful(static::METHOD_POST, '/equity/detailitem', $body);
->>>>>>> fed7966313a52ef2a800655916bdf20003d3905a
     }
 }
