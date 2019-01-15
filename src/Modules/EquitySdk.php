@@ -428,4 +428,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/projectmember', $body);
     }
+
+    /**
+     * 获取一个用户在权益限制金额
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/limitAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function equityLimit($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/limit', $body);
+    }
 }
