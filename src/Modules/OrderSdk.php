@@ -216,7 +216,16 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
 
 
 
-
+    /**
+     * 获取门店订单统计数据
+     * @link https://uniondrug.coding.net/p/module.order/git/tree/development/docs/api/OrderController/getStatisticByStoreIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderGetStatisticByStoreId($body)
+    {
+        return $this->restful("POST", "/order/getStatisticByStoreId", $body);
+    }
 
 
 

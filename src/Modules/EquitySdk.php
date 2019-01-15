@@ -439,4 +439,40 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/limit', $body);
     }
+
+    /**
+     * 用户消费数据列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityConsumeController/memberEquityTypeAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function memberEquityType($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/consume/memberequitytype', $body);
+    }
+
+
+    /**
+     * 设置权益为失效状态
+     * 入参只需要一个，使用优先级为 guaranteeId equityId 只有未激活和已激活状态的保障才可以设为失效状态
+     * @param $body
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/InvalidAction.md
+     */
+    public function invalid($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/invalid', $body);
+    }
+
+    /**
+     * 通过itemId获取对应的换药权益
+     * @param $body
+     * @return ClientResponseInterface
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailItemAction.md
+     */
+    public function detailItem($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/detailitem', $body);
+>>>>>>> fed7966313a52ef2a800655916bdf20003d3905a
+    }
 }
