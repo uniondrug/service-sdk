@@ -107,35 +107,35 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 商品条形码查询
-     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodController/searchKeywords.md
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodsController/searchKeywords.md
      * @param array $body
      * @return ClientResponseInterface
      */
     public function searchByCode($body)
     {
-        return $this->restful(static::METHOD_POST, "/good/searchByCode", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchByCode", $body);
     }
 
     /**
      * 商品内码查询（多个）
-     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodController/searchByNos.md
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodsController/searchByNos.md
      * @param array $body
      * @return ClientResponseInterface
      */
     public function searchByNos($body)
     {
-        return $this->restful(static::METHOD_POST, "/good/searchByNos", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchByNos", $body);
     }
 
     /**
      * 商品内码查询（单个）
-     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodController/searchByNo.md
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodsController/searchByNo.md
      * @param array $body
      * @return ClientResponseInterface
      */
     public function searchByNo($body)
     {
-        return $this->restful(static::METHOD_POST, "/good/searchByNo", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchByNo", $body);
     }
 
 
