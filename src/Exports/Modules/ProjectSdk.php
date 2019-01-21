@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2018-12-14
- * @time   Fri, 14 Dec 2018 17:39:25 +0800
+ * @date   2019-01-21
+ * @time   Mon, 21 Jan 2019 14:08:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -359,6 +359,17 @@ class ProjectSdk extends SdkBase
     public function getGroupList($body)
     {
         return $this->restful("POST", "/group/list", $body);
+    }
+
+    /**
+     * 根据项目id 获取分组列表带分页
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupPaging($body)
+    {
+        return $this->restful("POST", "/group/paging", $body);
     }
 
     /**
