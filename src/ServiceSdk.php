@@ -51,6 +51,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\DeliverSdk          $deliver                       药联到家配置服务
  * @property Modules\CarSdk              $car                           车辆服务
  * @property Modules\IdCardSdk           $idCard                        身份证服务
+ * @property Modules\WxMessageSdk        $wxMessage                     微信消息服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
