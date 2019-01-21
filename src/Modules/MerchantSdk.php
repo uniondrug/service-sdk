@@ -884,7 +884,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function addStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/add", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/add", $body);
     }
 
     /**
@@ -895,7 +895,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function infoStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/info", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/info", $body);
     }
 
     /**
@@ -906,7 +906,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function editStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/edit", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/edit", $body);
     }
 
     /**
@@ -917,7 +917,18 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function pagingStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/paging", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/paging", $body);
+    }
+
+    /**
+     * 门店图片删除
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/delAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delStoreImages($body)
+    {
+        return $this->restful(static::METHOD_POST, "/storeimages/del", $body);
     }
 
 
@@ -930,7 +941,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      */
     public function listsStoreImages($body)
     {
-        return $this->restful(static::METHOD_POST, "/storesimages/lists", $body);
+        return $this->restful(static::METHOD_POST, "/storeimages/lists", $body);
     }
 
     /**
@@ -999,5 +1010,148 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/organizebase/infoindependent", $body);
     }
+
+    /**
+     * 批量关闭状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusEndAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusEnd($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editstatusend", $body);
+    }
+
+    /**
+     * 批量开启状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusStartAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editStatusStart($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editstatusstart", $body);
+    }
+
+    /**
+     * id查询费率
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/detailAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function detailBalance($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/detail", $body);
+    }
+    /**
+     * 统计特定组织下的数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ccountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function countOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/count", $body);
+    }
+
+    /**
+     * 统计特定类型下的组织数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/countTypeAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function countTypeOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/counttype", $body);
+    }
+
+    /**
+     * 统计特定类型下组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listAllOrganize($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listall", $body);
+    }
+
+    /**
+     * 修改所属上级组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editParentIdAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editParentId($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editparentid", $body);
+    }
+
+    /**
+    * partnerIds读取商户信息
+    * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/partnerIdsAction.md
+    * @param array $body
+    * @return ClientResponseInterface
+    */
+    public function partnerIdsOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/partnerids", $body);
+    }
+
+    /**
+     * 通过partnerId读取下级商户集合
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllStoreAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listAllStoreOrgabuzeBase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listallstore", $body);
+    }
+
+    /**
+     * 通过默认编码获取组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalCodeInfoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function internalCodeInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/internalcodeinfo", $body);
+    }
+
+    /**
+     * 获取连锁集合的资金池
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/fundPoolsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function partnersFundPools($body)
+    {
+        return $this->restful(static::METHOD_POST, "/partners/fundpools", $body);
+    }
+
+    /**
+     * 获取连锁集合的人员数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/sumMemberLogicAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function assistantsSumMember($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/summember", $body);
+    }
+
+    /**
+     * ids查询费率集合
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/idsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function balanceIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/balance/ids", $body);
+    }
+
 
 }

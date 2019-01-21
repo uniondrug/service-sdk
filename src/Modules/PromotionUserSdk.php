@@ -203,4 +203,70 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/proxy/changeStatus", $body);
     }
+
+    /**
+     * 获取工业列表
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/getMerchantPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMerchantPaging($body)
+    {
+        return $this->restful("POST", "/merchant/getMerchantPaging", $body);
+    }
+
+    /**
+     * 改变工业用户审核状态
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/changeMerchantStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeMerchantStatus($body)
+    {
+        return $this->restful("POST", "/merchant/changeMerchantStatus", $body);
+    }
+
+    /**
+     * 改变工业用户使用状态
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/changeUseStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeMerchantUseStatus($body)
+    {
+        return $this->restful("POST", "/merchant/changeMerchantUseStatus", $body);
+    }
+
+    /**
+     * 获取工业列表
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/getMerchantListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMerchantList($body)
+    {
+        return $this->restful("POST", "/merchant/getMerchantList", $body);
+    }
+
+    /**
+     * 获取工业开票信息
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/getMerchantInvoiceInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMerchantInvoiceInfo($body)
+    {
+        return $this->restful("POST", "/merchant/getMerchantInvoiceInfo", $body);
+    }
+
+    /**
+     * 工业用户开票资料编辑
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/editMerchantInvoiceInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editMerchantInvoiceInfo($body)
+    {
+        return $this->restful("POST", "/merchant/editMerchantInvoiceInfo", $body);
+    }
 }

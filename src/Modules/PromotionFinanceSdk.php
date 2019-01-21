@@ -159,4 +159,180 @@ class PromotionFinanceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/report/quota", $body);
     }
+
+    /**
+     * 查看成交次数
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/BillsController/dealTimesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dealTimes($body)
+    {
+        return $this->restful("POST", "/bills/dealTimes", $body);
+    }
+
+    /**
+     * 查看展示次数
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/BillsController/showTimesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function showTimes($body)
+    {
+        return $this->restful("POST", "/bills/showTimes", $body);
+    }
+
+    /**
+     * 查询工业资金信息
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getMerchantFundInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMerchantFundInfo($body)
+    {
+        return $this->restful("POST", "/fund/getMerchantFundInfo", $body);
+    }
+
+    /**
+     * 查询工业充值明细
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getMerchantRechargePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMerchantRechargePaging($body)
+    {
+        return $this->restful("POST", "/fund/getMerchantRechargePaging", $body);
+    }
+
+    /**
+     * 充值详情
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/RechargeController/rechargeDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeDetail($body)
+    {
+        return $this->restful("POST", "/recharge/rechargeDetail", $body);
+    }
+
+    /**
+     * 申请开票
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/applyInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/applyInvoice", $body);
+    }
+
+    /**
+     * 确认申请发票信息
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/makeInvoiceInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function makeInvoiceInfo($body)
+    {
+        return $this->restful("POST", "/invoice/makeInvoiceInfo", $body);
+    }
+
+    /**
+     * 开票列表
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/invoicePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoicePaging($body)
+    {
+        return $this->restful("POST", "/invoice/invoicePaging", $body);
+    }
+
+    /**
+     * 审核开票
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/approveInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/approveInvoice", $body);
+    }
+
+    /**
+     * 确认开票
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/confirmInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function confirmInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/confirmInvoice", $body);
+    }
+
+    /**
+     * 获取开票金额详情
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/getInvoiceAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceAmount($body)
+    {
+        return $this->restful("POST", "/invoice/getInvoiceAmount", $body);
+    }
+
+    /**
+     * 获取开票详情
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/getInvoiceDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceDetail($body)
+    {
+        return $this->restful("POST", "/invoice/getInvoiceDetail", $body);
+    }
+
+    /**
+     * 设置开票金额
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/setInvoiceAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setInvoiceAmount($body)
+    {
+        return $this->restful("POST", "/invoice/setInvoiceAmount", $body);
+    }
+
+    /**
+     * 查询上一个或者下一个充值
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getNearlyRechargeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getNearlyRecharge($body)
+    {
+        return $this->restful("POST", "/fund/getNearlyRecharge", $body);
+    }
+
+    /**
+     * 获取开票流水
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/InvoiceController/invoiceBillsListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceBillsList($body)
+    {
+        return $this->restful("POST", "/invoice/invoiceBillsList", $body);
+    }
+
+    /**
+     * 获取状态符合的企业id
+     * @link https://uniondrug.coding.net/p/module.promotion.finance/git/blob/development/docs/api/FundController/getStatusMerchantIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStatusMerchantIds($body)
+    {
+        return $this->restful("POST", "/fund/getStatusMerchantIds", $body);
+    }
 }

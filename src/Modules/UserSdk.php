@@ -205,6 +205,39 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 创建用户身份证信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/membercards/add.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createMemberCard($body)
+    {
+        return $this->restful(static::METHOD_POST, "/membercards/add", $body);
+    }
+
+    /**
+     * 编辑用户身份证信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/membercards/edit.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editMemberCard($body)
+    {
+        return $this->restful(static::METHOD_POST, "/membercards/edit", $body);
+    }
+
+    /**
+     * 编辑用户身份证信息
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/membercards/edit.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editUnionOpen($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/editunionopen", $body);
+    }
+
+    /**
      * 获取用户默认地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/getDefaultAction.md
      * @param array $body
@@ -260,7 +293,7 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 修改地址
+     * 修改地址状态
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/setStatusAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -269,4 +302,94 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/member/address/setStatus", $body);
     }
+
+    /**
+     * 修改用户手机号
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/editMobileAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editMobile($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/editmobile", $body);
+    }
+
+    /**
+     * 修改用户姓名和证件号
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/editMemberCardsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editMemberCards($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/editmembercards", $body);
+    }
+
+    /**
+     * 清空用户openid 和 unionId
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/uniteOpenidAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function uniteOpenid($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/edituniteopenid", $body);
+    }
+
+    /**
+     * 获取120积分数量
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/aidAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function aidPointSum($body)
+    {
+        return $this->restful(static::METHOD_POST, "/wxmember/aid", $body);
+    }
+
+    /**
+     * 反馈列表
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/FeedbackController/listAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function feedbackList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/feedback/list", $body);
+    }
+
+    /**
+     * 提交反馈记录
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/FeedbackController/submitAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function submitFeedback($body)
+    {
+        return $this->restful(static::METHOD_POST, "/feedback/submit", $body);
+    }
+
+    /**
+     * 用用户id获取用户信息
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberInfoController/idsAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getMemberInfoByMemberIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/memberinfo/ids", $body);
+    }
+
+    /**
+     * 获取地址
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/infoAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getMemberAddressInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/member/address/info", $body);
+    }
+
+
 }

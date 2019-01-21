@@ -498,6 +498,39 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      */
     public function importAddUser($body)
     {
-        return $this->restful(static::METHOD_POST, "/user//import/add", $body);
+        return $this->restful(static::METHOD_POST, "/user/import/add", $body);
+    }
+
+    /**
+     * 获取一个项目的限制
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/project/projectLimitAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function projectLimit($body)
+    {
+        return $this->restful(static::METHOD_POST, '/project/limit', $body);
+    }
+
+    /**
+     * 获取项目的所有限制
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/project/projectLimitAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function projectLimits($body)
+    {
+        return $this->restful(static::METHOD_POST, '/project/limits', $body);
+    }
+
+    /**
+     * 获取用户项目权益数量
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/project/projectLimitAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function userCheck($body)
+    {
+        return $this->restful(static::METHOD_POST, '/user/check/condition', $body);
     }
 }

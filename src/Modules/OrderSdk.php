@@ -102,4 +102,135 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/order/notify", $body);
     }
+
+    /**
+     * 校验erp流水号
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/user/member/login.password.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function checkErp($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/checkErp", $body);
+    }
+
+
+    /**
+     * 物流订单添加
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderLogisticsController/addAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function addOrderLogistics($body)
+    {
+        return $this->restful(static::METHOD_POST, "/orderlogistics/add", $body);
+    }
+
+    /**
+     * 订单号查询物流列表
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderLogisticsController/pagingAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function pagingOrderLogistics($body)
+    {
+        return $this->restful(static::METHOD_POST, "/orderlogistics/paging", $body);
+    }
+
+    /**
+     * 订单号查询物流数量
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/memberStatusCountAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function memberStatusCount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/memberstatuscount", $body);
+    }
+
+    /**
+     * 用户查询物流列表
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/memberStatusListAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function memberStatusList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/memberstatuslist", $body);
+    }
+
+    /**
+     * 订单号退单
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/refundOrderAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function refundOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/refundorder", $body);
+    }
+
+    /**
+     * 订单号查询支付单号
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/getOrderNoAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function getOrderNo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/getorderno", $body);
+    }
+
+    /**
+     * 订单号跟新支付数据
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/editAmountAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function editAmount($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/editamount", $body);
+    }
+
+    /**
+     * 获取orderno集合
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/orderNosAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function orderNos($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/ordernos", $body);
+    }
+
+    /**
+     * 已支付完成后进行撤单
+     * @link https://uniondrug.coding.net/p/module.order/git/blob/development/docs/api/OrderController/cancelRefundAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function cancelRefund($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/cancelrefund", $body);
+    }
+
+
+
+    /**
+     * 获取门店订单统计数据
+     * @link https://uniondrug.coding.net/p/module.order/git/tree/development/docs/api/OrderController/getStatisticByStoreIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderGetStatisticByStoreId($body)
+    {
+        return $this->restful("POST", "/order/getStatisticByStoreId", $body);
+    }
+
+
+
+
+
+
+
 }
