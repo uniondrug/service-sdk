@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-01-21
- * @time   Mon, 21 Jan 2019 14:08:30 +0800
+ * @time   Mon, 21 Jan 2019 16:07:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -241,6 +241,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取唯一兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/cdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCdKey($body)
+    {
+        return $this->restful("POST", "/verify/cdKey", $body);
+    }
+
+    /**
      * 城市维度报表
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/cityAction.md
      * @param array $body 入参类型
@@ -403,6 +414,17 @@ class ProjectSdk extends SdkBase
     public function getProjectPaging($body)
     {
         return $this->restful("POST", "/project/paging", $body);
+    }
+
+    /**
+     * 获取项目类型
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/typeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectType($body)
+    {
+        return $this->restful("POST", "/project/type", $body);
     }
 
     /**
