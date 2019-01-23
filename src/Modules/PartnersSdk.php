@@ -138,5 +138,25 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/goods/searchByNo", $body);
     }
 
+    /**
+     * 商品信息存储redis
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodsController/save.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function saveGoodsRedis($body)
+    {
+        return $this->restful(static::METHOD_POST, "/goods/save", $body);
+    }
 
+    /**
+     * 商品库存存储redis
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/StockController/save.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function saveStockRedis($body)
+    {
+        return $this->restful(static::METHOD_POST, "/stock/save", $body);
+    }
 }
