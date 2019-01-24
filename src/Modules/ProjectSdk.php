@@ -534,14 +534,4 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/user/check/condition', $body);
     }
 
-    /**
-     * 获取项目类型
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/typeAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function getProjectType($body)
-    {
-        return $this->restful(static::METHOD_POST, "/project/type", $body);
-    }
 }
