@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-01-24
- * @time   Thu, 24 Jan 2019 14:51:59 +0800
+ * @time   Thu, 24 Jan 2019 17:43:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -502,6 +502,28 @@ class ProjectSdk extends SdkBase
     public function refuseProject($body)
     {
         return $this->restful("POST", "/project/refuse", $body);
+    }
+
+    /**
+     * 关闭知道获取方式
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setDisableGroupAccess($body)
+    {
+        return $this->restful("POST", "/group/access/disable", $body);
+    }
+
+    /**
+     * 开启指定获取方式
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setEnableGroupAccess($body)
+    {
+        return $this->restful("POST", "/group/access/enable", $body);
     }
 
     /**
