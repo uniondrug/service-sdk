@@ -6,7 +6,9 @@
 namespace Uniondrug\ServiceSdk\Exports;
 
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
@@ -30,6 +32,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
  * @property ProjectSdk         $project
  * @property ProductSdk         $product
  * @property DeliverSdk         $deliver
+ * @property MerchantSdk        $merchant
+ * @property CustomerSdk        $customer
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
