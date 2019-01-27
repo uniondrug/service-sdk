@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-01-24
- * @time   Thu, 24 Jan 2019 17:43:19 +0800
+ * @date   2019-01-27
+ * @time   Sun, 27 Jan 2019 11:14:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -60,6 +60,18 @@ class ProjectSdk extends SdkBase
     public function addGroup($body)
     {
         return $this->restful("POST", "/group/add", $body);
+    }
+
+    /**
+     * 新增接口模式的规则
+     * 只有在开启的时候 才会调一次
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/addGroupInterfaceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addGroupInterface($body)
+    {
+        return $this->restful("POST", "/group/access/interface/add", $body);
     }
 
     /**
@@ -194,6 +206,17 @@ class ProjectSdk extends SdkBase
     public function editGroupActivate($body)
     {
         return $this->restful("POST", "/group/activate/edit", $body);
+    }
+
+    /**
+     * 编辑接口模式的规则
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/editGroupInterfaceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editGroupInterface($body)
+    {
+        return $this->restful("POST", "/group/access/interface/edit", $body);
     }
 
     /**
@@ -505,7 +528,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 关闭知道获取方式
+     * 关闭指定获取方式
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/disableAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
