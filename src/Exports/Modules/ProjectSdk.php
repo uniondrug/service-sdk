@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-01-27
- * @time   Sun, 27 Jan 2019 11:14:05 +0800
+ * @date   2019-01-30
+ * @time   Wed, 30 Jan 2019 17:43:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -72,6 +72,17 @@ class ProjectSdk extends SdkBase
     public function addGroupInterface($body)
     {
         return $this->restful("POST", "/group/access/interface/add", $body);
+    }
+
+    /**
+     * 新增日志
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/LogController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addLog($body)
+    {
+        return $this->restful("POST", "/log/add", $body);
     }
 
     /**
@@ -184,6 +195,28 @@ class ProjectSdk extends SdkBase
     public function disableUser($body)
     {
         return $this->restful("POST", "/user/disable", $body);
+    }
+
+    /**
+     * 导出兑换码sql
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCdCodeBySqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function downCdCodeSql($body)
+    {
+        return $this->restful("POST", "/user/down/cdcode/sql", $body);
+    }
+
+    /**
+     * 权益列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getEquityBySqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function downEquitySql($body)
+    {
+        return $this->restful("POST", "/user/down/equity/sql", $body);
     }
 
     /**
@@ -407,6 +440,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取分组下接口规则列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/getInterfaceListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupInterfaceLists($body)
+    {
+        return $this->restful("POST", "/group/access/interface/lists", $body);
+    }
+
+    /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/listAction.md
      * @param array $body 入参类型
@@ -426,6 +470,17 @@ class ProjectSdk extends SdkBase
     public function getGroupPaging($body)
     {
         return $this->restful("POST", "/group/paging", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/LogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPagingLog($body)
+    {
+        return $this->restful("POST", "/log/paging", $body);
     }
 
     /**
