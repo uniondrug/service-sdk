@@ -159,4 +159,15 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/stock/save", $body);
     }
+
+    /**
+     * 商品热搜前10
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodsController/save.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function searchHotGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, "/goods/searchHotGoods", $body);
+    }
 }
