@@ -102,7 +102,7 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
      */
     public function searchKeywords($body)
     {
-        return $this->restful(static::METHOD_POST, "/good/searchKeywords", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchKeywords", $body);
     }
 
     /**
