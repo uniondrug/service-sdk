@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-01-31
- * @time   Thu, 31 Jan 2019 14:06:53 +0800
+ * @time   Thu, 31 Jan 2019 15:26:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -484,6 +484,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取扫码规则详情
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/getGroupScanDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupScanDetail($body)
+    {
+        return $this->restful("POST", "/group/access/scan/detail", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/LogController/pagingAction.md
      * @param array $body 入参类型
@@ -613,6 +624,28 @@ class ProjectSdk extends SdkBase
     public function setEnableGroupAccess($body)
     {
         return $this->restful("POST", "/group/access/enable", $body);
+    }
+
+    /**
+     * 编辑扫码的方式 通用码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/scanGlobalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setScanGlobal($body)
+    {
+        return $this->restful("POST", "/group/access/scan/edit/global", $body);
+    }
+
+    /**
+     * 编辑扫码的方式 单权益
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/scanSingleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setScanSingle($body)
+    {
+        return $this->restful("POST", "/group/access/scan/edit/single", $body);
     }
 
     /**
