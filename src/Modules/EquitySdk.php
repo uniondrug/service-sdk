@@ -430,6 +430,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 冻结对应权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/projectMemberAction.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function disableEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/equity/disable', $body);
+    }
+
+    /**
      * 获取一个用户在权益限制金额
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/limitAction.md
      * @param $body
