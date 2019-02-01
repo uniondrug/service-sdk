@@ -198,6 +198,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 冻结全部
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/disableAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disableAllUser($body)
+    {
+        return $this->restful("POST", "/user/disableAll", $body);
+    }
+
+    /**
      * 导出兑换码sql
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCdCodeBySqlAction.md
      * @param array $body 入参类型
