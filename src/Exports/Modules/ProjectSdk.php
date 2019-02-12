@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-01-31
- * @time   Thu, 31 Jan 2019 15:26:02 +0800
+ * @date   2019-02-12
+ * @time   Tue, 12 Feb 2019 14:54:57 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -176,6 +176,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 冻结全部
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/disableAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disableAllUser($body)
+    {
+        return $this->restful("POST", "/user/disableAll", $body);
+    }
+
+    /**
      * 禁用/冻结
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/disableAction.md
      * @param array $body 入参类型
@@ -209,7 +220,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 权益列表
+     * 权益列表sql
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getEquityBySqlAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -217,6 +228,17 @@ class ProjectSdk extends SdkBase
     public function downEquitySql($body)
     {
         return $this->restful("POST", "/user/down/equity/sql", $body);
+    }
+
+    /**
+     * 扫码获取sql
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getScanBySqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function downScanSql($body)
+    {
+        return $this->restful("POST", "/user/down/scan/sql", $body);
     }
 
     /**
