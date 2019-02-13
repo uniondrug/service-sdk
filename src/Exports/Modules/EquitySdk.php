@@ -41,6 +41,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 冻结所有权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disableAllEquity($body)
+    {
+        return $this->restful("POST", "/equity/disableAll", $body);
+    }
+
+    /**
      * 禁用接口
      * 禁用指定的权益
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableAction.md
