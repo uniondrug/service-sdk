@@ -605,6 +605,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 暂停全部
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/pauseAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pauseAllUser($body)
+    {
+        return $this->restful("POST", "/user/pauseAll", $body);
+    }
+
+    /**
      * 暂停项目
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/pauseAction.md
      * @param array $body 入参类型
