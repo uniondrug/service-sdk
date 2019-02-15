@@ -19,6 +19,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\TradeinSdk;
 
 /**
  * 基础模块SDK入口
@@ -36,6 +37,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
  * @property MerchantSdk        $merchant
  * @property CustomerSdk        $customer
  * @property EquitySdk          $equity
+ * @property TradeinSdk         $tradein
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
