@@ -53,6 +53,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\IdCardSdk           $idCard                        身份证服务
  * @property Modules\WxMessageSdk        $wxMessage                     微信消息服务
  * @property Modules\MessageTaskSdk      $messageTask                   消息任务服务
+ * @property Modules\TradeinSdk          $tradein                       连锁换新日配置服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
