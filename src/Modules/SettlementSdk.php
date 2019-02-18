@@ -391,4 +391,28 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/project/build", $body);
     }
+
+    /**
+     * 读取配置
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettingController/indexAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function settingIndex($body)
+    {
+        return $this->restful("POST", "/setting/index", $body);
+    }
+
+    /**
+     * 保存配置接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettingController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function settingUpdate($body)
+    {
+        return $this->restful("POST", "/setting/update", $body);
+    }
+
+
 }
