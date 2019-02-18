@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-02-12
- * @time   Tue, 12 Feb 2019 14:54:57 +0800
+ * @date   2019-02-18
+ * @time   Mon, 18 Feb 2019 14:09:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -627,6 +627,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 暂停
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/pauseAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pauseUser($body)
+    {
+        return $this->restful("POST", "/user/pause", $body);
+    }
+
+    /**
      * 拒绝审批
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/refuseAction.md
      * @param array $body 入参类型
@@ -690,6 +701,17 @@ class ProjectSdk extends SdkBase
     public function startProject($body)
     {
         return $this->restful("POST", "/project/start", $body);
+    }
+
+    /**
+     * 开始执行
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/startAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function startUser($body)
+    {
+        return $this->restful("POST", "/user/start", $body);
     }
 
     /**
