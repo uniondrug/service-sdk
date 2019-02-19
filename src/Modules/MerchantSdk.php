@@ -1153,5 +1153,16 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/balance/ids", $body);
     }
 
+    /**
+     * 修改组织直付类型
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/DirectAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function direct($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/direct", $body);
+    }
+
 
 }
