@@ -29,6 +29,17 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过cdKey绑定权益
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/bindEquityByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function bindEquityByCdKey($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/bindEquityByCdKey", $body);
+    }
+
+    /**
      * 获取审批列表
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/project/getApprovalList.md
      * @param array $body
