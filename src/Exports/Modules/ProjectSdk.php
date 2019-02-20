@@ -130,6 +130,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 通过cdKey绑定权益
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/bindEquityByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bindEquityByCdKey($body)
+    {
+        return $this->restful("POST", "/user/bindEquityByCdKey", $body);
+    }
+
+    /**
      * 取消审批
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/cancelAction.md
      * @param array $body 入参类型
