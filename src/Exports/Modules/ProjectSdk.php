@@ -352,6 +352,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取一个未激活权益
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCdKeyByGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCdKeyByGroup($body)
+    {
+        return $this->restful("POST", "/user/getCdKeyByGroup", $body);
+    }
+
+    /**
      * 城市维度报表
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ExportController/cityAction.md
      * @param array $body 入参类型
