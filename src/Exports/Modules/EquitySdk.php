@@ -96,4 +96,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/ids/lists", $body);
     }
+
+    /**
+     * 创建团体权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GroupEquityController/AddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityGroupAdd($body)
+    {
+        return $this->restful("POST", "/equity/group/add", $body);
+    }
 }
