@@ -545,4 +545,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/user/check/condition', $body);
     }
 
+    /**
+     * 获取一个未激活权益
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCdKeyByGroupAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getCdKeyByGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/getCdKeyByGroup", $body);
+    }
+
 }
