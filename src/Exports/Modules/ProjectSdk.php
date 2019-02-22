@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-02-18
- * @time   Mon, 18 Feb 2019 14:09:13 +0800
+ * @date   2019-02-22
+ * @time   Fri, 22 Feb 2019 17:12:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -98,7 +98,7 @@ class ProjectSdk extends SdkBase
 
     /**
      * 用户批量添加
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/addsAction.md
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/freeAddAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -591,6 +591,17 @@ class ProjectSdk extends SdkBase
     public function getProjectType($body)
     {
         return $this->restful("POST", "/project/type", $body);
+    }
+
+    /**
+     * 根据cdkey 获取用户信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/uInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserByCdKey($body)
+    {
+        return $this->restful("POST", "/verify/User/cdKey", $body);
     }
 
     /**
