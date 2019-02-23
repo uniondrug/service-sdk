@@ -315,6 +315,17 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 更新分组权益ID
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/editGroupEquityIdAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editGroupEquityId($body)
+    {
+        return $this->restful(static::METHOD_POST, "/group/editGroupEquityId", $body);
+    }
+
+    /**
      * 删除分组
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/project/group/del.md
      * @param array $body
