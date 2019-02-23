@@ -18,7 +18,7 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'partners';
 
     /**
-     * O2O订单回推
+     * 订单回推
      * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/callback.md
      * @param array $body
      * @return ClientResponseInterface
@@ -26,6 +26,28 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     public function callbackOrder($body)
     {
         return $this->restful(static::METHOD_POST, "/order/orderInsert", $body);
+    }
+
+    /**
+     * 订单回调
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/orderCallback.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function orderCallback($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/orderCallback", $body);
+    }
+
+    /**
+     * 订单重推
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/api/Api/OrderController/orderRepush.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function orderRepush($body)
+    {
+        return $this->restful(static::METHOD_POST, "/order/orderRepush", $body);
     }
 
     /**

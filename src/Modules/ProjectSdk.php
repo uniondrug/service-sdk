@@ -566,5 +566,14 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/user/getCdKeyByGroup", $body);
     }
-
+    /**
+     * 根据cdkey 获取用户信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/uInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserByCdKey($body)
+    {
+        return $this->restful("POST", "/verify/User/cdKey", $body);
+    }
 }
