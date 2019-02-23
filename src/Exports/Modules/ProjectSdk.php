@@ -275,6 +275,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 更新分组权益ID
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/editGroupEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editGroupEquityId($body)
+    {
+        return $this->restful("POST", "/group/editGroupEquityId", $body);
+    }
+
+    /**
      * 编辑接口模式的规则
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/editGroupInterfaceAction.md
      * @param array $body 入参类型
