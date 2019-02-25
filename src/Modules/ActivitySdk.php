@@ -43,6 +43,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 模式详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function detailMode($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/modes/detail', $body);
+    }
+
+    /**
      * 银行卡编码列表
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -76,6 +87,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 项目详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function detailProject($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/project/detail', $body);
+    }
+
+    /**
      * 新建/修改商品
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -106,6 +128,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     public function deleteProjectGoods($body)
     {
         return $this->restful(static::METHOD_POST, '/admin/projectGoods/delete', $body);
+    }
+
+    /**
+     * 商品详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function detailProjectGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/projectGoods/detail', $body);
     }
 
     /**
