@@ -21,39 +21,6 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'activity';
 
     /**
-     * 新建/修改子商品
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function setChildGoods($body)
-    {
-        return $this->restful(static::METHOD_POST, '/admin/childGoods/set', $body);
-    }
-
-    /**
-     * 新建/修改商品
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function setGoods($body)
-    {
-        return $this->restful(static::METHOD_POST, '/admin/goods/set', $body);
-    }
-
-    /**
-     * 子商品关联到主商品
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function associated($body)
-    {
-        return $this->restful(static::METHOD_POST, '/admin/goods/associated', $body);
-    }
-
-    /**
      * 新建/修改模式
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -65,14 +32,25 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 订单退款
+     * 模式列表
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function refund($body)
+    public function listMode($body)
     {
-        return $this->restful(static::METHOD_POST, '/admin/order/refund', $body);
+        return $this->restful(static::METHOD_POST, '/admin/modes/list', $body);
+    }
+
+    /**
+     * 银行卡编码列表
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function listBank($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/bankCode', $body);
     }
 
     /**
@@ -87,14 +65,91 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 主商品关联到项目
+     * 项目列表
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function projectGoods($body)
+    public function projectPaging($body)
     {
-        return $this->restful(static::METHOD_POST, '/admin/project/projectGoods', $body);
+        return $this->restful(static::METHOD_POST, '/admin/project/paging', $body);
+    }
+
+    /**
+     * 新建/修改商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function setProjectGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/projectGoods/set', $body);
+    }
+
+    /**
+     * 项目商品列表
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function viewProjectGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/projectGoods/view', $body);
+    }
+
+    /**
+     * 删除商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function deleteProjectGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/projectGoods/delete', $body);
+    }
+
+    /**
+     * 订单列表
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function orderList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/order/orderList', $body);
+    }
+
+    /**
+     * 订单详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function orderDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/order/detail', $body);
+    }
+
+    /**
+     * 订单--再创权益
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function orderEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/order/equity', $body);
+    }
+
+    /**
+     * 订单退款
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function refund($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/order/refund', $body);
     }
 
     /**
