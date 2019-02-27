@@ -5,6 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Exports;
 
+use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
@@ -38,6 +39,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\TradeinSdk;
  * @property CustomerSdk        $customer
  * @property EquitySdk          $equity
  * @property TradeinSdk         $tradein
+ * @property AiProfitStatisticsSdk $aiProfitStatistics
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
