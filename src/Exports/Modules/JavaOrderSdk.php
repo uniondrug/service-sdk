@@ -27,8 +27,85 @@ class JavaOrderSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function createOrder($body)
+    public function orderCreate($body)
     {
         return $this->restful("POST", "/order/create", $body);
+    }
+
+    /**
+     * 取消订单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCancel($body)
+    {
+        return $this->restful("POST", "/order/cancel", $body);
+    }
+
+    /**
+     * 订单商品退单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundGoods($body)
+    {
+        return $this->restful("POST", "/order/refund/goods", $body);
+    }
+
+    /**
+     * 订单退单服务
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundService($body)
+    {
+        return $this->restful("POST", "/order/refund/service", $body);
+    }
+
+    /**
+     * 订单退款
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCashierRefund($body)
+    {
+        return $this->restful("POST", "/order/cashier/refund", $body);
+    }
+
+    /**
+     * 订单支付
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCashierCreate($body)
+    {
+        return $this->restful("POST", "/order/cashier/create", $body);
+    }
+
+    /**
+     * 订单主订单查询
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryMain($body)
+    {
+        return $this->restful("POST", "/order/query/main", $body);
+    }
+
+    /**
+     * 订单memberId查询主订单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryMember($body)
+    {
+        return $this->restful("POST", "/order/query/member", $body);
     }
 }
