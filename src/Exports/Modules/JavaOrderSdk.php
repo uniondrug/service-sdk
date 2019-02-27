@@ -44,14 +44,14 @@ class JavaOrderSdk extends SdkBase
     }
 
     /**
-     * 订单商品退单
+     * 商品或主表单退单
      * @link
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function orderRefundGoods($body)
+    public function orderRefund($body)
     {
-        return $this->restful("POST", "/order/refund/goods", $body);
+        return $this->restful("POST", "/order/refund", $body);
     }
 
     /**
