@@ -29,4 +29,25 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/filter/equity", $body);
     }
+    /**
+     * 黑名单添加接口
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/addMerchantBlackListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addMerchantBlackList($body)
+    {
+        return $this->restful("POST", "/filter/addmerchantblacklist", $body);
+    }
+
+    /**
+     * 黑名单规则管理接口
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/addRuleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addRule($body)
+    {
+        return $this->restful("POST", "/filter/addrule", $body);
+    }
 }
