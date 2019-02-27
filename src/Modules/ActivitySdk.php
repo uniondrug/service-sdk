@@ -252,6 +252,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 活动手机号验证码注册用户
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function registerMember($body)
+    {
+        return $this->restful(static::METHOD_POST, '/member/register', $body);
+    }
+
+    /**
      * 查询未支付订单
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -318,6 +329,28 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 创建药联订单支付
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createModulePay($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/createModulePay', $body);
+    }
+
+    /**
+     * 药联订单确支付回调确认
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function modulePaid($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/modulePaid', $body);
+    }
+
+    /**
      * 药联订单确认(无自付订单)
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -348,28 +381,6 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     public function sendVoice($body)
     {
         return $this->restful(static::METHOD_POST, '/captcha/sendVoice', $body);
-    }
-
-    /**
-     * 活动注册用户
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function registerMember($body)
-    {
-        return $this->restful(static::METHOD_POST, '/captcha/register', $body);
-    }
-
-    /**
-     * 获取jssdk
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function jssdk($body)
-    {
-        return $this->restful(static::METHOD_POST, '/wx/wx/jssdk', $body);
     }
 
 
