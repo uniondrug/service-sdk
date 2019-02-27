@@ -33,6 +33,28 @@ class JavaOrderSdk extends SdkBase
     }
 
     /**
+     * 订单完成支付
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/orderCreate.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderFinishPay($body)
+    {
+        return $this->restful("POST", "/order/finishpay", $body);
+    }
+
+    /**
+     * 订单支付失败
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/orderCreate.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderFailPay($body)
+    {
+        return $this->restful("POST", "/order/failpay", $body);
+    }
+
+    /**
      * 取消订单
      * @link
      * @param array $body 入参类型
@@ -55,7 +77,7 @@ class JavaOrderSdk extends SdkBase
     }
 
     /**
-     * 订单退单服务
+     * 服务退货流程
      * @link
      * @param array $body 入参类型
      * @return ResponseInterface
