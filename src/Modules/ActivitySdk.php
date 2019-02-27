@@ -76,6 +76,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 复制项目及相关配置
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function copyProject($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/project/copyProject', $body);
+    }
+
+    /**
      * 项目列表
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
