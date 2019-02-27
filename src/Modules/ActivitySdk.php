@@ -208,6 +208,39 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取项目下商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function GetGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/projectGoods/getGoods', $body);
+    }
+
+    /**
+     * 获取项目和城市下商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getCityGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/projectGoods/getCityGoods', $body);
+    }
+
+    /**
+     * 获取商品详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getGoodsInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, '/projectGoods/getGoodsInfo', $body);
+    }
+
+    /**
      * 解析用户
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
