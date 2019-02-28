@@ -33,7 +33,7 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
      * 黑名单添加接口
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/addMerchantBlackListAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function addMerchantBlackList($body)
     {
@@ -44,10 +44,50 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
      * 黑名单规则管理接口
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/addRuleAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function addRule($body)
     {
         return $this->restful("POST", "/filter/addrule", $body);
+    }
+    /**
+     * 读取黑名单列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/listMerchantBlackListAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function listMerchantBlackList($body)
+    {
+        return $this->restful("POST", "/filter/listmerchantblacklist", $body);
+    }
+    /**
+     * 过期黑名单
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/updateStructAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateStruct($body)
+    {
+        return $this->restful("POST", "/filter/updatestruct", $body);
+    }
+    /**
+     * 过期黑名单
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/infoRuleAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function infoRule($body)
+    {
+        return $this->restful("POST", "/filter/inforule", $body);
+    }
+    /**
+     * 导出sql
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/derivedSqlAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function derivedSql($body)
+    {
+        return $this->restful("POST", "/filter/derivedsql", $body);
     }
 }
