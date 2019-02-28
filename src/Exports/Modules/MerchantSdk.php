@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-02-28
- * @time   Thu, 28 Feb 2019 13:56:25 +0800
+ * @time   Thu, 28 Feb 2019 14:40:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1201,7 +1201,7 @@ class MerchantSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function SearchOrganizeBase($body)
+    public function searchOrganizeBase($body)
     {
         return $this->restful("POST", "/organizebase/search", $body);
     }
