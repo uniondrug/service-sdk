@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-02-27
- * @time   Wed, 27 Feb 2019 10:35:40 +0800
+ * @date   2019-03-01
+ * @time   Fri, 01 Mar 2019 17:23:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,5 +71,16 @@ class AiProfitStatisticsSdk extends SdkBase
     public function totalIndex($body)
     {
         return $this->restful("POST", "/total/index", $body);
+    }
+
+    /**
+     * 验证是否在白名单
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/indexAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function validateIndex($body)
+    {
+        return $this->restful("POST", "/validate/index", $body);
     }
 }
