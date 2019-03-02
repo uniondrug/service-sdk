@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-02-28
- * @time   Thu, 28 Feb 2019 14:40:36 +0800
+ * @date   2019-03-02
+ * @time   Sat, 02 Mar 2019 16:37:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -203,6 +203,28 @@ class MerchantSdk extends SdkBase
     public function bankListAccountNumber($body)
     {
         return $this->restful("POST", "/accountnumber/bankList", $body);
+    }
+
+    /**
+     * 统计一个有多少连锁
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainNumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function chainNum($body)
+    {
+        return $this->restful("POST", "/organizebase/chainNum", $body);
+    }
+
+    /**
+     * 查找连锁下有多少门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainStoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function chainStore($body)
+    {
+        return $this->restful("POST", "/organizebase/chainStore", $body);
     }
 
     /**
@@ -1196,14 +1218,25 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 查找连锁
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/SearchAction.md
+     * 更具名称查找连锁
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/searchAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function searchOrganizeBase($body)
     {
         return $this->restful("POST", "/organizebase/search", $body);
+    }
+
+    /**
+     * 查找门店下有多少店员
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/storeAssAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeAss($body)
+    {
+        return $this->restful("POST", "/organizebase/storeAss", $body);
     }
 
     /**
