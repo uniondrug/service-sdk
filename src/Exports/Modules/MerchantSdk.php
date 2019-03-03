@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-02
- * @time   Sat, 02 Mar 2019 16:37:24 +0800
+ * @date   2019-03-03
+ * @time   Sun, 03 Mar 2019 17:33:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -206,7 +206,18 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 统计一个有多少连锁
+     * 查找连锁下的店员id
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainAssAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function chainAss($body)
+    {
+        return $this->restful("POST", "/organizebase/chainAss", $body);
+    }
+
+    /**
+     * 统计一共有多少连锁
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainNumAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
