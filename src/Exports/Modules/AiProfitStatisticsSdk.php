@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-01
- * @time   Fri, 01 Mar 2019 17:23:25 +0800
+ * @date   2019-03-04
+ * @time   Mon, 04 Mar 2019 14:44:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,7 +41,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 连锁首页接口
+     * 店员首页接口
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ClerkController/indexAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -52,7 +52,18 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 连锁首页接口
+     * 店员首页销售排名接口
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ClerkController/indexSalesRankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function clerkIndexSalesRank($body)
+    {
+        return $this->restful("POST", "/clerk/clerkIndexSalesRank", $body);
+    }
+
+    /**
+     * 门店首页接口
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/indexAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -60,6 +71,17 @@ class AiProfitStatisticsSdk extends SdkBase
     public function storeIndex($body)
     {
         return $this->restful("POST", "/store/index", $body);
+    }
+
+    /**
+     * 门店首页销售额排名
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/indexSalesRankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeIndexSalesRank($body)
+    {
+        return $this->restful("POST", "/store/storeIndexSalesRank", $body);
     }
 
     /**
