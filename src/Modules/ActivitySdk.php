@@ -406,6 +406,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 用户完成支付动作(等待支付回调)
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function didPay($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/didPay', $body);
+    }
+
+    /**
      * 发送验证码
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
