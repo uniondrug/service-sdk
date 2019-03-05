@@ -449,5 +449,38 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/captcha/sendVoice', $body);
     }
 
+    /**
+     * 配置商品百分比
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function proportion($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/projectGoods/proportion', $body);
+    }
+
+    /**
+     * 根据memberId,返回用户
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function memberDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/member/memberDetail', $body);
+    }
+
+    /**
+     * 根据memberId,返回用户
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function drawRecord($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/mode/drawRecord', $body);
+    }
+
 
 }
