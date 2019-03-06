@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-05
- * @time   Tue, 05 Mar 2019 17:46:05 +0800
+ * @date   2019-03-06
+ * @time   Wed, 06 Mar 2019 18:51:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -218,6 +218,17 @@ class UserSdk extends SdkBase
     }
 
     /**
+     * 获取带openid 的用户数量
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/getCountHasOpenIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCountHasOpenId($body)
+    {
+        return $this->restful("POST", "/wxmember/count/openid", $body);
+    }
+
+    /**
      * 获取用户默认地址
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/getDefaultAction.md
      * @param array $body 入参类型
@@ -226,6 +237,17 @@ class UserSdk extends SdkBase
     public function getDefaultAddress($body)
     {
         return $this->restful("POST", "/member/address/getDefault", $body);
+    }
+
+    /**
+     * 获取带openid 的用户数量
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/getListHasOpenIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getListHasOpenId($body)
+    {
+        return $this->restful("POST", "/wxmember/list/openid", $body);
     }
 
     /**
