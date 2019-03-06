@@ -4,28 +4,30 @@
  * @date   2018-12-04
  * @time   Tue, 04 Dec 2018 18:29:57 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
+namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Sdk;
+use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\Structs\StructInterface;
 
 /**
  * JavaOrderSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class JavaOrderSdk extends SdkBase
+class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.order.module';
+    protected $serviceName = 'javaModule';
 
     /**
      * 新增订单
      * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/orderCreate.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderCreate($body)
     {
@@ -36,7 +38,7 @@ class JavaOrderSdk extends SdkBase
      * 订单完成支付
      * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/orderCreate.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderFinishPay($body)
     {
@@ -47,7 +49,7 @@ class JavaOrderSdk extends SdkBase
      * 订单支付失败
      * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/orderCreate.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderFailPay($body)
     {
@@ -58,7 +60,7 @@ class JavaOrderSdk extends SdkBase
      * 取消订单
      * @link
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderCancel($body)
     {
@@ -69,7 +71,7 @@ class JavaOrderSdk extends SdkBase
      * 商品或主表单退单
      * @link
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderRefund($body)
     {
@@ -80,7 +82,7 @@ class JavaOrderSdk extends SdkBase
      * 服务退货流程
      * @link
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderRefundService($body)
     {
@@ -91,7 +93,7 @@ class JavaOrderSdk extends SdkBase
      * 订单退款
      * @link
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderCashierRefund($body)
     {
@@ -102,7 +104,7 @@ class JavaOrderSdk extends SdkBase
      * 订单支付
      * @link
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderCashierCreate($body)
     {
@@ -113,7 +115,7 @@ class JavaOrderSdk extends SdkBase
      * 订单主订单查询
      * @link
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderQueryMain($body)
     {
@@ -124,7 +126,7 @@ class JavaOrderSdk extends SdkBase
      * 订单memberId查询主订单
      * @link
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function orderQueryMember($body)
     {
