@@ -468,7 +468,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
      */
     public function memberDetail($body)
     {
-        return $this->restful(static::METHOD_POST, '/admin/member/memberDetail', $body);
+        return $this->restful(static::METHOD_POST, '/member/memberDetail', $body);
     }
 
     /**
@@ -479,7 +479,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
      */
     public function drawRecord($body)
     {
-        return $this->restful(static::METHOD_POST, '/admin/mode/drawRecord', $body);
+        return $this->restful(static::METHOD_POST, '/mode/drawRecord', $body);
     }
 
 
