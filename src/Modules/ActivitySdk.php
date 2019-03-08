@@ -219,14 +219,14 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 获取项目和城市下商品
+     * 获取城市项目
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
      */
-    public function getCityGoods($body)
+    public function getCityProject($body)
     {
-        return $this->restful(static::METHOD_POST, '/projectGoods/getCityGoods', $body);
+        return $this->restful(static::METHOD_POST, '/projectGoods/getCityProject', $body);
     }
 
     /**
@@ -259,7 +259,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
      */
     public function getFromTimes($body)
     {
-        return $this->restful(static::METHOD_POST, '/member/getFromTimes', $body);
+        return $this->restful(static::METHOD_POST, '/member/checkFromTimes', $body);
     }
 
     /**
@@ -270,7 +270,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
      */
     public function getToTimes($body)
     {
-        return $this->restful(static::METHOD_POST, '/member/getToTimes', $body);
+        return $this->restful(static::METHOD_POST, '/member/checkToTimes', $body);
     }
 
     /**
@@ -472,7 +472,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 根据memberId,返回用户
+     * 抽奖记录
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
