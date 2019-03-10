@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-03
- * @time   Sun, 03 Mar 2019 17:33:38 +0800
+ * @date   2019-03-10
+ * @time   Sun, 10 Mar 2019 15:44:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -217,7 +217,7 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 统计一共有多少连锁
+     * 统计全网一共有多少连锁
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainNumAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -236,6 +236,17 @@ class MerchantSdk extends SdkBase
     public function chainStore($body)
     {
         return $this->restful("POST", "/organizebase/chainStore", $body);
+    }
+
+    /**
+     * 统计全网一共有多少门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/clerkNumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function clerkNum($body)
+    {
+        return $this->restful("POST", "/organizebase/clerkNum", $body);
     }
 
     /**
@@ -1248,6 +1259,17 @@ class MerchantSdk extends SdkBase
     public function storeAss($body)
     {
         return $this->restful("POST", "/organizebase/storeAss", $body);
+    }
+
+    /**
+     * 统计全网一共有多少门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/storeNumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeNum($body)
+    {
+        return $this->restful("POST", "/organizebase/storeNum", $body);
     }
 
     /**
