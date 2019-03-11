@@ -23,6 +23,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TradeinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 
 /**
  * 基础模块SDK入口
@@ -43,7 +44,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
  * @property TradeinSdk            $tradein
  * @property AiProfitStatisticsSdk $aiProfitStatistics
  * @property UserSdk               $user
- * @property MessageSdk               $message
+ * @property MessageSdk            $message
+ * @property WxSdk                 $weixin
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
