@@ -45,7 +45,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property AiProfitStatisticsSdk $aiProfitStatistics
  * @property UserSdk               $user
  * @property MessageSdk            $message
- * @property WxSdk                 $weixin
+ * @property WxSdk                 $wx
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint

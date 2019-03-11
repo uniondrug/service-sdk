@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-03-11
- * @time   Mon, 11 Mar 2019 10:03:58 +0800
+ * @time   Mon, 11 Mar 2019 18:15:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -52,17 +52,6 @@ class WxSdk extends SdkBase
     }
 
     /**
-     * 获取标签列表
-     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/TagController/getAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function get($body)
-    {
-        return $this->restful("POST", "/tag/get", $body);
-    }
-
-    /**
      * 绑定标签
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/TagController/getIdListAction.md
      * @param array $body 入参类型
@@ -71,6 +60,17 @@ class WxSdk extends SdkBase
     public function getIdList($body)
     {
         return $this->restful("POST", "/tag/getIdList", $body);
+    }
+
+    /**
+     * 获取标签列表
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/TagController/getAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getTags($body)
+    {
+        return $this->restful("POST", "/tag/get", $body);
     }
 
     /**
@@ -90,7 +90,7 @@ class WxSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function label($body)
+    public function labelTag($body)
     {
         return $this->restful("POST", "/tag/label", $body);
     }
