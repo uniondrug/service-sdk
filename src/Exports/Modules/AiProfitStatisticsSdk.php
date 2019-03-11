@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-03-11
- * @time   Mon, 11 Mar 2019 10:30:21 +0800
+ * @time   Mon, 11 Mar 2019 10:32:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -108,7 +108,7 @@ class AiProfitStatisticsSdk extends SdkBase
 
     /**
      * 用户信息
-     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/isTagAction.md
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/updateIsTagAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
