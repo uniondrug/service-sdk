@@ -710,4 +710,191 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/updateSettlementStatus", $body);
     }
+
+    /**
+     * 添加理赔单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/addClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addClaim($body)
+    {
+        return $this->restful("POST", "/claim/add", $body);
+    }
+
+    /**
+     * 撤销理赔
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cancelClaim($body)
+    {
+        return $this->restful("POST", "/claim/cancel", $body);
+    }
+
+    /**
+     * 提交理赔
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/commitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function commitClaim($body)
+    {
+        return $this->restful("POST", "/claim/commit", $body);
+    }
+
+    /**
+     * 赔付完成
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/completeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function completeClaim($body)
+    {
+        return $this->restful("POST", "/claim/complete", $body);
+    }
+
+    /**
+     * 理赔开票单分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/billPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimBillPaging($body)
+    {
+        return $this->restful("POST", "/claim/billPaging", $body);
+    }
+
+    /**
+     * 理赔单详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimDetail($body)
+    {
+        return $this->restful("POST", "/claim/detail", $body);
+    }
+
+    /**
+     * 商品明细分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/goodsPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimGoodsPaging($body)
+    {
+        return $this->restful("POST", "/claim/goodsPaging", $body);
+    }
+
+    /**
+     * 理赔发票分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/invoicePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimInvoicePaging($body)
+    {
+        return $this->restful("POST", "/claim/invoicePaging", $body);
+    }
+
+    /**
+     * 理赔操作记录分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/logPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimLogPaging($body)
+    {
+        return $this->restful("POST", "/claim/logPaging", $body);
+    }
+
+    /**
+     * 理赔关联订单商品汇总信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/orderGoodsSummaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimOrderGoodsSummary($body)
+    {
+        return $this->restful("POST", "/claim/orderGoodsSummary", $body);
+    }
+
+    /**
+     * 订单汇总分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/orderPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimOrderPaging($body)
+    {
+        return $this->restful("POST", "/claim/orderPaging", $body);
+    }
+
+    /**
+     * 理赔单分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimPaging($body)
+    {
+        return $this->restful("POST", "/claim/paging", $body);
+    }
+
+    /**
+     * 添加/编辑开票时的汇总信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/relateSummaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimRelateSummary($body)
+    {
+        return $this->restful("POST", "/claim/relateSummary", $body);
+    }
+
+    /**
+     * 理赔汇总分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/claimReportPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimReportPaging($body)
+    {
+        return $this->restful("POST", "/claim/reportPaging", $body);
+    }
+
+    /**
+     * 理赔汇总统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/claimReportSummaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimReportSummary($body)
+    {
+        return $this->restful("POST", "/claim/reportSummary", $body);
+    }
+
+    /**
+     * 一键全部添加
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/setClaimNoAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setClaimNoAll($body)
+    {
+        return $this->restful("POST", "/claim/setClaimNoAll", $body);
+    }
+
+    /**
+     * 批量添加理赔单与开票单关联
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/setClaimNoByBillNosAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setClaimNoByBillNos($body)
+    {
+        return $this->restful("POST", "/claim/setClaimNoByBillNos", $body);
+    }
 }
