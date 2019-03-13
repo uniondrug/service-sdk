@@ -482,5 +482,16 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/admin/mode/drawRecord', $body);
     }
 
+    /**
+     * 删除城市
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function deleteProjectCity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/project/deleteProjectCity', $body);
+    }
+
 
 }
