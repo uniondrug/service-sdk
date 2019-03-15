@@ -21,7 +21,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\TradeinSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 
@@ -41,7 +41,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property MerchantSdk           $merchant
  * @property CustomerSdk           $customer
  * @property EquitySdk             $equity
- * @property TradeinSdk            $tradein
+ * @property MarketingSdk          $marketing
  * @property AiProfitStatisticsSdk $aiProfitStatistics
  * @property UserSdk               $user
  * @property MessageSdk            $message
