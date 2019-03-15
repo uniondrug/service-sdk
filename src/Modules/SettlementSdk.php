@@ -897,4 +897,48 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/claim/setClaimNoByBillNos", $body);
     }
+
+    /**
+     * 导出理赔商品
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportGoodsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportClaimGoods($body)
+    {
+        return $this->restful("POST", "/claim/exportGoods", $body);
+    }
+
+    /**
+     * 导出理赔发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportClaimInvoice($body)
+    {
+        return $this->restful("POST", "/claim/exportInvoice", $body);
+    }
+
+    /**
+     * 导出理赔订单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportOrdersAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportClaimOrders($body)
+    {
+        return $this->restful("POST", "/claim/exportOrders", $body);
+    }
+
+    /**
+     * 导出理赔汇总列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportReportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportClaimReport($body)
+    {
+        return $this->restful("POST", "/claim/exportReport", $body);
+    }
 }

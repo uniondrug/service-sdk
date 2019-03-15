@@ -21,6 +21,72 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'activity';
 
     /**
+     * 查询用户参与活动的次数
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getFromTimes($body)
+    {
+        return $this->restful(static::METHOD_POST, '/member/checkFromTimes', $body);
+    }
+
+    /**
+     * 查询用户活动受益次数
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getToTimes($body)
+    {
+        return $this->restful(static::METHOD_POST, '/member/checkToTimes', $body);
+    }
+
+    /**
+     * 获取城市项目
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getCityProject($body)
+    {
+        return $this->restful(static::METHOD_POST, '/projectGoods/getCityProject', $body);
+    }
+
+    /**
+     * 获取用户最新订单
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getMemberLastOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/getMemberLastOrder', $body);
+    }
+
+    /**
+     * 根据memberId,返回用户
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function memberDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/member/memberDetail', $body);
+    }
+
+    /**
+     * 抽奖记录
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function drawRecord($body)
+    {
+        return $this->restful(static::METHOD_POST, '/mode/drawRecord', $body);
+    }
+
+    /**
      * 新建/修改模式
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -252,28 +318,6 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 查询用户参与活动的次数
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function getFromTimes($body)
-    {
-        return $this->restful(static::METHOD_POST, '/member/getFromTimes', $body);
-    }
-
-    /**
-     * 查询用户活动受益次数
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function getToTimes($body)
-    {
-        return $this->restful(static::METHOD_POST, '/member/getToTimes', $body);
-    }
-
-    /**
      * 手机号获取用户
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -461,28 +505,6 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 根据memberId,返回用户
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function memberDetail($body)
-    {
-        return $this->restful(static::METHOD_POST, '/admin/member/memberDetail', $body);
-    }
-
-    /**
-     * 根据memberId,返回用户
-     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
-     * @param array $body
-     * @return ClientResponseInterface
-     */
-    public function drawRecord($body)
-    {
-        return $this->restful(static::METHOD_POST, '/admin/mode/drawRecord', $body);
-    }
-
-    /**
      * 删除城市
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -492,6 +514,8 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/admin/project/deleteProjectCity', $body);
     }
+
+
 
 
 }
