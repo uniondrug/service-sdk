@@ -35,7 +35,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingDrugCreate($body)
+    public function marketingDrugCreate($body)
     {
         return $this->restful("POST", "/marketing/drug/create", $body);
     }
@@ -46,7 +46,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingOrderCreate($body)
+    public function marketingOrderCreate($body)
     {
         return $this->restful("POST", "/marketing/order/create", $body);
     }
@@ -57,7 +57,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingOrderInfo($body)
+    public function marketingOrderInfo($body)
     {
         return $this->restful("POST", "/marketing/order/info", $body);
     }
@@ -68,7 +68,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingOrderIsJoin($body)
+    public function marketingOrderIsJoin($body)
     {
         return $this->restful("POST", "/marketing/order/is/join", $body);
     }
@@ -79,7 +79,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingPlanAdd($body)
+    public function marketingPlanAdd($body)
     {
         return $this->restful("POST", "/marketing/plan/add", $body);
     }
@@ -90,7 +90,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingPlanPartnerDetail($body)
+    public function marketingPlanPartnerDetail($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/detail", $body);
     }
@@ -101,7 +101,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingPlanPartnerStatus($body)
+    public function marketingPlanPartnerStatus($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/status", $body);
     }
@@ -112,7 +112,7 @@ class MarketingSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function MarketingPlaPartnerAdd($body)
+    public function marketingPlaPartnerAdd($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/add", $body);
     }
