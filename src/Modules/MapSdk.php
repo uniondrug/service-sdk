@@ -30,6 +30,17 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 修改链接
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function updateMap($body)
+    {
+        return $this->restful(static::METHOD_POST, "/amap/data/update", $body);
+    }
+
+    /**
      * 经纬度转换
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ConvertController/convertAction.md
      * @param array|StructInterface $body
