@@ -32,7 +32,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 批量添加药品
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/DrugController/createAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/DrugController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -43,7 +43,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 用户参加营销活动下订单接口
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/OrderController/createAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -54,7 +54,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单详情接口
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/OrderController/infoAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/infoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -65,7 +65,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 获取用户是否参加本月换新日活动
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/OrderController/isJoinAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/isJoinAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -76,7 +76,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 新增营销计划
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/MarketingPlanController/addAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -87,7 +87,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 获取该连锁下的营销数据
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/MarketingPlanPartnerController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -98,7 +98,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 获取换新日店铺状态
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/MarketingPlanPartnerController/statusAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/statusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -109,7 +109,7 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 新增营销计划下的连锁
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/MarketingPlanPartnerController/addAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
