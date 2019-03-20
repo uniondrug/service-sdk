@@ -31,112 +31,90 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'marketing';
 
     /**
-     * 新增营销计划
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/MarketingPlanController/addAction.md
+     * 批量添加药品
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/DrugController/createAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
-    public function MarketingPlanAdd($body)
+    public function marketingDrugCreate($body)
+    {
+        return $this->restful("POST", "/marketing/drug/create", $body);
+    }
+
+    /**
+     * 用户参加营销活动下订单接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingOrderCreate($body)
+    {
+        return $this->restful("POST", "/marketing/order/create", $body);
+    }
+
+    /**
+     * 订单详情接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingOrderInfo($body)
+    {
+        return $this->restful("POST", "/marketing/order/info", $body);
+    }
+
+    /**
+     * 获取用户是否参加本月换新日活动
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/isJoinAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingOrderIsJoin($body)
+    {
+        return $this->restful("POST", "/marketing/order/is/join", $body);
+    }
+
+    /**
+     * 新增营销计划
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingPlanAdd($body)
     {
         return $this->restful("POST", "/marketing/plan/add", $body);
     }
 
     /**
      * 获取该连锁下的营销数据
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/MarketingPlanPartnerController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/detailAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
-    public function MarketingPlanPartnerDetail($body)
+    public function marketingPlanPartnerDetail($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/detail", $body);
     }
 
     /**
-     * 新增营销计划下的连锁
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/MarketingPlanPartnerController/addAction.md
+     * 获取换新日店铺状态
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/statusAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
-    public function MarketingPlaPartnerAdd($body)
+    public function marketingPlanPartnerStatus($body)
+    {
+        return $this->restful("POST", "/marketing/plan/partner/status", $body);
+    }
+
+    /**
+     * 新增营销计划下的连锁
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingPlaPartnerAdd($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/add", $body);
-    }
-
-    /**
-     * 批量开启连锁
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/TradeInSwitchController/addAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function TradeInSwitchAdd($body)
-    {
-        return $this->restful("POST", "/trade/in/switch/adds", $body);
-    }
-
-    /**
-     * 批量开启门店
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/TradeInSwitchController/addStoresAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function TradeInSwitchAddStores($body)
-    {
-        return $this->restful("POST", "/trade/in/switch/add/stores", $body);
-    }
-
-    /**
-     * 批量关闭连锁
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/TradeInSwitchController/delAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function TradeInSwitchDel($body)
-    {
-        return $this->restful("POST", "/trade/in/switch/del", $body);
-    }
-
-    /**
-     * 批量关闭门店
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/TradeInSwitchController/delStoresAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function TradeInSwitchDelStores($body)
-    {
-        return $this->restful("POST", "/trade/in/switch/del/stores", $body);
-    }
-
-    /**
-     * 查看信息
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/TradeInSwitchController/getInfoAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function TradeInSwitchGetInfo($body)
-    {
-        return $this->restful("POST", "/trade/in/switch/get/info", $body);
-    }
-
-    /**
-     * 连锁及门店列表
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/TradeInSwitchController/listAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function TradeInSwitchList($body)
-    {
-        return $this->restful("POST", "/trade/in/switch/list", $body);
-    }
-
-    /**
-     * 连锁列表
-     * @link https://uniondrug.coding.net/p/module.marketing/git/tree/development/app/docs/api/TradeInSwitchController/partnerListAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function TradeInSwitchPartnerList($body)
-    {
-        return $this->restful("POST", "/trade/in/switch/partner/list", $body);
     }
 }
