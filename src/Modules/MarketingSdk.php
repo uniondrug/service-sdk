@@ -86,6 +86,17 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过类型查询用户订单
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/typeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingOrderType($body)
+    {
+        return $this->restful("POST", "/marketing/order/type", $body);
+    }
+
+    /**
      * 更新订单信息
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/updateAction.md
      * @param array $body 入参类型
