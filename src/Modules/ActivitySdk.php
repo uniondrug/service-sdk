@@ -515,6 +515,28 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/admin/project/deleteProjectCity', $body);
     }
 
+    /**
+     * 冻结项目资金
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function freezeProjectAmount($body)
+    {
+        return $this->restful(static::METHOD_POST, '/project/freeze', $body);
+    }
+
+    /**
+     * 解冻项目资金
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function unfreezeProjectAmount($body)
+    {
+        return $this->restful(static::METHOD_POST, '/project/unfreeze', $body);
+    }
+
 
 
 
