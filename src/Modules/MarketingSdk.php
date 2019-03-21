@@ -75,6 +75,28 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 查询用户的订单
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/memberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingOrderMember($body)
+    {
+        return $this->restful("POST", "/marketing/order/member", $body);
+    }
+
+    /**
+     * 更新订单信息
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingOrderUpdate($body)
+    {
+        return $this->restful("POST", "/marketing/order/update", $body);
+    }
+
+    /**
      * 新增营销计划
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanController/addAction.md
      * @param array $body 入参类型
