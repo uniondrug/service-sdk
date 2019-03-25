@@ -227,6 +227,17 @@ class OrderSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/order/getStatisticByStoreId", $body);
     }
 
+    /**
+     * 更改订单人员接口
+     * @link https://uniondrug.coding.net/p/module.order/git/tree/development/docs/api/OrderController/addAssistantAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addAssistant($body)
+    {
+        return $this->restful("POST", "/order/addassistant", $body);
+    }
+
 
 
 
