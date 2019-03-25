@@ -269,4 +269,15 @@ class PromotionUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/merchant/editMerchantInvoiceInfo", $body);
     }
+
+    /**
+     * 获取允许推广的工业用户id
+     * @link https://uniondrug.coding.net/p/module.promotion.user/git/blob/development/docs/api/MerchantController/merchantAllowPromotionAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchantAllowPromotion($body)
+    {
+        return $this->restful("POST", "/merchant/merchantAllowPromotion", $body);
+    }
 }
