@@ -1,0 +1,97 @@
+<?php
+/**
+ * 重要说明
+ * 1. 本文件由Postman命令脚本自动生成, 请不要修改, 若需修改
+ *    请通过`php console postman`命令重新生成.
+ * 2. 本脚本在生成时, 依赖所在项目的Controller有 `@Sdk method`定义,
+ *    同时, 项目根目录下的`postman.json`需有`sdk`、`sdkLink`定义
+ * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
+ *    的`src/Exports/Modules`目录下，并发重新发布release版本.
+ * @author PostmanCommand
+ * @date   2019-03-27
+ * @time   Wed, 27 Mar 2019 15:53:54 +0800
+ */
+namespace Uniondrug\ServiceSdk\Exports\Modules;
+
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+
+/**
+ * AiProfitDataSdk
+ * @package Uniondrug\ServiceSdk\Modules
+ */
+class AiProfitDataSdk extends SdkBase
+{
+    /**
+     * 服务名称
+     * 自来`postman.json`文件定义的`sdkService`值
+     * @var string
+     */
+    protected $serviceName = 'aiProfit.data.module';
+
+    /**
+     * 最佳排行
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/AssistantController/bestAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantBestRank($body)
+    {
+        return $this->restful("POST", "/assistant/best", $body);
+    }
+
+    /**
+     * top3排行
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/AssistantController/rankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantRankTopThree($body)
+    {
+        return $this->restful("POST", "/assistant/rank", $body);
+    }
+
+    /**
+     * 费率值
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RatioController/valueAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRatioValue($body)
+    {
+        return $this->restful("POST", "/value", $body);
+    }
+
+    /**
+     * 最佳排行
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/StoreController/bestAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeBestRank($body)
+    {
+        return $this->restful("POST", "/store/best", $body);
+    }
+
+    /**
+     * 门店top3排行
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/StoreController/rankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeRankTopThree($body)
+    {
+        return $this->restful("POST", "/store/rank", $body);
+    }
+
+    /**
+     * 全网数据走势图
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UnionController/trendAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function unionTrend($body)
+    {
+        return $this->restful("POST", "/union/trend", $body);
+    }
+}
