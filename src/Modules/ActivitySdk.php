@@ -15,7 +15,6 @@ use Uniondrug\ServiceSdk\ServiceSdkInterface;
  * 公共服务
  * @package Uniondrug\ServiceSdk\Modules
  */
-
 class ActivitySdk extends Sdk implements ServiceSdkInterface
 {
     protected $serviceName = 'activity';
@@ -516,6 +515,39 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 订单权益列表
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function equityList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/equity/list', $body);
+    }
+
+    /**
+     * 订单权益重发
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function retryEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/equity/retry', $body);
+    }
+
+    /**
+     * 订单补发权益
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function addOrderEquity($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/equity/addOrderEquity', $body);
+    }
+
+    /**
      * 冻结项目资金
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -536,8 +568,6 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/project/unfreeze', $body);
     }
-
-
 
 
 }
