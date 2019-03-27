@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-02-22
- * @time   Fri, 22 Feb 2019 17:12:10 +0800
+ * @date   2019-03-26
+ * @time   Tue, 26 Mar 2019 17:16:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -679,6 +679,17 @@ class ProjectSdk extends SdkBase
     public function pauseUser($body)
     {
         return $this->restful("POST", "/user/pause", $body);
+    }
+
+    /**
+     * 查询项目限制数据
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/limitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectLimit($body)
+    {
+        return $this->restful("POST", "/project/limit", $body);
     }
 
     /**
