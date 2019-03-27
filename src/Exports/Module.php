@@ -5,23 +5,24 @@
  */
 namespace Uniondrug\ServiceSdk\Exports;
 
+use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MessageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementlogSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 
@@ -43,6 +44,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property EquitySdk             $equity
  * @property MarketingSdk          $marketing
  * @property AiProfitStatisticsSdk $aiProfitStatistics
+ * @property AiProfitDataSdk       $aiProfitData
  * @property UserSdk               $user
  * @property MessageSdk            $message
  * @property WxSdk                 $wx
