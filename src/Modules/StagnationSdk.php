@@ -22,10 +22,43 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'stagnation';
 
     /**
-     * 新增权益码
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/CodeController/addAction.md
+     * 批量添加分组信息
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/batchCreateAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
+     */
+    public function batchCreateGroupManage($body)
+    {
+        return $this->restful("POST", "/group/manage/batch/create", $body);
+    }
+
+    /**
+     * 批量添加修改配置（规则）
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/batchUpdateConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function batchUpdateConfigAction($body)
+    {
+        return $this->restful("POST", "/config/batch/update/config", $body);
+    }
+
+    /**
+     * 批量修改分组信息
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/batchUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function batchUpdateGroupManage($body)
+    {
+        return $this->restful("POST", "/group/manage/batch/update", $body);
+    }
+
+    /**
+     * 新增权益码
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function codeAdd($body)
     {
@@ -34,9 +67,9 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 权益码信息详情
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/CodeController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/detailAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function codeDetail($body)
     {
@@ -45,9 +78,9 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 更新权益码数据
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/CodeController/updateAction.md
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function codeUpdate($body)
     {
@@ -55,10 +88,98 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 新增行驶证
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/LicenseController/addAction.md
+     * 新增配置（支持批量）
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/addAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
+     */
+    public function configAdd($body)
+    {
+        return $this->restful("POST", "/config/add", $body);
+    }
+
+    /**
+     * 权益码信息详情
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configDetail($body)
+    {
+        return $this->restful("POST", "/config/detail", $body);
+    }
+
+    /**
+     * 驻店员下的分组
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configList($body)
+    {
+        return $this->restful("POST", "/config/list", $body);
+    }
+
+    /**
+     * 分组下的驻店员
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configPaging($body)
+    {
+        return $this->restful("POST", "/config/paging", $body);
+    }
+
+    /**
+     * 积分列表查询接口
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/getRecordPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRecordPaging($body)
+    {
+        return $this->restful("POST", "/record/get/record/paging", $body);
+    }
+
+    /**
+     * 获取驻店宝分组列表（支持给定参数查询）
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/indexAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupManageIndex($body)
+    {
+        return $this->restful("POST", "/group/manage/index", $body);
+    }
+
+    /**
+     * 获取权益分组占用情况
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/occupyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupManageOccupy($body)
+    {
+        return $this->restful("POST", "/group/manage/occupy", $body);
+    }
+
+    /**
+     * 获取分组详情
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function infoGroupManage($body)
+    {
+        return $this->restful("POST", "/group/manage/info", $body);
+    }
+
+    /**
+     * 新增行驶证
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LicenseController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function licenseAdd($body)
     {
@@ -67,9 +188,9 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 行驶证详情
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/LicenseController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LicenseController/detailAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function licenseDetail($body)
     {
@@ -78,9 +199,9 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 新增驻店员数据统计
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/RecordController/addAction.md
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/addAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function recordAdd($body)
     {
@@ -89,9 +210,9 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 权益查询接口
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/RecordController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/detailAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function recordDetail($body)
     {
@@ -99,10 +220,21 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 驻店员数据统计
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/RecordController/statisticsAction.md
+     * 方法记录列表接口（支持按条件查询）
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/indexAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
+     */
+    public function recordIndex($body)
+    {
+        return $this->restful("POST", "/record/index", $body);
+    }
+
+    /**
+     * 驻店员数据统计
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/statisticsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function recordStatistics($body)
     {
@@ -111,9 +243,9 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 新增驻店员
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/UserController/addAction.md
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function userAdd($body)
     {
@@ -122,9 +254,9 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 驻店员信息详情
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/UserController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/detailAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function userDetail($body)
     {
@@ -132,24 +264,57 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 积分列表查询接口
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/RecordController/getRecordPagingAction.md
+     * 编辑驻店员信息
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/editAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
-    public function getRecordPaging($body)
+    public function userEdit($body)
     {
-        return $this->restful("POST", "/record/get/record/paging", $body);
+        return $this->restful("POST", "/user/edit", $body);
     }
 
     /**
-     * 配置详情
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/tree/development/app/docs/api/RecordController/getRecordPagingAction.md
+     * 获取驻店员发放金额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/giveOutAmountAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
-    public function configDetail($body)
+    public function userGiveOutAmount($body)
     {
-        return $this->restful("POST", "/config/detail", $body);
+        return $this->restful("POST", "/user/give/out/amount", $body);
+    }
+
+    /**
+     * 获取驻店员获取积分
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/givePointAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userGivePoint($body)
+    {
+        return $this->restful("POST", "/user/give/point", $body);
+    }
+
+    /**
+     * 驻店员列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPaging($body)
+    {
+        return $this->restful("POST", "/user/paging", $body);
+    }
+
+    /**
+     * 驻店员状态变更
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userStatus($body)
+    {
+        return $this->restful("POST", "/user/status", $body);
     }
 }
