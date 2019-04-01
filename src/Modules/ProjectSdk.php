@@ -576,4 +576,14 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/verify/User/cdKey", $body);
     }
+    /**
+     * 根据项目id 获取分组列表带分页
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupPaging($body)
+    {
+        return $this->restful("POST", "/group/paging", $body);
+    }
 }
