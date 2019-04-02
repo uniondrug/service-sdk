@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-27
- * @time   Wed, 27 Mar 2019 15:53:54 +0800
+ * @date   2019-04-02
+ * @time   Tue, 02 Apr 2019 09:45:22 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -52,6 +52,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 手动同步
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/AssistantController/taskAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantTask($body)
+    {
+        return $this->restful("POST", "/assistant/task", $body);
+    }
+
+    /**
      * 费率值
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RatioController/valueAction.md
      * @param array $body 入参类型
@@ -82,6 +93,17 @@ class AiProfitDataSdk extends SdkBase
     public function storeRankTopThree($body)
     {
         return $this->restful("POST", "/store/rank", $body);
+    }
+
+    /**
+     * 手动同步
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/StoreController/taskAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeTask($body)
+    {
+        return $this->restful("POST", "/store/task", $body);
     }
 
     /**
