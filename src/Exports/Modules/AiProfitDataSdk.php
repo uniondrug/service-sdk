@@ -30,6 +30,17 @@ class AiProfitDataSdk extends SdkBase
     protected $serviceName = 'aiProfit.data.module';
 
     /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/valueAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addContact($body)
+    {
+        return $this->restful("POST", "/add", $body);
+    }
+
+    /**
      * 最佳排行
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/AssistantController/bestAction.md
      * @param array $body 入参类型
