@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Unions`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-01
- * @time   Mon, 01 Apr 2019 16:31:53 +0800
+ * @date   2019-04-02
+ * @time   Tue, 02 Apr 2019 11:16:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Unions;
 
@@ -29,5 +29,25 @@ class ProjectSdk extends SdkBase
      */
     protected $serviceName = 'project.union';
 
+    /**
+     * 激活权益
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/activateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activate($body)
+    {
+        return $this->restful("POST", "/equity/activate", $body);
+    }
 
+    /**
+     * 根据分组信息创建权益
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createByGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function AddByGroup($body)
+    {
+        return $this->restful("POST", "/equity/group/add", $body);
+    }
 }
