@@ -350,4 +350,15 @@ class StagnationSdk extends SdkBase
     {
         return $this->restful("POST", "/user/status", $body);
     }
+
+    /**
+     * 驻店员列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userList($body)
+    {
+        return $this->restful("POST", "/user/list", $body);
+    }
 }
