@@ -26,8 +26,8 @@ class Config
     /**
      * Header定义
      */
-    const REQID_KEY = 'X-Requested-Id';
-    const REQID_NAME = 'HTTP_X_REQUESTED_ID';
+    const REQID_KEY = 'REQUEST_ID';
+    const REQID_NAME = 'HTTP_REQUEST_ID';
     public $environment;
     public $redisHost = '0.0.0.0';
     public $redisPort = 0;
@@ -77,7 +77,7 @@ class Config
             isset($sdkConfig->consulApiTimeout) && $this->consulApiTimeout = $sdkConfig->consulApiTimeout;
             isset($sdkConfig->consulUrlProtocol) && $this->consulUrlProtocol = $sdkConfig->consulUrlProtocol;
             isset($sdkConfig->consulUrlSuffix) && $this->consulUrlSuffix = $sdkConfig->consulUrlSuffix;
-            isset($sdkConfig->compatiables) && is_array($sdkConfig->compatiables) && $this->compatiables = $redisConfig->compatiables;
+            isset($sdkConfig->compatiables) && is_array($sdkConfig->compatiables) && $this->compatiables = $sdkConfig->compatiables;
         }
         // 2. Redis配置
         if ($redisConfig instanceof PhalconConfig) {
