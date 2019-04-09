@@ -361,4 +361,15 @@ class StagnationSdk extends SdkBase
     {
         return $this->restful("POST", "/user/list", $body);
     }
+
+    /**
+     * 通过stagnationMemberId统计某一列发放记录数
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statisticsUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function statisticsRecordColumn($body)
+    {
+        return $this->restful("POST", "/user/statistics/record/column", $body);
+    }
 }
