@@ -41,12 +41,15 @@ class StagnationSdk extends SdkBase
     }
 
     /**
-     * 批量添加修改配置（规则）
+     * 批量修改配置
+     * 支持禁用/启用单个分组配置
+     * 支持禁用/启用单个用户配置
+     * 支持禁用/启用某分组下的多个用户配置
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/batchUpdateConfigAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function batchUpdateConfigAction($body)
+    public function batchUpdateConfig($body)
     {
         return $this->restful("POST", "/config/batch/update/config", $body);
     }
@@ -250,6 +253,28 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 通过groupManageIds[]统计分组下用户数量
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/statisticsUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function statisticsGroupManageUser($body)
+    {
+        return $this->restful("POST", "/group/manage/statistics/user", $body);
+    }
+
+    /**
+     * 根据grouManageIds[]统计记录表某一列值
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/sumRecordColumnAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sumRecordColumnByGroupManageIds($body)
+    {
+        return $this->restful("POST", "/group/manage/sum/record/column", $body);
+    }
+
+    /**
      * 新增驻店员
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
@@ -324,5 +349,16 @@ class StagnationSdk extends SdkBase
     public function userStatus($body)
     {
         return $this->restful("POST", "/user/status", $body);
+    }
+
+    /**
+     * 驻店员列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userList($body)
+    {
+        return $this->restful("POST", "/user/list", $body);
     }
 }
