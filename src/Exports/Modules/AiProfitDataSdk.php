@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-04-09
- * @time   Tue, 09 Apr 2019 11:30:32 +0800
+ * @time   Tue, 09 Apr 2019 17:58:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,28 @@ class AiProfitDataSdk extends SdkBase
     public function getRatioValue($body)
     {
         return $this->restful("POST", "/value", $body);
+    }
+
+    /**
+     * 最佳排行
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/bestAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerBestRank($body)
+    {
+        return $this->restful("POST", "/partner/best", $body);
+    }
+
+    /**
+     * 门店top3排行
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/rankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerRankTopThree($body)
+    {
+        return $this->restful("POST", "/partner/rank", $body);
     }
 
     /**
