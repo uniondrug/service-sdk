@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-09
- * @time   Tue, 09 Apr 2019 17:58:55 +0800
+ * @date   2019-04-10
+ * @time   Wed, 10 Apr 2019 14:54:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class AiProfitDataSdk extends SdkBase
     public function partnerBestRank($body)
     {
         return $this->restful("POST", "/partner/best", $body);
+    }
+
+    /**
+     * 本月数据
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/monthAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerMonth($body)
+    {
+        return $this->restful("POST", "/partner/month", $body);
     }
 
     /**
