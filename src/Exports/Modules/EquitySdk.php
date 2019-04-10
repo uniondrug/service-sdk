@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-27
- * @time   Wed, 27 Mar 2019 10:31:58 +0800
+ * @date   2019-04-10
+ * @time   Wed, 10 Apr 2019 13:45:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -119,6 +119,17 @@ class EquitySdk extends SdkBase
     public function consumeEquity($body)
     {
         return $this->restful("POST", "/equity/consume", $body);
+    }
+
+    /**
+     * 权益消费列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/consumeListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function consumeList($body)
+    {
+        return $this->restful("POST", "/equity/consume/lists", $body);
     }
 
     /**
