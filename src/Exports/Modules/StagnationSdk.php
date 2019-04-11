@@ -372,4 +372,15 @@ class StagnationSdk extends SdkBase
     {
         return $this->restful("POST", "/user/statistics/record/column", $body);
     }
+
+    /**
+     * 获取驻店员发放记录导出数据
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportUserRecord($body)
+    {
+        return $this->restful("POST", "/record/user/export", $body);
+    }
 }
