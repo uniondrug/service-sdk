@@ -974,4 +974,15 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/claim/errorLogPaging", $body);
     }
+
+    /**
+     * 获取结算单分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStatementsPaging($body)
+    {
+        return $this->restful("POST", "/statements/paging", $body);
+    }
 }
