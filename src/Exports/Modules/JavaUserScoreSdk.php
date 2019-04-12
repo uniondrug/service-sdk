@@ -13,7 +13,7 @@ class JavaUserScoreSdk extends SdkBase
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.uesr.score.module';
+    protected $serviceName = 'java.user.credit';
 
     /**
      * 积分列表
