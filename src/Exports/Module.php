@@ -51,7 +51,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
  * @property MessageSdk            $message
  * @property WxSdk                 $wx
  * @property StagnationSdk         $stagnation
- * @property JavaUserScoreSdk      $javaUserScoreSdk
+ * @property JavaUserScoreSdk      $javaUserScore
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
