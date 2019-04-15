@@ -987,14 +987,14 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 连锁结算月视图
+     * 连锁结算月月视图
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/periodSummaryAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function partnerPeriodSummary($body)
     {
-        return $this->restful("POST", "/partner/PeriodSummary", $body);
+        return $this->restful("POST", "/partner/periodSummary", $body);
     }
 
     /**
@@ -1005,7 +1005,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
      */
     public function partnerSettlementPayMethod($body)
     {
-        return $this->restful("POST", "/partner/partnerPayMethod", $body);
+        return $this->restful("POST", "/partner/settlementPayMethod", $body);
     }
 
     /**
@@ -1017,5 +1017,27 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     public function partnerSettlementTotal($body)
     {
         return $this->restful("POST", "/partner/settlementTotal", $body);
+    }
+
+    /**
+     * 结算订单信息导出（含商品明细）
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementExport($body)
+    {
+        return $this->restful("POST", "/partner/settlementExport", $body);
+    }
+
+    /**
+     * 获取结算流程统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementStatisticsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementStatistics($body)
+    {
+        return $this->restful("POST", "/partner/settlementStatistics", $body);
     }
 }
