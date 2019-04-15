@@ -59,4 +59,16 @@ class JavaUserScoreSdk extends SdkBase
         return $this->restful("POST", "/preAccountRecords/edit/batch
 ", $body);
     }
+
+    /**
+     * 积分统计列表
+     * @param $body
+     *
+     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
+     */
+    public function preAccountRecordsCount($body){
+        return $this->restful("POST", "/preAccountRecords/edit/batch
+", $body);
+    }
+
 }
