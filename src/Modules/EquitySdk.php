@@ -518,4 +518,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/equity/updateavailableto', $body);
     }
+
+    /**
+     * 权益提额
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/liftingAmountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function liftingAmount($body)
+    {
+        return $this->restful("POST", "/equity/liftingamount", $body);
+    }
 }
