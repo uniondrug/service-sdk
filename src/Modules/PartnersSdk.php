@@ -196,7 +196,7 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单查询
      * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/OrderController/orderSearch.md
-     * @param array $body 入参类型
+     * @param $body
      * @return ClientResponseInterface
      */
     public function orderSearch($body)
