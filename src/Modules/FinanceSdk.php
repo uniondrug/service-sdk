@@ -52,6 +52,17 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 连锁财务发起新增结算单
+     * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/AddFromMerchantAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addStatementsFromMerchant($body)
+    {
+        return $this->restful("POST", "/statements/AddFromMerchant", $body);
+    }
+
+    /**
      * 结算单审核接口
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/auditingAction.md
      * @param array $body 入参类型
