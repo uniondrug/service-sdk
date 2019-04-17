@@ -586,4 +586,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/group/paging", $body);
     }
+
+    /**
+     * 状态列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function statusList($body)
+    {
+        return $this->restful("POST", "/user/status", $body);
+    }
 }
