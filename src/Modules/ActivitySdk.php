@@ -559,6 +559,39 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 资金池列表
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/Admin/PoolController/pagingAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function poolPaging($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/pool/paging', $body);
+    }
+
+    /**
+     * 资金池列表
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/Admin/PoolController/listAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function poolList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/pool/list', $body);
+    }
+
+    /**
+     * 新增资金池
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/Admin/PoolController/saveAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function poolSave($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/pool/save', $body);
+    }
+
+    /**
      * 冻结项目资金
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
