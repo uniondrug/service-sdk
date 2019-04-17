@@ -1071,18 +1071,29 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
      */
     public function addStatementLog($body)
     {
-        return $this->restful("POST", "/statements/add", $body);
+        return $this->restful("POST", "/statements/addLog", $body);
     }
 
     /**
      * 获取对账单操作日志记录明细
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/logDetailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function getStatementLogDetail($body)
     {
-        return $this->restful("POST", "/statements/detail", $body);
+        return $this->restful("POST", "/statements/logDetail", $body);
+    }
+
+    /**
+     * 获取对账单操作日志记录列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/logListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStatementLogList($body)
+    {
+        return $this->restful("POST", "/statements/logList", $body);
     }
 }
 
