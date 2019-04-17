@@ -67,7 +67,7 @@ class JavaUserScoreSdk extends SdkBase
      * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
      */
     public function preAccountRecordsCount($body){
-        return $this->restful("POST", "/preAccountRecords/edit/batch
+        return $this->restful("POST", "/preAccountRecords/count
 ", $body);
     }
 
