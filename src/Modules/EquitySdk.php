@@ -44,6 +44,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过id 获取多条权益信息
+     * @param $body
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/getDetailByIdsAction.md
+     * @return ClientResponseInterface
+     */
+    public function getEquityListByIds($body)
+    {
+        return $this->restful(static::METHOD_POST, "/equity/ids/lists", $body);
+    }
+
+    /**
      * 根据权益卡号查询权益详情
      * @param $body
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/detailAction.md
