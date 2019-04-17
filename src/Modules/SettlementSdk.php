@@ -1085,3 +1085,4 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/statements/detail", $body);
     }
 }
+
