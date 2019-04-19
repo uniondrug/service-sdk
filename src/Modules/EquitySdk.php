@@ -540,4 +540,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/equity/liftingamount", $body);
     }
+
+    /**
+     * 已用完权益数量
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GroupEquityController/useFinishedAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function equityUsefinished($body)
+    {
+        return $this->restful("POST", "/equity/group/usefinished", $body);
+    }
 }
