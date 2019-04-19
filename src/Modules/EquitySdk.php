@@ -547,7 +547,7 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
      * @param array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function equityUsefinished($body)
+    public function getEquityUsefinishedByGroupIds($body)
     {
         return $this->restful("POST", "/equity/group/usefinished", $body);
     }
