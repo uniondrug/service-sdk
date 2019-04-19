@@ -61,13 +61,24 @@ class JavaUserScoreSdk extends SdkBase
     }
 
     /**
-     * 积分统计列表
+     * 积分统计
      * @param $body
      *
      * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
      */
     public function preAccountRecordsCount($body){
         return $this->restful("POST", "/preAccountRecords/count
+", $body);
+    }
+
+    /**
+     * 导出
+     * @param $body
+     *
+     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
+     */
+    public function preAccountRecordsExport($body){
+        return $this->restful("POST", "/preAccountRecords/export
 ", $body);
     }
 
