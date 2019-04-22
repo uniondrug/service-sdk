@@ -24,10 +24,11 @@ use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementlogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
+use Uniondrug\ServiceSdk\Modules\DataSdk;
 
 /**
  * 基础模块SDK入口
@@ -54,6 +55,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
  * @property StagnationSdk         $stagnation
  * @property JavaUserScoreSdk      $javaUserScore
  * @property OrderSdk              $order
+ * @property DataSdk               $data
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
