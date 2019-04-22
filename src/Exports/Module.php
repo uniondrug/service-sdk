@@ -13,10 +13,12 @@ use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MessageSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\OrderSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementlogSdk;
@@ -50,6 +52,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
  * @property MessageSdk            $message
  * @property WxSdk                 $wx
  * @property StagnationSdk         $stagnation
+ * @property JavaUserScoreSdk      $javaUserScore
+ * @property OrderSdk              $order
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
