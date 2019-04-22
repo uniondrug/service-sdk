@@ -570,7 +570,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      * 根据cdkey 获取用户信息
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/uInfoAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function getUserByCdKey($body)
     {
@@ -580,7 +580,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      * 根据项目id 获取分组列表带分页
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/pagingAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function getGroupPaging($body)
     {
@@ -591,7 +591,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      * 状态列表
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/statusAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function statusList($body)
     {
@@ -602,10 +602,20 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      * 智赔导出兑换码sql
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/exportSqlAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function exportCdCodeSql($body)
     {
         return $this->restful("POST", "/user/export/cdcode/sql", $body);
+    }
+    /**
+     * 获取分组下已用完的用户数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getUseFinishedByGroupAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getUseFinishedByGroup($body)
+    {
+        return $this->restful("POST", "/user/useFinished", $body);
     }
 }
