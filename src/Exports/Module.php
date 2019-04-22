@@ -9,6 +9,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
@@ -28,7 +29,6 @@ use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
-use Uniondrug\ServiceSdk\Modules\DataSdk;
 
 /**
  * 基础模块SDK入口
