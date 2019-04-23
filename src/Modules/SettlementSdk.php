@@ -985,4 +985,148 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/statements/paging", $body);
     }
+
+    /**
+     * 连锁结算月月视图
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/periodSummaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerPeriodSummary($body)
+    {
+        return $this->restful("POST", "/partner/periodSummary", $body);
+    }
+
+    /**
+     * 获取结算数据支付方式接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementPayMethodAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementPayMethod($body)
+    {
+        return $this->restful("POST", "/partner/settlementPayMethod", $body);
+    }
+
+    /**
+     * 获取结算数据汇总
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementTotalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementTotal($body)
+    {
+        return $this->restful("POST", "/partner/settlementTotal", $body);
+    }
+
+    /**
+     * 结算订单信息导出（含商品明细）
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementExport($body)
+    {
+        return $this->restful("POST", "/partner/settlementExport", $body);
+    }
+
+    /**
+     * 获取结算流程统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementStatisticsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementStatistics($body)
+    {
+        return $this->restful("POST", "/partner/settlementStatistics", $body);
+    }
+
+    /**
+     * 连锁更新订单的状态接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/updateSettlementStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerUpdateSettlementStatus($body)
+    {
+        return $this->restful("POST", "/partner/updateSettlementStatus", $body);
+    }
+
+    /**
+     * 连锁结算订单数量
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementCount($body)
+    {
+        return $this->restful("POST", "/partner/settlementCount", $body);
+    }
+
+    /**
+     * 添加获取对账单操作日志记录
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/addLogAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addStatementLog($body)
+    {
+        return $this->restful("POST", "/statements/addLog", $body);
+    }
+
+    /**
+     * 获取对账单操作日志记录明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/logDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStatementLogDetail($body)
+    {
+        return $this->restful("POST", "/statements/logDetail", $body);
+    }
+
+    /**
+     * 获取对账单操作日志记录列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/logListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStatementLogList($body)
+    {
+        return $this->restful("POST", "/statements/logList", $body);
+    }
+
+    /**
+     * 连锁结算商品信息导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementGoodsExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementGoodsExport($body)
+    {
+        return $this->restful("POST", "/partner/settlementGoodsExport", $body);
+    }
+
+    /**
+     * 连锁结算订单信息导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementOrdersExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementOrdersExport($body)
+    {
+        return $this->restful("POST", "/partner/settlementOrdersExport", $body);
+    }
+
+    /**
+     * 获取连锁发起结算权限
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOrganizeAuthorityDetail($body)
+    {
+        return $this->restful("POST", "/organizeAuthority/detail", $body);
+    }
 }
+

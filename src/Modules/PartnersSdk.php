@@ -192,4 +192,26 @@ class PartnersSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/goods/searchHotGoods", $body);
     }
+
+    /**
+     * 订单查询
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/OrderController/orderSearch.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function orderSearch($body)
+    {
+        return $this->restful("POST", "/order/orderSearch", $body);
+    }
+
+    /**
+     * 商品列表
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/StoreController/searchStoreDrugs.md
+     * @param $body
+     * @return ClientResponseInterface
+     */
+    public function searchStoreDrugs($body)
+    {
+        return $this->restful(static::METHOD_POST, "/store/searchStoreDrugs", $body);
+    }
 }
