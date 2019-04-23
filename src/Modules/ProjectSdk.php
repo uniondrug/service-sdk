@@ -574,7 +574,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      */
     public function getUserByCdKey($body)
     {
-        return $this->restful("POST", "/verify/User/cdKey", $body);
+        return $this->restful(static::METHOD_POST, "/verify/User/cdKey", $body);
     }
     /**
      * 根据项目id 获取分组列表带分页
@@ -584,7 +584,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      */
     public function getGroupPaging($body)
     {
-        return $this->restful("POST", "/group/paging", $body);
+        return $this->restful(static::METHOD_POST, "/group/paging", $body);
     }
 
     /**
@@ -595,7 +595,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      */
     public function statusList($body)
     {
-        return $this->restful("POST", "/user/status", $body);
+        return $this->restful(static::METHOD_POST, "/user/status", $body);
     }
 
     /**
@@ -606,7 +606,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      */
     public function exportCdCodeSql($body)
     {
-        return $this->restful("POST", "/user/export/cdcode/sql", $body);
+        return $this->restful(static::METHOD_POST, "/user/export/cdcode/sql", $body);
     }
     /**
      * 获取分组下已用完的用户数量
@@ -616,6 +616,39 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
      */
     public function getUseFinishedByGroup($body)
     {
-        return $this->restful("POST", "/user/useFinished", $body);
+        return $this->restful(static::METHOD_POST, "/user/useFinished", $body);
+    }
+
+    /**
+     * 获取分组下所有的获取方式
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/getByGroupAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getGroupAccessLists($body)
+    {
+        return $this->restful(static::METHOD_POST, "/group/access/lists", $body);
+    }
+
+    /**
+     * 开启指定获取方式
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/enableAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function setEnableGroupAccess($body)
+    {
+        return $this->restful(static::METHOD_POST, "/group/access/enable", $body);
+    }
+
+    /**
+     * 修改激活信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupActivateController/editAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function editGroupActivate($body)
+    {
+        return $this->restful(static::METHOD_POST, "/group/activate/edit", $body);
     }
 }
