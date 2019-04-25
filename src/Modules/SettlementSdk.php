@@ -1161,5 +1161,16 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/deleteDistribution", $body);
     }
+
+    /**
+     * 通过订单No获取发票分配情况
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceController/getDistributionDetailByOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceDistributionDetailByOrderNo($body)
+    {
+        return $this->restful("POST", "/invoice/getDistributionDetailByOrderNo", $body);
+    }
 }
 
