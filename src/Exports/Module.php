@@ -22,6 +22,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MessageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\OrderSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\RuleSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementlogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
@@ -56,6 +57,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property JavaUserScoreSdk      $javaUserScore
  * @property OrderSdk              $order
  * @property DataSdk               $data
+ * @property RuleSdk               $rule
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
