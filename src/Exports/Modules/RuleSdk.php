@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-04-25
- * @time   Thu, 25 Apr 2019 10:31:50 +0800
+ * @time   Thu, 25 Apr 2019 17:08:32 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -76,6 +76,28 @@ class RuleSdk extends SdkBase
     }
 
     /**
+     * 获取黑名单商品sql
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/BlackListSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBlackListSql($body)
+    {
+        return $this->restful("POST", "/program/goods/black/sql", $body);
+    }
+
+    /**
+     * 获取白名单商品sql
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/WhiteListSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getWhiteListSql($body)
+    {
+        return $this->restful("POST", "/program/goods/white/sql", $body);
+    }
+
+    /**
      * 策略规则
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/infoRuleAction.md
      * @param array $body 入参类型
@@ -109,7 +131,7 @@ class RuleSdk extends SdkBase
     }
 
     /**
-     * 移除白名单
+     * 移除黑名单
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/blackDelAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
