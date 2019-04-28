@@ -573,4 +573,27 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/equity/liftingdetail", $body);
     }
+
+    /**
+     * 权益回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function recoverEquity($body)
+    {
+        return $this->restful("POST", "/equity/recover", $body);
+    }
+
+    /**
+     * 保障回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function recoverGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/recover", $body);
+    }
+
 }
