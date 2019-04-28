@@ -16,7 +16,7 @@ use Uniondrug\Structs\StructInterface;
  */
 class PrivilegeSdk extends Sdk implements ServiceSdkInterface
 {
-    protected $serviceName = 'deliver';
+    protected $serviceName = 'privilege';
 
     /**
      * 获取用户包含某个增值服务的所有任务详情
