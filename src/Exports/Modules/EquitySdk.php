@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-10
- * @time   Wed, 10 Apr 2019 13:45:42 +0800
+ * @date   2019-04-28
+ * @time   Sun, 28 Apr 2019 10:16:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -456,6 +456,28 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 提额操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/liftingAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function liftingAmount($body)
+    {
+        return $this->restful("POST", "/equity/liftingamount", $body);
+    }
+
+    /**
+     * 提额明细
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/liftingDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function liftingdetail($body)
+    {
+        return $this->restful("POST", "/equity/liftingdetail", $body);
+    }
+
+    /**
      * 锁定试算
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/lockAction.md
      * @param array $body 入参类型
@@ -535,6 +557,28 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 权益回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recoverEquity($body)
+    {
+        return $this->restful("POST", "/equity/recover", $body);
+    }
+
+    /**
+     * 保障回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recoverGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/recover", $body);
+    }
+
+    /**
      * 退款接口
      * 根据订单号和订单信息退还指定金额or次数的权益给用户权益账户
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/refundAction.md
@@ -589,16 +633,5 @@ class EquitySdk extends SdkBase
     public function updateAvailableTo($body)
     {
         return $this->restful("POST", "/equity/updateavailableto", $body);
-    }
-
-    /**
-     * 权益提额
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/liftingAmountAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function liftingAmount($body)
-    {
-        return $this->restful("POST", "/equity/liftingamount", $body);
     }
 }
