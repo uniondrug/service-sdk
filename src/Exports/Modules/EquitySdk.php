@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-28
- * @time   Sun, 28 Apr 2019 10:16:35 +0800
+ * @date   2019-04-29
+ * @time   Mon, 29 Apr 2019 16:24:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -84,6 +84,17 @@ class EquitySdk extends SdkBase
     public function addGuarantee($body)
     {
         return $this->restful("POST", "/guarantee/add", $body);
+    }
+
+    /**
+     * 即买即用权益信息修改
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/buySellAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function buySell($body)
+    {
+        return $this->restful("POST", "/equity/buysell", $body);
     }
 
     /**
