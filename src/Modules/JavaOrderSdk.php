@@ -90,29 +90,40 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 订单退款
-     * @link
-     * @param array $body 入参类型
+     * 数据统计
+     * @param $body
      * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
      */
-    public function orderCashierRefund($body)
+    public function statisticsByPartner($body)
     {
-        return $this->restful("POST", "/order/cashier/refund", $body);
+        return $this->restful("POST", "order/query/statisticsByMerchant", $body);
     }
 
     /**
-     * 订单支付
-     * @link
-     * @param array $body 入参类型
+     * 检查erp是否重复
+     * @param $body
      * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
      */
-    public function orderCashierCreate($body)
+    public function checkErpRepeat($body)
     {
-        return $this->restful("POST", "/order/cashier/create", $body);
+        return $this->restful("POST", "order/erpCheck", $body);
     }
 
     /**
-     * 订单主订单查询
+     * 获取药品详情
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function getItemDetail($body)
+    {
+        return $this->restful("POST", "/order/query/item", $body);
+    }
+
+    /**
+     * 订单主订单详情
      * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
@@ -120,6 +131,30 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     public function orderQueryMain($body)
     {
         return $this->restful("POST", "/order/query/main", $body);
+    }
+
+    /**
+     * 订单子订单详情
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderQuerySub($body)
+    {
+        return $this->restful("POST", "/order/query/sub", $body);
+
+    }
+
+    /**
+     * 修改订单店员信息
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateAssistant($body)
+    {
+        return $this->restful("POST", "/order/assistant/update", $body);
+
     }
 
     /**
