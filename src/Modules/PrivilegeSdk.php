@@ -149,4 +149,15 @@ class PrivilegeSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/task/paging", $body);
     }
+    
+    /**
+     * 创建领取任务
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createMemberTask($body)
+    {
+        return $this->restful("POST", "/member/task/create", $body);
+    }
 }
