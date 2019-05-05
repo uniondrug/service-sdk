@@ -186,7 +186,7 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
      * @param array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function orderQueryMember($body)
+    public function orderQueryBycondition($body)
     {
         return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
     }
