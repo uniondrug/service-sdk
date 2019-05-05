@@ -179,4 +179,15 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/order/query/member", $body);
     }
+
+    /**
+     * 子订单查询列表
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderQueryMember($body)
+    {
+        return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
+    }
 }
