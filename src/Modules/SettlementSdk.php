@@ -1172,5 +1172,60 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/getDistributionDetailByOrderNo", $body);
     }
+
+    /**
+     * 导出指定连锁订单的商品列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/goodsExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportGoodsExport($body)
+    {
+        return $this->restful("POST", "/report/goodsExport", $body);
+    }
+
+    /**
+     * 获取指定连锁订单的商品列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/goodsListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportGoodsList($body)
+    {
+        return $this->restful("POST", "/report/goodsList", $body);
+    }
+
+    /**
+     * 导出直付订单列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/ordersExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportOrdersExport($body)
+    {
+        return $this->restful("POST", "/report/ordersExport", $body);
+    }
+
+    /**
+     * 直付订单列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/ordersAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportOrdersList($body)
+    {
+        return $this->restful("POST", "/report/ordersList", $body);
+    }
+
+    /**
+     * 直付订单统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/ordersStatisticsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportOrdersStatistics($body)
+    {
+        return $this->restful("POST", "/report/ordersStatistics", $body);
+    }
 }
 
