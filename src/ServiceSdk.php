@@ -61,7 +61,9 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\MoreServiceSdk      $moreService                        药联更多服务模块
  * @property Modules\ActivitySdk         $activity                           活动模块
  * @property Modules\PrivilegeSdk        $privilege                          特权活动模块
+ * @property Modules\MsgSdk              $msg                                新版消息中心
  * @package Uniondrug\ServiceSdk
+ *
  */
 class ServiceSdk
 {
