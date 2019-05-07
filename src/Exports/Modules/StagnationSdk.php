@@ -231,6 +231,17 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 新增日志
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LogController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logAdd($body)
+    {
+        return $this->restful("POST", "/log/add", $body);
+    }
+
+    /**
      * 新增驻店员数据统计
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/addAction.md
      * @param array $body 入参类型
