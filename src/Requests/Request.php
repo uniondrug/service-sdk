@@ -105,7 +105,7 @@ class Request
     {
         $this->response->end();
         if ($this->response->hasError()) {
-            $this->logger->error("[d={$this->response->getDuration()}]SDK请求失败 - {$this->response->getError()}");
+            $this->logger->debug("[d={$this->response->getDuration()}]SDK请求失败 - {$this->response->getError()}");
         } else {
             $this->logger->debug("[d={$this->response->getDuration()}]SDK请求成功");
         }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-28
- * @time   Thu, 28 Mar 2019 16:20:36 +0800
+ * @date   2019-05-07
+ * @time   Tue, 07 May 2019 13:58:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -17,7 +17,7 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
- * OrderSdk
+ * MsgSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
 class MsgSdk extends SdkBase
@@ -30,12 +30,12 @@ class MsgSdk extends SdkBase
     protected $serviceName = 'msg.module';
 
     /**
-     * 发送模板消息
-     * @link
-     * @param json|StructInterface $body
+     * 消息发布
+     * @link https://uniondrug.coding.net/p/module.msg/git/blob/development/docs/api/Msg/PublishController/publishAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function msgPublish($body)
+    public function publish($body)
     {
         return $this->restful("POST", "/msg/publish", $body);
     }
