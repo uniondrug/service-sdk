@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-06
- * @time   Mon, 06 May 2019 17:59:28 +0800
+ * @date   2019-05-07
+ * @time   Tue, 07 May 2019 17:00:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AiProfitDataSdk extends SdkBase
     public function addContact($body)
     {
         return $this->restful("POST", "/add", $body);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addUser($body)
+    {
+        return $this->restful("POST", "/user/add", $body);
     }
 
     /**
@@ -74,6 +85,28 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 禁用
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disableUser($body)
+    {
+        return $this->restful("POST", "/user/disable", $body);
+    }
+
+    /**
+     * 开启
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function enableUser($body)
+    {
+        return $this->restful("POST", "/user/enable", $body);
+    }
+
+    /**
      * 费率值
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RatioController/valueAction.md
      * @param array $body 入参类型
@@ -82,6 +115,17 @@ class AiProfitDataSdk extends SdkBase
     public function getRatioValue($body)
     {
         return $this->restful("POST", "/value", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserInfo($body)
+    {
+        return $this->restful("POST", "/user/info", $body);
     }
 
     /**
