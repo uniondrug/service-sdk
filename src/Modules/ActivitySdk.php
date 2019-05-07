@@ -405,6 +405,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 按照新流程创建订单
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createByRootIn($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/rootIn', $body);
+    }
+
+    /**
      * 订单支付回调
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
