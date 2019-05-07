@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-10
- * @time   Wed, 10 Apr 2019 14:54:49 +0800
+ * @date   2019-05-06
+ * @time   Mon, 06 May 2019 17:59:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,17 @@ class AiProfitDataSdk extends SdkBase
     public function getRatioValue($body)
     {
         return $this->restful("POST", "/value", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserPaging($body)
+    {
+        return $this->restful("POST", "/user/paging", $body);
     }
 
     /**
