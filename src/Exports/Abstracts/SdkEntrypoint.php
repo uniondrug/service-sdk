@@ -47,15 +47,15 @@ abstract class SdkEntrypoint
         }
         // 2. history
         $name = ucfirst($name);
-        if (isset(self::$packageInstances[$name])) {
-            return self::$packageInstances[$name];
+        if (isset(self::$packageInstances[$this->package][$name])) {
+            return self::$packageInstances[$this->package][$name];
         }
         // 3. defined
         $class = "\\Uniondrug\\ServiceSdk\\Exports\\{$this->package}\\{$name}Sdk";
         try {
             $object = new $class($this->logger, $this->config);
-            self::$packageInstances[$name] = $object;
-            return self::$packageInstances[$name];
+            self::$packageInstances[$this->package][$name] = $object;
+            return self::$packageInstances[$this->package][$name];
         } catch(\Throwable $e) {
             throw new SdkException("未定义{$class}");
         }
