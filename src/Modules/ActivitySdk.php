@@ -423,7 +423,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
      */
     public function createByRootIn($body)
     {
-        return $this->restful(static::METHOD_POST, '/order/rootIn', $body);
+        return $this->restful(static::METHOD_POST, '/order/create/rootIn', $body);
     }
 
     /**
