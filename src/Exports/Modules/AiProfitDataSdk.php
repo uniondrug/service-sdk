@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-07
- * @time   Tue, 07 May 2019 17:00:11 +0800
+ * @date   2019-05-08
+ * @time   Wed, 08 May 2019 16:27:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class AiProfitDataSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'aiProfit.data.module';
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addActivity($body)
+    {
+        return $this->restful("POST", "/activity/add", $body);
+    }
 
     /**
      * 添加
@@ -85,6 +96,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 下架
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disableActivity($body)
+    {
+        return $this->restful("POST", "/activity/disable", $body);
+    }
+
+    /**
      * 禁用
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/disableAction.md
      * @param array $body 入参类型
@@ -97,6 +119,17 @@ class AiProfitDataSdk extends SdkBase
 
     /**
      * 开启
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function enableActivity($body)
+    {
+        return $this->restful("POST", "/activity/enable", $body);
+    }
+
+    /**
+     * 开启
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/enableAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -104,6 +137,39 @@ class AiProfitDataSdk extends SdkBase
     public function enableUser($body)
     {
         return $this->restful("POST", "/user/enable", $body);
+    }
+
+    /**
+     * 获取首页Banner
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/getBannerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getActivityBanner($body)
+    {
+        return $this->restful("POST", "/activity/banner/get", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getActivityInfo($body)
+    {
+        return $this->restful("POST", "/activity/info", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getActivityPaging($body)
+    {
+        return $this->restful("POST", "/activity/paging", $body);
     }
 
     /**
@@ -181,6 +247,17 @@ class AiProfitDataSdk extends SdkBase
     public function partnerTask($body)
     {
         return $this->restful("POST", "/partner/task", $body);
+    }
+
+    /**
+     * 设置首页Banner
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/setBannerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setActivityBanner($body)
+    {
+        return $this->restful("POST", "/activity/banner/set", $body);
     }
 
     /**
