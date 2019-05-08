@@ -45,4 +45,15 @@ class JavaCashierSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/cashier/create", $body);
     }
+
+    /**
+     * 订单消费
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderCashierConsume($body)
+    {
+        return $this->restful("POST", "/cashier/consume", $body);
+    }
 }
