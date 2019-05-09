@@ -62,7 +62,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function stopScheme($body)
     {
-        return $this->restful("POST", "/promoteCenter/scheme/stop", $body);
+        return $this->restful("POST", "/promote/scheme/stop", $body);
     }
 
     /**
