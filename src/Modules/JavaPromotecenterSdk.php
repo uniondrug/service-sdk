@@ -5,7 +5,7 @@
  * Date: 2019-05-09
  * Time: 11:08
  */
-namespace Uniondrug\ServiceSdk\Exports\Backends;
+namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
@@ -19,7 +19,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'java.middleend.promotecenter';
+    protected $serviceName = 'javaMiddleendPromotecenter';
 
     /**
      * 创建方案(活动方案)
