@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-08
- * @time   Wed, 08 May 2019 16:27:12 +0800
+ * @date   2019-05-09
+ * @time   Thu, 09 May 2019 16:51:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -48,7 +48,7 @@ class AiProfitDataSdk extends SdkBase
      */
     public function addContact($body)
     {
-        return $this->restful("POST", "/add", $body);
+        return $this->restful("POST", "/contact/add", $body);
     }
 
     /**
@@ -173,6 +173,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getContactPaging($body)
+    {
+        return $this->restful("POST", "/contact/paging", $body);
+    }
+
+    /**
      * 费率值
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RatioController/valueAction.md
      * @param array $body 入参类型
@@ -206,6 +217,28 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 连锁 客单价 分布
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/avgAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerAvgAmount($body)
+    {
+        return $this->restful("POST", "/partner/avgAmount", $body);
+    }
+
+    /**
+     * 连锁 门店客单价排行
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/avgAmountRankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerAvgAmountRank($body)
+    {
+        return $this->restful("POST", "/partner/avgAmountRank", $body);
+    }
+
+    /**
      * 最佳排行
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/bestAction.md
      * @param array $body 入参类型
@@ -214,6 +247,17 @@ class AiProfitDataSdk extends SdkBase
     public function partnerBestRank($body)
     {
         return $this->restful("POST", "/partner/best", $body);
+    }
+
+    /**
+     * 连锁开单数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/billCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerBillCount($body)
+    {
+        return $this->restful("POST", "/partner/billCount", $body);
     }
 
     /**
@@ -228,7 +272,29 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 门店top3排行
+     * 连锁 单月 销售额
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/monthAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerMonthAmount($body)
+    {
+        return $this->restful("POST", "/partner/monthAmount", $body);
+    }
+
+    /**
+     * 连锁 单月 开单数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/monthCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerMonthCount($body)
+    {
+        return $this->restful("POST", "/partner/monthCount", $body);
+    }
+
+    /**
+     * 连锁top3排行
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/rankAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -236,6 +302,17 @@ class AiProfitDataSdk extends SdkBase
     public function partnerRankTopThree($body)
     {
         return $this->restful("POST", "/partner/rank", $body);
+    }
+
+    /**
+     * 连锁销售额
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/saleAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSaleAmount($body)
+    {
+        return $this->restful("POST", "/partner/saleAmount", $body);
     }
 
     /**
