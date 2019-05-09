@@ -121,7 +121,18 @@ class StagnationSdk extends SdkBase
     }
 
     /**
-     * 驻店员下的分组
+     * 编辑配置（支持批量）
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configEdit($body)
+    {
+        return $this->restful("POST", "/config/edit", $body);
+    }
+
+    /**
+     * 驻店员下的分组列表
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/listAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -132,7 +143,7 @@ class StagnationSdk extends SdkBase
     }
 
     /**
-     * 分组下的驻店员
+     * 分组下的驻店员分页
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -140,6 +151,17 @@ class StagnationSdk extends SdkBase
     public function configPaging($body)
     {
         return $this->restful("POST", "/config/paging", $body);
+    }
+
+    /**
+     * 获取驻店员发放记录导出数据
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportUserRecord($body)
+    {
+        return $this->restful("POST", "/record/user/export", $body);
     }
 
     /**
@@ -209,6 +231,17 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 新增日志
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LogController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logAdd($body)
+    {
+        return $this->restful("POST", "/log/add", $body);
+    }
+
+    /**
      * 新增驻店员数据统计
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/addAction.md
      * @param array $body 入参类型
@@ -261,6 +294,17 @@ class StagnationSdk extends SdkBase
     public function statisticsGroupManageUser($body)
     {
         return $this->restful("POST", "/group/manage/statistics/user", $body);
+    }
+
+    /**
+     * 通过stagnationMemberId统计某一列发放记录数
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statisticsUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function statisticsRecordColumn($body)
+    {
+        return $this->restful("POST", "/user/statistics/record/column", $body);
     }
 
     /**
@@ -331,6 +375,17 @@ class StagnationSdk extends SdkBase
 
     /**
      * 驻店员列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userList($body)
+    {
+        return $this->restful("POST", "/user/list", $body);
+    }
+
+    /**
+     * 驻店员分页
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -349,27 +404,5 @@ class StagnationSdk extends SdkBase
     public function userStatus($body)
     {
         return $this->restful("POST", "/user/status", $body);
-    }
-
-    /**
-     * 驻店员列表
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userList($body)
-    {
-        return $this->restful("POST", "/user/list", $body);
-    }
-
-    /**
-     * 通过stagnationMemberId统计某一列发放记录数
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statisticsUserAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function statisticsRecordColumn($body)
-    {
-        return $this->restful("POST", "/user/statistics/record/column", $body);
     }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-01
- * @time   Mon, 01 Apr 2019 11:38:33 +0800
+ * @date   2019-05-07
+ * @time   Tue, 07 May 2019 16:16:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -341,6 +341,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 智赔导出兑换码sql
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportCdCodeSql($body)
+    {
+        return $this->restful("POST", "/user/export/cdcode/sql", $body);
+    }
+
+    /**
      * listAction()
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ApprovalController/listAction.md
      * @param array $body 入参类型
@@ -517,6 +528,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取分组的分期数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/getGroupInstallmentCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupInstallmentCount($body)
+    {
+        return $this->restful("POST", "/group/getGroupInstallmentCount", $body);
+    }
+
+    /**
      * 获取分组下接口规则列表
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/getInterfaceListAction.md
      * @param array $body 入参类型
@@ -613,6 +635,17 @@ class ProjectSdk extends SdkBase
     public function getProjectType($body)
     {
         return $this->restful("POST", "/project/type", $body);
+    }
+
+    /**
+     * 获取分组下已用完的用户数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getUseFinishedByGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUseFinishedByGroup($body)
+    {
+        return $this->restful("POST", "/user/useFinished", $body);
     }
 
     /**
@@ -789,5 +822,27 @@ class ProjectSdk extends SdkBase
     public function statisticProject($body)
     {
         return $this->restful("POST", "/project/statistic", $body);
+    }
+
+    /**
+     * 状态列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function statusList($body)
+    {
+        return $this->restful("POST", "/user/status", $body);
+    }
+
+    /**
+     * 回收兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userRecover($body)
+    {
+        return $this->restful("POST", "/user/recover", $body);
     }
 }

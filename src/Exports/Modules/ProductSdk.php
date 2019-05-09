@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-01-21
- * @time   Mon, 21 Jan 2019 11:49:52 +0800
+ * @date   2019-05-07
+ * @time   Tue, 07 May 2019 16:01:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class ProductSdk extends SdkBase
     public function getProgramDetail($body)
     {
         return $this->restful("POST", "/program/detail", $body);
+    }
+
+    /**
+     * 导出方案管理sql
+     * @link https://uniondrug.coding.net/p/module.product/git/blob/development/docs/api/ProgramController/getProgramExportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProgramExportSql($body)
+    {
+        return $this->restful("POST", "/program/getProgramExportSql", $body);
     }
 
     /**

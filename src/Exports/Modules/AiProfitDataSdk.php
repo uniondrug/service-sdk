@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-05-09
- * @time   Thu, 09 May 2019 10:21:09 +0800
+ * @time   Thu, 09 May 2019 10:32:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 

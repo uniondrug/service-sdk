@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-27
- * @time   Wed, 27 Mar 2019 10:31:58 +0800
+ * @date   2019-04-29
+ * @time   Mon, 29 Apr 2019 16:24:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -87,6 +87,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 即买即用权益信息修改
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/buySellAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function buySell($body)
+    {
+        return $this->restful("POST", "/equity/buysell", $body);
+    }
+
+    /**
      * 检查保障是否购买
      * 根据用户身份证号和产品ID检查是否购买过此保障
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/checkByIdCardAction.md
@@ -119,6 +130,17 @@ class EquitySdk extends SdkBase
     public function consumeEquity($body)
     {
         return $this->restful("POST", "/equity/consume", $body);
+    }
+
+    /**
+     * 权益消费列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/consumeListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function consumeList($body)
+    {
+        return $this->restful("POST", "/equity/consume/lists", $body);
     }
 
     /**
@@ -445,6 +467,28 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 提额操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/liftingAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function liftingAmount($body)
+    {
+        return $this->restful("POST", "/equity/liftingamount", $body);
+    }
+
+    /**
+     * 提额明细
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/liftingDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function liftingdetail($body)
+    {
+        return $this->restful("POST", "/equity/liftingdetail", $body);
+    }
+
+    /**
      * 锁定试算
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/lockAction.md
      * @param array $body 入参类型
@@ -521,6 +565,28 @@ class EquitySdk extends SdkBase
     public function read($body)
     {
         return $this->restful("POST", "/equity/read", $body);
+    }
+
+    /**
+     * 权益回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recoverEquity($body)
+    {
+        return $this->restful("POST", "/equity/recover", $body);
+    }
+
+    /**
+     * 保障回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recoverGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/recover", $body);
     }
 
     /**
