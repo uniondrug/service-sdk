@@ -61,7 +61,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property DataSdk               $data
  * @property RuleSdk               $rule
  * @property MsgSdk                $msg
- * @property JavaGoodsCenterSdk    $javaGoodsCenterSdk
+ * @property JavaGoodsCenterSdk    $javaGoodsCenter
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
