@@ -152,6 +152,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 复制蓄客红包项目及相关配置
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function copyRedpacket($body)
+    {
+        return $this->restful(static::METHOD_POST, '/admin/project/copyRedpacket', $body);
+    }
+
+    /**
      * 项目列表
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -306,6 +317,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过rootIn获取商品详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getGoodsDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/projectGoods/getGoodsDetail', $body);
+    }
+
+    /**
      * 解析用户
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -391,6 +413,17 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     public function createPay($body)
     {
         return $this->restful(static::METHOD_POST, '/order/createPay', $body);
+    }
+
+    /**
+     * 按照新流程创建订单
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createByRootIn($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/create/rootIn', $body);
     }
 
     /**
