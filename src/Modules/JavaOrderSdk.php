@@ -108,7 +108,7 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
      */
     public function checkErpRepeat($body)
     {
-        return $this->restful("POST", "order/erpCheck", $body);
+        return $this->restful("POST", "/order/query/erpcheck", $body);
     }
 
     /**
