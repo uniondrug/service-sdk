@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-05-09
- * @time   Thu, 09 May 2019 10:32:12 +0800
+ * @time   Thu, 09 May 2019 16:51:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -48,7 +48,7 @@ class AiProfitDataSdk extends SdkBase
      */
     public function addContact($body)
     {
-        return $this->restful("POST", "/add", $body);
+        return $this->restful("POST", "/contact/add", $body);
     }
 
     /**
@@ -170,6 +170,17 @@ class AiProfitDataSdk extends SdkBase
     public function getActivityPaging($body)
     {
         return $this->restful("POST", "/activity/paging", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getContactPaging($body)
+    {
+        return $this->restful("POST", "/contact/paging", $body);
     }
 
     /**
