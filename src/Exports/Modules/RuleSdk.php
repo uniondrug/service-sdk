@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-25
- * @time   Thu, 25 Apr 2019 17:08:32 +0800
+ * @date   2019-05-10
+ * @time   Fri, 10 May 2019 15:36:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -73,6 +73,17 @@ class RuleSdk extends SdkBase
     public function filterEquity($body)
     {
         return $this->restful("POST", "/filter/equity", $body);
+    }
+
+    /**
+     * 更具方案获取黑名单数量
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/getBlackListNumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBlackListNum($body)
+    {
+        return $this->restful("POST", "/program/goods/black/sql", $body);
     }
 
     /**
@@ -143,6 +154,17 @@ class RuleSdk extends SdkBase
 
     /**
      * 黑名单列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/blackListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function programGoodsBlackList($body)
+    {
+        return $this->restful("POST", "/program/goods/black/list", $body);
+    }
+
+    /**
+     * 黑名单列表带分页
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/blackPagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -175,7 +197,18 @@ class RuleSdk extends SdkBase
     }
 
     /**
-     * 列表白名单
+     * 白名单列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/whiteListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function programGoodsWhiteList($body)
+    {
+        return $this->restful("POST", "/program/goods/white/list", $body);
+    }
+
+    /**
+     * 白名单列表带分页
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/whitePagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
