@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-09
- * @time   Thu, 09 May 2019 16:51:30 +0800
+ * @date   2019-05-13
+ * @time   Mon, 13 May 2019 16:02:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -379,5 +379,16 @@ class AiProfitDataSdk extends SdkBase
     public function unionTrend($body)
     {
         return $this->restful("POST", "/union/trend", $body);
+    }
+
+    /**
+     * 修改登录时间
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/updateLoginTimeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateLoginTime($body)
+    {
+        return $this->restful("POST", "/user/updateLoginTime", $body);
     }
 }
