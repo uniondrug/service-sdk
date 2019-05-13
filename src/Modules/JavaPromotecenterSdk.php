@@ -75,4 +75,81 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/promote/scheme/modifyPartner", $body);
     }
+
+    /**
+     * 创建卡--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sendCard($body)
+    {
+        return $this->restful("POST", "/promote/card/sendCard", $body);
+    }
+
+    /**
+     * 消费券接口--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function consumeCoupon($body)
+    {
+        return $this->restful("POST", "/promote/coupon/consumeCoupon", $body);
+    }
+
+    /**
+     * 核销券接口--订单
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function payBackNotice($body)
+    {
+        return $this->restful("POST", "/promote/coupon/payBackNotice", $body);
+    }
+
+    /**
+     * 查询卡详情接口--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryCardDetail($body)
+    {
+        return $this->restful("POST", "/promote/card/queryCardDetail", $body);
+    }
+
+    /**
+     * 通过主订单号查询赠送权益--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryGiftDetail($body)
+    {
+        return $this->restful("POST", "/promote/card/queryGiftDetail", $body);
+    }
+
+    /**
+     * 查询卡消费记录（券列表）--微信
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryCouponList($body)
+    {
+        return $this->restful("POST", "/promote/card/queryCouponList", $body);
+    }
+
+    /**
+     * 查询卡列表接口--微信
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryMyCard($body)
+    {
+        return $this->restful("POST", "/promote/card/queryMyCard", $body);
+    }
 }
