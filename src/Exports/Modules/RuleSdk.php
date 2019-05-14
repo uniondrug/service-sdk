@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-10
- * @time   Fri, 10 May 2019 15:36:04 +0800
+ * @date   2019-05-14
+ * @time   Tue, 14 May 2019 15:43:29 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,28 @@ class RuleSdk extends SdkBase
     public function addRule($body)
     {
         return $this->restful("POST", "/filter/addrule", $body);
+    }
+
+    /**
+     * 商品品类编辑
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/categoryEditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function categoryEdit($body)
+    {
+        return $this->restful("POST", "/program/goods/categoryEdit", $body);
+    }
+
+    /**
+     * 商品品类
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/categoryListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function categoryList($body)
+    {
+        return $this->restful("POST", "/program/goods/categoryList", $body);
     }
 
     /**
