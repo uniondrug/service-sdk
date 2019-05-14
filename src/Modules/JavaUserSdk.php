@@ -59,6 +59,18 @@ class JavaUserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/preAccountRecords/paging", $body);
     }
 
+
+    /**
+     * 获取该订单和商品是否发过预积分
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function prePointCheck($body)
+    {
+        return $this->restful("POST", "/preAccountRecords/check", $body);
+    }
+
     /**
      * 积分记录列表
      * @param $body
