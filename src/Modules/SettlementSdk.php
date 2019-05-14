@@ -1373,7 +1373,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 资金池扣减金额接口
+     * 资金池扣减金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumOpFundAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
