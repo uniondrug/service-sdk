@@ -1338,5 +1338,82 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/report/settlementSummary", $body);
     }
+
+    /**
+     * 导出增值服务明细列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsExport($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/export", $body);
+    }
+
+    /**
+     * 增值服务明细列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsPaging($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/paging", $body);
+    }
+
+    /**
+     * 优惠金额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumFreePriceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsSumFreePrice($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/sumFreePrice", $body);
+    }
+
+    /**
+     * 实付金额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumOpFundAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsSumOpFund($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/sumOpFund", $body);
+    }
+
+    /**
+     * 商品数量统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumQuantityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsSumQuantity($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/sumQuantity", $body);
+    }
+
+    /**
+     * 实付金额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumSalePriceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsSumSalePrice($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/sumSalePrice", $body);
+    }
+
+    /**
+     * 商品总额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumTotalPriceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsSumTotalPrice($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/sumTotalPrice", $body);
+    }
 }
 
