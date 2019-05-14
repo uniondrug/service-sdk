@@ -64,6 +64,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\PrivilegeSdk         $privilege                                  特权活动模块
  * @property Modules\MsgSdk               $msg                                        新版消息中心
  * @property Modules\JavaPromotecenterSdk $javaPromotecenter                          营销方案
+ * @property Modules\JavaPushSdk          $javaPush                                   java push服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
