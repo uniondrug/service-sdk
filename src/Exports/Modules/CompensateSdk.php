@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-05-15
- * @time   Wed, 15 May 2019 11:12:57 +0800
+ * @time   Wed, 15 May 2019 14:48:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,7 +41,7 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 删除
+     * 取消授权
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/deleteAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -49,28 +49,6 @@ class CompensateSdk extends SdkBase
     public function authorizeDelete($body)
     {
         return $this->restful("POST", "/authorize/delete", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function authorizeDetail($body)
-    {
-        return $this->restful("POST", "/authorize/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function authorizeListing($body)
-    {
-        return $this->restful("POST", "/authorize/listing", $body);
     }
 
     /**
@@ -85,14 +63,14 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/updateAction.md
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/CustomerController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function authorizeUpdate($body)
+    public function customerPaging($body)
     {
-        return $this->restful("POST", "/authorize/update", $body);
+        return $this->restful("POST", "/customer/paging", $body);
     }
 
     /**
@@ -170,5 +148,16 @@ class CompensateSdk extends SdkBase
     public function logsPaging($body)
     {
         return $this->restful("POST", "/logs/paging", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectPaging($body)
+    {
+        return $this->restful("POST", "/project/paging", $body);
     }
 }
