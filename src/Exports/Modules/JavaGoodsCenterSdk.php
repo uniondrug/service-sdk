@@ -42,5 +42,14 @@ class JavaGoodsCenterSdk extends SdkBase
         return $this->restful("POST", "/partnerGoodsalelist/queryAll", $body);
     }
 
+    /**
+     * 查询商品列表带分页
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGoodsPage($body)
+    {
+        return $this->restful("POST", "/partnerGoodsalelist/querySqlPage", $body);
+    }
 
 }

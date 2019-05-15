@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-29
- * @time   Mon, 29 Apr 2019 16:24:59 +0800
+ * @date   2019-05-14
+ * @time   Tue, 14 May 2019 16:22:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -511,6 +511,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 订单号查询保障
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/orderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderno($body)
+    {
+        return $this->restful("POST", "/guarantee/orderno", $body);
+    }
+
+    /**
      * 创建权益消费限制
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityOrganController/createAction.md
      * @param array $body 入参类型
@@ -602,6 +613,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 订单号查询保障
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/renewAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function renew($body)
+    {
+        return $this->restful("POST", "/guarantee/renew", $body);
+    }
+
+    /**
      * 赠送保障
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/giveAction.md
      * @param array $body 入参类型
@@ -610,6 +632,17 @@ class EquitySdk extends SdkBase
     public function setGuaranteeGive($body)
     {
         return $this->restful("POST", "/guarantee/give", $body);
+    }
+
+    /**
+     * 保障理赔操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/settlementAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function settlement($body)
+    {
+        return $this->restful("POST", "/guarantee/settlement", $body);
     }
 
     /**
