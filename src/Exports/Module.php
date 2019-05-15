@@ -8,6 +8,7 @@ namespace Uniondrug\ServiceSdk\Exports;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
@@ -62,6 +63,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property RuleSdk               $rule
  * @property MsgSdk                $msg
  * @property JavaGoodsCenterSdk    $javaGoodsCenter
+ * @property CompensateSdk         $compensate
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
