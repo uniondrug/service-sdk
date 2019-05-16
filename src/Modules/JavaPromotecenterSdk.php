@@ -84,7 +84,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function sendCard($body)
     {
-        return $this->restful("POST", "/promote/card/sendCard", $body);
+        return $this->restful("POST", "/card/sendCard", $body);
     }
 
     /**
@@ -95,7 +95,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function consumeCoupon($body)
     {
-        return $this->restful("POST", "/promote/coupon/consumeCoupon", $body);
+        return $this->restful("POST", "/coupon/consumeCoupon", $body);
     }
 
     /**
@@ -106,7 +106,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function payBackNotice($body)
     {
-        return $this->restful("POST", "/promote/coupon/payBackNotice", $body);
+        return $this->restful("POST", "/coupon/payBackNotice", $body);
     }
 
     /**
@@ -117,7 +117,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function queryCardDetail($body)
     {
-        return $this->restful("POST", "/promote/card/queryCardDetail", $body);
+        return $this->restful("POST", "/card/queryCardDetail", $body);
     }
 
     /**
@@ -128,7 +128,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function queryGiftDetail($body)
     {
-        return $this->restful("POST", "/promote/card/queryGiftDetail", $body);
+        return $this->restful("POST", "/card/queryGiftDetail", $body);
     }
 
     /**
@@ -139,7 +139,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function queryCouponList($body)
     {
-        return $this->restful("POST", "/promote/card/queryCouponList", $body);
+        return $this->restful("POST", "/card/queryCouponList", $body);
     }
 
     /**
@@ -150,6 +150,6 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      */
     public function queryMyCard($body)
     {
-        return $this->restful("POST", "/promote/card/queryMyCard", $body);
+        return $this->restful("POST", "/card/queryMyCard", $body);
     }
 }
