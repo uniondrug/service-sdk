@@ -139,4 +139,16 @@ class AuditSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/audit/service/recover", $body);
     }
+    /**
+     * 获取理赔单详情
+     * detailAction()
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDetail($body)
+    {
+        return $this->restful("POST", "/change/detail", $body);
+    }
+
 }
