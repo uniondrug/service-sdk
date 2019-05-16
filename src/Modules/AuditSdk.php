@@ -27,7 +27,7 @@ class AuditSdk extends Sdk implements ServiceSdkInterface
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'audit.module';
+    protected $serviceName = 'audit';
 
     /**
      * 根据审核单自动审核
