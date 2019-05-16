@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-14
- * @time   Tue, 14 May 2019 15:43:29 +0800
+ * @date   2019-05-15
+ * @time   Wed, 15 May 2019 16:32:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -105,7 +105,7 @@ class RuleSdk extends SdkBase
      */
     public function getBlackListNum($body)
     {
-        return $this->restful("POST", "/program/goods/black/sql", $body);
+        return $this->restful("POST", "/program/goods/black/num", $body);
     }
 
     /**
