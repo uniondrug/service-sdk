@@ -142,7 +142,6 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     public function orderQuerySub($body)
     {
         return $this->restful("POST", "/order/query/sub", $body);
-
     }
 
     /**
@@ -154,10 +153,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     public function orderNos($body)
     {
         return $this->restful("POST", "/order/query/sub/list", $body);
-
     }
-    
-     /**
+
+    /**
      * 主订单列表orderNos查询
      * @link
      * @param array $body 入参类型
@@ -166,7 +164,6 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     public function orderMainNos($body)
     {
         return $this->restful("POST", "/queryMainOrderNoList", $body);
-
     }
 
     /**
@@ -178,7 +175,6 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     public function updateAssistant($body)
     {
         return $this->restful("POST", "/order/assistant/update", $body);
-
     }
 
     /**
@@ -201,5 +197,38 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     public function orderQueryBycondition($body)
     {
         return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
+    }
+
+    /**
+     * 子订单列表检索
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderQuerySubOrderListForAdmin($body)
+    {
+        return $this->restful("POST", "/order/query/querySubOrderListForAdmin", $body);
+    }
+
+    /**
+     * 直付子订单退单流程
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-order-service/doc/orderRefundGoods.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderRefundGoods($body)
+    {
+        return $this->restful("POST", "/order/refund/goods", $body);
+    }
+
+    /**
+     * 订单退款接口
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-cashier-service/doc/refund.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderRefundExecute($body)
+    {
+        return $this->restful("POST", "/cashier/refund/execute", $body);
     }
 }
