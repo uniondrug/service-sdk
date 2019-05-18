@@ -253,4 +253,15 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/order/query/queryItemListByOrderNo", $body);
     }
+
+    /**
+     * 订单退单退款接口
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderRefundCashierExecute($body)
+    {
+        return $this->restful("POST", "/refund/cashier/execute", $body);
+    }
 }
