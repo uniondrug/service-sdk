@@ -1415,5 +1415,93 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/serviceDetailStatistics/sumTotalPrice", $body);
     }
+
+    /**
+     * 资金池流水列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsPaging($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/paging", $body);
+    }
+
+    /**
+     * 导出资金池流水列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsExport($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/export", $body);
+    }
+
+    /**
+     * 期初金额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOriginFundAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsSumOriginFund($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/sumOriginFund", $body);
+    }
+
+    /**
+     * 期末余额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumFinalFundAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsSumFinalFund($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/sumFinalFund", $body);
+    }
+
+    /**
+     * 收入金额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumIncomeAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsSumIncomeAmount($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/sumIncomeAmount", $body);
+    }
+
+    /**
+     * 收入笔数统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumIncomeCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsSumIncomeCount($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/sumIncomeCount", $body);
+    }
+
+    /**
+     * 支出金额统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOutcomeAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsSumOutcomeAmount($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/sumOutcomeAmount", $body);
+    }
+
+    /**
+     * 支出笔数统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOutcomeCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolDetailStatisticsSumOutcomeCount($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/sumOutcomeCount", $body);
+    }
 }
 
