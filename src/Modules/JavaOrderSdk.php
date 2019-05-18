@@ -222,28 +222,6 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 订单退款接口
-     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-cashier-service/doc/refund.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function orderRefundExecute($body)
-    {
-        return $this->restful("POST", "/cashier/refund/execute", $body);
-    }
-
-    /**
-     * 根据主订单号查询主订单支付信息
-     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-cashier-service/doc/cashierQuery.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function orderQueryCashierByOutTradeNo($body)
-    {
-        return $this->restful("POST", "/cashier/queryCashierByOutTradeNo", $body);
-    }
-
-    /**
      * 根据退单号查询退款商品列表
      * @link
      * @param array $body 入参类型
