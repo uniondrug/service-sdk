@@ -1516,46 +1516,24 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 收入金额统计接口
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumIncomeAmountAction.md
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumIncomeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function poolDetailStatisticsSumIncomeAmount($body)
+    public function poolDetailStatisticsSumIncome($body)
     {
-        return $this->restful("POST", "/poolDetailStatistics/sumIncomeAmount", $body);
-    }
-
-    /**
-     * 收入笔数统计接口
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumIncomeCountAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function poolDetailStatisticsSumIncomeCount($body)
-    {
-        return $this->restful("POST", "/poolDetailStatistics/sumIncomeCount", $body);
+        return $this->restful("POST", "/poolDetailStatistics/sumIncome", $body);
     }
 
     /**
      * 支出金额统计接口
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOutcomeAmountAction.md
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOutcomeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function poolDetailStatisticsSumOutcomeAmount($body)
+    public function poolDetailStatisticsSumOutcome($body)
     {
-        return $this->restful("POST", "/poolDetailStatistics/sumOutcomeAmount", $body);
-    }
-
-    /**
-     * 支出笔数统计接口
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOutcomeCountAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function poolDetailStatisticsSumOutcomeCount($body)
-    {
-        return $this->restful("POST", "/poolDetailStatistics/sumOutcomeCount", $body);
+        return $this->restful("POST", "/poolDetailStatistics/sumOutcome", $body);
     }
 
     /**
