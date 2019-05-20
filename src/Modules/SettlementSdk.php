@@ -1340,6 +1340,61 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 添加付款记录
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentAdd($body)
+    {
+        return $this->restful("POST", "/payment/add", $body);
+    }
+
+    /**
+     * 删除付款记录
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentDelete($body)
+    {
+        return $this->restful("POST", "/payment/delete", $body);
+    }
+
+    /**
+     * 获取付款记录详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentDetail($body)
+    {
+        return $this->restful("POST", "/payment/detail", $body);
+    }
+
+    /**
+     * 修改付款记录
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentEdit($body)
+    {
+        return $this->restful("POST", "/payment/edit", $body);
+    }
+
+    /**
+     * 付款记录分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentPaging($body)
+    {
+        return $this->restful("POST", "/payment/paging", $body);
+    }
+
+    /**
      * 导出增值服务明细列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/exportAction.md
      * @param array $body 入参类型
