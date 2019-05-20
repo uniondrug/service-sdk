@@ -1558,5 +1558,27 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/poolDetailStatistics/sumOutcomeCount", $body);
     }
+
+    /**
+     * 凯撒解密算法
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataSecureController/edcodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataSecureDecode($body)
+    {
+        return $this->restful("POST", "/dataSecure/decode", $body);
+    }
+
+    /**
+     * 凯撒加密算法
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataSecureController/encodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataSecureEncode($body)
+    {
+        return $this->restful("POST", "/dataSecure/encode", $body);
+    }
 }
 
