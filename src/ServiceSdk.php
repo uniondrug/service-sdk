@@ -7,6 +7,7 @@ namespace Uniondrug\ServiceSdk;
 
 /**
  * SDK分发调度
+ * @property Modules\BackOrderSdk                $backOrder                                          订单sdk
  * @property Modules\TakeSdk                     $take                                               药联到家模块
  * @property Modules\WeixinSdk                   $weixin                                             微信模块
  * @property Modules\AbutmentSdk                 $abutment                                           对接模块
