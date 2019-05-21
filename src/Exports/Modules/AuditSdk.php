@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-28
- * @time   Sun, 28 Apr 2019 10:58:35 +0800
+ * @date   2019-05-21
+ * @time   Tue, 21 May 2019 16:32:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class AuditSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'audit.module';
+
+    /**
+     * 根据权益id 获取增值服务审核单的详情，不包括换药
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addedDetail($body)
+    {
+        return $this->restful("POST", "/audit/added/detail", $body);
+    }
 
     /**
      * 根据审核单自动审核
@@ -63,6 +74,50 @@ class AuditSdk extends SdkBase
     }
 
     /**
+     * 发起换药申请
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/applyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeApply($body)
+    {
+        return $this->restful("POST", "/change/apply", $body);
+    }
+
+    /**
+     * 执行审核流程
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/claimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeClaim($body)
+    {
+        return $this->restful("POST", "/change/claim", $body);
+    }
+
+    /**
+     * detailAction()
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDetail($body)
+    {
+        return $this->restful("POST", "/change/detail", $body);
+    }
+
+    /**
+     * 拒绝审核流程
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/rejectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeReject($body)
+    {
+        return $this->restful("POST", "/change/reject", $body);
+    }
+
+    /**
      * 判断增值服务是否可以回收
      * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/WaiterController/auditAction.md
      * @param array $body 入参类型
@@ -71,5 +126,39 @@ class AuditSdk extends SdkBase
     public function isRecover($body)
     {
         return $this->restful("POST", "/waiter/isrecover", $body);
+    }
+
+    /**
+     * 增值服务即买即用的自动审核
+     * 订单支付完成后调用
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/serviceAutoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceAuto($body)
+    {
+        return $this->restful("POST", "/audit/service/auto", $body);
+    }
+
+    /**
+     * 增值服务 即买即用
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/serviceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceImmediately($body)
+    {
+        return $this->restful("POST", "/audit/service/immediately", $body);
+    }
+
+    /**
+     * 回收
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/serviceCancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serviceRecover($body)
+    {
+        return $this->restful("POST", "/audit/service/recover", $body);
     }
 }

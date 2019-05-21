@@ -16,6 +16,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
@@ -64,6 +66,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property MsgSdk                $msg
  * @property JavaGoodsCenterSdk    $javaGoodsCenter
  * @property CompensateSdk         $compensate
+ * @property JavaOrderSdk         $javaOrder
+ * @property JavaPushSdk         $javaPush
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint

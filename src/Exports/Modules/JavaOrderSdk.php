@@ -130,14 +130,5 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/query/member", $body);
     }
-    /**
-     * 换新服务条目查询
-     * @link
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function orderDrugRenew($body)
-    {
-        return $this->restful("POST", "/drug/renew/query", $body);
-    }
+
 }
