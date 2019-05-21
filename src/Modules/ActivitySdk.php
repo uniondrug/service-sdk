@@ -665,7 +665,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
      */
     public function cancel($body)
     {
-        return $this->restful(static::METHOD_POST, '/order/cancel', $body);
+        return $this->restful(static::METHOD_POST, '/order/cancel/byNo', $body);
     }
 
 
