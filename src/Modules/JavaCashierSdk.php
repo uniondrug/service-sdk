@@ -56,4 +56,26 @@ class JavaCashierSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/cashier/consume", $body);
     }
+
+    /**
+     * 根据主订单号查询主订单支付信息
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-cashier-service/doc/cashierQuery.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderQueryCashierByOutTradeNo($body)
+    {
+        return $this->restful("POST", "/cashier/queryCashierByOutTradeNo", $body);
+    }
+
+    /**
+     * 根据主订单号/退单号 查询退单支付信息
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-cashier-service/doc/refundQuery.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderQueryRefunds($body)
+    {
+        return $this->restful("POST", "/cashier/queryRefunds", $body);
+    }
 }
