@@ -114,4 +114,26 @@ class JavaUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/preAccountRecords/info", $body);
     }
+    
+    /**
+     * 预发放积分详情
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function prePointCount($body)
+    {
+        return $this->restful("POST", "/preAccountRecords/count", $body);
+    }
+    
+    /**
+     * 积分统计详情详情
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function accountPointInfo($body)
+    {
+        return $this->restful("POST", "/preAccountRecords/count/history", $body);
+    }
 }
