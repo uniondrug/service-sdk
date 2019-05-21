@@ -658,7 +658,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 撤销订单
+     * 根据单号,撤销订单
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
