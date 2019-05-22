@@ -162,4 +162,15 @@ class AuditSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/audit/added/detail", $body);
     }
 
+    /**
+     * 根据订单号获取换药审核单详情
+     * 优先子订单
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/changeDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditChangeDetail($body)
+    {
+        return $this->restful("POST", "/audit/change/detail", $body);
+    }
 }
