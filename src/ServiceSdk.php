@@ -69,6 +69,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\JavaPushSdk                 $javaPush                                           java push服务
  * @property Modules\AuditSdk                    $audit                                              审核服务
  * @property Modules\JavaPromotecenterServiceSdk $javaPromotecenterService                           java营销中心前台
+ * @property Modules\WxapiSdk                    $wxapi                                              wxapi接口服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk

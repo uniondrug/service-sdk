@@ -617,4 +617,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/guarantee/orderno", $body);
     }
+
+    /**
+     * 换新保障列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/drugPagingAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function guaranteeDrugpaging($body)
+    {
+        return $this->restful("POST", "/guarantee/drugpaging", $body);
+    }
 }
