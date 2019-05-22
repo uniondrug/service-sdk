@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-21
- * @time   Tue, 21 May 2019 16:32:37 +0800
+ * @date   2019-05-22
+ * @time   Wed, 22 May 2019 10:24:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -96,14 +96,15 @@ class AuditSdk extends SdkBase
     }
 
     /**
-     * detailAction()
-     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/detailAction.md
+     * 根据订单号获取换药审核单详情
+     * 优先子订单
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/changeDetailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function changeDetail($body)
     {
-        return $this->restful("POST", "/change/detail", $body);
+        return $this->restful("POST", "/audit/change/detail", $body);
     }
 
     /**
@@ -126,18 +127,6 @@ class AuditSdk extends SdkBase
     public function isRecover($body)
     {
         return $this->restful("POST", "/waiter/isrecover", $body);
-    }
-
-    /**
-     * 增值服务即买即用的自动审核
-     * 订单支付完成后调用
-     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/serviceAutoAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function serviceAuto($body)
-    {
-        return $this->restful("POST", "/audit/service/auto", $body);
     }
 
     /**
