@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-05-22
- * @time   Wed, 22 May 2019 10:24:39 +0800
+ * @time   Wed, 22 May 2019 10:53:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,18 @@ class AuditSdk extends SdkBase
     public function AuditAuto($body)
     {
         return $this->restful("POST", "/audit/auto", $body);
+    }
+
+    /**
+     * 根据订单号获取换药审核单详情
+     * 优先子订单
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/changeDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditChangeDetail($body)
+    {
+        return $this->restful("POST", "/audit/change/detail", $body);
     }
 
     /**
@@ -96,15 +108,14 @@ class AuditSdk extends SdkBase
     }
 
     /**
-     * 根据订单号获取换药审核单详情
-     * 优先子订单
-     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/changeDetailAction.md
+     * 获取理赔单详情
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function changeDetail($body)
     {
-        return $this->restful("POST", "/audit/change/detail", $body);
+        return $this->restful("POST", "/change/detail", $body);
     }
 
     /**
