@@ -173,4 +173,17 @@ class AuditSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/audit/change/detail", $body);
     }
+    /**
+     * 根据保障获取理赔单详情
+     * 以后可能会有多个
+     * *
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/detailGuaranteeIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDetailGuaranteeId($body)
+    {
+        return $this->restful("POST", "/change/detail/guaranteeid", $body);
+    }
+
 }
