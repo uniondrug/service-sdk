@@ -29,4 +29,37 @@ class GoodCenterSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/queryGoods/query', $body);
     }
+
+    /**
+     * 条形码查询商品说明书
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getInstructionsByCode($body)
+    {
+        return $this->restful(static::METHOD_POST, '/queryGoods/queryYaoZs', $body);
+    }
+
+    /**
+     * 获取商品价格&销量&详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getPriceSales($body)
+    {
+        return $this->restful(static::METHOD_POST, '/queryGoods/queryGoodsBaseInfo', $body);
+    }
+
+    /**
+     * els搜索引擎搜索商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function goodsSearch($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goodsSearch/search', $body);
+    }
 }
