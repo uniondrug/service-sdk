@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-22
- * @time   Wed, 22 May 2019 10:53:00 +0800
+ * @date   2019-05-23
+ * @time   Thu, 23 May 2019 10:26:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -116,6 +116,19 @@ class AuditSdk extends SdkBase
     public function changeDetail($body)
     {
         return $this->restful("POST", "/change/detail", $body);
+    }
+
+    /**
+     * 根据保障获取理赔单详情
+     * 以后可能会有多个
+     * *
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/detailGuaranteeIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDetailGuaranteeId($body)
+    {
+        return $this->restful("POST", "/change/detail/guaranteeid", $body);
     }
 
     /**
