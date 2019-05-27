@@ -573,4 +573,70 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/equity/liftingdetail", $body);
     }
+
+    /**
+     * 权益回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function recoverEquity($body)
+    {
+        return $this->restful("POST", "/equity/recover", $body);
+    }
+
+    /**
+     * 保障回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/recoverAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function recoverGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/recover", $body);
+    }
+
+    /**
+     * 保障回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/detailByOrderAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function detailByOrder($body)
+    {
+        return $this->restful("POST", "/equity/detailByOrder", $body);
+    }
+
+    /**
+     * 保障回收操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/detailByOrderAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderNo($body)
+    {
+        return $this->restful("POST", "/guarantee/orderno", $body);
+    }
+
+    /**
+     * 换新保障列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/drugPagingAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function guaranteeDrugpaging($body)
+    {
+        return $this->restful("POST", "/guarantee/drugpaging", $body);
+    }
+
+    /**
+     * 统计个人换新总额
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/memberIdCountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function memberIdCount($body)
+    {
+        return $this->restful("POST", "/guarantee/memberidcount", $body);
+    }
 }
