@@ -58,6 +58,17 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 校验手机号唯一性
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/checkMobileAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkMobile($body)
+    {
+        return $this->restful("POST", "/user/check/mobile", $body);
+    }
+
+    /**
      * 新增权益码
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/addAction.md
      * @param array $body 入参类型
@@ -341,6 +352,17 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     public function userEdit($body)
     {
         return $this->restful("POST", "/user/edit", $body);
+    }
+
+    /**
+     * 单个驻店员信息
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userInfo($body)
+    {
+        return $this->restful("POST", "/user/info", $body);
     }
 
     /**
