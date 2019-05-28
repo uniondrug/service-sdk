@@ -101,7 +101,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 编辑一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/EditAction.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function edit($body)
     {
