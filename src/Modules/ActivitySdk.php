@@ -624,5 +624,38 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/project/unfreeze', $body);
     }
 
+    /**
+     * 创建虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createVirtualCard($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/create', $body);
+    }
+
+    /**
+     * 获取虚拟卡列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getVirtualList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/list', $body);
+    }
+
+    /**
+     * 核销虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function eliminateVirtualCard($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/eliminate', $body);
+    }
+
 
 }
