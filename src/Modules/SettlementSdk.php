@@ -987,6 +987,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取结算单明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/detailAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getStatementsDetail($body)
+    {
+        return $this->restful("POST", "/statements/detail", $body);
+    }
+
+    /**
      * 连锁结算月月视图
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/periodSummaryAction.md
      * @param array $body 入参类型
@@ -1590,6 +1601,5 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/statements/claimContinue", $body);
     }
-
 }
 
