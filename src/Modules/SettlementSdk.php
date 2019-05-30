@@ -1601,5 +1601,71 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/statements/claimContinue", $body);
     }
+
+    /**
+     * 对账单理赔处理
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/claimStatementAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskClaimStatement($body)
+    {
+        return $this->restful("POST", "/task/claimStatement", $body);
+    }
+
+    /**
+     * 生成开票单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/createBillAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskCreateBill($body)
+    {
+        return $this->restful("POST", "/task/createBill", $body);
+    }
+
+    /**
+     * 跑统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/createSettlementAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskCreateSettlement($body)
+    {
+        return $this->restful("POST", "/task/createSettlement", $body);
+    }
+
+    /**
+     * 关联开票单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/relateBillAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskRelateBill($body)
+    {
+        return $this->restful("POST", "/task/relateBill", $body);
+    }
+
+    /**
+     * 继续关联开票单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/relateBillContinueAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskRelateBillContinue($body)
+    {
+        return $this->restful("POST", "/task/relateBillContinue", $body);
+    }
+
+    /**
+     * 把问题订单重置执行状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/resetSettlementAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskResetSettlement($body)
+    {
+        return $this->restful("POST", "/task/resetSettlement", $body);
+    }
 }
 
