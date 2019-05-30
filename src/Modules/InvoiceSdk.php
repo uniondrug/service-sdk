@@ -96,4 +96,15 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/getDetail", $body);
     }
+
+    /**
+     * 编辑一个发票
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/EditAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function edit($body)
+    {
+        return $this->restful("POST", "/invoice/edit", $body);
+    }
 }
