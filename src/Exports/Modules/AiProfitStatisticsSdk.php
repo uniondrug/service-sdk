@@ -41,6 +41,17 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
+     * 连锁门店和店员信息
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ChainController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function chainInfo($body)
+    {
+        return $this->restful("POST", "/chain/info", $body);
+    }
+
+    /**
      * 店员首页接口
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ClerkController/indexAction.md
      * @param array $body 入参类型
