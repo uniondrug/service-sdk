@@ -149,4 +149,15 @@ class AiProfitStatisticsSdk extends SdkBase
     {
         return $this->restful("POST", "/validate/index", $body);
     }
+
+    /**
+     * 新增用户
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/addUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addUser($body)
+    {
+        return $this->restful("POST", "/validate/addUser", $body);
+    }
 }
