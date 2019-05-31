@@ -680,6 +680,28 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 核销虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function verifyVirtual($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/verifyVirtual', $body);
+    }
+
+    /**
+     * 核销虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoVirtualCard($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/info', $body);
+    }
+
+    /**
      * 订单微信支付回调
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
