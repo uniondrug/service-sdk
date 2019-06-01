@@ -59,4 +59,24 @@ class BackOrderSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/logistics/create", $body);
     }
 
+    /**
+     * 药联到家配送发货
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function deliver($body)
+    {
+        return $this->restful("POST", "/logistics/deliver/notify", $body);
+    }
+
+    /**
+     * 电商/o2o确认收货
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function receive($body)
+    {
+        return $this->restful("POST", "/logistics/receive/notify", $body);
+    }
+
 }
