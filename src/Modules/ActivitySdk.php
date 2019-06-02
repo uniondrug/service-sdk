@@ -680,7 +680,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 核销虚拟卡
+     * 回调核销虚拟卡
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
@@ -691,7 +691,7 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 核销虚拟卡
+     * 获取核销卡详情
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
      * @return ClientResponseInterface
