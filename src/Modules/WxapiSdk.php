@@ -116,4 +116,26 @@ class WxapiSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, '/distribution/dst/order/orderBuilder', $body);
     }
 
+    /**
+     * 判断渠道状态
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/tokenAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function queryChannelAvailable($body)
+    {
+        return $this->restful(static::METHOD_POST, '/distribution/dst/share/queryChannelAvailable', $body);
+    }
+
+    /**
+     * 连锁ID获取渠道
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/WxController/tokenAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function queryChannelByMerchantId($body)
+    {
+        return $this->restful(static::METHOD_POST, '/distribution/dst/share/queryChannelByMerchantId', $body);
+    }
+
 }

@@ -44,13 +44,13 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 删除一个发票
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deteleAction.md
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deleteAction.md
      * @param array $body 入参类型
      * @return ClientResponseInterface
      */
     public function delete($body)
     {
-        return $this->restful("POST", "/invoice/detele", $body);
+        return $this->restful("POST", "/invoice/delete", $body);
     }
 
     /**
@@ -95,5 +95,16 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     public function getDetail($body)
     {
         return $this->restful("POST", "/invoice/getDetail", $body);
+    }
+
+    /**
+     * 编辑一个发票
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/EditAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function edit($body)
+    {
+        return $this->restful("POST", "/invoice/edit", $body);
     }
 }
