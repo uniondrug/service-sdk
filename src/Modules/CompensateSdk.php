@@ -11,7 +11,7 @@
  * @date   2019-06-05
  * @time   Wed, 05 Jun 2019 10:10:32 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
+namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
