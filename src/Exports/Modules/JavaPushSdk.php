@@ -27,4 +27,14 @@ class JavaPushSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/push/notify', $body);
     }
+    /**
+     * 换新服务条目查询
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderDrugRenew($body)
+    {
+        return $this->restful("POST", "/audit/drug/renew/query", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-14
- * @time   Tue, 14 May 2019 16:22:01 +0800
+ * @date   2019-05-15
+ * @time   Wed, 15 May 2019 13:56:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -210,6 +210,17 @@ class EquitySdk extends SdkBase
     public function disableGuaranteeById($body)
     {
         return $this->restful("POST", "/guarantee/disable", $body);
+    }
+
+    /**
+     * 换新绑定保障接口
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/drugExpireAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drugExpire($body)
+    {
+        return $this->restful("POST", "/guarantee/drugexpire", $body);
     }
 
     /**
@@ -613,7 +624,7 @@ class EquitySdk extends SdkBase
     }
 
     /**
-     * 订单号查询保障
+     * 换新保障接口
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/renewAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

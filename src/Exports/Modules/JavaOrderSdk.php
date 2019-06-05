@@ -130,4 +130,5 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/query/member", $body);
     }
+
 }

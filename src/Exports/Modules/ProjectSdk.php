@@ -845,4 +845,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/user/recover", $body);
     }
+
+    /**
+     * 统计保险公司pbm和非pbm项目数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/icpbmAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function icpbm($body)
+    {
+        return $this->restful("POST", "/project/icpbm", $body);
+    }
 }
