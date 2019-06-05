@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-16
- * @time   Thu, 16 May 2019 10:51:50 +0800
+ * @date   2019-06-05
+ * @time   Wed, 05 Jun 2019 10:10:32 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -170,5 +170,49 @@ class CompensateSdk extends SdkBase
     public function projectPaging($body)
     {
         return $this->restful("POST", "/project/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportCreate($body)
+    {
+        return $this->restful("POST", "/report/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportDetail($body)
+    {
+        return $this->restful("POST", "/report/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportPaging($body)
+    {
+        return $this->restful("POST", "/report/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportUpdate($body)
+    {
+        return $this->restful("POST", "/report/update", $body);
     }
 }
