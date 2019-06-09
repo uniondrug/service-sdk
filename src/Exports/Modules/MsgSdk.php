@@ -39,4 +39,14 @@ class MsgSdk extends SdkBase
     {
         return $this->restful("POST", "/msg/publish", $body);
     }
+
+    /**
+     * 报告回调
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function report($body)
+    {
+        return $this->restful("POST", "/report/notify", $body);
+    }
 }
