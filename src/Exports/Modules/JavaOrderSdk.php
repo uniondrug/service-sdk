@@ -131,4 +131,15 @@ class JavaOrderSdk extends SdkBase
         return $this->restful("POST", "/order/query/member", $body);
     }
 
+    /**
+     * 订单子订单分页列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryPage($body)
+    {
+        return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
+    }
+
 }
