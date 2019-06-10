@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-07
- * @time   Tue, 07 May 2019 13:58:58 +0800
+ * @date   2019-06-06
+ * @time   Thu, 06 Jun 2019 18:36:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -17,36 +17,26 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
- * MsgSdk
+ * AssistantSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class MsgSdk extends SdkBase
+class AssistantSdk extends SdkBase
 {
     /**
      * 服务名称
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'msg.module';
+    protected $serviceName = 'assistant.module';
 
     /**
-     * 消息发布
-     * @link https://uniondrug.coding.net/p/module.msg/git/blob/development/docs/api/Msg/PublishController/publishAction.md
+     * 邀请函绑定
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Invite/InviteController/BindAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function publish($body)
+    public function inviteBind($body)
     {
-        return $this->restful("POST", "/msg/publish", $body);
-    }
-
-    /**
-     * 报告回调
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function report($body)
-    {
-        return $this->restful("POST", "/report/notify", $body);
+        return $this->restful("POST", "/invite/bind", $body);
     }
 }
