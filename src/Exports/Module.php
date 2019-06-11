@@ -70,7 +70,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property CompensateSdk         $compensate
  * @property JavaOrderSdk          $javaOrder
  * @property JavaPushSdk           $javaPush
- * @property AssistantSdk          $assistantSdk
+ * @property AssistantSdk          $assistant
  * @property JavaPromoteCenterSdk  $javaPromoteCenter
  * @package Uniondrug\ServiceSdk\Exports
  */
