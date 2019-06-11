@@ -37,6 +37,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
+use Uniondrug\ServiceSdk\Modules\MapSdk;
 
 /**
  * 基础模块SDK入口
@@ -72,6 +73,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
  * @property JavaPushSdk           $javaPush
  * @property AssistantSdk          $assistant
  * @property JavaPromoteCenterSdk  $javaPromoteCenter
+ * @property MapSdk                $map
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
