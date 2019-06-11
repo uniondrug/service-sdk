@@ -116,7 +116,7 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
      */
     public function ticket($body)
     {
-        return $this->restful(static::METHOD_POST, '/program/shortUrl', $body);
+        return $this->restful(static::METHOD_POST, '/program/ticket', $body);
     }
 
     /*
