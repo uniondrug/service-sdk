@@ -70,6 +70,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\AuditSdk                    $audit                                              审核服务
  * @property Modules\JavaPromotecenterServiceSdk $javaPromotecenterService                           java营销中心前台
  * @property Modules\WxapiSdk                    $wxapi                                              wxapi接口服务
+ * @property Modules\CompensateSdk               $compensate                                         智赔接口服务
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
@@ -103,7 +104,7 @@ class ServiceSdk
             $instance = new $class();
             self::$_modules[$key] = $instance;
             return self::$_modules[$key];
-        } catch(\Throwable $e) {
+        } catch (\Throwable $e) {
         }
         // 3. 未定义的SDK服务
         throw new Exception("SDK包中未找到'{$name}'定义");
