@@ -107,4 +107,26 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/wx/shortUrl', $body);
     }
+
+    /*
+     * code获取ticket、openid
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/ProgramController/ticketAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function ticket($body)
+    {
+        return $this->restful(static::METHOD_POST, '/program/shortUrl', $body);
+    }
+
+    /*
+    * 小程序登陆
+    * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/ProgramController/loginAction.md
+    * @param array $body
+    * @return ClientResponseInterface
+    */
+    public function login($body)
+    {
+        return $this->restful(static::METHOD_POST, '/program/login', $body);
+    }
 }
