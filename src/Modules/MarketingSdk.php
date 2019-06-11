@@ -17,6 +17,7 @@ use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 use Uniondrug\Structs\StructInterface;
+
 /**
  * MarketingSdk
  * @package Uniondrug\ServiceSdk\Modules
@@ -204,5 +205,27 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
     public function whiteUser($body)
     {
         return $this->restful("POST", "/white/user", $body);
+    }
+
+    /**
+     * userAction()
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/WhiteController/userAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceCreate($body)
+    {
+        return $this->restful("POST", "/evidence/create", $body);
+    }
+
+    /**
+     * userAction()
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/WhiteController/userAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceMember($body)
+    {
+        return $this->restful("POST", "/evidence/member", $body);
     }
 }
