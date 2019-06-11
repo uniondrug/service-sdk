@@ -1667,5 +1667,27 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/task/resetSettlement", $body);
     }
+
+    /**
+     * 对账订单快速比对导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/compareExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function settlementsCompareExport($body)
+    {
+        return $this->restful("POST", "/settlement/compareExport", $body);
+    }
+
+    /**
+     * 对账订单快速比对分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/comparePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function settlementsComparePaging($body)
+    {
+        return $this->restful("POST", "/settlement/comparePaging", $body);
+    }
 }
 
