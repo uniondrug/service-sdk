@@ -49,4 +49,15 @@ class MsgSdk extends SdkBase
     {
         return $this->restful("POST", "/report/notify", $body);
     }
+
+    /**
+     * 验证码校验
+     * @link https://uniondrug.coding.net/p/module.msg/git/blob/develop/docs/api/Msg/CheckController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function check($body)
+    {
+        return $this->restful("POST", "/msg/check", $body);
+    }
 }
