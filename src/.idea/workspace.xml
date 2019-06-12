@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8b95402b-5abc-4c9b-84a5-1b6bce6bba73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/ActivitySdk.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/ActivitySdk.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modules/ActivitySdk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="833" column="35" lean-forward="true" selection-start-line="833" selection-start-column="35" selection-end-line="833" selection-end-column="35" />
+            <state relative-caret-position="398">
+              <caret line="838" selection-start-line="838" selection-end-line="838" />
             </state>
           </provider>
         </entry>
@@ -63,16 +62,6 @@
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Structs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
           </expand>
@@ -109,12 +98,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560321378375</updated>
-      <workItem from="1560321379935" duration="3433000" />
+      <workItem from="1560321379935" duration="3786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3433000" />
+    <option name="totallyTimeSpent" value="3786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -152,8 +141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/ActivitySdk.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="833" column="35" lean-forward="true" selection-start-line="833" selection-start-column="35" selection-end-line="833" selection-end-column="35" />
+        <state relative-caret-position="398">
+          <caret line="838" selection-start-line="838" selection-end-line="838" />
         </state>
       </provider>
     </entry>
