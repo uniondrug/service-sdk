@@ -777,4 +777,5 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/goods/detail', $body);
     }
+
 }
