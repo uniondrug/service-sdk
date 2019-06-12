@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-11
- * @time   Tue, 11 Jun 2019 15:42:27 +0800
+ * @date   2019-06-12
+ * @time   Wed, 12 Jun 2019 16:36:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class AssistantSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'assistant.module';
+
+    /**
+     * 根据类型批量统计某个字段的数量
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantController/countAssistantByStoreIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantCountByStoreIds($body)
+    {
+        return $this->restful("POST", "/assistant/count/by/storeIds", $body);
+    }
 
     /**
      * 获取店员信息
