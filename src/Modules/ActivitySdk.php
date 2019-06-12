@@ -722,4 +722,60 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/order/cancel/byNo', $body);
     }
+
+    /**
+     * 金币模块的商品列表
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function goodsList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goods/list', $body);
+    }
+
+    /**
+     * 金币模块的新增商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function goodsAdd($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goods/add', $body);
+    }
+
+    /**
+     * 金币模块的编辑商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function goodsEdit($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goods/edit', $body);
+    }
+
+    /**
+     * 金币模块的上下架商品
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function goodsDel($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goods/del', $body);
+    }
+
+    /**
+     * 金币模块的商品详情
+     * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function goodsDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goods/detail', $body);
+    }
+
 }
