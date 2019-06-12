@@ -107,4 +107,26 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/edit", $body);
     }
+
+    /**
+     * 批量编辑
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/editInBatchAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function editInBatch($body)
+    {
+        return $this->restful("POST", "/invoice/editInBatch", $body);
+    }
+
+    /**
+     * 新增一个发票快递单
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/addExpressNoAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addExpressNo($body)
+    {
+        return $this->restful("POST", "/invoice/addExpressNo", $body);
+    }
 }
