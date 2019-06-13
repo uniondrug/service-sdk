@@ -23,9 +23,9 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 创建方案(活动方案)
-     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/%E4%BF%83%E9%94%80%E4%B8%AD%E5%BF%83%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3(%E6%96%B9%E6%A1%88%E7%9B%B8%E5%85%B3).md
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function addScheme($body)
     {
@@ -34,9 +34,9 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 方案详情展示(活动方案)
-     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/%E4%BF%83%E9%94%80%E4%B8%AD%E5%BF%83%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3(%E6%96%B9%E6%A1%88%E7%9B%B8%E5%85%B3).md
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function detailScheme($body)
     {
@@ -45,9 +45,9 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 方案列表展示(活动方案)
-     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/%E4%BF%83%E9%94%80%E4%B8%AD%E5%BF%83%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3(%E6%96%B9%E6%A1%88%E7%9B%B8%E5%85%B3).md
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function pagingScheme($body)
     {
@@ -56,9 +56,9 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 方案停用(活动方案)
-     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/%E4%BF%83%E9%94%80%E4%B8%AD%E5%BF%83%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3(%E6%96%B9%E6%A1%88%E7%9B%B8%E5%85%B3).md
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function stopScheme($body)
     {
@@ -67,9 +67,9 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 合作渠道修改(活动方案)
-     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/%E4%BF%83%E9%94%80%E4%B8%AD%E5%BF%83%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3(%E6%96%B9%E6%A1%88%E7%9B%B8%E5%85%B3).md
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function modifyPartner($body)
     {
@@ -80,7 +80,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 创建卡--药店宝
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function sendCard($body)
     {
@@ -91,7 +91,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 消费券接口--药店宝
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function consumeCoupon($body)
     {
@@ -102,7 +102,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 核销券接口--订单
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function payBackNotice($body)
     {
@@ -113,7 +113,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 查询卡详情接口--药店宝
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function queryCardDetail($body)
     {
@@ -124,7 +124,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 通过主订单号查询赠送权益--药店宝
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function queryGiftDetail($body)
     {
@@ -135,7 +135,7 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 查询卡消费记录（券列表）--微信
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function queryCouponList($body)
     {
@@ -146,10 +146,21 @@ class JavaPromotecenterSdk extends Sdk implements ServiceSdkInterface
      * 查询卡列表接口--微信
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
-     * @return ResponseInterface
+     * @return ClientResponseInterface
      */
     public function queryMyCard($body)
     {
         return $this->restful("POST", "/card/queryMyCard", $body);
+    }
+
+    /**
+     * 查询卡列表接口--微信
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function listScheme($body)
+    {
+        return $this->restful("POST", "/promote/scheme/list/info", $body);
     }
 }
