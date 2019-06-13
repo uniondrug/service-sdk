@@ -17,6 +17,7 @@ use Uniondrug\Structs\StructInterface;
 class MsgSdk extends Sdk implements ServiceSdkInterface
 {
 
+    protected $serviceName = 'msg';
     /**
      * 消息发布
      * @link https://uniondrug.coding.net/p/module.msg/git/blob/development/docs/api/Msg/PublishController/publishAction.md
