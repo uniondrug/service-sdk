@@ -77,6 +77,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过orderNos获取权益列表(智赔)
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/listByOrderNosAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getEquityByOrderNos($body)
+    {
+        return $this->restful(static::METHOD_POST, "/equity/orderNos/list", $body);
+    }
+
+    /**
      * 获取权益列表
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/getListsAction.md
      * @param $body
