@@ -63,6 +63,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\TradeinSdk                  $tradein                                            连锁换新日配置服务
  * @property Modules\MoreServiceSdk              $moreService                                        药联更多服务模块
  * @property Modules\ActivitySdk                 $activity                                           活动模块
+ * @property Modules\JwtSdk                      $jwt                                                鉴权模块
  * @property Modules\PrivilegeSdk                $privilege                                          特权活动模块
  * @property Modules\MsgSdk                      $msg                                                新版消息中心
  * @property Modules\JavaPromotecenterSdk        $javaPromotecenter                                  营销方案
