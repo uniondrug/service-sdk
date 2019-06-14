@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-07
- * @time   Tue, 07 May 2019 16:16:47 +0800
+ * @date   2019-06-14
+ * @time   Fri, 14 Jun 2019 11:15:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -363,6 +363,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 根据权益id 获取发行方
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getByEquityId($body)
+    {
+        return $this->restful("POST", "/user/info/equityid", $body);
+    }
+
+    /**
      * 通过订单号查找兑换码信息
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByorderNoAction.md
      * @param array $body 入参类型
@@ -385,7 +396,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 获取一个未激活权益
+     * 通过分组获取一个未激活的兑换码
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCdKeyByGroupAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -682,6 +693,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 统计保险公司pbm和非pbm项目数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/icpbmAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function icpbm($body)
+    {
+        return $this->restful("POST", "/project/icpbm", $body);
+    }
+
+    /**
      * 多种状态查询分页
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/pagingByStatusAction.md
      * @param array $body 入参类型
@@ -836,6 +858,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 通过外部订单号查找兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByOutOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userGetByOutOrderNo($body)
+    {
+        return $this->restful("POST", "/user/getByOutOrderNo", $body);
+    }
+
+    /**
      * 回收兑换码
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/recoverAction.md
      * @param array $body 入参类型
@@ -844,16 +877,5 @@ class ProjectSdk extends SdkBase
     public function userRecover($body)
     {
         return $this->restful("POST", "/user/recover", $body);
-    }
-
-    /**
-     * 统计保险公司pbm和非pbm项目数量
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/icpbmAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function icpbm($body)
-    {
-        return $this->restful("POST", "/project/icpbm", $body);
     }
 }
