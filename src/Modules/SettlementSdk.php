@@ -1722,5 +1722,16 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/statementComparePayMethod", $body);
     }
+
+    /**
+     * 快递公司列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ExpressController/listAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function expressList($body)
+    {
+        return $this->restful("POST", "/express/list", $body);
+    }
 }
 
