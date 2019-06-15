@@ -39,6 +39,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CarSdk;
 use Uniondrug\ServiceSdk\Modules\MapSdk;
 
 /**
@@ -78,6 +79,7 @@ use Uniondrug\ServiceSdk\Modules\MapSdk;
  * @property MapSdk                $map
  * @property ActivitySdk           $activity
  * @property WeixinSdk             $weixin
+ * @property CarSdk                $car
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint

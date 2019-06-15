@@ -54,7 +54,8 @@ trait SdkTrait
         'goodsReplace' => 'union',
         'msg' => 'module',
         'activity' => 'module',
-        'weixin' => 'module'
+        'weixin' => 'module',
+        'car' => 'module'
     ];
 
     /**
