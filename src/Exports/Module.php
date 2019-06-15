@@ -38,6 +38,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
 use Uniondrug\ServiceSdk\Modules\MapSdk;
 
 /**
@@ -76,6 +77,7 @@ use Uniondrug\ServiceSdk\Modules\MapSdk;
  * @property JavaPromoteCenterSdk  $javaPromoteCenter
  * @property MapSdk                $map
  * @property ActivitySdk           $activity
+ * @property WeixinSdk             $weixinSdk
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint

@@ -53,7 +53,8 @@ trait SdkTrait
         'finance' => 'union',
         'goodsReplace' => 'union',
         'msg' => 'module',
-        'activity' => 'module'
+        'activity' => 'module',
+        'weixin' => 'module'
     ];
 
     /**
