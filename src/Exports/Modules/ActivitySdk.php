@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-15
- * @time   Sat, 15 Jun 2019 13:40:01 +0800
+ * @time   Sat, 15 Jun 2019 13:48:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -544,6 +544,17 @@ class ActivitySdk extends SdkBase
     public function projectPaging($body)
     {
         return $this->restful("POST", "/admin/project/paging", $body);
+    }
+
+    /**
+     * 获取项目状态
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Project/ProjectController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectStatus($body)
+    {
+        return $this->restful("POST", "/project/status", $body);
     }
 
     /**
