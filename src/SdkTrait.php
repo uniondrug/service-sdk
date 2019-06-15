@@ -52,7 +52,8 @@ trait SdkTrait
         'invoice' => 'module',
         'finance' => 'union',
         'goodsReplace' => 'union',
-        'msg' => 'module'
+        'msg' => 'module',
+        'activity' => 'module'
     ];
 
     /**
