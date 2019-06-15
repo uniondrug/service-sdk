@@ -77,7 +77,7 @@ use Uniondrug\ServiceSdk\Modules\MapSdk;
  * @property JavaPromoteCenterSdk  $javaPromoteCenter
  * @property MapSdk                $map
  * @property ActivitySdk           $activity
- * @property WeixinSdk             $weixinSdk
+ * @property WeixinSdk             $weixin
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
