@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-15
- * @time   Wed, 15 May 2019 13:56:19 +0800
+ * @date   2019-06-15
+ * @time   Sat, 15 Jun 2019 14:53:23 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -156,6 +156,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 用消费订单号查权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/detailByOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function detailByOrder($body)
+    {
+        return $this->restful("POST", "/equity/detailByOrder", $body);
+    }
+
+    /**
      * 通过itemId获取对应的换药权益
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/detailItemAction.md
      * @param array $body 入参类型
@@ -281,6 +292,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 换新保障列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/drugPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDrugGuaranteePaging($body)
+    {
+        return $this->restful("POST", "/guarantee/drugpaging", $body);
+    }
+
+    /**
      * 权益详情
      * 根据权益id 或权益卡号 查找权益详情
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/detailAction.md
@@ -302,6 +324,17 @@ class EquitySdk extends SdkBase
     public function getEquityById($body)
     {
         return $this->restful("POST", "/equity/detail/equityId", $body);
+    }
+
+    /**
+     * 通过orderNos获取权益列表(智赔)
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/listByOrderNosAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEquityByOrderNos($body)
+    {
+        return $this->restful("POST", "/equity/orderNos/list", $body);
     }
 
     /**
@@ -452,6 +485,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 保障理赔操作
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/repairSettlementAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteeRepairSettlement($body)
+    {
+        return $this->restful("POST", "/guarantee/settlement/repair", $body);
+    }
+
+    /**
      * 设置权益为失效状态
      * 入参只需要一个，使用优先级为 equityId equityNo outOrderNo
      * 只有未激活和已激活状态的权益才可以设为失效状态
@@ -519,6 +563,17 @@ class EquitySdk extends SdkBase
     public function memberEquityType($body)
     {
         return $this->restful("POST", "/equity/consume/memberequitytype", $body);
+    }
+
+    /**
+     * 统计用户保障金额
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/memberIdCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberIdCount($body)
+    {
+        return $this->restful("POST", "/guarantee/memberidcount", $body);
     }
 
     /**
