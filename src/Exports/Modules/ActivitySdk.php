@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-15
- * @time   Sat, 15 Jun 2019 13:48:30 +0800
+ * @date   2019-06-16
+ * @time   Sun, 16 Jun 2019 21:50:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,17 @@ class ActivitySdk extends SdkBase
     public function confirm($body)
     {
         return $this->restful("POST", "/order/confirm", $body);
+    }
+
+    /**
+     * 虚拟卡消卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/VirtualCard/VirtualCardController/consumeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function consumeVirtualCard($body)
+    {
+        return $this->restful("POST", "/virtualCard/consume", $body);
     }
 
     /**
@@ -217,17 +228,6 @@ class ActivitySdk extends SdkBase
     }
 
     /**
-     * 虚拟卡消卡
-     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/VirtualCard/VirtualCardController/eliminateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function eliminateVirtualCard($body)
-    {
-        return $this->restful("POST", "/virtualCard/eliminate", $body);
-    }
-
-    /**
      * 权益列表
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/EquityController/listAction.md
      * @param array $body 入参类型
@@ -346,6 +346,17 @@ class ActivitySdk extends SdkBase
     public function getMemberLastOrder($body)
     {
         return $this->restful("POST", "/order/getMemberLastOrder", $body);
+    }
+
+    /**
+     * 获取最大可用的权益
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/getMaxEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMemberMaxEquity($body)
+    {
+        return $this->restful("POST", "/member/getMaxEquity", $body);
     }
 
     /**
@@ -580,6 +591,17 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 活动手机号验证码注册用户
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/registerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function registerMember($body)
+    {
+        return $this->restful("POST", "/member/register", $body);
+    }
+
+    /**
      * 订单权益重发
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/EquityController/retryAction.md
      * @param array $body 入参类型
@@ -654,17 +676,6 @@ class ActivitySdk extends SdkBase
     public function unfreezeProjectAmount($body)
     {
         return $this->restful("POST", "/fund/unfreeze", $body);
-    }
-
-    /**
-     * 虚拟卡核销回调变更订单状态
-     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderPayController/verifyVirtualAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function verifyVirtual($body)
-    {
-        return $this->restful("POST", "/order/verifyVirtual", $body);
     }
 
     /**
