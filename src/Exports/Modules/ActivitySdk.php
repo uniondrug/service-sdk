@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 11:22:15 +0800
+ * @time   Mon, 17 Jun 2019 12:09:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -393,6 +393,105 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 检测该商品能否被兑换
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/checkExchangeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldCheckExchange($body)
+    {
+        return $this->restful("POST", "/goods/checkExchange", $body);
+    }
+
+    /**
+     * 修改金币
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoldController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldEdit($body)
+    {
+        return $this->restful("POST", "/gold/edit", $body);
+    }
+
+    /**
+     * 新建商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsAdd($body)
+    {
+        return $this->restful("POST", "/goods/add", $body);
+    }
+
+    /**
+     * 上下架商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/delAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsDel($body)
+    {
+        return $this->restful("POST", "/goods/del", $body);
+    }
+
+    /**
+     * 商品详情
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsDetail($body)
+    {
+        return $this->restful("POST", "/goods/detail", $body);
+    }
+
+    /**
+     * 修改商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsEdit($body)
+    {
+        return $this->restful("POST", "/goods/edit", $body);
+    }
+
+    /**
+     * 后台商品列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsList($body)
+    {
+        return $this->restful("POST", "/goods/list", $body);
+    }
+
+    /**
+     * 获取用户金币
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoldController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldList($body)
+    {
+        return $this->restful("POST", "/gold/list", $body);
+    }
+
+    /**
+     * 新增订单
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldOrderAdd($body)
+    {
+        return $this->restful("POST", "/order/add", $body);
+    }
+
+    /**
      * 获取虚拟卡详情
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/VirtualCard/VirtualCardController/infoAction.md
      * @param array $body 入参类型
@@ -687,16 +786,5 @@ class ActivitySdk extends SdkBase
     public function viewProjectGoods($body)
     {
         return $this->restful("POST", "/admin/projectGoods/view", $body);
-    }
-
-    /**
-     * 微信支付回调(凡涉及到支付)
-     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderPayController/wxPaidAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function wxPaid($body)
-    {
-        return $this->restful("POST", "/order/wx/paid", $body);
     }
 }
