@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 17:50:58 +0800
+ * @time   Mon, 17 Jun 2019 19:10:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -489,6 +489,17 @@ class ActivitySdk extends SdkBase
     public function goldOrderAdd($body)
     {
         return $this->restful("POST", "/order/add", $body);
+    }
+
+    /**
+     * 用户订单记录
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/userOrderRecordAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldUserOrderRecord($body)
+    {
+        return $this->restful("POST", "/order/userOrderRecord", $body);
     }
 
     /**
