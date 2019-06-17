@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-23
- * @time   Thu, 23 May 2019 10:26:49 +0800
+ * @date   2019-06-17
+ * @time   Mon, 17 Jun 2019 13:40:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AuditSdk extends SdkBase
     public function addedDetail($body)
     {
         return $this->restful("POST", "/audit/added/detail", $body);
+    }
+
+    /**
+     * 根据子订单号查询审核单详情，不包括换药
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/getDetailByOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addedDetailByOrderNo($body)
+    {
+        return $this->restful("POST", "/audit/added/detail/orderno", $body);
     }
 
     /**
@@ -72,6 +83,17 @@ class AuditSdk extends SdkBase
     public function AuditCreateForm($body)
     {
         return $this->restful("POST", "/audit/form", $body);
+    }
+
+    /**
+     * 根据审核单
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/auditDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditDetail($body)
+    {
+        return $this->restful("POST", "/audit/detail", $body);
     }
 
     /**
@@ -119,9 +141,7 @@ class AuditSdk extends SdkBase
     }
 
     /**
-     * 根据保障获取理赔单详情
-     * 以后可能会有多个
-     * *
+     * 根据保障id 获取最新的理赔单详情
      * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ChangeController/detailGuaranteeIdAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
