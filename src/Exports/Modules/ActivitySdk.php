@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 19:10:54 +0800
+ * @time   Mon, 17 Jun 2019 20:06:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -808,5 +808,16 @@ class ActivitySdk extends SdkBase
     public function virtualChannel($body)
     {
         return $this->restful("POST", "/admin/projectGoods/virtualChannel", $body);
+    }
+
+    /**
+     * 微信支付回调(凡涉及到支付)
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderPayController/wxPaidAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function wxPaid($body)
+    {
+        return $this->restful("POST", "/order/wx/paid", $body);
     }
 }
