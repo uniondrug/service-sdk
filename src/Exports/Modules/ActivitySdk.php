@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 12:09:24 +0800
+ * @time   Mon, 17 Jun 2019 17:50:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -786,5 +786,16 @@ class ActivitySdk extends SdkBase
     public function viewProjectGoods($body)
     {
         return $this->restful("POST", "/admin/projectGoods/view", $body);
+    }
+
+    /**
+     * 获取未激活模式下的渠道列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectGoodsController/virtualChannelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function virtualChannel($body)
+    {
+        return $this->restful("POST", "/admin/projectGoods/virtualChannel", $body);
     }
 }
