@@ -31,8 +31,9 @@ class JwtSdk extends Sdk implements ServiceSdkInterface
         if (!$res->hasError()) {
             // 设置cookie
             $data = $res->getData();
-            setcookie("jwt", $data->jwt);
-            setcookie("project", $data->project);
+            $expire = strtotime("1 day");
+            setcookie("jwt", $data->jwt, $expire);
+            setcookie("project", $data->project, $expire);
         }
         return $res;
     }
