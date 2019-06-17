@@ -142,4 +142,92 @@ class JavaOrderSdk extends SdkBase
         return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
     }
 
+
+    /**
+     * 子订单查询列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryBycondition($body)
+    {
+        return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
+    }
+
+    /**
+     * 子订单列表检索
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQuerySubOrderListForAdmin($body)
+    {
+        return $this->restful("POST", "/order/query/querySubOrderListForAdmin", $body);
+    }
+
+    /**
+     * 直付子订单退单流程
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-order-service/doc/orderRefundGoods.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundGoods($body)
+    {
+        return $this->restful("POST", "/order/refund/goods", $body);
+    }
+
+    /**
+     * 根据退单号查询退款商品列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryRefundGoodsListForAdmin($body)
+    {
+        return $this->restful("POST", "/order/query/queryRefundGoodsListForAdmin", $body);
+    }
+
+    /**
+     * 根据子订单号查询退款单列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryRefundList($body)
+    {
+        return $this->restful("POST", "/order/query/queryRefundList", $body);
+    }
+
+    /**
+     * 根据子订单号查询退款商品列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryItemListByOrderNo($body)
+    {
+        return $this->restful("POST", "/order/query/queryItemListByOrderNo", $body);
+    }
+
+    /**
+     * 订单退单退款接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundCashierExecute($body)
+    {
+        return $this->restful("POST", "/refund/cashier/execute", $body);
+    }
+
+    /**
+     * 订单列表接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryMainOrderListByTerm($body)
+    {
+        return $this->restful("POST", "/order/query/queryMainOrderListByTerm", $body);
+    }
 }
