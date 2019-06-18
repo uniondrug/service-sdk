@@ -149,7 +149,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      */
     public function getListInExpress($body)
     {
-        return $this->restful("POST", "/invoice/getPagingInExpress", $body);
+        return $this->restful("POST", "/invoice/getListInExpress", $body);
     }
 
     /**
