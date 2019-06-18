@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-13
- * @time   Thu, 13 Jun 2019 11:38:54 +0800
+ * @date   2019-06-18
+ * @time   Tue, 18 Jun 2019 12:26:57 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -74,6 +74,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 按条件查询邀请信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Invite/InviteController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function inviteInfo($body)
+    {
+        return $this->restful("POST", "/invite/info", $body);
+    }
+
+    /**
      * 获取一条助手用户新
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/UserController/infoAction.md
      * @param array $body 入参类型
@@ -85,7 +96,7 @@ class AssistantSdk extends SdkBase
     }
 
     /**
-     * 邀请函绑定
+     * 统计城市经理人邀请数量
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Invite/InviteController/userInvitesAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
