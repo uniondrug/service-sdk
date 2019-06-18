@@ -34,7 +34,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 新增一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/addAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function add($body)
@@ -45,7 +45,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deleteAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function delete($body)
@@ -56,7 +56,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取发票分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getList($body)
@@ -67,7 +67,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据开票单获取发票的总和
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getInvoiceSumAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getInvoiceSum($body)
@@ -78,7 +78,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取发票的详情
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function detail($body)
@@ -89,7 +89,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据发票单号获取发票的详情
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getDetailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDetail($body)
@@ -100,7 +100,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 编辑一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/EditAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function edit($body)
@@ -111,7 +111,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 批量编辑
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/editInBatchAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function editInBatch($body)
@@ -122,7 +122,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 新增一个发票快递单
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/addExpressNoAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function addExpressNo($body)
@@ -133,7 +133,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 快递公司列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/ExpressController/listAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function expressList($body)
@@ -144,7 +144,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取快递页发票分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getPagingInExpressAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getListInExpress($body)
@@ -155,7 +155,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取未寄出发票数量
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/countInvoiceAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function countInvoice($body)
