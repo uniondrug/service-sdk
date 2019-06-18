@@ -118,6 +118,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editActivity($body)
+    {
+        return $this->restful("POST", "/activity/edit", $body);
+    }
+
+    /**
      * 开启
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/enableAction.md
      * @param array $body 入参类型
