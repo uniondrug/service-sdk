@@ -1722,5 +1722,16 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/statementComparePayMethod", $body);
     }
+
+    /**
+     * 获取对比结果订单数
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/countCompareAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function countCompare($body)
+    {
+        return $this->restful("POST", "/settlement/countCompare", $body);
+    }
 }
 
