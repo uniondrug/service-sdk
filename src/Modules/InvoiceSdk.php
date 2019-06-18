@@ -140,4 +140,15 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/express/list", $body);
     }
+
+    /**
+     * 获取快递页发票分页列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getPagingInExpressAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getListInExpress($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingInExpress", $body);
+    }
 }
