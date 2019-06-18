@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-18
- * @time   Tue, 18 Jun 2019 10:30:10 +0800
+ * @time   Tue, 18 Jun 2019 16:40:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -731,6 +731,17 @@ class ActivitySdk extends SdkBase
     public function registerMember($body)
     {
         return $this->restful("POST", "/member/register", $body);
+    }
+
+    /**
+     * 活动用户和药联用户的数据关联
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/registerMemberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function registerMemberInfo($body)
+    {
+        return $this->restful("POST", "/member/register/member", $body);
     }
 
     /**
