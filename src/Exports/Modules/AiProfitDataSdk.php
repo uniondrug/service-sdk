@@ -96,6 +96,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 取消首页Banner
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/cancelBannerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cancelActivityBanner($body)
+    {
+        return $this->restful("POST", "/activity/banner/cancel", $body);
+    }
+
+    /**
      * 下架
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/disableAction.md
      * @param array $body 入参类型
