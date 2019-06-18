@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 12:09:24 +0800
+ * @date   2019-06-18
+ * @time   Tue, 18 Jun 2019 09:49:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class ActivitySdk extends SdkBase
     public function addOrderEquity($body)
     {
         return $this->restful("POST", "/admin/equity/addOrderEquity", $body);
+    }
+
+    /**
+     * 校验验证码
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Sms/CaptchaController/checkCaptchaAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkCaptcha($body)
+    {
+        return $this->restful("POST", "/captcha/checkCaptcha", $body);
     }
 
     /**
@@ -492,6 +503,17 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 用户订单记录
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/userOrderRecordAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldUserOrderRecord($body)
+    {
+        return $this->restful("POST", "/order/userOrderRecord", $body);
+    }
+
+    /**
      * 获取虚拟卡详情
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/VirtualCard/VirtualCardController/infoAction.md
      * @param array $body 入参类型
@@ -778,6 +800,17 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 回传用户信息(头像、昵称、unionId)
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/updateMemberInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateMemberInfo($body)
+    {
+        return $this->restful("POST", "/member/updateMemberInfo", $body);
+    }
+
+    /**
      * 查看项目商品
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectGoodsController/viewAction.md
      * @param array $body 入参类型
@@ -786,5 +819,27 @@ class ActivitySdk extends SdkBase
     public function viewProjectGoods($body)
     {
         return $this->restful("POST", "/admin/projectGoods/view", $body);
+    }
+
+    /**
+     * 获取未激活模式下的渠道列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectGoodsController/virtualChannelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function virtualChannel($body)
+    {
+        return $this->restful("POST", "/admin/projectGoods/virtualChannel", $body);
+    }
+
+    /**
+     * 微信支付回调(凡涉及到支付)
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderPayController/wxPaidAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function wxPaid($body)
+    {
+        return $this->restful("POST", "/order/wx/paid", $body);
     }
 }

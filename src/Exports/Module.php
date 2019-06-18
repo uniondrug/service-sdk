@@ -19,6 +19,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaCashierSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
@@ -73,6 +74,7 @@ use Uniondrug\ServiceSdk\Modules\MapSdk;
  * @property JavaGoodsCenterSdk    $javaGoodsCenter
  * @property CompensateSdk         $compensate
  * @property JavaOrderSdk          $javaOrder
+ * @property JavaCashierSdk        $javaCashier
  * @property JavaPushSdk           $javaPush
  * @property AssistantSdk          $assistant
  * @property JavaPromoteCenterSdk  $javaPromoteCenter
