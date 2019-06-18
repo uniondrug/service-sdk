@@ -1612,4 +1612,26 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/settlement/updateSettlementStatus", $body);
     }
+
+    /**
+     * 连锁结算汇总统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/partnerSettlementSummaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerSettlementSummary($body)
+    {
+        return $this->restful("POST", "/report/partnerSettlementSummary", $body);
+    }
+
+    /**
+     * 药联结算汇总统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/totalSettlementSummaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function totalSettlementSummary($body)
+    {
+        return $this->restful("POST", "/report/totalSettlementSummary", $body);
+    }
 }
