@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 20:06:09 +0800
+ * @date   2019-06-18
+ * @time   Tue, 18 Jun 2019 09:49:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class ActivitySdk extends SdkBase
     public function addOrderEquity($body)
     {
         return $this->restful("POST", "/admin/equity/addOrderEquity", $body);
+    }
+
+    /**
+     * 校验验证码
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Sms/CaptchaController/checkCaptchaAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkCaptcha($body)
+    {
+        return $this->restful("POST", "/captcha/checkCaptcha", $body);
     }
 
     /**
@@ -786,6 +797,17 @@ class ActivitySdk extends SdkBase
     public function unfreezeProjectAmount($body)
     {
         return $this->restful("POST", "/fund/unfreeze", $body);
+    }
+
+    /**
+     * 回传用户信息(头像、昵称、unionId)
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/updateMemberInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateMemberInfo($body)
+    {
+        return $this->restful("POST", "/member/updateMemberInfo", $body);
     }
 
     /**
