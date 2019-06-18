@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-18
- * @time   Tue, 18 Jun 2019 09:49:16 +0800
+ * @time   Tue, 18 Jun 2019 10:30:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,17 @@ class ActivitySdk extends SdkBase
     public function create($body)
     {
         return $this->restful("POST", "/order/create", $body);
+    }
+
+    /**
+     * 按照新流程创建订单
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderController/newCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createByRootIn($body)
+    {
+        return $this->restful("POST", "/order/create/rootIn", $body);
     }
 
     /**
