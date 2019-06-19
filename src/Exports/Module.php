@@ -8,6 +8,7 @@ namespace Uniondrug\ServiceSdk\Exports;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuditSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
@@ -41,7 +42,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CarSdk;
-use Uniondrug\ServiceSdk\Modules\MapSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
 
 /**
  * 基础模块SDK入口
@@ -82,6 +83,7 @@ use Uniondrug\ServiceSdk\Modules\MapSdk;
  * @property ActivitySdk           $activity
  * @property WeixinSdk             $weixin
  * @property CarSdk                $car
+ * @property AuditSdk              $audit
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
