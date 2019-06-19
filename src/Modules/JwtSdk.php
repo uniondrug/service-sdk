@@ -44,7 +44,7 @@ class JwtSdk extends Sdk implements ServiceSdkInterface
      * @param \Redis $redis
      * @return ClientResponse
      */
-    public function authParse($body, \Redis $redis)
+    public function authParse($body, $redis)
     {
         $result = new ClientResponse();
         switch (true) {
