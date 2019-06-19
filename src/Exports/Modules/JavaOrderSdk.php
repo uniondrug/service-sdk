@@ -153,7 +153,6 @@ class JavaOrderSdk extends SdkBase
         return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
     }
 
-
     /**
      * 子订单查询列表
      * @link
@@ -240,5 +239,16 @@ class JavaOrderSdk extends SdkBase
     public function queryMainOrderListByTerm($body)
     {
         return $this->restful("POST", "/order/query/queryMainOrderListByTerm", $body);
+    }
+
+    /**
+     * 重复支付主订单退款接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mainOrderRefundCashier($body)
+    {
+        return $this->restful("POST", "/cancel/cashier/doublespending/main", $body);
     }
 }
