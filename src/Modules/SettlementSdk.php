@@ -21,7 +21,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 创建开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/addAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function addBill($body)
@@ -32,7 +32,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出商品明细
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/goodsDetailsExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function billGoodsDetailExport($body)
@@ -43,7 +43,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票信息商品明细分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/billGoodsPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function billGoodsPaging($body)
@@ -54,7 +54,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 更具投保id查询开票单已用多少投保金额
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/billInsureAmountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function billInsureAmount($body)
@@ -65,7 +65,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票单投保id分组信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/billInsureIdGroupAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function billInsureIdGroup($body)
@@ -76,7 +76,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/billInsureListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function billInsureList($body)
@@ -87,7 +87,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出关联订单列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/billOrderExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function billOrderExport($body)
@@ -98,7 +98,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/billOrderPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function billOrderPaging($body)
@@ -109,7 +109,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 预生成对账单下的项目列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ProjectController/buildAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function buildStatementProject($body)
@@ -120,7 +120,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 编辑开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/editAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function editBill($body)
@@ -131,7 +131,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出商品清单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/exportBillGoodsListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportBillGoodsList($body)
@@ -142,7 +142,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * exportBillOrderListAction()
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/exportBillOrderListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportBillOrderList($body)
@@ -153,7 +153,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 顾客信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/exportMemberPagingSqlAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportMemberPagingSql($body)
@@ -164,7 +164,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出指定对账单内商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/exportStatementGoodsAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportStatementGoods($body)
@@ -175,7 +175,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取开票信息检测结果
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/checkAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getBillCheckResult($body)
@@ -186,7 +186,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取开票单详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getBillDetail($body)
@@ -197,7 +197,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取开票单列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/listAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getBillList($body)
@@ -208,7 +208,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票单分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getBillPaging($body)
@@ -219,7 +219,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票单列表汇总信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/summaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getBillSummary($body)
@@ -230,7 +230,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 数据中心订单明细导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataController/ordersPagingExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDataOrdersExport($body)
@@ -241,7 +241,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataController/ordersPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDataOrdersPaging($body)
@@ -252,7 +252,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 直付应结账期表导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataController/directExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDirectExport($body)
@@ -263,7 +263,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 直付应结账期表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataController/directPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDirectPaging($body)
@@ -274,7 +274,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁直付结算信息导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataController/directSettlementExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDirectSettlementExport($body)
@@ -285,7 +285,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁直付结算信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataController/directSettlementPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDirectSettlementPaging($body)
@@ -296,7 +296,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 商品明细汇总信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/goodsListSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getGoodsListSummary($body)
@@ -307,7 +307,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取对账单项目列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ProjectController/listAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getProjectList($body)
@@ -318,7 +318,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取对账单项目分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ProjectController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getProjectPaging($body)
@@ -329,7 +329,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取销售清单分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/saleGoodsPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getSaleGoodsPaging($body)
@@ -340,7 +340,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 销售清单汇总信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/saleListSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getSaleListSummary($body)
@@ -351,7 +351,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取指定连锁订单的商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/goodsAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function goods($body)
@@ -362,7 +362,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出指定连锁订单的商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/goodsExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function goodsExport($body)
@@ -373,7 +373,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 初始化生成对账单订单数据
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/initStatementOrdersAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function initStatementOrders($body)
@@ -384,7 +384,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 初始化对比后生成对账单订单数据
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/initCompareOrdersAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function initCompareOrders($body)
@@ -395,7 +395,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 顾客信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/memberPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function memberPaging($body)
@@ -406,7 +406,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/orderDetailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function orderDetail($body)
@@ -417,7 +417,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取指定订单内商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/orderGoodsAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function orderGoods($body)
@@ -428,7 +428,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单信息商品列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/orderGoodsPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function orderGoodsPaging($body)
@@ -439,7 +439,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取订单结算数据支付方式接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/orderPayMethodAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function orderPayMethod($body)
@@ -450,7 +450,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算单订单列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/ordersAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function orders($body)
@@ -461,7 +461,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取指定连锁订单统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/ordersCountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function ordersCount($body)
@@ -472,7 +472,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出结算单订单列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/ordersExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function ordersExport($body)
@@ -483,7 +483,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取连锁订单统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/partnerCountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerCount($body)
@@ -494,7 +494,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 处理连锁全部订单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/handleAllAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerHandleAll($body)
@@ -505,7 +505,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 处理所有异常订单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/handleAllExceptionAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerHandleAllException($body)
@@ -516,7 +516,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 处理连锁异常订单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/handleExceptionAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerHandleException($body)
@@ -527,7 +527,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取指定连锁订单列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/ordersAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerOrders($body)
@@ -538,7 +538,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 直付数据处理分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/situationPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSituationPaging($body)
@@ -549,7 +549,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 直付数据处理分页汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/situationSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSituationSummary($body)
@@ -560,7 +560,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 检查队列
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/QueueController/checkAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function queueCheck($body)
@@ -571,7 +571,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 处理队列
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/QueueController/handleAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function queueHandle($body)
@@ -582,7 +582,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据对账单号把当指定账单下的订单重置为未绑定对账单的订单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/resetSettlementsAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function resetSettlements($body)
@@ -593,7 +593,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据范围重新更新settlements归属的开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/resetSettlementsBillNoAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function resetSettlementsBillNo($body)
@@ -604,7 +604,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出销售清单列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/saleGoodsExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function saleGoodsExport($body)
@@ -615,7 +615,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取配置
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettingController/indexAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function settingIndex($body)
@@ -626,7 +626,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 保存配置接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettingController/updateAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function settingUpdate($body)
@@ -637,7 +637,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取指定对账单内商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/statementGoodsAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function statementGoods($body)
@@ -648,7 +648,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算单结算数据支付方式接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/statementPayMethodAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function statementPayMethod($body)
@@ -659,7 +659,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 提交开票
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/submitBillAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function submitBill($body)
@@ -670,7 +670,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 更新开票单信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/updateAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function update($body)
@@ -681,7 +681,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开发票时更新开票单状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/updateBillStatusToInvoiceAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function updateBillStatusToInvoice($body)
@@ -692,7 +692,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 更新对账单下订单的属性接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/updateSettlementAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function updateSettlement($body)
@@ -703,7 +703,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 更新对账单下订单的开票单号接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/updateSettlementsBillNoAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function updateSettlementsBillNo($body)
@@ -714,7 +714,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 更新对账单下订单的状态接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/updateSettlementStatusAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function updateSettlementStatus($body)
@@ -725,7 +725,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加理赔单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/addClaimAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function addClaim($body)
@@ -736,7 +736,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 撤销理赔
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/cancelAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function cancelClaim($body)
@@ -747,7 +747,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 提交理赔
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/commitAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function commitClaim($body)
@@ -758,7 +758,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 赔付完成
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/completeAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function completeClaim($body)
@@ -769,7 +769,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔开票单分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/billPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimBillPaging($body)
@@ -780,7 +780,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔单详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimDetail($body)
@@ -791,7 +791,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 商品明细分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/goodsPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimGoodsPaging($body)
@@ -802,7 +802,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔发票分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/invoicePagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimInvoicePaging($body)
@@ -813,7 +813,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔操作记录分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/logPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimLogPaging($body)
@@ -824,7 +824,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔关联订单商品汇总信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/orderGoodsSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimOrderGoodsSummary($body)
@@ -835,7 +835,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单汇总分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/orderPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimOrderPaging($body)
@@ -846,7 +846,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔单分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimPaging($body)
@@ -857,7 +857,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加/编辑开票时的汇总信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/relateSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimRelateSummary($body)
@@ -868,7 +868,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔汇总分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/claimReportPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimReportPaging($body)
@@ -879,7 +879,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔汇总统计
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/claimReportSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getClaimReportSummary($body)
@@ -890,7 +890,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 一键全部添加
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/setClaimNoAllAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function setClaimNoAll($body)
@@ -901,7 +901,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 批量添加理赔单与开票单关联
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/setClaimNoByBillNosAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function setClaimNoByBillNos($body)
@@ -912,7 +912,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出理赔商品
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportGoodsAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportClaimGoods($body)
@@ -923,7 +923,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出理赔发票
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportInvoiceAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportClaimInvoice($body)
@@ -934,7 +934,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出理赔订单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportOrdersAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportClaimOrders($body)
@@ -945,7 +945,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出理赔汇总列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportReportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function exportClaimReport($body)
@@ -956,7 +956,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 检测理赔导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/checkClaimExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function checkClaimExport($body)
@@ -967,7 +967,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 重新处理理赔单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/rehandleClaimAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function rehandleClaim($body)
@@ -978,7 +978,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 理赔单理赔错误日志分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/errorLogPagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function claimErrorLogPaging($body)
@@ -989,7 +989,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算单分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getStatementsPaging($body)
@@ -1000,7 +1000,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算单明细
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getStatementsDetail($body)
@@ -1011,7 +1011,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁结算月月视图
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/periodSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerPeriodSummary($body)
@@ -1022,7 +1022,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算数据支付方式接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementPayMethodAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSettlementPayMethod($body)
@@ -1033,7 +1033,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算数据汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementTotalAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSettlementTotal($body)
@@ -1044,7 +1044,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算订单信息导出（含商品明细）
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSettlementExport($body)
@@ -1055,7 +1055,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算流程统计
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementStatisticsAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSettlementStatistics($body)
@@ -1066,7 +1066,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁更新订单的状态接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/updateSettlementStatusAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerUpdateSettlementStatus($body)
@@ -1077,7 +1077,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁结算订单数量
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementCountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSettlementCount($body)
@@ -1088,7 +1088,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加获取对账单操作日志记录
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/addLogAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function addStatementLog($body)
@@ -1099,7 +1099,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取对账单操作日志记录明细
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/logDetailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getStatementLogDetail($body)
@@ -1110,7 +1110,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取对账单操作日志记录列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/logListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getStatementLogList($body)
@@ -1121,7 +1121,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁结算商品信息导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementGoodsExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSettlementGoodsExport($body)
@@ -1132,7 +1132,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁结算订单信息导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/settlementOrdersExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function partnerSettlementOrdersExport($body)
@@ -1143,7 +1143,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取连锁发起结算权限
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getOrganizeAuthorityDetail($body)
@@ -1154,7 +1154,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加发票分配记录
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceController/addDistributionAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function addInvoiceDistribution($body)
@@ -1165,7 +1165,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 根据开票单号获取订单列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/getDetailByBillNoAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getDetailByBillNo($body)
@@ -1176,7 +1176,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除发票分配记录
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceController/deleteDistributionAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function deleteInvoiceDistribution($body)
@@ -1187,7 +1187,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 通过订单No获取发票分配情况
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceController/getDistributionDetailByOrderNoAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getInvoiceDistributionDetailByOrderNo($body)
@@ -1198,7 +1198,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出指定连锁订单的商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/goodsExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportGoodsExport($body)
@@ -1209,7 +1209,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取指定连锁订单的商品列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/goodsListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportGoodsList($body)
@@ -1220,7 +1220,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出直付订单列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/ordersExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportOrdersExport($body)
@@ -1231,7 +1231,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 直付订单列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/ordersAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportOrdersList($body)
@@ -1242,7 +1242,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 优惠金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumDiscountAmountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumDiscountAmount($body)
@@ -1253,7 +1253,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 直付金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumEquityAmountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumEquityAmount($body)
@@ -1264,7 +1264,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 直付结算金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumEquityStatementAmountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumEquityStatementAmount($body)
@@ -1275,7 +1275,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 商品数量统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumGoodsQuantityAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumGoodsQuantity($body)
@@ -1286,7 +1286,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单总额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumOrderAmountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumOrderAmount($body)
@@ -1297,7 +1297,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 自付到药联统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumPayAmountToUnionDrugAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumPayAmountToUnionDrug($body)
@@ -1308,7 +1308,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 自付到商家统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumPayAmountToVendorAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumPayAmountToVendor($body)
@@ -1319,7 +1319,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 本次结算金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumSettlementAmountAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function reportSumSettlementAmount($body)
@@ -1330,7 +1330,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算审核汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/settlementAuditSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getSettlementAuditSummary($body)
@@ -1341,7 +1341,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算开票汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/settlementInvoiceSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getSettlementInvoiceSummary($body)
@@ -1352,7 +1352,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/settlementSummaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function getSettlementSummary($body)
@@ -1363,7 +1363,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加付款记录
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/addAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function paymentAdd($body)
@@ -1374,7 +1374,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除付款记录
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/deleteAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function paymentDelete($body)
@@ -1385,7 +1385,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取付款记录详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function paymentDetail($body)
@@ -1396,7 +1396,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 修改付款记录
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/editAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function paymentEdit($body)
@@ -1407,7 +1407,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 付款记录分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function paymentPaging($body)
@@ -1418,7 +1418,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出增值服务明细列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/exportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function serviceDetailStatisticsExport($body)
@@ -1429,7 +1429,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 增值服务明细列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function serviceDetailStatisticsPaging($body)
@@ -1440,7 +1440,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 优惠金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumFreePriceAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function serviceDetailStatisticsSumFreePrice($body)
@@ -1451,7 +1451,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 资金池扣减金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumOpFundAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function serviceDetailStatisticsSumOpFund($body)
@@ -1462,7 +1462,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 商品数量统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumQuantityAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function serviceDetailStatisticsSumQuantity($body)
@@ -1473,7 +1473,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 实付金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumSalePriceAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function serviceDetailStatisticsSumSalePrice($body)
@@ -1484,7 +1484,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 商品总额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumTotalPriceAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function serviceDetailStatisticsSumTotalPrice($body)
@@ -1495,7 +1495,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 资金池流水列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function poolDetailStatisticsPaging($body)
@@ -1506,7 +1506,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 导出资金池流水列表接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/exportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function poolDetailStatisticsExport($body)
@@ -1517,7 +1517,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 期初金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOriginFundAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function poolDetailStatisticsSumOriginFund($body)
@@ -1528,7 +1528,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 期末余额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumFinalFundAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function poolDetailStatisticsSumFinalFund($body)
@@ -1539,7 +1539,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 收入金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumIncomeAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function poolDetailStatisticsSumIncome($body)
@@ -1550,7 +1550,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 支出金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/sumOutcomeAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function poolDetailStatisticsSumOutcome($body)
@@ -1561,7 +1561,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 凯撒解密算法
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataSecureController/edcodeAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function dataSecureDecode($body)
@@ -1572,7 +1572,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 凯撒加密算法
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataSecureController/encodeAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function dataSecureEncode($body)
@@ -1583,7 +1583,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算单统计
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/summaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function statementSummary($body)
@@ -1594,7 +1594,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开始理赔结算单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/summaryAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function statementStartClaim($body)
@@ -1605,7 +1605,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 继续理赔结算单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/claimContinueAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function statementClaimContinue($body)
@@ -1616,7 +1616,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 对账单理赔处理
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/claimStatementAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function taskClaimStatement($body)
@@ -1627,7 +1627,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 生成开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/createBillAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function taskCreateBill($body)
@@ -1638,7 +1638,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 跑统计
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/createSettlementAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function taskCreateSettlement($body)
@@ -1649,7 +1649,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 关联开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/relateBillAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function taskRelateBill($body)
@@ -1660,7 +1660,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 继续关联开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/relateBillContinueAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function taskRelateBillContinue($body)
@@ -1671,7 +1671,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 把问题订单重置执行状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/TaskController/resetSettlementAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function taskResetSettlement($body)
@@ -1682,7 +1682,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 对账订单快速比对导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/compareExportAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function settlementsCompareExport($body)
@@ -1693,7 +1693,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 对账订单快速比对分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/comparePagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function settlementsComparePaging($body)
@@ -1704,7 +1704,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算数据汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/settlementTotalAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function compareSettlementTotal($body)
@@ -1715,12 +1715,23 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取结算单结算数据支付方式接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/statementComparePayMethodAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function statementComparePayMethod($body)
     {
         return $this->restful("POST", "/settlement/statementComparePayMethod", $body);
+    }
+
+    /**
+     * 获取对比结果订单数
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/countCompareAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function countCompare($body)
+    {
+        return $this->restful("POST", "/settlement/countCompare", $body);
     }
 }
 
