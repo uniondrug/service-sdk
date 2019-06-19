@@ -66,6 +66,17 @@ class JavaOrderSdk extends SdkBase
     }
 
     /**
+     * 取消子订单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCancelSub($body)
+    {
+        return $this->restful("POST", "/order/cancel/sub", $body);
+    }
+
+    /**
      * 商品或主表单退单
      * @link
      * @param array $body 入参类型
