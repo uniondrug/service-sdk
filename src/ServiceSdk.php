@@ -5,6 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk;
 
+
 /**
  * SDK分发调度
  * @property Modules\BackOrderSdk                $backOrder                                          订单sdk
@@ -72,6 +73,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\JavaPromotecenterServiceSdk $javaPromotecenterService                           java营销中心前台
  * @property Modules\WxapiSdk                    $wxapi                                              wxapi接口服务
  * @property Modules\CompensateSdk               $compensate                                         智赔接口服务
+ * @property Modules\AssistantSdk                $assistant                                          助手SDK
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
