@@ -3,7 +3,7 @@
  * @author kuanxing <346300265@qq.com>
  * @date   2018-06-21
  */
-namespace Uniondrug\ServiceSdk\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Responses\ResponseInterface;
