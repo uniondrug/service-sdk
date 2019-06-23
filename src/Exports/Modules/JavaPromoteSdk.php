@@ -53,6 +53,17 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
+     * 方案列表详情接口
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listScheme($body)
+    {
+        return $this->restful("POST", "/promote/scheme/list/info", $body);
+    }
+
+    /**
      * 方案停用(活动方案)
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
      * @param array $body 入参类型
