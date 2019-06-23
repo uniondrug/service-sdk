@@ -21,6 +21,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaCashierSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
@@ -77,6 +78,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
  * @property JavaOrderSdk          $javaOrder
  * @property JavaCashierSdk        $javaCashier
  * @property JavaPushSdk           $javaPush
+ * @property JavaPromoteSdk        $javaPromote
  * @property AssistantSdk          $assistant
  * @property JavaPromoteCenterSdk  $javaPromoteCenter
  * @property MapSdk                $map

@@ -262,4 +262,15 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/cancel/cashier/doublespending/main", $body);
     }
+
+    /**
+     * 已撤销有付款信息的子订单退款接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrderRefundCashier($body)
+    {
+        return $this->restful("POST", "/cancel/cashier/sub", $body);
+    }
 }
