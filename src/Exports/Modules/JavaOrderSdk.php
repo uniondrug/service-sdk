@@ -273,4 +273,15 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/cancel/cashier/sub", $body);
     }
+
+    /**
+     * 订单退款查询接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryCashierCancel($body)
+    {
+        return $this->restful("POST", "/cashier/cancel/query", $body);
+    }
 }
