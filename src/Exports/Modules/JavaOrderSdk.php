@@ -66,6 +66,17 @@ class JavaOrderSdk extends SdkBase
     }
 
     /**
+     * 取消子订单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCancelSub($body)
+    {
+        return $this->restful("POST", "/order/cancel/sub", $body);
+    }
+
+    /**
      * 商品或主表单退单
      * @link
      * @param array $body 入参类型
@@ -153,7 +164,6 @@ class JavaOrderSdk extends SdkBase
         return $this->restful("POST", "/order/query/sub/list/bycondition", $body);
     }
 
-
     /**
      * 子订单查询列表
      * @link
@@ -240,5 +250,38 @@ class JavaOrderSdk extends SdkBase
     public function queryMainOrderListByTerm($body)
     {
         return $this->restful("POST", "/order/query/queryMainOrderListByTerm", $body);
+    }
+
+    /**
+     * 重复支付主订单退款接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mainOrderRefundCashier($body)
+    {
+        return $this->restful("POST", "/cancel/cashier/doublespending/main", $body);
+    }
+
+    /**
+     * 已撤销有付款信息的子订单退款接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrderRefundCashier($body)
+    {
+        return $this->restful("POST", "/cancel/cashier/sub", $body);
+    }
+
+    /**
+     * 订单退款查询接口
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryCashierCancel($body)
+    {
+        return $this->restful("POST", "/cashier/cancel/query", $body);
     }
 }

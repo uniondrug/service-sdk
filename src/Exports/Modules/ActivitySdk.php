@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-18
- * @time   Tue, 18 Jun 2019 10:30:10 +0800
+ * @date   2019-06-20
+ * @time   Thu, 20 Jun 2019 15:36:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class ActivitySdk extends SdkBase
     public function addOrderEquity($body)
     {
         return $this->restful("POST", "/admin/equity/addOrderEquity", $body);
+    }
+
+    /**
+     * 取消订单中心订单
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderController/cancelByNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cancelByNo($body)
+    {
+        return $this->restful("POST", "/order/cancel/byNo", $body);
     }
 
     /**
@@ -82,17 +93,6 @@ class ActivitySdk extends SdkBase
     public function copyProject($body)
     {
         return $this->restful("POST", "/admin/project/copyProject", $body);
-    }
-
-    /**
-     * 复制蓄客红包项目
-     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectController/copyRedpacketAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function copyRedpacket($body)
-    {
-        return $this->restful("POST", "/admin/project/copyRedpacket", $body);
     }
 
     /**
@@ -734,6 +734,17 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 活动用户和药联用户的数据关联
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/registerMemberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function registerMemberInfo($body)
+    {
+        return $this->restful("POST", "/member/register/member", $body);
+    }
+
+    /**
      * 订单权益重发
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/EquityController/retryAction.md
      * @param array $body 入参类型
@@ -811,7 +822,7 @@ class ActivitySdk extends SdkBase
     }
 
     /**
-     * 回传用户信息(头像、昵称、unionId)
+     * 回传用户信息(头像、昵称)
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/updateMemberInfoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
