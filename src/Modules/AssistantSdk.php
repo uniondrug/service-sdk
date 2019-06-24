@@ -82,6 +82,83 @@ class AssistantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 全部列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/OperationTabsController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function operationTabsListing($body)
+    {
+        return $this->restful("POST", "/operationTabs/listing", $body);
+    }
+
+    /**
+     * 新增角色
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function roleCreate($body)
+    {
+        return $this->restful("POST", "/role/create", $body);
+    }
+
+    /**
+     * 全部角色列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function roleListing($body)
+    {
+        return $this->restful("POST", "/role/listing", $body);
+    }
+
+    /**
+     * 获取角色权限列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/listingAuthAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function roleListingAuth($body)
+    {
+        return $this->restful("POST", "/role/listing/auth", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rolePaging($body)
+    {
+        return $this->restful("POST", "/role/paging", $body);
+    }
+
+    /**
+     * 分配权限
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/settingAuthAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function roleSettingAuth($body)
+    {
+        return $this->restful("POST", "/role/setting/auth", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function roleUpdate($body)
+    {
+        return $this->restful("POST", "/role/update", $body);
+    }
+
+    /**
      * 获取一条助手用户新
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/UserController/infoAction.md
      * @param array $body 入参类型
@@ -101,5 +178,27 @@ class AssistantSdk extends Sdk implements ServiceSdkInterface
     public function userInvites($body)
     {
         return $this->restful("POST", "/invite/userinvites", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersDetail($body)
+    {
+        return $this->restful("POST", "/users/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersPaging($body)
+    {
+        return $this->restful("POST", "/users/paging", $body);
     }
 }
