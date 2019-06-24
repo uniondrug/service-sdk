@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-24
- * @time   Mon, 24 Jun 2019 15:04:16 +0800
+ * @time   Mon, 24 Jun 2019 15:38:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -357,6 +357,28 @@ class AiProfitDataSdk extends SdkBase
     public function redPacketAll($body)
     {
         return $this->restful("POST", "/redPacket/all", $body);
+    }
+
+    /**
+     * 连锁城市列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/cityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redPacketCity($body)
+    {
+        return $this->restful("POST", "/redPacket/city", $body);
+    }
+
+    /**
+     * 连锁城市数据
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/cityDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redPacketCityData($body)
+    {
+        return $this->restful("POST", "/redPacket/cityData", $body);
     }
 
     /**
