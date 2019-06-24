@@ -5,7 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\Service\ClientClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 use Uniondrug\Structs\StructInterface;
@@ -21,8 +21,8 @@ class SettlementSheetSdk extends Sdk implements ServiceSdkInterface
     /**
      * 新增对账单
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function add($body)
     {
@@ -32,8 +32,8 @@ class SettlementSheetSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取对账单详情
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function detial($body)
     {
@@ -43,8 +43,8 @@ class SettlementSheetSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取对账单列表
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function paging($body)
     {
@@ -54,8 +54,8 @@ class SettlementSheetSdk extends Sdk implements ServiceSdkInterface
     /**
      * 更新对账单信息
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function update($body)
     {
@@ -66,8 +66,8 @@ class SettlementSheetSdk extends Sdk implements ServiceSdkInterface
     /**
      * 更新对账单商品替换状态
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/updateGoodsReplaceStatusAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function updateGoodsReplaceStatus($body)
     {
@@ -77,8 +77,8 @@ class SettlementSheetSdk extends Sdk implements ServiceSdkInterface
     /**
      * 软删除对账单
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function delete($body)
     {

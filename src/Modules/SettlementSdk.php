@@ -1733,5 +1733,16 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/countCompare", $body);
     }
+
+    /**
+     * 存疑不结算分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ExceptionController/pagingAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getExceptionPaging($body)
+    {
+        return $this->restful("POST", "/exception/paging", $body);
+    }
 }
 
