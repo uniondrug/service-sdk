@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-24
- * @time   Mon, 24 Jun 2019 11:02:00 +0800
+ * @time   Mon, 24 Jun 2019 14:30:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,17 @@ class AssistantSdk extends SdkBase
     public function roleCreate($body)
     {
         return $this->restful("POST", "/role/create", $body);
+    }
+
+    /**
+     * 角色详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function roleDetail($body)
+    {
+        return $this->restful("POST", "/role/detail", $body);
     }
 
     /**
