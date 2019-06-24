@@ -97,4 +97,14 @@ class JavaPromotecenterServiceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/card/queryMyCard", $body);
     }
+
+    /**
+     * 超级会员日检查方案和时间--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v2.0_超级会员日/doc/营销中心v2.0超级会员日接口文档（消费服务).md
+     * @return ClientResponseInterface
+     */
+    public function superDayCheckSchemeTime($body)
+    {
+        return $this->restful("POST", "/superDay/checkSchemeTime", $body);
+    }
 }
