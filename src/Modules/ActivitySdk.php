@@ -822,5 +822,16 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/order/add", $body);
     }
+
+    /**
+     * 核销虚拟卡（新）
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function consumeVirtualCard($body)
+    {
+        return $this->restful("POST", "/virtualCard/consume", $body);
+    }
     
 }
