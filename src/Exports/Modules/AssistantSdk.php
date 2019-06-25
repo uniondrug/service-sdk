@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-25
- * @time   Tue, 25 Jun 2019 14:35:43 +0800
+ * @time   Tue, 25 Jun 2019 16:36:29 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -214,6 +214,17 @@ class AssistantSdk extends SdkBase
     public function usersDetail($body)
     {
         return $this->restful("POST", "/users/detail", $body);
+    }
+
+    /**
+     * 用户列表按条件搜索
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersListing($body)
+    {
+        return $this->restful("POST", "/users/listing", $body);
     }
 
     /**
