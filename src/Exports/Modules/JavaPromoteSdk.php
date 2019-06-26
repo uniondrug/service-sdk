@@ -128,4 +128,15 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/memberDay/stop", $body);
     }
+
+    /**
+     * 修改超级会员日方案
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editMemberDay($body)
+    {
+        return $this->restful("POST", "/promote/memberDay/edit", $body);
+    }
 }
