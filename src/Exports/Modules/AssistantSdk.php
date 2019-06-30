@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-06-30
- * @time   Sun, 30 Jun 2019 19:09:25 +0800
+ * @time   Sun, 30 Jun 2019 19:17:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -90,7 +90,7 @@ class AssistantSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function listinguserstores($body)
+    public function listingUserStores($body)
     {
         return $this->restful("POST", "/listing", $body);
     }
