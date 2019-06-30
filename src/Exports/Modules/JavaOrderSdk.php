@@ -284,4 +284,15 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/cashier/cancel/query", $body);
     }
+
+    /**
+     * 根据门店id统计审核失败订单数量
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryAuditByStore($body)
+    {
+        return $this->restful("POST", "/order/query/audit/bystore", $body);
+    }
 }
