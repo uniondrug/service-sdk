@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-05
- * @time   Wed, 05 Jun 2019 10:10:32 +0800
+ * @date   2019-07-01
+ * @time   Mon, 01 Jul 2019 15:41:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -63,6 +63,17 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 绑定
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createInsuranceBind($body)
+    {
+        return $this->restful("POST", "/insurance/bind/create", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/CustomerController/pagingAction.md
      * @param array $body 入参类型
@@ -71,6 +82,17 @@ class CompensateSdk extends SdkBase
     public function customerPaging($body)
     {
         return $this->restful("POST", "/customer/paging", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceBindList($body)
+    {
+        return $this->restful("POST", "/insurance/bind/list", $body);
     }
 
     /**
@@ -214,5 +236,16 @@ class CompensateSdk extends SdkBase
     public function reportUpdate($body)
     {
         return $this->restful("POST", "/report/update", $body);
+    }
+
+    /**
+     * 解绑
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/unbindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function unbindInsuranceBind($body)
+    {
+        return $this->restful("POST", "/insurance/bind/unbind", $body);
     }
 }
