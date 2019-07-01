@@ -79,4 +79,14 @@ class BackOrderSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/logistics/receive/notify", $body);
     }
 
+    /**
+     * 电商同步商户单号
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function erpsn($body)
+    {
+        return $this->restful("POST", "/order/erpsn/update", $body);
+    }
+
 }
