@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-30
- * @time   Sun, 30 Jun 2019 23:38:39 +0800
+ * @date   2019-07-01
+ * @time   Mon, 01 Jul 2019 16:55:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -203,6 +203,17 @@ class AssistantSdk extends SdkBase
     public function userInvites($body)
     {
         return $this->restful("POST", "/invite/userinvites", $body);
+    }
+
+    /**
+     * 根据roleIds统计用户数量
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/countFilterAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersCountFilter($body)
+    {
+        return $this->restful("POST", "/users/count/filter", $body);
     }
 
     /**
