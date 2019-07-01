@@ -1744,5 +1744,38 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/exception/paging", $body);
     }
+
+    /**
+     * 确认协议接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/addProtocolAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addBillProtocol($body)
+    {
+        return $this->restful("POST", "/bill/addProtocol", $body);
+    }
+
+    /**
+     * 智赔开票单列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/pagingToAiAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getBillPagingToAi($body)
+    {
+        return $this->restful("POST", "/bill/pagingToAi", $body);
+    }
+
+    /**
+     * 协议内容接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/protocolDetailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getBillProtocolDetail($body)
+    {
+        return $this->restful("POST", "/bill/protocolDetail", $body);
+    }
 }
 
