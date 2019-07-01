@@ -8,33 +8,32 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-05
- * @time   Wed, 05 Jun 2019 10:10:32 +0800
+ * @date   2019-07-01
+ * @time   Mon, 01 Jul 2019 18:07:02 +0800
  */
-namespace Uniondrug\ServiceSdk\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
-use Uniondrug\ServiceSdk\Sdk;
-use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * CompensateSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class CompensateSdk extends Sdk implements ServiceSdkInterface
+class CompensateSdk extends SdkBase
 {
     /**
      * 服务名称
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'compensate';
+    protected $serviceName = 'compensate.module';
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/createAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function authorizeCreate($body)
     {
@@ -45,7 +44,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 取消授权
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/deleteAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function authorizeDelete($body)
     {
@@ -56,7 +55,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/pagingAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function authorizePaging($body)
     {
@@ -64,10 +63,32 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BillConfirmController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function BillConfirmCreate($body)
+    {
+        return $this->restful("POST", "/billConfirm/create", $body);
+    }
+
+    /**
+     * 绑定
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createInsuranceBind($body)
+    {
+        return $this->restful("POST", "/insurance/bind/create", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/CustomerController/pagingAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function customerPaging($body)
     {
@@ -75,10 +96,21 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceBindList($body)
+    {
+        return $this->restful("POST", "/insurance/bind/list", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/createAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function insuranceCreate($body)
     {
@@ -89,7 +121,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 详情
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/detailAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function insuranceDetail($body)
     {
@@ -100,7 +132,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 禁用
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/disableAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function insuranceDisable($body)
     {
@@ -111,7 +143,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 开启
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/enableAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function insuranceEnable($body)
     {
@@ -122,7 +154,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/pagingAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function insurancePaging($body)
     {
@@ -133,7 +165,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 新增
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/LogsController/createAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function logsCreate($body)
     {
@@ -144,7 +176,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/LogsController/pagingAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function logsPaging($body)
     {
@@ -155,7 +187,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/listAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function projectList($body)
     {
@@ -166,7 +198,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/pagingAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function projectPaging($body)
     {
@@ -177,7 +209,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 新增
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/createAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function reportCreate($body)
     {
@@ -188,7 +220,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 详情
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/detailAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function reportDetail($body)
     {
@@ -199,7 +231,7 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/pagingAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function reportPaging($body)
     {
@@ -210,10 +242,21 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
      * 修改
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/updateAction.md
      * @param array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function reportUpdate($body)
     {
         return $this->restful("POST", "/report/update", $body);
+    }
+
+    /**
+     * 解绑
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/unbindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function unbindInsuranceBind($body)
+    {
+        return $this->restful("POST", "/insurance/bind/unbind", $body);
     }
 }
