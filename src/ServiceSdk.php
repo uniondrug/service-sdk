@@ -74,6 +74,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\WxapiSdk                    $wxapi                                              wxapi接口服务
  * @property Modules\CompensateSdk               $compensate                                         智赔接口服务
  * @property Modules\AssistantSdk                $assistant                                          助手SDK
+ * @property Modules\NotifySdk                   $notify                                             消息推送SDK
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
