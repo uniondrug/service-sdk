@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-25
- * @time   Tue, 25 Jun 2019 16:36:29 +0800
+ * @date   2019-06-30
+ * @time   Sun, 30 Jun 2019 23:38:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,17 @@ class AssistantSdk extends SdkBase
     public function inviteInfo($body)
     {
         return $this->restful("POST", "/invite/info", $body);
+    }
+
+    /**
+     * 根据 userId 获取用户门店
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresController/ListingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listingUserStores($body)
+    {
+        return $this->restful("POST", "/userstores/listing", $body);
     }
 
     /**
