@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-07-01
- * @time   Mon, 01 Jul 2019 15:41:45 +0800
+ * @time   Mon, 01 Jul 2019 18:07:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -60,6 +60,17 @@ class CompensateSdk extends SdkBase
     public function authorizePaging($body)
     {
         return $this->restful("POST", "/authorize/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BillConfirmController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function BillConfirmCreate($body)
+    {
+        return $this->restful("POST", "/billConfirm/create", $body);
     }
 
     /**
