@@ -29,6 +29,7 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/filter/equity", $body);
     }
+
     /**
      * 黑名单添加接口
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/addMerchantBlackListAction.md
@@ -50,6 +51,7 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/filter/addrule", $body);
     }
+
     /**
      * 读取黑名单列表
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/listMerchantBlackListAction.md
@@ -60,6 +62,7 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/filter/listmerchantblacklist", $body);
     }
+
     /**
      * 过期黑名单
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/updateStructAction.md
@@ -70,6 +73,7 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/filter/updatestruct", $body);
     }
+
     /**
      * 过期黑名单
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/infoRuleAction.md
@@ -80,6 +84,7 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/filter/inforule", $body);
     }
+
     /**
      * 导出sql
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/derivedSqlAction.md
@@ -89,5 +94,16 @@ class RuleSdk extends Sdk implements ServiceSdkInterface
     public function derivedSql($body)
     {
         return $this->restful("POST", "/filter/derivedsql", $body);
+    }
+
+    /**
+     * 判断是否黑名单商品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/InfoBlackAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function infoblack($body)
+    {
+        return $this->restful("POST", "/filter/infoblack", $body);
     }
 }
