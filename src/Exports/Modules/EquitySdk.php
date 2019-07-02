@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-15
- * @time   Sat, 15 Jun 2019 14:53:23 +0800
+ * @date   2019-07-02
+ * @time   Tue, 02 Jul 2019 11:08:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -486,6 +486,8 @@ class EquitySdk extends SdkBase
 
     /**
      * 保障理赔操作
+     * 用于恢复数据使用，慎用！！！
+     * 更新保障对应的权益数据
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/repairSettlementAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -620,6 +622,17 @@ class EquitySdk extends SdkBase
     public function precheckDetail($body)
     {
         return $this->restful("POST", "/precheck/detail", $body);
+    }
+
+    /**
+     * 根据获取多条记录
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/precheckMemberIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function precheckList($body)
+    {
+        return $this->restful("POST", "/precheck/prechecklist", $body);
     }
 
     /**
