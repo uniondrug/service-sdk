@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-01
- * @time   Mon, 01 Jul 2019 18:07:02 +0800
+ * @date   2019-07-02
+ * @time   Tue, 02 Jul 2019 18:00:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class CompensateSdk extends SdkBase
     public function BillConfirmCreate($body)
     {
         return $this->restful("POST", "/billConfirm/create", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BillConfirmController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function BillConfirmList($body)
+    {
+        return $this->restful("POST", "/billConfirm/list", $body);
     }
 
     /**
