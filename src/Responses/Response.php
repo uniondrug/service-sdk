@@ -213,14 +213,16 @@ class Response implements ResponseInterface
         }
         // 3. 标准模式
         //    {"errno":0,"error":"","data":{...}}
-        if (isset($json->errno, $json->error, $json->data)) {
+        //if (isset($json->errno, $json->error, $json->data)) {
+        if (isset($json->errno, $json->error)) {
             $this->hasError() || $this->setError($json->errno, $json->error);
             $this->data = $json->data;
             return;
         }
         // 4. 兼容模式
         //    {"status":true,"message":"success","code":200,"data":{....}}
-        if (isset($json->status, $json->message, $json->data)) {
+        //if (isset($json->status, $json->message, $json->data)) {
+        if (isset($json->status, $json->message)) {
             if ($json->status === true) {
                 $this->setError(0, "");
             } else {
