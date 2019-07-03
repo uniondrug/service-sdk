@@ -1639,7 +1639,7 @@ class SettlementSdk extends SdkBase
      * 确认协议接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/addProtocolAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function addBillProtocol($body)
     {
@@ -1650,7 +1650,7 @@ class SettlementSdk extends SdkBase
      * 智赔开票单列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/pagingToAiAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getBillPagingToAi($body)
     {
@@ -1661,7 +1661,7 @@ class SettlementSdk extends SdkBase
      * 协议内容接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/protocolDetailAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getBillProtocolDetail($body)
     {
