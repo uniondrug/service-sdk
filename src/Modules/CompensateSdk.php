@@ -272,5 +272,36 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/insurance/bind/unbind", $body);
     }
 
+    /**
+     * 理赔概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectClaimStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/claim", $body);
+    }
 
+    /**
+     * 消费概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/consumeAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectConsumeStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/consume", $body);
+    }
+
+    /**
+     * 消费概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/equityAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectEquityStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/equity", $body);
+    }
 }
