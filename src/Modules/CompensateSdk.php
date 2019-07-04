@@ -75,6 +75,17 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BillConfirmController/listAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function BillConfirmList($body)
+    {
+        return $this->restful("POST", "/billConfirm/list", $body);
+    }
+
+    /**
      * 绑定
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/createAction.md
      * @param array $body 入参类型
@@ -260,4 +271,6 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/insurance/bind/unbind", $body);
     }
+
+
 }
