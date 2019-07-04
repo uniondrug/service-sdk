@@ -1141,6 +1141,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 配置连锁发起结算权限
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/addAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addOrganizeAuthorityDetail($body)
+    {
+        return $this->restful("POST", "/organizeAuthority/add", $body);
+    }
+
+    /**
      * 获取连锁发起结算权限
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/detailAction.md
      * @param object|array $body 入参类型
