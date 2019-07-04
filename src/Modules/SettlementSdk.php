@@ -1788,5 +1788,16 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/bill/protocolDetail", $body);
     }
+
+    /**
+     * 获取核算单位今年未结算第一单payTime
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/timeAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getPayTimeBegin($body)
+    {
+        return $this->restful("POST", "/settlement/time", $body);
+    }
 }
 
