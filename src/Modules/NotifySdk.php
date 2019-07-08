@@ -70,5 +70,16 @@ class NotifySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/notify/cancel", $body);
     }
 
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/backend.operatorcenter/git/blob/development/docs/api/Notify/NotifyController/deleteAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function delete($body)
+    {
+        return $this->restful(static::METHOD_POST, "/notify/delete", $body);
+    }
+
 
 }
