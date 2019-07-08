@@ -1146,7 +1146,7 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
      * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function addOrganizeAuthorityDetail($body)
+    public function addOrganizeAuthority($body)
     {
         return $this->restful("POST", "/organizeAuthority/add", $body);
     }
