@@ -840,9 +840,9 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function statsVirtualCard($body)
+    public function countVirtualCard($body)
     {
-        return $this->restful("POST", "/virtualCard/stats", $body);
+        return $this->restful("POST", "/virtualCard/count", $body);
     }
     
 }
