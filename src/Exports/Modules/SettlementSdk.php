@@ -1634,4 +1634,37 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/report/totalSettlementSummary", $body);
     }
+
+    /**
+     * 确认协议接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/addProtocolAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addBillProtocol($body)
+    {
+        return $this->restful("POST", "/bill/addProtocol", $body);
+    }
+
+    /**
+     * 智赔开票单列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/pagingToAiAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBillPagingToAi($body)
+    {
+        return $this->restful("POST", "/bill/pagingToAi", $body);
+    }
+
+    /**
+     * 协议内容接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/protocolDetailAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBillProtocolDetail($body)
+    {
+        return $this->restful("POST", "/bill/protocolDetail", $body);
+    }
 }
