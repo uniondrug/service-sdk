@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-20
- * @time   Thu, 20 Jun 2019 15:36:10 +0800
+ * @date   2019-07-08
+ * @time   Mon, 08 Jul 2019 11:17:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -415,17 +415,6 @@ class ActivitySdk extends SdkBase
     }
 
     /**
-     * 检测该商品能否被兑换
-     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/checkExchangeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goldCheckExchange($body)
-    {
-        return $this->restful("POST", "/goods/checkExchange", $body);
-    }
-
-    /**
      * 修改金币
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoldController/editAction.md
      * @param array $body 入参类型
@@ -808,6 +797,17 @@ class ActivitySdk extends SdkBase
     public function setProjectGoods($body)
     {
         return $this->restful("POST", "/admin/projectGoods/set", $body);
+    }
+
+    /**
+     * 统计用户虚拟卡张数
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/VirtualCard/VirtualCardController/statsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function statsVirtualCard($body)
+    {
+        return $this->restful("POST", "/virtualCard/stats", $body);
     }
 
     /**
