@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-05-15
- * @time   Wed, 15 May 2019 16:32:58 +0800
+ * @date   2019-07-08
+ * @time   Mon, 08 Jul 2019 14:46:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -131,6 +131,17 @@ class RuleSdk extends SdkBase
     }
 
     /**
+     * 判断是否黑名单商品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/InfoBlackAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function infoblack($body)
+    {
+        return $this->restful("POST", "/filter/infoblack", $body);
+    }
+
+    /**
      * 策略规则
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/FilterController/infoRuleAction.md
      * @param array $body 入参类型
@@ -150,6 +161,94 @@ class RuleSdk extends SdkBase
     public function listMerchantBlackList($body)
     {
         return $this->restful("POST", "/filter/listmerchantblacklist", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramCreate($body)
+    {
+        return $this->restful("POST", "/packageProgram/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramDelete($body)
+    {
+        return $this->restful("POST", "/packageProgram/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramDetail($body)
+    {
+        return $this->restful("POST", "/packageProgram/detail", $body);
+    }
+
+    /**
+     * 禁用用增值服务方案
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramDisable($body)
+    {
+        return $this->restful("POST", "/packageProgram/disable", $body);
+    }
+
+    /**
+     * 启用增值服务方案
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramEnable($body)
+    {
+        return $this->restful("POST", "/packageProgram/enable", $body);
+    }
+
+    /**
+     * 全部列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramListing($body)
+    {
+        return $this->restful("POST", "/packageProgram/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramPaging($body)
+    {
+        return $this->restful("POST", "/packageProgram/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramUpdate($body)
+    {
+        return $this->restful("POST", "/packageProgram/update", $body);
     }
 
     /**
