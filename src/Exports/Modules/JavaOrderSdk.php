@@ -295,4 +295,15 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/query/audit/bystore", $body);
     }
+
+    /**
+     * 根据主订单号集合获取子订单列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryMainOrderNoList($body)
+    {
+        return $this->restful("POST", "/order/query/queryMainOrderNoList", $body);
+    }
 }
