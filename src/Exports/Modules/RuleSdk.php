@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-08
- * @time   Mon, 08 Jul 2019 14:46:33 +0800
+ * @date   2019-07-09
+ * @time   Tue, 09 Jul 2019 17:05:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -252,6 +252,94 @@ class RuleSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsCreate($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsDelete($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsDetail($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/detail", $body);
+    }
+
+    /**
+     * 启用白名单商品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsDisable($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/disable", $body);
+    }
+
+    /**
+     * 启用白名单商品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsEnable($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/enable", $body);
+    }
+
+    /**
+     * 全部列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsListing($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsPaging($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsUpdate($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/update", $body);
+    }
+
+    /**
      * 新增黑名单
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/ProgramGoodsController/blackAddAction.md
      * @param array $body 入参类型
@@ -348,5 +436,71 @@ class RuleSdk extends SdkBase
     public function updateStruct($body)
     {
         return $this->restful("POST", "/filter/updatestruct", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsCreate($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsDelete($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsDetail($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/detail", $body);
+    }
+
+    /**
+     * 全部列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsListing($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsPaging($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsUpdate($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/update", $body);
     }
 }
