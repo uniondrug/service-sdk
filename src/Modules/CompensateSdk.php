@@ -8,14 +8,14 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-05
- * @time   Wed, 05 Jun 2019 10:10:32 +0800
+ * @date   2019-07-01
+ * @time   Mon, 01 Jul 2019 18:07:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\Service\ClientResponseInterface;
 
 /**
  * CompensateSdk
@@ -64,6 +64,39 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BillConfirmController/createAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function BillConfirmCreate($body)
+    {
+        return $this->restful("POST", "/billConfirm/create", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BillConfirmController/listAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function BillConfirmList($body)
+    {
+        return $this->restful("POST", "/billConfirm/list", $body);
+    }
+
+    /**
+     * 绑定
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/createAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function createInsuranceBind($body)
+    {
+        return $this->restful("POST", "/insurance/bind/create", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/CustomerController/pagingAction.md
      * @param array $body 入参类型
@@ -72,6 +105,17 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     public function customerPaging($body)
     {
         return $this->restful("POST", "/customer/paging", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/listAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function insuranceBindList($body)
+    {
+        return $this->restful("POST", "/insurance/bind/list", $body);
     }
 
     /**
@@ -215,5 +259,49 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     public function reportUpdate($body)
     {
         return $this->restful("POST", "/report/update", $body);
+    }
+
+    /**
+     * 解绑
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/unbindAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function unbindInsuranceBind($body)
+    {
+        return $this->restful("POST", "/insurance/bind/unbind", $body);
+    }
+
+    /**
+     * 理赔概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectClaimStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/claim", $body);
+    }
+
+    /**
+     * 消费概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/consumeAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectConsumeStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/consume", $body);
+    }
+
+    /**
+     * 消费概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/equityAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectEquityStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/equity", $body);
     }
 }

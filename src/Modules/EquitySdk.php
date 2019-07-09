@@ -650,4 +650,16 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/guarantee/memberidcount", $body);
     }
+
+    /**
+     * 启用权益
+     * 启用指定权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/enableAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function enableEquity($body)
+    {
+        return $this->restful("POST", "/equity/enable", $body);
+    }
 }

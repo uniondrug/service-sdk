@@ -1141,6 +1141,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 配置连锁发起结算权限
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/addAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addOrganizeAuthority($body)
+    {
+        return $this->restful("POST", "/organizeAuthority/add", $body);
+    }
+
+    /**
      * 获取连锁发起结算权限
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/detailAction.md
      * @param object|array $body 入参类型
@@ -1743,6 +1754,50 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     public function getExceptionPaging($body)
     {
         return $this->restful("POST", "/exception/paging", $body);
+    }
+
+    /**
+     * 确认协议接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/addProtocolAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addBillProtocol($body)
+    {
+        return $this->restful("POST", "/bill/addProtocol", $body);
+    }
+
+    /**
+     * 智赔开票单列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/pagingToAiAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getBillPagingToAi($body)
+    {
+        return $this->restful("POST", "/bill/pagingToAi", $body);
+    }
+
+    /**
+     * 协议内容接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/protocolDetailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getBillProtocolDetail($body)
+    {
+        return $this->restful("POST", "/bill/protocolDetail", $body);
+    }
+
+    /**
+     * 获取核算单位今年未结算第一单payTime
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/timeAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getPayTimeBegin($body)
+    {
+        return $this->restful("POST", "/settlement/time", $body);
     }
 }
 
