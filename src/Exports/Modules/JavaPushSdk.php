@@ -37,4 +37,14 @@ class JavaPushSdk extends SdkBase
     {
         return $this->restful("POST", "/audit/drug/renew/query", $body);
     }
+    /**
+     * 通过主订单查询审核单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditQuery($body)
+    {
+        return $this->restful("POST", "/audit/query", $body);
+    }
 }

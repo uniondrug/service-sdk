@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Unions`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-28
- * @time   Sun, 28 Apr 2019 17:19:11 +0800
+ * @date   2019-06-20
+ * @time   Thu, 20 Jun 2019 10:18:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Unions;
 
@@ -42,6 +42,9 @@ class ProjectSdk extends SdkBase
 
     /**
      * 根据分组信息创建权益
+     * 针对预创建兑换码情况
+     * 2019-06-20 09:49:03 目前还支持创建兑换码，下个版本会取消创建，只支持预创建的兑换码
+     * todo 取消直接创建兑换码
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createByGroupAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -49,6 +52,18 @@ class ProjectSdk extends SdkBase
     public function AddByGroup($body)
     {
         return $this->restful("POST", "/equity/group/add", $body);
+    }
+
+    /**
+     * 根据分组信息创建权益
+     * 针对无预创建兑换码情况
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createByGroupImmediatelyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function AddByGroupImmediately($body)
+    {
+        return $this->restful("POST", "/equity/group/add/immediately", $body);
     }
 
     /**

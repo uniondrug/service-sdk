@@ -58,6 +58,17 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
+     * 卡订单号
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryCardOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, '/card/queryCardOrder', $body);
+    }
+
+    /**
      * 新增标签
      * @link
      * @param array $body

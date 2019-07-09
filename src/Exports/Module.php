@@ -8,6 +8,7 @@ namespace Uniondrug\ServiceSdk\Exports;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuditSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
@@ -17,8 +18,11 @@ use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaCashierSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
@@ -27,6 +31,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MessageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MsgSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\OrderSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PackageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RuleSdk;
@@ -40,7 +45,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CarSdk;
-use Uniondrug\ServiceSdk\Modules\MapSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
 
 /**
  * 基础模块SDK入口
@@ -73,13 +78,18 @@ use Uniondrug\ServiceSdk\Modules\MapSdk;
  * @property JavaGoodsCenterSdk    $javaGoodsCenter
  * @property CompensateSdk         $compensate
  * @property JavaOrderSdk          $javaOrder
+ * @property JavaOrderCodeSdk      $javaOrderCode
+ * @property JavaCashierSdk        $javaCashier
  * @property JavaPushSdk           $javaPush
+ * @property JavaPromoteSdk        $javaPromote
  * @property AssistantSdk          $assistant
  * @property JavaPromoteCenterSdk  $javaPromoteCenter
  * @property MapSdk                $map
  * @property ActivitySdk           $activity
  * @property WeixinSdk             $weixin
  * @property CarSdk                $car
+ * @property AuditSdk              $audit
+ * @property PackageSdk            $package
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint

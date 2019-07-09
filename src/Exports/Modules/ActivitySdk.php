@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 11:22:15 +0800
+ * @date   2019-07-08
+ * @time   Mon, 08 Jul 2019 17:19:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,28 @@ class ActivitySdk extends SdkBase
     public function addOrderEquity($body)
     {
         return $this->restful("POST", "/admin/equity/addOrderEquity", $body);
+    }
+
+    /**
+     * 取消订单中心订单
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderController/cancelByNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cancelByNo($body)
+    {
+        return $this->restful("POST", "/order/cancel/byNo", $body);
+    }
+
+    /**
+     * 校验验证码
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Sms/CaptchaController/checkCaptchaAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkCaptcha($body)
+    {
+        return $this->restful("POST", "/captcha/checkCaptcha", $body);
     }
 
     /**
@@ -74,14 +96,14 @@ class ActivitySdk extends SdkBase
     }
 
     /**
-     * 复制蓄客红包项目
-     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectController/copyRedpacketAction.md
+     * 统计用户虚拟卡张数
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/VirtualCard/VirtualCardController/countAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function copyRedpacket($body)
+    public function countVirtualCard($body)
     {
-        return $this->restful("POST", "/admin/project/copyRedpacket", $body);
+        return $this->restful("POST", "/virtualCard/count", $body);
     }
 
     /**
@@ -93,6 +115,17 @@ class ActivitySdk extends SdkBase
     public function create($body)
     {
         return $this->restful("POST", "/order/create", $body);
+    }
+
+    /**
+     * 按照新流程创建订单
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Order/OrderController/newCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createByRootIn($body)
+    {
+        return $this->restful("POST", "/order/create/rootIn", $body);
     }
 
     /**
@@ -393,6 +426,105 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 修改金币
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoldController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldEdit($body)
+    {
+        return $this->restful("POST", "/gold/edit", $body);
+    }
+
+    /**
+     * 新建商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsAdd($body)
+    {
+        return $this->restful("POST", "/goods/add", $body);
+    }
+
+    /**
+     * 上下架商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/delAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsDel($body)
+    {
+        return $this->restful("POST", "/goods/del", $body);
+    }
+
+    /**
+     * 商品详情
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsDetail($body)
+    {
+        return $this->restful("POST", "/goods/detail", $body);
+    }
+
+    /**
+     * 修改商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsEdit($body)
+    {
+        return $this->restful("POST", "/goods/edit", $body);
+    }
+
+    /**
+     * 后台商品列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsList($body)
+    {
+        return $this->restful("POST", "/goods/list", $body);
+    }
+
+    /**
+     * 获取用户金币
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoldController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldList($body)
+    {
+        return $this->restful("POST", "/gold/list", $body);
+    }
+
+    /**
+     * 新增订单
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldOrderAdd($body)
+    {
+        return $this->restful("POST", "/order/add", $body);
+    }
+
+    /**
+     * 用户订单记录
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/userOrderRecordAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldUserOrderRecord($body)
+    {
+        return $this->restful("POST", "/order/userOrderRecord", $body);
+    }
+
+    /**
      * 获取虚拟卡详情
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/VirtualCard/VirtualCardController/infoAction.md
      * @param array $body 入参类型
@@ -602,6 +734,17 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 活动用户和药联用户的数据关联
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/registerMemberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function registerMemberInfo($body)
+    {
+        return $this->restful("POST", "/member/register/member", $body);
+    }
+
+    /**
      * 订单权益重发
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/EquityController/retryAction.md
      * @param array $body 入参类型
@@ -679,6 +822,17 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 回传用户信息(头像、昵称)
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/updateMemberInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateMemberInfo($body)
+    {
+        return $this->restful("POST", "/member/updateMemberInfo", $body);
+    }
+
+    /**
      * 查看项目商品
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectGoodsController/viewAction.md
      * @param array $body 入参类型
@@ -687,6 +841,17 @@ class ActivitySdk extends SdkBase
     public function viewProjectGoods($body)
     {
         return $this->restful("POST", "/admin/projectGoods/view", $body);
+    }
+
+    /**
+     * 获取未激活模式下的渠道列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectGoodsController/virtualChannelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function virtualChannel($body)
+    {
+        return $this->restful("POST", "/admin/projectGoods/virtualChannel", $body);
     }
 
     /**
