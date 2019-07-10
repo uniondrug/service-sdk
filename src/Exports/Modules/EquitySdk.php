@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-02
- * @time   Tue, 02 Jul 2019 11:08:59 +0800
+ * @date   2019-07-09
+ * @time   Tue, 09 Jul 2019 15:22:06 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -144,6 +144,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 统计用户保障数量
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/countGuaranteeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function countGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/countguarantee", $body);
+    }
+
+    /**
      * 用分组id获取分组权益id
      * 为了兼容 1.x SDK 新增此方法 和上面的方法相同
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GroupEquityController/detailByGroupIdAction.md
@@ -267,6 +278,17 @@ class EquitySdk extends SdkBase
     public function equityGroupEdit($body)
     {
         return $this->restful("POST", "/equity/group/edit", $body);
+    }
+
+    /**
+     * 权益集合消费数据统计
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityConsumeController/equityIdsCountsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityIdsCounts($body)
+    {
+        return $this->restful("POST", "/equity/consume/equityidscounts", $body);
     }
 
     /**
@@ -568,7 +590,7 @@ class EquitySdk extends SdkBase
     }
 
     /**
-     * 统计用户保障金额
+     * 统计用户换新保障金额
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/memberIdCountAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
