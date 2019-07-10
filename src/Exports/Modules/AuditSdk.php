@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-17
- * @time   Mon, 17 Jun 2019 13:40:35 +0800
+ * @date   2019-07-10
+ * @time   Wed, 10 Jul 2019 14:48:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -105,6 +105,17 @@ class AuditSdk extends SdkBase
     public function auditErpOrder($body)
     {
         return $this->restful("POST", "/erporder/audit", $body);
+    }
+
+    /**
+     * 重新审核
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditScriptController/rejectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditScriptRetry($body)
+    {
+        return $this->restful("POST", "/audit/script/retry", $body);
     }
 
     /**
