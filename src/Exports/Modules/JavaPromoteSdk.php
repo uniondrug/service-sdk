@@ -139,4 +139,37 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/memberDay/edit", $body);
     }
+
+    /**
+     * 新增标签
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryTagAdd($body)
+    {
+        return $this->restful(static::METHOD_POST, '/promote/tag/add', $body);
+    }
+
+    /**
+     * 标签删除
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryTagRemove($body)
+    {
+        return $this->restful(static::METHOD_POST, '/promote/tag/remove', $body);
+    }
+
+    /**
+     * 标签列表展示
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryTagList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/promote/tag/list', $body);
+    }
 }
