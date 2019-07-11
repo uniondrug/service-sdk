@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-07-11
- * @time   Thu, 11 Jul 2019 15:15:26 +0800
+ * @time   Thu, 11 Jul 2019 15:48:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -398,7 +398,7 @@ class EquitySdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getGoodsListByPrechecks($body)
+    public function getGoodsListByPrecheckNo($body)
     {
         return $this->restful("POST", "/precheck/precheckno/goodslist", $body);
     }
