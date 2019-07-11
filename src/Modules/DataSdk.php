@@ -71,4 +71,15 @@ class DataSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/areas/search", $body);
     }
+
+    /**
+     * 验证码重置(测试环境重置密码)
+     * @link https://uniondrug.coding.net/p/module.data/git/blob/development/docs/api/SMSController/resetAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function captchaReset($body)
+    {
+        return $this->restful("POST", "/sms/reset", $body);
+    }
 }
