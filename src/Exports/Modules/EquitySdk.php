@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-09
- * @time   Tue, 09 Jul 2019 15:22:06 +0800
+ * @date   2019-07-11
+ * @time   Thu, 11 Jul 2019 15:15:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -390,6 +390,17 @@ class EquitySdk extends SdkBase
     public function getEquityPaging($body)
     {
         return $this->restful("POST", "/equity/paging", $body);
+    }
+
+    /**
+     * 根据试算记录流水号 获取商品列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/getGoodsListByPrecheckNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGoodsListByPrechecks($body)
+    {
+        return $this->restful("POST", "/precheck/precheckno/goodslist", $body);
     }
 
     /**
