@@ -734,6 +734,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 修改理赔单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/editClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editClaim($body)
+    {
+        return $this->restful("POST", "/claim/edit", $body);
+    }
+
+    /**
      * 撤销理赔
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/cancelAction.md
      * @param object|array $body 入参类型
