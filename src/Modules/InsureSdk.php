@@ -305,4 +305,15 @@ class InsureSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/insurePolicy/submit", $body);
     }
+
+    /**
+     * 保单理赔属性
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimPropertyAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function claimPropertyPolicy($body)
+    {
+        return $this->restful("POST", "/policy/claimProperty", $body);
+    }
 }
