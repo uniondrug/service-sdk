@@ -17,6 +17,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk;
@@ -92,6 +93,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
  * @property AuditSdk              $audit
  * @property PackageSdk            $package
  * @property OssSdk                $oss
+ * @property JavaFinSdk            $javaFin
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
