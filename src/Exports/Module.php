@@ -31,6 +31,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MessageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MsgSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\OrderSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\OssSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PackageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
@@ -90,6 +91,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
  * @property CarSdk                $car
  * @property AuditSdk              $audit
  * @property PackageSdk            $package
+ * @property OssSdk                $oss
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
