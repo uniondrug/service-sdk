@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-12
- * @time   Fri, 12 Jul 2019 10:31:33 +0800
+ * @date   2019-07-13
+ * @time   Sat, 13 Jul 2019 09:34:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -84,6 +84,17 @@ class EquitySdk extends SdkBase
     public function addGuarantee($body)
     {
         return $this->restful("POST", "/guarantee/add", $body);
+    }
+
+    /**
+     * 统计用户金额
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/memberIdCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function adminmemberidcount($body)
+    {
+        return $this->restful("POST", "/equity/memberidcount", $body);
     }
 
     /**
