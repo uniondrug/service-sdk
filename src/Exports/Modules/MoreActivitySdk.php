@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-07-15
- * @time   Mon, 15 Jul 2019 12:01:34 +0800
+ * @time   Mon, 15 Jul 2019 14:22:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,39 @@ class MoreActivitySdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'more.activity.module';
+
+    /**
+     * 验证码校验
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Captcha/CaptchaController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function captchaCheck($body)
+    {
+        return $this->restful("POST", "/captcha/check", $body);
+    }
+
+    /**
+     * 短信发送
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Captcha/CaptchaController/sendAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function captchaSend($body)
+    {
+        return $this->restful("POST", "/captcha/send", $body);
+    }
+
+    /**
+     * 语言发送
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Captcha/CaptchaController/voiceSendAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function captchaVoiceSend($body)
+    {
+        return $this->restful("POST", "/captcha/voiceSend", $body);
+    }
 
     /**
      * 核销虚拟卡
