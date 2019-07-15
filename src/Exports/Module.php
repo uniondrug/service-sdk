@@ -48,6 +48,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CarSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk;
 
 /**
  * 基础模块SDK入口
@@ -94,6 +95,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
  * @property PackageSdk            $package
  * @property OssSdk                $oss
  * @property JavaFinSdk            $javaFin
+ * @property MoreActivitySdk       $moreActivity
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
