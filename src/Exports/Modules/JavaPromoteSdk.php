@@ -152,6 +152,17 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
+     * 修改标签
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryTagEdit($body)
+    {
+        return $this->restful(static::METHOD_POST, '/promote/tag/modify', $body);
+    }
+
+    /**
      * 标签删除
      * @link
      * @param array $body
