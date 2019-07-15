@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-09
- * @time   Tue, 09 Jul 2019 17:05:24 +0800
+ * @date   2019-07-15
+ * @time   Mon, 15 Jul 2019 13:36:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,17 @@ class RuleSdk extends SdkBase
     public function addRule($body)
     {
         return $this->restful("POST", "/filter/addrule", $body);
+    }
+
+    /**
+     * 统计执行数量
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/UpdatelogController/batchCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function batchCount($body)
+    {
+        return $this->restful("POST", "/updatelog/batchcount", $body);
     }
 
     /**
