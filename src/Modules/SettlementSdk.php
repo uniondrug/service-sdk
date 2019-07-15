@@ -1581,6 +1581,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 连锁期末余额
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/finalFundAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function partnerPoolDetailFinalFund($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/partnerFinalFund", $body);
+    }
+
+    /**
      * 凯撒解密算法
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataSecureController/edcodeAction.md
      * @param object|array $body 入参类型
