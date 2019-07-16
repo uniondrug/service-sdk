@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-15
- * @time   Mon, 15 Jul 2019 13:36:44 +0800
+ * @date   2019-07-16
+ * @time   Tue, 16 Jul 2019 14:42:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -230,6 +230,17 @@ class RuleSdk extends SdkBase
     }
 
     /**
+     * 获取导出的sql
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramExportSql($body)
+    {
+        return $this->restful("POST", "/packageProgram/export/sql", $body);
+    }
+
+    /**
      * 全部列表
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageProgramController/listingAction.md
      * @param array $body 入参类型
@@ -285,6 +296,17 @@ class RuleSdk extends SdkBase
     }
 
     /**
+     * 清空指定方案下所有的药品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/deleteAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsDeleteAll($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/delete/all", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/detailAction.md
      * @param array $body 入参类型
@@ -315,6 +337,17 @@ class RuleSdk extends SdkBase
     public function packageWhiteItemsEnable($body)
     {
         return $this->restful("POST", "/packageWhiteItems/enable", $body);
+    }
+
+    /**
+     * 导出excel 的sql
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageWhiteItemsExportSql($body)
+    {
+        return $this->restful("POST", "/packageWhiteItems/export/sql", $body);
     }
 
     /**
@@ -480,6 +513,39 @@ class RuleSdk extends SdkBase
     public function whiteListRelationsDetail($body)
     {
         return $this->restful("POST", "/whiteListRelations/detail", $body);
+    }
+
+    /**
+     * 启用白名单商品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsDisable($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/disable", $body);
+    }
+
+    /**
+     * 启用白名单商品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsEnable($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/enable", $body);
+    }
+
+    /**
+     * 导出excel sql
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsExportSql($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/export/sql", $body);
     }
 
     /**
