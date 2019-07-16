@@ -29,7 +29,7 @@ class JavaOrderCodeSdk extends SdkBase
      */
     public function createAuditNo($body)
     {
-        return $this->restful("POST", "/orderno/audit/creat", $body);
+        return $this->restful("POST", "/orderno/audit/create", $body);
     }
 
 }
