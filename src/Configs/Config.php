@@ -54,8 +54,8 @@ class Config
     private $sdkDomain = [
         'production' => 'uniondrug.cn',
         'release' => 'uniondrug.net',
-        'testing' => 'test.dovecot.cn',
-        'development' => 'dev.dovecot.cn',
+        'testing' => 'turboradio.cn',
+        'development' => 'dev.uniondrug.info',
     ];
 
     /**
