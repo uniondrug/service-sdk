@@ -419,4 +419,26 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/user/status", $body);
     }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/addAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function groupManageAdd($body)
+    {
+        return $this->restful("POST", "/group/manage/add", $body);
+    }
+
+    /**
+     * 微信配置类型(计次|计费)
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/typeAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function configType($body)
+    {
+        return $this->restful("POST", "/config/type", $body);
+    }
 }
