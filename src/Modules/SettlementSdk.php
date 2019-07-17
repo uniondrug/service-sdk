@@ -1847,12 +1847,11 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取负责人列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/listAction.md
-     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function getDirectorList($body)
+    public function getDirectorList()
     {
-        return $this->restful("POST", "/director/list", $body);
+        return $this->restful("POST", "/director/list");
     }
 }
 
