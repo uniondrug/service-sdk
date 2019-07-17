@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-07-17
- * @time   Wed, 17 Jul 2019 17:55:02 +0800
+ * @time   Wed, 17 Jul 2019 22:41:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -140,58 +140,58 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 修改金币
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/editAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goldEdit($body)
-    {
-        return $this->restful("POST", "/memberGold/edit", $body);
-    }
-
-    /**
      * 商品详情
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function goldGoodsDetail($body)
+    public function goodsGoldDetail($body)
     {
-        return $this->restful("POST", "/goods/detail", $body);
-    }
-
-    /**
-     * 新建或修改商品
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsController/editAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goldGoodsEdit($body)
-    {
-        return $this->restful("POST", "/goods/edit", $body);
+        return $this->restful("POST", "/goodsGold/detail", $body);
     }
 
     /**
      * 商品列表
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsController/listAction.md
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function goldGoodsList($body)
+    public function goodsGoldPaging($body)
     {
-        return $this->restful("POST", "/goods/list", $body);
+        return $this->restful("POST", "/goodsGold/paging", $body);
     }
 
     /**
-     * 获取用户金币
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/listAction.md
+     * 新建或修改商品
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/saveAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function goldList($body)
+    public function goodsGoldSave($body)
     {
-        return $this->restful("POST", "/memberGold/list", $body);
+        return $this->restful("POST", "/goodsGold/save", $body);
+    }
+
+    /**
+     * 用户金币信息
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberGoldInfo($body)
+    {
+        return $this->restful("POST", "/memberGold/info", $body);
+    }
+
+    /**
+     * 修改金币
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/saveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberGoldSave($body)
+    {
+        return $this->restful("POST", "/memberGold/save", $body);
     }
 
     /**
