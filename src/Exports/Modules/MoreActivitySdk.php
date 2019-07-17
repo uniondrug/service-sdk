@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-15
- * @time   Mon, 15 Jul 2019 14:22:12 +0800
+ * @date   2019-07-17
+ * @time   Wed, 17 Jul 2019 17:55:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -151,28 +151,6 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 新建商品
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goldGoodsAdd($body)
-    {
-        return $this->restful("POST", "/goods/add", $body);
-    }
-
-    /**
-     * 上下架商品
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsController/upDownAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goldGoodsDel($body)
-    {
-        return $this->restful("POST", "/goods/del", $body);
-    }
-
-    /**
      * 商品详情
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsController/detailAction.md
      * @param array $body 入参类型
@@ -184,7 +162,7 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 修改商品
+     * 新建或修改商品
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsController/editAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -217,28 +195,6 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 新增订单
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goldOrderAdd($body)
-    {
-        return $this->restful("POST", "/order/add", $body);
-    }
-
-    /**
-     * 用户订单记录
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderController/userOrderListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goldUserOrderRecord($body)
-    {
-        return $this->restful("POST", "/order/userOrderRecord", $body);
-    }
-
-    /**
      * 订单创建
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/createAction.md
      * @param array $body 入参类型
@@ -247,6 +203,28 @@ class MoreActivitySdk extends SdkBase
     public function orderCreate($body)
     {
         return $this->restful("POST", "/order/create", $body);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderGoldCreate($body)
+    {
+        return $this->restful("POST", "/orderGold/create", $body);
+    }
+
+    /**
+     * 分页
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderGoldPaging($body)
+    {
+        return $this->restful("POST", "/orderGold/paging", $body);
     }
 
     /**
@@ -269,5 +247,71 @@ class MoreActivitySdk extends SdkBase
     public function orderPayCreate($body)
     {
         return $this->restful("POST", "/order/pay/create", $body);
+    }
+
+    /**
+     * 项目详情
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectDetail($body)
+    {
+        return $this->restful("POST", "/project/detail", $body);
+    }
+
+    /**
+     * 商品详情
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGoodsDetail($body)
+    {
+        return $this->restful("POST", "/projectGoods/detail", $body);
+    }
+
+    /**
+     * 商品列表
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGoodsPaging($body)
+    {
+        return $this->restful("POST", "/projectGoods/paging", $body);
+    }
+
+    /**
+     * 商品修改或新增
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/saveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGoodsSave($body)
+    {
+        return $this->restful("POST", "/projectGoods/save", $body);
+    }
+
+    /**
+     * 项目列表
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectPaging($body)
+    {
+        return $this->restful("POST", "/project/paging", $body);
+    }
+
+    /**
+     * 项目修改或新增
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/saveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectSave($body)
+    {
+        return $this->restful("POST", "/project/save", $body);
     }
 }
