@@ -441,4 +441,15 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/config/type", $body);
     }
+
+    /**
+     * 微信配置列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/listByMemberAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function configListByMember($body)
+    {
+        return $this->restful("POST", "/config/list/member", $body);
+    }
 }
