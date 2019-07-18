@@ -1821,5 +1821,37 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/settlement/time", $body);
     }
+
+    /**
+     * 添加连锁负责人
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/addPartnerAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addPartnerDirector($body)
+    {
+        return $this->restful("POST", "/director/addPartner", $body);
+    }
+
+    /**
+     * 获取连锁负责人
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/partnerAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getPartnerDirector($body)
+    {
+        return $this->restful("POST", "/director/partner", $body);
+    }
+
+    /**
+     * 获取负责人列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/listAction.md
+     * @return ClientResponseInterface
+     */
+    public function getDirectorList()
+    {
+        return $this->restful("POST", "/director/list");
+    }
 }
 
