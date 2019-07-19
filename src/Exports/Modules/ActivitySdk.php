@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-18
- * @time   Thu, 18 Jul 2019 09:41:16 +0800
+ * @date   2019-07-19
+ * @time   Fri, 19 Jul 2019 17:38:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -545,6 +545,17 @@ class ActivitySdk extends SdkBase
     public function infoVirtualCard($body)
     {
         return $this->restful("POST", "/virtualCard/info", $body);
+    }
+
+    /**
+     * 根据项目名称获取项目列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectController/likeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function likeProject($body)
+    {
+        return $this->restful("POST", "/admin/project/like", $body);
     }
 
     /**
