@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-08
- * @time   Mon, 08 Jul 2019 17:19:24 +0800
+ * @date   2019-07-19
+ * @time   Fri, 19 Jul 2019 17:38:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -86,7 +86,7 @@ class ActivitySdk extends SdkBase
 
     /**
      * 复制项目
-     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectController/copyProjectAction.md
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectController/copyProjectsAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -404,6 +404,18 @@ class ActivitySdk extends SdkBase
     }
 
     /**
+     * 获取待复制项目详情
+     * *
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectController/getProjectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProject($body)
+    {
+        return $this->restful("POST", "/admin/project/getProject", $body);
+    }
+
+    /**
      * 检查用户活动受益次数
      * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Member/MemberController/checkToTimesAction.md
      * @param array $body 入参类型
@@ -533,6 +545,17 @@ class ActivitySdk extends SdkBase
     public function infoVirtualCard($body)
     {
         return $this->restful("POST", "/virtualCard/info", $body);
+    }
+
+    /**
+     * 根据项目名称获取项目列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Admin/ProjectController/likeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function likeProject($body)
+    {
+        return $this->restful("POST", "/admin/project/like", $body);
     }
 
     /**
