@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-17
- * @time   Wed, 17 Jul 2019 22:41:02 +0800
+ * @date   2019-07-20
+ * @time   Sat, 20 Jul 2019 16:25:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,28 @@ class MoreActivitySdk extends SdkBase
     public function cardPaging($body)
     {
         return $this->restful("POST", "/virtualCard/paging", $body);
+    }
+
+    /**
+     * 新增弹幕
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/DanMu/DanMuController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function danmuCreate($body)
+    {
+        return $this->restful("POST", "/danmu/create", $body);
+    }
+
+    /**
+     * 获取分页数据
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/DanMu/DanMuController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function danmuPaging($body)
+    {
+        return $this->restful("POST", "/danmu/paging", $body);
     }
 
     /**
