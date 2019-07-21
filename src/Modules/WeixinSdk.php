@@ -120,13 +120,13 @@ class WeixinSdk extends Sdk implements ServiceSdkInterface
     }
 
     /*
-    * 小程序登陆
-    * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/ProgramController/loginAction.md
+    * 解密开放数据
+    * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/ProgramController/decryptAction.md
     * @param array $body
     * @return ClientResponseInterface
     */
-    public function login($body)
+    public function decrypt($body)
     {
-        return $this->restful(static::METHOD_POST, '/program/login', $body);
+        return $this->restful(static::METHOD_POST, '/program/decrypt', $body);
     }
 }
