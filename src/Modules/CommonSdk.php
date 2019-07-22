@@ -236,4 +236,26 @@ class CommonSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/access/list", $body);
     }
+
+    /**
+     * 批量添加角色菜单(智赔测试环境专用)
+     * @link https://uniondrug.coding.net/p/module.common/git/blob/development/docs/api/MenuController/addMenuWithAllRoleAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function menuBatchAdd($body)
+    {
+        return $this->restful("POST", "/menu/batch/add", $body);
+    }
+
+    /**
+     * 批量删除角色菜单(智赔测试环境专用)
+     * @link https://uniondrug.coding.net/p/module.common/git/blob/development/docs/api/MenuController/DelMenuWithAllRoleAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function menuBatchDelete($body)
+    {
+        return $this->restful("POST", "/menu/batch/delete", $body);
+    }
 }

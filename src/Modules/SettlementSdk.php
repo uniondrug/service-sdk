@@ -734,6 +734,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 修改理赔单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/editClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editClaim($body)
+    {
+        return $this->restful("POST", "/claim/edit", $body);
+    }
+
+    /**
      * 撤销理赔
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/cancelAction.md
      * @param object|array $body 入参类型
@@ -1570,6 +1581,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 连锁期末余额
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolDetailStatisticsController/finalFundAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function partnerPoolDetailFinalFund($body)
+    {
+        return $this->restful("POST", "/poolDetailStatistics/partnerFinalFund", $body);
+    }
+
+    /**
      * 凯撒解密算法
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DataSecureController/edcodeAction.md
      * @param object|array $body 入参类型
@@ -1798,6 +1820,38 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     public function getPayTimeBegin($body)
     {
         return $this->restful("POST", "/settlement/time", $body);
+    }
+
+    /**
+     * 添加连锁负责人
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/addPartnerAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addPartnerDirector($body)
+    {
+        return $this->restful("POST", "/director/addPartner", $body);
+    }
+
+    /**
+     * 获取连锁负责人
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/partnerAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getPartnerDirector($body)
+    {
+        return $this->restful("POST", "/director/partner", $body);
+    }
+
+    /**
+     * 获取负责人列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/listAction.md
+     * @return ClientResponseInterface
+     */
+    public function getDirectorList()
+    {
+        return $this->restful("POST", "/director/list");
     }
 }
 
