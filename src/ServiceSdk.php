@@ -75,6 +75,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\CompensateSdk               $compensate                                                 智赔接口服务
  * @property Modules\AssistantSdk                $assistant                                                  助手SDK
  * @property Modules\NotifySdk                   $notify                                                     消息推送SDK
+ * @property Modules\MoreActivitySdk             $moreActivity                                               新活动模块SDK
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
