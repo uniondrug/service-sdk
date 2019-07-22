@@ -1164,5 +1164,38 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/organizebase/direct", $body);
     }
 
+    /**
+     * 连锁查询 (运营推送平台)
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listNameAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function partnerSearch($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listname", $body);
+    }
+
+    /**
+     * 门店查询 (运营推送平台)
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listParentNameAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function storeSearch($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/listparentname", $body);
+    }
+
+    /**
+     * 店员查询 (运营推送平台)
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function assistantsSearch($body)
+    {
+        return $this->restful(static::METHOD_POST, "/assistants/account", $body);
+    }
+
 
 }

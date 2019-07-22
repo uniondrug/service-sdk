@@ -163,7 +163,7 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
      */
     public function orderMainNos($body)
     {
-        return $this->restful("POST", "/queryMainOrderNoList", $body);
+        return $this->restful("POST", "/order/query/queryMainOrderNoList", $body);
     }
 
     /**

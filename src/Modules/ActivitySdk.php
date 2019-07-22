@@ -647,6 +647,61 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 创建虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function createVirtualCard($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/create', $body);
+    }
+
+    /**
+     * 获取虚拟卡列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getVirtualList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/list', $body);
+    }
+
+    /**
+     * 核销虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function eliminateVirtualCard($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/eliminate', $body);
+    }
+
+    /**
+     * 回调核销虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function verifyVirtual($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/verifyVirtual', $body);
+    }
+
+    /**
+     * 获取核销卡详情
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/OrderController/createAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function infoVirtualCard($body)
+    {
+        return $this->restful(static::METHOD_POST, '/virtualCard/info', $body);
+    }
+
+    /**
      * 订单微信支付回调
      * @link https://uniondrug.coding.net/p/module.health/git/blob/development/docs/api/OrderController/createAction.md
      * @param array $body
@@ -669,4 +724,125 @@ class ActivitySdk extends Sdk implements ServiceSdkInterface
     }
 
 
+    /**
+     * 检测该商品能否被兑换
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/checkExchangeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldCheckExchange($body)
+    {
+        return $this->restful("POST", "/goods/checkExchange", $body);
+    }
+
+    /**
+     * 修改金币
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoldController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldEdit($body)
+    {
+        return $this->restful("POST", "/gold/edit", $body);
+    }
+
+    /**
+     * 新建商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsAdd($body)
+    {
+        return $this->restful("POST", "/goods/add", $body);
+    }
+
+    /**
+     * 上下架商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/delAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsDel($body)
+    {
+        return $this->restful("POST", "/goods/del", $body);
+    }
+
+    /**
+     * 商品详情
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsDetail($body)
+    {
+        return $this->restful("POST", "/goods/detail", $body);
+    }
+
+    /**
+     * 修改商品
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsEdit($body)
+    {
+        return $this->restful("POST", "/goods/edit", $body);
+    }
+
+    /**
+     * 后台商品列表
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldGoodsList($body)
+    {
+        return $this->restful("POST", "/goods/list", $body);
+    }
+
+    /**
+     * 获取用户金币
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/GoldController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldList($body)
+    {
+        return $this->restful("POST", "/gold/list", $body);
+    }
+
+    /**
+     * 新增订单
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goldOrderAdd($body)
+    {
+        return $this->restful("POST", "/order/add", $body);
+    }
+
+    /**
+     * 核销虚拟卡（新）
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function consumeVirtualCard($body)
+    {
+        return $this->restful("POST", "/virtualCard/consume", $body);
+    }
+
+    /**
+     * 统计用户虚拟卡张数
+     * @link https://uniondrug.coding.net/p/module.activity/git/blob/development/docs/api/Gold/OrderController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function countVirtualCard($body)
+    {
+        return $this->restful("POST", "/virtualCard/count", $body);
+    }
+    
 }

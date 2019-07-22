@@ -651,4 +651,14 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/group/activate/edit", $body);
     }
+    /**
+     * 智赔用户列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCompensateUserPagingAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getCompensateUserPaging($body)
+    {
+        return $this->restful(static::METHOD_POST, "/user/compensate/paging", $body);
+    }
 }

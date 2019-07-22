@@ -5,7 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\Service\ClientClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 use Uniondrug\Structs\StructInterface;
@@ -22,7 +22,7 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
      * 结算单列表
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/listAction.md
      * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @return ClientClientResponseInterface
      */
     public function statementsList($body)
     {
@@ -32,8 +32,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算单结算数据汇总接口
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/totalDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function total($body)
     {
@@ -43,8 +43,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 新增结算单
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/AddAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function addStatements($body)
     {
@@ -54,8 +54,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁财务发起新增结算单
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/AddFromMerchantAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function addStatementsFromMerchant($body)
     {
@@ -63,10 +63,21 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 连锁财务对比后发起新增结算单
+     * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/AddFromCompareAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addStatementsFromCompare($body)
+    {
+        return $this->restful("POST", "/statements/AddFromCompare", $body);
+    }
+
+    /**
      * 结算单审核接口
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/auditingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function auditingStatements($body)
     {
@@ -76,8 +87,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算单状态变更接口
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/changeStatusAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function changeStatus($body)
     {
@@ -87,8 +98,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 商品明细
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/GoodsController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function goodsDetails($body)
     {
@@ -98,8 +109,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 商品列表
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/GoodsController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function goodsList($body)
     {
@@ -109,8 +120,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单结算明细
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/OrdersController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function ordersDetails($body)
     {
@@ -120,8 +131,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 订单列表
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/OrdersController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function ordersList($body)
     {
@@ -131,8 +142,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 结算单结算数据支付方式
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/StatementsController/payDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function payStatements($body)
     {
@@ -142,8 +153,8 @@ class FinanceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取账单的操作日志
      * @link https://uniondrug.coding.net/p/union.finance/git/blob/development/docs/api/Statements/LogController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function logPaging($body)
     {

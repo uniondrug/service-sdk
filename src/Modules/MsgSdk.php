@@ -17,14 +17,36 @@ use Uniondrug\Structs\StructInterface;
 class MsgSdk extends Sdk implements ServiceSdkInterface
 {
 
+    protected $serviceName = 'msg';
     /**
-     * 发送模板消息
-     * @link
-     * @param json|StructInterface $body
-     * @return ClientResponseInterface
+     * 消息发布
+     * @link https://uniondrug.coding.net/p/module.msg/git/blob/development/docs/api/Msg/PublishController/publishAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
-    public function msgPublish($body)
+    public function publish($body)
     {
         return $this->restful(static::METHOD_POST, "/msg/publish", $body);
+    }
+
+    /**
+     * 报告回调
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function report($body)
+    {
+        return $this->restful(static::METHOD_POST, "/report/notify", $body);
+    }
+
+    /**
+     * 验证码校验
+     * @link https://uniondrug.coding.net/p/module.msg/git/blob/develop/docs/api/Msg/CheckController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function check($body)
+    {
+        return $this->restful(static::METHOD_POST, "/msg/check", $body);
     }
 }

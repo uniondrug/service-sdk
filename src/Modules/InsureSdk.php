@@ -153,6 +153,17 @@ class InsureSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 更新保单状态
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeStatusAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function changeStatusPolicy($body)
+    {
+        return $this->restful("POST", "/policy/changeStatus", $body);
+    }
+    
+    /**
      * 理赔
      * @link https://uniondrug.coding.net/p/module.insure/git/tree/development/docs/api/ClaimController/claimAction.md
      * @param array $body 入参类型
@@ -293,5 +304,38 @@ class InsureSdk extends Sdk implements ServiceSdkInterface
     public function submitInsurePolicy($body)
     {
         return $this->restful("POST", "/insurePolicy/submit", $body);
+    }
+
+    /**
+     * 保单理赔属性
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimPropertyAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function claimPropertyPolicy($body)
+    {
+        return $this->restful("POST", "/policy/claimProperty", $body);
+    }
+
+    /**
+     * 保单明细汇总
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/detailSummaryAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function detailSummaryPolicy($body)
+    {
+        return $this->restful("POST", "/policy/detailSummary", $body);
+    }
+
+    /**
+     * 保司数据汇总
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerSummaryAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function insurerSummaryPolicy($body)
+    {
+        return $this->restful("POST", "/policy/insurerSummary", $body);
     }
 }

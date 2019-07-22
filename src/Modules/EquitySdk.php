@@ -77,6 +77,17 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过orderNos获取权益列表(智赔)
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/listByOrderNosAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getEquityByOrderNos($body)
+    {
+        return $this->restful(static::METHOD_POST, "/equity/orderNos/list", $body);
+    }
+
+    /**
      * 获取权益列表
      * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/getListsAction.md
      * @param $body
@@ -616,5 +627,39 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     public function orderNo($body)
     {
         return $this->restful("POST", "/guarantee/orderno", $body);
+    }
+
+    /**
+     * 换新保障列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/drugPagingAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function guaranteeDrugpaging($body)
+    {
+        return $this->restful("POST", "/guarantee/drugpaging", $body);
+    }
+
+    /**
+     * 统计个人换新总额
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/GuaranteeController/memberIdCountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function memberIdCount($body)
+    {
+        return $this->restful("POST", "/guarantee/memberidcount", $body);
+    }
+
+    /**
+     * 启用权益
+     * 启用指定权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/enableAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function enableEquity($body)
+    {
+        return $this->restful("POST", "/equity/enable", $body);
     }
 }
