@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-16
- * @time   Tue, 16 Jul 2019 14:42:36 +0800
+ * @date   2019-07-22
+ * @time   Mon, 22 Jul 2019 10:38:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -516,7 +516,18 @@ class RuleSdk extends SdkBase
     }
 
     /**
-     * 启用白名单商品
+     * 根据方案和产品id 获取关联详情
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/detailByProgramProductAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteListRelationsDetailByProgramProductId($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/detail/program", $body);
+    }
+
+    /**
+     * 禁用
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/disableAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -527,7 +538,7 @@ class RuleSdk extends SdkBase
     }
 
     /**
-     * 启用白名单商品
+     * 启用
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/enableAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
