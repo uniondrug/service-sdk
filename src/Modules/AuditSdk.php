@@ -195,4 +195,16 @@ class AuditSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/audit/added/detail/orderno", $body);
     }
+
+    /**
+     * 获取本月本周的换药审核数量
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/MemberCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function MemberCount($body)
+    {
+        return $this->restful("POST", "/audit/membercount", $body);
+    }
+
 }
