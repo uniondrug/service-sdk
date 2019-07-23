@@ -149,4 +149,16 @@ class MarketingSdk extends SdkBase
     {
         return $this->restful("POST", "/marketing/plan/partner/add", $body);
     }
+
+
+    /**
+     * 获取用户凭证
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/EvidenceController/memberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceMember($body)
+    {
+        return $this->restful("POST", "/evidence/member", $body);
+    }
 }
