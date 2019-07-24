@@ -12,6 +12,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\AuditSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CustomerserviceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
@@ -96,6 +97,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk;
  * @property OssSdk                $oss
  * @property JavaFinSdk            $javaFin
  * @property MoreActivitySdk       $moreActivity
+ * @property CustomerserviceSdk    $customerService
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
