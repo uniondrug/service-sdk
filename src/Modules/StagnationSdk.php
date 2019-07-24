@@ -452,4 +452,15 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/config/list/member", $body);
     }
+
+    /**
+     * 可用分组发放总额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/giveOutAmountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function codeGiveOutAmount($body)
+    {
+        return $this->restful("POST", "/code/give/out/amount", $body);
+    }
 }
