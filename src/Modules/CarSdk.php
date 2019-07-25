@@ -82,4 +82,14 @@ class CarSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/area/license", $body);
     }
+
+    /**
+     * 车险开通城市
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function areaOpened($body)
+    {
+        return $this->restful(static::METHOD_POST, "/area/opened", $body);
+    }
 }
