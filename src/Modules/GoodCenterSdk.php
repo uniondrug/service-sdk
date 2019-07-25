@@ -62,4 +62,15 @@ class GoodCenterSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, '/goodsSearch/search', $body);
     }
+
+    /**
+     * 药店宝增值服务详情
+     * @link https://uniondrug.coding.net/p/backend.app/git/blob/development/docs/api/Product/ProductController/detailAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function getGoodsDetailBySpuId($body)
+    {
+        return $this->restful(static::METHOD_POST, '/queryGoods/querySpuImgInfoBySpuId', $body);
+    }
 }
