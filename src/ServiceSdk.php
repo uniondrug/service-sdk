@@ -76,6 +76,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\AssistantSdk                $assistant                                                  助手SDK
  * @property Modules\NotifySdk                   $notify                                                     消息推送SDK
  * @property Modules\MoreActivitySdk             $moreActivity                                               新活动模块SDK
+* @property Modules\CustomerserviceSdk          $customerservice                                            客服模块
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
