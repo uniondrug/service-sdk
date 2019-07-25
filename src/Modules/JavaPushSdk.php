@@ -39,4 +39,15 @@ class JavaPushSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, 'yldj/push', $body);
     }
+
+    /**
+     * 链接
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function pushQuery($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/push/query', $body);
+    }
 }
