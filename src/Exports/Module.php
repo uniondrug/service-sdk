@@ -97,7 +97,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk;
  * @property OssSdk                $oss
  * @property JavaFinSdk            $javaFin
  * @property MoreActivitySdk       $moreActivity
- * @property CustomerserviceSdk    $customerService
+ * @property CustomerserviceSdk    $customerservice
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
