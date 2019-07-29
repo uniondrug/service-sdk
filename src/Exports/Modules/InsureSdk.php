@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-24
- * @time   Wed, 24 Jul 2019 11:12:38 +0800
+ * @date   2019-07-29
+ * @time   Mon, 29 Jul 2019 10:21:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class InsureSdk extends SdkBase
     public function addPolicy($body)
     {
         return $this->restful("POST", "/policy/add", $body);
+    }
+
+    /**
+     * 卡号没有创建完，创建卡号同时并导出excel
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/RepairErrorController/buildPolicyCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function buildPolicyCodeRepairError($body)
+    {
+        return $this->restful("POST", "/repairError/buildPolicyCode", $body);
     }
 
     /**
@@ -203,6 +214,17 @@ class InsureSdk extends SdkBase
     public function editPolicy($body)
     {
         return $this->restful("POST", "/policy/edit", $body);
+    }
+
+    /**
+     * 卡号已创建完，导出excel
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/RepairErrorController/exportPolicyCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportPolicyCodeRepairError($body)
+    {
+        return $this->restful("POST", "/repairError/exportPolicyCode", $body);
     }
 
     /**
