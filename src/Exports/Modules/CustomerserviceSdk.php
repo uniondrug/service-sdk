@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-24
- * @time   Wed, 24 Jul 2019 10:05:27 +0800
+ * @date   2019-07-26
+ * @time   Fri, 26 Jul 2019 09:55:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,6 +41,17 @@ class CustomerserviceSdk extends SdkBase
     }
 
     /**
+     * 退款申请单状态变更-拒绝
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundApplyDisable($body)
+    {
+        return $this->restful("POST", "/refundapply/disable", $body);
+    }
+
+    /**
      * 退款申请单记录详情
      * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/infoAction.md
      * @param array $body 入参类型
@@ -60,5 +71,27 @@ class CustomerserviceSdk extends SdkBase
     public function orderRefundApplyPaging($body)
     {
         return $this->restful("POST", "/refundapply/paging", $body);
+    }
+
+    /**
+     * 退款申请单备注
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/remarkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundApplyRemark($body)
+    {
+        return $this->restful("POST", "/refundapply/remark", $body);
+    }
+
+    /**
+     * 退款申请单状态变更-已退款
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/successAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundApplySuccess($body)
+    {
+        return $this->restful("POST", "/refundapply/success", $body);
     }
 }
