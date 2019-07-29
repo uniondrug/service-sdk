@@ -21,6 +21,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaCashierSdk;
@@ -98,6 +99,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk;
  * @property JavaFinSdk            $javaFin
  * @property MoreActivitySdk       $moreActivity
  * @property CustomerserviceSdk    $customerservice
+ * @property JavaOrderQuerySdk     $javaOrderQuery
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
