@@ -18,7 +18,7 @@ class JavaOrderquerySdk extends Sdk implements ServiceSdkInterface
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'JavaOrderquery';
+    protected $serviceName = 'javaOrderquery';
     
     /**
      * 退单信息查询
