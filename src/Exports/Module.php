@@ -101,7 +101,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property MoreActivitySdk       $moreActivity
  * @property CustomerserviceSdk    $customerservice
  * @property JavaOrderQuerySdk     $javaOrderQuery
- * @property JwtSdk                $jwtSdk
+ * @property JwtSdk                $jwt
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
