@@ -51,6 +51,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CarSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
 
 /**
  * 基础模块SDK入口
@@ -100,6 +101,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk;
  * @property MoreActivitySdk       $moreActivity
  * @property CustomerserviceSdk    $customerservice
  * @property JavaOrderQuerySdk     $javaOrderQuery
+ * @property JwtSdk                $jwtSdk
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
