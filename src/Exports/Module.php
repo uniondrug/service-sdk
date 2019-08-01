@@ -105,6 +105,9 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property JwtSdk                $jwt
  * @property JavaCommonSdk         $javaCommonSdk
  * @property RobotSdk              $robot
+ * @property PromotionUserSdk      $promotionUser
+ * @property PromotionFinanceSdk   $promotionFinance
+ * @property PromotionBiddingSdk   $promotionBiddingSdk
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
