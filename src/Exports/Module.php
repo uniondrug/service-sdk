@@ -39,6 +39,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\OssSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PackageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\RobotSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RuleSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementlogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
@@ -104,6 +105,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property JavaOrderQuerySdk     $javaOrderQuery
  * @property JwtSdk                $jwt
  * @property JavaCommonSdk         $javaCommonSdk
+ * @property RobotSdk              $robot
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
