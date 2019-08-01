@@ -183,4 +183,59 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/promote/tag/list', $body);
     }
+
+    /**
+     * 创建方案(其它优惠)
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v3.0_其他优惠类设置/doc/促销中心卡券方案接口v3.0其他优惠类型文档(方案相关).md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addCoupon($body)
+    {
+        return $this->restful(static::METHOD_POST, '/promote/giftCoupon/add', $body);
+    }
+
+    /**
+     * 方案详情(其它优惠)
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v3.0_其他优惠类设置/doc/促销中心卡券方案接口v3.0其他优惠类型文档(方案相关).md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function detailCoupon($body)
+    {
+        return $this->restful(static::METHOD_POST, '/promote/giftCoupon/info', $body);
+    }
+
+    /**
+     * 方案列表(其它优惠)
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v3.0_其他优惠类设置/doc/促销中心卡券方案接口v3.0其他优惠类型文档(方案相关).md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pagingCoupon($body)
+    {
+        return $this->restful(static::METHOD_POST, '/promote/giftCoupon/paging', $body);
+    }
+
+    /**
+     * 方案停用(其它优惠)
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function stopCoupon($body)
+    {
+        return $this->restful("POST", "/promote/giftCoupon/stop", $body);
+    }
+
+    /**
+     * 合作渠道修改(活动方案)
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function modifyPartnerCoupon($body)
+    {
+        return $this->restful("POST", "/promote/giftCoupon/modifyChannel", $body);
+    }
 }
