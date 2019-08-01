@@ -97,7 +97,6 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property WeixinSdk             $weixin
  * @property CarSdk                $car
  * @property AuditSdk              $audit
- * @property PackageSdk            $package
  * @property OssSdk                $oss
  * @property JavaFinSdk            $javaFin
  * @property MoreActivitySdk       $moreActivity
