@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-11
- * @time   Thu, 11 Jul 2019 15:48:25 +0800
+ * @date   2019-07-29
+ * @time   Mon, 29 Jul 2019 14:34:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -84,6 +84,28 @@ class EquitySdk extends SdkBase
     public function addGuarantee($body)
     {
         return $this->restful("POST", "/guarantee/add", $body);
+    }
+
+    /**
+     * 统计用户金额
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/memberIdCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function adminmemberidcount($body)
+    {
+        return $this->restful("POST", "/equity/memberidcount", $body);
+    }
+
+    /**
+     * 保障列表admin
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/adminPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function adminPaging($body)
+    {
+        return $this->restful("POST", "/guarantee/adminpaging", $body);
     }
 
     /**
@@ -379,6 +401,17 @@ class EquitySdk extends SdkBase
     public function getEquityListByIds($body)
     {
         return $this->restful("POST", "/equity/ids/lists", $body);
+    }
+
+    /**
+     * 根据外部订单号获取权益详情[列表]
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/getListsByOutOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEquityListByOutOrderNo($body)
+    {
+        return $this->restful("POST", "/equity/lists/outorderno", $body);
     }
 
     /**

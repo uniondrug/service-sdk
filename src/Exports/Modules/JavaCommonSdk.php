@@ -12,23 +12,24 @@ use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 /**
  * @package Uniondrug\ServiceSdk\Modules
  */
-class JavaFinSdk extends SdkBase
+class JavaCommonSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.fin.service';
+    protected $serviceName = 'java.common';
 
     /**
-     * 上传excel文件
+     * 获取兑换码卡号
      *
+     * </>
      * @param array $body 入参类型
      *
      * @return ResponseInterface
      */
-    public function excelParse($body)
+    public function equityPool($body)
     {
-        return $this->restful("POST", "/excel/parse", $body);
+        return $this->restful("POST", "/equity/pool", $body);
     }
 }

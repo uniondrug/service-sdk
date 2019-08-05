@@ -10,26 +10,25 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
- * JavaOrderSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class JavaOrderCodeSdk extends SdkBase
+class JavaFinSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.ordercode';
+    protected $serviceName = 'java.fin.service';
 
     /**
-     * 创建审核单单号
-     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-ordercode-service/CHANGELOG.MD#user-content-432
+     * 上传excel文件
+     *
      * @param array $body 入参类型
+     *
      * @return ResponseInterface
      */
-    public function createAuditNo($body)
+    public function excelParse($body)
     {
-        return $this->restful("POST", "/orderno/audit/creat", $body);
+        return $this->restful("POST", "/excel/parse", $body);
     }
-
 }

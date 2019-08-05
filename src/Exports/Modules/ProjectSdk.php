@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-14
- * @time   Fri, 14 Jun 2019 11:15:13 +0800
+ * @date   2019-07-29
+ * @time   Mon, 29 Jul 2019 15:28:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -404,6 +404,17 @@ class ProjectSdk extends SdkBase
     public function getCdKeyByGroup($body)
     {
         return $this->restful("POST", "/user/getCdKeyByGroup", $body);
+    }
+
+    /**
+     * 智赔用户列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCompensateUserPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCompensateUserPaging($body)
+    {
+        return $this->restful("POST", "/user/compensate/paging", $body);
     }
 
     /**
@@ -877,5 +888,16 @@ class ProjectSdk extends SdkBase
     public function userRecover($body)
     {
         return $this->restful("POST", "/user/recover", $body);
+    }
+
+    /**
+     * 兑换码列表查询
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/VerifyPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function verifyPaging($body)
+    {
+        return $this->restful("POST", "/verify/verifyPaging", $body);
     }
 }

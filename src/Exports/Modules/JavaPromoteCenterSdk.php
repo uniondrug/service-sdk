@@ -68,5 +68,13 @@ class JavaPromoteCenterSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/card/queryCardOrder', $body);
     }
 
-
+    /**
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function querySchemeInfo($body)
+    {
+        return $this->restful(static::METHOD_POST, '/coupon/querySchemeInfo', $body);
+    }
 }
