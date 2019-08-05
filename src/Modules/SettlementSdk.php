@@ -1864,5 +1864,16 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/bill/updateDownloadNum", $body);
     }
+
+    /**
+     * 获取bill详情byInvoice
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/detailByInvoiceIdAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getBillDetailByInvoiceId($body)
+    {
+        return $this->restful("POST", "/bill/detailByInvoiceId", $body);
+    }
 }
 
