@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-24
- * @time   Mon, 24 Jun 2019 15:38:10 +0800
+ * @date   2019-08-06
+ * @time   Tue, 06 Aug 2019 13:58:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,17 @@ class AiProfitDataSdk extends SdkBase
     public function addContact($body)
     {
         return $this->restful("POST", "/contact/add", $body);
+    }
+
+    /**
+     * 路由添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addRouter($body)
+    {
+        return $this->restful("POST", "/router/add", $body);
     }
 
     /**
@@ -140,6 +151,28 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 编辑路由
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editRouter($body)
+    {
+        return $this->restful("POST", "/router/edit", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editUser($body)
+    {
+        return $this->restful("POST", "/user/edit", $body);
+    }
+
+    /**
      * 开启
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/enableAction.md
      * @param array $body 入参类型
@@ -195,6 +228,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 获取下级列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/getBannerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getChildrenList($body)
+    {
+        return $this->restful("POST", "/router/childrenList", $body);
+    }
+
+    /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/pagingAction.md
      * @param array $body 入参类型
@@ -217,6 +261,28 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 路由详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRouterInfo($body)
+    {
+        return $this->restful("POST", "/router/info", $body);
+    }
+
+    /**
+     * 翻页列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRouterPaging($body)
+    {
+        return $this->restful("POST", "/router/paging", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/infoAction.md
      * @param array $body 入参类型
@@ -228,7 +294,18 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 列表
+     * LIST列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserList($body)
+    {
+        return $this->restful("POST", "/user/list", $body);
+    }
+
+    /**
+     * PAGING列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
