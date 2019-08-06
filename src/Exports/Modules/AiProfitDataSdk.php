@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-06
- * @time   Tue, 06 Aug 2019 13:58:08 +0800
+ * @time   Tue, 06 Aug 2019 15:24:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -250,6 +250,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 获取默认连锁
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/getDefaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDefaultUser($body)
+    {
+        return $this->restful("POST", "/user/get/default", $body);
+    }
+
+    /**
      * 费率值
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RatioController/valueAction.md
      * @param array $body 入参类型
@@ -478,6 +489,17 @@ class AiProfitDataSdk extends SdkBase
     public function setActivityBanner($body)
     {
         return $this->restful("POST", "/activity/banner/set", $body);
+    }
+
+    /**
+     * 设置默认连锁
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/setDefaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setDefaultUser($body)
+    {
+        return $this->restful("POST", "/user/set/default", $body);
     }
 
     /**
