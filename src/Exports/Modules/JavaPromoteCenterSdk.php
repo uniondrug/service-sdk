@@ -35,6 +35,17 @@ class JavaPromoteCenterSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/card/queryMyRecord', $body);
     }
 
+
+    /**
+     * 卡列表-分页
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pageCardList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/card/pageCardList', $body);
+    }
     /**
      * 卡详情
      * @link
