@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-10
- * @time   Sun, 10 Mar 2019 15:44:24 +0800
+ * @date   2019-08-06
+ * @time   Tue, 06 Aug 2019 14:17:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class MerchantSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'merchant.module';
+
+    /**
+     * 通过名称和手机号获取用户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function account($body)
+    {
+        return $this->restful("POST", "/assistants/account", $body);
+    }
 
     /**
      * 添加账号
@@ -225,6 +236,17 @@ class MerchantSdk extends SdkBase
     public function chainNum($body)
     {
         return $this->restful("POST", "/organizebase/chainNum", $body);
+    }
+
+    /**
+     * 读取连锁列表（有门店数量）
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function chainPaging($body)
+    {
+        return $this->restful("POST", "/organizebase/chainPaging", $body);
     }
 
     /**
@@ -800,6 +822,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/IdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ids($body)
+    {
+        return $this->restful("POST", "/assistants/ids", $body);
+    }
+
+    /**
      * 通过ids读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/idsAction.md
      * @param array $body 入参类型
@@ -943,6 +976,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 查询门店是否存在
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/isExistAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function isExistStore($body)
+    {
+        return $this->restful("POST", "/stores/isExist", $body);
+    }
+
+    /**
      * 获取某类型下的组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllAction.md
      * @param array $body 入参类型
@@ -987,6 +1031,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 简洁查询连锁
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listName($body)
+    {
+        return $this->restful("POST", "/organizebase/listname", $body);
+    }
+
+    /**
      * 读取商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAction.md
      * @param array $body 入参类型
@@ -995,6 +1050,17 @@ class MerchantSdk extends SdkBase
     public function listOrgabuzeBase($body)
     {
         return $this->restful("POST", "/organizebase/list", $body);
+    }
+
+    /**
+     * 简洁查询连锁名称返回门店名称
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listParentNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listParentname($body)
+    {
+        return $this->restful("POST", "/organizebase/listparentname", $body);
     }
 
     /**
@@ -1160,6 +1226,17 @@ class MerchantSdk extends SdkBase
     public function partnerIdsOrgabuzeBase($body)
     {
         return $this->restful("POST", "/organizebase/partnerids", $body);
+    }
+
+    /**
+     * 获取连锁&门店id
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/cooperationInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnersCooperationInfo($body)
+    {
+        return $this->restful("POST", "/partners/cooperationinfo", $body);
     }
 
     /**
