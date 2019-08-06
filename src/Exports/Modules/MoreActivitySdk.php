@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-06
- * @time   Tue, 06 Aug 2019 11:22:49 +0800
+ * @time   Tue, 06 Aug 2019 16:25:03 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -129,7 +129,18 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 开启抽奖
+     * 获取未领取记录
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Draw/DrawController/getAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drawGet($body)
+    {
+        return $this->restful("POST", "/draw/get", $body);
+    }
+
+    /**
+     * 开启抽奖(幂等获取未领取的奖励)
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Draw/DrawController/openAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -195,17 +206,6 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 用户详情
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function memberDetail($body)
-    {
-        return $this->restful("POST", "/member/detail", $body);
-    }
-
-    /**
      * 用户金币信息
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/infoAction.md
      * @param array $body 入参类型
@@ -225,6 +225,17 @@ class MoreActivitySdk extends SdkBase
     public function memberGoldSave($body)
     {
         return $this->restful("POST", "/memberGold/save", $body);
+    }
+
+    /**
+     * 解析入参,获取活动用户对象
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/parseAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberParse($body)
+    {
+        return $this->restful("POST", "/member/parse", $body);
     }
 
     /**
@@ -258,17 +269,6 @@ class MoreActivitySdk extends SdkBase
     public function orderGoldPaging($body)
     {
         return $this->restful("POST", "/orderGold/paging", $body);
-    }
-
-    /**
-     * 发起回调
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderNotifyController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function orderNotifyCreate($body)
-    {
-        return $this->restful("POST", "/order/notify/create", $body);
     }
 
     /**
