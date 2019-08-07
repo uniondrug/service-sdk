@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-29
- * @time   Mon, 29 Jul 2019 15:28:24 +0800
+ * @date   2019-08-07
+ * @time   Wed, 07 Aug 2019 16:12:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -767,6 +767,17 @@ class ProjectSdk extends SdkBase
     public function projectLimit($body)
     {
         return $this->restful("POST", "/project/limit", $body);
+    }
+
+    /**
+     * 根据type分组分表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/projectTypePaingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ProjectTypePaing($body)
+    {
+        return $this->restful("POST", "/group/projecttypepaing", $body);
     }
 
     /**
