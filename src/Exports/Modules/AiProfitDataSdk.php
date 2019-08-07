@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-06
- * @time   Tue, 06 Aug 2019 15:24:45 +0800
+ * @date   2019-08-07
+ * @time   Wed, 07 Aug 2019 15:56:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,39 @@ class AiProfitDataSdk extends SdkBase
     public function addContact($body)
     {
         return $this->restful("POST", "/contact/add", $body);
+    }
+
+    /**
+     * 弹窗添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPopups($body)
+    {
+        return $this->restful("POST", "/popups/add", $body);
+    }
+
+    /**
+     * 点击次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/addClickAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPopupsClick($body)
+    {
+        return $this->restful("POST", "/popups/addClick", $body);
+    }
+
+    /**
+     * 打开次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/addOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPopupsOpen($body)
+    {
+        return $this->restful("POST", "/popups/addOpen", $body);
     }
 
     /**
@@ -129,6 +162,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 下架
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disablePopups($body)
+    {
+        return $this->restful("POST", "/popups/disable", $body);
+    }
+
+    /**
      * 禁用
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/disableAction.md
      * @param array $body 入参类型
@@ -148,6 +192,17 @@ class AiProfitDataSdk extends SdkBase
     public function editActivity($body)
     {
         return $this->restful("POST", "/activity/edit", $body);
+    }
+
+    /**
+     * 编辑路由
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editPopups($body)
+    {
+        return $this->restful("POST", "/popups/edit", $body);
     }
 
     /**
@@ -258,6 +313,39 @@ class AiProfitDataSdk extends SdkBase
     public function getDefaultUser($body)
     {
         return $this->restful("POST", "/user/get/default", $body);
+    }
+
+    /**
+     * 取最新一条有效弹框
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/effectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEffectPopups($body)
+    {
+        return $this->restful("POST", "/popups/effect", $body);
+    }
+
+    /**
+     * 弹窗详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPopupsInfo($body)
+    {
+        return $this->restful("POST", "/popups/info", $body);
+    }
+
+    /**
+     * 翻页列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPopupsPaging($body)
+    {
+        return $this->restful("POST", "/popups/paging", $body);
     }
 
     /**
@@ -547,7 +635,7 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 修改登录时间
+     * 修改最后登录时间
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/updateLoginTimeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
