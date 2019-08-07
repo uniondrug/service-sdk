@@ -107,6 +107,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 禁用
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/bindCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bindCountUser($body)
+    {
+        return $this->restful("POST", "/user/bind/count", $body);
+    }
+
+    /**
      * 取消首页Banner
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/cancelBannerAction.md
      * @param array $body 入参类型
