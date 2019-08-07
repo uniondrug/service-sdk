@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-06
- * @time   Tue, 06 Aug 2019 16:25:03 +0800
+ * @date   2019-08-07
+ * @time   Wed, 07 Aug 2019 19:03:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -129,7 +129,7 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 获取未领取记录
+     * 获取未领取的抽奖码
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Draw/DrawController/getAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -272,14 +272,14 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 发起支付
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderPayController/createAction.md
+     * 订单撤销
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderNotifyController/cancelAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function orderPayCreate($body)
+    public function orderNotifyCancel($body)
     {
-        return $this->restful("POST", "/order/pay/create", $body);
+        return $this->restful("POST", "/order/notify/cancel", $body);
     }
 
     /**
