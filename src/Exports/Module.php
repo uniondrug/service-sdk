@@ -111,7 +111,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property PromotionUserSdk      $promotionUser
  * @property PromotionFinanceSdk   $promotionFinance
  * @property PromotionBiddingSdk   $promotionBiddingSdk
- * @property PackageSdk            $packageSdk
+ * @property PackageSdk            $package
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
