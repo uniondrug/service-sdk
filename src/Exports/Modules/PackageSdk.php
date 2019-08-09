@@ -292,4 +292,15 @@ class PackageSdk extends SdkBase
     {
         return $this->restful("POST", "/tags/update", $body);
     }
+
+    /**
+     * 获取最大编号
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/maxCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMaxTagCode($body)
+    {
+        return $this->restful("POST", "/tags/max/code", $body);
+    }
 }
