@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-12
- * @time   Mon, 12 Aug 2019 15:31:55 +0800
+ * @time   Mon, 12 Aug 2019 18:24:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class PackageSdk extends SdkBase
     public function guaranteesDetail($body)
     {
         return $this->restful("POST", "/guarantees/detail", $body);
+    }
+
+    /**
+     * 导出sql
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteesExportSql($body)
+    {
+        return $this->restful("POST", "/guarantees/export/sql", $body);
     }
 
     /**
@@ -324,6 +335,28 @@ class PackageSdk extends SdkBase
     public function packageUpdate($body)
     {
         return $this->restful("POST", "/package/update", $body);
+    }
+
+    /**
+     * 关闭即买即用
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/readyToUseCloseAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ReadyToUseClose($body)
+    {
+        return $this->restful("POST", "/packageGroup/readytouseclose", $body);
+    }
+
+    /**
+     * 开启即买即用
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/readyToUseOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ReadyToUseOpen($body)
+    {
+        return $this->restful("POST", "/packageGroup/readytouseopen", $body);
     }
 
     /**
