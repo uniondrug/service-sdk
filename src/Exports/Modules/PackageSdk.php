@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-12
- * @time   Mon, 12 Aug 2019 11:23:35 +0800
+ * @time   Mon, 12 Aug 2019 15:31:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -206,6 +206,17 @@ class PackageSdk extends SdkBase
     }
 
     /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageExport($body)
+    {
+        return $this->restful("POST", "/package/export", $body);
+    }
+
+    /**
      * 产品编号单条信息查询 （packageNo 产品编号）
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackAction.md
      * @param array $body 入参类型
@@ -228,7 +239,73 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 产品信息分页查询查询
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGroupCreate($body)
+    {
+        return $this->restful("POST", "/packageGroup/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGroupDelete($body)
+    {
+        return $this->restful("POST", "/packageGroup/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGroupDetail($body)
+    {
+        return $this->restful("POST", "/packageGroup/delete", $body);
+    }
+
+    /**
+     * 全部列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGroupListing($body)
+    {
+        return $this->restful("POST", "/packageGroup/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGroupPaging($body)
+    {
+        return $this->restful("POST", "/packageGroup/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGroupUpdate($body)
+    {
+        return $this->restful("POST", "/packageGroup/update", $body);
+    }
+
+    /**
+     * 产品信息分页查询查询 （编号/名称/类型）
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/packPagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
