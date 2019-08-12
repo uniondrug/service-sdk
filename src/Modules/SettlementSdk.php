@@ -1879,8 +1879,8 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function poolCutPartnersCreate($body)
     {
@@ -1890,8 +1890,8 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function poolCutPartnersDelete($body)
     {
@@ -1901,8 +1901,8 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function poolCutPartnersDetail($body)
     {
@@ -1912,8 +1912,8 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
      */
     public function poolCutPartnersListing($body)
     {
