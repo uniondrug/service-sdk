@@ -1875,5 +1875,49 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/bill/detailByInvoiceId", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolCutPartnersCreate($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolCutPartnersDelete($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolCutPartnersDetail($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function poolCutPartnersListing($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/listing", $body);
+    }
 }
 
