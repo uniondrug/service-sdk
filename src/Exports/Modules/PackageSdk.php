@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-08
- * @time   Thu, 08 Aug 2019 18:02:08 +0800
+ * @date   2019-08-12
+ * @time   Mon, 12 Aug 2019 11:23:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,6 +30,28 @@ class PackageSdk extends SdkBase
     protected $serviceName = 'package.module';
 
     /**
+     * 获取最大编号
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/maxCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMaxGuaranteeCode($body)
+    {
+        return $this->restful("POST", "/guarantees/max/code", $body);
+    }
+
+    /**
+     * 获取最大编号
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/maxCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMaxTagCode($body)
+    {
+        return $this->restful("POST", "/tags/max/code", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/createAction.md
      * @param array $body 入参类型
@@ -41,17 +63,6 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function guaranteesDelete($body)
-    {
-        return $this->restful("POST", "/guarantees/delete", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/detailAction.md
      * @param array $body 入参类型
@@ -60,17 +71,6 @@ class PackageSdk extends SdkBase
     public function guaranteesDetail($body)
     {
         return $this->restful("POST", "/guarantees/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function guaranteesListing($body)
-    {
-        return $this->restful("POST", "/guarantees/listing", $body);
     }
 
     /**
@@ -184,62 +184,62 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/detailAction.md
+     * 产品状态关闭 (packageId)
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/disableStatusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function packageDetail($body)
+    public function packageDisableStatus($body)
     {
-        return $this->restful("POST", "/package/detail", $body);
+        return $this->restful("POST", "/package/disableStatus", $body);
     }
 
     /**
-     * 产品状态关闭
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/disableAction.md
+     * 产品状态开启 (packageId)
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/enableStatusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function packageDisable($body)
+    public function packageEnableStatus($body)
     {
-        return $this->restful("POST", "/package/disable", $body);
+        return $this->restful("POST", "/package/enableStatus", $body);
     }
 
     /**
-     * 产品状态开启
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/enableAction.md
+     * 产品编号单条信息查询 （packageNo 产品编号）
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function packageEnable($body)
+    public function packageGetPack($body)
     {
-        return $this->restful("POST", "/package/enable", $body);
+        return $this->restful("POST", "/package/getPack", $body);
     }
 
     /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/listingAction.md
+     * 产品ID单条信息查询 （packageId 产品ID）
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackIdAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function packageListing($body)
+    public function packageGetPackId($body)
     {
-        return $this->restful("POST", "/package/listing", $body);
+        return $this->restful("POST", "/package/getPackId", $body);
     }
 
     /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/pagingAction.md
+     * 产品信息分页查询查询
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/packPagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function packagePaging($body)
+    public function packagePackPaging($body)
     {
-        return $this->restful("POST", "/package/paging", $body);
+        return $this->restful("POST", "/package/packPaging", $body);
     }
 
     /**
-     * 修改
+     * 产品信息修改 (packageId)
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -291,16 +291,5 @@ class PackageSdk extends SdkBase
     public function tagsUpdate($body)
     {
         return $this->restful("POST", "/tags/update", $body);
-    }
-
-    /**
-     * 获取最大编号
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/maxCodeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getMaxTagCode($body)
-    {
-        return $this->restful("POST", "/tags/max/code", $body);
     }
 }
