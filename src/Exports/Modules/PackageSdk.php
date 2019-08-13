@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-12
- * @time   Mon, 12 Aug 2019 18:24:28 +0800
+ * @date   2019-08-13
+ * @time   Tue, 13 Aug 2019 11:24:14 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -228,6 +228,28 @@ class PackageSdk extends SdkBase
     }
 
     /**
+     * 获取分组关联ID
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getGroupIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGetGroupId($body)
+    {
+        return $this->restful("POST", "/package/getGroupId", $body);
+    }
+
+    /**
+     * 获取保障ID
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getGuaranteeIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGetGuaranteeId($body)
+    {
+        return $this->restful("POST", "/package/getGuaranteeId", $body);
+    }
+
+    /**
      * 产品编号单条信息查询 （packageNo 产品编号）
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackAction.md
      * @param array $body 入参类型
@@ -247,6 +269,17 @@ class PackageSdk extends SdkBase
     public function packageGetPackId($body)
     {
         return $this->restful("POST", "/package/getPackId", $body);
+    }
+
+    /**
+     * 获取标签
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGetTags($body)
+    {
+        return $this->restful("POST", "/package/getTags", $body);
     }
 
     /**
