@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-13
- * @time   Tue, 13 Aug 2019 14:54:49 +0800
+ * @time   Tue, 13 Aug 2019 17:07:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -357,6 +357,83 @@ class PackageSdk extends SdkBase
     public function packageGroupUpdate($body)
     {
         return $this->restful("POST", "/packageGroup/update", $body);
+    }
+
+    /**
+     * 新增集合
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/addsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeAdds($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/adds", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeCreate($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeDelete($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeDetail($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/delete", $body);
+    }
+
+    /**
+     * 全部列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeListing($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteePaging($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeUpdate($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/update", $body);
     }
 
     /**
