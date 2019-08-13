@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-13
- * @time   Tue, 13 Aug 2019 11:24:14 +0800
+ * @time   Tue, 13 Aug 2019 14:54:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -283,6 +283,17 @@ class PackageSdk extends SdkBase
     }
 
     /**
+     * 新增集合
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/addsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGroupAdds($body)
+    {
+        return $this->restful("POST", "/packageGroup/adds", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/createAction.md
      * @param array $body 入参类型
@@ -312,7 +323,7 @@ class PackageSdk extends SdkBase
      */
     public function packageGroupDetail($body)
     {
-        return $this->restful("POST", "/packageGroup/delete", $body);
+        return $this->restful("POST", "/packageGroup/detail", $body);
     }
 
     /**
@@ -412,6 +423,17 @@ class PackageSdk extends SdkBase
     public function tagsDetail($body)
     {
         return $this->restful("POST", "/tags/detail", $body);
+    }
+
+    /**
+     * 获取产品列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/packageAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tagsPackage($body)
+    {
+        return $this->restful("POST", "/tags/package", $body);
     }
 
     /**
