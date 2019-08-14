@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-13
- * @time   Tue, 13 Aug 2019 17:07:25 +0800
+ * @date   2019-08-14
+ * @time   Wed, 14 Aug 2019 17:16:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -400,7 +400,7 @@ class PackageSdk extends SdkBase
      */
     public function packageGuaranteeDetail($body)
     {
-        return $this->restful("POST", "/packageGuarantee/delete", $body);
+        return $this->restful("POST", "/packageGuarantee/detail", $body);
     }
 
     /**
