@@ -41,6 +41,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\SmsSdk                      $sms                                                        短信服务
  * @property Modules\DrugsSdk                    $drugs                                                      药品中心
  * @property Modules\MapSdk                      $map                                                        高德云图服务
+ * @property Modules\PoolSdk                     $pool                                                       资金池服务
  * @property Modules\FinanceSdk                  $finance                                                    结算中心服务
  * @property Modules\SettlementSdk               $settlement                                                 财务结算计算模块
  * @property Modules\SettlementSheetSdk          $settlementSheet                                            财务结算单管理模块
@@ -76,6 +77,8 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\AssistantSdk                $assistant                                                  助手SDK
  * @property Modules\NotifySdk                   $notify                                                     消息推送SDK
  * @property Modules\MoreActivitySdk             $moreActivity                                               新活动模块SDK
+ * @property Modules\CustomerserviceSdk          $customerservice                                            客服模块
+ * @property Modules\JavaOrderquerySdk           $javaOrderquery                                             订单查询模块
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
