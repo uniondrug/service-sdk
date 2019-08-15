@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-15
- * @time   Thu, 15 Aug 2019 10:58:04 +0800
+ * @time   Thu, 15 Aug 2019 16:06:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -701,6 +701,17 @@ class ProjectSdk extends SdkBase
     public function getUserPaging($body)
     {
         return $this->restful("POST", "/user/paging", $body);
+    }
+
+    /**
+     * 计算分组下权益的有效期
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/termAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupTerm($body)
+    {
+        return $this->restful("POST", "/group/term", $body);
     }
 
     /**
