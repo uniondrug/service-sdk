@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-07
- * @time   Wed, 07 Aug 2019 16:12:34 +0800
+ * @date   2019-08-15
+ * @time   Thu, 15 Aug 2019 10:58:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -877,6 +877,17 @@ class ProjectSdk extends SdkBase
     public function statusList($body)
     {
         return $this->restful("POST", "/user/status", $body);
+    }
+
+    /**
+     * 统计分组金额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/SumIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sumids($body)
+    {
+        return $this->restful("POST", "/group/sumids", $body);
     }
 
     /**
