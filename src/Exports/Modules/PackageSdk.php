@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-14
- * @time   Wed, 14 Aug 2019 17:16:51 +0800
+ * @date   2019-08-15
+ * @time   Thu, 15 Aug 2019 11:08:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class PackageSdk extends SdkBase
     public function guaranteesPaging($body)
     {
         return $this->restful("POST", "/guarantees/paging", $body);
+    }
+
+    /**
+     * 统计保障总额
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/sumAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteesSumAmount($body)
+    {
+        return $this->restful("POST", "/guarantees/sum/amount", $body);
     }
 
     /**
