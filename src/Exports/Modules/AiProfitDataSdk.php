@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-07
- * @time   Wed, 07 Aug 2019 15:56:37 +0800
+ * @date   2019-08-16
+ * @time   Fri, 16 Aug 2019 15:14:06 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AiProfitDataSdk extends SdkBase
     public function addActivity($body)
     {
         return $this->restful("POST", "/activity/add", $body);
+    }
+
+    /**
+     * 点击次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/BuriedPointController/addTimesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addBuriedPointTimes($body)
+    {
+        return $this->restful("POST", "/buriedPoint/addTimes", $body);
     }
 
     /**
@@ -206,7 +217,7 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 编辑路由
+     * 编辑弹窗
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/editAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
