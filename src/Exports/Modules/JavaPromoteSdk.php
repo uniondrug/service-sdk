@@ -238,4 +238,15 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/giftCoupon/modifyChannel", $body);
     }
+
+    /**
+     * 卡券类编辑接口
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v3.1_%E5%90%8E%E5%8F%B0%E7%BC%96%E8%BE%91%EF%BC%8C%E4%BF%9D%E9%9A%9C%E8%B5%A0%E9%80%81/doc/%E4%BF%83%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v3.1%20%E7%BC%96%E8%BE%91%E5%8A%9F%E8%83%BD%E6%96%87%E6%A1%A3(%E6%96%B9%E6%A1%88%E7%9B%B8%E5%85%B3).md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updatePromoteScheme($body)
+    {
+        return $this->restful("POST", "/promote/scheme/edit", $body);
+    }
 }
