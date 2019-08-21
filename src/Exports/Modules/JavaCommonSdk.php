@@ -32,4 +32,17 @@ class JavaCommonSdk extends SdkBase
     {
         return $this->restful("POST", "/equity/pool", $body);
     }
+
+    /**
+     * 获取字典数据
+     *
+     * </>
+     * @param array $body 入参类型
+     *
+     * @return ResponseInterface
+     */
+    public function dictData($body)
+    {
+        return $this->restful("POST", "/dict/data", $body);
+    }
 }
