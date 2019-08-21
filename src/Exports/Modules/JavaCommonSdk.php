@@ -34,15 +34,12 @@ class JavaCommonSdk extends SdkBase
     }
 
     /**
-     * 获取字典数据
-     *
-     * </>
-     * @param array $body 入参类型
-     *
+     * 数据字典
+     * @param $body
      * @return ResponseInterface
      */
     public function dictData($body)
     {
-        return $this->restful("POST", "/dict/data", $body);
+        return $this->restful("POST","/dict/data",$body);
     }
 }
