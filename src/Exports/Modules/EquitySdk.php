@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-29
- * @time   Mon, 29 Jul 2019 14:34:35 +0800
+ * @date   2019-08-22
+ * @time   Thu, 22 Aug 2019 11:38:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -702,6 +702,18 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 预核算 针对自付转权益的权益卡
+     * 只提供给审核中心，其他人请勿使用
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/noCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function precheckNoCheck($body)
+    {
+        return $this->restful("POST", "/precheck/no/check", $body);
+    }
+
+    /**
      * 项目下的用户拥有的权益和总金额计算
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/projectMemberAction.md
      * @param array $body 入参类型
@@ -788,6 +800,17 @@ class EquitySdk extends SdkBase
     public function settlement($body)
     {
         return $this->restful("POST", "/guarantee/settlement", $body);
+    }
+
+    /**
+     * 新保障理赔接口
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/SettlementClaimsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function SettlementClaims($body)
+    {
+        return $this->restful("POST", "/guarantee/settlementclaims", $body);
     }
 
     /**
