@@ -53,6 +53,17 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * LIST列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/listAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function authorizeList($body)
+    {
+        return $this->restful("POST", "/authorize/list", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/pagingAction.md
      * @param array $body 入参类型
