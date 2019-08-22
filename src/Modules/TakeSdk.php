@@ -219,4 +219,15 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/user/take/o2oAcceptCount", $body);
     }
 
+
+    /**
+     * 批量查询对应门店的接单数量新商户中心id
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/o2oAcceptCountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function o2oAcceptCountOrgan($body)
+    {
+        return $this->restful("POST", "/user/take/o2oAcceptCountOrgan", $body);
+    }
 }

@@ -47,7 +47,6 @@ class JavaUserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/preAccountRecords/edit", $body);
     }
 
-
     /**
      * 预发放列表
      * @param $body
@@ -58,8 +57,7 @@ class JavaUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/preAccountRecords/paging", $body);
     }
-
-
+    
     /**
      * 获取该订单和商品是否发过预积分
      * @param $body
@@ -114,7 +112,7 @@ class JavaUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/preAccountRecords/info", $body);
     }
-    
+
     /**
      * 预发放积分详情
      * @param $body
@@ -125,7 +123,7 @@ class JavaUserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/preAccountRecords/count", $body);
     }
-    
+
     /**
      * 积分统计详情详情
      * @param $body
