@@ -1198,4 +1198,14 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
 
+    /**
+     * 编辑组织信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function editOrganizebase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editmap", $body);
+    }
 }
