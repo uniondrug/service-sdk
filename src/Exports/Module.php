@@ -19,6 +19,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaCommonSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaExchangeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk;
@@ -112,6 +113,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property PromotionFinanceSdk   $promotionFinance
  * @property PromotionBiddingSdk   $promotionBiddingSdk
  * @property PackageSdk            $package
+ * @property JavaExchangeSdk       $javaExchange
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
