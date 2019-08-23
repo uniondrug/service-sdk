@@ -786,7 +786,7 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function ProjectTypePaing($body)
+    public function projectTypePaing($body)
     {
         return $this->restful("POST", "/group/projecttypepaing", $body);
     }
