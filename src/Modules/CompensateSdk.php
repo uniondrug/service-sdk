@@ -13,9 +13,9 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
+use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
-use Uniondrug\Service\ClientResponseInterface;
 
 /**
  * CompensateSdk
@@ -116,6 +116,17 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     public function customerPaging($body)
     {
         return $this->restful("POST", "/customer/paging", $body);
+    }
+
+    /**
+     * 权益
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/GroupController/equityAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function groupEquityStatistic($body)
+    {
+        return $this->restful("POST", "/group/statistic/equity", $body);
     }
 
     /**
