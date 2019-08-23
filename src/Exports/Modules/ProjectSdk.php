@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-20
- * @time   Tue, 20 Aug 2019 10:19:11 +0800
+ * @date   2019-08-23
+ * @time   Fri, 23 Aug 2019 10:39:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -704,6 +704,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 计算分组下权益的有效期
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/termAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupTerm($body)
+    {
+        return $this->restful("POST", "/group/term", $body);
+    }
+
+    /**
      * 统计保险公司pbm和非pbm项目数量
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/icpbmAction.md
      * @param array $body 入参类型
@@ -767,6 +778,17 @@ class ProjectSdk extends SdkBase
     public function projectLimit($body)
     {
         return $this->restful("POST", "/project/limit", $body);
+    }
+
+    /**
+     * 根据type分组分表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/projectTypePaingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ProjectTypePaing($body)
+    {
+        return $this->restful("POST", "/group/projecttypepaing", $body);
     }
 
     /**
@@ -866,6 +888,17 @@ class ProjectSdk extends SdkBase
     public function statusList($body)
     {
         return $this->restful("POST", "/user/status", $body);
+    }
+
+    /**
+     * 统计分组金额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/SumIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sumids($body)
+    {
+        return $this->restful("POST", "/group/sumids", $body);
     }
 
     /**
