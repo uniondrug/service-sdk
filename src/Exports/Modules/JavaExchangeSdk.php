@@ -80,7 +80,7 @@ class JavaExchangeSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function list($body)
+    public function exchangeList($body)
     {
         return $this->restful("POST", "/exchange/list", $body);
     }
