@@ -261,4 +261,168 @@ class JavaPromoteSdk extends SdkBase
         return $this->restful("POST", "/promote/giftCoupon/edit", $body);
     }
 
+    /**
+     * 创建抵用券方案
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addVoucher($body)
+    {
+        return $this->restful("POST", "/promote/voucher/add", $body);
+    }
+
+    /**
+     * 抵扣券方案停用
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function stopVoucher($body)
+    {
+        return $this->restful("POST", "/promote/voucher/stop", $body);
+    }
+
+    /**
+     * 抵扣券方案编辑接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function editVoucher($body)
+    {
+        return $this->restful("POST", "/promote/voucher/edit", $body);
+    }
+
+    /**
+     * 抵扣券方案列表查询
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function listVoucher($body)
+    {
+        return $this->restful("POST", "/promote/voucher/list/info", $body);
+    }
+
+    /**
+     * 抵扣券详情查询
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function infoVoucher($body)
+    {
+        return $this->restful("POST", "/promote/voucher/voucherInfo", $body);
+    }
+
+    /**
+     * 抵扣券成本方案创建
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addBear($body)
+    {
+        return $this->restful("POST", "/promote/voucher/bear/add", $body);
+    }
+
+    /**
+     * 抵扣券成本方案编辑接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function editBear($body)
+    {
+        return $this->restful("POST", "/promote/voucher/bear/edit", $body);
+    }
+
+    /**
+     * 抵扣券成本方案停用接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function stopBear($body)
+    {
+        return $this->restful("POST", "/promote/voucher/bear/stop", $body);
+    }
+
+    /**
+     * 抵扣券成本方案查询接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function infoBear($body)
+    {
+        return $this->restful("POST", "/promote/voucher/bear/info", $body);
+    }
+
+    /**
+     * 抵扣券成本方案列表查询接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function listBear($body)
+    {
+        return $this->restful("POST", "/promote/voucher/bear/list/info", $body);
+    }
+
+    /**
+     * 抵扣券商品创建
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/add", $body);
+    }
+
+    /**
+     * 抵扣券商品编辑接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function editGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/edit", $body);
+    }
+
+    /**
+     * 抵扣券商品停用接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function stopGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/stop", $body);
+    }
+
+    /**
+     * 抵扣券商品查询接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function infoGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/info", $body);
+    }
+
+    /**
+     * 抵扣券商品列表查询接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function listGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/list/info", $body);
+    }
 }
