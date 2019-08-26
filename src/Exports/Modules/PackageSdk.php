@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-15
- * @time   Thu, 15 Aug 2019 11:08:16 +0800
+ * @date   2019-08-26
+ * @time   Mon, 26 Aug 2019 22:58:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -184,7 +184,18 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 新增产品（换药）
+     * 添加风险保障分页列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/addsPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageAddsPaging($body)
+    {
+        return $this->restful("", "/packageGuarantee", $body);
+    }
+
+    /**
+     * 新增产品
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -195,18 +206,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 新增产品（非换药）
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/createNoAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function packageCreateNo($body)
-    {
-        return $this->restful("POST", "/package/createNo", $body);
-    }
-
-    /**
-     * 产品状态关闭 (packageId)
+     * 产品状态关闭
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/disableStatusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -217,7 +217,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 产品状态开启 (packageId)
+     * 产品状态开启
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/enableStatusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -250,7 +250,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 获取保障ID
+     * 获取保障
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getGuaranteeIdAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -261,7 +261,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 产品编号单条信息查询 （packageNo 产品编号）
+     * 产品编号单条信息查询
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -272,7 +272,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 产品ID单条信息查询 （packageId 产品ID）
+     * 产品ID单条信息查询
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackIdAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -426,7 +426,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 分页列表
+     * 风险保障分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -448,7 +448,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 产品信息分页查询查询 （编号/名称/类型）
+     * 产品信息分页查询查询
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/packPagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -459,7 +459,7 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 产品信息修改 (packageId)
+     * 产品信息修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -467,6 +467,17 @@ class PackageSdk extends SdkBase
     public function packageUpdate($body)
     {
         return $this->restful("POST", "/package/update", $body);
+    }
+
+    /**
+     * 更新标签
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/updateTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageUpdateTags($body)
+    {
+        return $this->restful("POST", "/package/updateTags", $body);
     }
 
     /**
