@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-08-27
- * @time   Tue, 27 Aug 2019 20:14:53 +0800
+ * @time   Tue, 27 Aug 2019 10:48:56 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -500,6 +500,17 @@ class PackageSdk extends SdkBase
     public function ReadyToUseOpen($body)
     {
         return $this->restful("POST", "/packageGroup/readytouseopen", $body);
+    }
+
+    /**
+     * 移除标签下产品列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/removePackageAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function removeTagPackages($body)
+    {
+        return $this->restful("POST", "/tags/remove/package", $body);
     }
 
     /**
