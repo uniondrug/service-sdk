@@ -9,6 +9,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AuditSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuthoritySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CommonSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk;
@@ -116,6 +117,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property PromotionBiddingSdk   $promotionBiddingSdk
  * @property PackageSdk            $package
  * @property JavaExchangeSdk       $javaExchange
+ * @property AuthoritySdk          $authority
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
