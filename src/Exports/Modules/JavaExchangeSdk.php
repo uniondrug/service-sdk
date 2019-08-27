@@ -84,4 +84,15 @@ class JavaExchangeSdk extends SdkBase
     {
         return $this->restful("POST", "/exchange/list", $body);
     }
+
+    /**
+     * 更新商户状态
+     * @link https://uniondrug.coding.net/p/java.middlend.exchangecenter/git/blob/feature/feature_init/docs/merchant_edit_status.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateMerchantStatus($body)
+    {
+        return $this->restful("POST", "/exchange/merchant/editStatus", $body);
+    }
 }
