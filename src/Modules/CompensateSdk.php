@@ -218,6 +218,28 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 激活曲线图
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/activateAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectActivateStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/activate", $body);
+    }
+
+    /**
+     * 理赔柱状图
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimChartAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectClaimChartStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/claim/chart", $body);
+    }
+
+    /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/listAction.md
      * @param array $body 入参类型
