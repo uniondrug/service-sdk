@@ -191,7 +191,7 @@ class PackageSdk extends SdkBase
      */
     public function packageAddsPaging($body)
     {
-        return $this->restful("", "/packageGuarantee", $body);
+        return $this->restful("POST", "/packageGuarantee/addsPaging", $body);
     }
 
     /**
