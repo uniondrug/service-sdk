@@ -416,7 +416,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 抵扣券商品列表查询接口
+     * 抵扣券商品列表分页查询接口
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -424,5 +424,16 @@ class JavaPromoteSdk extends SdkBase
     public function listGoods($body)
     {
         return $this->restful("POST", "/promote/voucher/goods/list/info", $body);
+    }
+
+    /**
+     * 抵扣券商品列表查询接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function allListGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/allByScheme/info", $body);
     }
 }
