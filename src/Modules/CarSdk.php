@@ -92,4 +92,14 @@ class CarSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/area/opened", $body);
     }
+
+    /**
+     * 通过驾驶证查车辆信息
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getOcrByLicenseNo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/search/getOcrByLicenseNo", $body);
+    }
 }
