@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-07
- * @time   Wed, 07 Aug 2019 19:03:05 +0800
+ * @date   2019-09-01
+ * @time   Sun, 01 Sep 2019 10:31:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -206,6 +206,61 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 开始使用
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupAccountController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupAccountCreate($body)
+    {
+        return $this->restful("POST", "/groupAccount/create", $body);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupCreate($body)
+    {
+        return $this->restful("POST", "/group/create", $body);
+    }
+
+    /**
+     * 开团详情
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupDetail($body)
+    {
+        return $this->restful("POST", "/group/detail", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupGoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupGoodsList($body)
+    {
+        return $this->restful("POST", "/groupGoods/list", $body);
+    }
+
+    /**
+     * 助力
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/helpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupHelp($body)
+    {
+        return $this->restful("POST", "/group/help", $body);
+    }
+
+    /**
      * 用户金币信息
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/infoAction.md
      * @param array $body 入参类型
@@ -346,5 +401,16 @@ class MoreActivitySdk extends SdkBase
     public function projectSave($body)
     {
         return $this->restful("POST", "/project/save", $body);
+    }
+
+    /**
+     * 活动用户和药联用户的数据关联
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/registerMemberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function registerMemberInfo($body)
+    {
+        return $this->restful("POST", "/member/register/member", $body);
     }
 }
