@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-01
- * @time   Sun, 01 Sep 2019 10:54:46 +0800
+ * @time   Sun, 01 Sep 2019 14:42:18 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -280,6 +280,17 @@ class MoreActivitySdk extends SdkBase
     public function memberGoldSave($body)
     {
         return $this->restful("POST", "/memberGold/save", $body);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberInfoController/saveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberInfoSave($body)
+    {
+        return $this->restful("POST", "/member/info/save", $body);
     }
 
     /**
