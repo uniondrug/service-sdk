@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-01
- * @time   Sun, 01 Sep 2019 14:42:18 +0800
+ * @date   2019-09-02
+ * @time   Mon, 02 Sep 2019 15:35:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -305,6 +305,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 活动用户和药联用户的数据关联
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/registerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberRegister($body)
+    {
+        return $this->restful("POST", "/member/register", $body);
+    }
+
+    /**
      * 订单创建
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/createAction.md
      * @param array $body 入参类型
@@ -412,16 +423,5 @@ class MoreActivitySdk extends SdkBase
     public function projectSave($body)
     {
         return $this->restful("POST", "/project/save", $body);
-    }
-
-    /**
-     * 活动用户和药联用户的数据关联
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/registerMemberAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function registerMemberInfo($body)
-    {
-        return $this->restful("POST", "/member/register/member", $body);
     }
 }
