@@ -28,7 +28,7 @@ class JavaGoodsCenterMngSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getQuerySql($body)
+    public function searchGoods($body)
     {
         return $this->restful("POST", "/goods/query", $body);
     }
