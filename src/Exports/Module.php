@@ -23,6 +23,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaCommonSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaExchangeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterMngSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk;
@@ -118,6 +119,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property PackageSdk            $package
  * @property JavaExchangeSdk       $javaExchange
  * @property AuthoritySdk          $authority
+ * @property JavaGoodsCenterMngSdk $javaGoodsCenterMng
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
