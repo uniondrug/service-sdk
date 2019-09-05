@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-05
- * @time   Thu, 05 Sep 2019 10:59:32 +0800
+ * @time   Thu, 05 Sep 2019 17:17:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AiPushSdk extends SdkBase
     public function accountCreate($body)
     {
         return $this->restful("POST", "/account/create", $body);
+    }
+
+    /**
+     * 账户详情
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/AccountController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function accountDetail($body)
+    {
+        return $this->restful("POST", "/account/detail", $body);
     }
 
     /**
