@@ -7,6 +7,7 @@ namespace Uniondrug\ServiceSdk\Exports;
 
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AuditSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AuthoritySdk;
@@ -120,6 +121,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property JavaExchangeSdk       $javaExchange
  * @property AuthoritySdk          $authority
  * @property JavaGoodsCenterMngSdk $javaGoodsCenterMng
+ * @property AiPushSdk             $aiPush
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
