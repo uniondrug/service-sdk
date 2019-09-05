@@ -40,6 +40,11 @@ class Config
     public $timeout = 25;
     public $userAgent = 'UDSDK/2.0';
     /**
+     * 项目名称
+     * @var string
+     */
+    public $appName = '';
+    /**
      * Consul是否使用API模式
      * `true` : 使用API, 获取真实地址
      * `false` : 使用DNS, 自己解析以获取的IP
@@ -62,7 +67,7 @@ class Config
      * @param PhalconConfig $sdkConfig
      * @param PhalconConfig $redisConfig
      */
-    public function __construct(PhalconConfig $sdkConfig = null, PhalconConfig $redisConfig = null, $environment)
+    public function __construct(PhalconConfig $sdkConfig = null, PhalconConfig $redisConfig = null, $environment, PhalconConfig $appConfig = null)
     {
         $this->environment = $environment;
         $host = isset($this->sdkDomain[$environment]) ? $this->sdkDomain[$environment] : 'sdk.register';
@@ -86,6 +91,10 @@ class Config
             isset($redisConfig->auth) && $this->redisAuth = $redisConfig->auth;
             isset($redisConfig->password) && $this->redisAuth = $redisConfig->password;
             isset($redisConfig->index) && $this->redisIndex = $redisConfig->index;
+        }
+        // 3.项目配置
+        if ($appConfig instanceof PhalconConfig) {
+            isset($appConfig->appName) && $this->appName = $appConfig->appName;
         }
     }
 }
