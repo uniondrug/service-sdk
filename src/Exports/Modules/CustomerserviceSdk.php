@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-26
- * @time   Fri, 26 Jul 2019 09:55:39 +0800
+ * @date   2019-09-06
+ * @time   Fri, 06 Sep 2019 15:49:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,94 @@ class CustomerserviceSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'customerservice.module';
+
+    /**
+     * 添加操作日志
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/OperateLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createOperateLog($body)
+    {
+        return $this->restful("POST", "/operate/log/create", $body);
+    }
+
+    /**
+     * 读取操作日志
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/OperateLogController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listOperateLog($body)
+    {
+        return $this->restful("POST", "/operate/log/list", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/LogMsgController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logMsgCreate($body)
+    {
+        return $this->restful("POST", "/logMsg/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/LogMsgController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logMsgDelete($body)
+    {
+        return $this->restful("POST", "/logMsg/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/LogMsgController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logMsgDetail($body)
+    {
+        return $this->restful("POST", "/logMsg/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/LogMsgController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logMsgListing($body)
+    {
+        return $this->restful("POST", "/logMsg/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/LogMsgController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logMsgPaging($body)
+    {
+        return $this->restful("POST", "/logMsg/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/LogMsgController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logMsgUpdate($body)
+    {
+        return $this->restful("POST", "/logMsg/update", $body);
+    }
 
     /**
      * 退款申请记录添加
