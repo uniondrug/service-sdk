@@ -24,9 +24,9 @@ class MoreServiceSdk extends Sdk implements ServiceSdkInterface
      * @param int $timeOut
      * @return ClientResponseInterface
      */
-    public function bind($body,$timeOut=3)
+    public function bind($body)
     {
-        return $this->restful(static::METHOD_POST, "/virtualMobile/bind", $body, null, ['timeout' => $timeOut]);
+        return $this->restful(static::METHOD_POST, "/virtualMobile/bind", $body);
     }
     /**
      * 解绑虚拟号码接口
@@ -35,9 +35,9 @@ class MoreServiceSdk extends Sdk implements ServiceSdkInterface
      * @param int $timeOut
      * @return ClientResponseInterface
      */
-    public function removeBind($body,$timeOut=3)
+    public function removeBind($body)
     {
-        return $this->restful(static::METHOD_POST, "/virtualMobile/removeBind", $body,null,['timeout'=>$timeOut]);
+        return $this->restful(static::METHOD_POST, "/virtualMobile/removeBind", $body);
     }
     /**
      * 虚拟号码有效期延期接口
