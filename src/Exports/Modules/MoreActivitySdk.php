@@ -216,7 +216,6 @@ class MoreActivitySdk extends SdkBase
         return $this->restful("POST", "/groupAccount/consume", $body);
     }
 
-
     /**
      * 开始使用
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupAccountController/createAction.md
