@@ -24,7 +24,7 @@ class MoreServiceSdk extends Sdk implements ServiceSdkInterface
      * @param int $timeOut
      * @return ClientResponseInterface
      */
-    public function bind($body,$timeOut = 3)
+    public function bind($body,$timeOut=3)
     {
         return $this->restful(static::METHOD_POST, "/virtualMobile/bind", $body, null, ['timeout' => $timeOut]);
     }
@@ -35,7 +35,7 @@ class MoreServiceSdk extends Sdk implements ServiceSdkInterface
      * @param int $timeOut
      * @return ClientResponseInterface
      */
-    public function removeBind($body,$timeOut = 3)
+    public function removeBind($body,$timeOut=3)
     {
         return $this->restful(static::METHOD_POST, "/virtualMobile/removeBind", $body,null,['timeout'=>$timeOut]);
     }

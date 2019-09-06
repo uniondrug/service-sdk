@@ -30,6 +30,18 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 创建地图打点
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function createAmap($body)
+    {
+        return $this->restful(static::METHOD_POST, "/amap/data/create", $body);
+    }
+
+
+    /**
      * 修改链接
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
      * @param array|StructInterface $body

@@ -168,6 +168,17 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 智赔所需 根据CDKEY获取发放记录
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/cdKeyAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getRecordByCDKey($body)
+    {
+        return $this->restful("POST", "/record/cdKey", $body);
+    }
+
+    /**
      * 积分列表查询接口
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/getRecordPagingAction.md
      * @param array $body 入参类型
