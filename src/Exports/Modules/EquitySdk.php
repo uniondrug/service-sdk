@@ -426,6 +426,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 根据实卡id获取权益列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/getEquityListByIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEquitysById($body)
+    {
+        return $this->restful("POST", "/equity/equitys/equityId", $body);
+    }
+
+    /**
      * 根据试算记录流水号 获取商品列表
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/getGoodsListByPrecheckNoAction.md
      * @param array $body 入参类型
