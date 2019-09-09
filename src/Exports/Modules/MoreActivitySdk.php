@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-06
- * @time   Fri, 06 Sep 2019 10:47:27 +0800
+ * @date   2019-09-09
+ * @time   Mon, 09 Sep 2019 15:49:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -434,5 +434,16 @@ class MoreActivitySdk extends SdkBase
     public function projectSave($body)
     {
         return $this->restful("POST", "/project/save", $body);
+    }
+
+    /**
+     * 规则文案详情
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Template/TemplateController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateDetail($body)
+    {
+        return $this->restful("POST", "/template/detail", $body);
     }
 }
