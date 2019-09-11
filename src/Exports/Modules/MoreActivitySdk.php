@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-09
- * @time   Mon, 09 Sep 2019 15:49:58 +0800
+ * @date   2019-09-11
+ * @time   Wed, 11 Sep 2019 11:28:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -225,6 +225,17 @@ class MoreActivitySdk extends SdkBase
     public function groupAccountCreate($body)
     {
         return $this->restful("POST", "/groupAccount/create", $body);
+    }
+
+    /**
+     * 助力状态判断
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupCheck($body)
+    {
+        return $this->restful("POST", "/group/check", $body);
     }
 
     /**
