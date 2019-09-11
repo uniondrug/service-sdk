@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-11
- * @time   Wed, 11 Sep 2019 11:28:35 +0800
+ * @time   Wed, 11 Sep 2019 15:08:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -247,6 +247,17 @@ class MoreActivitySdk extends SdkBase
     public function groupCreate($body)
     {
         return $this->restful("POST", "/group/create", $body);
+    }
+
+    /**
+     * 获取分页
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupDanmuController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupDanmu($body)
+    {
+        return $this->restful("POST", "/groupDanmu/paging", $body);
     }
 
     /**
