@@ -276,4 +276,15 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/order/query/queryMainOrderListByTerm", $body);
     }
 
+    /**
+     * 收货通知接口
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/api-docs/docs-order/orderLogisticsReceived.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function logisticsReceiveNotify($body)
+    {
+        return $this->restful("POST", "/logistics/receive/notify", $body);
+    }
+
 }

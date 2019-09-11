@@ -46,7 +46,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
     /**
-     * 取消订单
+     * 查询运费
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/master/docs/api/Express/HuoJuController/selectFreightAction.md
      * @param array $body
      * @return ClientResponseInterface
