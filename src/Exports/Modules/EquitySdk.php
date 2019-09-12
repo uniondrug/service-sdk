@@ -857,4 +857,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/updateavailableto", $body);
     }
+
+    /**
+     * 根据项目ID和MemberId查看是否有权益信息
+     * @link https://uniondrug.coding.net/p/module.equity/git/blob/development/docs/api/EquityController/checkEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkEquity($body)
+    {
+        return $this->restful("POST", "/equity/checkequity", $body);
+    }
 }
