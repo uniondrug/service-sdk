@@ -21,6 +21,7 @@ class MoreServiceSdk extends Sdk implements ServiceSdkInterface
      * 绑定虚拟号码接口
      * @link https://uniondrug.coding.net/p/module.more.service/git/blob/develop/docs/api/VirtualMobileController/bindAction.md
      * @param array $body
+     * @param int $timeOut
      * @return ClientResponseInterface
      */
     public function bind($body)
@@ -31,6 +32,7 @@ class MoreServiceSdk extends Sdk implements ServiceSdkInterface
      * 解绑虚拟号码接口
      * @link https://uniondrug.coding.net/p/module.more.service/git/blob/develop/docs/api/VirtualMobileController/removeBindAction.md
      * @param array $body
+     * @param int $timeOut
      * @return ClientResponseInterface
      */
     public function removeBind($body)
