@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-11
- * @time   Mon, 11 Mar 2019 10:32:53 +0800
+ * @date   2019-09-16
+ * @time   Mon, 16 Sep 2019 13:50:03 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,7 +30,18 @@ class AiProfitStatisticsSdk extends SdkBase
     protected $serviceName = 'aiProfit.statistics.module';
 
     /**
-     * 连锁首页接口
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/addUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addUser($body)
+    {
+        return $this->restful("POST", "/validate/addUser", $body);
+    }
+
+    /**
+     * 首页
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ChainController/indexAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -41,7 +52,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 连锁门店和店员信息
+     * 详情
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ChainController/infoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -52,7 +63,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 店员首页接口
+     * 首页
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ClerkController/indexAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -63,7 +74,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 店员首页销售排名接口
+     * 首页销售排名
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ClerkController/indexSalesRankAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -71,6 +82,17 @@ class AiProfitStatisticsSdk extends SdkBase
     public function clerkIndexSalesRank($body)
     {
         return $this->restful("POST", "/clerk/clerkIndexSalesRank", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/editUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editUser($body)
+    {
+        return $this->restful("POST", "/validate/editUser", $body);
     }
 
     /**
@@ -85,7 +107,18 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 门店首页接口
+     * 累计销售额
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/cumulativeSalesRankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeCumulativeSalesRank($body)
+    {
+        return $this->restful("POST", "/store/cumulativeSalesRank", $body);
+    }
+
+    /**
+     * 首页
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/indexAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -96,7 +129,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 门店首页销售额排名
+     * 首页销售额
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/indexSalesRankAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -107,7 +140,40 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 全网首页接口
+     * 上月销售额
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/monthSalesRankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeMonthSalesRank($body)
+    {
+        return $this->restful("POST", "/store/monthSalesRank", $body);
+    }
+
+    /**
+     * 今日销售额
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/todaySalesRankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeTodaySalesRank($body)
+    {
+        return $this->restful("POST", "/store/TodaySalesRank", $body);
+    }
+
+    /**
+     * 累计销售额
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/totalRankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeTotalRank($body)
+    {
+        return $this->restful("POST", "/store/totalRank", $body);
+    }
+
+    /**
+     * 首页
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/TotalController/indexAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -118,7 +184,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 用户信息
+     * 打标签
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/updateIsTagAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -129,7 +195,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 用户信息
+     * 详情
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/userInfoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -140,7 +206,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 验证是否在白名单
+     * 验证白名单
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/indexAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -148,27 +214,5 @@ class AiProfitStatisticsSdk extends SdkBase
     public function validateIndex($body)
     {
         return $this->restful("POST", "/validate/index", $body);
-    }
-
-    /**
-     * 新增用户
-     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/addUserAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function addUser($body)
-    {
-        return $this->restful("POST", "/validate/addUser", $body);
-    }
-
-    /**
-     * 修改用户
-     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ValidateController/editUserAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function editUser($body)
-    {
-        return $this->restful("POST", "/validate/editUser", $body);
     }
 }
