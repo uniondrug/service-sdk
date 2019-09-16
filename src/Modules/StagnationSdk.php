@@ -223,6 +223,17 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * userIds[]是否关联groupManage
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/isReleatedGroupManageByuserIdsAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function isReleatedGroupManageByuserIds($body)
+    {
+        return $this->restful("POST", "/group/manage/isreleated/by/userIds", $body);
+    }
+
+    /**
      * 新增行驶证
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LicenseController/addAction.md
      * @param array $body 入参类型
