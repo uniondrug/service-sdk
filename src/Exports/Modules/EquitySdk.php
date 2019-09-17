@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-17
- * @time   Tue, 17 Sep 2019 18:21:06 +0800
+ * @time   Tue, 17 Sep 2019 18:32:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -903,13 +903,13 @@ class EquitySdk extends SdkBase
     }
 
     /**
-     * 更新权益卡时间
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/updateAvailableToAction.md
+     * 保障延期设置
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/updateAvailableToAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function updateAvailableTo($body)
     {
-        return $this->restful("POST", "/equity/updateavailableto", $body);
+        return $this->restful("POST", "/guarantee/updateAvailableTo", $body);
     }
 }
