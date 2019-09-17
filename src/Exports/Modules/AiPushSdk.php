@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-05
- * @time   Thu, 05 Sep 2019 17:17:04 +0800
+ * @date   2019-09-17
+ * @time   Tue, 17 Sep 2019 11:46:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,61 +28,6 @@ class AiPushSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'aiPush.module';
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/AccountController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function accountCreate($body)
-    {
-        return $this->restful("POST", "/account/create", $body);
-    }
-
-    /**
-     * 账户详情
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/AccountController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function accountDetail($body)
-    {
-        return $this->restful("POST", "/account/detail", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/AccountController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function accountPaging($body)
-    {
-        return $this->restful("POST", "/account/paging", $body);
-    }
-
-    /**
-     * 更新账户信息
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/AccountController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function accountUpdate($body)
-    {
-        return $this->restful("POST", "/account/update", $body);
-    }
-
-    /**
-     * 启用或关闭账户
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/AccountController/updateStatusAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function accountUpdateStatus($body)
-    {
-        return $this->restful("POST", "/account/updateStatus", $body);
-    }
 
     /**
      * JAVA调用是否发放积分
@@ -357,5 +302,60 @@ class AiPushSdk extends SdkBase
     public function poolRecordsUpdate($body)
     {
         return $this->restful("POST", "/poolRecords/update", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersCreate($body)
+    {
+        return $this->restful("POST", "/users/create", $body);
+    }
+
+    /**
+     * 用户详情
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersDetail($body)
+    {
+        return $this->restful("POST", "/users/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersPaging($body)
+    {
+        return $this->restful("POST", "/users/paging", $body);
+    }
+
+    /**
+     * 更新用户信息
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersUpdate($body)
+    {
+        return $this->restful("POST", "/users/update", $body);
+    }
+
+    /**
+     * 启用或关闭用户
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/updateStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersUpdateStatus($body)
+    {
+        return $this->restful("POST", "/users/updateStatus", $body);
     }
 }
