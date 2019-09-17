@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-17
- * @time   Tue, 17 Sep 2019 13:53:50 +0800
+ * @time   Tue, 17 Sep 2019 18:21:06 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -347,14 +347,25 @@ class EquitySdk extends SdkBase
     }
 
     /**
-     * 权益账号余额查询
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityExtendController/createAction.md
+     * 权益账号余额信息查询
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityExtendController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function extendDetail($body)
     {
         return $this->restful("POST", "/equity/extend/detail", $body);
+    }
+
+    /**
+     * 权益账号余额多条查询
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityExtendController/detailsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function extendDetailAll($body)
+    {
+        return $this->restful("POST", "/equity/extend/details", $body);
     }
 
     /**
