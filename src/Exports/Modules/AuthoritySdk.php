@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-27
- * @time   Tue, 27 Aug 2019 10:31:53 +0800
+ * @date   2019-09-17
+ * @time   Tue, 17 Sep 2019 15:52:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,61 @@ class AuthoritySdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'authority.module';
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemAuthController/batchDeleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemAuthBatchDelete($body)
+    {
+        return $this->restful("POST", "/systemAuth/batch/delete", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemAuthController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemAuthCreate($body)
+    {
+        return $this->restful("POST", "/systemAuth/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemAuthController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemAuthDetail($body)
+    {
+        return $this->restful("POST", "/systemAuth/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemAuthController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemAuthPaging($body)
+    {
+        return $this->restful("POST", "/systemAuth/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemAuthController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemAuthUpdate($body)
+    {
+        return $this->restful("POST", "/systemAuth/update", $body);
+    }
 
     /**
      * 新增
