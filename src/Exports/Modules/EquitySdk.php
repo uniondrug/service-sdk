@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-17
- * @time   Tue, 17 Sep 2019 18:32:09 +0800
+ * @time   Tue, 17 Sep 2019 22:36:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -363,7 +363,7 @@ class EquitySdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function extendDetailAll($body)
+    public function extendDetails($body)
     {
         return $this->restful("POST", "/equity/extend/details", $body);
     }
