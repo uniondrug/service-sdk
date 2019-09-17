@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-29
- * @time   Mon, 29 Jul 2019 14:34:35 +0800
+ * @date   2019-09-17
+ * @time   Tue, 17 Sep 2019 13:53:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -117,6 +117,17 @@ class EquitySdk extends SdkBase
     public function buySell($body)
     {
         return $this->restful("POST", "/equity/buysell", $body);
+    }
+
+    /**
+     * 根据项目ID和MemberId查看是否有权益信息
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/checkEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkEquity($body)
+    {
+        return $this->restful("POST", "/equity/checkequity", $body);
     }
 
     /**
@@ -325,6 +336,28 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 退款前检查
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityRefundController/refundCheckListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityRefundListOrderNo($body)
+    {
+        return $this->restful("POST", "/equity/refund/list/orderNo", $body);
+    }
+
+    /**
+     * 权益账号余额查询
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityExtendController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function extendDetail($body)
+    {
+        return $this->restful("POST", "/equity/extend/detail", $body);
+    }
+
+    /**
      * 通过orderNos 获取多条权益信息
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/orderNosAction.md
      * @param array $body 入参类型
@@ -426,6 +459,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 根据实卡id获取权益列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/getEquityListByIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEquitysById($body)
+    {
+        return $this->restful("POST", "/equity/equitys/equityId", $body);
+    }
+
+    /**
      * 根据试算记录流水号 获取商品列表
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/getGoodsListByPrecheckNoAction.md
      * @param array $body 入参类型
@@ -513,6 +557,17 @@ class EquitySdk extends SdkBase
     public function getMemberIsConsume($body)
     {
         return $this->restful("POST", "/equity/consume/member", $body);
+    }
+
+    /**
+     * 根据退款单号检查退款详情
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityRefundController/getDetailByRefundNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRefundDetailByRefundNo($body)
+    {
+        return $this->restful("POST", "/equity/refund/detail/refundNo", $body);
     }
 
     /**
@@ -702,6 +757,18 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 预核算 针对自付转权益的权益卡
+     * 只提供给审核中心，其他人请勿使用
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PrecheckController/noCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function precheckNoCheck($body)
+    {
+        return $this->restful("POST", "/precheck/no/check", $body);
+    }
+
+    /**
      * 项目下的用户拥有的权益和总金额计算
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/projectMemberAction.md
      * @param array $body 入参类型
@@ -748,13 +815,13 @@ class EquitySdk extends SdkBase
     /**
      * 退款接口
      * 根据订单号和订单信息退还指定金额or次数的权益给用户权益账户
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/refundAction.md
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityRefundController/refundAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function refund($body)
     {
-        return $this->restful("POST", "/equity/refund", $body);
+        return $this->restful("POST", "/equity/refund/", $body);
     }
 
     /**
@@ -788,6 +855,17 @@ class EquitySdk extends SdkBase
     public function settlement($body)
     {
         return $this->restful("POST", "/guarantee/settlement", $body);
+    }
+
+    /**
+     * 新保障理赔接口
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/SettlementClaimsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function SettlementClaims($body)
+    {
+        return $this->restful("POST", "/guarantee/settlementclaims", $body);
     }
 
     /**

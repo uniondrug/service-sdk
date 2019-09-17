@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-07
- * @time   Wed, 07 Aug 2019 16:12:34 +0800
+ * @date   2019-08-23
+ * @time   Fri, 23 Aug 2019 10:39:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -704,6 +704,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 计算分组下权益的有效期
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/termAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupTerm($body)
+    {
+        return $this->restful("POST", "/group/term", $body);
+    }
+
+    /**
      * 统计保险公司pbm和非pbm项目数量
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/icpbmAction.md
      * @param array $body 入参类型
@@ -775,7 +786,7 @@ class ProjectSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function ProjectTypePaing($body)
+    public function projectTypePaing($body)
     {
         return $this->restful("POST", "/group/projecttypepaing", $body);
     }
@@ -877,6 +888,28 @@ class ProjectSdk extends SdkBase
     public function statusList($body)
     {
         return $this->restful("POST", "/user/status", $body);
+    }
+
+    /**
+     * 统计分组金额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/SumIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sumids($body)
+    {
+        return $this->restful("POST", "/group/sumids", $body);
+    }
+
+    /**
+     * 检查项目下手机号领取了几个
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/checkByConditionAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userCheck($body)
+    {
+        return $this->restful("POST", "/user/check/condition", $body);
     }
 
     /**

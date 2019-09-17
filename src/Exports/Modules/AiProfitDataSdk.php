@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-07
- * @time   Wed, 07 Aug 2019 15:56:37 +0800
+ * @date   2019-09-09
+ * @time   Mon, 09 Sep 2019 17:30:14 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AiProfitDataSdk extends SdkBase
     public function addActivity($body)
     {
         return $this->restful("POST", "/activity/add", $body);
+    }
+
+    /**
+     * 点击次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/BuriedPointController/addTimesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addBuriedPointTimes($body)
+    {
+        return $this->restful("POST", "/buriedPoint/addTimes", $body);
     }
 
     /**
@@ -140,7 +151,7 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 禁用
+     * 绑定连锁数
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/bindCountAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -159,6 +170,28 @@ class AiProfitDataSdk extends SdkBase
     public function cancelActivityBanner($body)
     {
         return $this->restful("POST", "/activity/banner/cancel", $body);
+    }
+
+    /**
+     * 某日的数据明细
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/dataDetailByDayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataDetailByDay($body)
+    {
+        return $this->restful("POST", "/redPacket/dataDetailByDay", $body);
+    }
+
+    /**
+     * 根据时间段和连锁code查询数据列表提供折线图数据
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/dataListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataList($body)
+    {
+        return $this->restful("POST", "/redPacket/dataList", $body);
     }
 
     /**
@@ -206,7 +239,7 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 编辑路由
+     * 编辑弹窗
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/editAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

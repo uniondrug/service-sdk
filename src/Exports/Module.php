@@ -7,9 +7,12 @@ namespace Uniondrug\ServiceSdk\Exports;
 
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AuditSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuthoritySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CommonSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\CustomerserviceSdk;
@@ -19,7 +22,9 @@ use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaCommonSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaExchangeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterMngSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk;
@@ -73,6 +78,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property DeliverSdk            $deliver
  * @property MerchantSdk           $merchant
  * @property CustomerSdk           $customer
+ * @property CommonSdk             $common
  * @property EquitySdk             $equity
  * @property MarketingSdk          $marketing
  * @property AiProfitStatisticsSdk $aiProfitStatistics
@@ -111,6 +117,11 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property PromotionUserSdk      $promotionUser
  * @property PromotionFinanceSdk   $promotionFinance
  * @property PromotionBiddingSdk   $promotionBiddingSdk
+ * @property PackageSdk            $package
+ * @property JavaExchangeSdk       $javaExchange
+ * @property AuthoritySdk          $authority
+ * @property JavaGoodsCenterMngSdk $javaGoodsCenterMng
+ * @property AiPushSdk             $aiPush
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint

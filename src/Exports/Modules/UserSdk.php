@@ -436,4 +436,15 @@ class UserSdk extends SdkBase
     {
         return $this->restful("POST", "/wxmember/edituniteopenid", $body);
     }
+
+    /**
+     * 批量查询用户列表
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getWxmemberList($body)
+    {
+        return $this->restful("POST", "/wxmember/list", $body);
+    }
 }

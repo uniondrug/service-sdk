@@ -94,4 +94,14 @@ class CarSdk extends SdkBase
     {
         return $this->restful("POST", "/license/list", $body);
     }
+
+    /**
+     * 通过驾驶证查车辆信息
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOcrByLicenseNo($body)
+    {
+        return $this->restful("POST", "/search/getOcrByLicenseNo", $body);
+    }
 }

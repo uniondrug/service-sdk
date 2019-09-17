@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-06
- * @time   Tue, 06 Aug 2019 14:17:35 +0800
+ * @date   2019-09-16
+ * @time   Mon, 16 Sep 2019 14:02:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -423,6 +423,17 @@ class MerchantSdk extends SdkBase
     public function editInvoice($body)
     {
         return $this->restful("POST", "/invoice/edit", $body);
+    }
+
+    /**
+     * 地图打点信息调整
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editMapAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editmap($body)
+    {
+        return $this->restful("POST", "/organizebase/editmap", $body);
     }
 
     /**
@@ -1020,6 +1031,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 查询对应的图片信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listImageAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listImage($body)
+    {
+        return $this->restful("POST", "/organizebase/listimage", $body);
+    }
+
+    /**
      * ROOT下独立结算组织查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listIsIndependentAction.md
      * @param array $body 入参类型
@@ -1064,6 +1086,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 通过名称获取连锁下的门店简易信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listRootIdNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listRootIdName($body)
+    {
+        return $this->restful("POST", "/organizebase/listrootidname", $body);
+    }
+
+    /**
      * 读取root商户集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listRootIdAction.md
      * @param array $body 入参类型
@@ -1083,6 +1116,17 @@ class MerchantSdk extends SdkBase
     public function listsStoreImages($body)
     {
         return $this->restful("POST", "/storeimages/lists", $body);
+    }
+
+    /**
+     * 获取连锁下的门店简易信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listStoreSmallOrgAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listStoreSmallOrg($body)
+    {
+        return $this->restful("POST", "/organizebase/liststoresmall", $body);
     }
 
     /**
@@ -1347,6 +1391,17 @@ class MerchantSdk extends SdkBase
     public function storeNum($body)
     {
         return $this->restful("POST", "/organizebase/storeNum", $body);
+    }
+
+    /**
+     * 同步门店信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sync($body)
+    {
+        return $this->restful("POST", "/organizebase/sync", $body);
     }
 
     /**

@@ -402,4 +402,37 @@ class InsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policy/view", $body);
     }
+
+    /**
+     * 正常投保导出
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/originalExportAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportAuditDetail($body)
+    {
+        return $this->restful("POST", "/auditDetail/originalExport", $body);
+    }
+
+    /**
+     * 花都换药投保导出
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/exportOfHuaDuAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportAuditDetailOfHuaDu($body)
+    {
+        return $this->restful("POST", "/auditDetail/exportOfHuaDu", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/pagingAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditDetailPaging($body)
+    {
+        return $this->restful("POST", "/auditDetail/paging", $body);
+    }
 }

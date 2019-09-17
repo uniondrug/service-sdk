@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-15
- * @time   Sat, 15 Jun 2019 17:35:37 +0800
+ * @date   2019-08-29
+ * @time   Thu, 29 Aug 2019 17:52:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -60,6 +60,17 @@ class WeixinSdk extends SdkBase
     public function createTag($body)
     {
         return $this->restful("POST", "/tag/createTag", $body);
+    }
+
+    /**
+     * decryptAction()
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/ProgramController/decryptAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function decrypt($body)
+    {
+        return $this->restful("POST", "/program/decrypt", $body);
     }
 
     /**
@@ -126,5 +137,16 @@ class WeixinSdk extends SdkBase
     public function shortUrl($body)
     {
         return $this->restful("POST", "/wx/shortUrl", $body);
+    }
+
+    /**
+     * code获取ticket、openid
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/ProgramController/ticketAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ticket($body)
+    {
+        return $this->restful("POST", "/program/ticket", $body);
     }
 }
