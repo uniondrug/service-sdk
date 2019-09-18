@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-17
- * @time   Tue, 17 Sep 2019 22:36:54 +0800
+ * @date   2019-09-18
+ * @time   Wed, 18 Sep 2019 11:02:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -363,7 +363,7 @@ class EquitySdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function extendDetails($body)
+    public function extendDetailAll($body)
     {
         return $this->restful("POST", "/equity/extend/details", $body);
     }
