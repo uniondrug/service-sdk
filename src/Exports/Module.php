@@ -19,6 +19,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\CustomerserviceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\InsureRankSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaCommonSdk;
@@ -122,6 +123,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property AuthoritySdk          $authority
  * @property JavaGoodsCenterMngSdk $javaGoodsCenterMng
  * @property AiPushSdk             $aiPush
+ * @property InsureRankSdk         $insureRankSdk
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
