@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-17
- * @time   Tue, 17 Sep 2019 11:46:12 +0800
+ * @date   2019-09-18
+ * @time   Wed, 18 Sep 2019 14:35:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AiPushSdk extends SdkBase
     public function checkIssuePoints($body)
     {
         return $this->restful("POST", "/poolRecords/checkIssuePoints", $body);
+    }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportPoolRecord($body)
+    {
+        return $this->restful("POST", "/poolRecords/exportRecord", $body);
     }
 
     /**
@@ -239,7 +250,7 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 新增
+     * 流水新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -247,39 +258,6 @@ class AiPushSdk extends SdkBase
     public function poolRecordsCreate($body)
     {
         return $this->restful("POST", "/poolRecords/create", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function poolRecordsDelete($body)
-    {
-        return $this->restful("POST", "/poolRecords/delete", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function poolRecordsDetail($body)
-    {
-        return $this->restful("POST", "/poolRecords/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function poolRecordsListing($body)
-    {
-        return $this->restful("POST", "/poolRecords/listing", $body);
     }
 
     /**
@@ -294,14 +272,14 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/updateAction.md
+     * 类型
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/typeListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function poolRecordsUpdate($body)
+    public function poolRecordsTypeList($body)
     {
-        return $this->restful("POST", "/poolRecords/update", $body);
+        return $this->restful("POST", "/poolRecords/typeList", $body);
     }
 
     /**
