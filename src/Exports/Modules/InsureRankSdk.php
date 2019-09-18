@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-17
- * @time   Tue, 17 Sep 2019 16:20:35 +0800
+ * @date   2019-09-18
+ * @time   Wed, 18 Sep 2019 17:56:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -31,6 +31,61 @@ class InsureRankSdk extends SdkBase
 
     /**
      * 新增
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function areaInsureCreate($body)
+    {
+        return $this->restful("POST", "/areaInsure/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function areaInsureDetail($body)
+    {
+        return $this->restful("POST", "/areaInsure/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function areaInsureListing($body)
+    {
+        return $this->restful("POST", "/areaInsure/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function areaInsurePaging($body)
+    {
+        return $this->restful("POST", "/areaInsure/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function areaInsureUpdate($body)
+    {
+        return $this->restful("POST", "/areaInsure/update", $body);
+    }
+
+    /**
+     * 新增
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -38,17 +93,6 @@ class InsureRankSdk extends SdkBase
     public function countryInsureCreate($body)
     {
         return $this->restful("POST", "/countryInsure/create", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function countryInsureDelete($body)
-    {
-        return $this->restful("POST", "/countryInsure/delete", $body);
     }
 
     /**
@@ -60,17 +104,6 @@ class InsureRankSdk extends SdkBase
     public function countryInsureDetail($body)
     {
         return $this->restful("POST", "/countryInsure/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function countryInsureListing($body)
-    {
-        return $this->restful("POST", "/countryInsure/listing", $body);
     }
 
     /**
@@ -137,6 +170,17 @@ class InsureRankSdk extends SdkBase
     public function countryInsureWeekUpdate($body)
     {
         return $this->restful("POST", "/countryInsureWeek/update", $body);
+    }
+
+    /**
+     * 首次登陆
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/firstLoginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function firstLogin($body)
+    {
+        return $this->restful("POST", "/users/firstLogin", $body);
     }
 
     /**
@@ -228,6 +272,17 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 最后一次登陆
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/lastLoginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function lastLogin($body)
+    {
+        return $this->restful("POST", "/users/lastLogin", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/RegulatorController/detailAction.md
      * @param array $body 入参类型
@@ -239,7 +294,7 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
-     * LIST列表
+     * 信息列表
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/RegulatorController/listingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -261,17 +316,6 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/SettingsController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function settingsDelete($body)
-    {
-        return $this->restful("POST", "/settings/delete", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/SettingsController/detailAction.md
      * @param array $body 入参类型
@@ -280,17 +324,6 @@ class InsureRankSdk extends SdkBase
     public function settingsDetail($body)
     {
         return $this->restful("POST", "/settings/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/SettingsController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function settingsListing($body)
-    {
-        return $this->restful("POST", "/settings/listing", $body);
     }
 
     /**
@@ -316,6 +349,28 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 绑定微信
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/bindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersBind($body)
+    {
+        return $this->restful("POST", "/users/bind", $body);
+    }
+
+    /**
+     * 启用|停用
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/changeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersChange($body)
+    {
+        return $this->restful("POST", "/users/change", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/createAction.md
      * @param array $body 入参类型
@@ -327,17 +382,6 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function usersDelete($body)
-    {
-        return $this->restful("POST", "/users/delete", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/detailAction.md
      * @param array $body 入参类型
@@ -346,17 +390,6 @@ class InsureRankSdk extends SdkBase
     public function usersDetail($body)
     {
         return $this->restful("POST", "/users/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function usersListing($body)
-    {
-        return $this->restful("POST", "/users/listing", $body);
     }
 
     /**
