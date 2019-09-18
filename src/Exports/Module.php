@@ -123,7 +123,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property AuthoritySdk          $authority
  * @property JavaGoodsCenterMngSdk $javaGoodsCenterMng
  * @property AiPushSdk             $aiPush
- * @property InsureRankSdk         $insureRankSdk
+ * @property InsureRankSdk         $insureRank
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
