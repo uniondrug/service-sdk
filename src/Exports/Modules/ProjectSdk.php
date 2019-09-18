@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-23
- * @time   Fri, 23 Aug 2019 10:39:12 +0800
+ * @date   2019-09-18
+ * @time   Wed, 18 Sep 2019 17:19:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -98,7 +98,7 @@ class ProjectSdk extends SdkBase
 
     /**
      * 用户批量添加
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/freeAddAction.md
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/addsAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
