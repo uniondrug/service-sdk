@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-17
- * @time   Tue, 17 Sep 2019 15:52:01 +0800
+ * @date   2019-09-19
+ * @time   Thu, 19 Sep 2019 17:43:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -162,17 +162,6 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemRoleController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function systemRoleDelete($body)
-    {
-        return $this->restful("POST", "/systemRole/delete", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemRoleController/detailAction.md
      * @param array $body 入参类型
@@ -181,6 +170,28 @@ class AuthoritySdk extends SdkBase
     public function systemRoleDetail($body)
     {
         return $this->restful("POST", "/systemRole/detail", $body);
+    }
+
+    /**
+     * 启用/停用
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemRoleController/modifyStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemRoleModifyStatus($body)
+    {
+        return $this->restful("POST", "/systemRole/modifystatus", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemRoleController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemRolePaging($body)
+    {
+        return $this->restful("POST", "/systemRole/paging", $body);
     }
 
     /**
