@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-18
- * @time   Wed, 18 Sep 2019 13:47:32 +0800
+ * @date   2019-09-19
+ * @time   Thu, 19 Sep 2019 17:20:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -140,6 +140,17 @@ class EquitySdk extends SdkBase
     public function checkGuarantee($body)
     {
         return $this->restful("POST", "/guarantee/check", $body);
+    }
+
+    /**
+     * 生成理赔单号
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/creatBillAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimCreatBill($body)
+    {
+        return $this->restful("POST", "/equity/claim/creatBill", $body);
     }
 
     /**
