@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 15:29:52 +0800
+ * @time   Fri, 20 Sep 2019 16:52:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -143,6 +143,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 理赔【扣除】
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/claimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimClaim($body)
+    {
+        return $this->restful("POST", "/equity/claim/claim", $body);
+    }
+
+    /**
      * 生成理赔单号
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/creatBillAction.md
      * @param array $body 入参类型
@@ -162,6 +173,17 @@ class EquitySdk extends SdkBase
     public function claimDetail($body)
     {
         return $this->restful("POST", "/equity/claim/detail", $body);
+    }
+
+    /**
+     * 驳回
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/rejectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimReject($body)
+    {
+        return $this->restful("POST", "/equity/claim/reject", $body);
     }
 
     /**
