@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-19
- * @time   Thu, 19 Sep 2019 17:43:00 +0800
+ * @date   2019-09-20
+ * @time   Fri, 20 Sep 2019 11:48:18 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,17 @@ class AuthoritySdk extends SdkBase
     public function systemAuthUpdate($body)
     {
         return $this->restful("POST", "/systemAuth/update", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemManageController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemManageListing($body)
+    {
+        return $this->restful("POST", "/systemManage/listing", $body);
     }
 
     /**
@@ -206,7 +217,7 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 批量关联用户
+     * 关联用户
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -214,6 +225,17 @@ class AuthoritySdk extends SdkBase
     public function systemWorkerRoleCreate($body)
     {
         return $this->restful("POST", "/systemWorkerRole/create", $body);
+    }
+
+    /**
+     * 批量关联用户
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/createAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemWorkerRoleCreateAll($body)
+    {
+        return $this->restful("POST", "/systemWorkerRole/createall", $body);
     }
 
     /**
@@ -236,6 +258,17 @@ class AuthoritySdk extends SdkBase
     public function systemWorkerRoleDetail($body)
     {
         return $this->restful("POST", "/systemWorkerRole/detail", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemWorkerRoleList($body)
+    {
+        return $this->restful("POST", "/systemWorkerRole/list", $body);
     }
 
     /**
