@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 12:20:55 +0800
+ * @time   Fri, 20 Sep 2019 14:39:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -151,6 +151,17 @@ class EquitySdk extends SdkBase
     public function claimCreatBill($body)
     {
         return $this->restful("POST", "/equity/claim/creatBill", $body);
+    }
+
+    /**
+     * 理赔单查询
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimDetail($body)
+    {
+        return $this->restful("POST", "/equity/claim/detail", $body);
     }
 
     /**
