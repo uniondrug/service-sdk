@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-19
- * @time   Thu, 19 Sep 2019 17:20:54 +0800
+ * @date   2019-09-20
+ * @time   Fri, 20 Sep 2019 12:20:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -922,5 +922,16 @@ class EquitySdk extends SdkBase
     public function updateAvailableTo($body)
     {
         return $this->restful("POST", "/guarantee/updateAvailableTo", $body);
+    }
+
+    /**
+     * 变更信息
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquitySerialController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateEquitySerial($body)
+    {
+        return $this->restful("POST", "/equity/serial/update", $body);
     }
 }

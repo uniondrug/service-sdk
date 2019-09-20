@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-18
- * @time   Wed, 18 Sep 2019 17:19:27 +0800
+ * @date   2019-09-20
+ * @time   Fri, 20 Sep 2019 12:24:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -723,6 +723,17 @@ class ProjectSdk extends SdkBase
     public function icpbm($body)
     {
         return $this->restful("POST", "/project/icpbm", $body);
+    }
+
+    /**
+     * 信息变更
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/modifyVerifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function modifyVerify($body)
+    {
+        return $this->restful("POST", "/verify/modifyVerify", $body);
     }
 
     /**
