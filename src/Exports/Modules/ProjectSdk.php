@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 12:24:47 +0800
+ * @time   Fri, 20 Sep 2019 15:26:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -913,6 +913,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 根据分单号查找用户在指定分组下未激活的兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByBillNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function UserBillNo($body)
+    {
+        return $this->restful("POST", "/user/billNo", $body);
+    }
+
+    /**
      * 检查项目下手机号领取了几个
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/checkByConditionAction.md
      * @param array $body 入参类型
@@ -943,6 +954,17 @@ class ProjectSdk extends SdkBase
     public function userRecover($body)
     {
         return $this->restful("POST", "/user/recover", $body);
+    }
+
+    /**
+     * 根据分单号，姓名 身份证号 查找兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/successListsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userSuccessList($body)
+    {
+        return $this->restful("POST", "/user/success/list", $body);
     }
 
     /**

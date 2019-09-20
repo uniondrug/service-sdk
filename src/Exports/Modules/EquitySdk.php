@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 14:39:13 +0800
+ * @time   Fri, 20 Sep 2019 15:29:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -310,6 +310,17 @@ class EquitySdk extends SdkBase
     public function enableEquity($body)
     {
         return $this->restful("POST", "/equity/enable", $body);
+    }
+
+    /**
+     * 根据分单号和用户信息 获取已经存在的权益，并返回权益和用户信息
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/getByBillNosAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityGetByBillNos($body)
+    {
+        return $this->restful("POST", "/equity/billNos", $body);
     }
 
     /**
