@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-09-23
- * @time   Mon, 23 Sep 2019 14:21:36 +0800
+ * @time   Mon, 23 Sep 2019 17:40:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -290,7 +290,7 @@ class AuthoritySdk extends SdkBase
      */
     public function systemWorkerRoleListAll($body)
     {
-        return $this->restful("POST", "/systemWorkerRole/paging", $body);
+        return $this->restful("POST", "/systemWorkerRole/listall", $body);
     }
 
     /**
