@@ -17,6 +17,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\CustomerSdk                 $customer                                                    客户服务
  * @property Modules\DataSdk                     $data                                                        数据服务
  * @property Modules\EquitySdk                   $equity                                                      权益服务
+ * @property Modules\EshopSdk                    $eshop                                                       线上统一订单服务
  * @property Modules\GoodCenterSdk               $goodCenter                                                  商品中心
  * @property Modules\JavaUserSdk                 $javaUser                                                    用户中心
  * @property Modules\JavaOrderSdk                $javaOrder                                                   java订单中心
