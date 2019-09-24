@@ -81,6 +81,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\MoreActivitySdk             $moreActivity                                                新活动模块SDK
  * @property Modules\CustomerserviceSdk          $customerservice                                             客服模块
  * @property Modules\JavaOrderquerySdk           $javaOrderquery                                              订单查询模块
+ * @property Modules\ErpPaySdk                   $erpPay                                                      erp收银
  * @property Modules\HuoJuExpressSdk             $huoJuExpress
  * 药联火聚快递
  * @package Uniondrug\ServiceSdk
