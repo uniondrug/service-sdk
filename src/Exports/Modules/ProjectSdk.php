@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 15:26:12 +0800
+ * @date   2019-09-25
+ * @time   Wed, 25 Sep 2019 17:01:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -943,6 +943,17 @@ class ProjectSdk extends SdkBase
     public function userGetByOutOrderNo($body)
     {
         return $this->restful("POST", "/user/getByOutOrderNo", $body);
+    }
+
+    /**
+     * 根据权益id
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userGetEquityId($body)
+    {
+        return $this->restful("POST", "/user/equityid", $body);
     }
 
     /**
