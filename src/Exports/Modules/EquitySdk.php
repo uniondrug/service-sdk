@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 16:52:34 +0800
+ * @date   2019-09-25
+ * @time   Wed, 25 Sep 2019 21:27:23 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -421,6 +421,28 @@ class EquitySdk extends SdkBase
     public function extendDetailAll($body)
     {
         return $this->restful("POST", "/equity/extend/detailAll", $body);
+    }
+
+    /**
+     * 权益信息查询
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityExtendController/getEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function extendGetEquity($body)
+    {
+        return $this->restful("POST", "/equity/extend/getEquity", $body);
+    }
+
+    /**
+     * 更新分单号对应用户信息
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityExtendController/updateEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function extendUpdateEquity($body)
+    {
+        return $this->restful("POST", "/equity/extend/update/equity", $body);
     }
 
     /**
