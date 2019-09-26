@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-25
- * @time   Wed, 25 Sep 2019 21:27:23 +0800
+ * @date   2019-09-26
+ * @time   Thu, 26 Sep 2019 11:07:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -707,6 +707,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 保障延期设置
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/updateAvailableToAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteeUpdateAvailableTo($body)
+    {
+        return $this->restful("POST", "/guarantee/updateAvailableTo", $body);
+    }
+
+    /**
      * 设置权益为失效状态
      * 入参只需要一个，使用优先级为 equityId equityNo outOrderNo
      * 只有未激活和已激活状态的权益才可以设为失效状态
@@ -980,14 +991,14 @@ class EquitySdk extends SdkBase
     }
 
     /**
-     * 保障延期设置
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/updateAvailableToAction.md
+     * 更新权益卡时间
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/updateAvailableToAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function updateAvailableTo($body)
     {
-        return $this->restful("POST", "/guarantee/updateAvailableTo", $body);
+        return $this->restful("POST", "/equity/updateavailableto", $body);
     }
 
     /**
