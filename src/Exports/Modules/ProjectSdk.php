@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 12:24:47 +0800
+ * @date   2019-09-26
+ * @time   Thu, 26 Sep 2019 17:02:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -913,6 +913,28 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 根据分单号查找用户在指定分组下未激活的兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByBillNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function UserBillNo($body)
+    {
+        return $this->restful("POST", "/user/billNo", $body);
+    }
+
+    /**
+     * 根据分单号查找对应的用户权益ID
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getBillNoEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function UserBillNoEquity($body)
+    {
+        return $this->restful("POST", "/user/billNo/equity", $body);
+    }
+
+    /**
      * 检查项目下手机号领取了几个
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/checkByConditionAction.md
      * @param array $body 入参类型
@@ -935,6 +957,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 根据权益id
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userGetEquityId($body)
+    {
+        return $this->restful("POST", "/user/equityid", $body);
+    }
+
+    /**
      * 回收兑换码
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/recoverAction.md
      * @param array $body 入参类型
@@ -943,6 +976,17 @@ class ProjectSdk extends SdkBase
     public function userRecover($body)
     {
         return $this->restful("POST", "/user/recover", $body);
+    }
+
+    /**
+     * 根据分单号，姓名 身份证号 查找兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/successListsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userSuccessList($body)
+    {
+        return $this->restful("POST", "/user/success/list", $body);
     }
 
     /**
