@@ -447,4 +447,15 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/voucher/modifyChannel", $body);
     }
+
+    /**
+     * 抵扣券渠道连锁修改接口
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v4.0_抵用券兑换券/doc/促销中心卡券方案接口v4.0抵用券.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function modifyPartnerVoucher($body)
+    {
+        return $this->restful("POST", "/promote/voucher/modifyPartner", $body);
+    }
 }

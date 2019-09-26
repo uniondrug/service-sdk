@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-18
- * @time   Wed, 18 Sep 2019 17:56:36 +0800
+ * @date   2019-09-24
+ * @time   Tue, 24 Sep 2019 10:52:57 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -85,6 +85,17 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 根据保司ID获取绑定信息
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/SettingsController/bindInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bindInfo($body)
+    {
+        return $this->restful("POST", "/settings/bindInfo", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureController/createAction.md
      * @param array $body 入参类型
@@ -126,6 +137,17 @@ class InsureRankSdk extends SdkBase
     public function countryInsureUpdate($body)
     {
         return $this->restful("POST", "/countryInsure/update", $body);
+    }
+
+    /**
+     * 最近本周待投
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureWeekController/areaWeekAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function countryInsureWeekAreaWeek($body)
+    {
+        return $this->restful("POST", "/countryInsureWeek/areaWeek", $body);
     }
 
     /**
@@ -184,6 +206,17 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 获取保司最近评分
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureScoreController/getScoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getScore($body)
+    {
+        return $this->restful("POST", "/insureScore/getScore", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureMonthController/createAction.md
      * @param array $body 入参类型
@@ -214,6 +247,28 @@ class InsureRankSdk extends SdkBase
     public function insureMonthPaging($body)
     {
         return $this->restful("POST", "/insureMonth/paging", $body);
+    }
+
+    /**
+     * 药联累计投保
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureMonthController/totalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insureMonthTotal($body)
+    {
+        return $this->restful("POST", "/insureMonth/total", $body);
+    }
+
+    /**
+     * 某保司累计投保
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureMonthController/totalByInsureAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insureMonthTotalByInsure($body)
+    {
+        return $this->restful("POST", "/insureMonth/totalByInsure", $body);
     }
 
     /**
@@ -302,6 +357,17 @@ class InsureRankSdk extends SdkBase
     public function regulatorListing($body)
     {
         return $this->restful("POST", "/regulator/listing", $body);
+    }
+
+    /**
+     * 获取保司历史评分
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureScoreController/scoreListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreList($body)
+    {
+        return $this->restful("POST", "/insureScore/scoreList", $body);
     }
 
     /**
@@ -412,5 +478,16 @@ class InsureRankSdk extends SdkBase
     public function usersUpdate($body)
     {
         return $this->restful("POST", "/users/update", $body);
+    }
+
+    /**
+     * 微信登陆获取保司
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/WeChatLoginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function weChatLogin($body)
+    {
+        return $this->restful("POST", "/users/weChatLogin", $body);
     }
 }

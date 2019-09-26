@@ -435,4 +435,15 @@ class InsureSdk extends SdkBase
     {
         return $this->restful("POST", "/auditDetail/paging", $body);
     }
+    
+    /**
+     * 计算保单理赔上限比例
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimMaxRatioAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimMaxRatioPolicy($body)
+    {
+        return $this->restful("POST", "/policy/claimMaxRatio", $body);
+    }
 }

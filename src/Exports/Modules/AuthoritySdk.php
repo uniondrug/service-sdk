@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-20
- * @time   Fri, 20 Sep 2019 11:48:18 +0800
+ * @date   2019-09-23
+ * @time   Mon, 23 Sep 2019 17:40:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -126,6 +126,17 @@ class AuthoritySdk extends SdkBase
     public function systemMenuDetail($body)
     {
         return $this->restful("POST", "/systemMenu/detail", $body);
+    }
+
+    /**
+     * 获取菜单子列表
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemMenuController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemMenuList($body)
+    {
+        return $this->restful("POST", "/systemMenu/list", $body);
     }
 
     /**
@@ -269,6 +280,17 @@ class AuthoritySdk extends SdkBase
     public function systemWorkerRoleList($body)
     {
         return $this->restful("POST", "/systemWorkerRole/list", $body);
+    }
+
+    /**
+     * 所属系统的所有关联用户
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/listAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemWorkerRoleListAll($body)
+    {
+        return $this->restful("POST", "/systemWorkerRole/listall", $body);
     }
 
     /**
