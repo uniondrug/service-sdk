@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-24
- * @time   Tue, 24 Sep 2019 10:52:57 +0800
+ * @date   2019-09-27
+ * @time   Fri, 27 Sep 2019 14:50:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,18 +30,7 @@ class InsureRankSdk extends SdkBase
     protected $serviceName = 'insure.rank.module';
 
     /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function areaInsureCreate($body)
-    {
-        return $this->restful("POST", "/areaInsure/create", $body);
-    }
-
-    /**
-     * 详情
+     * 保险公司所在监管机构月市场保费数据
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -49,39 +38,6 @@ class InsureRankSdk extends SdkBase
     public function areaInsureDetail($body)
     {
         return $this->restful("POST", "/areaInsure/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function areaInsureListing($body)
-    {
-        return $this->restful("POST", "/areaInsure/listing", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function areaInsurePaging($body)
-    {
-        return $this->restful("POST", "/areaInsure/paging", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/AreaInsureController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function areaInsureUpdate($body)
-    {
-        return $this->restful("POST", "/areaInsure/update", $body);
     }
 
     /**
@@ -126,6 +82,17 @@ class InsureRankSdk extends SdkBase
     public function countryInsurePaging($body)
     {
         return $this->restful("POST", "/countryInsure/paging", $body);
+    }
+
+    /**
+     * 某月占比=某月各监管区域内投保金额/全国投保金额
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureController/proportionAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function countryInsureProportion($body)
+    {
+        return $this->restful("POST", "/countryInsure/proportion", $body);
     }
 
     /**
@@ -195,6 +162,17 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 预计待投
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureWeekController/expectInsureAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function expectInsure($body)
+    {
+        return $this->restful("POST", "/countryInsureWeek/expectInsure", $body);
+    }
+
+    /**
      * 首次登陆
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/firstLoginAction.md
      * @param array $body 入参类型
@@ -258,6 +236,17 @@ class InsureRankSdk extends SdkBase
     public function insureMonthTotal($body)
     {
         return $this->restful("POST", "/insureMonth/total", $body);
+    }
+
+    /**
+     * 某监管机构内的所有保司每月投保数据总和
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureMonthController/totalByAreaAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insureMonthTotalByArea($body)
+    {
+        return $this->restful("POST", "/insureMonth/totalByArea", $body);
     }
 
     /**
@@ -371,6 +360,17 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 某月保司评分占比
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureScoreController/scoreProportionAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreProportion($body)
+    {
+        return $this->restful("POST", "/insureScore/scoreProportion", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/SettingsController/createAction.md
      * @param array $body 入参类型
@@ -412,6 +412,17 @@ class InsureRankSdk extends SdkBase
     public function settingsUpdate($body)
     {
         return $this->restful("POST", "/settings/update", $body);
+    }
+
+    /**
+     * 月度药联所有保险公司投保金额总和
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureMonthController/unionTotalByMonthAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function unionTotalByMonth($body)
+    {
+        return $this->restful("POST", "/insureMonth/unionTotalByMonth", $body);
     }
 
     /**
