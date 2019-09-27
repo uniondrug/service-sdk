@@ -20,7 +20,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加商户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/add.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addMerchant($body)
@@ -31,7 +31,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加组织架构
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/add.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addOrganization($body)
@@ -42,7 +42,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除商户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/del.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function delMerchant($body)
@@ -53,7 +53,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除组织架构
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/del.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function delOrganization($body)
@@ -64,7 +64,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 编辑商户
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/edit.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editMerchant($body)
@@ -75,7 +75,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 编辑组织架构
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/edit.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editOrganization($body)
@@ -86,7 +86,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取单个组织架构详情
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/get.info.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getOrganizationInfo($body)
@@ -97,7 +97,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取商户资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/get.info.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getMerchantInfo($body)
@@ -108,7 +108,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 用ids获取商户信息
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/get.ids.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getMerchantByIds($body)
@@ -119,7 +119,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取商户资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/merchant/get.list.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getMerchantList($body)
@@ -130,7 +130,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取组织架构树
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/organization/get.tree.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getOrganizationTree($body)
@@ -141,7 +141,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 员工登录
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/login.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function login($body)
@@ -152,7 +152,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加员工
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/add.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addWorker($body)
@@ -163,7 +163,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 编辑员工
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/edit.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editWorker($body)
@@ -174,7 +174,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 停用员工
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/disable.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function disableWorker($body)
@@ -185,7 +185,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 启用员工
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/enable.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function enableWorker($body)
@@ -196,7 +196,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 员工列表
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/get.paging.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getWorkerPaging($body)
@@ -207,7 +207,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 员工列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/listAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getWorkerList($body)
@@ -218,7 +218,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 员工简易资料
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/info.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getWorkerInfo($body)
@@ -229,7 +229,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取权限下员工数量
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/roleCount.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getRoleCount($body)
@@ -240,7 +240,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除员工
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/remove.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function removeWorker($body)
@@ -251,7 +251,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 关联员工
      * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/merchant/worker/relation.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function relationWorker($body)
@@ -262,7 +262,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addOrgabuzeBase($body)
@@ -273,7 +273,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 修改组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editOrgabuzeBase($body)
@@ -284,7 +284,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/delAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function delOrgabuzeBase($body)
@@ -295,7 +295,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoOrgabuzeBase($body)
@@ -306,7 +306,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/listAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function listOrgabuzeBase($body)
@@ -317,7 +317,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取组织架构树
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/treeAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function treeOrgabuzeBase($body)
@@ -328,7 +328,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * ids读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/OrganizeBaseController/idsAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function idsOrgabuzeBase($body)
@@ -339,7 +339,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addWorkerMan($body)
@@ -350,7 +350,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 编辑员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editWorkerMan($body)
@@ -361,7 +361,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取员工列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/listAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function listWorkerMan($body)
@@ -372,7 +372,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取员工分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingWorkerMan($body)
@@ -383,7 +383,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 读取员工信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoWorkerMan($body)
@@ -394,7 +394,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 停用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/disableAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function disableWorkerMan($body)
@@ -405,7 +405,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 启用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/enableAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function enableWorkerMan($body)
@@ -416,7 +416,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取权限下用户数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/roleCountAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function roleCountWorkerMan($body)
@@ -427,7 +427,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 删除权限
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/removeAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function removeWorkerMan($body)
@@ -438,7 +438,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 用户关联权限
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/relationAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function relationWorkerMan($body)
@@ -449,7 +449,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 批量停用用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/editStatusEndAllAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusEndAllWorkerMan($body)
@@ -460,7 +460,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 批量开启用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/dev_wss/docs/api/WorkerManController/editStatusStartAllAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusStartAllWorkerMan($body)
@@ -471,7 +471,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 财务账号添加
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addAccountNumber($body)
@@ -482,7 +482,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 财务账号查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoAccountNumber($body)
@@ -493,7 +493,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 财务账号修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editAccountNumber($body)
@@ -504,7 +504,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 财务账号列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingAccountNumber($body)
@@ -515,7 +515,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 财务账号停用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editStatusEndAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusEndAccountNumber($body)
@@ -526,7 +526,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 财务账号启用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editStatusStartAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusStartAccountNumber($body)
@@ -537,7 +537,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始用户添加
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addAssistants($body)
@@ -548,7 +548,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始用户查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoAssistants($body)
@@ -559,7 +559,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始用户修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editAssistants($body)
@@ -570,7 +570,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 查询用户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingAssistants($body)
@@ -581,7 +581,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 用户停用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusEndAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusEndAssistants($body)
@@ -592,7 +592,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 用户启用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusStartAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusStartAssistants($body)
@@ -603,7 +603,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 用户批量停用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusEndAllAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusEndAllAssistants($body)
@@ -614,7 +614,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 用户批量启用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusStartAllAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusStartAllAssistants($body)
@@ -625,7 +625,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 用户批量启用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/memberIdInfoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function memberIdInfoAssistants($body)
@@ -636,7 +636,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addBalance($body)
@@ -647,7 +647,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 费率查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoBalance($body)
@@ -658,7 +658,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 费率修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editBalance($body)
@@ -669,7 +669,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 查询费率列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingBalance($body)
@@ -680,7 +680,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 查询顶级组织费率接口
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/infochainAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoChainBalance($body)
@@ -688,11 +688,10 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/balance/infochain", $body);
     }
 
-
     /**
      * 添加开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addInvoice($body)
@@ -703,7 +702,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票配置查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoInvoice($body)
@@ -714,7 +713,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票配置修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editInvoice($body)
@@ -725,7 +724,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 开票配置列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingInvoice($body)
@@ -736,7 +735,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加原始商户中心
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addPartners($body)
@@ -747,7 +746,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始商户中心查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoPartners($body)
@@ -758,7 +757,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始商户中心修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editPartners($body)
@@ -769,7 +768,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始商户中心列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingPartners($body)
@@ -780,7 +779,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始商户中心列表树
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/treeAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function treePartners($body)
@@ -791,7 +790,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始商户中心关闭
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editStatusEndAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusEndPartners($body)
@@ -802,7 +801,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始商户中心开启
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editStatusStartAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusStartPartners($body)
@@ -813,7 +812,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加原始连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addStores($body)
@@ -824,7 +823,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始连锁门店查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoStores($body)
@@ -835,7 +834,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始连锁门店修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStores($body)
@@ -846,7 +845,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始连锁门店列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingStores($body)
@@ -857,7 +856,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始连锁门店关闭
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editStatusEndAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusEndStores($body)
@@ -868,7 +867,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 原始连锁门店开启
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editStatusStartAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusStartStores($body)
@@ -879,7 +878,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加门店图片
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/addAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function addStoreImages($body)
@@ -890,7 +889,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 门店图片查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/infoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoStoreImages($body)
@@ -901,7 +900,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 门店图片修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/editAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStoreImages($body)
@@ -912,7 +911,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 门店图片列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/pagingAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function pagingStoreImages($body)
@@ -923,7 +922,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 门店图片删除
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/delAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function delStoreImages($body)
@@ -931,12 +930,10 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/storeimages/del", $body);
     }
 
-
-
     /**
      * 门店图片集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImageController/ListsAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function listsStoreImages($body)
@@ -947,7 +944,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取rootid下所有组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ListsAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function listRootidOrganizeBase($body)
@@ -958,7 +955,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取所有银行
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/bankListAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function bankListAccountNumber($body)
@@ -966,11 +963,10 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/accountnumber/bankList", $body);
     }
 
-
     /**
      * 用连锁id获取组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/getByPartnerAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function getOrganByPartnerId($body)
@@ -981,7 +977,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 通过partnerId获取组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/PartnerIdInfoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function partnerIdInfoOrganizeBase($body)
@@ -992,7 +988,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * ROOT下独立结算组织查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ListIsIndependentAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function listIsIndependent($body)
@@ -1003,7 +999,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 最近上级独立结算组织查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/InfoIndependentAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function infoIndependent($body)
@@ -1014,7 +1010,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 批量关闭状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusEndAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusEnd($body)
@@ -1025,7 +1021,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 批量开启状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusStartAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editStatusStart($body)
@@ -1036,17 +1032,18 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * id查询费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/detailAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function detailBalance($body)
     {
         return $this->restful(static::METHOD_POST, "/balance/detail", $body);
     }
+
     /**
      * 统计特定组织下的数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/ccountAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function countOrganize($body)
@@ -1057,7 +1054,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 统计特定类型下的组织数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/countTypeAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function countTypeOrganize($body)
@@ -1068,7 +1065,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 统计特定类型下组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function listAllOrganize($body)
@@ -1079,7 +1076,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 修改所属上级组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editParentIdAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editParentId($body)
@@ -1088,11 +1085,11 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-    * partnerIds读取商户信息
-    * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/partnerIdsAction.md
-    * @param array $body
-    * @return ClientResponseInterface
-    */
+     * partnerIds读取商户信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/partnerIdsAction.md
+     * @param object|array $body
+     * @return ClientResponseInterface
+     */
     public function partnerIdsOrgabuzeBase($body)
     {
         return $this->restful(static::METHOD_POST, "/organizebase/partnerids", $body);
@@ -1101,7 +1098,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 通过partnerId读取下级商户集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllStoreAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function listAllStoreOrgabuzeBase($body)
@@ -1112,7 +1109,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 通过默认编码获取组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalCodeInfoAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function internalCodeInfo($body)
@@ -1123,7 +1120,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取连锁集合的资金池
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/fundPoolsAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function partnersFundPools($body)
@@ -1134,7 +1131,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取连锁集合的人员数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/sumMemberLogicAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function assistantsSumMember($body)
@@ -1145,7 +1142,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * ids查询费率集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/idsAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function balanceIds($body)
@@ -1156,7 +1153,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 修改组织直付类型
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/DirectAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function direct($body)
@@ -1167,7 +1164,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 连锁查询 (运营推送平台)
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listNameAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function partnerSearch($body)
@@ -1178,7 +1175,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 门店查询 (运营推送平台)
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listParentNameAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function storeSearch($body)
@@ -1189,7 +1186,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     /**
      * 店员查询 (运营推送平台)
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function assistantsSearch($body)
@@ -1197,15 +1194,25 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/assistants/account", $body);
     }
 
-
     /**
      * 编辑组织信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
-     * @param array $body
+     * @param object|array $body
      * @return ClientResponseInterface
      */
     public function editOrganizebase($body)
     {
         return $this->restful(static::METHOD_POST, "/organizebase/editmap", $body);
+    }
+
+    /**
+     * 读取商户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/codeListAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeCodeList($body)
+    {
+        return $this->restful("POST", "/organizebase/codeList", $body);
     }
 }
