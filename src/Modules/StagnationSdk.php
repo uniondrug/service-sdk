@@ -485,4 +485,15 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/code/give/out/amount", $body);
     }
+
+    /**
+     * 未激活数据
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/unactiveAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function codeUnactive($body)
+    {
+        return $this->restful("POST", "/code/unactive", $body);
+    }
 }
