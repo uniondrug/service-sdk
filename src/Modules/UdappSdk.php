@@ -60,4 +60,15 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/merchantPush/detail", $body);
     }
+
+    /**
+     * 二次扫码开关
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/DirectAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function merchantSecondDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, "/merchantSecond/detail", $body);
+    }
 }

@@ -1206,13 +1206,13 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 读取商户列表
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/codeListAction.md
+     * 读取保司列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/insureListAction.md
      * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function organizeCodeList($body)
+    public function getInsureList($body)
     {
-        return $this->restful("POST", "/organizebase/codeList", $body);
+        return $this->restful("POST", "/organizebase/insureList", $body);
     }
 }
