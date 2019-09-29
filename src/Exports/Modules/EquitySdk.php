@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-29
- * @time   Sun, 29 Sep 2019 15:21:14 +0800
+ * @date   2019-09-26
+ * @time   Thu, 26 Sep 2019 18:24:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 

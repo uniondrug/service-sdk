@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-11
- * @time   Wed, 11 Sep 2019 15:08:50 +0800
+ * @date   2019-09-28
+ * @time   Sat, 28 Sep 2019 03:49:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -327,6 +327,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 活动用户登陆药联公众号
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/loadAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberLoad($body)
+    {
+        return $this->restful("POST", "/member/load", $body);
+    }
+
+    /**
      * 解析入参,获取活动用户对象
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/parseAction.md
      * @param array $body 入参类型
@@ -467,5 +478,16 @@ class MoreActivitySdk extends SdkBase
     public function templateDetail($body)
     {
         return $this->restful("POST", "/template/detail", $body);
+    }
+
+    /**
+     * 更新手机号、头像、昵称、wxMemberId
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Member/MemberController/updateMemberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateMember($body)
+    {
+        return $this->restful("POST", "/member/updateMember", $body);
     }
 }

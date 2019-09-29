@@ -11,6 +11,7 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -280,5 +281,16 @@ class AssistantSdk extends SdkBase
     public function usersUpdate($body)
     {
         return $this->restful("POST", "/users/update", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getAreaConfig($body)
+    {
+        return $this->restful("POST", "/userArea/areaConfig", $body);
     }
 }
