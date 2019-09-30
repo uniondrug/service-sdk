@@ -382,6 +382,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取结算金额
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/getSettlementAmountAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getSettlementAmount($body)
+    {
+        return $this->restful("POST", "/settlement/getSettlementAmount", $body);
+    }
+
+    /**
      * 初始化对比后生成对账单订单数据
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/initCompareOrdersAction.md
      * @param object|array $body 入参类型
