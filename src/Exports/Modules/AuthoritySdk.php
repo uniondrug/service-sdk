@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-23
- * @time   Mon, 23 Sep 2019 17:40:10 +0800
+ * @date   2019-09-30
+ * @time   Mon, 30 Sep 2019 16:11:56 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -85,17 +85,6 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemManageController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function systemManageListing($body)
-    {
-        return $this->restful("POST", "/systemManage/listing", $body);
-    }
-
-    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemMenuController/createAction.md
      * @param array $body 入参类型
@@ -137,6 +126,17 @@ class AuthoritySdk extends SdkBase
     public function systemMenuList($body)
     {
         return $this->restful("POST", "/systemMenu/list", $body);
+    }
+
+    /**
+     * 获取角色的菜单树
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemMenuController/roleTreeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemMenuRoleTree($body)
+    {
+        return $this->restful("POST", "/systemMenu/roletree", $body);
     }
 
     /**
@@ -206,7 +206,7 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 分页列表
+     * 角色分页列表
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemRoleController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -261,7 +261,7 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 详情
+     * 所属系统用户角色详情
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -272,7 +272,7 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 详情
+     * 所属平台用户角色列表
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/listAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -294,7 +294,7 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 分页列表
+     * 角色用户分页列表
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
