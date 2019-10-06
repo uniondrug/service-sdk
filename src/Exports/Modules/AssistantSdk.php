@@ -293,4 +293,49 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/userArea/areaConfig", $body);
     }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaCreate($body)
+    {
+        return $this->restful("POST", "/userArea/create", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaUpdate($body)
+    {
+        return $this->restful("POST", "/userArea/update", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaDetail($body)
+    {
+        return $this->restful("POST", "/userArea/detail", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaPaging($body)
+    {
+        return $this->restful("POST", "/userArea/paging", $body);
+    }
+
 }
