@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-26
- * @time   Thu, 26 Sep 2019 17:02:31 +0800
+ * @date   2019-09-29
+ * @time   Sun, 29 Sep 2019 15:49:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -149,6 +149,17 @@ class ProjectSdk extends SdkBase
     public function cancelProject($body)
     {
         return $this->restful("POST", "/project/cancel", $body);
+    }
+
+    /**
+     * 检查兑换码是否存在
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/checkUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkUser($body)
+    {
+        return $this->restful("POST", "/verify/checkUser", $body);
     }
 
     /**

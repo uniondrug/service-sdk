@@ -131,6 +131,17 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 检查权益虚列表信息是否存在
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquitySerialController/checkEquitySerialAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkEquitySerial($body)
+    {
+        return $this->restful("POST", "/equity/serial/checkEquitySerial", $body);
+    }
+
+    /**
      * 检查保障是否购买
      * 根据用户身份证号和产品ID检查是否购买过此保障
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/checkByIdCardAction.md
