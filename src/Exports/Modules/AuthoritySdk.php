@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-30
- * @time   Mon, 30 Sep 2019 16:11:56 +0800
+ * @date   2019-10-06
+ * @time   Sun, 06 Oct 2019 15:56:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -126,6 +126,17 @@ class AuthoritySdk extends SdkBase
     public function systemMenuList($body)
     {
         return $this->restful("POST", "/systemMenu/list", $body);
+    }
+
+    /**
+     * 启用/停用
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemMenuController/modifyStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemMenuModifyStatus($body)
+    {
+        return $this->restful("POST", "/systemMenu/modifystatus", $body);
     }
 
     /**
