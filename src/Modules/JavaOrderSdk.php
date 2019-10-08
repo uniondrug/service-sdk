@@ -4,6 +4,7 @@
  * @date   2018-12-04
  * @time   Tue, 04 Dec 2018 18:29:57 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\Service\ClientResponseInterface;
@@ -58,9 +59,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 取消订单
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderCancel($body)
     {
@@ -69,9 +70,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 商品或主表单退单
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderRefund($body)
     {
@@ -80,9 +81,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 服务退货流程
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderRefundService($body)
     {
@@ -124,9 +125,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单主订单详情
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQueryMain($body)
     {
@@ -135,9 +136,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单子订单详情
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQuerySub($body)
     {
@@ -146,9 +147,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * orderNos查询
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderNos($body)
     {
@@ -157,9 +158,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 主订单列表orderNos查询
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderMainNos($body)
     {
@@ -168,9 +169,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 修改订单店员信息
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function updateAssistant($body)
     {
@@ -179,9 +180,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单memberId查询主订单
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQueryMember($body)
     {
@@ -190,9 +191,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 子订单查询列表
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQueryBycondition($body)
     {
@@ -201,9 +202,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 子订单列表检索
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQuerySubOrderListForAdmin($body)
     {
@@ -223,9 +224,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据退单号查询退款商品列表
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQueryRefundGoodsListForAdmin($body)
     {
@@ -234,9 +235,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据子订单号查询退款单列表
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQueryRefundList($body)
     {
@@ -245,9 +246,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 根据子订单号查询退款商品列表
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderQueryItemListByOrderNo($body)
     {
@@ -256,9 +257,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单退单退款接口
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderRefundCashierExecute($body)
     {
@@ -267,9 +268,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单列表接口
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function queryMainOrderListByTerm($body)
     {
@@ -289,9 +290,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单支付
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderCashierCreate($body)
     {
@@ -300,9 +301,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 订单消费
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderCashierConsume($body)
     {
@@ -311,9 +312,9 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * O2O订单发货
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderCashierNotify($body)
     {
@@ -322,12 +323,26 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
 
     /**
      * 更新订单ErpSn信息接口
-     * @link
      * @param array $body 入参类型
      * @return ClientResponseInterface
+     * @link
      */
     public function orderCashierUpdate($body)
     {
         return $this->restful("POST", "/order/erpsn/update", $body);
     }
+
+    /**
+     * 查询用户 待付款，待发货，待收货的订单数量
+     * @link https://uniondrug.coding.net/p/java.module.order/d/java.module.order/git/blob/development/api-docs/docs-order/orderQueryMemberOrderCount.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function queryOrderCount($body)
+    {
+        return $this->restful("POST", "/order/query/member/queryOrderCount", $body);
+    }
+
+
 }
