@@ -309,4 +309,25 @@ class JavaOrderSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/cashier/consume", $body);
     }
 
+    /**
+     * O2O订单发货
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderCashierNotify($body)
+    {
+        return $this->restful("POST", "/logistics/deliver/notify", $body);
+    }
+
+    /**
+     * 更新订单ErpSn信息接口
+     * @link
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderCashierUpdate($body)
+    {
+        return $this->restful("POST", "/order/erpsn/update", $body);
+    }
 }

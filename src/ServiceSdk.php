@@ -17,6 +17,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\CustomerSdk                 $customer                                                    客户服务
  * @property Modules\DataSdk                     $data                                                        数据服务
  * @property Modules\EquitySdk                   $equity                                                      权益服务
+ * @property Modules\EshopSdk                    $eshop                                                       线上统一订单服务
  * @property Modules\GoodCenterSdk               $goodCenter                                                  商品中心
  * @property Modules\JavaUserSdk                 $javaUser                                                    用户中心
  * @property Modules\JavaOrderSdk                $javaOrder                                                   java订单中心
@@ -80,6 +81,7 @@ namespace Uniondrug\ServiceSdk;
  * @property Modules\MoreActivitySdk             $moreActivity                                                新活动模块SDK
  * @property Modules\CustomerserviceSdk          $customerservice                                             客服模块
  * @property Modules\JavaOrderquerySdk           $javaOrderquery                                              订单查询模块
+ * @property Modules\ErpPaySdk                   $erpPay                                                      erp收银
  * @property Modules\HuoJuExpressSdk             $huoJuExpress
  * 药联火聚快递
  * @package Uniondrug\ServiceSdk
