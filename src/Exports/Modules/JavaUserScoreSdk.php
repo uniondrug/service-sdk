@@ -82,4 +82,15 @@ class JavaUserScoreSdk extends SdkBase
 ", $body);
     }
 
+
+    /**
+     * 发放积分
+     * @param $body
+     *
+     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
+     */
+    public function accountRecordsAdd($body){
+        return $this->restful("POST", "/accountrecords/add
+", $body);
+    }
 }
