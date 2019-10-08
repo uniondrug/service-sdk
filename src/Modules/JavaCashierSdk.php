@@ -89,4 +89,16 @@ class JavaCashierSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/cashier/queryCashierAllByOutTradeNo", $body);
     }
+
+
+    /**
+     * 查询订单接口
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/api-docs/docs-cashier/cashierStatusCheck.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderCheckStatus($body)
+    {
+        return $this->restful("POST", "/cashier/status/check", $body);
+    }
 }
