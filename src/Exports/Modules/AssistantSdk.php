@@ -338,4 +338,40 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userArea/paging", $body);
     }
 
+
+    /**
+     * 根据省份ID获取省份信息
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getProvinceByIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProvinceByIds($body)
+    {
+        return $this->restful("POST", "/userArea/getProvinceByIds", $body);
+    }
+
+
+    /**
+     * 根据区域ID获取区域信息
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getAreaByIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getAreaByIds($body)
+    {
+        return $this->restful("POST", "/userArea/getAreaByIds", $body);
+    }
+
+
+    /**
+     * 获取区域完整配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getByUserIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getByUserId($body)
+    {
+        return $this->restful("POST", "/userArea/getByUserId", $body);
+    }
+
 }
