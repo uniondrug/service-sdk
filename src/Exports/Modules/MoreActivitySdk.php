@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-28
- * @time   Sat, 28 Sep 2019 03:49:27 +0800
+ * @date   2019-10-10
+ * @time   Thu, 10 Oct 2019 17:34:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -489,5 +489,16 @@ class MoreActivitySdk extends SdkBase
     public function updateMember($body)
     {
         return $this->restful("POST", "/member/updateMember", $body);
+    }
+
+    /**
+     * 创建虚拟卡(通用版本)
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/VirtualCard/VirtualCardController/createCardAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function virtualCardCreate($body)
+    {
+        return $this->restful("POST", "/virtualCard/createCard", $body);
     }
 }
