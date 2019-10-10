@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-09
- * @time   Mon, 09 Sep 2019 17:30:14 +0800
+ * @date   2019-10-10
+ * @time   Thu, 10 Oct 2019 17:31:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -459,6 +459,50 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 模块显示与关闭
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/changeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleChange($body)
+    {
+        return $this->restful("POST", "/modulecontrol/change", $body);
+    }
+
+    /**
+     * 根据连锁code判断是参加活动连锁还是未参加活动
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleCheck($body)
+    {
+        return $this->restful("POST", "/modulecontrol/check", $body);
+    }
+
+    /**
+     * 模块详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleDetail($body)
+    {
+        return $this->restful("POST", "/modulecontrol/detail", $body);
+    }
+
+    /**
+     * 编辑模块
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleUpdate($body)
+    {
+        return $this->restful("POST", "/modulecontrol/update", $body);
+    }
+
+    /**
      * 连锁 客单价 分布
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/avgAmountAction.md
      * @param array $body 入参类型
@@ -599,6 +643,17 @@ class AiProfitDataSdk extends SdkBase
     public function redPacketCityData($body)
     {
         return $this->restful("POST", "/redPacket/cityData", $body);
+    }
+
+    /**
+     * 根据code判断是否存在连锁
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/getPartnerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redPacketGetPartner($body)
+    {
+        return $this->restful("POST", "/redPacket/getPartner", $body);
     }
 
     /**
