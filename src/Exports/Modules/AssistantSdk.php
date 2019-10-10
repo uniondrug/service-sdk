@@ -374,4 +374,40 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userArea/getByUserId", $body);
     }
 
+
+    /**
+     * 信息上报列表
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function feedbackPaing($body)
+    {
+        return $this->restful("POST", "/feedback/paging", $body);
+    }
+
+
+    /**
+     * 信息上报处理
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/upateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function feedbackUpdate($body)
+    {
+        return $this->restful("POST", "/feedback/update", $body);
+    }
+
+
+    /**
+     * 信息上报详情
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function feedbackDetail($body)
+    {
+        return $this->restful("POST", "/feedback/detail", $body);
+    }
+
 }
