@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-18
- * @time   Wed, 18 Sep 2019 14:35:07 +0800
+ * @date   2019-10-11
+ * @time   Fri, 11 Oct 2019 10:33:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -129,6 +129,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 检查冲突
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/checkClashAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planCheckClash($body)
+    {
+        return $this->restful("POST", "/plan/checkClash", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/createAction.md
      * @param array $body 入参类型
@@ -137,17 +148,6 @@ class AiPushSdk extends SdkBase
     public function planCreate($body)
     {
         return $this->restful("POST", "/plan/create", $body);
-    }
-
-    /**
-     * 更新方案状态
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function planDelete($body)
-    {
-        return $this->restful("POST", "/plan/delete", $body);
     }
 
     /**
@@ -162,6 +162,28 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 方案停用
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planDisable($body)
+    {
+        return $this->restful("POST", "/plan/disable", $body);
+    }
+
+    /**
+     * 方案启用
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/enableRatioAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planEnable($body)
+    {
+        return $this->restful("POST", "/plan/enable", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/createAction.md
      * @param array $body 入参类型
@@ -173,61 +195,6 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function planGoodsDelete($body)
-    {
-        return $this->restful("POST", "/planGoods/delete", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function planGoodsDetail($body)
-    {
-        return $this->restful("POST", "/planGoods/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function planGoodsListing($body)
-    {
-        return $this->restful("POST", "/planGoods/listing", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function planGoodsPaging($body)
-    {
-        return $this->restful("POST", "/planGoods/paging", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function planGoodsUpdate($body)
-    {
-        return $this->restful("POST", "/planGoods/update", $body);
-    }
-
-    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/pagingAction.md
      * @param array $body 入参类型
@@ -236,6 +203,17 @@ class AiPushSdk extends SdkBase
     public function planPaging($body)
     {
         return $this->restful("POST", "/plan/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planPartnerCreate($body)
+    {
+        return $this->restful("POST", "/planPartners/create", $body);
     }
 
     /**
@@ -272,7 +250,7 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 类型
+     * 流水类型
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/typeListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
