@@ -327,4 +327,15 @@ class MoreActivitySdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/project/save", $body);
     }
 
+    /**
+     * 检测虚拟卡
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/saveAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function cardCheck($body)
+    {
+        return $this->restful(static::METHOD_POST, "/virtualCard/check", $body);
+    }
+
 }

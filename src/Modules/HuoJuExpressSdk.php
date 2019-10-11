@@ -105,5 +105,15 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+    /**
+     * 物流查询快递100
+     * @link https://uniondrug.coding.net/p/module.partners.express/d/module.partners.express/git/blob/testing/docs/api/Express/Express100Controller/selectInquiryAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function logisticsInquiry($body)
+    {
+        return $this->restful(static::METHOD_POST, "/index", $body);
+    }
 
 }
