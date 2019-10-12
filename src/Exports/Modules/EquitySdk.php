@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-08
- * @time   Tue, 08 Oct 2019 16:19:28 +0800
+ * @date   2019-10-12
+ * @time   Sat, 12 Oct 2019 11:45:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -343,6 +343,72 @@ class EquitySdk extends SdkBase
     public function enableEquity($body)
     {
         return $this->restful("POST", "/equity/enable", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityAvailableController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAvailableCreate($body)
+    {
+        return $this->restful("POST", "/equityAvailable/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityAvailableController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAvailableDelete($body)
+    {
+        return $this->restful("POST", "/equityAvailable/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityAvailableController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAvailableDetail($body)
+    {
+        return $this->restful("POST", "/equityAvailable/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityAvailableController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAvailableListing($body)
+    {
+        return $this->restful("POST", "/equityAvailable/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityAvailableController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAvailablePaging($body)
+    {
+        return $this->restful("POST", "/equityAvailable/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityAvailableController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAvailableUpdate($body)
+    {
+        return $this->restful("POST", "/equityAvailable/update", $body);
     }
 
     /**
