@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-10-14
- * @time   Mon, 14 Oct 2019 00:22:35 +0800
+ * @time   Mon, 14 Oct 2019 00:26:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,7 +30,7 @@ class MerchantApplySdk extends SdkBase
     protected $serviceName = 'merchant.apply.module';
 
     /**
-     * 检验验证码
+     * 添加报名记录
      * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
