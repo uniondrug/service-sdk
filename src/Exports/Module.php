@@ -37,6 +37,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MerchantApplySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MessageSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MsgSdk;
@@ -124,6 +125,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property JavaGoodsCenterMngSdk $javaGoodsCenterMng
  * @property AiPushSdk             $aiPush
  * @property InsureRankSdk         $insureRank
+ * @property MerchantApplySdk      $merchantApply
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
