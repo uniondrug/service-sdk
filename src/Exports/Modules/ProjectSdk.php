@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-29
- * @time   Sun, 29 Sep 2019 15:49:21 +0800
+ * @date   2019-10-14
+ * @time   Mon, 14 Oct 2019 17:02:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -393,6 +393,17 @@ class ProjectSdk extends SdkBase
     public function getByOrderNo($body)
     {
         return $this->restful("POST", "/user/getByOrderNo", $body);
+    }
+
+    /**
+     * 通过订单号批量查找兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByorderNosAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getByOrderNos($body)
+    {
+        return $this->restful("POST", "/user/getByOrderNos", $body);
     }
 
     /**
