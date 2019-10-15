@@ -74,6 +74,6 @@ abstract class Sdk
      */
     protected function restful(string $method, string $path, $body = null, $query = null, $extra = null)
     {
-        $url = Host::get($this->serviceVersion, $this->serviceName, $path);
+        $url = Host::get($this->serviceVersion, $this->serviceClass, $this->serviceName, $path);
     }
 }
