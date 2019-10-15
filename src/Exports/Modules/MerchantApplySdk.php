@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-14
- * @time   Mon, 14 Oct 2019 00:26:48 +0800
+ * @date   2019-10-15
+ * @time   Tue, 15 Oct 2019 15:36:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,5 +38,16 @@ class MerchantApplySdk extends SdkBase
     public function applyAdd($body)
     {
         return $this->restful("POST", "/apply/add", $body);
+    }
+
+    /**
+     * 报名列表-分页
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyPaging($body)
+    {
+        return $this->restful("POST", "/apply/paging", $body);
     }
 }
