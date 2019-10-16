@@ -5,6 +5,8 @@
  */
 namespace Uniondrug\ServiceSdk\Bases;
 
+use Phalcon\Di;
+use Uniondrug\Framework\Container;
 use Uniondrug\ServiceSdk\Exceptions\NoNameException;
 
 /**
@@ -15,6 +17,11 @@ abstract class Sdk
 {
     const VERSION_1X = 1;
     const VERSION_2X = 2;
+    /**
+     * 容器
+     * @var Container
+     */
+    public static $container;
     /**
      * SDK类名
      * @var string
@@ -33,14 +40,42 @@ abstract class Sdk
 
     /**
      * Sdk constructor.
+     * @param int $version
+     * @throws NoNameException
      */
     public function __construct(int $version)
     {
+        // 1. property
         $this->serviceClass = get_class($this);
         $this->serviceVersion = $version;
-        if ($this->serviceName === null) {
-            throw new NoNameException("sdk name not defined by 'serviceName' property.");
+        // 2. framework container
+        if (self::$container === null) {
+            self::$container = Di::getDefault();
         }
+        // 3. name checker
+        if ($this->serviceName === null) {
+            throw new NoNameException("sdk name not defined by property");
+        }
+    }
+
+    final public function _class()
+    {
+        return $this->serviceClass;
+    }
+
+    final public function _name()
+    {
+        return $this->serviceName;
+    }
+
+    final public function _v1()
+    {
+        return $this->serviceVersion == self::VERSION_1X;
+    }
+
+    final public function _v2()
+    {
+        return $this->serviceVersion == self::VERSION_2X;
     }
 
     /**
@@ -48,7 +83,7 @@ abstract class Sdk
      * @param int $seconds
      * @return $this
      */
-    public function withCache(int $seconds = 300)
+    final public function withCache(int $seconds = 300)
     {
         return $this;
     }
@@ -58,7 +93,7 @@ abstract class Sdk
      * @param int $limit
      * @return $this
      */
-    public function withRetry(int $limit = 3)
+    final public function withRetry(int $limit = 3)
     {
         return $this;
     }
@@ -71,9 +106,44 @@ abstract class Sdk
      * @param null   $query
      * @param null   $extra
      * @return Response
+     * @throws \Throwable
      */
-    protected function restful(string $method, string $path, $body = null, $query = null, $extra = null)
+    final protected function restful(string $method, string $path, $body = null, $query = null, $extra = null)
     {
-        $url = Host::get($this->serviceVersion, $this->serviceClass, $this->serviceName, $path);
+        // 1. init Service address
+        $url = Host::get($this, $path);
+        // 2. init response
+        $response = new Response($this);
+        $response->setUrl($url);
+        try {
+            // 3. init request options
+            $options = is_array($extra) ? $extra : [];
+            // 4. query string
+            if (is_array($query) || is_string($query)) {
+                $options['query'] = $query;
+            }
+            // 5. body
+            if (is_string($body)) {
+                $options['body'] = $body;
+            } else if (is_array($body)) {
+                $options['json'] = $body;
+            } else if (is_object($body)) {
+                if (method_exists($body, 'toJson')) {
+                    $options['body'] = $body->toJson();
+                } else if (method_exists($body, 'toArray')) {
+                    $options['json'] = $body->toArray();
+                }
+            }
+            // 6. send response
+            $response->setContents(self::$container->getShared('httpClient')->request($method, $url, $options));
+        } catch(\Throwable $e) {
+            // 7. error found
+            throw $e;
+        } finally {
+            // 8. end response
+            $response->end();
+        }
+        // 9. result
+        return $response;
     }
 }
