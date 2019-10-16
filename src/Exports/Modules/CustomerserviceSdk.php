@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-06
- * @time   Fri, 06 Sep 2019 15:49:02 +0800
+ * @date   2019-10-16
+ * @time   Wed, 16 Oct 2019 14:00:57 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -181,5 +181,16 @@ class CustomerserviceSdk extends SdkBase
     public function orderRefundApplySuccess($body)
     {
         return $this->restful("POST", "/refundapply/success", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/UserJobNumberController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userJobNumberDetail($body)
+    {
+        return $this->restful("POST", "/userJobNumber/detail", $body);
     }
 }
