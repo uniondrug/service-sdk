@@ -6,7 +6,7 @@
 namespace Uniondrug\ServiceSdk\Exceptions;
 
 /**
- * NotRegisterException
+ * 服务未注册
  * @package Uniondrug\ServiceSdk\Exceptions
  */
 class NotRegisterException extends \Exception

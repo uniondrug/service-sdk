@@ -38,7 +38,7 @@
                 .
                 .
                 .
-                \Uniondrug\ServiceSdk\SdkServiceProvider::class
+                \Uniondrug\ServiceSdk\Provider::class
             ]
         ]
     ];

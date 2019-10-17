@@ -6,9 +6,9 @@
 namespace Uniondrug\ServiceSdk\Exceptions;
 
 /**
- * SDK未定义
+ * 无效的Restful请求方式
  * @package Uniondrug\ServiceSdk\Exceptions
  */
-class NoSdkException extends \Exception
+class NotRestException extends \Exception
 {
 }

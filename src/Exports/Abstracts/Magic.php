@@ -5,7 +5,10 @@
  */
 namespace Uniondrug\ServiceSdk\Exports\Abstracts;
 
+use Uniondrug\ServiceSdk\Bases\EventsTrait;
+use Uniondrug\ServiceSdk\Exceptions\NoNameException;
 use Uniondrug\ServiceSdk\Exceptions\NoSdkException;
+use Uniondrug\ServiceSdk\ServiceSdk;
 
 /**
  * Magic
@@ -13,29 +16,53 @@ use Uniondrug\ServiceSdk\Exceptions\NoSdkException;
  */
 abstract class Magic
 {
+    /**
+     * NameSpace
+     * @var string
+     */
     protected $ns;
-    private static $_classes = [];
+    /**
+     * @var ServiceSdk
+     */
+    private $sdk;
+    /**
+     * @var array
+     */
+    private static $properties = [];
+    /**
+     * Events
+     */
+    use EventsTrait;
 
     /**
-     * 读取SDK
      * @param $name
-     * @return Sdk
-     * @throws \Exception
+     * @return object
+     * @throws NoSdkException
      */
     public function __get($name)
     {
-        // 1. from history
         $key = strtolower($this->ns.'-'.$name);
-        if (isset(self::$_classes[$key])) {
-            return self::$_classes[$key];
+        if (isset(self::$properties[$key])) {
+            return self::$properties[$key];
         }
-        // 2. build
         $class = "\\Uniondrug\\ServiceSdk\\Exports\\{$this->ns}\\".ucfirst($name)."Sdk";
         if (class_exists($class)) {
-            self::$_classes[$key] = new $class();
-            return self::$_classes[$key];
+            self::$properties[$key] = new $class($this->sdk);
+            return self::$properties[$key];
         }
-        // 3. not found
-        throw new NoSdkException("sdk {$name} not found of v2");
+        throw new NoSdkException("sdk {$name} not found from v2");
+    }
+
+    /**
+     * Magic constructor.
+     * @param ServiceSdk $sdk
+     * @throws NoNameException
+     */
+    public function __construct(ServiceSdk $sdk)
+    {
+        $this->sdk = $sdk;
+        if ($this->ns === null) {
+            throw new NoNameException("export name not defined by ns");
+        }
     }
 }

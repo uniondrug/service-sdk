@@ -6,7 +6,7 @@
 namespace Uniondrug\ServiceSdk\Exceptions;
 
 /**
- * VersionException
+ * 版本号错误
  * @package Uniondrug\ServiceSdk\Exceptions
  */
 class VersionException extends \Exception

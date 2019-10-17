@@ -6,7 +6,7 @@
 namespace Uniondrug\ServiceSdk\Exceptions;
 
 /**
- * NoNameException
+ * SDK名称未定义
  * @package Uniondrug\ServiceSdk\Exceptions
  */
 class NoNameException extends \Exception
