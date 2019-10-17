@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-12
- * @time   Sat, 12 Oct 2019 11:45:25 +0800
+ * @date   2019-10-17
+ * @time   Thu, 17 Oct 2019 15:34:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1064,6 +1064,17 @@ class EquitySdk extends SdkBase
     public function SettlementClaims($body)
     {
         return $this->restful("POST", "/guarantee/settlementclaims", $body);
+    }
+
+    /**
+     * 添加寿险权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/sxAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function SxAddEquity($body)
+    {
+        return $this->restful("POST", "/equity/sxadd", $body);
     }
 
     /**
