@@ -1974,5 +1974,16 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/announcement/update", $body);
     }
+
+    /**
+     * 前端结算错误日志
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/updateAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function frontendStatementLogCreate($body)
+    {
+        return $this->restful("POST", "/frontendStatementLog/create", $body);
+    }
 }
 
