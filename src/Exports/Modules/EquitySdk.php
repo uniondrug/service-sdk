@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-17
- * @time   Thu, 17 Oct 2019 15:34:51 +0800
+ * @date   2019-10-18
+ * @time   Fri, 18 Oct 2019 16:08:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1031,6 +1031,17 @@ class EquitySdk extends SdkBase
     public function serialUpdateBillNo($body)
     {
         return $this->restful("POST", "/equity/serial/update/billNo", $body);
+    }
+
+    /**
+     * 根据项目及用户信息更新序列表信息
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquitySerialController/updateBillNoV2Action.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serialUpdateBillNoV2($body)
+    {
+        return $this->restful("POST", "/equity/serial/update/billNo/V2", $body);
     }
 
     /**
