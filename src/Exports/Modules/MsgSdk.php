@@ -52,6 +52,17 @@ class MsgSdk extends SdkBase
     }
 
     /**
+     * xml消息发布
+     * @link https://uniondrug.coding.net/p/module.msg/git/blob/development/docs/api/Msg/PublishController/publishXmlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function publishXml($body)
+    {
+        return $this->restful("POST", "/msg/publishXml", $body);
+    }
+
+    /**
      * 状态报告回执
      * @link https://uniondrug.coding.net/p/module.msg/git/blob/development/docs/api/Msg/ReportController/notifyAction.md
      * @param array $body 入参类型
