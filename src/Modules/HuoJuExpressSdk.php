@@ -21,7 +21,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
      */
     public function createOrder($body)
     {
-        return $this->restful(static::METHOD_POST, "/index", $body);
+        return $this->restful(static::METHOD_POST, "/createOrder", $body);
     }
 
     /**
@@ -32,7 +32,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
      */
     public function preCreateOrder($body)
     {
-        return $this->restful(static::METHOD_POST, "/index", $body);
+        return $this->restful(static::METHOD_POST, "/preCreate", $body);
     }
 
     /**
@@ -43,7 +43,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
      */
     public function selectOrder($body)
     {
-        return $this->restful(static::METHOD_POST, "/index", $body);
+        return $this->restful(static::METHOD_POST, "/selectOrder", $body);
     }
     /**
      * 查询运费
