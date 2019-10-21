@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-18
- * @time   Fri, 18 Oct 2019 16:08:01 +0800
+ * @date   2019-10-21
+ * @time   Mon, 21 Oct 2019 10:13:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -409,6 +409,17 @@ class EquitySdk extends SdkBase
     public function equityAvailableUpdate($body)
     {
         return $this->restful("POST", "/equityAvailable/update", $body);
+    }
+
+    /**
+     * 根据实卡ID查询虚拟卡ID
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityCombineController/getByEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityCombineEquityId($body)
+    {
+        return $this->restful("POST", "/equity/combine/getByEquityId", $body);
     }
 
     /**
