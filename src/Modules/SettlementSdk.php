@@ -1985,5 +1985,48 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/frontendStatementLog/create", $body);
     }
-}
 
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/createAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountCreate($body)
+    {
+        return $this->restful("POST", "/organizeAccount/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountDetail($body)
+    {
+        return $this->restful("POST", "/organizeAccount/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/pagingAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountPaging($body)
+    {
+        return $this->restful("POST", "/organizeAccount/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountUpdate($body)
+    {
+        return $this->restful("POST", "/organizeAccount/update", $body);
+    }
+}
