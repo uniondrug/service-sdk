@@ -1032,4 +1032,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/group/check/limit", $body);
     }
+
+    /**
+     * 检查项目，成员的权益是否打到限额或者限制数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/checkLimitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkLimit($body)
+    {
+        return $this->restful("POST", "/verify/checkLimit", $body);
+    }
 }
