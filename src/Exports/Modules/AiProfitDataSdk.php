@@ -754,4 +754,37 @@ class AiProfitDataSdk extends SdkBase
     {
         return $this->restful("POST", "/user/updateLoginTime", $body);
     }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addMarket($body)
+    {
+        return $this->restful("POST", "/market/add", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketDetail($body)
+    {
+        return $this->restful("POST", "/market/detail", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketUpdate($body)
+    {
+        return $this->restful("POST", "/market/update", $body);
+    }
 }
