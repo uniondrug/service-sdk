@@ -316,6 +316,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * List列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getActivityList($body)
+    {
+        return $this->restful("POST", "/activity/paging", $body);
+    }
+
+    /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/pagingAction.md
      * @param array $body 入参类型
