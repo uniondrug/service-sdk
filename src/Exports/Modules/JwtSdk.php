@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-08-11
- * @time   Sun, 11 Aug 2019 11:32:00 +0800
+ * @date   2019-10-23
+ * @time   Wed, 23 Oct 2019 11:39:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class JwtSdk extends SdkBase
     public function encode($body)
     {
         return $this->restful("POST", "/jwt/encode", $body);
+    }
+
+    /**
+     * 活动重定向
+     * @link https://uniondrug.coding.net/p/module.jwt/git/blob/development/docs/api/DomainController/projectRedirectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectRedirect($body)
+    {
+        return $this->restful("POST", "/domain/projectRedirect", $body);
     }
 
     /**
