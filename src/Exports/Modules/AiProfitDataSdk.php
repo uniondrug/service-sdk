@@ -323,7 +323,7 @@ class AiProfitDataSdk extends SdkBase
      */
     public function getActivityList($body)
     {
-        return $this->restful("POST", "/activity/paging", $body);
+        return $this->restful("POST", "/activity/list", $body);
     }
 
     /**
