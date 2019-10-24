@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-10-24
- * @time   Thu, 24 Oct 2019 17:21:43 +0800
+ * @time   Thu, 24 Oct 2019 17:58:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -63,6 +63,17 @@ class MerchantApplySdk extends SdkBase
     }
 
     /**
+     * 更新财务资料
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyFinanceController/financeUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyFinanceUpdate($body)
+    {
+        return $this->restful("POST", "/apply/finance/update", $body);
+    }
+
+    /**
      * 添加商户记录
      * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyMerchantController/merchantAddAction.md
      * @param array $body 入参类型
@@ -82,6 +93,17 @@ class MerchantApplySdk extends SdkBase
     public function applyMerchantSync($body)
     {
         return $this->restful("POST", "/apply/merchant/sync", $body);
+    }
+
+    /**
+     * 更新商户记录
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyMerchantController/merchantUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantUpdate($body)
+    {
+        return $this->restful("POST", "/apply/merchant/Update", $body);
     }
 
     /**
@@ -126,5 +148,16 @@ class MerchantApplySdk extends SdkBase
     public function applyStoreByOrganizationIds($body)
     {
         return $this->restful("POST", "/apply/store/listbyorganizationids", $body);
+    }
+
+    /**
+     * 删除门店信息
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/StoreDeleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreDelete($body)
+    {
+        return $this->restful("POST", "/apply/store/delete", $body);
     }
 }
