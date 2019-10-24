@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-11
- * @time   Fri, 11 Oct 2019 14:47:41 +0800
+ * @date   2019-10-24
+ * @time   Thu, 24 Oct 2019 14:16:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -60,6 +60,17 @@ class AiProfitDataSdk extends SdkBase
     public function addContact($body)
     {
         return $this->restful("POST", "/contact/add", $body);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addMarket($body)
+    {
+        return $this->restful("POST", "/market/add", $body);
     }
 
     /**
@@ -118,6 +129,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 附近门店数据——累计销售额，累计开单数，今日销售额，今日开单数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/aroundDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function aroundData($body)
+    {
+        return $this->restful("POST", "/partner/aroundData", $body);
+    }
+
+    /**
      * 最佳排行
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/AssistantController/bestAction.md
      * @param array $body 入参类型
@@ -148,6 +170,17 @@ class AiProfitDataSdk extends SdkBase
     public function assistantTask($body)
     {
         return $this->restful("POST", "/assistant/task", $body);
+    }
+
+    /**
+     * 上月最佳门店销售额，药联最佳门店半年销售额曲线图，附近最佳门店半年销售额曲线图
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/bestStoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bestStore($body)
+    {
+        return $this->restful("POST", "/partner/bestStore", $body);
     }
 
     /**
@@ -470,6 +503,39 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 上月药联增值服务最佳门店开单数，预计可产生的销售额
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/lastBestAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function lastBest($body)
+    {
+        return $this->restful("POST", "/partner/lastBest", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketDetail($body)
+    {
+        return $this->restful("POST", "/market/detail", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketUpdate($body)
+    {
+        return $this->restful("POST", "/market/update", $body);
+    }
+
+    /**
      * 模块显示与关闭
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/changeAction.md
      * @param array $body 入参类型
@@ -566,6 +632,17 @@ class AiProfitDataSdk extends SdkBase
     public function partnerBillCount($body)
     {
         return $this->restful("POST", "/partner/billCount", $body);
+    }
+
+    /**
+     * 根据连锁名称获取列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/partnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerList($body)
+    {
+        return $this->restful("POST", "/partner/partnerList", $body);
     }
 
     /**
@@ -723,6 +800,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 根据新的连锁ID获取附近门店信息
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/storeListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeList($body)
+    {
+        return $this->restful("POST", "/partner/storeList", $body);
+    }
+
+    /**
      * 门店top3排行
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/StoreController/rankAction.md
      * @param array $body 入参类型
@@ -764,38 +852,5 @@ class AiProfitDataSdk extends SdkBase
     public function updateLoginTime($body)
     {
         return $this->restful("POST", "/user/updateLoginTime", $body);
-    }
-
-    /**
-     * 添加
-     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function addMarket($body)
-    {
-        return $this->restful("POST", "/market/add", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function marketDetail($body)
-    {
-        return $this->restful("POST", "/market/detail", $body);
-    }
-
-    /**
-     * 编辑
-     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function marketUpdate($body)
-    {
-        return $this->restful("POST", "/market/update", $body);
     }
 }
