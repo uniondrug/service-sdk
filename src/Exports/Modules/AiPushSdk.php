@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-11
- * @time   Fri, 11 Oct 2019 10:33:17 +0800
+ * @date   2019-10-24
+ * @time   Thu, 24 Oct 2019 13:48:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -126,6 +126,17 @@ class AiPushSdk extends SdkBase
     public function industryCashPoolingRecharge($body)
     {
         return $this->restful("POST", "/industryCashPooling/recharge", $body);
+    }
+
+    /**
+     * 方案关联商户商品回调
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/CreatePlanCallbackAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planCallback($body)
+    {
+        return $this->restful("POST", "/plan/createCallback", $body);
     }
 
     /**
