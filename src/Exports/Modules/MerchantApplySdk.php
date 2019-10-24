@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-15
- * @time   Tue, 15 Oct 2019 15:36:24 +0800
+ * @date   2019-10-24
+ * @time   Thu, 24 Oct 2019 17:21:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,6 +41,50 @@ class MerchantApplySdk extends SdkBase
     }
 
     /**
+     * 申请单详情
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyDetail($body)
+    {
+        return $this->restful("POST", "/apply/detail", $body);
+    }
+
+    /**
+     * 添加财务资料
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyFinanceController/financeAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyFinanceAdd($body)
+    {
+        return $this->restful("POST", "/apply/finance/add", $body);
+    }
+
+    /**
+     * 添加商户记录
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyMerchantController/merchantAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantAdd($body)
+    {
+        return $this->restful("POST", "/apply/merchant/add", $body);
+    }
+
+    /**
+     * 同步数据
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyMerchantController/syncAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantSync($body)
+    {
+        return $this->restful("POST", "/apply/merchant/sync", $body);
+    }
+
+    /**
      * 报名列表-分页
      * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyController/pagingAction.md
      * @param array $body 入参类型
@@ -49,5 +93,38 @@ class MerchantApplySdk extends SdkBase
     public function applyPaging($body)
     {
         return $this->restful("POST", "/apply/paging", $body);
+    }
+
+    /**
+     * 添加门店记录
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreAdd($body)
+    {
+        return $this->restful("POST", "/apply/store/add", $body);
+    }
+
+    /**
+     * 申请单门店列表
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeByApplyIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreByApplyId($body)
+    {
+        return $this->restful("POST", "/apply/store/list", $body);
+    }
+
+    /**
+     * 批量查询申请单门店列表
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeByOrganizationIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreByOrganizationIds($body)
+    {
+        return $this->restful("POST", "/apply/store/listbyorganizationids", $body);
     }
 }
