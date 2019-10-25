@@ -19,6 +19,17 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
 
 
     /**
+     * 学习
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AssistantController/completeAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function assistantComplete($body)
+    {
+        return $this->restful("POST", "/assistant/complete", $body);
+    }
+
+    /**
      * 创建店员
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AssistantController/createAction.md
      * @param array $body 入参类型
@@ -27,6 +38,17 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     public function assistantCreate($body)
     {
         return $this->restful("POST", "/assistant/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AssistantController/detailAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function assistantDetail($body)
+    {
+        return $this->restful("POST", "/assistant/detail", $body);
     }
 
     /**
@@ -41,6 +63,17 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取门店店员列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AssistantController/listAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function assistantList($body)
+    {
+        return $this->restful("POST", "/assistant/list", $body);
+    }
+
+    /**
      * 调店
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AssistantController/transferAction.md
      * @param array $body 入参类型
@@ -51,6 +84,16 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/assistant/transfer", $body);
     }
 
+    /**
+     * 修改店员信息
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AssistantController/updateAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function assistantUpdate($body)
+    {
+        return $this->restful("POST", "/assistant/update", $body);
+    }
     /**
      * 配置连锁开启
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MerchantPushController/closeAction.md
