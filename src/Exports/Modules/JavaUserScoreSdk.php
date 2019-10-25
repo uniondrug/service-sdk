@@ -94,4 +94,14 @@ class JavaUserScoreSdk extends SdkBase
     {
         return $this->restful("POST", "/accountrecords/paging", $body);
     }
+
+    /**
+     * 批量发放积分
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
+     */
+    public function batchIntegralAdd($body)
+    {
+        return $this->restful("POST", "/accountrecords/batch/add", $body);
+    }
 }
