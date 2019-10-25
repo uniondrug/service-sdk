@@ -84,4 +84,15 @@ class GoodCenterSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/queryGoods/querySkuInfoByCode", $body);
     }
+
+    /**
+     * 根据channel查询商品
+     * @link https://uniondrug.coding.net/p/java.module.goodscenter/git/blob/development/uniondrug-goods-parent/docs/goods-manager/查询/商品查询.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryGoodByChannel($body)
+    {
+        return $this->restful("POST", "/goodsSalesChannel/queryByChannel", $body);
+    }
 }
