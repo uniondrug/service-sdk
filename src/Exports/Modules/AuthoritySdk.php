@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-06
- * @time   Sun, 06 Oct 2019 15:56:01 +0800
+ * @date   2019-10-24
+ * @time   Thu, 24 Oct 2019 23:48:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -239,6 +239,17 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
+     * 所属系统的用户分页列表
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/pagingMenuAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemWorkerMenuPaging($body)
+    {
+        return $this->restful("POST", "/systemWorkerRole/pagingmenu", $body);
+    }
+
+    /**
      * 关联用户
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/createAction.md
      * @param array $body 入参类型
@@ -294,7 +305,7 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 所属系统的所有关联用户
+     * 所属角色的所有关联用户
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/listAllAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -305,7 +316,7 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
-     * 角色用户分页列表
+     * 所属角色的用户分页列表
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
