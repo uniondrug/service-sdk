@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-10-25
- * @time   Fri, 25 Oct 2019 10:18:04 +0800
+ * @time   Fri, 25 Oct 2019 14:29:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -115,6 +115,17 @@ class MerchantApplySdk extends SdkBase
     public function applyModifyFollower($body)
     {
         return $this->restful("POST", "/apply/modifyfollower", $body);
+    }
+
+    /**
+     * 手动变更状态
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyController/modifyStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyModifyStatus($body)
+    {
+        return $this->restful("POST", "/apply/modifystatus", $body);
     }
 
     /**
