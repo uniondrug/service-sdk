@@ -382,6 +382,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取结算金额
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/getSettlementAmountAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getSettlementAmount($body)
+    {
+        return $this->restful("POST", "/settlement/getSettlementAmount", $body);
+    }
+
+    /**
      * 初始化对比后生成对账单订单数据
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/initCompareOrdersAction.md
      * @param object|array $body 入参类型
@@ -1853,5 +1864,180 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/director/list");
     }
-}
 
+    /**
+     * 更新开票单付款状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/updateDownloadNumAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateBillDownloadNum($body)
+    {
+        return $this->restful("POST", "/bill/updateDownloadNum", $body);
+    }
+
+    /**
+     * 获取bill详情byInvoice
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/detailByInvoiceIdAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getBillDetailByInvoiceId($body)
+    {
+        return $this->restful("POST", "/bill/detailByInvoiceId", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/createAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function poolCutPartnersCreate($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/deleteAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function poolCutPartnersDelete($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function poolCutPartnersDetail($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PoolCutPartnersController/listingAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function poolCutPartnersListing($body)
+    {
+        return $this->restful("POST", "/poolCutPartners/listing", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function announcementDetail($body)
+    {
+        return $this->restful("POST", "/announcement/detail", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/createAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function announcementPartnerCreate($body)
+    {
+        return $this->restful("POST", "/announcementPartner/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function announcementPartnerDetail($body)
+    {
+        return $this->restful("POST", "/announcementPartner/detail", $body);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/updateAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function announcementUpdate($body)
+    {
+        return $this->restful("POST", "/announcement/update", $body);
+    }
+
+    /**
+     * 前端结算错误日志
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/updateAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function frontendStatementLogCreate($body)
+    {
+        return $this->restful("POST", "/frontendStatementLog/create", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/createAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountCreate($body)
+    {
+        return $this->restful("POST", "/organizeAccount/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountDetail($body)
+    {
+        return $this->restful("POST", "/organizeAccount/detail", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountExist($body)
+    {
+        return $this->restful("POST", "/organizeAccount/exist", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/pagingAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountPaging($body)
+    {
+        return $this->restful("POST", "/organizeAccount/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountUpdate($body)
+    {
+        return $this->restful("POST", "/organizeAccount/update", $body);
+    }
+}

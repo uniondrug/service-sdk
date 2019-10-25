@@ -294,4 +294,15 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/evidence/detail", $body);
     }
+
+    /**
+     * userAction()
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/WhiteController/userAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDayOrgan($body)
+    {
+        return $this->restful("POST", "/marketing/plan/partner/changeDayOrgan", $body);
+    }
 }

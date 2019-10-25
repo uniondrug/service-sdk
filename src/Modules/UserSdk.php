@@ -402,5 +402,27 @@ class UserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/accountrecords/data", $body);
     }
 
+    /**
+     * 查询用户证件集合
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberCardsController/ListMemeberIdAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getMemberIdCardByMemberIds($body)
+    {
+        return $this->restful("POST", "/membercards/listmember", $body);
+    }
+
+    /**
+     * 查询证件号数量
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberCardsController/ListMemeberIdAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function cardNumMemberCard($body)
+    {
+        return $this->restful("POST", "/membercards/cardNum", $body);
+    }
+
 
 }

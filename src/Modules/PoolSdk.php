@@ -11,15 +11,15 @@
  * @date   2019-07-24
  * @time   Wed, 24 Jul 2019 11:27:13 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
+namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\ClientResponseInterface;
+use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\Structs\StructInterface;
 
 /**
- * PoolSdk
+ * 资金池模块
  * @package Uniondrug\ServiceSdk\Modules
  */
 class PoolSdk extends Sdk implements ServiceSdkInterface

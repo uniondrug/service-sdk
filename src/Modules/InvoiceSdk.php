@@ -162,4 +162,26 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/invoice/countInvoice", $body);
     }
+
+    /**
+     * 通过保司获取发票导出
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getExportByInsureAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getInvoiceExportByInsure($body)
+    {
+        return $this->restful("POST", "/invoice/getExportByInsure", $body);
+    }
+
+    /**
+     * 通过保司获取发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getPagingByInsureAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function getInvoicePagingByInsure($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingByInsure", $body);
+    }
 }

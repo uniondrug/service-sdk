@@ -13,9 +13,9 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
+use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
-use Uniondrug\Service\ClientResponseInterface;
 
 /**
  * CompensateSdk
@@ -50,6 +50,17 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     public function authorizeDelete($body)
     {
         return $this->restful("POST", "/authorize/delete", $body);
+    }
+
+    /**
+     * LIST列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/listAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function authorizeList($body)
+    {
+        return $this->restful("POST", "/authorize/list", $body);
     }
 
     /**
@@ -105,6 +116,17 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     public function customerPaging($body)
     {
         return $this->restful("POST", "/customer/paging", $body);
+    }
+
+    /**
+     * 权益
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/GroupController/equityAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function groupEquityStatistic($body)
+    {
+        return $this->restful("POST", "/group/statistic/equity", $body);
     }
 
     /**
@@ -193,6 +215,28 @@ class CompensateSdk extends Sdk implements ServiceSdkInterface
     public function logsPaging($body)
     {
         return $this->restful("POST", "/logs/paging", $body);
+    }
+
+    /**
+     * 激活曲线图
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/activateAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectActivateStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/activate", $body);
+    }
+
+    /**
+     * 理赔柱状图
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimChartAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function projectClaimChartStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/claim/chart", $body);
     }
 
     /**
