@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-10-25
- * @time   Fri, 25 Oct 2019 15:29:56 +0800
+ * @time   Fri, 25 Oct 2019 17:34:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -74,6 +74,17 @@ class MerchantApplySdk extends SdkBase
     }
 
     /**
+     * 修改组织ID
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyFinanceController/financeUpdateApplyIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyFinanceUpdateApplyId($body)
+    {
+        return $this->restful("POST", "/apply/finance/update/applyId", $body);
+    }
+
+    /**
      * 添加商户记录
      * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyMerchantController/merchantAddAction.md
      * @param array $body 入参类型
@@ -104,6 +115,17 @@ class MerchantApplySdk extends SdkBase
     public function applyMerchantUpdate($body)
     {
         return $this->restful("POST", "/apply/merchant/update", $body);
+    }
+
+    /**
+     * 修改组织ID
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyMerchantController/merchantUpdateApplyIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantUpdateApplyId($body)
+    {
+        return $this->restful("POST", "/apply/merchant/update/applyId", $body);
     }
 
     /**
@@ -181,5 +203,16 @@ class MerchantApplySdk extends SdkBase
     public function applyStoreDelete($body)
     {
         return $this->restful("POST", "/apply/store/delete", $body);
+    }
+
+    /**
+     * 编辑报名记录
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyUpdate($body)
+    {
+        return $this->restful("POST", "/apply/update", $body);
     }
 }
