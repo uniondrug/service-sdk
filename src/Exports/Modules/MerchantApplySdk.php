@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-10-25
- * @time   Fri, 25 Oct 2019 17:34:37 +0800
+ * @time   Fri, 25 Oct 2019 17:59:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -196,13 +196,24 @@ class MerchantApplySdk extends SdkBase
 
     /**
      * 删除门店信息
-     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/StoreDeleteAction.md
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeDeleteAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function applyStoreDelete($body)
     {
         return $this->restful("POST", "/apply/store/delete", $body);
+    }
+
+    /**
+     * 修改门店信息
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreUpdate($body)
+    {
+        return $this->restful("POST", "/apply/store/update", $body);
     }
 
     /**
