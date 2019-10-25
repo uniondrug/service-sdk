@@ -2009,6 +2009,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountExist($body)
+    {
+        return $this->restful("POST", "/organizeAccount/exist", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/pagingAction.md
      * @param object|array $body 入参类型
