@@ -1045,35 +1045,35 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 项目提额
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/promoteAmountAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function promoteProjectAmount($body)
-    {
-        return $this->restful("POST", "/project/promoteProjectAmount", $body);
-    }
-
-    /**
-     * 修改项目限额
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/changeLimitAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function changeProjectLimit($body)
-    {
-        return $this->restful("POST", "/project/changeProjectLimit", $body);
-    }
-
-    /**
      * 分组提额
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/changeGroupMoneyAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function changeGroupMoney($body)
+    public function groupChangeMoney($body)
     {
-        return $this->restful("POST", "/group/changeGroupMoney", $body);
+        return $this->restful("POST", "/group/groupChangeMoney", $body);
+    }
+
+    /**
+     * 修改项目限额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectLimitController/changeLimitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectLimitChangeLimit($body)
+    {
+        return $this->restful("POST", "/projectLimit/projectLimitChangeLimit", $body);
+    }
+
+    /**
+     * 项目提额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/promoteAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectPromoteAmount($body)
+    {
+        return $this->restful("POST", "/project/projectPromoteAmount", $body);
     }
 }
