@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-10-28
- * @time   Mon, 28 Oct 2019 09:50:45 +0800
+ * @time   Mon, 28 Oct 2019 12:57:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -112,7 +112,7 @@ class MerchantApplySdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function applyMerchantUpdateApplyId($body)
+    public function applyMerchantUpdateOrganizationId($body)
     {
         return $this->restful("POST", "/apply/merchant/update/organizationId", $body);
     }
