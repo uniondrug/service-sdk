@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-10-28
- * @time   Mon, 28 Oct 2019 12:57:13 +0800
+ * @time   Mon, 28 Oct 2019 14:01:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class MerchantApplySdk extends SdkBase
     public function applyFinanceUpdate($body)
     {
         return $this->restful("POST", "/apply/finance/update", $body);
+    }
+
+    /**
+     * 设置完成状态
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyController/finishedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyFinished($body)
+    {
+        return $this->restful("POST", "/apply/finished", $body);
     }
 
     /**
@@ -203,6 +214,17 @@ class MerchantApplySdk extends SdkBase
     public function applyStoreUpdate($body)
     {
         return $this->restful("POST", "/apply/store/update", $body);
+    }
+
+    /**
+     * 修改组织ID
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeUpdateOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreUpdateOrganizationId($body)
+    {
+        return $this->restful("POST", "/apply/store/update/organizationId", $body);
     }
 
     /**
