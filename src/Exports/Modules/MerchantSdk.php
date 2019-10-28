@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-16
- * @time   Mon, 16 Sep 2019 14:02:39 +0800
+ * @date   2019-10-28
+ * @time   Mon, 28 Oct 2019 09:37:18 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -712,6 +712,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 读取保司列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/insureListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInsureList($body)
+    {
+        return $this->restful("POST", "/organizebase/insureList", $body);
+    }
+
+    /**
      * 读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/idsAction.md
      * @param array $body 入参类型
@@ -1402,6 +1413,39 @@ class MerchantSdk extends SdkBase
     public function sync($body)
     {
         return $this->restful("POST", "/organizebase/sync", $body);
+    }
+
+    /**
+     * 商户中心双向同步添加
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncadd($body)
+    {
+        return $this->restful("POST", "/organizebase/syncadd", $body);
+    }
+
+    /**
+     * 商户中心双向添加
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddErpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncAddErp($body)
+    {
+        return $this->restful("POST", "/organizebase/syncadderp", $body);
+    }
+
+    /**
+     * 商户中心同步internal
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/synEditInternalErpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function synEditInternalErp($body)
+    {
+        return $this->restful("POST", "/organizebase/syneditinternalerp", $body);
     }
 
     /**
