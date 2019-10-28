@@ -2040,4 +2040,26 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/organizeAccount/update", $body);
     }
+
+    /**
+     * 编辑保司开票信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/editAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function editInsurerInvoiceInfo($body)
+    {
+        return $this->restful("POST", "/insurerInvoiceInfo/edit", $body);
+    }
+
+    /**
+     * 添加保司开票信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/addAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function addInsurerInvoiceInfo($body)
+    {
+        return $this->restful("POST", "/insurerInvoiceInfo/add", $body);
+    }
 }
