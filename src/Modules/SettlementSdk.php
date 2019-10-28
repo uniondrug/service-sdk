@@ -2042,6 +2042,17 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取连锁财务人员数量
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/addAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountCountWorker($body)
+    {
+        return $this->restful("POST", "/organizeAccount/countWorker", $body);
+    }
+
+    /**
      * 编辑保司开票信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/editAction.md
      * @param array $body 入参类型
