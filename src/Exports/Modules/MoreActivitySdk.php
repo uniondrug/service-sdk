@@ -1,317 +1,55 @@
 <?php
-/**
- * 重要说明
- * 1. 本文件由Postman命令脚本自动生成, 请不要修改, 若需修改
- *    请通过`php console postman`命令重新生成.
- * 2. 本脚本在生成时, 依赖所在项目的Controller有 `@Sdk method`定义,
- *    同时, 项目根目录下的`postman.json`需有`sdk`、`sdkLink`定义
- * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
- *    的`src/Exports/Modules`目录下，并发重新发布release版本.
- * @author PostmanCommand
- * @date   2019-07-17
- * @time   Wed, 17 Jul 2019 22:41:02 +0800
- */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
 
-use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+namespace App\Controllers\Order;
+
+use App\Controllers\Abstracts\Base;
+use App\Logics\Order\CreateLogic;
+use App\Logics\Order\CreateNewLogic;
+use App\Logics\Order\orderStatusLogic;
 
 /**
- * MoreActivitySdk
- * @package Uniondrug\ServiceSdk\Modules
+ * 订单服务
+ * @package App\Controllers\Order
+ * @RoutePrefix("/order")
  */
-class MoreActivitySdk extends SdkBase
+class OrderController extends Base
 {
     /**
-     * 服务名称
-     * 自来`postman.json`文件定义的`sdkService`值
-     * @var string
-     */
-    protected $serviceName = 'more.activity.module';
-
-    /**
-     * 验证码校验
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Captcha/CaptchaController/checkAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function captchaCheck($body)
-    {
-        return $this->restful("POST", "/captcha/check", $body);
-    }
-
-    /**
-     * 短信发送
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Captcha/CaptchaController/sendAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function captchaSend($body)
-    {
-        return $this->restful("POST", "/captcha/send", $body);
-    }
-
-    /**
-     * 语言发送
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Captcha/CaptchaController/voiceSendAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function captchaVoiceSend($body)
-    {
-        return $this->restful("POST", "/captcha/voiceSend", $body);
-    }
-
-    /**
-     * 核销虚拟卡
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/VirtualCard/VirtualCardController/consumeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function cardConsume($body)
-    {
-        return $this->restful("POST", "/virtualCard/consume", $body);
-    }
-
-    /**
-     * 创建虚拟卡
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/VirtualCard/VirtualCardController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function cardCreate($body)
-    {
-        return $this->restful("POST", "/virtualCard/create", $body);
-    }
-
-    /**
-     * 虚拟卡详情
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/VirtualCard/VirtualCardController/infoAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function cardInfo($body)
-    {
-        return $this->restful("POST", "/virtualCard/info", $body);
-    }
-
-    /**
-     * 虚拟卡列表
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/VirtualCard/VirtualCardController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function cardPaging($body)
-    {
-        return $this->restful("POST", "/virtualCard/paging", $body);
-    }
-
-    /**
-     * 开启抽奖
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Draw/DrawController/openAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drawOpen($body)
-    {
-        return $this->restful("POST", "/draw/open", $body);
-    }
-
-    /**
-     * 校验项目资金
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Fund/FundController/checkAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function fundCheck($body)
-    {
-        return $this->restful("POST", "/fund/check", $body);
-    }
-
-    /**
-     * 冻结项目资金
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Fund/FundController/freezeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function fundFreeze($body)
-    {
-        return $this->restful("POST", "/fund/freeze", $body);
-    }
-
-    /**
-     * 商品详情
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goodsGoldDetail($body)
-    {
-        return $this->restful("POST", "/goodsGold/detail", $body);
-    }
-
-    /**
-     * 商品列表
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goodsGoldPaging($body)
-    {
-        return $this->restful("POST", "/goodsGold/paging", $body);
-    }
-
-    /**
-     * 新建或修改商品
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/saveAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goodsGoldSave($body)
-    {
-        return $this->restful("POST", "/goodsGold/save", $body);
-    }
-
-    /**
-     * 用户金币信息
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/infoAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function memberGoldInfo($body)
-    {
-        return $this->restful("POST", "/memberGold/info", $body);
-    }
-
-    /**
-     * 修改金币
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/saveAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function memberGoldSave($body)
-    {
-        return $this->restful("POST", "/memberGold/save", $body);
-    }
-
-    /**
      * 订单创建
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * @Route("/create")
+     * @input \App\Structs\Requests\Order\Create\CreateStruct
+     * @output \App\Structs\Results\Order\Create\ResultCreateStruct
+     * @sdk orderCreate
      */
-    public function orderCreate($body)
+    public function createAction()
     {
-        return $this->restful("POST", "/order/create", $body);
+        $struct = CreateLogic::factory($this->request->getJsonRawBody());
+        return $this->serviceServer->withStruct($struct);
     }
 
     /**
-     * 创建
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * 新订单创建
+     * @Route("/createNew")
+     * @input \App\Structs\Requests\Order\Create\CreateNewStruct
+     * @output \App\Structs\Results\Order\CreateNew\ResultCreateNewStruct
+     * @sdk createNew
      */
-    public function orderGoldCreate($body)
+    public function createNewAction()
     {
-        return $this->restful("POST", "/orderGold/create", $body);
+        $struct = CreateNewLogic::factory($this->request->getJsonRawBody());
+        return $this->serviceServer->withStruct($struct);
     }
 
     /**
-     * 分页
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
+     * 查询订单状态
+     * @Route("/orderStatus")
+     * @input \App\Structs\Requests\Order\Create\CreateNewStruct
+     * @output \App\Structs\Results\Order\CreateNew\ResultCreateNewStruct
+     * @sdk orderStatus
      */
-    public function orderGoldPaging($body)
+    public function orderStatusAction()
     {
-        return $this->restful("POST", "/orderGold/paging", $body);
-    }
-
-    /**
-     * 发起回调
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderNotifyController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function orderNotifyCreate($body)
-    {
-        return $this->restful("POST", "/order/notify/create", $body);
-    }
-
-    /**
-     * 发起支付
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderPayController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function orderPayCreate($body)
-    {
-        return $this->restful("POST", "/order/pay/create", $body);
-    }
-
-    /**
-     * 项目详情
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectDetail($body)
-    {
-        return $this->restful("POST", "/project/detail", $body);
-    }
-
-    /**
-     * 商品详情
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectGoodsDetail($body)
-    {
-        return $this->restful("POST", "/projectGoods/detail", $body);
-    }
-
-    /**
-     * 商品列表
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectGoodsPaging($body)
-    {
-        return $this->restful("POST", "/projectGoods/paging", $body);
-    }
-
-    /**
-     * 商品修改或新增
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/saveAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectGoodsSave($body)
-    {
-        return $this->restful("POST", "/projectGoods/save", $body);
-    }
-
-    /**
-     * 项目列表
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectPaging($body)
-    {
-        return $this->restful("POST", "/project/paging", $body);
-    }
-
-    /**
-     * 项目修改或新增
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/saveAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectSave($body)
-    {
-        return $this->restful("POST", "/project/save", $body);
+        $struct = orderStatusLogic::factory($this->request->getJsonRawBody());
+        return $this->serviceServer->withStruct($struct);
     }
 }
