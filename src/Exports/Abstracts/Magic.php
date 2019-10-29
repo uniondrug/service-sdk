@@ -62,7 +62,7 @@ abstract class Magic
     {
         $this->sdk = $sdk;
         if ($this->ns === null) {
-            throw new NoNameException("export name not defined by ns");
+            throw new NoNameException("sdk export name not defined by ns property");
         }
     }
 }

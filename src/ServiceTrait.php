@@ -7,6 +7,7 @@ namespace Uniondrug\ServiceSdk;
 
 /**
  * SDK入口
+ * @property Modules\UserSdk $user
  * @package Uniondrug\ServiceSdk
  */
 trait ServiceTrait

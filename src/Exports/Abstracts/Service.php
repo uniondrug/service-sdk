@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Abstracts;
 
 use Uniondrug\ServiceSdk\Bases\Service as BaseService;
+use Uniondrug\ServiceSdk\ServiceSdk;
 
 /**
  * V2版基类
@@ -13,4 +14,8 @@ use Uniondrug\ServiceSdk\Bases\Service as BaseService;
  */
 abstract class Service extends BaseService
 {
+    public function __construct(ServiceSdk $sdk)
+    {
+        parent::__construct($sdk, parent::VERSION_2);
+    }
 }

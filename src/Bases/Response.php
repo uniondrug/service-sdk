@@ -6,7 +6,6 @@
 namespace Uniondrug\ServiceSdk\Bases;
 
 use Psr\Http\Message\StreamInterface;
-use Uniondrug\HttpClient\Client as HttpClient;
 use Uniondrug\ServiceSdk\ServiceSdk;
 
 /**
@@ -20,16 +19,11 @@ class Response implements ResponseInterface
      * @var ServiceSdk
      */
     private $sdk;
-    private $logger;
     private $errno = 0;
     private $error = '';
     private $contents = '';
     private $data;
     private $url;
-    /**
-     * @var HttpClient
-     */
-    private static $http;
     /**
      * 开始时间
      * @var double
@@ -49,11 +43,7 @@ class Response implements ResponseInterface
     {
         $this->begin = (double) microtime(true);
         $this->sdk = $sdk;
-        $this->logger = $sdk->getContainer()->getLogger();
         $this->data = new \stdClass();
-        if (self::$http === null) {
-            self::$http = $this->sdk->getContainer()->getShared('httpClient');
-        }
     }
 
     /**
@@ -139,7 +129,7 @@ class Response implements ResponseInterface
         // 1. prepare
         $method = strtoupper($method);
         $this->url = $url;
-        $this->logger->debug("请求{SDK}开始");
+        $this->sdk->getLogger()->debug("SDK请求开始");
         // 2. begin send request
         try {
             // 2.0 options initialized
@@ -161,7 +151,7 @@ class Response implements ResponseInterface
                 }
             }
             // 2.3 send request
-            $resp = self::$http->request($method, $url, $options);
+            $resp = $this->sdk->getHttpClient()->request($method, $url, $options);
             $stream = $resp->getBody();
             if ($stream instanceof StreamInterface) {
                 $this->contents = $stream->getContents();
@@ -171,7 +161,7 @@ class Response implements ResponseInterface
             $this->setError($e->getCode(), $e->getMessage());
         } finally {
             $this->duration = (double) sprintf("%.06f", microtime(true) - $this->begin);
-            $this->logger->info(sprintf("[d=%.06f]请求{SDK}结果 - %s", $this->duration, $this->contents));
+            $this->sdk->getLogger()->info(sprintf("[d=%.06f]SDK请求{{$url}}结果 - %s", $this->duration, $this->contents));
         }
         return $this;
     }
@@ -192,16 +182,6 @@ class Response implements ResponseInterface
     public function toJson()
     {
         return json_encode($this->toArray(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    }
-
-    /**
-     * 打印对象
-     */
-    public function varDump()
-    {
-        unset($this->sdk);
-        unset($this->logger);
-        print_r($this);
     }
 
     /**

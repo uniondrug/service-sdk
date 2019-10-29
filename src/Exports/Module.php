@@ -5,8 +5,11 @@
  */
 namespace Uniondrug\ServiceSdk\Exports;
 
+use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
+
 /**
  * SDK For Module
+ * @property UserSdk $user
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\Magic

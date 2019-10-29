@@ -5,7 +5,9 @@
  */
 namespace Uniondrug\ServiceSdk;
 
+use Phalcon\Logger\AdapterInterface;
 use Uniondrug\Framework\Container;
+use Uniondrug\HttpClient\Client;
 use Uniondrug\ServiceSdk\Bases\EventsTrait;
 use Uniondrug\ServiceSdk\Bases\Response;
 use Uniondrug\ServiceSdk\Bases\Restful;
@@ -36,6 +38,14 @@ class ServiceSdk
      */
     private $container;
     /**
+     * @var AdapterInterface
+     */
+    private $logger;
+    /**
+     * @var Client
+     */
+    private $httpClient;
+    /**
      * @var Settings
      */
     private $settings;
@@ -56,11 +66,13 @@ class ServiceSdk
     public function __construct(Container $container)
     {
         $this->container = $container;
+        $this->logger = $container->getLogger();
+        $this->httpClient = $container->getShared('httpClient');
         $this->settings = new Settings($container->getConfig()->path('sdk'));
     }
 
     /**
-     * 调用Rest
+     * 按Restful调用
      * @param $name
      * @param $arguments
      * @return Response
@@ -105,6 +117,24 @@ class ServiceSdk
     public function getContainer()
     {
         return $this->container;
+    }
+
+    /**
+     * 读取HttpClient
+     * @return Client
+     */
+    public function getHttpClient()
+    {
+        return $this->httpClient;
+    }
+
+    /**
+     * 读取Logger
+     * @return AdapterInterface
+     */
+    public function getLogger()
+    {
+        return $this->logger;
     }
 
     /**

@@ -1,3 +1,14 @@
-# ignore
-.DS_Store
+# GIT Ignore
+
 .idea/
+log/
+tmp/
+bak/
+vendor/
+composer.lock
+console
+server
+
+*.zip
+*.bak
+!*/.gitkeep

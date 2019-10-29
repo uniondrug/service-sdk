@@ -15,8 +15,9 @@ use Uniondrug\ServiceSdk\ServiceSdk;
 class Restful
 {
     /**
-     * @param $name
-     * @param $arguments
+     * 调用Restful入口
+     * @param string $name
+     * @param array  $arguments
      * @throws NotRestException
      */
     public static function __callStatic($name, $arguments)
@@ -26,9 +27,10 @@ class Restful
 
     /**
      * DELETE请求
-     * @param string $uri
-     * @param null   $body
-     * @param null   $extra
+     * @param ServiceSdk $sdk
+     * @param string     $uri
+     * @param null       $body
+     * @param null       $extra
      * @return ResponseInterface
      */
     public static function delete(ServiceSdk $sdk, string $uri, $body = null, $extra = null)
@@ -38,8 +40,9 @@ class Restful
 
     /**
      * GET请求
-     * @param string $uri
-     * @param null   $extra
+     * @param ServiceSdk $sdk
+     * @param string     $uri
+     * @param null       $extra
      * @return ResponseInterface
      */
     public static function get(ServiceSdk $sdk, string $uri, $extra = null)
@@ -49,8 +52,9 @@ class Restful
 
     /**
      * HEAD请求
-     * @param string $uri
-     * @param null   $extra
+     * @param ServiceSdk $sdk
+     * @param string     $uri
+     * @param null       $extra
      * @return ResponseInterface
      */
     public static function head(ServiceSdk $sdk, string $uri, $extra = null)
@@ -60,8 +64,9 @@ class Restful
 
     /**
      * OPTIONS请求
-     * @param string $uri
-     * @param null   $extra
+     * @param ServiceSdk $sdk
+     * @param string     $uri
+     * @param null       $extra
      * @return ResponseInterface
      */
     public static function options(ServiceSdk $sdk, string $uri, $extra = null)
@@ -71,9 +76,10 @@ class Restful
 
     /**
      * PATCH请求
-     * @param string $uri
-     * @param null   $body
-     * @param null   $extra
+     * @param ServiceSdk $sdk
+     * @param string     $uri
+     * @param null       $body
+     * @param null       $extra
      * @return ResponseInterface
      */
     public static function patch(ServiceSdk $sdk, string $uri, $body = null, $extra = null)
@@ -83,9 +89,10 @@ class Restful
 
     /**
      * POST请求
-     * @param string $uri
-     * @param null   $body
-     * @param null   $extra
+     * @param ServiceSdk $sdk
+     * @param string     $uri
+     * @param null       $body
+     * @param null       $extra
      * @return ResponseInterface
      */
     public static function post(ServiceSdk $sdk, string $uri, $body = null, $extra = null)
@@ -95,9 +102,10 @@ class Restful
 
     /**
      * PUT请求
-     * @param string $uri
-     * @param null   $body
-     * @param null   $extra
+     * @param ServiceSdk $sdk
+     * @param string     $uri
+     * @param null       $body
+     * @param null       $extra
      * @return ResponseInterface
      */
     public static function put(ServiceSdk $sdk, string $uri, $body = null, $extra = null)
@@ -106,7 +114,7 @@ class Restful
     }
 
     /**
-     * HttpClient请求
+     * 调用Restful请求
      * @param ServiceSdk $sdk
      * @param string     $method
      * @param string     $url

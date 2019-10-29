@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk\Modules\Abstracts;
 
 use Uniondrug\ServiceSdk\Bases\Service as BaseService;
+use Uniondrug\ServiceSdk\ServiceSdk;
 
 /**
  * V1版基类
@@ -13,4 +14,23 @@ use Uniondrug\ServiceSdk\Bases\Service as BaseService;
  */
 abstract class Service extends BaseService
 {
+
+    const METHOD_DELETE = "DELETE";
+
+    const METHOD_GET = "GET";
+
+    const METHOD_HEAD = "HEAD";
+
+    const METHOD_OPTIONS = "OPTIONS";
+
+    const METHOD_PATCH = "PATCH";
+
+    const METHOD_POST = "POST";
+
+    const METHOD_PUT = "PUT";
+
+    public function __construct(ServiceSdk $sdk)
+    {
+        parent::__construct($sdk, parent::VERSION_1);
+    }
 }

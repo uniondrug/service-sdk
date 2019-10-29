@@ -16,7 +16,7 @@ trait EventsTrait
     /**
      * 允许缓存
      * @param int $seconds
-     * @return ServiceSdk|$this
+     * @return $this
      */
     final public function withCache(int $seconds = 300)
     {
@@ -26,7 +26,7 @@ trait EventsTrait
     /**
      * 允许重试
      * @param int $limit
-     * @return ServiceSdk|$this
+     * @return $this
      */
     final public function withRetry(int $limit = 3)
     {
