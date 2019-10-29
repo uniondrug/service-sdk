@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-24
- * @time   Mon, 24 Jun 2019 15:38:10 +0800
+ * @date   2019-10-24
+ * @time   Thu, 24 Oct 2019 14:16:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,6 +41,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 点击次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/BuriedPointController/addTimesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addBuriedPointTimes($body)
+    {
+        return $this->restful("POST", "/buriedPoint/addTimes", $body);
+    }
+
+    /**
      * 添加
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/valueAction.md
      * @param array $body 入参类型
@@ -53,6 +64,61 @@ class AiProfitDataSdk extends SdkBase
 
     /**
      * 添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addMarket($body)
+    {
+        return $this->restful("POST", "/market/add", $body);
+    }
+
+    /**
+     * 弹窗添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPopups($body)
+    {
+        return $this->restful("POST", "/popups/add", $body);
+    }
+
+    /**
+     * 点击次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/addClickAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPopupsClick($body)
+    {
+        return $this->restful("POST", "/popups/addClick", $body);
+    }
+
+    /**
+     * 打开次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/addOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPopupsOpen($body)
+    {
+        return $this->restful("POST", "/popups/addOpen", $body);
+    }
+
+    /**
+     * 路由添加
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addRouter($body)
+    {
+        return $this->restful("POST", "/router/add", $body);
+    }
+
+    /**
+     * 添加
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -60,6 +126,17 @@ class AiProfitDataSdk extends SdkBase
     public function addUser($body)
     {
         return $this->restful("POST", "/user/add", $body);
+    }
+
+    /**
+     * 附近门店数据——累计销售额，累计开单数，今日销售额，今日开单数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/aroundDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function aroundData($body)
+    {
+        return $this->restful("POST", "/partner/aroundData", $body);
     }
 
     /**
@@ -96,6 +173,28 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 上月最佳门店销售额，药联最佳门店半年销售额曲线图，附近最佳门店半年销售额曲线图
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/bestStoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bestStore($body)
+    {
+        return $this->restful("POST", "/partner/bestStore", $body);
+    }
+
+    /**
+     * 绑定连锁数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/bindCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bindCountUser($body)
+    {
+        return $this->restful("POST", "/user/bind/count", $body);
+    }
+
+    /**
      * 取消首页Banner
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/cancelBannerAction.md
      * @param array $body 入参类型
@@ -107,6 +206,28 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 某日的数据明细
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/dataDetailByDayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataDetailByDay($body)
+    {
+        return $this->restful("POST", "/redPacket/dataDetailByDay", $body);
+    }
+
+    /**
+     * 根据时间段和连锁code查询数据列表提供折线图数据
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/dataListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataList($body)
+    {
+        return $this->restful("POST", "/redPacket/dataList", $body);
+    }
+
+    /**
      * 下架
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/disableAction.md
      * @param array $body 入参类型
@@ -115,6 +236,17 @@ class AiProfitDataSdk extends SdkBase
     public function disableActivity($body)
     {
         return $this->restful("POST", "/activity/disable", $body);
+    }
+
+    /**
+     * 下架
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function disablePopups($body)
+    {
+        return $this->restful("POST", "/popups/disable", $body);
     }
 
     /**
@@ -137,6 +269,39 @@ class AiProfitDataSdk extends SdkBase
     public function editActivity($body)
     {
         return $this->restful("POST", "/activity/edit", $body);
+    }
+
+    /**
+     * 编辑弹窗
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editPopups($body)
+    {
+        return $this->restful("POST", "/popups/edit", $body);
+    }
+
+    /**
+     * 编辑路由
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editRouter($body)
+    {
+        return $this->restful("POST", "/router/edit", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editUser($body)
+    {
+        return $this->restful("POST", "/user/edit", $body);
     }
 
     /**
@@ -184,6 +349,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * List列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getActivityList($body)
+    {
+        return $this->restful("POST", "/activity/list", $body);
+    }
+
+    /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/pagingAction.md
      * @param array $body 入参类型
@@ -192,6 +368,17 @@ class AiProfitDataSdk extends SdkBase
     public function getActivityPaging($body)
     {
         return $this->restful("POST", "/activity/paging", $body);
+    }
+
+    /**
+     * 获取下级列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/getBannerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getChildrenList($body)
+    {
+        return $this->restful("POST", "/router/childrenList", $body);
     }
 
     /**
@@ -206,6 +393,50 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 获取默认连锁
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/getDefaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDefaultUser($body)
+    {
+        return $this->restful("POST", "/user/get/default", $body);
+    }
+
+    /**
+     * 取最新一条有效弹框
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/effectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEffectPopups($body)
+    {
+        return $this->restful("POST", "/popups/effect", $body);
+    }
+
+    /**
+     * 弹窗详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPopupsInfo($body)
+    {
+        return $this->restful("POST", "/popups/info", $body);
+    }
+
+    /**
+     * 翻页列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PopupsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPopupsPaging($body)
+    {
+        return $this->restful("POST", "/popups/paging", $body);
+    }
+
+    /**
      * 费率值
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RatioController/valueAction.md
      * @param array $body 入参类型
@@ -214,6 +445,28 @@ class AiProfitDataSdk extends SdkBase
     public function getRatioValue($body)
     {
         return $this->restful("POST", "/value", $body);
+    }
+
+    /**
+     * 路由详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRouterInfo($body)
+    {
+        return $this->restful("POST", "/router/info", $body);
+    }
+
+    /**
+     * 翻页列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RouterController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRouterPaging($body)
+    {
+        return $this->restful("POST", "/router/paging", $body);
     }
 
     /**
@@ -228,7 +481,18 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 列表
+     * LIST列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserList($body)
+    {
+        return $this->restful("POST", "/user/list", $body);
+    }
+
+    /**
+     * PAGING列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -236,6 +500,94 @@ class AiProfitDataSdk extends SdkBase
     public function getUserPaging($body)
     {
         return $this->restful("POST", "/user/paging", $body);
+    }
+
+    /**
+     * 上月药联增值服务最佳门店开单数，预计可产生的销售额
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/lastBestAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function lastBest($body)
+    {
+        return $this->restful("POST", "/partner/lastBest", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketDetail($body)
+    {
+        return $this->restful("POST", "/market/detail", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/MarketController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketUpdate($body)
+    {
+        return $this->restful("POST", "/market/update", $body);
+    }
+
+    /**
+     * 模块显示与关闭
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/changeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleChange($body)
+    {
+        return $this->restful("POST", "/modulecontrol/change", $body);
+    }
+
+    /**
+     * 根据连锁code判断是参加活动连锁还是未参加活动
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleCheck($body)
+    {
+        return $this->restful("POST", "/modulecontrol/check", $body);
+    }
+
+    /**
+     * 模块详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleDetail($body)
+    {
+        return $this->restful("POST", "/modulecontrol/detail", $body);
+    }
+
+    /**
+     * 模块列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/ListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleList($body)
+    {
+        return $this->restful("POST", "/modulecontrol/list", $body);
+    }
+
+    /**
+     * 编辑模块
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleUpdate($body)
+    {
+        return $this->restful("POST", "/modulecontrol/update", $body);
     }
 
     /**
@@ -280,6 +632,17 @@ class AiProfitDataSdk extends SdkBase
     public function partnerBillCount($body)
     {
         return $this->restful("POST", "/partner/billCount", $body);
+    }
+
+    /**
+     * 根据连锁名称获取列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/partnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerList($body)
+    {
+        return $this->restful("POST", "/partner/partnerList", $body);
     }
 
     /**
@@ -382,6 +745,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 根据code判断是否存在连锁
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/getPartnerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redPacketGetPartner($body)
+    {
+        return $this->restful("POST", "/redPacket/getPartner", $body);
+    }
+
+    /**
      * 连锁战绩
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/RedPacketController/partnerAction.md
      * @param array $body 入参类型
@@ -404,6 +778,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 设置默认连锁
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/setDefaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setDefaultUser($body)
+    {
+        return $this->restful("POST", "/user/set/default", $body);
+    }
+
+    /**
      * 最佳排行
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/StoreController/bestAction.md
      * @param array $body 入参类型
@@ -412,6 +797,17 @@ class AiProfitDataSdk extends SdkBase
     public function storeBestRank($body)
     {
         return $this->restful("POST", "/store/best", $body);
+    }
+
+    /**
+     * 根据新的连锁ID获取附近门店信息
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/storeListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeList($body)
+    {
+        return $this->restful("POST", "/partner/storeList", $body);
     }
 
     /**
@@ -448,7 +844,7 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 修改登录时间
+     * 修改最后登录时间
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/updateLoginTimeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

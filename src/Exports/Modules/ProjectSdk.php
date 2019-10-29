@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-14
- * @time   Fri, 14 Jun 2019 11:15:13 +0800
+ * @date   2019-10-14
+ * @time   Mon, 14 Oct 2019 17:02:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -98,7 +98,7 @@ class ProjectSdk extends SdkBase
 
     /**
      * 用户批量添加
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/freeAddAction.md
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/addsAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -149,6 +149,17 @@ class ProjectSdk extends SdkBase
     public function cancelProject($body)
     {
         return $this->restful("POST", "/project/cancel", $body);
+    }
+
+    /**
+     * 检查兑换码是否存在
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/checkUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkUser($body)
+    {
+        return $this->restful("POST", "/verify/checkUser", $body);
     }
 
     /**
@@ -385,6 +396,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 通过订单号批量查找兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByorderNosAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getByOrderNos($body)
+    {
+        return $this->restful("POST", "/user/getByOrderNos", $body);
+    }
+
+    /**
      * 获取唯一兑换码
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/cdKeyAction.md
      * @param array $body 入参类型
@@ -404,6 +426,17 @@ class ProjectSdk extends SdkBase
     public function getCdKeyByGroup($body)
     {
         return $this->restful("POST", "/user/getCdKeyByGroup", $body);
+    }
+
+    /**
+     * 智赔用户列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCompensateUserPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCompensateUserPaging($body)
+    {
+        return $this->restful("POST", "/user/compensate/paging", $body);
     }
 
     /**
@@ -693,6 +726,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 计算分组下权益的有效期
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/termAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupTerm($body)
+    {
+        return $this->restful("POST", "/group/term", $body);
+    }
+
+    /**
      * 统计保险公司pbm和非pbm项目数量
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/icpbmAction.md
      * @param array $body 入参类型
@@ -701,6 +745,17 @@ class ProjectSdk extends SdkBase
     public function icpbm($body)
     {
         return $this->restful("POST", "/project/icpbm", $body);
+    }
+
+    /**
+     * 信息变更
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/modifyVerifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function modifyVerify($body)
+    {
+        return $this->restful("POST", "/verify/modifyVerify", $body);
     }
 
     /**
@@ -756,6 +811,17 @@ class ProjectSdk extends SdkBase
     public function projectLimit($body)
     {
         return $this->restful("POST", "/project/limit", $body);
+    }
+
+    /**
+     * 根据type分组分表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/projectTypePaingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectTypePaing($body)
+    {
+        return $this->restful("POST", "/group/projecttypepaing", $body);
     }
 
     /**
@@ -858,6 +924,50 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 统计分组金额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/SumIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sumids($body)
+    {
+        return $this->restful("POST", "/group/sumids", $body);
+    }
+
+    /**
+     * 根据分单号查找用户在指定分组下未激活的兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByBillNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function UserBillNo($body)
+    {
+        return $this->restful("POST", "/user/billNo", $body);
+    }
+
+    /**
+     * 根据分单号查找对应的用户权益ID
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getBillNoEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function UserBillNoEquity($body)
+    {
+        return $this->restful("POST", "/user/billNo/equity", $body);
+    }
+
+    /**
+     * 检查项目下手机号领取了几个
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/checkByConditionAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userCheck($body)
+    {
+        return $this->restful("POST", "/user/check/condition", $body);
+    }
+
+    /**
      * 通过外部订单号查找兑换码信息
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getByOutOrderNoAction.md
      * @param array $body 入参类型
@@ -869,6 +979,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 根据权益id
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userGetEquityId($body)
+    {
+        return $this->restful("POST", "/user/equityid", $body);
+    }
+
+    /**
      * 回收兑换码
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/recoverAction.md
      * @param array $body 入参类型
@@ -877,5 +998,82 @@ class ProjectSdk extends SdkBase
     public function userRecover($body)
     {
         return $this->restful("POST", "/user/recover", $body);
+    }
+
+    /**
+     * 根据分单号，姓名 身份证号 查找兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/successListsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userSuccessList($body)
+    {
+        return $this->restful("POST", "/user/success/list", $body);
+    }
+
+    /**
+     * 兑换码列表查询
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/VerifyPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function verifyPaging($body)
+    {
+        return $this->restful("POST", "/verify/verifyPaging", $body);
+    }
+
+    /**
+     * 查询项目限制数据
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/groupLimitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupLimit($body)
+    {
+        return $this->restful("POST", "/group/check/limit", $body);
+    }
+
+    /**
+     * 检查项目，成员的权益是否打到限额或者限制数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/checkLimitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkLimit($body)
+    {
+        return $this->restful("POST", "/verify/checkLimit", $body);
+    }
+
+    /**
+     * 分组提额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/changeGroupMoneyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupChangeMoney($body)
+    {
+        return $this->restful("POST", "/group/groupChangeMoney", $body);
+    }
+
+    /**
+     * 修改项目限额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectLimitController/changeLimitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectLimitChangeLimit($body)
+    {
+        return $this->restful("POST", "/projectLimit/projectLimitChangeLimit", $body);
+    }
+
+    /**
+     * 项目提额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/promoteAmountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectPromoteAmount($body)
+    {
+        return $this->restful("POST", "/project/projectPromoteAmount", $body);
     }
 }

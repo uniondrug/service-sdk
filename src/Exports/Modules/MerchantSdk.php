@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-10
- * @time   Sun, 10 Mar 2019 15:44:24 +0800
+ * @date   2019-10-28
+ * @time   Mon, 28 Oct 2019 09:37:18 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class MerchantSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'merchant.module';
+
+    /**
+     * 通过名称和手机号获取用户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function account($body)
+    {
+        return $this->restful("POST", "/assistants/account", $body);
+    }
 
     /**
      * 添加账号
@@ -228,6 +239,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 读取连锁列表（有门店数量）
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function chainPaging($body)
+    {
+        return $this->restful("POST", "/organizebase/chainPaging", $body);
+    }
+
+    /**
      * 查找连锁下有多少门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainStoreAction.md
      * @param array $body 入参类型
@@ -401,6 +423,17 @@ class MerchantSdk extends SdkBase
     public function editInvoice($body)
     {
         return $this->restful("POST", "/invoice/edit", $body);
+    }
+
+    /**
+     * 地图打点信息调整
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editMapAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editmap($body)
+    {
+        return $this->restful("POST", "/organizebase/editmap", $body);
     }
 
     /**
@@ -679,6 +712,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 读取保司列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/insureListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInsureList($body)
+    {
+        return $this->restful("POST", "/organizebase/insureList", $body);
+    }
+
+    /**
      * 读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/idsAction.md
      * @param array $body 入参类型
@@ -797,6 +841,17 @@ class MerchantSdk extends SdkBase
     public function getWorkerPaging($body)
     {
         return $this->restful("POST", "/worker/paging", $body);
+    }
+
+    /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/IdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ids($body)
+    {
+        return $this->restful("POST", "/assistants/ids", $body);
     }
 
     /**
@@ -943,6 +998,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 查询门店是否存在
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/isExistAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function isExistStore($body)
+    {
+        return $this->restful("POST", "/stores/isExist", $body);
+    }
+
+    /**
      * 获取某类型下的组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllAction.md
      * @param array $body 入参类型
@@ -976,6 +1042,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 查询对应的图片信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listImageAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listImage($body)
+    {
+        return $this->restful("POST", "/organizebase/listimage", $body);
+    }
+
+    /**
      * ROOT下独立结算组织查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listIsIndependentAction.md
      * @param array $body 入参类型
@@ -987,6 +1064,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 简洁查询连锁
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listName($body)
+    {
+        return $this->restful("POST", "/organizebase/listname", $body);
+    }
+
+    /**
      * 读取商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAction.md
      * @param array $body 入参类型
@@ -995,6 +1083,28 @@ class MerchantSdk extends SdkBase
     public function listOrgabuzeBase($body)
     {
         return $this->restful("POST", "/organizebase/list", $body);
+    }
+
+    /**
+     * 简洁查询连锁名称返回门店名称
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listParentNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listParentname($body)
+    {
+        return $this->restful("POST", "/organizebase/listparentname", $body);
+    }
+
+    /**
+     * 通过名称获取连锁下的门店简易信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listRootIdNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listRootIdName($body)
+    {
+        return $this->restful("POST", "/organizebase/listrootidname", $body);
     }
 
     /**
@@ -1017,6 +1127,17 @@ class MerchantSdk extends SdkBase
     public function listsStoreImages($body)
     {
         return $this->restful("POST", "/storeimages/lists", $body);
+    }
+
+    /**
+     * 获取连锁下的门店简易信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listStoreSmallOrgAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listStoreSmallOrg($body)
+    {
+        return $this->restful("POST", "/organizebase/liststoresmall", $body);
     }
 
     /**
@@ -1163,6 +1284,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 获取连锁&门店id
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/cooperationInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnersCooperationInfo($body)
+    {
+        return $this->restful("POST", "/partners/cooperationinfo", $body);
+    }
+
+    /**
      * 获取连锁集合的资金池
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/fundPoolsAction.md
      * @param array $body 入参类型
@@ -1270,6 +1402,50 @@ class MerchantSdk extends SdkBase
     public function storeNum($body)
     {
         return $this->restful("POST", "/organizebase/storeNum", $body);
+    }
+
+    /**
+     * 同步门店信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sync($body)
+    {
+        return $this->restful("POST", "/organizebase/sync", $body);
+    }
+
+    /**
+     * 商户中心双向同步添加
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncadd($body)
+    {
+        return $this->restful("POST", "/organizebase/syncadd", $body);
+    }
+
+    /**
+     * 商户中心双向添加
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddErpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncAddErp($body)
+    {
+        return $this->restful("POST", "/organizebase/syncadderp", $body);
+    }
+
+    /**
+     * 商户中心同步internal
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/synEditInternalErpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function synEditInternalErp($body)
+    {
+        return $this->restful("POST", "/organizebase/syneditinternalerp", $body);
     }
 
     /**

@@ -32,4 +32,14 @@ class JavaOrderCodeSdk extends SdkBase
         return $this->restful("POST", "/orderno/audit/create", $body);
     }
 
+    /**
+     * 创建退款申请单单号
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/uniondrug/uniondrug-services/uniondrug-ordercode-service/CHANGELOG.MD#user-content-434
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createApplyNo($body)
+    {
+        return $this->restful("POST", "/orderno/backamountapply/create", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-03-06
- * @time   Wed, 06 Mar 2019 18:51:26 +0800
+ * @date   2019-07-23
+ * @time   Tue, 23 Jul 2019 10:57:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -350,6 +350,17 @@ class UserSdk extends SdkBase
     }
 
     /**
+     * 查询用户列表证件
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberCardsController/PagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pagingMemberCard($body)
+    {
+        return $this->restful("POST", "/membercards/paging", $body);
+    }
+
+    /**
      * 查询用户列表
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/PagingAction.md
      * @param array $body 入参类型
@@ -424,5 +435,16 @@ class UserSdk extends SdkBase
     public function uniteOpenid($body)
     {
         return $this->restful("POST", "/wxmember/edituniteopenid", $body);
+    }
+
+    /**
+     * 批量查询用户列表
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getWxmemberList($body)
+    {
+        return $this->restful("POST", "/wxmember/list", $body);
     }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Unions`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-06-20
- * @time   Thu, 20 Jun 2019 10:18:16 +0800
+ * @date   2019-10-11
+ * @time   Fri, 11 Oct 2019 14:49:32 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Unions;
 
@@ -38,6 +38,17 @@ class ProjectSdk extends SdkBase
     public function activate($body)
     {
         return $this->restful("POST", "/equity/activate", $body);
+    }
+
+    /**
+     * 根据cdkey 创建权益
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function AddByCdKey($body)
+    {
+        return $this->restful("POST", "/equity/cdkey/add", $body);
     }
 
     /**
@@ -87,5 +98,82 @@ class ProjectSdk extends SdkBase
     public function CreateImmediately($body)
     {
         return $this->restful("POST", "/equity/create/immediately", $body);
+    }
+
+    /**
+     * 开户
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/activateAccountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchAcitvateAccount($body)
+    {
+        return $this->restful("POST", "/equity/batch/activate/account", $body);
+    }
+
+    /**
+     * 发起理赔【冻结】
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/applyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchApply($body)
+    {
+        return $this->restful("POST", "/equity/batch/apply", $body);
+    }
+
+    /**
+     * 余额多条查询
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/balanceDetailsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchBalanceDetails($body)
+    {
+        return $this->restful("POST", "/equity/batch/balance/details", $body);
+    }
+
+    /**
+     * 理赔 【扣除】
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/claimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchClaim($body)
+    {
+        return $this->restful("POST", "/equity/batch/claim", $body);
+    }
+
+    /**
+     * 充值
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/rechargeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchRecharge($body)
+    {
+        return $this->restful("POST", "/equity/batch/recharge", $body);
+    }
+
+    /**
+     * 驳回 【解冻】
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/rejectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchReject($body)
+    {
+        return $this->restful("POST", "/equity/batch/reject", $body);
+    }
+
+    /**
+     * 根据分单号同步用户信息
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquitySyncController/billNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equitySyncBillNo($body)
+    {
+        return $this->restful("POST", "/equity/sync/billNo", $body);
     }
 }

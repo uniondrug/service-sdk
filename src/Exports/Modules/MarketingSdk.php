@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-02-15
- * @time   Fri, 15 Feb 2019 10:41:09 +0800
+ * @date   2019-10-25
+ * @time   Fri, 25 Oct 2019 13:18:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -17,8 +17,8 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
- * Class MarketingSdk
- * @package Uniondrug\ServiceSdk\Exports\Modules
+ * MarketingSdk
+ * @package Uniondrug\ServiceSdk\Modules
  */
 class MarketingSdk extends SdkBase
 {
@@ -28,6 +28,72 @@ class MarketingSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'marketing.module';
+
+    /**
+     * 获取开启换新日的连锁
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/changeDayOrganAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDayOrgan($body)
+    {
+        return $this->restful("POST", "/marketing/plan/partner/changeDayOrgan", $body);
+    }
+
+    /**
+     * 添加凭证
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/EvidenceController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceCreate($body)
+    {
+        return $this->restful("POST", "/evidence/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/EvidenceController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceDetail($body)
+    {
+        return $this->restful("POST", "/evidence/detail", $body);
+    }
+
+    /**
+     * 获取用户凭证
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/EvidenceController/memberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceMember($body)
+    {
+        return $this->restful("POST", "/evidence/member", $body);
+    }
+
+    /**
+     * 修改凭证时间
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/EvidenceController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceUpdate($body)
+    {
+        return $this->restful("POST", "/evidence/update", $body);
+    }
+
+    /**
+     * 设置可用
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/EvidenceController/useAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function evidenceUse($body)
+    {
+        return $this->restful("POST", "/evidence/use", $body);
+    }
 
     /**
      * 批量添加药品
@@ -63,7 +129,7 @@ class MarketingSdk extends SdkBase
     }
 
     /**
-     * 获取用户是否参加本月换新日活动
+     * 获取用户是否参加换新日活动
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/isJoinAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -118,6 +184,28 @@ class MarketingSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingPlanDetail($body)
+    {
+        return $this->restful("POST", "/marketing/plan/detail", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingPlanList($body)
+    {
+        return $this->restful("POST", "/marketing/plan/list", $body);
+    }
+
+    /**
      * 获取该连锁下的营销数据
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/detailAction.md
      * @param array $body 入参类型
@@ -126,6 +214,17 @@ class MarketingSdk extends SdkBase
     public function marketingPlanPartnerDetail($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/detail", $body);
+    }
+
+    /**
+     * 获取该连锁下的列表
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingPlanPartnerList($body)
+    {
+        return $this->restful("POST", "/marketing/plan/partner/list", $body);
     }
 
     /**
@@ -148,5 +247,82 @@ class MarketingSdk extends SdkBase
     public function marketingPlaPartnerAdd($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/add", $body);
+    }
+
+    /**
+     * 用户数据
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RecordController/memberDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberData($body)
+    {
+        return $this->restful("POST", "/marketing/record/memberData", $body);
+    }
+
+    /**
+     * 通过类型查询用户订单
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/memberOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberOrder($body)
+    {
+        return $this->restful("POST", "/marketing/order/memberOrder", $body);
+    }
+
+    /**
+     * 类型订单
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/orderCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCount($body)
+    {
+        return $this->restful("POST", "/marketing/order/orderCount", $body);
+    }
+
+    /**
+     * 创建记录
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RecordController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recordCreate($body)
+    {
+        return $this->restful("POST", "/marketing/record/create", $body);
+    }
+
+    /**
+     * 用户参加营销活动下订单接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/refundAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refund($body)
+    {
+        return $this->restful("POST", "/marketing/order/refund", $body);
+    }
+
+    /**
+     * userAction()
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/WhiteController/userAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function whiteUser($body)
+    {
+        return $this->restful("POST", "/white/user", $body);
+    }
+
+    /**
+     * 用户参加营销活动下订单接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/yearCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function yearCreate($body)
+    {
+        return $this->restful("POST", "/marketing/order/yearCreate", $body);
     }
 }

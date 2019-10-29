@@ -56,7 +56,8 @@ trait SdkTrait
         'activity' => 'module',
         'weixin' => 'module',
         'car' => 'module',
-        'moreActivity' => 'module'
+        'moreActivity' => 'module',
+        'jwt' => 'module'
     ];
 
     /**

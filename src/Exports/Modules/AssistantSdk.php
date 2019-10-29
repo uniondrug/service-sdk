@@ -11,6 +11,7 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -281,4 +282,144 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/users/update", $body);
     }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getAreaConfig($body)
+    {
+        return $this->restful("POST", "/userArea/areaConfig", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaCreate($body)
+    {
+        return $this->restful("POST", "/userArea/create", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaUpdate($body)
+    {
+        return $this->restful("POST", "/userArea/update", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaDetail($body)
+    {
+        return $this->restful("POST", "/userArea/detail", $body);
+    }
+
+    /**
+     * 获取区域配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/areaConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userAreaPaging($body)
+    {
+        return $this->restful("POST", "/userArea/paging", $body);
+    }
+
+
+    /**
+     * 根据省份ID获取省份信息
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getProvinceByIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProvinceByIds($body)
+    {
+        return $this->restful("POST", "/userArea/getProvinceByIds", $body);
+    }
+
+
+    /**
+     * 根据区域ID获取区域信息
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getAreaByIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getAreaByIds($body)
+    {
+        return $this->restful("POST", "/userArea/getAreaByIds", $body);
+    }
+
+
+    /**
+     * 根据区域ID获取区域信息
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getByProvinceIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserAreaByProvinceIds($body)
+    {
+        return $this->restful("POST", "/userArea/getByProvinceIds", $body);
+    }
+
+
+    /**
+     * 获取区域完整配置
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getByUserIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getByUserId($body)
+    {
+        return $this->restful("POST", "/userArea/getByUserId", $body);
+    }
+
+
+    /**
+     * 信息上报列表
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function feedbackPaing($body)
+    {
+        return $this->restful("POST", "/feedback/paging", $body);
+    }
+
+
+    /**
+     * 信息上报处理
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/upateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function feedbackUpdate($body)
+    {
+        return $this->restful("POST", "/feedback/update", $body);
+    }
+
+
+    /**
+     * 信息上报详情
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function feedbackDetail($body)
+    {
+        return $this->restful("POST", "/feedback/detail", $body);
+    }
+
 }

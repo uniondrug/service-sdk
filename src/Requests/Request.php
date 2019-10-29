@@ -196,6 +196,10 @@ class Request
         if (!isset($options['headers']['User-Agent'])) {
             $options['headers']['User-Agent'] = $this->config->userAgent;
         }
+        // 5. Origin 项目来源
+        if (!isset($options['headers']['Origin'])) {
+            $options['headers']['Origin'] = $this->config->appName;
+        }
         // n. return
         return $options;
     }
