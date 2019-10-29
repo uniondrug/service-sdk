@@ -8,13 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
-<<<<<<< HEAD
  * @date   2019-10-29
- * @time   Tue, 29 Oct 2019 10:04:54 +0800
-=======
- * @date   2019-10-28
- * @time   Mon, 28 Oct 2019 14:29:09 +0800
->>>>>>> c0515a320248cc5db7b6ba2d2052575ced6d7ca3
+ * @time   Tue, 29 Oct 2019 13:52:15 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -431,17 +426,6 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 查询订单状态
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/orderStatusAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function orderStatus($body)
-    {
-        return $this->restful("POST", "/order/orderStatus", $body);
-    }
-
-    /**
      * 项目详情
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/detailAction.md
      * @param array $body 入参类型
@@ -516,6 +500,17 @@ class MoreActivitySdk extends SdkBase
     public function projectSave($body)
     {
         return $this->restful("POST", "/project/save", $body);
+    }
+
+    /**
+     * 查询订单状态
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/orderStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function status($body)
+    {
+        return $this->restful("POST", "/order/status", $body);
     }
 
     /**
