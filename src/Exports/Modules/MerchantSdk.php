@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-28
- * @time   Mon, 28 Oct 2019 09:37:18 +0800
+ * @date   2019-10-30
+ * @time   Wed, 30 Oct 2019 18:37:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -258,6 +258,17 @@ class MerchantSdk extends SdkBase
     public function chainStore($body)
     {
         return $this->restful("POST", "/organizebase/chainStore", $body);
+    }
+
+    /**
+     * 城市查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/cityPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cityPaging($body)
+    {
+        return $this->restful("POST", "/organizebase/citypaging", $body);
     }
 
     /**
@@ -987,6 +998,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 通过internalCode获取连锁门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function internalcode($body)
+    {
+        return $this->restful("POST", "/organizebase/internalcode", $body);
+    }
+
+    /**
      * 通过默认编码获取组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalCodeInfoAction.md
      * @param array $body 入参类型
@@ -1116,6 +1138,17 @@ class MerchantSdk extends SdkBase
     public function listRootidOrganizeBase($body)
     {
         return $this->restful("POST", "/organizebase/listrootid", $body);
+    }
+
+    /**
+     * 读取商户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listSmallAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listSmallOrgabuzeBase($body)
+    {
+        return $this->restful("POST", "/organizebase/listsmall", $body);
     }
 
     /**
