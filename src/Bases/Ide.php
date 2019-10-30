@@ -121,5 +121,3 @@ trait {{NAME}}Trait {
 EOT;
     }
 }
-
-Ide::builder(null);
