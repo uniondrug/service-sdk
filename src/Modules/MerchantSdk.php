@@ -1215,4 +1215,15 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/organizebase/insureList", $body);
     }
+
+    /**
+     * 读取保司列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/insureListAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function cityPaging($body)
+    {
+        return $this->restful("POST", "/organizebase/citypaging", $body);
+    }
 }
