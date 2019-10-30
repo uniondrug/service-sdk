@@ -2042,9 +2042,20 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 获取连锁财务人员数量
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/addAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function organizeAccountCountWorker($body)
+    {
+        return $this->restful("POST", "/organizeAccount/countWorker", $body);
+    }
+
+    /**
      * 编辑保司开票信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/editAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function editInsurerInvoiceInfo($body)
@@ -2055,11 +2066,33 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加保司开票信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/addAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
     public function addInsurerInvoiceInfo($body)
     {
         return $this->restful("POST", "/insurerInvoiceInfo/add", $body);
+    }
+
+    /**
+     * 商业公司单体店关系详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/addAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function businessSingleUnitDetail($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/detail", $body);
+    }
+
+    /**
+     * 商业公司单体店关系列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/addAction.md
+     * @param object|array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function businessSingleUnitListing($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/listing", $body);
     }
 }
