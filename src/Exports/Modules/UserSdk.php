@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-23
- * @time   Tue, 23 Jul 2019 10:57:54 +0800
+ * @date   2019-10-30
+ * @time   Wed, 30 Oct 2019 14:59:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -52,6 +52,17 @@ class UserSdk extends SdkBase
     }
 
     /**
+     * 添加无openId用户
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/addSmallAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addSmallWxMembers($body)
+    {
+        return $this->restful("POST", "/wxmember/addsmall", $body);
+    }
+
+    /**
      * 获取用户120获取的积分数据
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/aidAction.md
      * @param array $body 入参类型
@@ -72,6 +83,17 @@ class UserSdk extends SdkBase
     public function bindWeixin($body)
     {
         return $this->restful("POST", "/member/bind", $body);
+    }
+
+    /**
+     * 查询证件号数量
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberCardsController/cardNumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cardNumMemberCard($body)
+    {
+        return $this->restful("POST", "/membercards/cardNum", $body);
     }
 
     /**
@@ -284,6 +306,17 @@ class UserSdk extends SdkBase
     }
 
     /**
+     * 批量查询用户列表
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getWxmemberList($body)
+    {
+        return $this->restful("POST", "/wxmember/list", $body);
+    }
+
+    /**
      * 查看积分记录
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/AccountRecordsController/infoAction.md
      * @param array $body 入参类型
@@ -435,16 +468,5 @@ class UserSdk extends SdkBase
     public function uniteOpenid($body)
     {
         return $this->restful("POST", "/wxmember/edituniteopenid", $body);
-    }
-
-    /**
-     * 批量查询用户列表
-     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getWxmemberList($body)
-    {
-        return $this->restful("POST", "/wxmember/list", $body);
     }
 }
