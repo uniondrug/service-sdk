@@ -9,7 +9,7 @@ namespace Uniondrug\ServiceSdk\Exports;
  * SDK For Union
  * @package Uniondrug\ServiceSdk\Exports
  */
-class Union extends Abstracts\Magic
+class Union extends Abstracts\Export
 {
     protected $ns = 'Unions';
 }

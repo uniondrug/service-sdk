@@ -9,8 +9,8 @@ namespace Uniondrug\ServiceSdk;
  * 待删除
  * 免修改兼容1.x版本
  * @deprecated 3.0
- * @package Uniondrug\ServiceSdk
+ * @package    Uniondrug\ServiceSdk
  */
-abstract class Sdk extends Modules\Abstracts\Service
+abstract class Sdk extends Modules\Abstracts\Sdk
 {
 }

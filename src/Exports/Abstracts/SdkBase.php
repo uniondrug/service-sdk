@@ -1,15 +1,16 @@
 <?php
 /**
  * @author wsfuyibing <websearch@163.com>
- * @date   2019-10-16
+ * @date   2019-10-29
  */
 namespace Uniondrug\ServiceSdk\Exports\Abstracts;
 
 /**
- * Magic
+ * 待删除
  * 免修改兼容2.x版本
- * @package Uniondrug\ServiceSdk\Exports\Abstracts
+ * @deprecated 3.0
+ * @package    Uniondrug\ServiceSdk
  */
-abstract class SdkBase extends Service
+abstract class SdkBase extends Sdk
 {
 }

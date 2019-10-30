@@ -1,6 +1,7 @@
 <?php
 return [
     'default' => [
+        'timeout' => 15,
         'consulApiTimeout' => 3,
         'hosts' => [
             "abutment" => "http://abutment.module.{{domain}}",

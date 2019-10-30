@@ -1,117 +1,99 @@
 <?php
 /**
  * @author wsfuyibing <websearch@163.com>
- * @date   2019-10-15
+ * @date   2019-10-28
  */
 namespace Uniondrug\ServiceSdk;
 
-use Phalcon\Logger\AdapterInterface;
 use Uniondrug\Framework\Container;
 use Uniondrug\HttpClient\Client;
-use Uniondrug\ServiceSdk\Bases\EventsTrait;
-use Uniondrug\ServiceSdk\Bases\Response;
+use Uniondrug\Phar\Server\Logs\Logger;
+use Phalcon\Logger\Adapter as LoggerAdapter;
+use Uniondrug\ServiceSdk\Bases\Host;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Bases\Restful;
-use Uniondrug\ServiceSdk\Bases\Settings;
-use Uniondrug\ServiceSdk\Exceptions\NoSdkException;
-use Uniondrug\ServiceSdk\Exports\Backend;
-use Uniondrug\ServiceSdk\Exports\Module;
-use Uniondrug\ServiceSdk\Exports\Union;
+use Uniondrug\ServiceSdk\Bases\Setting;
 
 /**
  * SDK入口
- * @method Bases\ResponseInterface delete(string $uri, array $body = null, array $extra = null)
- * @method Bases\ResponseInterface get(string $uri, array $extra = null)
- * @method Bases\ResponseInterface head(string $uri, array $extra = null)
- * @method Bases\ResponseInterface options(string $uri, array $extra = null)
- * @method Bases\ResponseInterface patch(string $uri, array $body = null, array $extra = null)
- * @method Bases\ResponseInterface post(string $uri, array $body = null, array $extra = null)
- * @method Bases\ResponseInterface put(string $uri, array $body = null, array $extra = null)
- * @property Backend $backend
- * @property Module  $module
- * @property Union   $union
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
 {
     /**
+     * IDEs
+     */
+    use ServiceTrait;
+    /**
+     * 容器
      * @var Container
      */
     private $container;
-    /**
-     * @var AdapterInterface
-     */
-    private $logger;
     /**
      * @var Client
      */
     private $httpClient;
     /**
-     * @var Settings
+     * @var Host
      */
-    private $settings;
+    private $host;
     /**
-     * 历史属性
-     * @var array
+     * 日志
+     * @var Logger|LoggerAdapter
      */
-    private static $properties = [];
+    private $logger;
     /**
-     * 注释与注解
+     * 设置
+     * @var Setting
      */
-    use ServiceTrait, EventsTrait;
+    private $setting;
 
     /**
-     * constructor.
-     * @param Container $container
+     * ServiceSdk constructor.
+     * @param $container
      */
-    public function __construct(Container $container)
+    public function __construct($container)
     {
+        // 1. basic
         $this->container = $container;
-        $this->logger = $container->getLogger();
-        $this->httpClient = $container->getShared('httpClient');
-        $this->settings = new Settings($container->getConfig()->path('sdk'));
+        $this->setting = new Setting($this);
+        $this->host = new Host();
+        // 3. http client
+        $this->httpClient = $this->container->getShared('httpClient');
+        // 2. logger
+        if ($this->container->hasSharedInstance('server')) {
+            $this->logger = $this->container->getShared('server')->getLogger();
+        } else {
+            $this->logger = $this->container->getLogger();
+        }
     }
 
     /**
-     * 按Restful调用
-     * @param $name
-     * @param $arguments
-     * @return Response
+     * 按方法读
+     * @param string $name
+     * @param array  $arguments
+     * @return ResponseInterface
+     * @example $serviceSdk->get("http://www.example.com")
      */
     public function __call($name, $arguments)
     {
-        return Restful::$name($this, ... $arguments);
+        return Restful::withCall($this, $name, ... $arguments);
     }
 
     /**
-     * 读取SDKs
-     * @param string $name
-     * @return object
-     * @throws NoSdkException
+     * 按属性读
+     * @param $name
+     * @return Bases\Sdk|Exports\Abstracts\Export
+     * @example $serviceSdk->user->get()
+     * @example $serviceSdk->module->user->get()
      */
     public function __get($name)
     {
-        // 1. history
-        if (isset(self::$properties[$name])) {
-            return self::$properties[$name];
-        }
-        // 2. v2
-        $v2 = "\\Uniondrug\\ServiceSdk\\Exports\\".ucfirst($name);
-        if (class_exists($v2)) {
-            self::$properties[$name] = new $v2($this);
-            return self::$properties[$name];
-        }
-        // 3. v1
-        $v1 = "\\Uniondrug\\ServiceSdk\\Modules\\".ucfirst($name)."Sdk";
-        if (class_exists($v1)) {
-            self::$properties[$name] = new $v1($this);
-            return self::$properties[$name];
-        }
-        // 4. no
-        throw new NoSdkException("sdk {$name} not found from v1");
+        return Restful::withNamed($this, $name);
     }
 
     /**
-     * 读取容器
+     * 读容器对象
      * @return Container
      */
     public function getContainer()
@@ -120,7 +102,6 @@ class ServiceSdk
     }
 
     /**
-     * 读取HttpClient
      * @return Client
      */
     public function getHttpClient()
@@ -129,8 +110,8 @@ class ServiceSdk
     }
 
     /**
-     * 读取Logger
-     * @return AdapterInterface
+     * 读日志对象
+     * @return LoggerAdapter|Logger
      */
     public function getLogger()
     {
@@ -138,11 +119,20 @@ class ServiceSdk
     }
 
     /**
-     * 读取配置
-     * @return Settings
+     * 读设置对象
+     * @return Setting
      */
-    public function getSettings()
+    public function getSetting()
     {
-        return $this->settings;
+        return $this->setting;
+    }
+
+    /**
+     * 读取Host对象
+     * @return Host
+     */
+    public function getHost()
+    {
+        return $this->host;
     }
 }

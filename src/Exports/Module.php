@@ -12,7 +12,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
  * @property UserSdk $user
  * @package Uniondrug\ServiceSdk\Exports
  */
-class Module extends Abstracts\Magic
+class Module extends Abstracts\Export
 {
     protected $ns = 'Modules';
 }

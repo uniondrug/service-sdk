@@ -9,7 +9,7 @@ namespace Uniondrug\ServiceSdk\Exports;
  * SDK For Backend
  * @package Uniondrug\ServiceSdk\Exports
  */
-class Backend extends Abstracts\Magic
+class Backend extends Abstracts\Export
 {
     protected $ns = 'Backends';
 }

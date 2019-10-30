@@ -1,49 +1,47 @@
 <?php
 /**
  * @author wsfuyibing <websearch@163.com>
- * @date   2019-10-16
+ * @date   2019-10-29
  */
 namespace Uniondrug\ServiceSdk\Bases;
 
-use Psr\Http\Message\StreamInterface;
 use Uniondrug\ServiceSdk\ServiceSdk;
 
 /**
- * Response
+ * SDK请求结果
  * @package Uniondrug\ServiceSdk\Bases
  */
 class Response implements ResponseInterface
 {
-    const ERROR_EMPTY = 1;
+    const ERROR_NULL = 0;
+    const ERROR_DEFAULT = 1;
+    const ERROR_EMPTY_CONTENTS = 2;
+    const ERROR_INVALID_JSON_STRING = 3;
+    const ERROR_COMPATIABLED = 4;
     /**
      * @var ServiceSdk
      */
-    private $sdk;
-    private $errno = 0;
-    private $error = '';
-    private $contents = '';
-    private $data;
-    private $url;
+    private $serviceSdk;
     /**
-     * 开始时间
-     * @var double
+     * @var string
      */
-    private $begin = 0.0;
+    private $_contents = '';
     /**
-     * 执行时长
-     * @var double
+     * @var \stdClass|array
      */
-    private $duration = 0.0;
+    private $_data;
+    private $_duration = 0.0;
+    private $_errno = 0;
+    private $_error = '';
+    private $_url = '';
 
     /**
      * Response constructor.
-     * @param ServiceSdk $sdk
+     * @param ServiceSdk $serviceSdk
      */
-    public function __construct(ServiceSdk $sdk)
+    public function __construct(ServiceSdk $serviceSdk)
     {
-        $this->begin = (double) microtime(true);
-        $this->sdk = $sdk;
-        $this->data = new \stdClass();
+        $this->serviceSdk = $serviceSdk;
     }
 
     /**
@@ -56,29 +54,30 @@ class Response implements ResponseInterface
     }
 
     /**
-     * 请求原始内容
+     * 原始内容
      * @return string
      */
     public function getContents()
     {
-        return $this->contents;
+        return $this->_contents;
     }
 
     /**
-     * @return \stdClass
+     * 返回数据
+     * @return \stdClass|array
      */
     public function getData()
     {
-        return $this->data;
+        return $this->_data;
     }
 
     /**
-     * 执行时间长
+     * 执行时长
      * @return double
      */
     public function getDuration()
     {
-        return $this->duration;
+        return $this->_duration;
     }
 
     /**
@@ -87,24 +86,25 @@ class Response implements ResponseInterface
      */
     public function getErrno()
     {
-        return $this->errno;
+        return $this->_errno;
     }
 
     /**
-     * 错误内容
+     * 错误原因
      * @return string
      */
     public function getError()
     {
-        return $this->error;
+        return $this->_error;
     }
 
     /**
+     * 请求URL
      * @return string
      */
     public function getUrl()
     {
-        return $this->url;
+        return $this->_url;
     }
 
     /**
@@ -113,70 +113,67 @@ class Response implements ResponseInterface
      */
     public function hasError()
     {
-        return $this->errno !== 0;
+        return $this->_errno !== self::ERROR_NULL;
     }
 
     /**
-     * 发送请求
+     * 发起CURL请求
      * @param string $method
      * @param string $url
      * @param null   $body
-     * @param null   $extra
-     * @return $this
+     * @param null   $query
+     * @param null   $options
      */
-    public function send(string $method, string $url, $body = null, $extra = null)
+    public function send(string $method, string $url, $body = null, $query = null, $options = null)
     {
-        // 1. prepare
-        $method = strtoupper($method);
-        $this->url = $url;
-        $this->sdk->getLogger()->debug("SDK请求开始");
-        // 2. begin send request
+        $this->_url = $url;
+        // 1. init options
+        $begin = microtime(true);
+        $options = is_array($options) ? $options : [];
+        // 1.1 timeout
+        if (!isset($options['timeout'])) {
+            $options['timeout'] = $this->serviceSdk->getSetting()->timeout();
+        }
+        // 1.2 body
+        if (is_string($body)) {
+            $options['body'] = $body;
+        } else if (is_array($body)) {
+            $options['json'] = $body;
+        } else if (is_object($body)) {
+            if (method_exists($body, 'toJson')) {
+                $options['body'] = $body->toJson();
+            } else if (method_exists($body, 'toArray')) {
+                $options['json'] = $body->toArray();
+            }
+        }
+        // 1.3 query
+        if (is_array($query)) {
+            $options['query'] = $query;
+        }
+        // 2. send http request
         try {
-            // 2.0 options initialized
-            $options = is_array($extra) ? $extra : [];
-            // 2.1 timeout
-            if (!isset($options['timeout'])) {
-                $options['timeout'] = $this->sdk->getSettings()->timeout;
-            }
-            // 2.2 body
-            if (is_string($body)) {
-                $options['body'] = $body;
-            } else if (is_array($body)) {
-                $options['json'] = $body;
-            } else if (is_object($body)) {
-                if (method_exists($body, 'toJson')) {
-                    $options['body'] = $body->toJson();
-                } else if (method_exists($body, 'toArray')) {
-                    $options['json'] = $body->toArray();
-                }
-            }
-            // 2.3 send request
-            $resp = $this->sdk->getHttpClient()->request($method, $url, $options);
-            $stream = $resp->getBody();
-            if ($stream instanceof StreamInterface) {
-                $this->contents = $stream->getContents();
-                $this->parseContents();
-            }
+            $this->_contents = $this->serviceSdk->getHttpClient()->request($method, $url, $options)->getBody()->getContents();
+            $this->parseContents();
         } catch(\Throwable $e) {
             $this->setError($e->getCode(), $e->getMessage());
+            $this->serviceSdk->getLogger()->error(sprintf("SDK以{%s}请求{%s}出错 - %s", $method, $url, $e->getMessage()));
         } finally {
-            $this->duration = (double) sprintf("%.06f", microtime(true) - $this->begin);
-            $this->sdk->getLogger()->info(sprintf("[d=%.06f]SDK请求{{$url}}结果 - %s", $this->duration, $this->contents));
+            $this->_duration = microtime(true) - $begin;
+            $this->serviceSdk->getLogger()->info(sprintf("[d=%.06f]SDK以{%s}请求{%s}结果 - %s", $this->_duration, $method, $url, $this->_contents));
         }
-        return $this;
     }
 
     /**
-     * 数据Arr数据组
+     * 结果转数组
      * @return array
      */
     public function toArray()
     {
-        return json_decode(json_encode($this->data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), true);
+        return json_decode(json_encode($this->_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), true);
     }
 
     /**
-     * 转JSON字符串
+     * 结果转JSON
      * @return string
      */
     public function toJson()
@@ -185,31 +182,40 @@ class Response implements ResponseInterface
     }
 
     /**
-     * 解析SDK结果
+     * 解析SDK请求结果
      */
     private function parseContents()
     {
-        // 1. empty contents
-        if ($this->contents === '') {
-            $this->setError(self::ERROR_EMPTY, "empty responsed");
+        // 1. is empty
+        if ($this->_contents === '') {
+            $this->setError(self::ERROR_EMPTY_CONTENTS, 'empty content responsed');
             return;
         }
-        // 2. parser json
-        $std = json_decode($this->contents, false);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            $this->setError(json_last_error(), json_last_error_msg());
+        // 2. is JSON string
+        try {
+            $std = \GuzzleHttp\json_decode($this->_contents, false);
+        } catch(\Throwable $e) {
+            $this->setError(self::ERROR_INVALID_JSON_STRING, 'responsed string was not json string');
             return;
         }
-        // 3. keywords
-        $std->errno = isset($std->errno) && is_numeric($std->errno) ? (int) $std->errno : 0;
-        $std->error = isset($std->error) && is_string($std->error) ? $std->error : '';
-        if ($std->errno !== 0) {
-            $this->setError($std->errno, $std->error);
-            return;
+        // 3. logic failure
+        if (isset($std->errno) && isset($std->error)) {
+            print_r ($std);
+            if ((int) $std->errno !== 0) {
+                $this->setError($std->errno, $std->error);
+                return;
+            }
+        } else {
+            if (!isset($std->status) || $std->status !== true) {
+                $this->setError(self::ERROR_COMPATIABLED, 'responsed json format was not validated');
+                return;
+            }
         }
         // 4. data
-        if ($std->data) {
-            $this->data = &$std->data;
+        if (isset($std->data) && (is_array($std->data) || is_object($std->data))) {
+            $this->_data = $std->data;
+        } else {
+            $this->_data = new \stdClass();
         }
     }
 
@@ -217,13 +223,11 @@ class Response implements ResponseInterface
      * 设置错误
      * @param int    $errno
      * @param string $error
-     * @return $this
      */
     private function setError(int $errno, string $error)
     {
-        $this->errno = (int) $errno;
-        $this->errno === 0 && $this->errno = 2;
-        $this->error = $error;
-        return $this;
+        $this->_errno = $errno;
+        $this->_errno || $this->_errno = self::ERROR_DEFAULT;
+        $this->_error = $error;
     }
 }

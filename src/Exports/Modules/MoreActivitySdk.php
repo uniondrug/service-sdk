@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-28
- * @time   Mon, 28 Oct 2019 14:29:09 +0800
+ * @date   2019-10-29
+ * @time   Tue, 29 Oct 2019 17:42:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -115,6 +115,17 @@ class MoreActivitySdk extends SdkBase
     public function cardPaging($body)
     {
         return $this->restful("POST", "/virtualCard/paging", $body);
+    }
+
+    /**
+     * 新订单创建
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/createNewAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createNew($body)
+    {
+        return $this->restful("POST", "/order/createNew", $body);
     }
 
     /**
@@ -489,6 +500,17 @@ class MoreActivitySdk extends SdkBase
     public function projectSave($body)
     {
         return $this->restful("POST", "/project/save", $body);
+    }
+
+    /**
+     * 查询订单状态
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/orderStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function status($body)
+    {
+        return $this->restful("POST", "/order/status", $body);
     }
 
     /**
