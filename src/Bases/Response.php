@@ -156,7 +156,6 @@ class Response implements ResponseInterface
             $this->parseContents();
         } catch(\Throwable $e) {
             $this->setError($e->getCode(), $e->getMessage());
-            $this->serviceSdk->getLogger()->error(sprintf("SDK以{%s}请求{%s}出错 - %s", $method, $url, $e->getMessage()));
         } finally {
             $this->_duration = microtime(true) - $begin;
             $this->serviceSdk->getLogger()->info(sprintf("[d=%.06f]SDK以{%s}请求{%s}结果 - %s", $this->_duration, $method, $url, $this->_contents));
@@ -200,7 +199,6 @@ class Response implements ResponseInterface
         }
         // 3. logic failure
         if (isset($std->errno) && isset($std->error)) {
-            print_r ($std);
             if ((int) $std->errno !== 0) {
                 $this->setError($std->errno, $std->error);
                 return;

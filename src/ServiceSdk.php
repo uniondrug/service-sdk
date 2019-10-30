@@ -12,7 +12,11 @@ use Phalcon\Logger\Adapter as LoggerAdapter;
 use Uniondrug\ServiceSdk\Bases\Host;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Bases\Restful;
+use Uniondrug\ServiceSdk\Bases\Sdk as BootSdk;
 use Uniondrug\ServiceSdk\Bases\Setting;
+use Uniondrug\ServiceSdk\Bases\WithTrait;
+use Uniondrug\ServiceSdk\Exceptions\UnknownRestfulException;
+use Uniondrug\ServiceSdk\Traits\BootTrait;
 
 /**
  * SDK入口
@@ -23,7 +27,7 @@ class ServiceSdk
     /**
      * IDEs
      */
-    use ServiceTrait;
+    use BootTrait, WithTrait;
     /**
      * 容器
      * @var Container
@@ -77,7 +81,7 @@ class ServiceSdk
      */
     public function __call($name, $arguments)
     {
-        return Restful::withCall($this, $name, ... $arguments);
+        throw new UnknownRestfulException($name);
     }
 
     /**
@@ -90,6 +94,80 @@ class ServiceSdk
     public function __get($name)
     {
         return Restful::withNamed($this, $name);
+    }
+
+    /**
+     * @param string $url
+     * @param null   $body
+     * @param null   $extra
+     * @return ResponseInterface
+     */
+    public function delete(string $url, $body = null, $extra = null)
+    {
+        return Restful::withCall($this, BootSdk::METHOD_DELETE, $url, $body, null, $extra);
+    }
+
+    /**
+     * @param string $url
+     * @param null   $extra
+     * @return ResponseInterface
+     */
+    public function get(string $url, $extra = null)
+    {
+        return Restful::withCall($this, BootSdk::METHOD_GET, $url, null, null, $extra);
+    }
+
+    /**
+     * @param string $url
+     * @param null   $extra
+     * @return ResponseInterface
+     */
+    public function head(string $url, $extra = null)
+    {
+        return Restful::withCall($this, BootSdk::METHOD_HEAD, $url, null, null, $extra);
+    }
+
+    /**
+     * @param string $url
+     * @param null   $extra
+     * @return ResponseInterface
+     */
+    public function options(string $url, $extra = null)
+    {
+        return Restful::withCall($this, BootSdk::METHOD_OPTIONS, $url, null, null, $extra);
+    }
+
+    /**
+     * @param string $url
+     * @param null   $body
+     * @param null   $extra
+     * @return ResponseInterface
+     */
+    public function patch(string $url, $body = null, $extra = null)
+    {
+        return Restful::withCall($this, BootSdk::METHOD_PATCH, $url, $body, null, $extra);
+    }
+
+    /**
+     * @param string $url
+     * @param null   $body
+     * @param null   $extra
+     * @return ResponseInterface
+     */
+    public function post(string $url, $body = null, $extra = null)
+    {
+        return Restful::withCall($this, BootSdk::METHOD_POST, $url, $body, null, $extra);
+    }
+
+    /**
+     * @param string $url
+     * @param null   $body
+     * @param null   $extra
+     * @return ResponseInterface
+     */
+    public function put(string $url, $body = null, $extra = null)
+    {
+        return Restful::withCall($this, BootSdk::METHOD_PUT, $url, $body, null, $extra);
     }
 
     /**

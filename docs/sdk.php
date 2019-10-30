@@ -1,9 +1,9 @@
 <?php
 return [
     'default' => [
-        'timeout' => 15,
+        'consulApiAddress' => 'http://udsdk.{{domain}}/v1/catalog/service',
         'consulApiTimeout' => 3,
-        'hosts' => [
+        'consulHosts' => [
             "abutment" => "http://abutment.module.{{domain}}",
             "activity" => "http://activity.module.{{domain}}",
             "audit" => "http://audit.module.{{domain}}",
@@ -74,22 +74,20 @@ return [
             "user" => "http://user.module.{{domain}}",
             "weixin" => "http://wx.module.{{domain}}",
             "wxapi" => "https://wxapi.{{domain}}"
-        ]
+        ],
+        'nsEnabled' => false,
+        'nsApiAddress' => 'http://ns.module.{{domain}}/node/get'
     ],
     'development' => [
-        'consulApiAddress' => 'http://udsdk.uniondrug.info/v1/catalog/service',
-        'domain' => 'uniondrug.info'
+        'domain' => 'dev.uniondrug.info',
     ],
     'testing' => [
-        'consulApiAddress' => 'http://udsdk.turboradio.cn/v1/catalog/service',
         'domain' => 'truboradio.cn'
     ],
     'release' => [
-        'consulApiAddress' => 'http://udsdk.uniondrug.net/v1/catalog/service',
         'domain' => 'uniondrug.net'
     ],
     'production' => [
-        'consulApiAddress' => 'http://udsdk2.uniondrug.cn/v1/catalog/service',
         'domain' => 'uniondrug.cn'
     ]
 ];

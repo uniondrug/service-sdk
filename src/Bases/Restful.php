@@ -6,7 +6,6 @@
 namespace Uniondrug\ServiceSdk\Bases;
 
 use Uniondrug\ServiceSdk\Exceptions\NotPublishedException;
-use Uniondrug\ServiceSdk\Exceptions\UnknownRestfulException;
 use Uniondrug\ServiceSdk\Exports\Abstracts\Export;
 use Uniondrug\ServiceSdk\ServiceSdk;
 
@@ -19,14 +18,20 @@ class Restful
     private static $names = [];
 
     /**
+     * 发送Restful请求
      * @param ServiceSdk $serviceSdk
      * @param string     $method
-     * @param array      ...$args
-     * @return ResponseInterface
+     * @param string     $url
+     * @param null       $body
+     * @param null       $query
+     * @param null       $extra
+     * @return Response
      */
-    public static function withCall(ServiceSdk $serviceSdk, string $method, ... $args)
+    public static function withCall(ServiceSdk $serviceSdk, string $method, string $url, $body = null, $query = null, $extra = null)
     {
-        throw new UnknownRestfulException($method);
+        $response = new Response($serviceSdk);
+        $response->send($method, $url, $body, $query, $extra);
+        return $response;
     }
 
     /**

@@ -5,11 +5,14 @@
  */
 namespace Uniondrug\ServiceSdk\Exports;
 
+use Uniondrug\ServiceSdk\Traits\BackendTrait;
+
 /**
  * SDK For Backend
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Backend extends Abstracts\Export
 {
+    use BackendTrait;
     protected $ns = 'Backends';
 }

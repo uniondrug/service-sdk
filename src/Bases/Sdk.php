@@ -38,6 +38,10 @@ abstract class Sdk
      * @var string
      */
     protected $serviceName;
+    /**
+     * 兼容With
+     */
+    use WithTrait;
 
     /**
      * @param string $name

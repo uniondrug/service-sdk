@@ -5,6 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Exports\Abstracts;
 
+use Uniondrug\ServiceSdk\Bases\WithTrait;
 use Uniondrug\ServiceSdk\Exceptions\NotPublishedException;
 use Uniondrug\ServiceSdk\ServiceSdk;
 
@@ -17,6 +18,10 @@ abstract class Export
     private static $exports = [];
     private $serviceSdk;
     protected $ns;
+    /**
+     * 兼容With
+     */
+    use WithTrait;
 
     public function __construct(ServiceSdk $serviceSdk)
     {

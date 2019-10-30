@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk\Exports;
 
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
+use Uniondrug\ServiceSdk\Traits\ModuleTrait;
 
 /**
  * SDK For Module
@@ -14,5 +15,6 @@ use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
  */
 class Module extends Abstracts\Export
 {
+    use ModuleTrait;
     protected $ns = 'Modules';
 }
