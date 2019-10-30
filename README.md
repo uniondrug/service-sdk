@@ -45,11 +45,29 @@
 
 ### how to run
 
-1. 基础调用
+
+1. 标准调用
     ```text
+    $response = $this->serviceSdk->module->user->login(["mobile" => "13966013721"]);
+    if ($response->hasError()){
+       echo $response->getError();
+    } else {
+       echo $response->toJson();
+    }
+    ```
+1. 基础调用 - 常用的7种Restful方式
+    ```text
+    $this->serviceSdk->delete("http://wxapi.uniondrug.cn/v/user");
     $this->serviceSdk->get("http://wxapi.uniondrug.cn/v/user");
     ```
-1. 标准调用
-1. 兼容模式
+1. 兼容模式 - `待废弃`
+    ```text
+    $response = $this->serviceSdk->user->login(["mobile" => "13966013721"]);
+    if ($response->hasError()){
+       echo $response->getError();
+    } else {
+       echo $response->toJson();
+    }
+    ```
 
 
