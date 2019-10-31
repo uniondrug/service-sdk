@@ -1233,7 +1233,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
      * @param object|array $body 入参类型
      * @return ClientResponseInterface
      */
-    public function liststoresmall($body)
+    public function listStoreSmallOrg($body)
     {
         return $this->restful("POST", "/organizebase/liststoresmall", $body);
     }
