@@ -41,6 +41,17 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * statusAction()
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/ConfigController/statusAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function configStatus($body)
+    {
+        return $this->restful("POST", "/config/status", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AssistantController/detailAction.md
      * @param array $body 入参类型
