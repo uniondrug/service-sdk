@@ -1143,4 +1143,26 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/serial/update", $body);
     }
+
+    /**
+     * 根据groupId冻结已激活的权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableEquityByGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityDisableEquityByGroup($body)
+    {
+        return $this->restful("POST", "/equity/equityDisableEquityByGroup", $body);
+    }
+
+    /**
+     * 根据projectId冻结已激活的权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableEquityByProjectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityDisableEquityByProject($body)
+    {
+        return $this->restful("POST", "/equity/equityDisableEquityByProject", $body);
+    }
 }
