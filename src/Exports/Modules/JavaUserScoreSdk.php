@@ -112,6 +112,6 @@ class JavaUserScoreSdk extends SdkBase
      */
     public function importExcel($body)
     {
-        return $this->restful("POST", "/import/excel", $body);
+        return $this->restful("POST", "/accountrecords/import/excel", $body);
     }
 }
