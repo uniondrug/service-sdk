@@ -566,6 +566,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/user/getCdKeyByGroup", $body);
     }
+
     /**
      * 根据cdkey 获取用户信息
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/uInfoAction.md
@@ -576,6 +577,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/verify/User/cdKey", $body);
     }
+
     /**
      * 根据项目id 获取分组列表带分页
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/pagingAction.md
@@ -608,6 +610,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/user/export/cdcode/sql", $body);
     }
+
     /**
      * 获取分组下已用完的用户数量
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getUseFinishedByGroupAction.md
@@ -651,6 +654,7 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/group/activate/edit", $body);
     }
+
     /**
      * 智赔用户列表
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getCompensateUserPagingAction.md
@@ -660,5 +664,16 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     public function getCompensateUserPaging($body)
     {
         return $this->restful(static::METHOD_POST, "/user/compensate/paging", $body);
+    }
+
+    /**
+     * 内容
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function ydbCheckVerify($body)
+    {
+        return $this->restful(static::METHOD_POST, "/verify/ydbCheck", $body);
     }
 }
