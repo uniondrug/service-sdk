@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-30
- * @time   Wed, 30 Oct 2019 18:37:43 +0800
+ * @date   2019-11-04
+ * @time   Mon, 04 Nov 2019 15:44:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1248,6 +1248,17 @@ class MerchantSdk extends SdkBase
     public function pagingBalance($body)
     {
         return $this->restful("POST", "/balance/paging", $body);
+    }
+
+    /**
+     * 通过internalCode获取连锁门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/pagingIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pagingIds($body)
+    {
+        return $this->restful("POST", "/organizebase/pagingIds", $body);
     }
 
     /**
