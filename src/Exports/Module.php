@@ -114,7 +114,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property CustomerserviceSdk    $customerservice
  * @property JavaOrderQuerySdk     $javaOrderQuery
  * @property JwtSdk                $jwt
- * @property JavaCommonSdk         $javaCommonSdk
+ * @property JavaCommonSdk         $javaCommon
  * @property RobotSdk              $robot
  * @property PromotionUserSdk      $promotionUser
  * @property PromotionFinanceSdk   $promotionFinance
