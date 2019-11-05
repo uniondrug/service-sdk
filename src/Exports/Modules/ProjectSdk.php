@@ -1076,4 +1076,17 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/project/projectPromoteAmount", $body);
     }
+
+    /**
+     * 验证权益领取(药店宝)
+     * 验证用户输入的信息是否正确, 当正确时
+     * 业务系统继续执行下层激活逻辑, 反之应中止执行
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/ydbCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ydbCheckVerify($body)
+    {
+        return $this->restful("POST", "/verify/ydbCheck", $body);
+    }
 }

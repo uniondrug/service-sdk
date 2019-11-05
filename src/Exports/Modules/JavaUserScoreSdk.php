@@ -104,4 +104,14 @@ class JavaUserScoreSdk extends SdkBase
     {
         return $this->restful("POST", "/accountrecords/batch/add", $body);
     }
+
+    /**
+     * 导入积分excel并解析
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
+     */
+    public function importExcel($body)
+    {
+        return $this->restful("POST", "/accountrecords/import/excel", $body);
+    }
 }
