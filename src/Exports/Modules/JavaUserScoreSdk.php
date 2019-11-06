@@ -97,23 +97,25 @@ class JavaUserScoreSdk extends SdkBase
 
     /**
      * 批量发放积分
-     * @param $body
-     * @param $options
+     * @param      $body
+     * @param null $query
+     * @param null $extra
      * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
      */
-    public function batchIntegralAdd($body, $options)
+    public function batchIntegralAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountrecords/batch/add", $body, $options);
+        return $this->restful("POST", "/accountrecords/batch/add", $body, $query, $extra);
     }
 
     /**
      * 导入积分excel并解析
-     * @param $body
-     * @param $options
+     * @param      $body
+     * @param null $query
+     * @param null $extra
      * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
      */
-    public function importExcel($body, $options)
+    public function importExcel($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountrecords/import/excel", $body, $options);
+        return $this->restful("POST", "/accountrecords/import/excel", $body, $query, $extra);
     }
 }
