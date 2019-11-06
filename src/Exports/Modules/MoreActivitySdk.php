@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-05
- * @time   Tue, 05 Nov 2019 10:55:43 +0800
+ * @date   2019-11-06
+ * @time   Wed, 06 Nov 2019 11:45:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -148,6 +148,17 @@ class MoreActivitySdk extends SdkBase
     public function danmuPaging($body)
     {
         return $this->restful("POST", "/danmu/paging", $body);
+    }
+
+    /**
+     * 双十一活动
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/doubleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function double($body)
+    {
+        return $this->restful("POST", "/order/double", $body);
     }
 
     /**
