@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk\Requests;
 
 use GuzzleHttp\Client;
+use Phalcon\Di;
 use Phalcon\Logger\AdapterInterface;
 use Uniondrug\ServiceSdk\Configs\Config;
 use Uniondrug\ServiceSdk\SdkException;
@@ -66,9 +67,16 @@ class RequestConsul
             return $uri;
         }
         // 3. 构建client
-        self::$urlClient || self::$urlClient = new Client([
-            'timeout' => $this->config->consulApiTimeout,
-        ]);
+        if (self::$urlClient === null) {
+            $di = Di::getDefault();
+            if ($di->has('httpClient')) {
+                self::$urlClient = $di->getShared('httpClient');
+            } else {
+                self::$urlClient = new Client([
+                    'timeout' => $this->config->consulApiTimeout,
+                ]);
+            }
+        }
         // 4. 从ConsulApi提取
         if ($this->config->consulApiEnable) {
             $apiBegin = microtime(true);

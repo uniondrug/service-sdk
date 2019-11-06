@@ -8,6 +8,7 @@ namespace Uniondrug\ServiceSdk\Requests;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use GuzzleHttp\Psr7\Stream as GuzzleStream;
+use Phalcon\Di;
 use Uniondrug\ServiceSdk\SdkException;
 
 /**
@@ -44,8 +45,13 @@ class RequestHttp
             return self::RETRY_NO;
         }
         // 2. HTTP对象
-        if (self::$client === null) {
-            self::$client = new Client();
+        if (!self::$client) {
+            $di = Di::getDefault();
+            if ($di->has('httpClient')) {
+                self::$client = $di->getShared('httpClient');
+            } else {
+                self::$client = new Client();
+            }
         }
         // 3. 执行HTTP请求
         $this->request->logger->info("SDK第{{$offset}}次请求{{$url}}");
