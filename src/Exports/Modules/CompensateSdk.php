@@ -270,4 +270,15 @@ class CompensateSdk extends SdkBase
     {
         return $this->restful("POST", "/insurance/bind/unbind", $body);
     }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByMerchantIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectCountByMerchantId($body)
+    {
+        return $this->restful("POST", "/project/countByMerchantId", $body);
+    }
 }
