@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-06
- * @time   Wed, 06 Nov 2019 16:58:24 +0800
+ * @date   2019-11-08
+ * @time   Fri, 08 Nov 2019 14:57:14 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * CompanySdk
@@ -401,6 +401,17 @@ class CompanySdk extends SdkBase
     public function userChange($body)
     {
         return $this->restful("POST", "/user/change", $body);
+    }
+
+    /**
+     * 根据手机号码获取账户信息
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/UserController/checkStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userCheckStatus($body)
+    {
+        return $this->restful("POST", "/user/checkStatus", $body);
     }
 
     /**
