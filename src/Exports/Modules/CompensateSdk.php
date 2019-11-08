@@ -272,13 +272,13 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByMerchantIdAction.md
+     * customerIds获取项目数
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByCustomerIdAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function projectCountByMerchantId($body)
+    public function projectCountByCustomerId($body)
     {
-        return $this->restful("POST", "/project/countByMerchantId", $body);
+        return $this->restful("POST", "/project/countByCustomerId", $body);
     }
 }
