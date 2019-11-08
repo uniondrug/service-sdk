@@ -9,12 +9,12 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-11-08
- * @time   Fri, 08 Nov 2019 14:57:14 +0800
+ * @time   Fri, 08 Nov 2019 18:01:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * CompanySdk
@@ -236,6 +236,17 @@ class CompanySdk extends SdkBase
     public function pointExchangeRecordPaging($body)
     {
         return $this->restful("POST", "/pointExchangeRecord/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/PointExchangeSettingController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointExchangeSettingCreate($body)
+    {
+        return $this->restful("POST", "/pointExchangeSetting/create", $body);
     }
 
     /**
