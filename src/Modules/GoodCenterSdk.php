@@ -91,7 +91,7 @@ class GoodCenterSdk extends Sdk implements ServiceSdkInterface
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function queryGoodByChannel($body)
+    public function queryByChannel($body)
     {
         return $this->restful("POST", "/goodsSalesChannel/queryByChannel", $body);
     }
