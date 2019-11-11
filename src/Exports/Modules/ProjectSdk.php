@@ -1089,4 +1089,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
     }
+
+    /**
+     * 回收分组
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/recycleEquityByGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupRecycle($body)
+    {
+        return $this->restful("POST", "/group/groupRecycle", $body);
+    }
 }
