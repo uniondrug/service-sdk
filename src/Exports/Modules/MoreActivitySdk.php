@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-08
- * @time   Fri, 08 Nov 2019 17:32:21 +0800
+ * @date   2019-11-11
+ * @time   Mon, 11 Nov 2019 15:45:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -448,6 +448,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 订单支付完成回调
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderNotifyController/paydAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderNotifyPayd($body)
+    {
+        return $this->restful("POST", "/order/notify/payd", $body);
+    }
+
+    /**
      * 项目详情
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/detailAction.md
      * @param array $body 入参类型
@@ -555,6 +566,17 @@ class MoreActivitySdk extends SdkBase
     public function superMember($body)
     {
         return $this->restful("POST", "/order/super/member", $body);
+    }
+
+    /**
+     * 超级会员日
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/superStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function superStatus($body)
+    {
+        return $this->restful("POST", "/order/super/status", $body);
     }
 
     /**
