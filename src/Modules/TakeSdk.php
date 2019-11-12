@@ -109,6 +109,17 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 拣货
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/takeAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function pick($body)
+    {
+        return $this->restful("POST", "/order/pick", $body);
+    }
+
+    /**
      * 等待骑手到店
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/takeAction.md
      * @param array $body 入参类型
