@@ -217,6 +217,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeRedeemRecordController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function employeeRedeemRecordList($body)
+    {
+        return $this->restful("POST", "/employeeRedeemRecord/listing", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeRedeemRecordController/pagingAction.md
      * @param array $body 入参类型
