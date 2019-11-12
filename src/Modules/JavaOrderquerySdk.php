@@ -30,4 +30,16 @@ class JavaOrderquerySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/refund/query/queryRefundListByOrderNoForYDB", $body);
     }
+
+    /**
+     * 计算订单状态下的订单数量
+     * @link https://uniondrug.coding.net/p/docs/git/blob/development/api-docs/java.module.order/api-docs/docs-order-query/orderGroupCount.md
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function queryCountViewStatus($body)
+    {
+        return $this->restful("POST", "/order/v2/main/count/viewStatus", $body);
+    }
 }
