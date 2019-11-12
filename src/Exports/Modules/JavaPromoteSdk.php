@@ -8,7 +8,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 class JavaPromoteSdk extends SdkBase
 {
@@ -424,6 +424,17 @@ class JavaPromoteSdk extends SdkBase
     public function listGoods($body)
     {
         return $this->restful("POST", "/promote/voucher/goods/list/info", $body);
+    }
+
+    /**
+     * 抵扣券商品分配优惠金额接口
+     * @link
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function assignDiscountGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/assign/discount", $body);
     }
 
     /**
