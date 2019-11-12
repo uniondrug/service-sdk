@@ -12,7 +12,7 @@ return [
         'domain' => 'dev.uniondrug.info',
     ],
     'testing' => [
-        'domain' => 'truboradio.cn'
+        'domain' => 'turboradio.cn'
     ],
     'release' => [
         'domain' => 'uniondrug.net'
