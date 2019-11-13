@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-11
- * @time   Mon, 11 Nov 2019 14:52:04 +0800
+ * @date   2019-11-13
+ * @time   Wed, 13 Nov 2019 18:04:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -302,6 +302,72 @@ class UdappSdk extends SdkBase
     public function merchantSecondDetail($body)
     {
         return $this->restful("POST", "/merchantSecond/detail", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageCreate($body)
+    {
+        return $this->restful("POST", "/message/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageDelete($body)
+    {
+        return $this->restful("POST", "/message/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageDetail($body)
+    {
+        return $this->restful("POST", "/message/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageListing($body)
+    {
+        return $this->restful("POST", "/message/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messagePaging($body)
+    {
+        return $this->restful("POST", "/message/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageUpdate($body)
+    {
+        return $this->restful("POST", "/message/update", $body);
     }
 
     /**
