@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-12
- * @time   Tue, 12 Nov 2019 11:27:29 +0800
+ * @date   2019-11-13
+ * @time   Wed, 13 Nov 2019 15:07:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -162,6 +162,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 批量删除
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/batchDeleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function employeeBatchDelete($body)
+    {
+        return $this->restful("POST", "/employee/batch/delete", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/createAction.md
      * @param array $body 入参类型
@@ -235,7 +246,7 @@ class CompanySdk extends SdkBase
      */
     public function employeeRedeemRecordPaging($body)
     {
-        return $this->restful("POST", "/employeeRedeemRecord/listing", $body);
+        return $this->restful("POST", "/employeeRedeemRecord/paging", $body);
     }
 
     /**
