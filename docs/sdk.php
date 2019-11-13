@@ -5,7 +5,8 @@ return [
         'consulApiTimeout' => 3,
         'consulHosts' => [],
         'nsEnabled' => true,
-        'nsApiAddress' => 'http://ns.module.{{domain}}/node/get'
+        'nsApiAddress' => 'http://ns.module.{{domain}}/node/get',
+        'contentType' => 'application/json;charset=utf-8'
     ],
     'development' => [
         'consulApiAddress' => 'http://udsdk.uniondrug.info/v1/catalog/service',
