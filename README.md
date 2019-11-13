@@ -41,6 +41,9 @@
             ]
         ];
     ```
+1. 设置`config/sdk.php`配置文件, 从`vendor/uniondrug/service-sdk/docs/sdk.php`中复制即可
+1. 去除`ServiceTrait`中对于`$sdk`的`@property`定义(可选, 若有则去除).
+
 
 
 ### how to run
