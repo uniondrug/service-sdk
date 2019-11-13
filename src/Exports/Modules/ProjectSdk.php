@@ -1100,15 +1100,4 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/group/groupRecycle", $body);
     }
-
-    /**
-     * 修改项目限额或者不限额
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectLimitController/modifyLimitAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectLimitModifyLimit($body)
-    {
-        return $this->restful("POST", "/projectLimit/projectLimitModifyLimit", $body);
-    }
 }
