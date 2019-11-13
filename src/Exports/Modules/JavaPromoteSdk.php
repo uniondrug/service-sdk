@@ -427,6 +427,17 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
+     * 抵扣券商品分配优惠金额接口
+     * @link
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function assignDiscountGoods($body)
+    {
+        return $this->restful("POST", "/promote/voucher/goods/assign/discount", $body);
+    }
+
+    /**
      * 抵扣券商品列表查询接口
      * @link
      * @param array $body

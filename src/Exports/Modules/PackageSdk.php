@@ -14,7 +14,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * PackageSdk
@@ -577,5 +577,16 @@ class PackageSdk extends SdkBase
     public function tagsUpdate($body)
     {
         return $this->restful("POST", "/tags/update", $body);
+    }
+
+    /**
+     * 增值服务列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/Old/OldPackageController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function oldPackagePaging($body)
+    {
+        return $this->restful("POST", "/old/package/paging", $body);
     }
 }

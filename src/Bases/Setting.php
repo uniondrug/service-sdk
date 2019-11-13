@@ -14,6 +14,7 @@ use Uniondrug\ServiceSdk\ServiceSdk;
  */
 class Setting
 {
+    const DEFAULT_CONTENT_TYPE = 'application/json';
     private $_domain;
     private $_timeout = 25;
     private $_consulApi = 3;
@@ -24,6 +25,10 @@ class Setting
     private $_consulHosts = false;
     private $_nsApi = '';
     private $_nsEnabled = false;
+    /**
+     *
+     */
+    private $_contentType;
 
     /**
      * constructor.
@@ -32,6 +37,7 @@ class Setting
     public function __construct(ServiceSdk $sdk)
     {
         $config = $sdk->getContainer()->getConfig()->path('sdk');
+        $this->_contentType = self::DEFAULT_CONTENT_TYPE;
         if ($config instanceof Config) {
             $this->initBase($config);
             $this->initConsul($config);
@@ -56,6 +62,15 @@ class Setting
     public function consulTimeout()
     {
         return $this->_consulTimeout;
+    }
+
+    /**
+     * 文档类型
+     * @return string
+     */
+    public function contentType()
+    {
+        return $this->_contentType;
     }
 
     /**
@@ -132,6 +147,9 @@ class Setting
         }
         if (isset($config->timeout) && is_numeric($config->timeout) && $config->timeout > 0) {
             $this->_timeout = $config->timeout;
+        }
+        if (isset($config->contentType) && is_string($config->contentType)) {
+            $this->_contentType = $config->contentType;
         }
     }
 

@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-24
- * @time   Thu, 24 Oct 2019 13:48:08 +0800
+ * @date   2019-11-13
+ * @time   Wed, 13 Nov 2019 17:37:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * AiPushSdk
@@ -130,7 +130,7 @@ class AiPushSdk extends SdkBase
 
     /**
      * 方案关联商户商品回调
-     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/CreatePlanCallbackAction.md
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/createPlanCallbackAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -148,6 +148,17 @@ class AiPushSdk extends SdkBase
     public function planCheckClash($body)
     {
         return $this->restful("POST", "/plan/checkClash", $body);
+    }
+
+    /**
+     * 方案冲突 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/clashPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planClashPaging($body)
+    {
+        return $this->restful("POST", "/plan/clashPaging", $body);
     }
 
     /**

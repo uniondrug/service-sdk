@@ -14,7 +14,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * CompensateSdk
@@ -280,5 +280,16 @@ class CompensateSdk extends SdkBase
     public function projectCountByCustomerId($body)
     {
         return $this->restful("POST", "/project/countByCustomerId", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemListing($body)
+    {
+        return $this->restful("POST", "/redeem/list", $body);
     }
 }
