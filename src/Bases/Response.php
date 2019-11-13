@@ -130,6 +130,12 @@ class Response implements ResponseInterface
         // 1. init options
         $begin = microtime(true);
         $options = is_array($options) ? $options : [];
+        // 1.0 headers
+        $options['headers'] = isset($options['headers']) && is_array($options['headers']) ? $options['headers'] : [];
+        $contentType = $this->serviceSdk->getSetting()->contentType();
+        if ($contentType !== '') {
+            $options['headers']['content-type'] = $contentType;
+        }
         // 1.1 timeout
         if (!isset($options['timeout'])) {
             $options['timeout'] = $this->serviceSdk->getSetting()->timeout();
