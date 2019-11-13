@@ -367,7 +367,7 @@ class CompanySdk extends SdkBase
      */
     public function pointSettingList($body)
     {
-        return $this->restful("POST", "/pointSetting/List", $body);
+        return $this->restful("POST", "/pointSetting/list", $body);
     }
 
     /**
