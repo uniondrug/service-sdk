@@ -30,6 +30,17 @@ class CompanySdk extends SdkBase
     protected $serviceName = 'company.module';
 
     /**
+     * 兑换
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/AddValueServiceExchangeController/exchangeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addValueServiceExchange($body)
+    {
+        return $this->restful("POST", "/addValueServiceExchange/exchange", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/AddValueServiceExchangeController/createAction.md
      * @param array $body 入参类型
