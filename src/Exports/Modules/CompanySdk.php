@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-13
- * @time   Wed, 13 Nov 2019 15:07:40 +0800
+ * @date   2019-11-14
+ * @time   Thu, 14 Nov 2019 16:17:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -283,6 +283,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/PointExchangeRecordController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointExchangeRecordExport($body)
+    {
+        return $this->restful("POST", "/pointExchangeRecord/export", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/PointExchangeRecordController/pagingAction.md
      * @param array $body 入参类型
@@ -335,6 +346,17 @@ class CompanySdk extends SdkBase
     public function pointRecordCreate($body)
     {
         return $this->restful("POST", "/pointRecord/create", $body);
+    }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/PointRecordController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointRecordExport($body)
+    {
+        return $this->restful("POST", "/pointRecord/export", $body);
     }
 
     /**
