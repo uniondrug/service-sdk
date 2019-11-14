@@ -53,6 +53,19 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 删除数据，删除后可以重新创建
+     * 输入：
+     * ids，待删除的id，可以是数组，不超过50个。
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/deleteAction.md
+     * @param array|StructInterface $body
+     * @return ClientResponseInterface
+     */
+    public function deleteAmap($body)
+    {
+        return $this->restful("POST", "/amap/data/delete", $body);
+    }
+
+    /**
      * 修改链接
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
      * @param array|StructInterface $body
