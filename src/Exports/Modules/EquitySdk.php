@@ -1209,4 +1209,14 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/equityEnableEquityByProject", $body);
     }
+    /**
+     * getActivateGuaranteeNumAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/getActivateGuaranteeNumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteeGetActivateNum($body)
+    {
+        return $this->restful("POST", "/guarantee/guaranteeGetActivateNum", $body);
+    }
 }
