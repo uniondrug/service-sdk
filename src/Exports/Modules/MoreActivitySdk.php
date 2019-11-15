@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-11
- * @time   Mon, 11 Nov 2019 15:45:12 +0800
+ * @date   2019-11-15
+ * @time   Fri, 15 Nov 2019 10:11:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -327,6 +327,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 用户金币明细信息
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberGoldDetail($body)
+    {
+        return $this->restful("POST", "/memberGold/detail", $body);
+    }
+
+    /**
      * 用户金币信息
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/infoAction.md
      * @param array $body 入参类型
@@ -569,7 +580,7 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 超级会员日
+     * 超级会员日订单状态
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/superStatusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
