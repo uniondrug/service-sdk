@@ -241,4 +241,16 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/user/take/o2oAcceptCountOrgan", $body);
     }
+
+
+    /**
+     * 自动处理订单
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/o2oAcceptCountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderAutoDriver($body)
+    {
+        return $this->restful("POST", "/order/orderAutoDriver", $body);
+    }
 }
