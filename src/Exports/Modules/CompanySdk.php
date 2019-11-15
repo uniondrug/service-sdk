@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-14
- * @time   Thu, 14 Nov 2019 16:17:20 +0800
+ * @date   2019-11-15
+ * @time   Fri, 15 Nov 2019 12:49:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * CompanySdk
@@ -181,6 +181,17 @@ class CompanySdk extends SdkBase
     public function employeeBatchDelete($body)
     {
         return $this->restful("POST", "/employee/batch/delete", $body);
+    }
+
+    /**
+     * 根据customerId获取雇员数量
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/employeeCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function employeeCount($body)
+    {
+        return $this->restful("POST", "/employee/employeeCount", $body);
     }
 
     /**
