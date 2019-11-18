@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-29
- * @time   Tue, 29 Oct 2019 10:06:12 +0800
+ * @date   2019-11-18
+ * @time   Mon, 18 Nov 2019 09:40:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -138,7 +138,7 @@ class InsureSdk extends SdkBase
     {
         return $this->restful("POST", "/claimOnline/claimDetail", $body);
     }
-
+    
     /**
      * 计算保单理赔上限比例
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimMaxRatioAction.md
@@ -162,7 +162,18 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 理赔结果
+     * 推送理赔数据的结果
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimPushResultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimPushResultClaimOnline($body)
+    {
+        return $this->restful("POST", "/claimOnline/claimPushResult", $body);
+    }
+
+    /**
+     * 通知理赔的结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimResultAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -412,83 +423,5 @@ class InsureSdk extends SdkBase
     public function viewPolicy($body)
     {
         return $this->restful("POST", "/policy/view", $body);
-    }
-
-    /**
-     * 获取需要执行的投保的数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/insureDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insureDataInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/insureData", $body);
-    }
-
-    /**
-     * 投保结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/insureResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insureResultInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/insureResult", $body);
-    }
-
-
-    /**
-     * 获取需要执行的上传卡号数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/downloadCodeDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function downloadCodeDataInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/downloadCodeData", $body);
-    }
-
-    /**
-     * 上传卡号结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/downloadCodeResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function downloadCodeResultInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/downloadCodeResult", $body);
-    }
-
-    /**
-     * 理赔结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineTaskController/claimResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimResultClaimOnlineTask($body)
-    {
-        return $this->restful("POST", "/claimOnlineTask/claimResult", $body);
-    }
-
-    /**
-     * 获取需要执行的理赔数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineTaskController/claimDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDataClaimOnlineTask($body)
-    {
-        return $this->restful("POST", "/claimOnlineTask/claimData", $body);
-    }
-
-    /**
-     * 通知理赔的详细过程
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineTaskController/claimDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDetailClaimOnlineTask($body)
-    {
-        return $this->restful("POST", "/claimOnlineTask/claimDetail", $body);
     }
 }
