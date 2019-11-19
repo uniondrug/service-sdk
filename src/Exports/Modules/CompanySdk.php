@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-15
- * @time   Fri, 15 Nov 2019 12:49:24 +0800
+ * @date   2019-11-19
+ * @time   Tue, 19 Nov 2019 13:37:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,28 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 使用类比占比
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/purposeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyCustomerPurpose($body)
+    {
+        return $this->restful("POST", "/data/purpose", $body);
+    }
+
+    /**
+     * 权益额，权益数，权益员工数，已发权益额占比
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/rightsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyDataRights($body)
+    {
+        return $this->restful("POST", "/data/rights", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/CompanyController/detailAction.md
      * @param array $body 入参类型
@@ -151,6 +173,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 使用金额，次数柱状图
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/histogramAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyHistogram($body)
+    {
+        return $this->restful("POST", "/data/histogram", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/CompanyController/pagingAction.md
      * @param array $body 入参类型
@@ -162,6 +195,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 各状态权益数占比
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/rightsProportionAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyRightsProportion($body)
+    {
+        return $this->restful("POST", "/data/rightsProportion", $body);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/CompanyController/updateAction.md
      * @param array $body 入参类型
@@ -170,6 +214,17 @@ class CompanySdk extends SdkBase
     public function companyUpdate($body)
     {
         return $this->restful("POST", "/company/update", $body);
+    }
+
+    /**
+     * 已使用金额，累计使用次数，权益使用人数，30天内即将过期权益
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/usedDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyUsedData($body)
+    {
+        return $this->restful("POST", "/data/usedData", $body);
     }
 
     /**
