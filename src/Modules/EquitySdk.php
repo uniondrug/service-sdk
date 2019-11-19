@@ -707,4 +707,25 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/equity/equityEnableEquityByProject", $body);
     }
+    /**
+     * recycleGroupEquityAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleGroupEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityRecycleGroup($body)
+    {
+        return $this->restful("POST", "/equity/equityRecycleGroup", $body);
+    }
+
+    /**
+     * recycleSingleEquityAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleSingleEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityRecycleSingle($body)
+    {
+        return $this->restful("POST", "/equity/equityRecycleSingle", $body);
+    }
 }
