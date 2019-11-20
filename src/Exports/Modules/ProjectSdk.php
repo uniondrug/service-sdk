@@ -1110,4 +1110,26 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/verify/verifyPaging", $body);
     }
+
+    /**
+     * changeGroupTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/changeGroupTypeAction.md
+     * @param array $body 入参类型
+     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
+     */
+    public function userChangeGroupType($body)
+    {
+        return $this->restful("POST", "/user/userChangeGroupType", $body);
+    }
+
+    /**
+     * changeSingleTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/changeSingleTypeAction.md
+     * @param array $body 入参类型
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function userChangeSingleType($body)
+    {
+        return $this->restful("POST", "/user/userChangeSingleType", $body);
+    }
 }

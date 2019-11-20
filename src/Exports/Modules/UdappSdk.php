@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-13
- * @time   Wed, 13 Nov 2019 18:04:07 +0800
+ * @date   2019-11-20
+ * @time   Wed, 20 Nov 2019 16:55:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * UdappSdk
@@ -162,6 +162,17 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * 检验登录token
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/tokenCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantTokenCheck($body)
+    {
+        return $this->restful("POST", "/assistant/tokenCheck", $body);
+    }
+
+    /**
      * 调店
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/transferAction.md
      * @param array $body 入参类型
@@ -170,6 +181,17 @@ class UdappSdk extends SdkBase
     public function assistantTransfer($body)
     {
         return $this->restful("POST", "/assistant/transfer", $body);
+    }
+
+    /**
+     * 调店
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/transferListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantTransferList($body)
+    {
+        return $this->restful("POST", "/assistant/transferList", $body);
     }
 
     /**
@@ -393,7 +415,7 @@ class UdappSdk extends SdkBase
     }
 
     /**
-     * 详情
+     * app获取详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReleasesController/getReleasesAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -500,5 +522,38 @@ class UdappSdk extends SdkBase
     public function tipsUpdate($body)
     {
         return $this->restful("POST", "/tips/update", $body);
+    }
+
+    /**
+     * 获取门店店员数量
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tokenCreate($body)
+    {
+        return $this->restful("POST", "/token/create", $body);
+    }
+
+    /**
+     * 获取门店店员数量
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tokenDetail($body)
+    {
+        return $this->restful("POST", "/token/detail", $body);
+    }
+
+    /**
+     * 获取门店店员数量
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/expireAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tokenExpire($body)
+    {
+        return $this->restful("POST", "/token/expire", $body);
     }
 }
