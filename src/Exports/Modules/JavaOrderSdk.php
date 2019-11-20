@@ -306,4 +306,15 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/query/queryMainOrderNoList", $body);
     }
+
+    /**
+     * 组合商品退货流程
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRefundPackage($body)
+    {
+        return $this->restful("POST", "/order/refund/package", $body);
+    }
 }
