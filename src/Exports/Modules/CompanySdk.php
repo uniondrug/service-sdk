@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-19
- * @time   Tue, 19 Nov 2019 13:37:51 +0800
+ * @date   2019-11-20
+ * @time   Wed, 20 Nov 2019 17:42:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -335,6 +335,17 @@ class CompanySdk extends SdkBase
     public function employeeUpdate($body)
     {
         return $this->restful("POST", "/employee/update", $body);
+    }
+
+    /**
+     * 企业平台员工导出sql
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportSql($body)
+    {
+        return $this->restful("POST", "/employee/export/sql", $body);
     }
 
     /**
