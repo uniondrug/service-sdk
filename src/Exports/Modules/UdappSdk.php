@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-11-20
- * @time   Wed, 20 Nov 2019 15:36:23 +0800
+ * @time   Wed, 20 Nov 2019 16:05:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -159,6 +159,17 @@ class UdappSdk extends SdkBase
     public function assistantStoreCount($body)
     {
         return $this->restful("POST", "/assistant/storeCount", $body);
+    }
+
+    /**
+     * 检验登录token
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/tokenCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantTokenCheck($body)
+    {
+        return $this->restful("POST", "/assistant/tokenCheck", $body);
     }
 
     /**
