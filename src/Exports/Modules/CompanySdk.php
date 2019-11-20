@@ -338,6 +338,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 企业平台员工导出sql
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportSql($body)
+    {
+        return $this->restful("POST", "/employee/export/sql", $body);
+    }
+
+    /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EquityController/listAction.md
      * @param array $body 入参类型
