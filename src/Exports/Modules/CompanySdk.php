@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-14
- * @time   Thu, 14 Nov 2019 16:17:20 +0800
+ * @date   2019-11-20
+ * @time   Wed, 20 Nov 2019 18:46:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,28 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 使用类比占比
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/purposeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyCustomerPurpose($body)
+    {
+        return $this->restful("POST", "/data/purpose", $body);
+    }
+
+    /**
+     * 权益额，权益数，权益员工数，已发权益额占比
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/rightsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyDataRights($body)
+    {
+        return $this->restful("POST", "/data/rights", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/CompanyController/detailAction.md
      * @param array $body 入参类型
@@ -151,6 +173,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 使用金额，次数柱状图
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/histogramAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyHistogram($body)
+    {
+        return $this->restful("POST", "/data/histogram", $body);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/CompanyController/pagingAction.md
      * @param array $body 入参类型
@@ -159,6 +192,17 @@ class CompanySdk extends SdkBase
     public function companyPaging($body)
     {
         return $this->restful("POST", "/company/paging", $body);
+    }
+
+    /**
+     * 各状态权益数占比
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/rightsProportionAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyRightsProportion($body)
+    {
+        return $this->restful("POST", "/data/rightsProportion", $body);
     }
 
     /**
@@ -173,6 +217,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 已使用金额，累计使用次数，权益使用人数，30天内即将过期权益
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/Platform/DataController/usedDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function companyUsedData($body)
+    {
+        return $this->restful("POST", "/data/usedData", $body);
+    }
+
+    /**
      * 批量删除
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/batchDeleteAction.md
      * @param array $body 入参类型
@@ -181,6 +236,17 @@ class CompanySdk extends SdkBase
     public function employeeBatchDelete($body)
     {
         return $this->restful("POST", "/employee/batch/delete", $body);
+    }
+
+    /**
+     * 根据customerId获取雇员数量
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/employeeCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function employeeCount($body)
+    {
+        return $this->restful("POST", "/employee/employeeCount", $body);
     }
 
     /**
@@ -269,6 +335,28 @@ class CompanySdk extends SdkBase
     public function employeeUpdate($body)
     {
         return $this->restful("POST", "/employee/update", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EquityController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityList($body)
+    {
+        return $this->restful("POST", "/equity/listing", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/MemberController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberList($body)
+    {
+        return $this->restful("POST", "/member/listing", $body);
     }
 
     /**
