@@ -30,7 +30,7 @@ class MoreActivitySdk extends SdkBase
     protected $serviceName = 'more.activity.module';
 
     /**
-     * 连锁下活动列表
+     * 获取连锁下活动列表
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/activityListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -644,4 +644,5 @@ class MoreActivitySdk extends SdkBase
     {
         return $this->restful("POST", "/virtualCard/createCard", $body);
     }
+
 }
