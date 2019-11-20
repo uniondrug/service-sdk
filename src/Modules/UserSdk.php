@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
@@ -424,5 +425,23 @@ class UserSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/membercards/cardNum", $body);
     }
 
+    /**
+     * changeGroupTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/changeGroupTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userChangeGroupType($body)
+    {
+        return $this->restful("POST", "/user/userChangeGroupType", $body);
+    }
 
+    /**
+     * changeSingleTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/changeSingleTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userChangeSingleType($body)
+    {
 }
