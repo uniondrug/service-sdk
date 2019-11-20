@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-11-20
- * @time   Wed, 20 Nov 2019 16:05:35 +0800
+ * @time   Wed, 20 Nov 2019 16:55:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -181,6 +181,17 @@ class UdappSdk extends SdkBase
     public function assistantTransfer($body)
     {
         return $this->restful("POST", "/assistant/transfer", $body);
+    }
+
+    /**
+     * 调店
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/transferListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantTransferList($body)
+    {
+        return $this->restful("POST", "/assistant/transferList", $body);
     }
 
     /**
