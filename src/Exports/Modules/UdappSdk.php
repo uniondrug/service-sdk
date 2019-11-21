@@ -1,21 +1,33 @@
 <?php
 /**
- * @author wsfuyibing <websearch@163.com>
- * @date   2018-03-27
+ * 重要说明
+ * 1. 本文件由Postman命令脚本自动生成, 请不要修改, 若需修改
+ *    请通过`php console postman`命令重新生成.
+ * 2. 本脚本在生成时, 依赖所在项目的Controller有 `@Sdk method`定义,
+ *    同时, 项目根目录下的`postman.json`需有`sdk`、`sdkLink`定义
+ * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
+ *    的`src/Exports/Modules`目录下，并发重新发布release版本.
+ * @author PostmanCommand
+ * @date   2019-11-13
+ * @time   Wed, 13 Nov 2019 18:04:07 +0800
  */
-namespace Uniondrug\ServiceSdk\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
-use Uniondrug\ServiceSdk\Sdk;
-use Uniondrug\ServiceSdk\ServiceSdkInterface;
-use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * 客户管理
+ * UdappSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class UdappSdk extends Sdk implements ServiceSdkInterface
+class UdappSdk extends SdkBase
 {
-    protected $serviceName = 'udapp';
+    /**
+     * 服务名称
+     * 自来`postman.json`文件定义的`sdkService`值
+     * @var string
+     */
+    protected $serviceName = 'udapp.module';
 
     /**
      * 新增
@@ -40,7 +52,7 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 无分页列表
+     * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/listingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -147,17 +159,6 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     public function assistantStoreCount($body)
     {
         return $this->restful("POST", "/assistant/storeCount", $body);
-    }
-
-    /**
-     * 检验登录token
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/tokenCheckAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function assistantTokenCheck($body)
-    {
-        return $this->restful("POST", "/assistant/tokenCheck", $body);
     }
 
     /**
@@ -392,7 +393,7 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * app获取详情
+     * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReleasesController/getReleasesAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -499,38 +500,5 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
     public function tipsUpdate($body)
     {
         return $this->restful("POST", "/tips/update", $body);
-    }
-
-    /**
-     * 获取门店店员数量
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function tokenCreate($body)
-    {
-        return $this->restful("POST", "/token/create", $body);
-    }
-
-    /**
-     * 获取门店店员数量
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function tokenDetail($body)
-    {
-        return $this->restful("POST", "/token/detail", $body);
-    }
-
-    /**
-     * 获取门店店员数量
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/expireAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function tokenExpire($body)
-    {
-        return $this->restful("POST", "/token/expire", $body);
     }
 }

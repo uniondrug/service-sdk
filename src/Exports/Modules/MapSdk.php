@@ -3,26 +3,29 @@
  * @author kuanxing <346300265@qq.com>
  * @date   2018-06-21
  */
-namespace Uniondrug\ServiceSdk\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
-use Uniondrug\ServiceSdk\Sdk;
-use Uniondrug\ServiceSdk\ServiceSdkInterface;
-use Uniondrug\Structs\StructInterface;
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * 云图服务
  * @package Uniondrug\ServiceSdk\Modules
  */
-class MapSdk extends Sdk implements ServiceSdkInterface
+class MapSdk extends SdkBase
 {
-    protected $serviceName = 'map';
+    /**
+     * 服务名称
+     * 自来`postman.json`文件定义的`sdkService`值
+     * @var string
+     */
+    protected $serviceName = 'map.module';
 
     /**
      * 注册新应用
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function amapSearch($body)
     {
@@ -30,46 +33,10 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 创建地图打点
-     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
-     */
-    public function createAmap($body)
-    {
-        return $this->restful(static::METHOD_POST, "/amap/data/create", $body);
-    }
-
-
-    /**
-     * 读取数据POSTphp
-     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/infoAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
-     */
-    public function infoAmap($body)
-    {
-        return $this->restful("POST", "/amap/data/info", $body);
-    }
-
-    /**
-     * 删除数据，删除后可以重新创建
-     * 输入：
-     * ids，待删除的id，可以是数组，不超过50个。
-     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/deleteAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
-     */
-    public function deleteAmap($body)
-    {
-        return $this->restful("POST", "/amap/data/delete", $body);
-    }
-
-    /**
      * 修改链接
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function updateMap($body)
     {
@@ -79,8 +46,8 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     /**
      * 经纬度转换
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ConvertController/convertAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function locationConvert($body)
     {
@@ -90,8 +57,8 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     /**
      * 经纬度详情
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/DetailController/detailAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function locationDetail($body)
     {
@@ -101,8 +68,8 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     /**
      * 地址转为经纬度
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ByAddressController/byAddressAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function locationByAddress($body)
     {
@@ -112,8 +79,8 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     /**
      * 行政区域查询
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/District/ByKeywordsController/byKeywordsAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function districtByKeywords($body)
     {
@@ -123,8 +90,8 @@ class MapSdk extends Sdk implements ServiceSdkInterface
     /**
      * 获取两经纬度距离
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/GetDistanceController/distanceAction.md
-     * @param array|StructInterface $body
-     * @return ClientResponseInterface
+     * @param array $body 入参类型
+     * @return ResponseInterface
      */
     public function locationDistance($body)
     {
