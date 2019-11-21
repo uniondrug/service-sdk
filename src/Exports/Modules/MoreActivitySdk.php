@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-11-21
- * @time   Thu, 21 Nov 2019 10:33:44 +0800
+ * @time   Thu, 21 Nov 2019 16:28:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -214,6 +214,17 @@ class MoreActivitySdk extends SdkBase
     public function fundFreeze($body)
     {
         return $this->restful("POST", "/fund/freeze", $body);
+    }
+
+    /**
+     * 门店Id获取projectId
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getProjectIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectId($body)
+    {
+        return $this->restful("POST", "/project/getProjectId", $body);
     }
 
     /**
