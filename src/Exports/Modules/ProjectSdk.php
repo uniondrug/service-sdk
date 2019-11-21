@@ -1143,4 +1143,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/user/userChangeProjectType", $body);
     }
+
+    /**
+     * 回收单个兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/recycleEquitySingleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupRecycleSingle($body)
+    {
+        return $this->restful("POST", "/group/groupRecycleSingle", $body);
+    }
 }
