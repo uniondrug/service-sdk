@@ -1111,38 +1111,6 @@ class ProjectSdk extends SdkBase
         return $this->restful("POST", "/verify/verifyPaging", $body);
     }
 
-    /**
-     * changeGroupTypeAction()
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/changeGroupTypeAction.md
-     * @param array $body 入参类型
-     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
-     */
-    public function userChangeGroupType($body)
-    {
-        return $this->restful("POST", "/user/userChangeGroupType", $body);
-    }
-
-    /**
-     * changeSingleTypeAction()
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/changeSingleTypeAction.md
-     * @param array $body 入参类型
-     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
-     */
-    public function userChangeSingleType($body)
-    {
-        return $this->restful("POST", "/user/userChangeSingleType", $body);
-    }
-
-    /**
-     * changeProjectTypeAction()
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/changeProjectTypeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userChangeProjectType($body)
-    {
-        return $this->restful("POST", "/user/userChangeProjectType", $body);
-    }
 
     /**
      * 回收单个兑换码
@@ -1153,5 +1121,38 @@ class ProjectSdk extends SdkBase
     public function groupRecycleSingle($body)
     {
         return $this->restful("POST", "/group/groupRecycleSingle", $body);
+    }
+
+    /**
+     * changeGroupTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeGroupTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeChangeGroupType($body)
+    {
+        return $this->restful("POST", "/redeem/redeemCodeChangeGroupType", $body);
+    }
+
+    /**
+     * changeProjectTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeProjectTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeChangeProjectType($body)
+    {
+        return $this->restful("POST", "/redeem/redeemCodeChangeProjectType", $body);
+    }
+
+    /**
+     * changeSingleTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeSingleTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeChangeSingleType($body)
+    {
+        return $this->restful("POST", "/redeem/redeemCodeChangeSingleType", $body);
     }
 }
