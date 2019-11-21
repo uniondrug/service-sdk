@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-11-21
- * @time   Thu, 21 Nov 2019 16:28:47 +0800
+ * @time   Thu, 21 Nov 2019 18:01:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -346,6 +346,17 @@ class MoreActivitySdk extends SdkBase
     public function groupHelp($body)
     {
         return $this->restful("POST", "/group/help", $body);
+    }
+
+    /**
+     * 查询开团信息
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupInfo($body)
+    {
+        return $this->restful("POST", "/group/info", $body);
     }
 
     /**
