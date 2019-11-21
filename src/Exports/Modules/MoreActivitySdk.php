@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-20
- * @time   Wed, 20 Nov 2019 09:48:39 +0800
+ * @date   2019-11-21
+ * @time   Thu, 21 Nov 2019 10:33:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,7 +30,7 @@ class MoreActivitySdk extends SdkBase
     protected $serviceName = 'more.activity.module';
 
     /**
-     * 获取连锁下活动列表
+     * 连锁下活动列表
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/activityListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -335,6 +335,28 @@ class MoreActivitySdk extends SdkBase
     public function groupHelp($body)
     {
         return $this->restful("POST", "/group/help", $body);
+    }
+
+    /**
+     * 检测营销卡
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MarketCard/MarketCardController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketCardCheck($body)
+    {
+        return $this->restful("POST", "/MarketCard/check", $body);
+    }
+
+    /**
+     * 创建营销卡
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MarketCard/MarketCardController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketCardCreate($body)
+    {
+        return $this->restful("POST", "/MarketCard/create", $body);
     }
 
     /**
@@ -644,5 +666,4 @@ class MoreActivitySdk extends SdkBase
     {
         return $this->restful("POST", "/virtualCard/createCard", $body);
     }
-
 }
