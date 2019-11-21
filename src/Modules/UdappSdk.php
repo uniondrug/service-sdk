@@ -17,6 +17,14 @@ class UdappSdk extends Sdk implements ServiceSdkInterface
 {
     protected $serviceName = 'udapp';
 
+
+    /**
+     * 服务名称
+     * 自来`postman.json`文件定义的`sdkService`值
+     * @var string
+     */
+    protected $serviceName = 'udapp.module';
+
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/createAction.md

@@ -5,6 +5,9 @@
  */
 namespace Uniondrug\ServiceSdk;
 
-interface ServiceSdkInterface
+/**
+ * @package Uniondrug\ServiceSdk
+ */
+class Exception extends \Exception
 {
 }

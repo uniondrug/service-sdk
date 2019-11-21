@@ -1,216 +1,125 @@
 <?php
 /**
  * @author wsfuyibing <websearch@163.com>
- * @date   2019-10-28
+ * @date   2018-03-27
  */
 namespace Uniondrug\ServiceSdk;
 
-use Uniondrug\Framework\Container;
-use Uniondrug\HttpClient\Client;
-use Uniondrug\Phar\Server\Logs\Logger;
-use Phalcon\Logger\Adapter as LoggerAdapter;
-use Uniondrug\ServiceSdk\Bases\Host;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
-use Uniondrug\ServiceSdk\Bases\Restful;
-use Uniondrug\ServiceSdk\Bases\Sdk as BootSdk;
-use Uniondrug\ServiceSdk\Bases\Setting;
-use Uniondrug\ServiceSdk\Bases\WithTrait;
-use Uniondrug\ServiceSdk\Exceptions\UnknownRestfulException;
-use Uniondrug\ServiceSdk\Traits\BootTrait;
-
 /**
- * SDK入口
+ * SDK分发调度
+ * @property Modules\BackOrderSdk                $backOrder                                                   订单sdk
+ * @property Modules\TakeSdk                     $take                                                        药联到家模块
+ * @property Modules\WeixinSdk                   $weixin                                                      微信模块
+ * @property Modules\AbutmentSdk                 $abutment                                                    对接模块
+ * @property Modules\TokenSdk                    $token                                                       token
+ * @property Modules\CashierSdk                  $cashier                                                     收银台服务
+ * @property Modules\CommonSdk                   $common                                                      公共服务
+ * @property Modules\CustomerSdk                 $customer                                                    客户服务
+ * @property Modules\DataSdk                     $data                                                        数据服务
+ * @property Modules\EquitySdk                   $equity                                                      权益服务
+ * @property Modules\EshopSdk                    $eshop                                                       线上统一订单服务
+ * @property Modules\GoodCenterSdk               $goodCenter                                                  商品中心
+ * @property Modules\JavaUserSdk                 $javaUser                                                    用户中心
+ * @property Modules\JavaOrderSdk                $javaOrder                                                   java订单中心
+ * @property Modules\JavaCashierSdk              $javaCashier                                                 java收银中心
+ * @property Modules\MarketingSdk                $marketing                                                   java订单中心
+ * @property Modules\GoodsSdk                    $goods                                                       商品服务
+ * @property Modules\MbsSdk                      $mbs                                                         消息总线服务
+ * @property Modules\Mbs2Sdk                     $mbs2                                                        新版MBS消息服务
+ * @property Modules\UnionProjectSdk             $unionProject                                                中台创建权益
+ * @property Modules\MerchantSdk                 $merchant                                                    商户服务
+ * @property Modules\ProductSdk                  $product                                                     产品服务
+ * @property Modules\ProjectSdk                  $project                                                     项目服务
+ * @property Modules\ReportSdk                   $report                                                      报表服务
+ * @property Modules\RuleSdk                     $rule                                                        规则中心/规则引擎
+ * @property Modules\UserSdk                     $user                                                        用户服务
+ * @property Modules\MessageSdk                  $message                                                     消息中心
+ * @property Modules\OrderSdk                    $order                                                       订单中心
+ * @property Modules\PaymentsSdk                 $payments                                                    支付中心
+ * @property Modules\PromotionUserSdk            $promotionUser                                               智推用户服务
+ * @property Modules\PromotionBiddingSdk         $promotionBidding                                            智推竞价服务
+ * @property Modules\PromotionFinanceSdk         $promotionFinance                                            智推财务服务
+ * @property Modules\SmsSdk                      $sms                                                         短信服务
+ * @property Modules\DrugsSdk                    $drugs                                                       药品中心
+ * @property Modules\MapSdk                      $map                                                         高德云图服务
+ * @property Modules\PoolSdk                     $pool                                                        资金池服务
+ * @property Modules\FinanceSdk                  $finance                                                     结算中心服务
+ * @property Modules\SettlementSdk               $settlement                                                  财务结算计算模块
+ * @property Modules\SettlementSheetSdk          $settlementSheet                                             财务结算单管理模块
+ * @property Modules\SettlementLogSdk            $settlementLog                                               财务结算日志管理模块
+ * @property Modules\InsureSdk                   $insure                                                      投保服务
+ * @property Modules\GuaranteeSdk                $guarantee                                                   保障服务
+ * @property Modules\BillSdk                     $bill                                                        开票服务
+ * @property Modules\UdappSdk                    $udapp                                                       药店宝服务
+ * @property Modules\JavaMerchantSdk             $javaMerchant                                                java商户
+ * @property Modules\InvoiceSdk                  $invoice                                                     发票服务
+ * @property Modules\GoodsReplaceSdk             $goodsReplace                                                财务中心.结算单商品替换服务
+ * @property Modules\StagnationSdk               $stagnation                                                  驻店宝服务
+ * @property Modules\PartnersSdk                 $partners                                                    连锁服务
+ * @property Modules\ExpressSdk                  $express                                                     物流服务
+ * @property Modules\SchemeSdk                   $scheme                                                      增值服务方案服务
+ * @property Modules\RefundSdk                   $refund                                                      退单服务
+ * @property Modules\DeliverSdk                  $deliver                                                     药联到家配置服务
+ * @property Modules\CarSdk                      $car                                                         车辆服务
+ * @property Modules\IdCardSdk                   $idCard                                                      身份证服务
+ * @property Modules\WxMessageSdk                $wxMessage                                                   微信消息服务
+ * @property Modules\MessageTaskSdk              $messageTask                                                 消息任务服务
+ * @property Modules\TradeinSdk                  $tradein                                                     连锁换新日配置服务
+ * @property Modules\MoreServiceSdk              $moreService                                                 药联更多服务模块
+ * @property Modules\ActivitySdk                 $activity                                                    活动模块
+ * @property Modules\JwtSdk                      $jwt                                                         鉴权模块
+ * @property Modules\PrivilegeSdk                $privilege                                                   特权活动模块
+ * @property Modules\MsgSdk                      $msg                                                         新版消息中心
+ * @property Modules\JavaPromotecenterSdk        $javaPromotecenter                                           营销方案
+ * @property Modules\JavaPushSdk                 $javaPush                                                    java push服务
+ * @property Modules\AuditSdk                    $audit                                                       审核服务
+ * @property Modules\JavaPromotecenterServiceSdk $javaPromotecenterService                                    java营销中心前台
+ * @property Modules\WxapiSdk                    $wxapi                                                       wxapi接口服务
+ * @property Modules\CompensateSdk               $compensate                                                  智赔接口服务
+ * @property Modules\AssistantSdk                $assistant                                                   助手SDK
+ * @property Modules\NotifySdk                   $notify                                                      消息推送SDK
+ * @property Modules\MoreActivitySdk             $moreActivity                                                新活动模块SDK
+ * @property Modules\CustomerserviceSdk          $customerservice                                             客服模块
+ * @property Modules\JavaOrderquerySdk           $javaOrderquery                                              订单查询模块
+ * @property Modules\ErpPaySdk                   $erpPay                                                      erp收银
+ * @property Modules\HuoJuExpressSdk             $huoJuExpress
+ * 药联火聚快递
  * @package Uniondrug\ServiceSdk
  */
 class ServiceSdk
 {
     /**
-     * IDEs
+     * SDK模块列表
+     * @var array
      */
-    use BootTrait, WithTrait;
+    private static $_modules = [];
     /**
-     * 容器
-     * @var Container
+     * SDK命名规则
+     * @var string
      */
-    private $container;
-    /**
-     * @var Client
-     */
-    private $httpClient;
-    /**
-     * @var Host
-     */
-    private $host;
-    /**
-     * 日志
-     * @var Logger|LoggerAdapter
-     */
-    private $logger;
-    /**
-     * 设置
-     * @var Setting
-     */
-    private $setting;
+    private static $_modulesExtensionName = 'Sdk';
 
     /**
-     * ServiceSdk constructor.
-     * @param $container
-     */
-    public function __construct($container)
-    {
-        // 1. basic
-        $this->container = $container;
-        $this->setting = new Setting($this);
-        $this->host = new Host();
-        // 3. http client
-        $this->httpClient = $this->container->getShared('httpClient');
-        // 2. logger
-        if ($this->container->hasSharedInstance('server')) {
-            $this->logger = $this->container->getShared('server')->getLogger();
-        } else {
-            $this->logger = $this->container->getLogger();
-        }
-    }
-
-    /**
-     * 按方法读
-     * @param string $name
-     * @param array  $arguments
-     * @return ResponseInterface
-     * @example $serviceSdk->get("http://www.example.com")
-     */
-    public function __call($name, $arguments)
-    {
-        throw new UnknownRestfulException($name);
-    }
-
-    /**
-     * 按属性读
-     * @param $name
-     * @return Bases\Sdk|Exports\Abstracts\Export
-     * @example $serviceSdk->user->get()
-     * @example $serviceSdk->module->user->get()
+     * @param string $name 服务名
+     * @return ServiceSdkInterface
+     * @throws Exception
      */
     public function __get($name)
     {
-        return Restful::withNamed($this, $name);
-    }
-
-    /**
-     * @param string $url
-     * @param null   $body
-     * @param null   $extra
-     * @return ResponseInterface
-     */
-    public function delete(string $url, $body = null, $extra = null)
-    {
-        return Restful::withCall($this, BootSdk::METHOD_DELETE, $url, $body, null, $extra);
-    }
-
-    /**
-     * @param string $url
-     * @param null   $extra
-     * @return ResponseInterface
-     */
-    public function get(string $url, $extra = null)
-    {
-        return Restful::withCall($this, BootSdk::METHOD_GET, $url, null, null, $extra);
-    }
-
-    /**
-     * @param string $url
-     * @param null   $extra
-     * @return ResponseInterface
-     */
-    public function head(string $url, $extra = null)
-    {
-        return Restful::withCall($this, BootSdk::METHOD_HEAD, $url, null, null, $extra);
-    }
-
-    /**
-     * @param string $url
-     * @param null   $extra
-     * @return ResponseInterface
-     */
-    public function options(string $url, $extra = null)
-    {
-        return Restful::withCall($this, BootSdk::METHOD_OPTIONS, $url, null, null, $extra);
-    }
-
-    /**
-     * @param string $url
-     * @param null   $body
-     * @param null   $extra
-     * @return ResponseInterface
-     */
-    public function patch(string $url, $body = null, $extra = null)
-    {
-        return Restful::withCall($this, BootSdk::METHOD_PATCH, $url, $body, null, $extra);
-    }
-
-    /**
-     * @param string $url
-     * @param null   $body
-     * @param null   $extra
-     * @return ResponseInterface
-     */
-    public function post(string $url, $body = null, $extra = null)
-    {
-        return Restful::withCall($this, BootSdk::METHOD_POST, $url, $body, null, $extra);
-    }
-
-    /**
-     * @param string $url
-     * @param null   $body
-     * @param null   $extra
-     * @return ResponseInterface
-     */
-    public function put(string $url, $body = null, $extra = null)
-    {
-        return Restful::withCall($this, BootSdk::METHOD_PUT, $url, $body, null, $extra);
-    }
-
-    /**
-     * 读容器对象
-     * @return Container
-     */
-    public function getContainer()
-    {
-        return $this->container;
-    }
-
-    /**
-     * @return Client
-     */
-    public function getHttpClient()
-    {
-        return $this->httpClient;
-    }
-
-    /**
-     * 读日志对象
-     * @return LoggerAdapter|Logger
-     */
-    public function getLogger()
-    {
-        return $this->logger;
-    }
-
-    /**
-     * 读设置对象
-     * @return Setting
-     */
-    public function getSetting()
-    {
-        return $this->setting;
-    }
-
-    /**
-     * 读取Host对象
-     * @return Host
-     */
-    public function getHost()
-    {
-        return $this->host;
+        $key = strtolower($name);
+        // 1. 从上个实例中读取
+        if (isset(self::$_modules[$key])) {
+            return self::$_modules[$key];
+        }
+        // 2. 检查定义
+        $class = __NAMESPACE__.'\\Modules\\'.ucfirst($name).self::$_modulesExtensionName;
+        try {
+            $instance = new $class();
+            self::$_modules[$key] = $instance;
+            return self::$_modules[$key];
+        } catch(\Throwable $e) {
+        }
+        // 3. 未定义的SDK服务
+        throw new Exception("SDK包中未找到'{$name}'定义");
     }
 }

@@ -1,14 +1,10 @@
-# GIT Ignore
-
-.idea/
-log/
-tmp/
-bak/
-vendor/
-composer.lock
-console
-server
-
-*.zip
-*.bak
-!*/.gitkeep
+# Created by .ignore support plugin (hsz.mobi)
+/.idea
+/log/*
+/tmp/*
+/composer.lock
+/vendor
+!**/.gitkeep
+php_errors.log
+/server
+/console

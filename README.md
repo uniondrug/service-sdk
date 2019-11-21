@@ -1,76 +1,35 @@
-# SDK V3
+# Service Sdk
+
+> 模块`ServiceSdk`用于在模块、项目、应用中调用服务的一种快速入口
 
 
-### how to do
+### 如何使用?
 
-> 如何使用`V3`版本SDK
+*一、示例*
 
-1. 修改`composer.json`文件, 选择`3.x`版本
-    ```text
+```text
+class ExampleController extends Controller 
+{
+    public function TestAction()
     {
-        .
-        .
-        "require" : {
-            .
-            .
-            "uniondrug/service-sdk" : "^3.0",
-            .
-            .
-        },
-        .
-        .
-        "scripts" : {
-            "post-autoload-dump" : "Uniondrug\\ServiceSdk\\Bases\\Ide::builder"
-        }
+        $body = ['key' => 'value'];
+        $response = $this->serviceSdk->common->getMenuList($body);
     }
-    ```
-1. 执行`composer update`更新依赖版
-1. 修改`config/app.php`应用
-     ```text
-        return [
-            'default' => [
-                .
-                .
-                .
-                'providers' => [
-                    .
-                    .
-                    .
-                    \Uniondrug\ServiceSdk\Provider::class
-                ]
-            ]
-        ];
-    ```
-1. 设置`config/sdk.php`配置文件, 从`vendor/uniondrug/service-sdk/docs/sdk.php`中复制即可
-1. 去除`ServiceTrait`中对于`$sdk`的`@property`定义(可选, 若有则去除).
+}
+```
+
+*二、说明*
+
+1. 仅限在 `Controller`、`Logic` 层使用。
+1. 关键说明
+    1. `$this->serviceSdk` 指向 `Uniondrug\ServiceSdk\ServiceSdk` 实例。
+    1. `common` 为服务名称(即: 前一节的属性), 指向 `Uniondrug\ServiceSdk\ServiceSdk\Modules\CommonSdk` 实例。
+    1. `getMenuList` 为方法名称, 指向 `Uniondrug\ServiceSdk\ServiceSdk\Modules\CommonSdk::getMenuList()` 方法。
+    1. `$body` 为参数, 支持 `array` 或 `Uniondrug\Structs\StructInterface` 实例。
+    1. `$response` 为服务请求结果, 返回 `Uniondrug\Service\ClientResponseInterface` 实例。
 
 
 
-### how to run
-
-
-1. 标准调用
-    ```text
-    $response = $this->serviceSdk->module->user->login(["mobile" => "13966013721"]);
-    if ($response->hasError()){
-       echo $response->getError();
-    } else {
-       echo $response->toJson();
-    }
-    ```
-1. 基础调用 - 常用的7种Restful方式
-    ```text
-    $this->serviceSdk->delete("http://wxapi.uniondrug.cn/v/user");
-    $this->serviceSdk->get("http://wxapi.uniondrug.cn/v/user");
-    ```
-1. 兼容模式 - `待废弃`
-    ```text
-    $response = $this->serviceSdk->user->login(["mobile" => "13966013721"]);
-    if ($response->hasError()){
-       echo $response->getError();
-    } else {
-       echo $response->toJson();
-    }
-    ```
+### 如何制作?
 
 
