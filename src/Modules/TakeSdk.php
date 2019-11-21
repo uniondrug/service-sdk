@@ -109,6 +109,17 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 拣货
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/takeAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function pick($body)
+    {
+        return $this->restful("POST", "/order/pick", $body);
+    }
+
+    /**
      * 等待骑手到店
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/OrderController/takeAction.md
      * @param array $body 入参类型
@@ -229,5 +240,17 @@ class TakeSdk extends Sdk implements ServiceSdkInterface
     public function o2oAcceptCountOrgan($body)
     {
         return $this->restful("POST", "/user/take/o2oAcceptCountOrgan", $body);
+    }
+
+
+    /**
+     * 自动处理订单
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/o2oAcceptCountAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function orderAutoDriver($body)
+    {
+        return $this->restful("POST", "/order/orderAutoDriver", $body);
     }
 }
