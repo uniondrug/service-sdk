@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-21
- * @time   Thu, 21 Nov 2019 11:18:28 +0800
+ * @date   2019-11-22
+ * @time   Fri, 22 Nov 2019 15:07:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -856,6 +856,17 @@ class ProjectSdk extends SdkBase
     public function pauseUser($body)
     {
         return $this->restful("POST", "/user/pause", $body);
+    }
+
+    /**
+     * 获取项目可用余额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/getProjectUsefulMoneyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGetUsefulMoney($body)
+    {
+        return $this->restful("POST", "/project/projectGetUsefulMoney", $body);
     }
 
     /**
