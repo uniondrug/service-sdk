@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-11-24
- * @time   Sun, 24 Nov 2019 20:55:55 +0800
+ * @time   Sun, 24 Nov 2019 21:05:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -536,6 +536,17 @@ class EquitySdk extends SdkBase
     /**
      * 通过分组回收权益(异步)
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleGroupEquityAsyncAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityRecycleAsyncGroup($body)
+    {
+        return $this->restful("POST", "/equity/equityRecycleAsyncGroup", $body);
+    }
+
+    /**
+     * 通过分组回收权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleGroupEquityAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
