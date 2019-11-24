@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-20
- * @time   Wed, 20 Nov 2019 16:55:37 +0800
+ * @date   2019-11-24
+ * @time   Sun, 24 Nov 2019 18:04:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -52,7 +52,7 @@ class UdappSdk extends SdkBase
     }
 
     /**
-     * 详情
+     * 无分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/listingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -203,6 +203,17 @@ class UdappSdk extends SdkBase
     public function assistantUpdate($body)
     {
         return $this->restful("POST", "/assistant/update", $body);
+    }
+
+    /**
+     * 配置
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/cacheConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cacheConfig($body)
+    {
+        return $this->restful("POST", "/config/cacheConfig", $body);
     }
 
     /**
