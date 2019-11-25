@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-13
- * @time   Wed, 13 Nov 2019 14:40:54 +0800
+ * @date   2019-11-22
+ * @time   Fri, 22 Nov 2019 15:07:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -749,6 +749,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 查询分组可用金额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/calculateUsefulMoneyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupLeftMoney($body)
+    {
+        return $this->restful("POST", "/group/groupLeftMoney", $body);
+    }
+
+    /**
      * 回收分组
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/recycleEquityByGroupAction.md
      * @param array $body 入参类型
@@ -757,6 +768,17 @@ class ProjectSdk extends SdkBase
     public function groupRecycle($body)
     {
         return $this->restful("POST", "/group/groupRecycle", $body);
+    }
+
+    /**
+     * 回收单个兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/recycleEquitySingleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupRecycleSingle($body)
+    {
+        return $this->restful("POST", "/group/groupRecycleSingle", $body);
     }
 
     /**
@@ -837,6 +859,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取项目可用余额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/getProjectUsefulMoneyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGetUsefulMoney($body)
+    {
+        return $this->restful("POST", "/project/projectGetUsefulMoney", $body);
+    }
+
+    /**
      * 查询项目限制数据
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/limitAction.md
      * @param array $body 入参类型
@@ -878,6 +911,39 @@ class ProjectSdk extends SdkBase
     public function projectTypePaing($body)
     {
         return $this->restful("POST", "/group/projecttypepaing", $body);
+    }
+
+    /**
+     * changeGroupTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeGroupTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeChangeGroupType($body)
+    {
+        return $this->restful("POST", "/redeem/redeemCodeChangeGroupType", $body);
+    }
+
+    /**
+     * changeProjectTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeProjectTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeChangeProjectType($body)
+    {
+        return $this->restful("POST", "/redeem/redeemCodeChangeProjectType", $body);
+    }
+
+    /**
+     * changeSingleTypeAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeSingleTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeChangeSingleType($body)
+    {
+        return $this->restful("POST", "/redeem/redeemCodeChangeSingleType", $body);
     }
 
     /**
@@ -1091,6 +1157,7 @@ class ProjectSdk extends SdkBase
 
     /**
      * 根据分单号，姓名 身份证号 查找兑换码信息
+     * 【仅供寿险使用】
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/successListsAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

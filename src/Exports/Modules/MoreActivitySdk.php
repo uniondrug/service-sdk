@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-29
- * @time   Tue, 29 Oct 2019 17:42:35 +0800
+ * @date   2019-11-21
+ * @time   Thu, 21 Nov 2019 18:01:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * MoreActivitySdk
@@ -28,6 +28,17 @@ class MoreActivitySdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'more.activity.module';
+
+    /**
+     * 连锁下活动列表
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/activityListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityList($body)
+    {
+        return $this->restful("POST", "/project/activityList", $body);
+    }
 
     /**
      * 验证码校验
@@ -151,6 +162,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 双十一活动
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/doubleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function double($body)
+    {
+        return $this->restful("POST", "/order/double", $body);
+    }
+
+    /**
      * 获取未领取的抽奖码
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Draw/DrawController/getAction.md
      * @param array $body 入参类型
@@ -192,6 +214,17 @@ class MoreActivitySdk extends SdkBase
     public function fundFreeze($body)
     {
         return $this->restful("POST", "/fund/freeze", $body);
+    }
+
+    /**
+     * 门店Id获取projectId
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getProjectIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectId($body)
+    {
+        return $this->restful("POST", "/project/getProjectId", $body);
     }
 
     /**
@@ -316,6 +349,50 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 查询开团信息
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupInfo($body)
+    {
+        return $this->restful("POST", "/group/info", $body);
+    }
+
+    /**
+     * 检测营销卡
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MarketCard/MarketCardController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketCardCheck($body)
+    {
+        return $this->restful("POST", "/MarketCard/check", $body);
+    }
+
+    /**
+     * 创建营销卡
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MarketCard/MarketCardController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketCardCreate($body)
+    {
+        return $this->restful("POST", "/MarketCard/create", $body);
+    }
+
+    /**
+     * 用户金币明细信息
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberGoldDetail($body)
+    {
+        return $this->restful("POST", "/memberGold/detail", $body);
+    }
+
+    /**
      * 用户金币信息
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/MemberGold/MemberGoldController/infoAction.md
      * @param array $body 入参类型
@@ -382,6 +459,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 商户信息
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/merchantInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchanInfo($body)
+    {
+        return $this->restful("POST", "/project/merchantInfo", $body);
+    }
+
+    /**
      * 订单创建
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/createAction.md
      * @param array $body 入参类型
@@ -426,6 +514,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 订单支付完成回调
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderNotifyController/paydAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderNotifyPayd($body)
+    {
+        return $this->restful("POST", "/order/notify/payd", $body);
+    }
+
+    /**
      * 项目详情
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/detailAction.md
      * @param array $body 入参类型
@@ -445,6 +544,17 @@ class MoreActivitySdk extends SdkBase
     public function projectGoodsDetail($body)
     {
         return $this->restful("POST", "/projectGoods/detail", $body);
+    }
+
+    /**
+     * 商品列表
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGoodsList($body)
+    {
+        return $this->restful("POST", "/projectGoods/list", $body);
     }
 
     /**
@@ -511,6 +621,28 @@ class MoreActivitySdk extends SdkBase
     public function status($body)
     {
         return $this->restful("POST", "/order/status", $body);
+    }
+
+    /**
+     * 超级会员日
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/superMemberAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function superMember($body)
+    {
+        return $this->restful("POST", "/order/super/member", $body);
+    }
+
+    /**
+     * 超级会员日订单状态
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/superStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function superStatus($body)
+    {
+        return $this->restful("POST", "/order/super/status", $body);
     }
 
     /**

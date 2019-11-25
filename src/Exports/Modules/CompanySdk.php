@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-19
- * @time   Tue, 19 Nov 2019 13:37:51 +0800
+ * @date   2019-11-21
+ * @time   Thu, 21 Nov 2019 11:15:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -338,6 +338,39 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EquityController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityList($body)
+    {
+        return $this->restful("POST", "/equity/listing", $body);
+    }
+
+    /**
+     * 企业平台员工导出sql
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/EmployeeController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportSql($body)
+    {
+        return $this->restful("POST", "/employee/export/sql", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/MemberController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberList($body)
+    {
+        return $this->restful("POST", "/member/listing", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/PointExchangeRecordController/createAction.md
      * @param array $body 入参类型
@@ -547,6 +580,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 根据openID获取账户信息
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/UserController/userByOpenIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userByOpenId($body)
+    {
+        return $this->restful("POST", "/user/userByOpenId", $body);
+    }
+
+    /**
      * 账户启用|停用
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/UserController/changeAction.md
      * @param array $body 入参类型
@@ -555,6 +599,17 @@ class CompanySdk extends SdkBase
     public function userChange($body)
     {
         return $this->restful("POST", "/user/change", $body);
+    }
+
+    /**
+     * 利用手机号更新账号openID
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/UserController/changeOpenIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userChangeOpenId($body)
+    {
+        return $this->restful("POST", "/user/changeOpenId", $body);
     }
 
     /**

@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
@@ -423,6 +424,4 @@ class UserSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/membercards/cardNum", $body);
     }
-
-
 }
