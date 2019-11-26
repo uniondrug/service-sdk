@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-11-26
- * @time   Tue, 26 Nov 2019 16:42:53 +0800
+ * @time   Tue, 26 Nov 2019 17:37:37 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -60,6 +60,17 @@ class MerchantApplySdk extends SdkBase
     public function applyContractDelete($body)
     {
         return $this->restful("POST", "/applyContract/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractDetail($body)
+    {
+        return $this->restful("POST", "/applyContract/detail", $body);
     }
 
     /**
