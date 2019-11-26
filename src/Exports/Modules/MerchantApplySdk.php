@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-29
- * @time   Tue, 29 Oct 2019 15:25:42 +0800
+ * @date   2019-11-26
+ * @time   Tue, 26 Nov 2019 16:42:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,50 @@ class MerchantApplySdk extends SdkBase
     public function applyAdd($body)
     {
         return $this->restful("POST", "/apply/add", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractCreate($body)
+    {
+        return $this->restful("POST", "/applyContract/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractDelete($body)
+    {
+        return $this->restful("POST", "/applyContract/delete", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractListing($body)
+    {
+        return $this->restful("POST", "/applyContract/listing", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractUpdate($body)
+    {
+        return $this->restful("POST", "/applyContract/update", $body);
     }
 
     /**
@@ -206,7 +250,7 @@ class MerchantApplySdk extends SdkBase
     }
 
     /**
-     * 根据Id门店信息
+     * 根据Id获取门店详情
      * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeDetailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
