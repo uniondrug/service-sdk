@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-21
- * @time   Mon, 21 Oct 2019 10:13:47 +0800
+ * @date   2019-11-25
+ * @time   Mon, 25 Nov 2019 11:17:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * EquitySdk
@@ -423,6 +423,50 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 根据groupId冻结已激活的权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableEquityByGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityDisableEquityByGroup($body)
+    {
+        return $this->restful("POST", "/equity/equityDisableEquityByGroup", $body);
+    }
+
+    /**
+     * 根据projectId冻结已激活的权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableEquityByProjectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityDisableEquityByProject($body)
+    {
+        return $this->restful("POST", "/equity/equityDisableEquityByProject", $body);
+    }
+
+    /**
+     * 根据groupId解冻已激活的权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/enableEquityByGroupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityEnableEquityByGroup($body)
+    {
+        return $this->restful("POST", "/equity/equityEnableEquityByGroup", $body);
+    }
+
+    /**
+     * 根据projectId解冻已激活的权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/enableEquityByProjectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityEnableEquityByProject($body)
+    {
+        return $this->restful("POST", "/equity/equityEnableEquityByProject", $body);
+    }
+
+    /**
      * 根据分单号和用户信息 获取已经存在的权益，并返回权益和用户信息
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/getByBillNosAction.md
      * @param array $body 入参类型
@@ -442,6 +486,17 @@ class EquitySdk extends SdkBase
     public function equityGetEquityDetail($body)
     {
         return $this->restful("POST", "/equity/virtual/detail", $body);
+    }
+
+    /**
+     * getRecycleDataAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/getRecycleDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityGetRecycleData($body)
+    {
+        return $this->restful("POST", "/equity/equityGetRecycleData", $body);
     }
 
     /**
@@ -487,6 +542,39 @@ class EquitySdk extends SdkBase
     public function equityLimit($body)
     {
         return $this->restful("POST", "/equity/limit", $body);
+    }
+
+    /**
+     * 通过分组回收权益(异步)
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleGroupEquityAsyncAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityRecycleAsyncGroup($body)
+    {
+        return $this->restful("POST", "/equity/equityRecycleAsyncGroup", $body);
+    }
+
+    /**
+     * 通过分组回收权益
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleGroupEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityRecycleGroup($body)
+    {
+        return $this->restful("POST", "/equity/equityRecycleGroup", $body);
+    }
+
+    /**
+     * recycleSingleEquityAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleSingleEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityRecycleSingle($body)
+    {
+        return $this->restful("POST", "/equity/equityRecycleSingle", $body);
     }
 
     /**
@@ -778,6 +866,17 @@ class EquitySdk extends SdkBase
     public function guaranteeDetail($body)
     {
         return $this->restful("POST", "/guarantee/info", $body);
+    }
+
+    /**
+     * getActivateGuaranteeNumAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/getActivateGuaranteeNumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteeGetActivateNum($body)
+    {
+        return $this->restful("POST", "/guarantee/guaranteeGetActivateNum", $body);
     }
 
     /**
@@ -1142,69 +1241,5 @@ class EquitySdk extends SdkBase
     public function updateEquitySerial($body)
     {
         return $this->restful("POST", "/equity/serial/update", $body);
-    }
-    /**
-     * recycleGroupEquityAction()
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleGroupEquityAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function equityRecycleGroup($body)
-    {
-        return $this->restful("POST", "/equity/equityRecycleGroup", $body);
-    }
-
-    /**
-     * recycleSingleEquityAction()
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/recycleSingleEquityAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function equityRecycleSingle($body)
-    {
-        return $this->restful("POST", "/equity/equityRecycleSingle", $body);
-    }
-    /**
-     * 根据groupId冻结已激活的权益
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableEquityByGroupAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function equityDisableEquityByGroup($body)
-    {
-        return $this->restful("POST", "/equity/equityDisableEquityByGroup", $body);
-    }
-
-    /**
-     * 根据projectId冻结已激活的权益
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/disableEquityByProjectAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function equityDisableEquityByProject($body)
-    {
-        return $this->restful("POST", "/equity/equityDisableEquityByProject", $body);
-    }
-
-    /**
-     * 根据groupId解冻已激活的权益
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/enableEquityByGroupAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function equityEnableEquityByGroup($body)
-    {
-        return $this->restful("POST", "/equity/equityEnableEquityByGroup", $body);
-    }
-
-    /**
-     * 根据projectId解冻已激活的权益
-     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/enableEquityByProjectAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function equityEnableEquityByProject($body)
-    {
-        return $this->restful("POST", "/equity/equityEnableEquityByProject", $body);
     }
 }

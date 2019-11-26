@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-21
- * @time   Thu, 21 Nov 2019 10:33:44 +0800
+ * @date   2019-11-25
+ * @time   Mon, 25 Nov 2019 14:41:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -217,6 +217,28 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * modeId获取projectId
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getModeProjectIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getModeProject($body)
+    {
+        return $this->restful("POST", "/project/modeProjectId", $body);
+    }
+
+    /**
+     * 门店Id获取projectId
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getProjectIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectId($body)
+    {
+        return $this->restful("POST", "/project/getProjectId", $body);
+    }
+
+    /**
      * 商品详情
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/detailAction.md
      * @param array $body 入参类型
@@ -335,6 +357,17 @@ class MoreActivitySdk extends SdkBase
     public function groupHelp($body)
     {
         return $this->restful("POST", "/group/help", $body);
+    }
+
+    /**
+     * 查询开团信息
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupInfo($body)
+    {
+        return $this->restful("POST", "/group/info", $body);
     }
 
     /**
