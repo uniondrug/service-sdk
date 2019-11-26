@@ -6,9 +6,11 @@
 namespace Uniondrug\ServiceSdk\Exports;
 
 use Uniondrug\ServiceSdk\Traits\BackendTrait;
+use Uniondrug\ServiceSdk\Exports\Backends\ReservationPhysicalSdk;
 
 /**
  * SDK For Backend
+ * @property ReservationPhysicalSdk $reservationPhysical
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Backend extends Abstracts\Export

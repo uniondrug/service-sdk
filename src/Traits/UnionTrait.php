@@ -12,6 +12,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Unions\EshopSdk $eshop
  * @property \Uniondrug\ServiceSdk\Exports\Unions\FinanceSdk $finance
  * @property \Uniondrug\ServiceSdk\Exports\Unions\ProjectSdk $project
+ * @property \Uniondrug\ServiceSdk\Exports\Unions\DistributionSdk $distribution
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait UnionTrait {
