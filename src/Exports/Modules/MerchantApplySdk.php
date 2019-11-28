@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-27
- * @time   Wed, 27 Nov 2019 18:11:51 +0800
+ * @date   2019-11-28
+ * @time   Thu, 28 Nov 2019 14:56:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -48,7 +48,7 @@ class MerchantApplySdk extends SdkBase
      */
     public function applyContractCreate($body)
     {
-        return $this->restful("POST", "/applyContract/create", $body);
+        return $this->restful("POST", "/apply/contract/create", $body);
     }
 
     /**
@@ -59,7 +59,7 @@ class MerchantApplySdk extends SdkBase
      */
     public function applyContractDelete($body)
     {
-        return $this->restful("POST", "/applyContract/delete", $body);
+        return $this->restful("POST", "/apply/contract/delete", $body);
     }
 
     /**
@@ -70,7 +70,7 @@ class MerchantApplySdk extends SdkBase
      */
     public function applyContractDetail($body)
     {
-        return $this->restful("POST", "/applyContract/detail", $body);
+        return $this->restful("POST", "/apply/contract/detail", $body);
     }
 
     /**
@@ -81,7 +81,7 @@ class MerchantApplySdk extends SdkBase
      */
     public function applyContractListing($body)
     {
-        return $this->restful("POST", "/applyContract/listing", $body);
+        return $this->restful("POST", "/apply/contract/listing", $body);
     }
 
     /**
@@ -92,7 +92,7 @@ class MerchantApplySdk extends SdkBase
      */
     public function applyContractUpdate($body)
     {
-        return $this->restful("POST", "/applyContract/update", $body);
+        return $this->restful("POST", "/apply/contract/update", $body);
     }
 
     /**
