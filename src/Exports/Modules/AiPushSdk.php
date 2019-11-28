@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-13
- * @time   Wed, 13 Nov 2019 17:37:05 +0800
+ * @date   2019-11-28
+ * @time   Thu, 28 Nov 2019 11:45:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -280,6 +280,17 @@ class AiPushSdk extends SdkBase
     public function poolRecordsTypeList($body)
     {
         return $this->restful("POST", "/poolRecords/typeList", $body);
+    }
+
+    /**
+     * 根据手机获取用户详情
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/getUserByMobileAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersByMobile($body)
+    {
+        return $this->restful("POST", "/users/getUserByMobile", $body);
     }
 
     /**
