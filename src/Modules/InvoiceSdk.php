@@ -13,10 +13,9 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
-use Uniondrug\Structs\StructInterface;
 
 /**
  * InvoiceSdk
@@ -35,7 +34,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 新增一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/addAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function add($body)
     {
@@ -46,7 +45,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 删除一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deleteAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function delete($body)
     {
@@ -57,7 +56,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 获取发票分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getListAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getList($body)
     {
@@ -68,7 +67,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 根据开票单获取发票的总和
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getInvoiceSumAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getInvoiceSum($body)
     {
@@ -79,7 +78,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 获取发票的详情
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/detailAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function detail($body)
     {
@@ -90,7 +89,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 根据发票单号获取发票的详情
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getDetailAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getDetail($body)
     {
@@ -101,7 +100,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 编辑一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/EditAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function edit($body)
     {
@@ -112,7 +111,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 批量编辑
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/editInBatchAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function editInBatch($body)
     {
@@ -123,7 +122,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 新增一个发票快递单
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/addExpressNoAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function addExpressNo($body)
     {
@@ -134,7 +133,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 快递公司列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/ExpressController/listAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function expressList($body)
     {
@@ -145,7 +144,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 获取快递页发票分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getPagingInExpressAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getListInExpress($body)
     {
@@ -156,7 +155,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 获取未寄出发票数量
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/countInvoiceAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function countInvoice($body)
     {
@@ -167,7 +166,7 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 通过保司获取发票导出
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getExportByInsureAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getInvoiceExportByInsure($body)
     {
@@ -178,10 +177,21 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
      * 通过保司获取发票列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getPagingByInsureAction.md
      * @param object|array $body 入参类型
-     * @return ClientResponseInterface
+     * @return ResponseInterface
      */
     public function getInvoicePagingByInsure($body)
     {
         return $this->restful("POST", "/invoice/getPagingByInsure", $body);
+    }
+
+    /**
+     * 通过理赔单号获取发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cc($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingByClaimNo", $body);
     }
 }
