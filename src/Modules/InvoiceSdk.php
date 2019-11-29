@@ -163,6 +163,17 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过理赔单号获取发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoicePagingByClaimNo($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingByClaimNo", $body);
+    }
+
+    /**
      * 通过保司获取发票导出
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getExportByInsureAction.md
      * @param object|array $body 入参类型
