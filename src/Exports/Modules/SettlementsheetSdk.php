@@ -32,7 +32,7 @@ class SettlementsheetSdk extends SdkBase
     /**
      * 新增对账单
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/addAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function add($body)
@@ -43,7 +43,7 @@ class SettlementsheetSdk extends SdkBase
     /**
      * 软删除对账单
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/deleteAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function delete($body)
@@ -54,7 +54,7 @@ class SettlementsheetSdk extends SdkBase
     /**
      * 读取对账单详情
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function detial($body)
@@ -65,7 +65,7 @@ class SettlementsheetSdk extends SdkBase
     /**
      * 读取对账单列表
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/pagingAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function paging($body)
@@ -76,7 +76,7 @@ class SettlementsheetSdk extends SdkBase
     /**
      * 更新对账单信息
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/updateAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function update($body)
@@ -87,7 +87,7 @@ class SettlementsheetSdk extends SdkBase
     /**
      * 更新对账单商品替换状态
      * @link https://uniondrug.coding.net/p/module.settlementsheet/git/blob/development/docs/api/settlementSheetController/updateGoodsReplaceStatusAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function updateGoodsReplaceStatus($body)

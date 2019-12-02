@@ -32,7 +32,7 @@ class InvoiceSdk extends SdkBase
     /**
      * 新增一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/addAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function add($body)
@@ -43,7 +43,7 @@ class InvoiceSdk extends SdkBase
     /**
      * 获取发票的详情
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/detailAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function detail($body)
@@ -54,7 +54,7 @@ class InvoiceSdk extends SdkBase
     /**
      * 删除一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deteleAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function detele($body)
@@ -65,7 +65,7 @@ class InvoiceSdk extends SdkBase
     /**
      * 根据开票单号或对账单号获取发票的总和
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getInvoiceSumAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function getInvoiceSum($body)
@@ -76,11 +76,22 @@ class InvoiceSdk extends SdkBase
     /**
      * 获取发票分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function getList($body)
     {
         return $this->restful("POST", "/invoice/getList", $body);
+    }
+
+    /**
+     * 通过理赔单号获取发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoicePagingByClaimNo($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingByClaimNo", $body);
     }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-21
- * @time   Thu, 21 Nov 2019 18:01:36 +0800
+ * @date   2019-12-02
+ * @time   Mon, 02 Dec 2019 16:06:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -195,6 +195,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 查询转盘订单详情
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Draw/DrawController/OrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drawOrder($body)
+    {
+        return $this->restful("POST", "/draw/order", $body);
+    }
+
+    /**
      * 校验项目资金
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Fund/FundController/checkAction.md
      * @param array $body 入参类型
@@ -217,14 +228,14 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 门店Id获取projectId
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getProjectIdAction.md
+     * modeId获取projectId
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getModeProjectIdAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getProjectId($body)
+    public function getModeProject($body)
     {
-        return $this->restful("POST", "/project/getProjectId", $body);
+        return $this->restful("POST", "/project/modeProjectId", $body);
     }
 
     /**
@@ -346,17 +357,6 @@ class MoreActivitySdk extends SdkBase
     public function groupHelp($body)
     {
         return $this->restful("POST", "/group/help", $body);
-    }
-
-    /**
-     * 查询开团信息
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Group/GroupController/infoAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function groupInfo($body)
-    {
-        return $this->restful("POST", "/group/info", $body);
     }
 
     /**

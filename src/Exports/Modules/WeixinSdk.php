@@ -32,7 +32,7 @@ class WeixinSdk extends SdkBase
     /**
      * 获取accessToken接口
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/WxController/tokenAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function accessToken($body)
@@ -43,7 +43,7 @@ class WeixinSdk extends SdkBase
     /**
      * 配置接口
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/WxController/configAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function config($body)
@@ -54,7 +54,7 @@ class WeixinSdk extends SdkBase
     /**
      * 创建tag
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/TagController/createTagAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function createTag($body)
@@ -65,7 +65,7 @@ class WeixinSdk extends SdkBase
     /**
      * decryptAction()
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/ProgramController/decryptAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function decrypt($body)
@@ -76,7 +76,7 @@ class WeixinSdk extends SdkBase
     /**
      * 绑定标签
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/TagController/getIdListAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function getIdList($body)
@@ -87,7 +87,7 @@ class WeixinSdk extends SdkBase
     /**
      * 用code换取openid
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/WxController/openidAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function getOpenIdByCode($body)
@@ -98,7 +98,7 @@ class WeixinSdk extends SdkBase
     /**
      * 获取标签列表
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/TagController/getAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function getTags($body)
@@ -109,7 +109,7 @@ class WeixinSdk extends SdkBase
     /**
      * 获取微信用户信息接口
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/WxController/infoAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function getUserInfo($body)
@@ -120,7 +120,7 @@ class WeixinSdk extends SdkBase
     /**
      * 绑定标签
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/TagController/labelAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function labelTag($body)
@@ -131,7 +131,7 @@ class WeixinSdk extends SdkBase
     /**
      * 设置短链接
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/WxController/shortUrlAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function shortUrl($body)
@@ -142,7 +142,7 @@ class WeixinSdk extends SdkBase
     /**
      * code获取ticket、openid
      * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/ProgramController/ticketAction.md
-     * @param array $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function ticket($body)
