@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-12-02
- * @time   Mon, 02 Dec 2019 09:37:02 +0800
+ * @time   Mon, 02 Dec 2019 11:57:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,6 +41,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 每日记录列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/countAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function count($body)
+    {
+        return $this->restful("POST", "/poolRecords/count", $body);
+    }
+
+    /**
      * 近30天的红包折线图
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/redLineAction.md
      * @param array $body 入参类型
@@ -49,6 +60,17 @@ class AiPushSdk extends SdkBase
     public function dataRedLine($body)
     {
         return $this->restful("POST", "/weiXin/data/redLine", $body);
+    }
+
+    /**
+     * 每日记录列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/dayListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dayList($body)
+    {
+        return $this->restful("POST", "/poolRecords/dayList", $body);
     }
 
     /**
@@ -313,6 +335,17 @@ class AiPushSdk extends SdkBase
     public function redDataPaging($body)
     {
         return $this->restful("POST", "/weiXin/data/getRedDataPaging", $body);
+    }
+
+    /**
+     * 已消费的权益红包总额
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/redUsedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redUsedData($body)
+    {
+        return $this->restful("POST", "/weiXin/data/redUsed", $body);
     }
 
     /**
