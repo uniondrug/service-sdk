@@ -8,8 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
+<<<<<<< HEAD
  * @date   2019-12-02
  * @time   Mon, 02 Dec 2019 16:06:39 +0800
+=======
+ * @date   2019-11-25
+ * @time   Mon, 25 Nov 2019 14:41:10 +0800
+>>>>>>> 368cba7ef1e6ddc33c4c541369649c1c4a8667cf
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -230,6 +235,20 @@ class MoreActivitySdk extends SdkBase
     /**
      * modeId获取projectId
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getModeProjectIdAction.md
+<<<<<<< HEAD
+=======
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getModeProject($body)
+    {
+        return $this->restful("POST", "/project/modeProjectId", $body);
+    }
+
+    /**
+     * 门店Id获取projectId
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getProjectIdAction.md
+>>>>>>> 368cba7ef1e6ddc33c4c541369649c1c4a8667cf
      * @param array $body 入参类型
      * @return ResponseInterface
      */

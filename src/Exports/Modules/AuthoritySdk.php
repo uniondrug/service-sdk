@@ -325,4 +325,15 @@ class AuthoritySdk extends SdkBase
     {
         return $this->restful("POST", "/systemWorkerRole/paging", $body);
     }
+
+    /**
+     * 已关联人员
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/countWorkersAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemWorkerRoleCountWorkers($body)
+    {
+        return $this->restful("POST", "/systemWorkerRole/countWorkers", $body);
+    }
 }

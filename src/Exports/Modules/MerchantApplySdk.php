@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-29
- * @time   Tue, 29 Oct 2019 15:25:42 +0800
+ * @date   2019-11-28
+ * @time   Thu, 28 Nov 2019 14:56:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,61 @@ class MerchantApplySdk extends SdkBase
     public function applyAdd($body)
     {
         return $this->restful("POST", "/apply/add", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractCreate($body)
+    {
+        return $this->restful("POST", "/apply/contract/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractDelete($body)
+    {
+        return $this->restful("POST", "/apply/contract/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractDetail($body)
+    {
+        return $this->restful("POST", "/apply/contract/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractListing($body)
+    {
+        return $this->restful("POST", "/apply/contract/listing", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyContractController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractUpdate($body)
+    {
+        return $this->restful("POST", "/apply/contract/update", $body);
     }
 
     /**
@@ -206,7 +261,7 @@ class MerchantApplySdk extends SdkBase
     }
 
     /**
-     * 根据Id门店信息
+     * 根据Id获取门店详情
      * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeDetailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -225,6 +280,17 @@ class MerchantApplySdk extends SdkBase
     public function applyStoreUpdate($body)
     {
         return $this->restful("POST", "/apply/store/update", $body);
+    }
+
+    /**
+     * 修改门店的地图 mapCode
+     * @link https://uniondrug.coding.net/p/module.apply.merchant/git/blob/development/docs/api/ApplyStoreController/storeUpdateMapCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreUpdateMapCode($body)
+    {
+        return $this->restful("POST", "/apply/store/update/mapCode", $body);
     }
 
     /**

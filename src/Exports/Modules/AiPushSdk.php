@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-13
- * @time   Wed, 13 Nov 2019 17:37:05 +0800
+ * @date   2019-12-02
+ * @time   Mon, 02 Dec 2019 11:57:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,6 +41,39 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 每日记录列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/countAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function count($body)
+    {
+        return $this->restful("POST", "/poolRecords/count", $body);
+    }
+
+    /**
+     * 近30天的红包折线图
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/redLineAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataRedLine($body)
+    {
+        return $this->restful("POST", "/weiXin/data/redLine", $body);
+    }
+
+    /**
+     * 每日记录列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/dayListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dayList($body)
+    {
+        return $this->restful("POST", "/poolRecords/dayList", $body);
+    }
+
+    /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/exportAction.md
      * @param array $body 入参类型
@@ -49,6 +82,17 @@ class AiPushSdk extends SdkBase
     public function exportPoolRecord($body)
     {
         return $this->restful("POST", "/poolRecords/exportRecord", $body);
+    }
+
+    /**
+     * 根据organizationId获取projectIds
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/getProjectIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectId($body)
+    {
+        return $this->restful("POST", "/weiXin/data/getProjectId", $body);
     }
 
     /**
@@ -280,6 +324,39 @@ class AiPushSdk extends SdkBase
     public function poolRecordsTypeList($body)
     {
         return $this->restful("POST", "/poolRecords/typeList", $body);
+    }
+
+    /**
+     * 红包数据分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/getRedDataPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redDataPaging($body)
+    {
+        return $this->restful("POST", "/weiXin/data/getRedDataPaging", $body);
+    }
+
+    /**
+     * 已消费的权益红包总额
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/redUsedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redUsedData($body)
+    {
+        return $this->restful("POST", "/weiXin/data/redUsed", $body);
+    }
+
+    /**
+     * 根据手机获取用户详情
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/getUserByMobileAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersByMobile($body)
+    {
+        return $this->restful("POST", "/users/getUserByMobile", $body);
     }
 
     /**
