@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-18
- * @time   Mon, 18 Nov 2019 09:40:42 +0800
+ * @date   2019-11-29
+ * @time   Fri, 29 Nov 2019 17:33:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -107,14 +107,14 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 撤销理赔
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeAction.md
+     * 发起理赔
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function claim($body)
     {
-        return $this->restful("POST", "/claim/revoke", $body);
+        return $this->restful("POST", "/claim/claim", $body);
     }
 
     /**
@@ -128,17 +128,6 @@ class InsureSdk extends SdkBase
         return $this->restful("POST", "/claimOnline/claimData", $body);
     }
 
-    /**
-     * 通知理赔的详细过程
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDetailClaimOnline($body)
-    {
-        return $this->restful("POST", "/claimOnline/claimDetail", $body);
-    }
-    
     /**
      * 计算保单理赔上限比例
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimMaxRatioAction.md
@@ -316,6 +305,17 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 理赔明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPagingClaim($body)
+    {
+        return $this->restful("POST", "/claim/paging", $body);
+    }
+
+    /**
      * 获取投保计划详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/detailAction.md
      * @param array $body 入参类型
@@ -401,6 +401,17 @@ class InsureSdk extends SdkBase
     public function payInsurePolicy($body)
     {
         return $this->restful("POST", "/insurePolicy/pay", $body);
+    }
+
+    /**
+     * 撤销理赔
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function revoke($body)
+    {
+        return $this->restful("POST", "/claim/revoke", $body);
     }
 
     /**
