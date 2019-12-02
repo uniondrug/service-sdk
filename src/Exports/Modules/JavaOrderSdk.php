@@ -317,4 +317,15 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/refund/package", $body);
     }
+
+    /**
+     * 修改订单店员信息
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function updateAssistant($body)
+    {
+        return $this->restful("POST", "/order/assistant/update", $body);
+    }
 }
