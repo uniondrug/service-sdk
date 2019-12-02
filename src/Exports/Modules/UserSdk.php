@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-30
- * @time   Wed, 30 Oct 2019 14:59:11 +0800
+ * @date   2019-12-02
+ * @time   Mon, 02 Dec 2019 23:40:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * UserSdk
@@ -402,6 +402,28 @@ class UserSdk extends SdkBase
     public function pagingWxMembers($body)
     {
         return $this->restful("POST", "/wxmember/paging", $body);
+    }
+
+    /**
+     * 添加用户
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/PayAccountController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function payAccountCreate($body)
+    {
+        return $this->restful("POST", "/payAccount/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/PayAccountController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function payAccountDetail($body)
+    {
+        return $this->restful("POST", "/payAccount/detail", $body);
     }
 
     /**
