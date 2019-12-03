@@ -14,7 +14,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * TakeSdk
@@ -137,6 +137,17 @@ class TakeSdk extends SdkBase
     public function getDetail($body)
     {
         return $this->restful("POST", "/user/take/getDetail", $body);
+    }
+
+    /**
+     * 新订单分页
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/newPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOrderPaging($body)
+    {
+        return $this->restful("POST", "/order/new/paging", $body);
     }
 
     /**
