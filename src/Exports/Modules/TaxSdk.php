@@ -72,4 +72,15 @@ class TaxSdk extends SdkBase
     {
         return $this->restful("POST", "/invoiceExpress/update", $body);
     }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressDelete($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/delete", $body);
+    }
 }
