@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-02
- * @time   Mon, 02 Dec 2019 16:06:39 +0800
+ * @date   2019-12-03
+ * @time   Tue, 03 Dec 2019 11:15:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -522,6 +522,17 @@ class MoreActivitySdk extends SdkBase
     public function orderNotifyPayd($body)
     {
         return $this->restful("POST", "/order/notify/payd", $body);
+    }
+
+    /**
+     * 公众号订单撤销
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderNotifyController/publicCancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderNotifyPublicCancel($body)
+    {
+        return $this->restful("POST", "/order/notify/publicCancel", $body);
     }
 
     /**
