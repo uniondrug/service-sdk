@@ -32,7 +32,7 @@ class TaxSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/createAction.md
-     * @param array|object $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function invoiceExpressCreate($body)
@@ -41,20 +41,9 @@ class TaxSdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @return ResponseInterface
-     */
-    public function invoiceExpressDelete($body)
-    {
-        return $this->restful("POST", "/invoiceExpress/delete", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/detailAction.md
-     * @param array|object $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function invoiceExpressDetail($body)
@@ -63,20 +52,9 @@ class TaxSdk extends SdkBase
     }
 
     /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/listingAction.md
-     * @param array|object $body 入参类型
-     * @return ResponseInterface
-     */
-    public function invoiceExpressListing($body)
-    {
-        return $this->restful("POST", "/invoiceExpress/listing", $body);
-    }
-
-    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/pagingAction.md
-     * @param array|object $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function invoiceExpressPaging($body)
@@ -87,7 +65,7 @@ class TaxSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param array|object $body 入参类型
+     * @param object|array $body 入参类型
      * @return ResponseInterface
      */
     public function invoiceExpressUpdate($body)
