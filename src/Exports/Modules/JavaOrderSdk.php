@@ -355,7 +355,7 @@ class JavaOrderSdk extends SdkBase
      * @return ResponseInterface
      * @link
      */
-    public function orderCashierUpdate($body)
+    public function orderErpUpdate($body)
     {
         return $this->restful("POST", "/order/erpsn/update", $body);
     }
