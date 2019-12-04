@@ -328,4 +328,35 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/assistant/update", $body);
     }
+
+    /**
+     * 配送发货
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function deliver($body)
+    {
+        return $this->restful("POST", "/logistics/deliver/notify", $body);
+    }
+
+    /**
+     * 检查erp是否重复
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkErpRepeat($body)
+    {
+        return $this->restful("POST", "/order/query/erpcheck", $body);
+    }
+
+    /**
+     * 更新订单ErpSn信息接口
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function orderCashierUpdate($body)
+    {
+        return $this->restful("POST", "/order/erpsn/update", $body);
+    }
 }
