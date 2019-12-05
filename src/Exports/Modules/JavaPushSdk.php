@@ -27,6 +27,7 @@ class JavaPushSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/push/notify', $body);
     }
+
     /**
      * 换新服务条目查询
      * @link
@@ -37,6 +38,7 @@ class JavaPushSdk extends SdkBase
     {
         return $this->restful("POST", "/audit/drug/renew/query", $body);
     }
+
     /**
      * 通过主订单查询审核单
      * @link
@@ -46,5 +48,16 @@ class JavaPushSdk extends SdkBase
     public function auditQuery($body)
     {
         return $this->restful("POST", "/audit/query", $body);
+    }
+
+    /**
+     * 订单转移重新审核
+     * @link https://uniondrug.coding.net/p/java.module.order/d/java.module.order/git/blob/development/api-docs/docs-order-push/auditRetry.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditRetry($body)
+    {
+        return $this->restful("POST", "/audit/retry", $body);
     }
 }
