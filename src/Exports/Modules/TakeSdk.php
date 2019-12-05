@@ -140,6 +140,17 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 新订单详情
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/newDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOrderDetail($body)
+    {
+        return $this->restful("POST", "/order/new/paging", $body);
+    }
+
+    /**
      * 新订单分页
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/newPagingAction.md
      * @param array $body 入参类型
@@ -148,6 +159,17 @@ class TakeSdk extends SdkBase
     public function getOrderPaging($body)
     {
         return $this->restful("POST", "/order/new/paging", $body);
+    }
+
+    /**
+     * 商品缺货
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/GoodController/goodshortageCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goodShortageCreate($body)
+    {
+        return $this->restful("POST", "/good/shortage/create", $body);
     }
 
     /**
