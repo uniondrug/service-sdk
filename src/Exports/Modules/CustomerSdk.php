@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-12-05
- * @time   Thu, 05 Dec 2019 16:53:38 +0800
+ * @time   Thu, 05 Dec 2019 18:59:22 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -203,6 +203,17 @@ class CustomerSdk extends SdkBase
     public function getEmployeeInfo($body)
     {
         return $this->restful("POST", "/employee/info", $body);
+    }
+
+    /**
+     * infoByMobileAction()
+     * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/infoByMobileAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEmployeeInfoByMobile($body)
+    {
+        return $this->restful("POST", "/employee/infoByMobile", $body);
     }
 
     /**
