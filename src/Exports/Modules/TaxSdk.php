@@ -68,7 +68,7 @@ class TaxSdk extends SdkBase
      * @param object|array $body 入参类型
      * @return ResponseInterface
      */
-    public function invoiceExpressPagingListing($body)
+    public function invoiceExpressListing($body)
     {
         return $this->restful("POST", "/invoiceExpress/listing", $body);
     }
