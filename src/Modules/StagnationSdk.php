@@ -102,6 +102,17 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 通过cdKey更新权益码
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateEquityNoAction.md
+     * @param array $body 入参类型
+     * @return ClientResponseInterface
+     */
+    public function updateEquityNo($body)
+    {
+        return $this->restful("POST", "/code/updateEquityNo", $body);
+    }
+
+    /**
      * 新增配置（支持批量）
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/addAction.md
      * @param array $body 入参类型
