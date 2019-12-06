@@ -63,6 +63,17 @@ class TaxSdk extends SdkBase
     }
 
     /**
+     * 批次列表
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/pagingAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressListing($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/listing", $body);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
      * @param object|array $body 入参类型
@@ -82,5 +93,16 @@ class TaxSdk extends SdkBase
     public function invoiceExpressDelete($body)
     {
         return $this->restful("POST", "/invoiceExpress/delete", $body);
+    }
+
+    /**
+     * 批量删除
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressDeleteInBatch($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/deleteInBatch", $body);
     }
 }

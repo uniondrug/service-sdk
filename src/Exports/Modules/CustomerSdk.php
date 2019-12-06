@@ -8,10 +8,9 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-01-21
- * @time   Mon, 21 Jan 2019 17:28:30 +0800
+ * @date   2019-12-05
+ * @time   Thu, 05 Dec 2019 18:59:22 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -42,7 +41,7 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * addAction()
+     * 新增
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -50,6 +49,17 @@ class CustomerSdk extends SdkBase
     public function addEmployee($body)
     {
         return $this->restful("POST", "/employee/add", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeTagController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addEmployeeTag($body)
+    {
+        return $this->restful("POST", "/employeeTag/add", $body);
     }
 
     /**
@@ -64,7 +74,7 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * delAction()
+     * 删除
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/delAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -75,7 +85,7 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * delAction()
+     * 删除
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeTagController/delAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -97,7 +107,7 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * editAction()
+     * 编辑
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/editAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -108,7 +118,7 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * editAction()
+     * 修改
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeTagController/editAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -163,7 +173,7 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * idsAction()
+     * 获取雇员IDs
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/idsAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -174,7 +184,18 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * infoAction()
+     * 根据customerId获取雇员数量
+     * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/employeeCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEmployeeCount($body)
+    {
+        return $this->restful("POST", "/employee/EmployeeCount", $body);
+    }
+
+    /**
+     * 详情
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/infoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -185,7 +206,18 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * pagingAction()
+     * infoByMobileAction()
+     * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/infoByMobileAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEmployeeInfoByMobile($body)
+    {
+        return $this->restful("POST", "/employee/infoByMobile", $body);
+    }
+
+    /**
+     * 雇员分页列表
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -196,7 +228,7 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * infoAction()
+     * 详情
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeTagController/infoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -207,7 +239,18 @@ class CustomerSdk extends SdkBase
     }
 
     /**
-     * pagingAction()
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeTagController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getEmployeeTagList($body)
+    {
+        return $this->restful("POST", "/employeeTag/list", $body);
+    }
+
+    /**
+     * 分页
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/EmployeeTagController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -216,16 +259,4 @@ class CustomerSdk extends SdkBase
     {
         return $this->restful("POST", "/employeeTag/paging", $body);
     }
-
-    /**
-     * 添加雇员标签
-     * @link https://uniondrug.coding.net/p/docs/git/blob/development/sdks/service/customer/employeeTag/add.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function addEmployeeTag($body)
-    {
-        return $this->restful("POST", "/employeeTag/add", $body);
-    }
-
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-21
- * @time   Thu, 21 Nov 2019 11:15:39 +0800
+ * @date   2019-12-06
+ * @time   Fri, 06 Dec 2019 15:22:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -357,6 +357,28 @@ class CompanySdk extends SdkBase
     public function exportSql($body)
     {
         return $this->restful("POST", "/employee/export/sql", $body);
+    }
+
+    /**
+     * 权益数据
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/RedeemController/dataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRedeemData($body)
+    {
+        return $this->restful("POST", "/redeem/data", $body);
+    }
+
+    /**
+     * 根据memberId获取兑换码id数组
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/RedeemController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRedeemUserIds($body)
+    {
+        return $this->restful("POST", "/redeem/list", $body);
     }
 
     /**
