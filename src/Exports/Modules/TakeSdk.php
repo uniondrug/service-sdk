@@ -163,13 +163,13 @@ class TakeSdk extends SdkBase
 
     /**
      * 商品缺货
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/GoodController/goodshortageCreateAction.md
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/goodShortageCreateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function goodShortageCreate($body)
     {
-        return $this->restful("POST", "/good/shortage/create", $body);
+        return $this->restful("POST", "/order/good/shortage/create", $body);
     }
 
     /**
