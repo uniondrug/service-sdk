@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-12-06
- * @time   Fri, 06 Dec 2019 10:46:05 +0800
+ * @time   Fri, 06 Dec 2019 15:22:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -368,6 +368,17 @@ class CompanySdk extends SdkBase
     public function getRedeemData($body)
     {
         return $this->restful("POST", "/redeem/data", $body);
+    }
+
+    /**
+     * 根据memberId获取兑换码id数组
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/RedeemController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRedeemUserIds($body)
+    {
+        return $this->restful("POST", "/redeem/list", $body);
     }
 
     /**
