@@ -105,4 +105,15 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/getListingByClaimNo", $body);
     }
+
+    /**
+     * 财税发票池
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoicePagingForTax($body)
+    {
+        return $this->restful("POST", "/invoice/pagingForTax", $body);
+    }
 }
