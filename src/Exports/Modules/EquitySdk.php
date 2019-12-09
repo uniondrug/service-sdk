@@ -1219,4 +1219,16 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/guarantee/guaranteeGetActivateNum", $body);
     }
+
+    /**
+     * 批量冻结申请接口
+     * batchClaimAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/batchClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchClaim($body)
+    {
+        return $this->restful("POST", "/equity/equityBatchClaim", $body);
+    }
 }
