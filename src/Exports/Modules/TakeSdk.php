@@ -147,7 +147,7 @@ class TakeSdk extends SdkBase
      */
     public function getOrderDetail($body)
     {
-        return $this->restful("POST", "/order/new/paging", $body);
+        return $this->restful("POST", "/order/new/detail", $body);
     }
 
     /**
