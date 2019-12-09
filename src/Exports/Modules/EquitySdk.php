@@ -1244,6 +1244,7 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 批量冻结申请接口
      * batchClaimAction()
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/batchClaimAction.md
      * @param array $body 入参类型
