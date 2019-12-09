@@ -1,5 +1,4 @@
 <?php
-
 namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\Service\ClientResponseInterface;
@@ -13,6 +12,7 @@ use Uniondrug\ServiceSdk\ServiceSdkInterface;
 class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
 {
     protected $serviceName = 'huoJuExpress';
+
     /**
      * 创建订单
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/testing/docs/api/Express/HuoJuController/createOrderAction.md
@@ -45,6 +45,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+
     /**
      * 查询运费
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/master/docs/api/Express/HuoJuController/selectFreightAction.md
@@ -55,6 +56,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+
     /**
      * 百度调用-查询运费
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/master/docs/api/Express/HuoJuController/InquiryFreightAction.md
@@ -65,6 +67,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+
     /**
      * 取消订单
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/testing/docs/api/Express/HuoJuController/cancelOrderAction.md
@@ -75,6 +78,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+
     /**
      * 锁定订单
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/testing/docs/api/Express/HuoJuController/lockOrderAction.md
@@ -85,6 +89,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+
     /**
      * 订单退款
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/testing/docs/api/Express/HuoJuController/refundOrderAction.md
@@ -95,6 +100,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+
     /**
      * 修改订单
      * @link https://uniondrug.coding.net/p/module.partners.express/git/blob/testing/docs/api/Express/HuoJuController/updateOrderAction.md
@@ -105,6 +111,7 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
+
     /**
      * 物流查询快递100
      * @link https://uniondrug.coding.net/p/module.partners.express/d/module.partners.express/git/blob/testing/docs/api/Express/Express100Controller/selectInquiryAction.md
@@ -116,4 +123,14 @@ class HuoJuExpressSdk extends Sdk implements ServiceSdkInterface
         return $this->restful(static::METHOD_POST, "/index", $body);
     }
 
+    /**
+     * 快递列表展示
+     * @link https://uniondrug.coding.net/p/module.partners.express/d/module.partners.express/git/blob/testing/docs/api/Express/ExpressListController/showListAction.md
+     * @param array $body
+     * @return ClientResponseInterface
+     */
+    public function showList($body)
+    {
+        return $this->restful(static::METHOD_POST, "/index", $body);
+    }
 }
