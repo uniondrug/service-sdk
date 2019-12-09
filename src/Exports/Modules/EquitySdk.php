@@ -1242,4 +1242,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/serial/update", $body);
     }
+
+    /**
+     * batchClaimAction()
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityController/batchClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchClaim($body)
+    {
+        return $this->restful("POST", "/equity/equityBatchClaim", $body);
+    }
 }
