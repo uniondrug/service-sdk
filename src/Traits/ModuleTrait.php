@@ -72,6 +72,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk $weixin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\WxSdk $wx
  * @property \Uniondrug\ServiceSdk\Exports\Modules\CompanySdk $company
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaHealthSdk $javaHealth
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait {
