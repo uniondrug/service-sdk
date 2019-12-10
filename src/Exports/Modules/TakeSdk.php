@@ -246,7 +246,7 @@ class TakeSdk extends SdkBase
      */
     public function pickOrderNo($body)
     {
-        return $this->restful("POST", "/order/orderAutoDriver", $body);
+        return $this->restful("POST", "/order/pickOrderNo", $body);
     }
 
     /**
