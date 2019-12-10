@@ -239,6 +239,17 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 拣单订单号
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/pickOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pickOrderNo($body)
+    {
+        return $this->restful("POST", "/order/orderAutoDriver", $body);
+    }
+
+    /**
      * 连锁列表
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/Partner/PartnerSwitchController/listAction.md
      * @param array $body 入参类型
