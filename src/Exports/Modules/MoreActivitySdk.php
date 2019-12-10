@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-09
- * @time   Mon, 09 Dec 2019 17:21:48 +0800
+ * @date   2019-12-10
+ * @time   Tue, 10 Dec 2019 14:21:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -676,6 +676,17 @@ class MoreActivitySdk extends SdkBase
     public function topupOrder($body)
     {
         return $this->restful("POST", "/order/topup/order", $body);
+    }
+
+    /**
+     * o2o活动订单状态
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/topupStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function topupStatus($body)
+    {
+        return $this->restful("POST", "/order/topup/status", $body);
     }
 
     /**
