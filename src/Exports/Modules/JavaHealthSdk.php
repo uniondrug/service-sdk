@@ -19,7 +19,7 @@ class JavaHealthSdk extends SdkBase
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.health';
+    protected $serviceName = 'java.health.module';
 
     /**
      * 健康券的列表查询
