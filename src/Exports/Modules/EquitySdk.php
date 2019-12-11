@@ -1231,4 +1231,26 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/equityBatchClaim", $body);
     }
+
+    /**
+     * 寿险批量驳回老
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/rejectBatchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityClaimRejectOld($body)
+    {
+        return $this->restful("POST", "/equity/claim/rejectOld", $body);
+    }
+
+    /**
+     * 查询流水号数据
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/getDataByOperatorAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityClaimGetOperatorNoData($body)
+    {
+        return $this->restful("POST", "/equity/claim/getOperatorNoData", $body);
+    }
 }
