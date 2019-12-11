@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-09
- * @time   Mon, 09 Dec 2019 22:23:24 +0800
+ * @date   2019-12-10
+ * @time   Tue, 10 Dec 2019 16:26:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -382,6 +382,17 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 手动发放
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/TimeSendLogController/giveOutBySelfAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function giveOutBySelf($body)
+    {
+        return $this->restful("POST", "/timeSendLog/giveOutBySelf", $body);
+    }
+
+    /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/MemberController/listAction.md
      * @param array $body 入参类型
@@ -621,6 +632,17 @@ class CompanySdk extends SdkBase
     public function tagUpdate($body)
     {
         return $this->restful("POST", "/tag/update", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/TimeSendLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function timeSendLogCreate($body)
+    {
+        return $this->restful("POST", "/timeSendLog/create", $body);
     }
 
     /**
