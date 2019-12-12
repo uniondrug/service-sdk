@@ -90,4 +90,24 @@ class JavaHealthSdk extends SdkBase
     {
         return $this->restful("POST", "/heaCenter/appointment/delete", $body);
     }
+
+    /**
+     * 发送手机验证码
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function sendMessage($body)
+    {
+        return $this->restful("POST", "/heaCenter/sendMessage", $body);
+    }
+
+    /**
+     * 校验手机验证码
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function validateMessage($body)
+    {
+        return $this->restful("POST", "/heaCenter/validateMessage", $body);
+    }
 }
