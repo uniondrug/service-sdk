@@ -1264,4 +1264,26 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/claim/rejectNew", $body);
     }
+
+    /**
+     * 批量扣除（新）
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/claimBatchNewAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityClaimClaimNew($body)
+    {
+        return $this->restful("POST", "/equity/claim/claimNew", $body);
+    }
+
+    /**
+     * 批量扣除（老）
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/claimBatchOldAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityClaimClaimOld($body)
+    {
+        return $this->restful("POST", "/equity/claim/claimOld", $body);
+    }
 }
