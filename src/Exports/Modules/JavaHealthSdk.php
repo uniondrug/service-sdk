@@ -48,7 +48,7 @@ class JavaHealthSdk extends SdkBase
      */
     public function heaCenterBackstageDelete($body)
     {
-        return $this->restful("POST", "/heaCenter/backstage/delete", $body);
+        return $this->restful("POST", "/heaCenter/delete", $body);
     }
 
     /**
