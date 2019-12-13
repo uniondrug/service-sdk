@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-02
- * @time   Mon, 02 Dec 2019 11:57:47 +0800
+ * @date   2019-12-13
+ * @time   Fri, 13 Dec 2019 11:46:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * AiPushSdk
@@ -30,7 +30,18 @@ class AiPushSdk extends SdkBase
     protected $serviceName = 'aiPush.module';
 
     /**
-     * JAVA调用是否发放积分
+     * JAVA调用 取消发放积分
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/cancelPointsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cancelPoints($body)
+    {
+        return $this->restful("POST", "/poolRecords/cancelPoints", $body);
+    }
+
+    /**
+     * JAVA调用是否发放积分(预发)
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/issuePointsAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -41,7 +52,7 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 每日记录列表
+     * 发放统计
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/countAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -346,6 +357,17 @@ class AiPushSdk extends SdkBase
     public function redUsedData($body)
     {
         return $this->restful("POST", "/weiXin/data/redUsed", $body);
+    }
+
+    /**
+     * JAVA调用实发积分
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/sendPointsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sendPoints($body)
+    {
+        return $this->restful("POST", "/poolRecords/sendPoints", $body);
     }
 
     /**
