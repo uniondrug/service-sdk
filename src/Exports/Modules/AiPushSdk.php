@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-13
- * @time   Fri, 13 Dec 2019 11:46:50 +0800
+ * @date   2019-12-16
+ * @time   Mon, 16 Dec 2019 16:17:06 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class AiPushSdk extends SdkBase
     public function exportPoolRecord($body)
     {
         return $this->restful("POST", "/poolRecords/exportRecord", $body);
+    }
+
+    /**
+     * 药店宝查看商品给店员发放积分数
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/getPointAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPoint($body)
+    {
+        return $this->restful("POST", "/plan/getPoint", $body);
     }
 
     /**
