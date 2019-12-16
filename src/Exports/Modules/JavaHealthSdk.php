@@ -110,4 +110,14 @@ class JavaHealthSdk extends SdkBase
     {
         return $this->restful("POST", "/heaCenter/validateMessage", $body);
     }
+
+    /**
+     * 查看健康券记录接口
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function findLog($body)
+    {
+        return $this->restful("POST", "/heaCenter/findLog", $body);
+    }
 }
