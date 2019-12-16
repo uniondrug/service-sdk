@@ -106,6 +106,6 @@ class MapSdk extends SdkBase
      */
     public function cityWeather($body)
     {
-        return $this->restful(static::METHOD_POST, "/location/weather/bycity", $body);
+        return $this->restful(static::METHOD_POST, "/location/weather", $body);
     }
 }
