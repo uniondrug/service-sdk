@@ -120,4 +120,14 @@ class JavaHealthSdk extends SdkBase
     {
         return $this->restful("POST", "/heaCenter/findLog", $body);
     }
+
+    /**
+     * Excel导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function excelExport($body)
+    {
+        return $this->restful("POST", "/heaCenter/excelExport", $body);
+    }
 }
