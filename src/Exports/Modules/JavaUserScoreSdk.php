@@ -104,4 +104,14 @@ class JavaUserScoreSdk extends SdkBase
     {
         return $this->restful("POST", "/accountrecords/batch/add", $body);
     }
+
+    /**
+     * 提现
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Responses\ResponseInterface
+     */
+    public function withdraw($body)
+    {
+        return $this->restful("POST", "/preAccountRecords/withdraw", $body);
+    }
 }

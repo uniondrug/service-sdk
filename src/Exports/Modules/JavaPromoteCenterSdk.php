@@ -35,7 +35,6 @@ class JavaPromoteCenterSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/card/queryMyRecord', $body);
     }
 
-
     /**
      * 卡列表-分页
      * @link
@@ -46,6 +45,7 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/card/pageCardList', $body);
     }
+
     /**
      * 卡详情
      * @link
@@ -98,5 +98,15 @@ class JavaPromoteCenterSdk extends SdkBase
     public function editCardInfo($body)
     {
         return $this->restful(static::METHOD_POST, '/card/update', $body);
+    }
+
+    /**
+     * 抵扣券
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function deductCouponTrial($body)
+    {
+        return $this->restful(static::METHOD_POST, '/deductCoupon/deductCouponTrial', $body);
     }
 }
