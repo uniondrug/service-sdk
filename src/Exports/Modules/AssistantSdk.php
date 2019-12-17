@@ -422,4 +422,63 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/feedback/detail", $body);
     }
 
+
+    /**
+     * 云联客户列表
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerList($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/paging", $body);
+    }
+
+
+    /**
+     * 指定跟进人 (支持批量)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/bindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerBind($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/bind", $body);
+    }
+
+
+    /**
+     * 省份列表
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/CloudCustomerController/provinceListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerProvinceList($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/provinceList", $body);
+    }
+
+
+    /**
+     * 城市列表
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/cityListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerCityList($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/cityList", $body);
+    }
+
+    /**
+     * 云联客户详情
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/DetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerDetail($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/detail", $body);
+    }
+
 }

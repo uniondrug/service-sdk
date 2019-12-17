@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-04
- * @time   Wed, 04 Sep 2019 14:37:16 +0800
+ * @date   2019-12-04
+ * @time   Wed, 04 Dec 2019 10:55:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -181,6 +181,28 @@ class PackageSdk extends SdkBase
     public function logsUpdate($body)
     {
         return $this->restful("POST", "/logs/update", $body);
+    }
+
+    /**
+     * 老表增值服务列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/Old/OldPackageController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function oldPackageListing($body)
+    {
+        return $this->restful("POST", "/old/package/listing", $body);
+    }
+
+    /**
+     * 老表增值服务分页列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/Old/OldPackageController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function oldPackagePaging($body)
+    {
+        return $this->restful("POST", "/old/package/paging", $body);
     }
 
     /**
@@ -577,16 +599,5 @@ class PackageSdk extends SdkBase
     public function tagsUpdate($body)
     {
         return $this->restful("POST", "/tags/update", $body);
-    }
-
-    /**
-     * 增值服务列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/Old/OldPackageController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function oldPackagePaging($body)
-    {
-        return $this->restful("POST", "/old/package/paging", $body);
     }
 }

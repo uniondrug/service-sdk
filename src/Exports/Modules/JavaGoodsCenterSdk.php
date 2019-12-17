@@ -5,7 +5,6 @@
  * Date: 2019-05-09
  * Time: 15:09
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -53,7 +52,6 @@ class JavaGoodsCenterSdk extends SdkBase
         return $this->restful("POST", "/partnerGoodsalelist/querySqlPage", $body);
     }
 
-
     /**
      * 查询商品详情
      * @param array $body 入参类型
@@ -63,5 +61,4 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/queryGoods/querySpuImgInfoBySpuId", $body);
     }
-
 }

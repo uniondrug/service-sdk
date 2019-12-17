@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-02
- * @time   Mon, 02 Dec 2019 16:06:39 +0800
+ * @date   2019-12-10
+ * @time   Tue, 10 Dec 2019 14:21:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -525,6 +525,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 公众号订单撤销
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderNotifyController/publicCancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderNotifyPublicCancel($body)
+    {
+        return $this->restful("POST", "/order/notify/publicCancel", $body);
+    }
+
+    /**
      * 项目详情
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/detailAction.md
      * @param array $body 入参类型
@@ -654,6 +665,28 @@ class MoreActivitySdk extends SdkBase
     public function templateDetail($body)
     {
         return $this->restful("POST", "/template/detail", $body);
+    }
+
+    /**
+     * o2o 70得100
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/topupAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function topupOrder($body)
+    {
+        return $this->restful("POST", "/order/topup/order", $body);
+    }
+
+    /**
+     * o2o活动订单状态
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Order/OrderController/topupStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function topupStatus($body)
+    {
+        return $this->restful("POST", "/order/topup/status", $body);
     }
 
     /**

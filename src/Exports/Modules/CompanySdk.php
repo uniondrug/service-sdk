@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-21
- * @time   Thu, 21 Nov 2019 11:15:39 +0800
+ * @date   2019-12-10
+ * @time   Tue, 10 Dec 2019 16:26:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -360,6 +360,39 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 权益数据
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/RedeemController/dataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRedeemData($body)
+    {
+        return $this->restful("POST", "/redeem/data", $body);
+    }
+
+    /**
+     * 根据memberId获取兑换码id数组
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/RedeemController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRedeemUserIds($body)
+    {
+        return $this->restful("POST", "/redeem/list", $body);
+    }
+
+    /**
+     * 手动发放
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/TimeSendLogController/giveOutBySelfAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function giveOutBySelf($body)
+    {
+        return $this->restful("POST", "/timeSendLog/giveOutBySelf", $body);
+    }
+
+    /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/MemberController/listAction.md
      * @param array $body 入参类型
@@ -514,6 +547,28 @@ class CompanySdk extends SdkBase
     }
 
     /**
+     * 设置积分购买权益折扣
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/PointExchangeSettingController/setDiscountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function setDiscount($body)
+    {
+        return $this->restful("POST", "/pointExchangeSetting/setDiscount", $body);
+    }
+
+    /**
+     * 开关控制
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/PointExchangeSettingController/controlSwitchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function settingControlSwitch($body)
+    {
+        return $this->restful("POST", "/pointExchangeSetting/controlSwitch", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/TagController/createAction.md
      * @param array $body 入参类型
@@ -577,6 +632,17 @@ class CompanySdk extends SdkBase
     public function tagUpdate($body)
     {
         return $this->restful("POST", "/tag/update", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.company/git/blob/development/docs/api/TimeSendLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function timeSendLogCreate($body)
+    {
+        return $this->restful("POST", "/timeSendLog/create", $body);
     }
 
     /**

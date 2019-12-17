@@ -14,7 +14,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * TakeSdk
@@ -140,6 +140,39 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 新订单详情
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/newDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOrderDetail($body)
+    {
+        return $this->restful("POST", "/order/new/detail", $body);
+    }
+
+    /**
+     * 新订单分页
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/newPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOrderPaging($body)
+    {
+        return $this->restful("POST", "/order/new/paging", $body);
+    }
+
+    /**
+     * 商品缺货
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/goodShortageCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goodShortageCreate($body)
+    {
+        return $this->restful("POST", "/order/good/shortage/create", $body);
+    }
+
+    /**
      * 用户拒绝
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/memberRefuseAction.md
      * @param array $body 入参类型
@@ -203,6 +236,17 @@ class TakeSdk extends SdkBase
     public function pick($body)
     {
         return $this->restful("POST", "/order/pick", $body);
+    }
+
+    /**
+     * 拣单订单号
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/pickOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pickOrderNo($body)
+    {
+        return $this->restful("POST", "/order/pickOrderNo", $body);
     }
 
     /**
