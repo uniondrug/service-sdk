@@ -176,17 +176,6 @@ class JavaOrderSdk extends SdkBase
     }
 
     /**
-     * 子订单查询列表
-     * @link
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function subOrderList($body)
-    {
-        return $this->restful("POST", "/order/v2/sub/list", $body);
-    }
-
-    /**
      * 子订单列表检索
      * @link
      * @param array $body 入参类型
