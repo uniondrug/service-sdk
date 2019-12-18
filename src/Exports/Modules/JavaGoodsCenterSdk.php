@@ -61,4 +61,14 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/queryGoods/querySpuImgInfoBySpuId", $body);
     }
+
+    /**
+     * SKU查询商品详情
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGoodsQueryBySkuNo($body)
+    {
+        return $this->restful("POST", "/queryGoods/getGoodsByGoodsNo", $body);
+    }
 }
