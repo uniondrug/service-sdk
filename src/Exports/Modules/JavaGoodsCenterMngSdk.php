@@ -39,6 +39,6 @@ class JavaGoodsCenterMngSdk extends SdkBase
      */
     public function getGoodsQueryBySkuNo($body)
     {
-        return $this->restful("POST", "/goods/queryBySkuNo", $body);
+        return $this->restful("POST", "/queryGoods/getGoodsByGoodsNo", $body);
     }
 }
