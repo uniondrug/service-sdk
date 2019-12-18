@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-04
- * @time   Wed, 04 Dec 2019 10:55:51 +0800
+ * @date   2019-12-18
+ * @time   Wed, 18 Dec 2019 11:14:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * PackageSdk
@@ -437,6 +437,17 @@ class PackageSdk extends SdkBase
     }
 
     /**
+     * 获取保障有效期开始时间和结束时间
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/getAvailableDateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeGetAvailableDate($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/getAvailableDate", $body);
+    }
+
+    /**
      * 全部列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/listingAction.md
      * @param array $body 入参类型
@@ -478,6 +489,94 @@ class PackageSdk extends SdkBase
     public function packagePackPaging($body)
     {
         return $this->restful("POST", "/package/packPaging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramCreate($body)
+    {
+        return $this->restful("POST", "/packageProgram/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramDelete($body)
+    {
+        return $this->restful("POST", "/packageProgram/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramDetail($body)
+    {
+        return $this->restful("POST", "/packageProgram/detail", $body);
+    }
+
+    /**
+     * 禁用用增值服务方案
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramDisable($body)
+    {
+        return $this->restful("POST", "/packageProgram/disable", $body);
+    }
+
+    /**
+     * 启用增值服务方案
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramEnable($body)
+    {
+        return $this->restful("POST", "/packageProgram/enable", $body);
+    }
+
+    /**
+     * 全部列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramListing($body)
+    {
+        return $this->restful("POST", "/packageProgram/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramPaging($body)
+    {
+        return $this->restful("POST", "/packageProgram/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageProgramUpdate($body)
+    {
+        return $this->restful("POST", "/packageProgram/update", $body);
     }
 
     /**

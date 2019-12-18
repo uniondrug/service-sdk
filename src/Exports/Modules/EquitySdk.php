@@ -1287,4 +1287,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/claim/rejectNew", $body);
     }
+
+    /**
+     * 获取理赔单号（自己使用）
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/getClaimNosAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getClaimNos($body)
+    {
+        return $this->restful("POST", "/equity/claim/getClaimNos", $body);
+    }
 }
