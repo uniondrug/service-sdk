@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-17
- * @time   Tue, 17 Dec 2019 11:33:24 +0800
+ * @date   2019-12-18
+ * @time   Wed, 18 Dec 2019 18:59:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1438,6 +1438,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 分页多天列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/partnerPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerDayPaging($body)
+    {
+        return $this->restful("POST", "/scoreStore/partnerdaypaging", $body);
+    }
+
+    /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/deleteAction.md
      * @param array $body 入参类型
@@ -1479,6 +1490,17 @@ class MerchantSdk extends SdkBase
     public function scorePartnerPaging($body)
     {
         return $this->restful("POST", "/scorePartner/paging", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/scoreDayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerScoreDay($body)
+    {
+        return $this->restful("POST", "/scorePartner/scoreDay", $body);
     }
 
     /**
