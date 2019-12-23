@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-25
- * @time   Fri, 25 Oct 2019 16:54:15 +0800
+ * @date   2019-12-17
+ * @time   Tue, 17 Dec 2019 19:39:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -52,6 +52,17 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 计算保司得分
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureScoreController/calculatedScoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function calculatedScore($body)
+    {
+        return $this->restful("POST", "/insureScore/calculatedScore", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureController/createAction.md
      * @param array $body 入参类型
@@ -85,7 +96,7 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
-     * 某月占比=某月各监管区域内投保金额/全国投保金额
+     * 药联投保分布
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/CountryInsureController/proportionAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -192,6 +203,17 @@ class InsureRankSdk extends SdkBase
     public function getScore($body)
     {
         return $this->restful("POST", "/insureScore/getScore", $body);
+    }
+
+    /**
+     * 各监管累计保费数据分页列表
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/ShowPercentController/insureDataPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insureDataPaging($body)
+    {
+        return $this->restful("POST", "/showPercent/insureDataPaging", $body);
     }
 
     /**
@@ -316,6 +338,39 @@ class InsureRankSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureSumController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insureSumDetail($body)
+    {
+        return $this->restful("POST", "/insureSum/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureSumController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insureSumPaging($body)
+    {
+        return $this->restful("POST", "/insureSum/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureSumController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insureSumUpdate($body)
+    {
+        return $this->restful("POST", "/insureSum/update", $body);
+    }
+
+    /**
      * 最后一次登陆
      * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/UsersController/lastLoginAction.md
      * @param array $body 入参类型
@@ -423,6 +478,50 @@ class InsureRankSdk extends SdkBase
     public function settingsUpdate($body)
     {
         return $this->restful("POST", "/settings/update", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/ShowPercentController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function showPercentCreate($body)
+    {
+        return $this->restful("POST", "/showPercent/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/ShowPercentController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function showPercentDetail($body)
+    {
+        return $this->restful("POST", "/showPercent/detail", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/ShowPercentController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function showPercentUpdate($body)
+    {
+        return $this->restful("POST", "/showPercent/update", $body);
+    }
+
+    /**
+     * 将保司月投保累计数据同步到保司累计投保表
+     * @link https://uniondrug.coding.net/p/module.rank.insure/git/blob/development/docs/api/InsureSumController/syncDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncData($body)
+    {
+        return $this->restful("POST", "/insureSum/syncData", $body);
     }
 
     /**

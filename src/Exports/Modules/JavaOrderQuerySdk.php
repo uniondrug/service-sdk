@@ -29,4 +29,15 @@ class JavaOrderQuerySdk extends SdkBase
     {
         return $this->restful("POST", "/customer/query/queryMainOrderList", $body);
     }
+
+    /**
+     * 子订单查询列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrderList($body)
+    {
+        return $this->restful("POST", "/order/v2/sub/list", $body);
+    }
 }

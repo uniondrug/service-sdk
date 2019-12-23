@@ -128,6 +128,6 @@ class JavaHealthSdk extends SdkBase
      */
     public function excelExport($body)
     {
-        return $this->restful("POST", "/heaCenter/excelExport", $body);
+        return $this->restful("GET", "/heaCenter/excelExport", $body);
     }
 }

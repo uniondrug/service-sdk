@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-16
- * @time   Mon, 16 Dec 2019 16:17:06 +0800
+ * @date   2019-12-19
+ * @time   Thu, 19 Dec 2019 16:27:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,28 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 根据organizationId获取getSchemeIds
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/getSchemeIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getSchemeId($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/getSchemeId", $body);
+    }
+
+    /**
+     * 订单商品数据
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/goodsListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goodsList($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/goodsList", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/createAction.md
      * @param array $body 入参类型
@@ -192,6 +214,28 @@ class AiPushSdk extends SdkBase
     public function industryCashPoolingRecharge($body)
     {
         return $this->restful("POST", "/industryCashPooling/recharge", $body);
+    }
+
+    /**
+     * 订单列表数据
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/orderPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderPaging($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/orderPaging", $body);
+    }
+
+    /**
+     * 获取订单连锁
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/partnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerList($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/partnerList", $body);
     }
 
     /**
@@ -445,5 +489,27 @@ class AiPushSdk extends SdkBase
     public function usersUpdateStatus($body)
     {
         return $this->restful("POST", "/users/updateStatus", $body);
+    }
+
+    /**
+     * 抵扣券统计数据
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/voucherDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function voucherData($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/voucherData", $body);
+    }
+
+    /**
+     * 抵扣券总额
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/totalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function voucherTotal($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/voucherTotal", $body);
     }
 }
