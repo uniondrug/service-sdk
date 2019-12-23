@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-25
- * @time   Fri, 25 Oct 2019 13:18:28 +0800
+ * @date   2019-12-23
+ * @time   Mon, 23 Dec 2019 19:26:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * MarketingSdk
@@ -93,6 +93,28 @@ class MarketingSdk extends SdkBase
     public function evidenceUse($body)
     {
         return $this->restful("POST", "/evidence/use", $body);
+    }
+
+    /**
+     * 新增营销计划
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingChangeWhiteController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingChangeWhiteCreate($body)
+    {
+        return $this->restful("POST", "/marketingChangeWhite/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingChangeWhiteController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingChangeWhiteDetail($body)
+    {
+        return $this->restful("POST", "/marketingChangeWhite/detail", $body);
     }
 
     /**
