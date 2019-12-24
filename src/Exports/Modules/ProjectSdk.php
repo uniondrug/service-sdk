@@ -1177,4 +1177,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/verify/verifyPaging", $body);
     }
+
+    /**
+     * 内容
+     * @param $body
+     * @return ResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function ydbCheckVerify($body)
+    {
+        return $this->restful(static::METHOD_POST, "/verify/ydbCheck", $body);
+    }
 }
