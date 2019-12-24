@@ -101,6 +101,17 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
+     * 通过主订单号查询赠送权益--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryGiftDetail($body)
+    {
+        return $this->restful("POST", "/card/queryGiftDetail", $body);
+    }
+
+    /**
      * 抵扣券
      * @param $body
      * @return ResponseInterface
@@ -108,5 +119,36 @@ class JavaPromoteCenterSdk extends SdkBase
     public function deductCouponTrial($body)
     {
         return $this->restful(static::METHOD_POST, '/deductCoupon/deductCouponTrial', $body);
+    }
+
+    /**
+     * 查询卡列表接口--微信
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryMyCard($body)
+    {
+        return $this->restful("POST", "/card/queryMyCard", $body);
+    }
+
+    /**
+     * 超级会员日检查方案和时间--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v2.0_超级会员日/doc/营销中心v2.0超级会员日接口文档（消费服务).md
+     * @return ResponseInterface
+     */
+    public function superDayCheckSchemeTime($body)
+    {
+        return $this->restful("POST", "/superDay/checkSchemeTime", $body);
+    }
+
+    /**
+     * 超级会员日消费接口--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development_v2.0_超级会员日/doc/营销中心v2.0超级会员日接口文档（消费服务).md
+     * @return ResponseInterface
+     */
+    public function superDaysuperConsume($body)
+    {
+        return $this->restful("POST", "/superDay/superConsume", $body);
     }
 }

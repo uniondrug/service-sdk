@@ -661,4 +661,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/user/compensate/paging", $body);
     }
+
+    /**
+     * 内容
+     * @param $body
+     * @return ClientResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function ydbCheckVerify($body)
+    {
+        return $this->restful(static::METHOD_POST, "/verify/ydbCheck", $body);
+    }
 }
