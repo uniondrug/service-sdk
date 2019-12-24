@@ -151,4 +151,15 @@ class JavaUserScoreSdk extends SdkBase
     {
         return $this->restful("POST", "/preAccountRecords/add", $body);
     }
+
+    /**
+     * 积分商品转移
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function creditGoodsInfo($body)
+    {
+        return $this->restful("POST", "/creditGoods/info", $body);
+    }
 }
