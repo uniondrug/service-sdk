@@ -61,11 +61,13 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OssSdk                $oss
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PackageSdk            $package
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ProductSdk            $product
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PartnersSdk           $partners
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk            $project
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PromotionBiddingSdk   $promotionBidding
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PromotionFinanceSdk   $promotionFinance
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PromotionUserSdk      $promotionUser
  * @property \Uniondrug\ServiceSdk\Exports\Modules\RobotSdk              $robot
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\HuoJuExpressSdk       $huoJuExpress
  * @property \Uniondrug\ServiceSdk\Exports\Modules\RuleSdk               $rule
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMerchantSdk       $javaMerchant
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementLogSdk      $settlementLog
