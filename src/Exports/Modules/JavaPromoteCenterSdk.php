@@ -151,4 +151,15 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/superDay/superConsume", $body);
     }
+
+    /**
+     * 消费券接口--药店宝
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function consumeCoupon($body)
+    {
+        return $this->restful("POST", "/coupon/consumeCoupon", $body);
+    }
 }

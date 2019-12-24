@@ -359,4 +359,25 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/erpsn/update", $body);
     }
+
+    /**
+     * 订单消费
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCashierConsume($body)
+    {
+        return $this->restful("POST", "/cashier/consume", $body);
+    }
+
+    /**
+     * 数据统计
+     * @param $body
+     * @return ResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function statisticsByPartner($body)
+    {
+        return $this->restful("POST", "order/query/statisticsByMerchant", $body);
+    }
 }

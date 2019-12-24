@@ -701,6 +701,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 编辑组织信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
+     * @param object|array $body
+     * @return ResponseInterface
+     */
+    public function editOrganizebase($body)
+    {
+        return $this->restful(static::METHOD_POST, "/organizebase/editmap", $body);
+    }
+
+    /**
      * 启用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/enableAction.md
      * @param array $body 入参类型

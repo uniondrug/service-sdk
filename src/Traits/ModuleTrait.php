@@ -44,6 +44,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommissionSdk     $javaCommission
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDistributionSdk   $javaDistribution
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk        $javaPromote
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk         $javaErpPay
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk           $javaPush
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk      $javaUserScore
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JwtSdk                $jwt
@@ -66,11 +67,15 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PromotionUserSdk      $promotionUser
  * @property \Uniondrug\ServiceSdk\Exports\Modules\RobotSdk              $robot
  * @property \Uniondrug\ServiceSdk\Exports\Modules\RuleSdk               $rule
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMerchantSdk       $javaMerchant
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementLogSdk      $settlementLog
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk         $settlement
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk    $settlementsheet
  * @property \Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk         $stagnation
  * @property \Uniondrug\ServiceSdk\Exports\Modules\TokenSdk              $token
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PrivilegeSdk          $privilege
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\SchemeSdk             $scheme
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\TakeSdk               $take
  * @property \Uniondrug\ServiceSdk\Exports\Modules\UdappSdk              $udapp
  * @property \Uniondrug\ServiceSdk\Exports\Modules\UserSdk               $user
  * @property \Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk             $weixin

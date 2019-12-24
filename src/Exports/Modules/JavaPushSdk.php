@@ -60,4 +60,26 @@ class JavaPushSdk extends SdkBase
     {
         return $this->restful("POST", "/audit/retry", $body);
     }
+
+    /**
+     * 药联到家push
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function yaoliandaojiaPush($body)
+    {
+        return $this->restful(static::METHOD_POST, 'yldj/push', $body);
+    }
+
+    /**
+     * 链接
+     * @param $body
+     * @return ResponseInterface
+     * @throws \Uniondrug\ServiceSdk\Exception
+     */
+    public function pushQuery($body)
+    {
+        return $this->restful(static::METHOD_POST, '/order/push/query', $body);
+    }
 }

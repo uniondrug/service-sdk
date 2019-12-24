@@ -21,6 +21,7 @@ class JavaCashierSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'java.cashier.module';
+
     /**
      * 订单退款
      * @link
@@ -74,5 +75,16 @@ class JavaCashierSdk extends SdkBase
     public function orderQueryRefunds($body)
     {
         return $this->restful("POST", "/cashier/queryRefunds", $body);
+    }
+
+    /**
+     * 查询订单接口
+     * @link https://uniondrug.coding.net/p/java.module.order/git/blob/development/api-docs/docs-cashier/cashierStatusCheck.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderCheckStatus($body)
+    {
+        return $this->restful("POST", "/cashier/status/check", $body);
     }
 }

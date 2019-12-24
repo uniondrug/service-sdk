@@ -40,4 +40,15 @@ class JavaOrderQuerySdk extends SdkBase
     {
         return $this->restful("POST", "/order/v2/sub/list", $body);
     }
+
+    /**
+     * 退单信息查询
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryRefundListByOrderNoForYDB($body)
+    {
+        return $this->restful("POST", "/refund/query/queryRefundListByOrderNoForYDB", $body);
+    }
 }

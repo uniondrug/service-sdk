@@ -108,4 +108,15 @@ class MapSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, "/location/weather", $body);
     }
+
+    /**
+     * 创建地图打点
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AmapController/searchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createAmap($body)
+    {
+        return $this->restful(static::METHOD_POST, "/amap/data/create", $body);
+    }
 }
