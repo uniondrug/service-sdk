@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-10
- * @time   Tue, 10 Dec 2019 14:21:46 +0800
+ * @date   2019-12-24
+ * @time   Tue, 24 Dec 2019 16:54:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * MoreActivitySdk
@@ -38,6 +38,17 @@ class MoreActivitySdk extends SdkBase
     public function activityList($body)
     {
         return $this->restful("POST", "/project/activityList", $body);
+    }
+
+    /**
+     * 新增或者修改活动链接
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/activityUrlSaveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityUrlSave($body)
+    {
+        return $this->restful("POST", "/project/activityUrlSave", $body);
     }
 
     /**
@@ -228,6 +239,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 获取跳转域名活动地址
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getActivityUrlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getActivityUrl($body)
+    {
+        return $this->restful("POST", "/project/getActivityUrl", $body);
+    }
+
+    /**
      * modeId获取projectId
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/getModeProjectIdAction.md
      * @param array $body 入参类型
@@ -236,6 +258,17 @@ class MoreActivitySdk extends SdkBase
     public function getModeProject($body)
     {
         return $this->restful("POST", "/project/modeProjectId", $body);
+    }
+
+    /**
+     * 获取连锁下的活动列表
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/Project/ProjectController/GetNewActivityListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getNewActivityList($body)
+    {
+        return $this->restful("POST", "/project/getNewActivityList", $body);
     }
 
     /**
@@ -588,6 +621,17 @@ class MoreActivitySdk extends SdkBase
     public function projectGoodsSave($body)
     {
         return $this->restful("POST", "/projectGoods/save", $body);
+    }
+
+    /**
+     * 商品限制缓存
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/ProjectGoods/ProjectGoodsController/timesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGoodsTimes($body)
+    {
+        return $this->restful("POST", "/projectGoods/times", $body);
     }
 
     /**
