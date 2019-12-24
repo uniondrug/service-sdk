@@ -6,14 +6,13 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
-use Uniondrug\ServiceSdk\Sdk;
-use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 
 /**
  * 药品中心服务
  * @package Uniondrug\ServiceSdk\Modules
  */
-class PartnersSdk extends Sdk implements ServiceSdkInterface
+class PartnersSdk extends SdkBase
 {
     protected $serviceName = 'partners.module';
 
