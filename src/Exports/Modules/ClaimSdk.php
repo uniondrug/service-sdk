@@ -139,4 +139,15 @@ class ClaimSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/claimRejectOld", $body);
     }
+
+    /**
+     * 查询流水号数据
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityClaimController/getDataByOperatorAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityClaimGetOperatorNoData($body)
+    {
+        return $this->restful("POST", "/equity/claim/getOperatorNoData", $body);
+    }
 }
