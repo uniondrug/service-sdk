@@ -9,12 +9,12 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-12-25
- * @time   Wed, 25 Dec 2019 09:36:21 +0800
+ * @time   Wed, 25 Dec 2019 14:05:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Base\ResponseInterface;
 
 /**
  * SettlementSdk
@@ -1449,6 +1449,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 商家银行账号分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/businessPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountBusinessPaging($body)
+    {
+        return $this->restful("POST", "/organizeBankAccount/businessPaging", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/createAction.md
      * @param array $body 入参类型
@@ -1482,12 +1493,34 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountPaging($body)
+    {
+        return $this->restful("POST", "/organizeBankAccount/paging", $body);
+    }
+
+    /**
+     * 设为默认
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/setIsDefaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountSetIsDefault($body)
+    {
+        return $this->restful("POST", "/organizeBankAccount/paging", $body);
+    }
+
+    /**
      * 设置状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/setStatusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function organizeBankAccountPaging($body)
+    public function organizeBankAccountSetStatus($body)
     {
         return $this->restful("POST", "/organizeBankAccount/paging", $body);
     }
