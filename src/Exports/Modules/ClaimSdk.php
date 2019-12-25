@@ -83,4 +83,59 @@ class ClaimSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/user/cancel", $body);
     }
+
+    /**
+     * 批量扣除（新）
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/claimBatchNewAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimClaimNew($body)
+    {
+        return $this->restful("POST", "/claim/claimNew", $body);
+    }
+
+    /**
+     * 批量扣除（老）
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/claimBatchOldAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimClaimOld($body)
+    {
+        return $this->restful("POST", "/claim/claimOld", $body);
+    }
+
+    /**
+     * 寿险批量冻结(创建理赔)
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/frozeForSxAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimFrozeForSx($body)
+    {
+        return $this->restful("POST", "/claim/claimFrozeForSx", $body);
+    }
+
+    /**
+     * 寿险批量驳回新
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchNewAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimRejectNew($body)
+    {
+        return $this->restful("POST", "/claim/rejectNew", $body);
+    }
+
+    /**
+     * 寿险批量驳回老
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimRejectOld($body)
+    {
+        return $this->restful("POST", "/claim/claimRejectOld", $body);
+    }
 }
