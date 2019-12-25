@@ -117,7 +117,7 @@ class JavaOrderSdk extends SdkBase
      */
     public function orderCashierCreate($body)
     {
-        return $this->restful("POST", "/order/cashier/create", $body);
+        return $this->restful("POST", "/cashier/create", $body);
     }
 
     /**
@@ -378,6 +378,6 @@ class JavaOrderSdk extends SdkBase
      */
     public function statisticsByPartner($body)
     {
-        return $this->restful("POST", "order/query/statisticsByMerchant", $body);
+        return $this->restful("POST", "/order/query/statisticsByMerchant", $body);
     }
 }
