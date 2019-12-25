@@ -128,6 +128,7 @@ class ClaimSdk extends SdkBase
         return $this->restful("POST", "/claim/rejectNew", $body);
     }
 
+
     /**
      * 寿险批量驳回老
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchAction.md
