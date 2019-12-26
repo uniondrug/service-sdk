@@ -11,14 +11,14 @@
  * @date   2019-12-26
  * @time   Thu, 26 Dec 2019 17:12:15 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Backends;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * SketchSdk
- * @package Uniondrug\ServiceSdk\Modules
+ * Class CaseSdk
+ * @package Uniondrug\ServiceSdk\Exports\Modules
  */
 class CaseSdk extends SdkBase
 {
