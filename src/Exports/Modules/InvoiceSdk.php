@@ -107,6 +107,17 @@ class InvoiceSdk extends SdkBase
     }
 
     /**
+     * 通过理赔单号获取连锁级发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceListingByClaimNoInMerchant($body)
+    {
+        return $this->restful("POST", "/invoice/getListingByClaimNoInMerchant", $body);
+    }
+
+    /**
      * 财税发票池
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
      * @param object|array $body 入参类型
