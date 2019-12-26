@@ -150,4 +150,15 @@ class ClaimSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/getOperatorNoData", $body);
     }
+
+    /**
+     * 查询是否有寿险理赔记录接口
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/checkHasTPARecordAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimCheckHasTPAData($body)
+    {
+        return $this->restful("POST", "/claim/checkHasTPAData", $body);
+    }
 }
