@@ -89,6 +89,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Backend $backend
  * @property \Uniondrug\ServiceSdk\Exports\Module $module
  * @property \Uniondrug\ServiceSdk\Exports\Union $union
+ * @property \Uniondrug\ServiceSdk\Exports\CaseSdk $case
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait BootTrait {
