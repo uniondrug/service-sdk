@@ -14,7 +14,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Unions;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * ProjectSdk
