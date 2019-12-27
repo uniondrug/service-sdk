@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Unions`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-11
- * @time   Fri, 11 Oct 2019 14:49:32 +0800
+ * @date   2019-12-27
+ * @time   Fri, 27 Dec 2019 13:51:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Unions;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * ProjectSdk
@@ -41,7 +41,8 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 根据cdkey 创建权益
+     * 根据cdkey 创建权益(会自动激活权益)
+     * 此接口暫時不提供使用
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createByCdKeyAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -101,6 +102,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 批量激活
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/allActivateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAllActivate($body)
+    {
+        return $this->restful("POST", "/equity/all/activate", $body);
+    }
+
+    /**
      * 开户
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/activateAccountAction.md
      * @param array $body 入参类型
@@ -156,7 +168,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 驳回 【解冻】
+     * 理赔撤销（驳回 【解冻】）
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/rejectAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -164,6 +176,39 @@ class ProjectSdk extends SdkBase
     public function equityBatchReject($body)
     {
         return $this->restful("POST", "/equity/batch/reject", $body);
+    }
+
+    /**
+     * 撤销开户
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/repealAddRedeemCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchRepealAccount($body)
+    {
+        return $this->restful("POST", "/equity/batch/repeal/account", $body);
+    }
+
+    /**
+     * 撤销充值
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/repealRechargeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchRepealRecharge($body)
+    {
+        return $this->restful("POST", "/equity/batch/repeal/recharge", $body);
+    }
+
+    /**
+     * 根据兑换码创建权益并激活兑换码
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createEquityByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityCreateByCdKey($body)
+    {
+        return $this->restful("POST", "/equity/create/cdKey", $body);
     }
 
     /**
