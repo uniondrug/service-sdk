@@ -11,7 +11,7 @@
  * @date   2019-12-27
  * @time   Fri, 27 Dec 2019 11:24:23 +0800
  */
-namespace Uniondrug\ServiceSdk\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
