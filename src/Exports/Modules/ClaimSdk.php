@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2019-12-30
- * @time   Mon, 30 Dec 2019 10:15:32 +0800
+ * @time   Mon, 30 Dec 2019 14:49:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class ClaimSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'claim.module';
+
+    /**
+     * 创建理赔申请
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeCreate($body)
+    {
+        return $this->restful("POST", "/change/create", $body);
+    }
 
     /**
      * 管理员撤销理赔
