@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-24
- * @time   Tue, 24 Dec 2019 18:09:14 +0800
+ * @date   2019-12-30
+ * @time   Mon, 30 Dec 2019 14:49:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,6 +30,28 @@ class ClaimSdk extends SdkBase
     protected $serviceName = 'claim.module';
 
     /**
+     * 创建理赔申请
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeCreate($body)
+    {
+        return $this->restful("POST", "/change/create", $body);
+    }
+
+    /**
+     * 管理员撤销理赔
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminCancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimAdminCancel($body)
+    {
+        return $this->restful("POST", "/claim/admin/cancel", $body);
+    }
+
+    /**
      * 理赔材料回调sdk
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/callbackAction.md
      * @param array $body 入参类型
@@ -41,47 +63,14 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 发起理赔
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/createAction.md
+     * 查询是否有理赔记录接口
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/checkHasRecordAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function claimCreate($body)
+    public function claimCheckHasData($body)
     {
-        return $this->restful("POST", "/claim/create", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDetail($body)
-    {
-        return $this->restful("POST", "/claim/detail", $body);
-    }
-
-    /**
-     * 理赔分页列表
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimPaging($body)
-    {
-        return $this->restful("POST", "/claim/paging", $body);
-    }
-
-    /**
-     * 用户撤销理赔
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/userCancelAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimUserCancel($body)
-    {
-        return $this->restful("POST", "/claim/user/cancel", $body);
+        return $this->restful("POST", "/claim/checkHasData", $body);
     }
 
     /**
@@ -107,6 +96,39 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 发起理赔
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimCreate($body)
+    {
+        return $this->restful("POST", "/claim/create", $body);
+    }
+
+    /**
+     * 理赔详情
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimDetail($body)
+    {
+        return $this->restful("POST", "/claim/detail", $body);
+    }
+
+    /**
+     * 理赔通过
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/finishAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimFinish($body)
+    {
+        return $this->restful("POST", "/claim/finish", $body);
+    }
+
+    /**
      * 寿险批量冻结(创建理赔)
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/frozeForSxAction.md
      * @param array $body 入参类型
@@ -115,29 +137,6 @@ class ClaimSdk extends SdkBase
     public function claimFrozeForSx($body)
     {
         return $this->restful("POST", "/claim/claimFrozeForSx", $body);
-    }
-
-    /**
-     * 寿险批量驳回新
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchNewAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimRejectNew($body)
-    {
-        return $this->restful("POST", "/claim/rejectNew", $body);
-    }
-
-
-    /**
-     * 寿险批量驳回老
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimRejectOld($body)
-    {
-        return $this->restful("POST", "/claim/claimRejectOld", $body);
     }
 
     /**
@@ -152,13 +151,57 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 查询是否有理赔记录接口
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/checkHasRecordAction.md
+     * 后台理赔分页列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminPagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function claimCheckHasData($body)
+    public function claimPaging($body)
     {
-        return $this->restful("POST", "/claim/checkHasData", $body);
+        return $this->restful("POST", "/claim/admin/paging", $body);
+    }
+
+    /**
+     * 理赔拒绝
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/refusedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimRefused($body)
+    {
+        return $this->restful("POST", "/claim/refused", $body);
+    }
+
+    /**
+     * 寿险批量驳回新
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchNewAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimRejectNew($body)
+    {
+        return $this->restful("POST", "/claim/rejectNew", $body);
+    }
+
+    /**
+     * 寿险批量驳回老
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimRejectOld($body)
+    {
+        return $this->restful("POST", "/claim/claimRejectOld", $body);
+    }
+
+    /**
+     * 用户撤销理赔
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/userCancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimUserCancel($body)
+    {
+        return $this->restful("POST", "/claim/user/cancel", $body);
     }
 }
