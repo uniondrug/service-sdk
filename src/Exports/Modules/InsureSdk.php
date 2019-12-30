@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-29
- * @time   Fri, 29 Nov 2019 17:33:30 +0800
+ * @date   2019-12-30
+ * @time   Mon, 30 Dec 2019 11:21:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -107,7 +107,7 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 发起理赔
+     * 发起理赔1-3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -137,6 +137,17 @@ class InsureSdk extends SdkBase
     public function claimMaxRatioPolicy($body)
     {
         return $this->restful("POST", "/policy/claimMaxRatio", $body);
+    }
+
+    /**
+     * 异步发起理赔-支持版本3
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimNotifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimNotify($body)
+    {
+        return $this->restful("POST", "/claim/claimNotify", $body);
     }
 
     /**
@@ -294,6 +305,28 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 发起理赔v4
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function fourthVersionClaim($body)
+    {
+        return $this->restful("POST", "/claim/claim/fourthVersion", $body);
+    }
+
+    /**
+     * 撤销理赔v4
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionRevokeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function fourthVersionRevoke($body)
+    {
+        return $this->restful("POST", "/claim/revoke/fourthVersion", $body);
+    }
+
+    /**
      * 获取投保单列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/pagingAction.md
      * @param array $body 入参类型
@@ -404,7 +437,7 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 撤销理赔
+     * 撤销理赔1-3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -412,6 +445,17 @@ class InsureSdk extends SdkBase
     public function revoke($body)
     {
         return $this->restful("POST", "/claim/revoke", $body);
+    }
+
+    /**
+     * 异步撤销理赔-支持版本3
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeNotifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function revokeNotify($body)
+    {
+        return $this->restful("POST", "/claim/revokeNotify", $body);
     }
 
     /**
