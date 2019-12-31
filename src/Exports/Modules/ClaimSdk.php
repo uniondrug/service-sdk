@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-30
- * @time   Mon, 30 Dec 2019 14:49:54 +0800
+ * @date   2019-12-31
+ * @time   Tue, 31 Dec 2019 16:07:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,6 +30,17 @@ class ClaimSdk extends SdkBase
     protected $serviceName = 'claim.module';
 
     /**
+     * 执行审核流程
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/claimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeAudit($body)
+    {
+        return $this->restful("POST", "/change/audit", $body);
+    }
+
+    /**
      * 创建理赔申请
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/createAction.md
      * @param array $body 入参类型
@@ -38,6 +49,39 @@ class ClaimSdk extends SdkBase
     public function changeCreate($body)
     {
         return $this->restful("POST", "/change/create", $body);
+    }
+
+    /**
+     * 获取理赔单详情
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDetail($body)
+    {
+        return $this->restful("POST", "/change/detail", $body);
+    }
+
+    /**
+     * 获取最新的理赔单详情
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/detailGuaranteeIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeNewDetail($body)
+    {
+        return $this->restful("POST", "/change/new/detail", $body);
+    }
+
+    /**
+     * 拒绝审核流程
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/rejectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeReject($body)
+    {
+        return $this->restful("POST", "/change/reject", $body);
     }
 
     /**
