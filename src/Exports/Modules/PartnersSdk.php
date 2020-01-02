@@ -123,7 +123,9 @@ class PartnersSdk extends SdkBase
      */
     public function searchKeywords($body)
     {
-        return $this->restful(static::METHOD_POST, "/goods/searchKeywords", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchKeywords", $body, null, [
+            'timeout' => 10
+        ]);
     }
 
     /**
@@ -134,7 +136,9 @@ class PartnersSdk extends SdkBase
      */
     public function searchByCode($body)
     {
-        return $this->restful(static::METHOD_POST, "/goods/searchByCode", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchByCode", $body, null, [
+            'timeout' => 10
+        ]);
     }
 
     /**
@@ -145,7 +149,9 @@ class PartnersSdk extends SdkBase
      */
     public function searchByNos($body)
     {
-        return $this->restful(static::METHOD_POST, "/goods/searchByNos", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchByNos", $body, null, [
+            'timeout' => 10
+        ]);
     }
 
     /**
@@ -156,7 +162,9 @@ class PartnersSdk extends SdkBase
      */
     public function searchByNo($body)
     {
-        return $this->restful(static::METHOD_POST, "/goods/searchByNo", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchByNo", $body, null, [
+            'timeout' => 10
+        ]);
     }
 
     /**
@@ -189,7 +197,9 @@ class PartnersSdk extends SdkBase
      */
     public function searchHotGoods($body)
     {
-        return $this->restful(static::METHOD_POST, "/goods/searchHotGoods", $body);
+        return $this->restful(static::METHOD_POST, "/goods/searchHotGoods", $body, null, [
+            'timeout' => 10
+        ]);
     }
 
     /**

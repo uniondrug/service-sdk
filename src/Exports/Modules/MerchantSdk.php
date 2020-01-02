@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-18
- * @time   Wed, 18 Dec 2019 18:59:28 +0800
+ * @date   2019-12-30
+ * @time   Mon, 30 Dec 2019 14:39:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -701,17 +701,6 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 编辑组织信息
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
-     * @param object|array $body
-     * @return ResponseInterface
-     */
-    public function editOrganizebase($body)
-    {
-        return $this->restful(static::METHOD_POST, "/organizebase/editmap", $body);
-    }
-
-    /**
      * 启用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/enableAction.md
      * @param array $body 入参类型
@@ -1039,6 +1028,17 @@ class MerchantSdk extends SdkBase
     public function internalCodeInfo($body)
     {
         return $this->restful("POST", "/organizebase/internalcodeinfo", $body);
+    }
+
+    /**
+     * 通过internalName获取连锁门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function internalNameInfo($body)
+    {
+        return $this->restful("POST", "/organizebase/internalnameinfo", $body);
     }
 
     /**
@@ -1504,7 +1504,18 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 分页列表
+     * 获取评分区间数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/rankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerRank($body)
+    {
+        return $this->restful("POST", "/scorePartner/rank", $body);
+    }
+
+    /**
+     * 获取最近总分的
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/scoreDayAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -1578,6 +1589,17 @@ class MerchantSdk extends SdkBase
     public function scoreStorePaging($body)
     {
         return $this->restful("POST", "/scoreStore/paging", $body);
+    }
+
+    /**
+     * 获取评分区间数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/rankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreStoreRank($body)
+    {
+        return $this->restful("POST", "/scoreStoreSum/rank", $body);
     }
 
     /**

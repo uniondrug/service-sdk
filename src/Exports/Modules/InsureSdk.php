@@ -107,14 +107,14 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 撤销理赔
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeAction.md
+     * 发起理赔1-3
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function claim($body)
     {
-        return $this->restful("POST", "/claim/revoke", $body);
+        return $this->restful("POST", "/claim/claim", $body);
     }
 
     /**
@@ -129,17 +129,6 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 通知理赔的详细过程
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDetailClaimOnline($body)
-    {
-        return $this->restful("POST", "/claimOnline/claimDetail", $body);
-    }
-
-    /**
      * 计算保单理赔上限比例
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimMaxRatioAction.md
      * @param array $body 入参类型
@@ -148,6 +137,17 @@ class InsureSdk extends SdkBase
     public function claimMaxRatioPolicy($body)
     {
         return $this->restful("POST", "/policy/claimMaxRatio", $body);
+    }
+
+    /**
+     * 异步发起理赔-支持版本3
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimNotifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimNotify($body)
+    {
+        return $this->restful("POST", "/claim/claimNotify", $body);
     }
 
     /**
@@ -162,7 +162,18 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 理赔结果
+     * 推送理赔数据的结果
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimPushResultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimPushResultClaimOnline($body)
+    {
+        return $this->restful("POST", "/claimOnline/claimPushResult", $body);
+    }
+
+    /**
+     * 通知理赔的结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimResultAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -294,6 +305,28 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 发起理赔v4
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function fourthVersionClaim($body)
+    {
+        return $this->restful("POST", "/claim/claim/fourthVersion", $body);
+    }
+
+    /**
+     * 撤销理赔v4
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionRevokeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function fourthVersionRevoke($body)
+    {
+        return $this->restful("POST", "/claim/revoke/fourthVersion", $body);
+    }
+
+    /**
      * 获取投保单列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/pagingAction.md
      * @param array $body 入参类型
@@ -302,6 +335,17 @@ class InsureSdk extends SdkBase
     public function getInsurePolicyPaging($body)
     {
         return $this->restful("POST", "/insurePolicy/paging", $body);
+    }
+
+    /**
+     * 理赔明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPagingClaim($body)
+    {
+        return $this->restful("POST", "/claim/paging", $body);
     }
 
     /**
@@ -393,6 +437,28 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 撤销理赔1-3
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function revoke($body)
+    {
+        return $this->restful("POST", "/claim/revoke", $body);
+    }
+
+    /**
+     * 异步撤销理赔-支持版本3
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeNotifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function revokeNotify($body)
+    {
+        return $this->restful("POST", "/claim/revokeNotify", $body);
+    }
+
+    /**
      * 提交投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/submitAction.md
      * @param array $body 入参类型
@@ -412,83 +478,5 @@ class InsureSdk extends SdkBase
     public function viewPolicy($body)
     {
         return $this->restful("POST", "/policy/view", $body);
-    }
-
-    /**
-     * 获取需要执行的投保的数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/insureDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insureDataInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/insureData", $body);
-    }
-
-    /**
-     * 投保结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/insureResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insureResultInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/insureResult", $body);
-    }
-
-
-    /**
-     * 获取需要执行的上传卡号数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/downloadCodeDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function downloadCodeDataInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/downloadCodeData", $body);
-    }
-
-    /**
-     * 上传卡号结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/downloadCodeResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function downloadCodeResultInsureTask($body)
-    {
-        return $this->restful("POST", "/insureTask/downloadCodeResult", $body);
-    }
-
-    /**
-     * 理赔结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineTaskController/claimResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimResultClaimOnlineTask($body)
-    {
-        return $this->restful("POST", "/claimOnlineTask/claimResult", $body);
-    }
-
-    /**
-     * 获取需要执行的理赔数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineTaskController/claimDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDataClaimOnlineTask($body)
-    {
-        return $this->restful("POST", "/claimOnlineTask/claimData", $body);
-    }
-
-    /**
-     * 通知理赔的详细过程
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineTaskController/claimDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDetailClaimOnlineTask($body)
-    {
-        return $this->restful("POST", "/claimOnlineTask/claimDetail", $body);
     }
 }
