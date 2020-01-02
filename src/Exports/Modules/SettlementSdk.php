@@ -1511,7 +1511,7 @@ class SettlementSdk extends SdkBase
      */
     public function organizeBankAccountSetIsDefault($body)
     {
-        return $this->restful("POST", "/organizeBankAccount/paging", $body);
+        return $this->restful("POST", "/organizeBankAccount/setIsDefault", $body);
     }
 
     /**
@@ -1522,7 +1522,7 @@ class SettlementSdk extends SdkBase
      */
     public function organizeBankAccountSetStatus($body)
     {
-        return $this->restful("POST", "/organizeBankAccount/paging", $body);
+        return $this->restful("POST", "/organizeBankAccount/setStatus", $body);
     }
 
     /**
