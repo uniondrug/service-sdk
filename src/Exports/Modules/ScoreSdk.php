@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-16
- * @time   Mon, 16 Dec 2019 16:34:38 +0800
+ * @date   2020-01-03
+ * @time   Fri, 03 Jan 2020 14:10:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,7 +30,7 @@ class ScoreSdk extends SdkBase
     protected $serviceName = 'score.module';
 
     /**
-     * 分页列表
+     * 修改状态
      * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ScoreController/editStatusAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -38,6 +38,17 @@ class ScoreSdk extends SdkBase
     public function editStatus($body)
     {
         return $this->restful("POST", "/score/editStatus", $body);
+    }
+
+    /**
+     * 导出连锁评分汇总
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ExcelExportSqlController/scorePartnerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ExcelExportSqlScorePartner($body)
+    {
+        return $this->restful("POST", "/excelexporsql/scorepartner", $body);
     }
 
     /**
