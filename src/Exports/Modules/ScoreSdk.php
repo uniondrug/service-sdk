@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-01-03
- * @time   Fri, 03 Jan 2020 14:10:42 +0800
+ * @time   Fri, 03 Jan 2020 17:45:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,39 @@ class ScoreSdk extends SdkBase
     public function ExcelExportSqlScorePartner($body)
     {
         return $this->restful("POST", "/excelexporsql/scorepartner", $body);
+    }
+
+    /**
+     * 导出门店评分详情
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ExcelExportSqlController/scoreStoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ExcelExportSqlScoreScore($body)
+    {
+        return $this->restful("POST", "/excelexporsql/scorestore", $body);
+    }
+
+    /**
+     * 导出门店评分汇总
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ExcelExportSqlController/scoreStoreSumAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ExcelExportSqlScoreScoreSum($body)
+    {
+        return $this->restful("POST", "/excelexporsql/scorestoresum", $body);
+    }
+
+    /**
+     * 导出门店评分汇总多日
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ExcelExportSqlController/scoreStoreSumDayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ExcelExportSqlScoreScoreSumDay($body)
+    {
+        return $this->restful("POST", "/excelexporsql/scorestoresumday", $body);
     }
 
     /**
