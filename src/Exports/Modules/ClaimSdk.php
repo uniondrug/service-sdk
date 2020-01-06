@@ -257,7 +257,7 @@ class ClaimSdk extends SdkBase
      */
     public function claimChannelAdd($body)
     {
-        return $this->restful("POST", "/add", $body);
+        return $this->restful("POST", "/claimChannel/add", $body);
     }
 
     /**
@@ -268,6 +268,6 @@ class ClaimSdk extends SdkBase
      */
     public function claimChannelGetList($body)
     {
-        return $this->restful("POST", "/getList", $body);
+        return $this->restful("POST", "/claimChannel/getList", $body);
     }
 }
