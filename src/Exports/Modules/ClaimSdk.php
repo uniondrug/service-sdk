@@ -248,26 +248,4 @@ class ClaimSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/user/cancel", $body);
     }
-
-    /**
-     * 新增渠道
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimChannelController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimChannelAdd($body)
-    {
-        return $this->restful("POST", "/claimChannel/add", $body);
-    }
-
-    /**
-     * 获取渠道列表（不分页）
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimChannelController/getListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimChannelGetList($body)
-    {
-        return $this->restful("POST", "/claimChannel/getList", $body);
-    }
 }
