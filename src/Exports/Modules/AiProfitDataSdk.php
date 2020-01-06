@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-24
- * @time   Thu, 24 Oct 2019 14:16:35 +0800
+ * @date   2020-01-06
+ * @time   Mon, 06 Jan 2020 18:36:23 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -225,6 +225,17 @@ class AiProfitDataSdk extends SdkBase
     public function dataList($body)
     {
         return $this->restful("POST", "/redPacket/dataList", $body);
+    }
+
+    /**
+     * 每日明细
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PkController/dayDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dayDetail($body)
+    {
+        return $this->restful("POST", "/pk/dayDetail", $body);
     }
 
     /**
@@ -591,6 +602,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 每月明细
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PkController/monthDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function monthDetail($body)
+    {
+        return $this->restful("POST", "/pk/monthDetail", $body);
+    }
+
+    /**
      * 连锁 客单价 分布
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/avgAmountAction.md
      * @param array $body 入参类型
@@ -709,6 +731,17 @@ class AiProfitDataSdk extends SdkBase
     public function partnerTask($body)
     {
         return $this->restful("POST", "/partner/task", $body);
+    }
+
+    /**
+     * 默认排行榜
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PkController/indexAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pkIndex($body)
+    {
+        return $this->restful("POST", "/pk/index", $body);
     }
 
     /**
