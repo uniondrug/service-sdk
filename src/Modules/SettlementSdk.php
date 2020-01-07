@@ -2116,4 +2116,15 @@ class SettlementSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/claim/paymentPaging", $body);
     }
+
+    /**
+     * 订单理赔信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/orderClaimDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimOrderDetail($body)
+    {
+        return $this->restful("POST", "/claim/order/claimDetail", $body);
+    }
 }
