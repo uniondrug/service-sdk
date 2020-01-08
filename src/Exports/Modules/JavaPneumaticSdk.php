@@ -53,7 +53,7 @@ class JavaPneumaticSdk extends SdkBase
      */
     public function riskManage($body)
     {
-        return $this->restful(static::METHOD_POST, '/risk/assessment/trade/brand', $body, null, [
+        return $this->restful(static::METHOD_POST, '/risk/assessment/trade', $body, null, [
             'timeout' => 1
         ]);
     }
