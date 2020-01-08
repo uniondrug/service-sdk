@@ -40,4 +40,15 @@ class JavaPneumaticSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/pneumatic/merchant/limit', $body);
     }
+
+    /**
+     * 连锁风控
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function riskManage($body)
+    {
+        return $this->restful(static::METHOD_POST, '/risk/assessment/trade/brand', $body);
+    }
 }
