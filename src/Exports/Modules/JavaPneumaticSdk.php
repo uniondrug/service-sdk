@@ -27,7 +27,9 @@ class JavaPneumaticSdk extends SdkBase
      */
     public function userLimit($body)
     {
-        return $this->restful(static::METHOD_POST, '/pneumatic/customer/limit', $body);
+        return $this->restful(static::METHOD_POST, '/pneumatic/customer/limit', $body, null, [
+            'timeout' => 1
+        ]);
     }
 
     /**
@@ -38,6 +40,21 @@ class JavaPneumaticSdk extends SdkBase
      */
     public function merchantLimit($body)
     {
-        return $this->restful(static::METHOD_POST, '/pneumatic/merchant/limit', $body);
+        return $this->restful(static::METHOD_POST, '/pneumatic/merchant/limit', $body, null, [
+            'timeout' => 1
+        ]);
+    }
+
+    /**
+     * 连锁风控
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function riskManage($body)
+    {
+        return $this->restful(static::METHOD_POST, '/risk/assessment/trade', $body, null, [
+            'timeout' => 1
+        ]);
     }
 }
