@@ -349,6 +349,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 批量提交付款
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/commitBatchSuccessAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalPaymentCommitBatchSuccess($body)
+    {
+        return $this->restful("POST", "/capitalPayment/commitBatchSuccess", $body);
+    }
+
+    /**
      * 资金付款审核分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/auditPagingAction.md
      * @param object|array $body 入参类型
