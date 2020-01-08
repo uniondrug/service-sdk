@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-29
- * @time   Tue, 29 Oct 2019 10:06:12 +0800
+ * @date   2020-01-07
+ * @time   Tue, 07 Jan 2020 15:49:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -192,6 +192,17 @@ class InsureSdk extends SdkBase
     public function deletePlan($body)
     {
         return $this->restful("POST", "/plan/delete", $body);
+    }
+
+    /**
+     * 理赔详情
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function detailClaim($body)
+    {
+        return $this->restful("POST", "/claim/detail", $body);
     }
 
     /**
