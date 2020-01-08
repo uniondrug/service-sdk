@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-30
- * @time   Mon, 30 Dec 2019 14:39:17 +0800
+ * @date   2020-01-08
+ * @time   Wed, 08 Jan 2020 11:28:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -888,6 +888,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 简易ids读取商户信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/idsSmallAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function idsSmallOrganizeBase($body)
+    {
+        return $this->restful("POST", "/organizebase/idssmall", $body);
+    }
+
+    /**
      * 查询账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/infoAction.md
      * @param array $body 入参类型
@@ -1743,6 +1754,28 @@ class MerchantSdk extends SdkBase
     public function syncAddErp($body)
     {
         return $this->restful("POST", "/organizebase/syncadderp", $body);
+    }
+
+    /**
+     * 商户中心接受erp回推添加门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddStroeErpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncAddStoreErp($body)
+    {
+        return $this->restful("POST", "/organizebase/syncaddstoreerp", $body);
+    }
+
+    /**
+     * 商户中心接受erp回推修改门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncEditStoreErpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncEditStoreErp($body)
+    {
+        return $this->restful("POST", "/organizebase/synceditstoreerp", $body);
     }
 
     /**
