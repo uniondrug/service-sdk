@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-31
- * @time   Tue, 31 Dec 2019 16:07:54 +0800
+ * @date   2020-01-09
+ * @time   Thu, 09 Jan 2020 14:49:06 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,7 +30,7 @@ class ClaimSdk extends SdkBase
     protected $serviceName = 'claim.module';
 
     /**
-     * 执行审核流程
+     * 换新执行审核流程
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/claimAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -41,7 +41,7 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 创建理赔申请
+     * 创建换新理赔申请
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -52,7 +52,7 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 获取理赔单详情
+     * 获取换新理赔单详情
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -60,6 +60,17 @@ class ClaimSdk extends SdkBase
     public function changeDetail($body)
     {
         return $this->restful("POST", "/change/detail", $body);
+    }
+
+    /**
+     * 保障ID获取换新理赔单详情
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/detail2Action.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeDetail2($body)
+    {
+        return $this->restful("POST", "/change/detail2", $body);
     }
 
     /**
@@ -74,7 +85,7 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 拒绝审核流程
+     * 换新拒绝审核流程
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/rejectAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
