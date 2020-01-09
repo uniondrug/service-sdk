@@ -205,4 +205,15 @@ class AuditSdk extends SdkBase
     {
         return $this->restful("POST", "/audit/service/recover", $body);
     }
+
+    /**
+     * 根据保障类型和保障id获取子订单
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/getSubOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditGetSubOrderNoByGuaranteeIds($body)
+    {
+        return $this->restful("POST", "/audit/getSubOrderNo", $body);
+    }
 }
