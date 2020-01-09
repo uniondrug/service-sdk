@@ -243,4 +243,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/claimChannel/getList", $body);
     }
+
+    /**
+     * 药店宝检测
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/VerifyController/ydbCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function verifyYDBCheck($body)
+    {
+        return $this->restful("POST", "/verify/ydbCheck", $body);
+    }
 }
