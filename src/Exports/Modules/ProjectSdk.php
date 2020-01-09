@@ -1188,4 +1188,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, "/verify/ydbCheck", $body);
     }
+
+    /**
+     * 获取检测对应的分组对应的状态
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/getStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupAccessCheckStatus($body)
+    {
+        return $this->restful("POST", "/group/access/getStatus", $body);
+    }
 }
