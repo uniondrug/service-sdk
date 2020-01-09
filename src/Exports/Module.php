@@ -57,6 +57,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\UdappSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
@@ -126,6 +127,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
  * @property AiPushSdk             $aiPush
  * @property InsureRankSdk         $insureRank
  * @property MerchantApplySdk      $merchantApply
+ * @property UdappSdk              $udapp
  * @package Uniondrug\ServiceSdk\Exports
  */
 class Module extends Abstracts\SdkEntrypoint
