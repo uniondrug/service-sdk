@@ -1199,4 +1199,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/group/access/getStatus", $body);
     }
+    /**
+     * getValidationAction()
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/getValidationAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function verifyGetValidation($body)
+    {
+        return $this->restful("POST", "/verify/getValidation", $body);
+    }
+
 }
