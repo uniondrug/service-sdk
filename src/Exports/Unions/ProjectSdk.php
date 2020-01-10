@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Unions`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-11
- * @time   Fri, 11 Oct 2019 14:49:32 +0800
+ * @date   2019-12-27
+ * @time   Fri, 27 Dec 2019 13:51:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Unions;
 
@@ -41,7 +41,8 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 根据cdkey 创建权益
+     * 根据cdkey 创建权益(会自动激活权益)
+     * 此接口暫時不提供使用
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createByCdKeyAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -101,6 +102,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 批量激活
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/allActivateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityAllActivate($body)
+    {
+        return $this->restful("POST", "/equity/all/activate", $body);
+    }
+
+    /**
      * 开户
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/activateAccountAction.md
      * @param array $body 入参类型
@@ -156,7 +168,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 驳回 【解冻】
+     * 理赔撤销（驳回 【解冻】）
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/rejectAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -164,6 +176,39 @@ class ProjectSdk extends SdkBase
     public function equityBatchReject($body)
     {
         return $this->restful("POST", "/equity/batch/reject", $body);
+    }
+
+    /**
+     * 撤销开户
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/repealAddRedeemCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchRepealAccount($body)
+    {
+        return $this->restful("POST", "/equity/batch/repeal/account", $body);
+    }
+
+    /**
+     * 撤销充值
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityBatchController/repealRechargeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityBatchRepealRecharge($body)
+    {
+        return $this->restful("POST", "/equity/batch/repeal/recharge", $body);
+    }
+
+    /**
+     * 根据兑换码创建权益并激活兑换码
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/createEquityByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityCreateByCdKey($body)
+    {
+        return $this->restful("POST", "/equity/create/cdKey", $body);
     }
 
     /**
@@ -178,6 +223,28 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 新增渠道
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/ClaimChannelController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimChannelAdd($body)
+    {
+        return $this->restful("POST", "/claimChannel/add", $body);
+    }
+
+    /**
+     * 获取渠道列表（不分页）
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/ClaimChannelController/getListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimChannelGetList($body)
+    {
+        return $this->restful("POST", "/claimChannel/getList", $body);
+    }
+
+    /**
      * 药店宝检测
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/VerifyController/ydbCheckAction.md
      * @param array $body 入参类型
@@ -186,5 +253,25 @@ class ProjectSdk extends SdkBase
     public function verifyYDBCheck($body)
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
+    }
+    /**
+     * 通过订单号和productId获取保障ID和权益ID
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/AuditController/auditGetEquityAndGuaranteeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditEquityAndGuarantee($body)
+    {
+        return $this->restful("POST", "/audit/getEquityAndGuarantee", $body);
+    }
+    /**
+     * 获取保障列表
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/guaranteePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityGuaranteePaging($body)
+    {
+        return $this->restful("POST", "/equity/guaranteePaging", $body);
     }
 }
