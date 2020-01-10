@@ -264,7 +264,6 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/audit/getEquityAndGuarantee", $body);
     }
-
     /**
      * 获取保障列表
      * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/guaranteePagingAction.md

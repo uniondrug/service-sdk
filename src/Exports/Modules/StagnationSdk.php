@@ -110,6 +110,17 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configDelete($body)
+    {
+        return $this->restful("POST", "/config/delete", $body);
+    }
+
+    /**
      * 权益码信息详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/detailAction.md
      * @param array $body 入参类型
