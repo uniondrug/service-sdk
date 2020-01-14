@@ -1200,6 +1200,7 @@ class ProjectSdk extends SdkBase
         return $this->restful("POST", "/group/access/getStatus", $body);
     }
     /**
+     * 获取有效期
      * getValidationAction()
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/getValidationAction.md
      * @param array $body 入参类型
