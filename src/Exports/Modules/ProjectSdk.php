@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-01-15
- * @time   Wed, 15 Jan 2020 10:11:38 +0800
+ * @time   Wed, 15 Jan 2020 10:47:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -965,7 +965,7 @@ class ProjectSdk extends SdkBase
      */
     public function redeemCodeOutOrderCreate($body)
     {
-        return $this->restful("", "/redeem/code/out/order", $body);
+        return $this->restful("POST", "/redeem/code/out/order/create", $body);
     }
 
     /**
