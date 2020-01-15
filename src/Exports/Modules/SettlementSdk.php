@@ -2547,4 +2547,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/settlement/updateSettlementStatus", $body);
     }
+
+    /**
+     * 获取用户下连锁列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/listByMemberAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeAccountListByMember($body)
+    {
+        return $this->restful("POST", "/organizeAccount/listByMember", $body);
+    }
 }
