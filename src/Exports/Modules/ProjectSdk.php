@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-14
- * @time   Tue, 14 Jan 2020 15:50:06 +0800
+ * @date   2020-01-15
+ * @time   Wed, 15 Jan 2020 10:11:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -955,6 +955,17 @@ class ProjectSdk extends SdkBase
     public function redeemCodeChangeSingleType($body)
     {
         return $this->restful("POST", "/redeem/redeemCodeChangeSingleType", $body);
+    }
+
+    /**
+     * 创建兑换码订单关联记录
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeOutOrderController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeOutOrderCreate($body)
+    {
+        return $this->restful("", "/redeem/code/out/order", $body);
     }
 
     /**
