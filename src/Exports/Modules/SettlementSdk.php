@@ -2558,4 +2558,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/organizeAccount/listByMember", $body);
     }
+
+    /**
+     * 商家服务平台版本详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessCenterVersionController/detailAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessCenterVersionDetail($body)
+    {
+        return $this->restful("POST", "/businessCenterVersion/detail", $body);
+    }
 }
