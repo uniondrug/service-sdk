@@ -352,6 +352,28 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 未激活数据
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/unactiveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tmpUnactive($body)
+    {
+        return $this->restful("POST", "/tmp/unactive", $body);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tmpUpdate($body)
+    {
+        return $this->restful("POST", "/tmp/update", $body);
+    }
+
+    /**
      * 新增驻店员
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
