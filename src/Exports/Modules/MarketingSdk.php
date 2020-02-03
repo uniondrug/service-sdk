@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-23
- * @time   Mon, 23 Dec 2019 19:26:46 +0800
+ * @date   2020-02-03
+ * @time   Mon, 03 Feb 2020 15:09:22 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * MarketingSdk
@@ -38,6 +38,28 @@ class MarketingSdk extends SdkBase
     public function changeDayOrgan($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/changeDayOrgan", $body);
+    }
+
+    /**
+     * 新增营销计划
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/ConfigController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configCreate($body)
+    {
+        return $this->restful("POST", "/config/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/ConfigController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configDetail($body)
+    {
+        return $this->restful("POST", "/config/detail", $body);
     }
 
     /**
@@ -93,6 +115,39 @@ class MarketingSdk extends SdkBase
     public function evidenceUse($body)
     {
         return $this->restful("POST", "/evidence/use", $body);
+    }
+
+    /**
+     * 新增黑名单
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingBlackController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingBlackCreate($body)
+    {
+        return $this->restful("POST", "/marketingBlack/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingBlackController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingBlackDetail($body)
+    {
+        return $this->restful("POST", "/marketingBlack/detail", $body);
+    }
+
+    /**
+     * 用门店查询
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingBlackController/storeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingBlackStore($body)
+    {
+        return $this->restful("POST", "/marketingBlack/store", $body);
     }
 
     /**
@@ -250,6 +305,17 @@ class MarketingSdk extends SdkBase
     }
 
     /**
+     * 获取连锁状态
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/partnerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingPlanPartnerPartner($body)
+    {
+        return $this->restful("POST", "/marketing/plan/partner/partner", $body);
+    }
+
+    /**
      * 获取换新日店铺状态
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/statusAction.md
      * @param array $body 入参类型
@@ -305,6 +371,17 @@ class MarketingSdk extends SdkBase
     }
 
     /**
+     * 订单分页
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderPaging($body)
+    {
+        return $this->restful("POST", "/marketing/order/paging", $body);
+    }
+
+    /**
      * 创建记录
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RecordController/createAction.md
      * @param array $body 入参类型
@@ -324,6 +401,28 @@ class MarketingSdk extends SdkBase
     public function refund($body)
     {
         return $this->restful("POST", "/marketing/order/refund", $body);
+    }
+
+    /**
+     * 审核接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/auditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function riskAudit($body)
+    {
+        return $this->restful("POST", "/risk/audit", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function riskPaging($body)
+    {
+        return $this->restful("POST", "/risk/paging", $body);
     }
 
     /**
