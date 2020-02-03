@@ -243,4 +243,35 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/claimChannel/getList", $body);
     }
+
+    /**
+     * 药店宝检测
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/VerifyController/ydbCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function verifyYDBCheck($body)
+    {
+        return $this->restful("POST", "/verify/ydbCheck", $body);
+    }
+    /**
+     * 通过订单号和productId获取保障ID和权益ID
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/AuditController/auditGetEquityAndGuaranteeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditEquityAndGuarantee($body)
+    {
+        return $this->restful("POST", "/audit/getEquityAndGuarantee", $body);
+    }
+    /**
+     * 获取保障列表
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/EquityController/guaranteePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityGuaranteePaging($body)
+    {
+        return $this->restful("POST", "/equity/guaranteePaging", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-18
- * @time   Wed, 18 Dec 2019 11:14:00 +0800
+ * @date   2020-01-14
+ * @time   Tue, 14 Jan 2020 14:27:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -258,6 +258,17 @@ class PackageSdk extends SdkBase
     public function packageExport($body)
     {
         return $this->restful("POST", "/package/export", $body);
+    }
+
+    /**
+     * 增值服务对应的权益和保障相关信息
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGetDetailList($body)
+    {
+        return $this->restful("POST", "/package/getDetailList", $body);
     }
 
     /**

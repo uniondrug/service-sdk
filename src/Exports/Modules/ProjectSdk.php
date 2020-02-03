@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-22
- * @time   Fri, 22 Nov 2019 15:07:51 +0800
+ * @date   2020-01-15
+ * @time   Wed, 15 Jan 2020 10:47:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -738,6 +738,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取检测对应的分组对应的状态
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupAccessController/getStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupAccessCheckStatus($body)
+    {
+        return $this->restful("POST", "/group/access/getStatus", $body);
+    }
+
+    /**
      * 分组提额
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/changeGroupMoneyAction.md
      * @param array $body 入参类型
@@ -914,7 +925,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * changeGroupTypeAction()
+     * 修改分组兑换码状态（冻结、解冻、回收）
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeGroupTypeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -925,7 +936,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * changeProjectTypeAction()
+     * 修改项目兑换码状态（冻结、解冻、回收）
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeProjectTypeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -936,7 +947,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * changeSingleTypeAction()
+     * 修改单个兑换码状态（冻结、解冻、回收）
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/changeSingleTypeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -944,6 +955,28 @@ class ProjectSdk extends SdkBase
     public function redeemCodeChangeSingleType($body)
     {
         return $this->restful("POST", "/redeem/redeemCodeChangeSingleType", $body);
+    }
+
+    /**
+     * 创建兑换码订单关联记录
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeOutOrderController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeOutOrderCreate($body)
+    {
+        return $this->restful("POST", "/redeem/code/out/order/create", $body);
+    }
+
+    /**
+     * 获取兑换码外部订单记录详情
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeOutOrderController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeOutOrderDetail($body)
+    {
+        return $this->restful("POST", "/redeem/code/out/order/detail", $body);
     }
 
     /**
@@ -1168,6 +1201,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 获取有效期
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/getValidationAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function verifyGetValidation($body)
+    {
+        return $this->restful("POST", "/verify/getValidation", $body);
+    }
+
+    /**
      * 兑换码列表查询
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/VerifyPagingAction.md
      * @param array $body 入参类型
@@ -1179,13 +1223,15 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 内容
-     * @param $body
+     * 验证权益领取(药店宝)
+     * 验证用户输入的信息是否正确, 当正确时
+     * 业务系统继续执行下层激活逻辑, 反之应中止执行
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/VerifyController/ydbCheckAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
-     * @throws \Uniondrug\ServiceSdk\Exception
      */
     public function ydbCheckVerify($body)
     {
-        return $this->restful(static::METHOD_POST, "/verify/ydbCheck", $body);
+        return $this->restful("POST", "/verify/ydbCheck", $body);
     }
 }

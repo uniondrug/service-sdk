@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-09-16
- * @time   Mon, 16 Sep 2019 13:50:03 +0800
+ * @date   2020-01-19
+ * @time   Sun, 19 Jan 2020 11:43:03 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -107,7 +107,62 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 累计销售额
+     * 方案开启或者关闭
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/changeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanChange($body)
+    {
+        return $this->restful("POST", "/scoreplan/change", $body);
+    }
+
+    /**
+     * 新增方案
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanCreate($body)
+    {
+        return $this->restful("POST", "/scoreplan/create", $body);
+    }
+
+    /**
+     * 方案详情
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanDetail($body)
+    {
+        return $this->restful("POST", "/scoreplan/detail", $body);
+    }
+
+    /**
+     * 方案列表
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanPaging($body)
+    {
+        return $this->restful("POST", "/scoreplan/paging", $body);
+    }
+
+    /**
+     * 方案编辑
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanUpdate($body)
+    {
+        return $this->restful("POST", "/scoreplan/update", $body);
+    }
+
+    /**
+     * 累计销售额排行
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/cumulativeSalesRankAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -140,7 +195,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 上月销售额
+     * 上月销售额排行
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/monthSalesRankAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -151,7 +206,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 今日销售额
+     * 今日销售额排行
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/todaySalesRankAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -162,7 +217,7 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
-     * 累计销售额
+     * 销售额总排行
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/StoreController/totalRankAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

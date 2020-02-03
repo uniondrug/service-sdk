@@ -110,6 +110,17 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configDelete($body)
+    {
+        return $this->restful("POST", "/config/delete", $body);
+    }
+
+    /**
      * 权益码信息详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/detailAction.md
      * @param array $body 入参类型
@@ -338,6 +349,28 @@ class StagnationSdk extends SdkBase
     public function sumRecordColumnByGroupManageIds($body)
     {
         return $this->restful("POST", "/group/manage/sum/record/column", $body);
+    }
+
+    /**
+     * 未激活数据
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/unactiveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tmpUnactive($body)
+    {
+        return $this->restful("POST", "/tmp/unactive", $body);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function tmpUpdate($body)
+    {
+        return $this->restful("POST", "/tmp/update", $body);
     }
 
     /**

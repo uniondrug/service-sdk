@@ -184,6 +184,39 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/MessageController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageCreate($body)
+    {
+        return $this->restful("POST", "/message/create", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/MessageController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageListing($body)
+    {
+        return $this->restful("POST", "/message/list", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/MessageController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageUpdate($body)
+    {
+        return $this->restful("POST", "/message/update", $body);
+    }
+
+    /**
      * 批量查询对应门店的接单数量
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/o2oAcceptCountAction.md
      * @param array $body 入参类型
