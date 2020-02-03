@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-02-03
- * @time   Mon, 03 Feb 2020 16:21:58 +0800
+ * @time   Mon, 03 Feb 2020 18:32:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -137,6 +137,17 @@ class MarketingSdk extends SdkBase
     public function marketingBlackDetail($body)
     {
         return $this->restful("POST", "/marketingBlack/detail", $body);
+    }
+
+    /**
+     * 开关
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingBlackController/onOffAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingBlackOnOff($body)
+    {
+        return $this->restful("POST", "/marketingBlack/onOff", $body);
     }
 
     /**
@@ -302,6 +313,17 @@ class MarketingSdk extends SdkBase
     public function marketingPlanPartnerList($body)
     {
         return $this->restful("POST", "/marketing/plan/partner/list", $body);
+    }
+
+    /**
+     * 开关接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingPlanPartnerController/onOffAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingPlanPartnerOnOff($body)
+    {
+        return $this->restful("POST", "/marketing/plan/partner/onOff", $body);
     }
 
     /**
