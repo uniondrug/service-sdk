@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-03
- * @time   Mon, 03 Feb 2020 18:32:11 +0800
+ * @date   2020-02-04
+ * @time   Tue, 04 Feb 2020 10:19:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -148,6 +148,17 @@ class MarketingSdk extends SdkBase
     public function marketingBlackOnOff($body)
     {
         return $this->restful("POST", "/marketingBlack/onOff", $body);
+    }
+
+    /**
+     * 获取有数据的门店
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/MarketingBlackController/statusStoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingBlackStatusStore($body)
+    {
+        return $this->restful("POST", "/marketingBlack/statusStore", $body);
     }
 
     /**
