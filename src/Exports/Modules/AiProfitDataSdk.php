@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-04
- * @time   Tue, 04 Feb 2020 15:08:33 +0800
+ * @date   2020-02-05
+ * @time   Wed, 05 Feb 2020 17:34:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -588,6 +588,17 @@ class AiProfitDataSdk extends SdkBase
     public function moduleList($body)
     {
         return $this->restful("POST", "/modulecontrol/list", $body);
+    }
+
+    /**
+     * 根据连锁code判断微信端智盈到家数据是否展示
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/sendCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleSendCheck($body)
+    {
+        return $this->restful("POST", "/modulecontrol/sendcheck", $body);
     }
 
     /**
