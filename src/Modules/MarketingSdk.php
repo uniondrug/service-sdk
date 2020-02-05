@@ -305,26 +305,5 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/marketing/plan/partner/changeDayOrgan", $body);
     }
-
-    /**
-     * 查询风控记录接口
-     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function riskDetail($body)
-    {
-        return $this->restful("POST", "/risk/detail", $body);
-    }
-
-    /**
-     * 列表
-     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function riskPaging($body)
-    {
-        return $this->restful("POST", "/risk/paging", $body);
-    }
 }
+
