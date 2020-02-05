@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-19
- * @time   Sun, 19 Jan 2020 11:43:03 +0800
+ * @date   2020-02-05
+ * @time   Wed, 05 Feb 2020 11:10:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -140,6 +140,17 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
+     * 根据连锁ID获取最近生效的方案
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/effectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanEffect($body)
+    {
+        return $this->restful("POST", "/scoreplan/effect", $body);
+    }
+
+    /**
      * 方案列表
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/pagingAction.md
      * @param array $body 入参类型
@@ -148,6 +159,17 @@ class AiProfitStatisticsSdk extends SdkBase
     public function scorePlanPaging($body)
     {
         return $this->restful("POST", "/scoreplan/paging", $body);
+    }
+
+    /**
+     * 根据连锁ID获取即将生效的方案
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/soonAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanSoon($body)
+    {
+        return $this->restful("POST", "/scoreplan/soon", $body);
     }
 
     /**
