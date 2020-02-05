@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-03
- * @time   Fri, 03 Jan 2020 17:45:58 +0800
+ * @date   2020-02-04
+ * @time   Tue, 04 Feb 2020 16:01:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * ScoreSdk
@@ -49,6 +49,17 @@ class ScoreSdk extends SdkBase
     public function ExcelExportSqlScorePartner($body)
     {
         return $this->restful("POST", "/excelexporsql/scorepartner", $body);
+    }
+
+    /**
+     * 导出连锁评分详情列表
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ExcelExportSqlController/scorePartnerDetailsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ExcelExportSqlScorePartnerDetails($body)
+    {
+        return $this->restful("POST", "/excelexporsql/scorepartnerdetails", $body);
     }
 
     /**
@@ -137,6 +148,28 @@ class ScoreSdk extends SdkBase
     public function scorePaging($body)
     {
         return $this->restful("POST", "/score/paging", $body);
+    }
+
+    /**
+     * 分页多天列表
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ScorePartnerDetailsController/partnerPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerDetailsDayPaging($body)
+    {
+        return $this->restful("POST", "/scorePartnerDetails/partnerdaypaging", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ScorePartnerDetailsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerDetailsPaging($body)
+    {
+        return $this->restful("POST", "/scorePartnerDetails/paging", $body);
     }
 
     /**
