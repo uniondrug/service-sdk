@@ -176,7 +176,7 @@ class JavaOrderSdk extends SdkBase
     }
 
     /**
-     * 子订单列表检索
+     * 子订单列表检索(已转到 javaOrderQuerySdk.php)
      * @link
      * @param array $body 入参类型
      * @return ResponseInterface
