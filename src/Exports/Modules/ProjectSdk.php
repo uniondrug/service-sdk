@@ -1245,4 +1245,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
     }
+
+    /**
+     * 绑定激活的兑换码memberId(寿险用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/bindRedeemCodeMemberIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeBindMemberId($body)
+    {
+        return $this->restful("POST", "/redeem/bindMemberId", $body);
+    }
 }
