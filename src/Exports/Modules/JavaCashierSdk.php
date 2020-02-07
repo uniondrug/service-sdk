@@ -87,4 +87,15 @@ class JavaCashierSdk extends SdkBase
     {
         return $this->restful("POST", "/cashier/status/check", $body);
     }
+
+    /**
+     * 根据主订单号查询主订单所有支付信息
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryCashierAllByOutTradeNo($body)
+    {
+        return $this->restful("POST", "/cashier/queryCashierAllByOutTradeNo", $body);
+    }
 }
