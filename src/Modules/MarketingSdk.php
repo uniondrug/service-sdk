@@ -306,3 +306,4 @@ class MarketingSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/marketing/plan/partner/changeDayOrgan", $body);
     }
 }
+

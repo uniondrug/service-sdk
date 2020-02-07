@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-15
- * @time   Wed, 15 Jan 2020 10:47:52 +0800
+ * @date   2020-02-06
+ * @time   Thu, 06 Feb 2020 11:28:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -52,7 +52,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 添加分组
+     * 添加分组(弃用，请使用V2版本)
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -185,6 +185,17 @@ class ProjectSdk extends SdkBase
     public function checkVerify($body)
     {
         return $this->restful("POST", "/verify/check", $body);
+    }
+
+    /**
+     * 创建分组
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/V2/GroupController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createGroupV2($body)
+    {
+        return $this->restful("POST", "/v2/group/create", $body);
     }
 
     /**
@@ -1233,5 +1244,16 @@ class ProjectSdk extends SdkBase
     public function ydbCheckVerify($body)
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
+    }
+
+    /**
+     * 绑定激活的兑换码memberId(寿险用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/bindRedeemCodeMemberIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeBindMemberId($body)
+    {
+        return $this->restful("POST", "/redeem/bindMemberId", $body);
     }
 }

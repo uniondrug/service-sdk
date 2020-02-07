@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-03
- * @time   Mon, 03 Feb 2020 15:50:07 +0800
+ * @date   2020-02-05
+ * @time   Wed, 05 Feb 2020 17:34:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -591,6 +591,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 根据连锁code判断微信端智盈到家数据是否展示
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/sendCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function moduleSendCheck($body)
+    {
+        return $this->restful("POST", "/modulecontrol/sendcheck", $body);
+    }
+
+    /**
      * 智盈到家模块配置详情
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ModuleControlController/sendDetailAction.md
      * @param array $body 入参类型
@@ -635,6 +646,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 智盈到家连锁整体累计销售总额和累计开单数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/O2oPartnerController/sumDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function o2oSumData($body)
+    {
+        return $this->restful("POST", "/o2opartner/sumdata", $body);
+    }
+
+    /**
      * 连锁 客单价 分布
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PartnerController/avgAmountAction.md
      * @param array $body 入参类型
@@ -676,6 +698,28 @@ class AiProfitDataSdk extends SdkBase
     public function partnerBillCount($body)
     {
         return $this->restful("POST", "/partner/billCount", $body);
+    }
+
+    /**
+     * 智盈到家柱形图和折线图数据
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/O2oPartnerController/partnerDataListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerDataList($body)
+    {
+        return $this->restful("POST", "/o2opartner/datalist", $body);
+    }
+
+    /**
+     * 智盈到家每日明细
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/O2oPartnerController/dayDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function partnerDayDataDetail($body)
+    {
+        return $this->restful("POST", "/o2opartner/daydetail", $body);
     }
 
     /**

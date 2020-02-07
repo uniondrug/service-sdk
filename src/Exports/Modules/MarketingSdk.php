@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-04
- * @time   Tue, 04 Feb 2020 10:19:33 +0800
+ * @date   2020-02-05
+ * @time   Wed, 05 Feb 2020 15:46:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -459,6 +459,28 @@ class MarketingSdk extends SdkBase
     }
 
     /**
+     * 修改风控接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function riskUpdate($body)
+    {
+        return $this->restful("POST", "/risk/update", $body);
+    }
+
+    /**
+     * 查询风控记录接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function riskDetail($body)
+    {
+        return $this->restful("POST", "/risk/detail", $body);
+    }
+
+    /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/pagingAction.md
      * @param array $body 入参类型
@@ -467,6 +489,17 @@ class MarketingSdk extends SdkBase
     public function riskPaging($body)
     {
         return $this->restful("POST", "/risk/paging", $body);
+    }
+
+    /**
+     * 检查
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function riskCheck($body)
+    {
+        return $this->restful("POST", "/risk/check", $body);
     }
 
     /**
