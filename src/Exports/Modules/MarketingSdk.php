@@ -459,14 +459,14 @@ class MarketingSdk extends SdkBase
     }
 
     /**
-     * 新增风控接口
+     * 修改风控接口
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function riskCreate($body)
+    public function riskUpdate($body)
     {
-        return $this->restful("POST", "/risk/create", $body);
+        return $this->restful("POST", "/risk/update", $body);
     }
 
     /**
@@ -489,6 +489,17 @@ class MarketingSdk extends SdkBase
     public function riskPaging($body)
     {
         return $this->restful("POST", "/risk/paging", $body);
+    }
+
+    /**
+     * 检查
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function riskCheck($body)
+    {
+        return $this->restful("POST", "/risk/check", $body);
     }
 
     /**
