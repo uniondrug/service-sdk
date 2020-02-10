@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-05
- * @time   Wed, 05 Feb 2020 15:46:17 +0800
+ * @date   2020-02-10
+ * @time   Mon, 10 Feb 2020 13:15:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -416,6 +416,17 @@ class MarketingSdk extends SdkBase
 
     /**
      * 订单分页
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/itemListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderItemList($body)
+    {
+        return $this->restful("POST", "/marketing/order/itemList", $body);
+    }
+
+    /**
+     * 订单分页
      * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/OrderController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -459,14 +470,14 @@ class MarketingSdk extends SdkBase
     }
 
     /**
-     * 修改风控接口
-     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/createAction.md
+     * 风控检查
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/checkAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function riskUpdate($body)
+    public function riskCheck($body)
     {
-        return $this->restful("POST", "/risk/update", $body);
+        return $this->restful("POST", "/risk/check", $body);
     }
 
     /**
@@ -492,14 +503,14 @@ class MarketingSdk extends SdkBase
     }
 
     /**
-     * 检查
-     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/pagingAction.md
+     * 上传风控图片接口
+     * @link https://uniondrug.coding.net/p/module.marketing/git/blob/development/docs/api/RiskController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function riskCheck($body)
+    public function riskUpdate($body)
     {
-        return $this->restful("POST", "/risk/check", $body);
+        return $this->restful("POST", "/risk/update", $body);
     }
 
     /**
