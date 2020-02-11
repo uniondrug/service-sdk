@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-07
- * @time   Tue, 07 Jan 2020 15:49:54 +0800
+ * @date   2020-02-11
+ * @time   Tue, 11 Feb 2020 10:17:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class InsureSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'insure.module';
+
+    /**
+     * 添加保单关闭记录
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/addCloseAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addClosePolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/addclose", $body);
+    }
 
     /**
      * 新建投单
@@ -60,6 +71,17 @@ class InsureSdk extends SdkBase
     public function addPolicy($body)
     {
         return $this->restful("POST", "/policy/add", $body);
+    }
+
+    /**
+     * 添加保单变更记录
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/add", $body);
     }
 
     /**
@@ -195,6 +217,28 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 删除保单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function deletePolicy($body)
+    {
+        return $this->restful("POST", "/policy/delete", $body);
+    }
+
+    /**
+     * 删除保单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function deletePolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/delete", $body);
+    }
+
+    /**
      * 理赔详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/detailAction.md
      * @param array $body 入参类型
@@ -261,6 +305,17 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 修改保单关闭记录
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/editCloseAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editClosePolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/editclose", $body);
+    }
+
+    /**
      * 编辑投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/editAction.md
      * @param array $body 入参类型
@@ -280,6 +335,17 @@ class InsureSdk extends SdkBase
     public function editPolicy($body)
     {
         return $this->restful("POST", "/policy/edit", $body);
+    }
+
+    /**
+     * 修改保单变更记录
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editPolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/edit", $body);
     }
 
     /**
@@ -437,6 +503,17 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 保单分页浏览
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pagingPolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/paging", $body);
+    }
+
+    /**
      * 付款
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/payAction.md
      * @param array $body 入参类型
@@ -489,5 +566,16 @@ class InsureSdk extends SdkBase
     public function viewPolicy($body)
     {
         return $this->restful("POST", "/policy/view", $body);
+    }
+
+    /**
+     * 查看保单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/viewAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function viewPolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/view", $body);
     }
 }
