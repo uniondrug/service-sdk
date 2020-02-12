@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-04
- * @time   Tue, 04 Feb 2020 16:01:59 +0800
+ * @date   2020-02-12
+ * @time   Wed, 12 Feb 2020 15:45:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,17 @@ class ScoreSdk extends SdkBase
     public function ExcelExportSqlScorePartner($body)
     {
         return $this->restful("POST", "/excelexporsql/scorepartner", $body);
+    }
+
+    /**
+     * 导出连锁评分多日
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ExcelExportSqlController/scorePartnerDetailsDayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ExcelExportSqlScorePartnerDetailDay($body)
+    {
+        return $this->restful("POST", "/excelexporsql/scorepartnerdetailsday", $body);
     }
 
     /**
@@ -170,6 +181,17 @@ class ScoreSdk extends SdkBase
     public function scorePartnerDetailsPaging($body)
     {
         return $this->restful("POST", "/scorePartnerDetails/paging", $body);
+    }
+
+    /**
+     * 连锁评分查询
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ScorePartnerDetailsController/partnerInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerDetailsPartnerInfo($body)
+    {
+        return $this->restful("POST", "/scorePartnerDetails/partnerinfo", $body);
     }
 
     /**
