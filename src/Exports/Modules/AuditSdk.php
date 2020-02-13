@@ -97,19 +97,30 @@ class AuditSdk extends SdkBase
     }
 
     /**
-     * erp换新订单审核
-     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/ErpOrderController/auditAction.md
+     * 通过订单号和productId获取保障ID和权益ID
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/getEquityAndGuaranteeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function auditErpOrder($body)
+    public function auditGetEquityAndGuarantee($body)
     {
-        return $this->restful("POST", "/erporder/audit", $body);
+        return $this->restful("POST", "/audit/getProductAndGuarantee", $body);
+    }
+
+    /**
+     * 根据保障类型和保障id获取子订单
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/getSubOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditGetSubOrderNoByGuaranteeIds($body)
+    {
+        return $this->restful("POST", "/audit/getSubOrderNo", $body);
     }
 
     /**
      * 重新审核
-     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditScriptController/rejectAction.md
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditScriptController/retryAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -185,6 +196,17 @@ class AuditSdk extends SdkBase
     }
 
     /**
+     * 获取本月本周的换药审核数量
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/MemberCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function memberCount($body)
+    {
+        return $this->restful("POST", "/audit/membercount", $body);
+    }
+
+    /**
      * 增值服务 即买即用
      * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/serviceAction.md
      * @param array $body 入参类型
@@ -204,27 +226,5 @@ class AuditSdk extends SdkBase
     public function serviceRecover($body)
     {
         return $this->restful("POST", "/audit/service/recover", $body);
-    }
-
-    /**
-     * 通过订单号和productId获取保障ID和权益ID
-     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/getEquityAndGuaranteeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function auditGetEquityAndGuarantee($body)
-    {
-        return $this->restful("POST", "/audit/getProductAndGuarantee", $body);
-    }
-
-    /**
-     * 根据保障类型和保障id获取子订单
-     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditController/getSubOrderNoAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function auditGetSubOrderNoByGuaranteeIds($body)
-    {
-        return $this->restful("POST", "/audit/getSubOrderNo", $body);
     }
 }
