@@ -8,14 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-07
- * @time   Fri, 07 Feb 2020 14:36:02 +0800
+ * @date   2020-02-13
+ * @time   Thu, 13 Feb 2020 14:31:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
-
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * DistsellSdk
@@ -29,17 +28,6 @@ class DistsellSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'distsell.module';
-
-    /**
-     * 连锁有多少增值服务
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantProductCountAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function merchantProductCount($body)
-    {
-        return $this->restful("POST", "/product/merchantProductCount", $body);
-    }
 
     /**
      * 创建积分
@@ -72,6 +60,28 @@ class DistsellSdk extends SdkBase
     public function pointList($body)
     {
         return $this->restful("POST", "/point/list", $body);
+    }
+
+    /**
+     * 连锁层面的创建
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/merchantCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointMerchantCreate($body)
+    {
+        return $this->restful("POST", "/point/merchantCreate", $body);
+    }
+
+    /**
+     * 连锁层面的修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/merchantUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointMerchantUpdate($body)
+    {
+        return $this->restful("POST", "/point/merchantUpdate", $body);
     }
 
     /**
@@ -108,7 +118,7 @@ class DistsellSdk extends SdkBase
     }
 
     /**
-     * 创建商品
+     * 商品详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -127,6 +137,50 @@ class DistsellSdk extends SdkBase
     public function productEdit($body)
     {
         return $this->restful("POST", "/product/edit", $body);
+    }
+
+    /**
+     * 连锁ids获取数据
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productList($body)
+    {
+        return $this->restful("POST", "/product/list", $body);
+    }
+
+    /**
+     * 连锁纬度的添加
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productMerchantCreate($body)
+    {
+        return $this->restful("POST", "/product/merchantCreate", $body);
+    }
+
+    /**
+     * 连锁纬度的详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productMerchantDetail($body)
+    {
+        return $this->restful("POST", "/product/merchantDetail", $body);
+    }
+
+    /**
+     * 连锁纬度的编辑
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantEditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productMerchantEdit($body)
+    {
+        return $this->restful("POST", "/product/merchantEdit", $body);
     }
 
     /**
