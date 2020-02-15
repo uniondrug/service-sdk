@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-11
- * @time   Tue, 11 Feb 2020 10:17:55 +0800
+ * @date   2020-02-15
+ * @time   Sat, 15 Feb 2020 21:38:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,17 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 保单关闭审核提交
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/checkClosePolicyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkClosePolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/checkclose", $body);
+    }
+
+    /**
      * 校验提交投保结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/checkAction.md
      * @param array $body 入参类型
@@ -126,6 +137,28 @@ class InsureSdk extends SdkBase
     public function checkInsurePolicyResult($body)
     {
         return $this->restful("POST", "/insurePolicy/check", $body);
+    }
+
+    /**
+     * 保单审核提交
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/checkPolicyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkPolicy($body)
+    {
+        return $this->restful("POST", "/policy/check", $body);
+    }
+
+    /**
+     * 保单变更审核提交
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/checkPolicyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkPolicyRecord($body)
+    {
+        return $this->restful("POST", "/policyrecord/check", $body);
     }
 
     /**
@@ -555,6 +588,17 @@ class InsureSdk extends SdkBase
     public function submitInsurePolicy($body)
     {
         return $this->restful("POST", "/insurePolicy/submit", $body);
+    }
+
+    /**
+     * 同步付款计划状态
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/syncPolicyPayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncPolicyPay($body)
+    {
+        return $this->restful("POST", "/policy/syncpolicypay", $body);
     }
 
     /**

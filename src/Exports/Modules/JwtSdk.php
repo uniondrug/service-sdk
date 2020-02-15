@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-11
- * @time   Tue, 11 Feb 2020 12:43:42 +0800
+ * @date   2020-02-13
+ * @time   Thu, 13 Feb 2020 12:52:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class JwtSdk extends SdkBase
     public function newDecode($body)
     {
         return $this->restful("POST", "/jwt/newDecode", $body);
+    }
+
+    /**
+     * 新活动系统jwt加密
+     * @link https://uniondrug.coding.net/p/module.jwt/git/blob/development/docs/api/JwtController/newEncodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function newEncode($body)
+    {
+        return $this->restful("POST", "/jwt/newEncode", $body);
     }
 
     /**

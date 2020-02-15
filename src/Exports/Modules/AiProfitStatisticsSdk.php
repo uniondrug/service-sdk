@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-05
- * @time   Wed, 05 Feb 2020 11:10:25 +0800
+ * @date   2020-02-14
+ * @time   Fri, 14 Feb 2020 10:11:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,39 @@ class AiProfitStatisticsSdk extends SdkBase
     public function orderIndex($body)
     {
         return $this->restful("POST", "/order/index", $body);
+    }
+
+    /**
+     * 连锁详情
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePartnerController/DetailDAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerDetailD($body)
+    {
+        return $this->restful("POST", "/scorePartner/detailD", $body);
+    }
+
+    /**
+     * 根据连锁ID和scoreId查找最近的一条评分记录
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePartnerController/latelyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerLately($body)
+    {
+        return $this->restful("POST", "/scorePartner/lately", $body);
+    }
+
+    /**
+     * 获取排名和平均分
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePartnerController/rankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerRank($body)
+    {
+        return $this->restful("POST", "/scorePartner/rank", $body);
     }
 
     /**
