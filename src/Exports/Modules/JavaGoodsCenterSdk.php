@@ -82,4 +82,26 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/queryGoods/querySkuInfoByCode", $body);
     }
+
+    /**
+     * 用id获取信息
+     * @link https://uniondrug.coding.net/p/java.module.goodscenter/git/blob/development/uniondrug-goods-parent/docs/goods-manager/查询/商品查询.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInfoById($body)
+    {
+        return $this->restful("POST", "/goodsSalesChannel/getInfoById", $body);
+    }
+
+    /**
+     * 根据channel查询商品
+     * @link https://uniondrug.coding.net/p/java.module.goodscenter/git/blob/development/uniondrug-goods-parent/docs/goods-manager/查询/商品查询.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryByChannel($body)
+    {
+        return $this->restful("POST", "/goodsSalesChannel/queryByChannel", $body);
+    }
 }
