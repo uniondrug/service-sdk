@@ -481,4 +481,26 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/cloudCustomer/detail", $body);
     }
 
+    /**
+     * 钉钉工作通知相关统计
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/Statistic/DingtalkMessageStatisticController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dingtalkStatisticCreate($body)
+    {
+        return $this->restful("POST", "/dingtalkStatistic/create", $body);
+    }
+
+    /**
+     * 拜访评分相关信息统计
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/Statistic/VisitScoreStatisticController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function visitScoreStatisticCreate($body)
+    {
+        return $this->restful("POST", "/visitScoreStatistic/create", $body);
+    }
+
 }

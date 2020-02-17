@@ -469,4 +469,128 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/voucher/modifyPartner", $body);
     }
+
+
+    /*运费券接口*/
+
+    /**
+     * 创建运费券券方案
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addFreight($body)
+    {
+        return $this->restful("POST", "/promote/freight/add", $body);
+    }
+
+    /**
+     * 运费券券方案停用
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function stopFreight($body)
+    {
+        return $this->restful("POST", "/promote/freight/stop", $body);
+    }
+
+    /**
+     * 运费券券方案编辑接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function editFreight($body)
+    {
+        return $this->restful("POST", "/promote/freight/edit", $body);
+    }
+
+    /**
+     * 运费券券方案列表查询
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pagingFreight($body)
+    {
+        return $this->restful("POST", "/promote/freight/paging", $body);
+    }
+
+    /**
+     * 运费券券详情查询
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function simpleInfoFreight($body)
+    {
+        return $this->restful("POST", "/promote/freight/simpleInfo", $body);
+    }
+
+    /**
+     * 渠道连锁店修改
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function modifyChannelFreight($body)
+    {
+        return $this->restful("POST", "/promote/freight/modifyChannel", $body);
+    }
+
+    /**
+     * 运费券成本方案创建
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addFreightBear($body)
+    {
+        return $this->restful("POST", "/promote/freight/bear/add", $body);
+    }
+
+    /**
+     * 运费券成本方案编辑接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function editFreightBear($body)
+    {
+        return $this->restful("POST", "/promote/freight/bear/edit", $body);
+    }
+
+    /**
+     * 运费券成本方案停用接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function stopFreightBear($body)
+    {
+        return $this->restful("POST", "/promote/freight/bear/stop", $body);
+    }
+
+    /**
+     * 运费券成本方案查询接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function infoFreightBear($body)
+    {
+        return $this->restful("POST", "/promote/freight/bear/info", $body);
+    }
+
+    /**
+     * 运费券成本方案列表查询接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function listFreightBear($body)
+    {
+        return $this->restful("POST", "/promote/freight/bear/list/info", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-23
- * @time   Wed, 23 Oct 2019 11:39:25 +0800
+ * @date   2020-02-13
+ * @time   Thu, 13 Feb 2020 12:52:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class JwtSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'jwt.module';
+
+    /**
+     * 公共支付完成页配置
+     * @link https://uniondrug.coding.net/p/module.jwt/git/blob/development/docs/api/DomainController/commonConfigAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function commonConfig($body)
+    {
+        return $this->restful("POST", "/domain/commonConfig", $body);
+    }
 
     /**
      * jwt解密
@@ -71,6 +82,28 @@ class JwtSdk extends SdkBase
     public function encode($body)
     {
         return $this->restful("POST", "/jwt/encode", $body);
+    }
+
+    /**
+     * 新活动系统jwt解密
+     * @link https://uniondrug.coding.net/p/module.jwt/git/blob/development/docs/api/JwtController/newDecodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function newDecode($body)
+    {
+        return $this->restful("POST", "/jwt/newDecode", $body);
+    }
+
+    /**
+     * 新活动系统jwt加密
+     * @link https://uniondrug.coding.net/p/module.jwt/git/blob/development/docs/api/JwtController/newEncodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function newEncode($body)
+    {
+        return $this->restful("POST", "/jwt/newEncode", $body);
     }
 
     /**

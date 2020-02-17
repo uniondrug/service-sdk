@@ -193,4 +193,15 @@ class RobotSdk extends SdkBase
     {
         return $this->restful("POST", "/robot/updateStatusOff", $body);
     }
+
+    /**
+     * 发送钉钉工作通知给员工 [单个员工]
+     * @link https://uniondrug.coding.net/p/module.robot/d/module.robot/git/blob/development/docs/api/CorpconversationController/singleSendByMobileAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function singleSendByMobile($body)
+    {
+        return $this->restful("POST", "/corpconversation/singleSendByMobile", $body);
+    }
 }
