@@ -662,4 +662,48 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/equity/enable", $body);
     }
+
+    /**
+     * 权益试算批量消费
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PreCheckBatchController/consumeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function precheckBatchConsume($body)
+    {
+        return $this->restful("POST", "/precheckBatch/consume", $body);
+    }
+
+    /**
+     * 试算权益批量锁定
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PreCheckBatchController/lockAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function precheckBatchLockEquity($body)
+    {
+        return $this->restful("POST", "/precheckBatch/lock", $body);
+    }
+
+    /**
+     * 权益试算批量退款
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PreCheckBatchController/refundAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function precheckBatchRefund($body)
+    {
+        return $this->restful("POST", "/precheckBatch/refund", $body);
+    }
+
+    /**
+     * 试算权益批量解锁
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/PreCheckBatchController/unlockAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function precheckBatchUnlockEquity($body)
+    {
+        return $this->restful("POST", "/precheckBatch/unlock", $body);
+    }
 }
