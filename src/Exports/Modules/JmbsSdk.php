@@ -61,10 +61,10 @@ class JmbsSdk extends Mbs2Sdk
         }
         // 2. 转成Java入参
         $uuid = md5(json_encode($body, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
-        $body['tag'] = isset($body['topicTag']) && is_string($body['topicTag']) && $body['topicTag'] !== '' ?: '';
-        $body['topic'] = isset($body['topicName']) && is_string($body['topicName']) && $body['topicName'] !== '' ?: '';
+        $body['tag'] = isset($body['topicTag']) && is_string($body['topicTag']) && $body['topicTag'] !== '' ? $body['topicTag'] : '';
+        $body['topic'] = isset($body['topicName']) && is_string($body['topicName']) && $body['topicName'] !== '' ? $body['topicName'] : '';
         $body['reqNo'] = $uuid;
-        $body['msgKey'] = isset($body['msgKey']) && is_string($body['msgKey']) && $body['msgKey'] !== '' ? $body['msgKey'] : $uuid;
+        $body['msgKey'] = isset($body['msgKey']) && is_string($body['msgKey']) && $body['msgKey'] !== '' ? $body['msgKey'] : '';
         return $body;
     }
 }
