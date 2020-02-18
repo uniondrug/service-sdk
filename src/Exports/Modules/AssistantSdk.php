@@ -31,6 +31,314 @@ class AssistantSdk extends SdkBase
     protected $serviceName = 'assistant.module';
 
     /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyAdd($body)
+    {
+        return $this->restful("POST", "/apply/add", $body);
+    }
+
+    /**
+     * 校验
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyCheck($body)
+    {
+        return $this->restful("POST", "/apply/check", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyContractController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractCreate($body)
+    {
+        return $this->restful("POST", "/apply/contract/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyContractController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractDelete($body)
+    {
+        return $this->restful("POST", "/apply/contract/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyContractController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractDetail($body)
+    {
+        return $this->restful("POST", "/apply/contract/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyContractController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractListing($body)
+    {
+        return $this->restful("POST", "/apply/contract/listing", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyContractController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyContractUpdate($body)
+    {
+        return $this->restful("POST", "/apply/contract/update", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyDetail($body)
+    {
+        return $this->restful("POST", "/apply/detail", $body);
+    }
+
+    /**
+     * 添加财务资料
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyFinanceController/financeAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyFinanceAdd($body)
+    {
+        return $this->restful("POST", "/apply/finance/add", $body);
+    }
+
+    /**
+     * 更新财务资料
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyFinanceController/financeUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyFinanceUpdate($body)
+    {
+        return $this->restful("POST", "/apply/finance/update", $body);
+    }
+
+    /**
+     * 设置完成状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/finishedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyFinished($body)
+    {
+        return $this->restful("POST", "/apply/finished", $body);
+    }
+
+    /**
+     * 非分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyList($body)
+    {
+        return $this->restful("POST", "/apply/list", $body);
+    }
+
+    /**
+     * 添加商户记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyMerchantController/merchantAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantAdd($body)
+    {
+        return $this->restful("POST", "/apply/merchant/add", $body);
+    }
+
+    /**
+     * 同步数据
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyMerchantController/syncAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantSync($body)
+    {
+        return $this->restful("POST", "/apply/merchant/sync", $body);
+    }
+
+    /**
+     * 更新商户记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyMerchantController/merchantUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantUpdate($body)
+    {
+        return $this->restful("POST", "/apply/merchant/update", $body);
+    }
+
+    /**
+     * 修改组织ID
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyMerchantController/merchantUpdateOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantUpdateOrganizationId($body)
+    {
+        return $this->restful("POST", "/apply/merchant/update/organizationId", $body);
+    }
+
+    /**
+     * 设置跟进人
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/modifyFollowerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyModifyFollower($body)
+    {
+        return $this->restful("POST", "/apply/modifyfollower", $body);
+    }
+
+    /**
+     * 手动变更状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/modifyStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyModifyStatus($body)
+    {
+        return $this->restful("POST", "/apply/modifystatus", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyPaging($body)
+    {
+        return $this->restful("POST", "/apply/paging", $body);
+    }
+
+    /**
+     * 添加门店记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeAddAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreAdd($body)
+    {
+        return $this->restful("POST", "/apply/store/add", $body);
+    }
+
+    /**
+     * 申请单门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeByApplyIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreByApplyId($body)
+    {
+        return $this->restful("POST", "/apply/store/list", $body);
+    }
+
+    /**
+     * 批量查询申请单门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeByOrganizationIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreByOrganizationIds($body)
+    {
+        return $this->restful("POST", "/apply/store/listbyorganizationids", $body);
+    }
+
+    /**
+     * 删除门店信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeDeleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreDelete($body)
+    {
+        return $this->restful("POST", "/apply/store/delete", $body);
+    }
+
+    /**
+     * 根据Id获取门店详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreDetail($body)
+    {
+        return $this->restful("POST", "/apply/store/detail", $body);
+    }
+
+    /**
+     * 修改门店信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeUpdateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreUpdate($body)
+    {
+        return $this->restful("POST", "/apply/store/update", $body);
+    }
+
+    /**
+     * 修改门店的地图 mapCode
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeUpdateMapCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreUpdateMapCode($body)
+    {
+        return $this->restful("POST", "/apply/store/update/mapCode", $body);
+    }
+
+    /**
+     * 修改组织ID
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeUpdateOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreUpdateOrganizationId($body)
+    {
+        return $this->restful("POST", "/apply/store/update/organizationId", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyUpdate($body)
+    {
+        return $this->restful("POST", "/apply/update", $body);
+    }
+
+    /**
      * 根据类型批量统计某个字段的数量
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantController/countAssistantByStoreIdsAction.md
      * @param array $body 入参类型
