@@ -42,6 +42,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 校验
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyCheck($body)
+    {
+        return $this->restful("POST", "/apply/check", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyContractController/createAction.md
      * @param array $body 入参类型
