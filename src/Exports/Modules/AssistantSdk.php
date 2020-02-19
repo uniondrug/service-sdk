@@ -427,6 +427,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 搜索
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OrganizeBaseController/searchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function OrganizeBaseSearch($body)
+    {
+        return $this->restful("POST", "/organizebase/search", $body);
+    }
+
+    /**
      * 新增角色
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/RoleController/createAction.md
      * @param array $body 入参类型
