@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-14
- * @time   Fri, 14 Feb 2020 10:11:34 +0800
+ * @date   2020-02-18
+ * @time   Tue, 18 Feb 2020 18:27:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,17 @@ class AiProfitStatisticsSdk extends SdkBase
     public function orderIndex($body)
     {
         return $this->restful("POST", "/order/index", $body);
+    }
+
+    /**
+     * 次数加1
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScoreClickController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreClickAdd($body)
+    {
+        return $this->restful("POST", "/scoreClick/add", $body);
     }
 
     /**
