@@ -14,7 +14,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * DistsellSdk
@@ -28,6 +28,28 @@ class DistsellSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'distsell.module';
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/LeadController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function leadCreate($body)
+    {
+        return $this->restful("POST", "/lead/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/LeadController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function leadDetail($body)
+    {
+        return $this->restful("POST", "/lead/detail", $body);
+    }
 
     /**
      * 创建积分
