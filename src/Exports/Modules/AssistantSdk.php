@@ -432,7 +432,7 @@ class AssistantSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function OrganizeBaseSearch($body)
+    public function organizeBaseSearch($body)
     {
         return $this->restful("POST", "/organizebase/search", $body);
     }
