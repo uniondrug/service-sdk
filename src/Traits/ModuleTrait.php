@@ -87,6 +87,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaInvoiceSdk        $javaInvoice
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaHealthSdk         $javaHealth
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk              $score
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk     $guaranteeclaimSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
