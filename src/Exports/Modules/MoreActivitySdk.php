@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-22
- * @time   Sat, 22 Feb 2020 14:51:06 +0800
+ * @date   2020-02-24
+ * @time   Mon, 24 Feb 2020 15:20:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * MoreActivitySdk
@@ -500,6 +500,17 @@ class MoreActivitySdk extends SdkBase
     public function merchanInfo($body)
     {
         return $this->restful("POST", "/project/merchantInfo", $body);
+    }
+
+    /**
+     * 只核销虚拟卡不发权益
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/VirtualCard/VirtualCardController/newConsumeCardAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function newVirtualCardConsume($body)
+    {
+        return $this->restful("POST", "/virtualCard/newConsumeCard", $body);
     }
 
     /**
