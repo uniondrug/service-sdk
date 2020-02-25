@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-02-25
- * @time   Tue, 25 Feb 2020 16:49:20 +0800
+ * @time   Tue, 25 Feb 2020 18:34:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -103,7 +103,7 @@ class ClaimSdk extends SdkBase
      */
     public function claimAdditional($body)
     {
-        return $this->restful("", "/claim", $body);
+        return $this->restful("POST", "/claim/additional", $body);
     }
 
     /**
@@ -218,13 +218,13 @@ class ClaimSdk extends SdkBase
 
     /**
      * 理赔日志记录列表
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimLogController/listingAction.md
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimLogController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function claimLogListing($body)
+    public function claimLogDetail($body)
     {
-        return $this->restful("POST", "/claim/log/listing", $body);
+        return $this->restful("POST", "/claim/log/detail", $body);
     }
 
     /**
