@@ -34,7 +34,7 @@ class ExchangeSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function addOrderEquity($body)
+    public function exchangeTrial($body)
     {
         return $this->restful("POST", "/exchange/trial", $body);
     }
