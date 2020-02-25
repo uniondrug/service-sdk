@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-13
- * @time   Thu, 13 Feb 2020 14:31:58 +0800
+ * @date   2020-02-25
+ * @time   Tue, 25 Feb 2020 22:20:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * DistsellSdk
@@ -126,6 +126,17 @@ class DistsellSdk extends SdkBase
     public function pointUpdate($body)
     {
         return $this->restful("POST", "/point/update", $body);
+    }
+
+    /**
+     * 给app用的列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/appListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productAppList($body)
+    {
+        return $this->restful("POST", "/product/appList", $body);
     }
 
     /**
