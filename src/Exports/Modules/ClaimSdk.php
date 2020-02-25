@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-09
- * @time   Thu, 09 Jan 2020 14:49:06 +0800
+ * @date   2020-02-25
+ * @time   Tue, 25 Feb 2020 16:49:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class ClaimSdk extends SdkBase
     public function changeReject($body)
     {
         return $this->restful("POST", "/change/reject", $body);
+    }
+
+    /**
+     * 材料待补充
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/additionalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimAdditional($body)
+    {
+        return $this->restful("", "/claim", $body);
     }
 
     /**
@@ -206,6 +217,28 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 理赔日志记录列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimLogController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimLogListing($body)
+    {
+        return $this->restful("POST", "/claim/log/listing", $body);
+    }
+
+    /**
+     * 理赔材料补充接口
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimMaterialController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimMaterialCreate($body)
+    {
+        return $this->restful("POST", "/claim/material/create", $body);
+    }
+
+    /**
      * 后台理赔分页列表
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminPagingAction.md
      * @param array $body 入参类型
@@ -258,5 +291,16 @@ class ClaimSdk extends SdkBase
     public function claimUserCancel($body)
     {
         return $this->restful("POST", "/claim/user/cancel", $body);
+    }
+
+    /**
+     * 修改理赔保单号
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/policyNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updatePolicyNo($body)
+    {
+        return $this->restful("POST", "/claim/policy/no", $body);
     }
 }
