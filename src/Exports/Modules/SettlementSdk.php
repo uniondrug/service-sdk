@@ -316,17 +316,6 @@ class SettlementSdk extends SdkBase
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function businessSingleUnitDetail($body)
-    {
-        return $this->restful("POST", "/businessSingleUnit/detail", $body);
-    }
-
-    /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/listingAction.md
      * @param array $body 入参类型
@@ -2568,5 +2557,71 @@ class SettlementSdk extends SdkBase
     public function businessCenterVersionDetail($body)
     {
         return $this->restful("POST", "/businessCenterVersion/detail", $body);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitCreate($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitDelete($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitDetail($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitPaging($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/paging", $body);
+    }
+
+    /**
+     * 更新比例
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/updateRateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitUpdateRate($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/updateRate", $body);
+    }
+
+    /**
+     * 更新状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/updateStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitUpdateStatus($body)
+    {
+        return $this->restful("POST", "/businessSingleUnit/updateStatus", $body);
     }
 }
