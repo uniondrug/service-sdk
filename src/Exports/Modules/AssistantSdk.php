@@ -11,7 +11,6 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -149,6 +148,17 @@ class AssistantSdk extends SdkBase
     public function applyFinished($body)
     {
         return $this->restful("POST", "/apply/finished", $body);
+    }
+
+    /**
+     * 导入
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/importAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyImport($body)
+    {
+        return $this->restful("POST", "/apply/import", $body);
     }
 
     /**
@@ -292,6 +302,17 @@ class AssistantSdk extends SdkBase
     public function applyStoreDetail($body)
     {
         return $this->restful("POST", "/apply/store/detail", $body);
+    }
+
+    /**
+     * 导入
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/importAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreImport($body)
+    {
+        return $this->restful("POST", "/apply/store/import", $body);
     }
 
     /**
@@ -657,7 +678,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userArea/paging", $body);
     }
 
-
     /**
      * 根据省份ID获取省份信息
      * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getProvinceByIdsAction.md
@@ -668,7 +688,6 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/userArea/getProvinceByIds", $body);
     }
-
 
     /**
      * 根据区域ID获取区域信息
@@ -681,7 +700,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userArea/getAreaByIds", $body);
     }
 
-
     /**
      * 根据区域ID获取区域信息
      * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/UserAreaController/getByProvinceIdsAction.md
@@ -692,7 +710,6 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/userArea/getByProvinceIds", $body);
     }
-
 
     /**
      * 获取区域完整配置
@@ -705,7 +722,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userArea/getByUserId", $body);
     }
 
-
     /**
      * 信息上报列表
      * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/pagingAction.md
@@ -716,7 +732,6 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/feedback/paging", $body);
     }
-
 
     /**
      * 信息上报处理
@@ -729,7 +744,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/feedback/update", $body);
     }
 
-
     /**
      * 信息上报详情
      * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/FeedbackController/detailAction.md
@@ -740,7 +754,6 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/feedback/detail", $body);
     }
-
 
     /**
      * 云联客户列表
@@ -753,7 +766,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/cloudCustomer/paging", $body);
     }
 
-
     /**
      * 指定跟进人 (支持批量)
      * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/bindAction.md
@@ -765,7 +777,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/cloudCustomer/bind", $body);
     }
 
-
     /**
      * 省份列表
      * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/CloudCustomerController/provinceListAction.md
@@ -776,7 +787,6 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/cloudCustomer/provinceList", $body);
     }
-
 
     /**
      * 城市列表
@@ -821,5 +831,4 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/visitScoreStatistic/create", $body);
     }
-
 }
