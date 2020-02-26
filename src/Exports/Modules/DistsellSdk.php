@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-25
- * @time   Tue, 25 Feb 2020 22:20:36 +0800
+ * @date   2020-02-26
+ * @time   Wed, 26 Feb 2020 11:40:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -225,6 +225,17 @@ class DistsellSdk extends SdkBase
     public function productPaging($body)
     {
         return $this->restful("POST", "/product/paging", $body);
+    }
+
+    /**
+     * 设置状态
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productStatus($body)
+    {
+        return $this->restful("POST", "/product/status", $body);
     }
 
     /**
