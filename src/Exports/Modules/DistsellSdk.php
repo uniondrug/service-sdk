@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-13
- * @time   Thu, 13 Feb 2020 14:31:58 +0800
+ * @date   2020-02-26
+ * @time   Wed, 26 Feb 2020 20:45:15 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * DistsellSdk
@@ -129,6 +129,17 @@ class DistsellSdk extends SdkBase
     }
 
     /**
+     * 给app用的列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/appListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productAppList($body)
+    {
+        return $this->restful("POST", "/product/appList", $body);
+    }
+
+    /**
      * 创建商品
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/createAction.md
      * @param array $body 入参类型
@@ -159,6 +170,17 @@ class DistsellSdk extends SdkBase
     public function productEdit($body)
     {
         return $this->restful("POST", "/product/edit", $body);
+    }
+
+    /**
+     * 导入添加
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/importCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productImportCreate($body)
+    {
+        return $this->restful("POST", "/product/importCreate", $body);
     }
 
     /**
@@ -214,6 +236,17 @@ class DistsellSdk extends SdkBase
     public function productPaging($body)
     {
         return $this->restful("POST", "/product/paging", $body);
+    }
+
+    /**
+     * 设置状态
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productStatus($body)
+    {
+        return $this->restful("POST", "/product/status", $body);
     }
 
     /**
