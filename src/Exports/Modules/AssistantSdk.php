@@ -11,6 +11,7 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -808,6 +809,50 @@ class AssistantSdk extends SdkBase
     public function cloudCustomerDetail($body)
     {
         return $this->restful("POST", "/cloudCustomer/detail", $body);
+    }
+
+    /**
+     * 省份分页列表(带连锁\门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/provincePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerProvincePaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/provincePaging", $body);
+    }
+
+    /**
+     * 城市分页列表(带连锁\门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/cityPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerCityPaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/cityPaging", $body);
+    }
+
+    /**
+     * 连锁列表(带门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/partnerPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerPartnerPaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/partnerPaging", $body);
+    }
+
+    /**
+     * 门店列表(带门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/storePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerStorePaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/storePaging", $body);
     }
 
     /**
