@@ -438,6 +438,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/MerchantTagController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchantTagCreate($body)
+    {
+        return $this->restful("POST", "/merchant/tag/create", $body);
+    }
+
+    /**
      * 全部列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/OperationTabsController/listingAction.md
      * @param array $body 入参类型
