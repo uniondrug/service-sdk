@@ -317,6 +317,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStorePaging($body)
+    {
+        return $this->restful("POST", "/apply/store/paging", $body);
+    }
+
+    /**
      * 修改门店信息
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeUpdateAction.md
      * @param array $body 入参类型
