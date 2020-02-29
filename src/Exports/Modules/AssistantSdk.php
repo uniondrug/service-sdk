@@ -1008,4 +1008,39 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/v4Role/update", $body);
     }
+
+    /**
+     * 批量指定跟进人
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/bindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyBind($body)
+    {
+        return $this->restful("POST", "/selfApply/bind", $body);
+    }
+
+    /**
+     * 导出列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyExport($body)
+    {
+        return $this->restful("POST", "/selfApply/export", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyPaging($body)
+    {
+        return $this->restful("POST", "/selfApply/paging", $body);
+    }
+
+
 }
