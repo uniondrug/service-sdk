@@ -887,4 +887,125 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/visitScoreStatistic/create", $body);
     }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthFunctionController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthFunctionDetail($body)
+    {
+        return $this->restful("POST", "/v4AuthFunction/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthFunctionController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthFunctionListing($body)
+    {
+        return $this->restful("POST", "/v4AuthFunction/listing", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthMenuController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthMenuDetail($body)
+    {
+        return $this->restful("POST", "/v4AuthMenu/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthMenuController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthMenuListing($body)
+    {
+        return $this->restful("POST", "/v4AuthMenu/listing", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleAuthController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleAuthListing($body)
+    {
+        return $this->restful("POST", "/v4RoleAuth/listing", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleCreate($body)
+    {
+        return $this->restful("POST", "/v4Role/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleDetail($body)
+    {
+        return $this->restful("POST", "/v4Role/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleListing($body)
+    {
+        return $this->restful("POST", "/v4Role/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RolePaging($body)
+    {
+        return $this->restful("POST", "/v4Role/paging", $body);
+    }
+
+    /**
+     * 设置权限
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/setAuthAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleSetAuth($body)
+    {
+        return $this->restful("POST", "/v4Role/setAuth", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleUpdate($body)
+    {
+        return $this->restful("POST", "/v4Role/update", $body);
+    }
 }
