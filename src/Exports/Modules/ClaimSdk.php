@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-25
- * @time   Tue, 25 Feb 2020 18:34:58 +0800
+ * @date   2020-02-27
+ * @time   Thu, 27 Feb 2020 10:39:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -162,6 +162,17 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 待赔付
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/compensateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimCompensate($body)
+    {
+        return $this->restful("POST", "/claim/compensate", $body);
+    }
+
+    /**
      * 发起理赔
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/createAction.md
      * @param array $body 入参类型
@@ -250,6 +261,17 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 打款失败
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/payNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimPayNo($body)
+    {
+        return $this->restful("POST", "/claim/pay/no", $body);
+    }
+
+    /**
      * 理赔拒绝
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/refusedAction.md
      * @param array $body 入参类型
@@ -291,6 +313,17 @@ class ClaimSdk extends SdkBase
     public function claimUserCancel($body)
     {
         return $this->restful("POST", "/claim/user/cancel", $body);
+    }
+
+    /**
+     * 打款中
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/waitPayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimWaitPay($body)
+    {
+        return $this->restful("POST", "/claim/wait/pay", $body);
     }
 
     /**
