@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-27
- * @time   Thu, 27 Feb 2020 10:39:48 +0800
+ * @date   2020-03-02
+ * @time   Mon, 02 Mar 2020 17:54:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -115,6 +115,17 @@ class ClaimSdk extends SdkBase
     public function claimAdminCancel($body)
     {
         return $this->restful("POST", "/claim/admin/cancel", $body);
+    }
+
+    /**
+     * 后台理赔分页列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimAdminPaging($body)
+    {
+        return $this->restful("POST", "/claim/admin/paging", $body);
     }
 
     /**
@@ -250,14 +261,14 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 后台理赔分页列表
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminPagingAction.md
+     * 用户端理赔分页列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function claimPaging($body)
     {
-        return $this->restful("POST", "/claim/admin/paging", $body);
+        return $this->restful("POST", "/claim/paging", $body);
     }
 
     /**
