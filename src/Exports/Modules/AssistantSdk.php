@@ -1053,5 +1053,16 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/selfApply/paging", $body);
     }
 
+    /**
+     * 省市列表按字母分类 (地图用)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CommonController/citysAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function CommonCitys($body)
+    {
+        return $this->restful("POST", "/common/citys", $body);
+    }
+
 
 }
