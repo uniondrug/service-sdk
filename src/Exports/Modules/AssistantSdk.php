@@ -1065,4 +1065,93 @@ class AssistantSdk extends SdkBase
     }
 
 
+    /**
+     * 获取用户标签
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagSetController/getUserTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserTags($body)
+    {
+        return $this->restful("POST", "/userTagSet/getUserTags", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagCreate($body)
+    {
+        return $this->restful("POST", "/userTag/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagDelete($body)
+    {
+        return $this->restful("POST", "/userTag/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagDetail($body)
+    {
+        return $this->restful("POST", "/userTag/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagListing($body)
+    {
+        return $this->restful("POST", "/userTag/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagPaging($body)
+    {
+        return $this->restful("POST", "/userTag/paging", $body);
+    }
+
+    /**
+     * 给用户设置标签
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagSetController/setTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagSetTags($body)
+    {
+        return $this->restful("POST", "/userTagSet/setTags", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagUpdate($body)
+    {
+        return $this->restful("POST", "/userTag/update", $body);
+    }
+
+
 }
