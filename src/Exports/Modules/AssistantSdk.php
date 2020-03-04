@@ -1175,5 +1175,27 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/visitInspectRecord/paging", $body);
     }
 
+    /**
+     * 取消跟进
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CloudCustomerController/cancelFollowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerCancelFollow($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/cancelFollow", $body);
+    }
+
+    /**
+     * 取消跟进
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/cancelFollowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyCancelFollow($body)
+    {
+        return $this->restful("POST", "/selfApply/cancelFollow", $body);
+    }
+
 
 }
