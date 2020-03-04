@@ -151,6 +151,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 更新状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function announcementUpdateStatus($body)
+    {
+        return $this->restful("POST", "/announcement/updateStatus", $body);
+    }
+
+    /**
      * 省份列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BankHouseController/citiesAction.md
      * @param array $body 入参类型
