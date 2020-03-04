@@ -38,4 +38,14 @@ class ExchangeSdk extends SdkBase
     {
         return $this->restful("POST", "/exchange/trial", $body);
     }
+
+    /**
+     * 商户用户余额查询API
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exchangeBalance($body)
+    {
+        return $this->restful("POST", "/exchange/balance", $body);
+    }
 }

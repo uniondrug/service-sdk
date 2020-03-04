@@ -11,6 +11,7 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -316,6 +317,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStorePaging($body)
+    {
+        return $this->restful("POST", "/apply/store/paging", $body);
+    }
+
+    /**
      * 修改门店信息
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeUpdateAction.md
      * @param array $body 入参类型
@@ -434,6 +446,17 @@ class AssistantSdk extends SdkBase
     public function listingUserStores($body)
     {
         return $this->restful("POST", "/userstores/listing", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/MerchantTagController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchantTagCreate($body)
+    {
+        return $this->restful("POST", "/merchant/tag/create", $body);
     }
 
     /**
@@ -811,6 +834,50 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 省份分页列表(带连锁\门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/provincePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerProvincePaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/provincePaging", $body);
+    }
+
+    /**
+     * 城市分页列表(带连锁\门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/cityPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerCityPaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/cityPaging", $body);
+    }
+
+    /**
+     * 连锁列表(带门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/partnerPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerPartnerPaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/partnerPaging", $body);
+    }
+
+    /**
+     * 门店列表(带门店数量统计)
+     * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/CloudCustomerController/storePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerStorePaging($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/storePaging", $body);
+    }
+
+    /**
      * 钉钉工作通知相关统计
      * @link https://uniondrug.coding.net/p/module.assistant/d/module.assistant/git/blob/development/docs/api/Statistic/DingtalkMessageStatisticController/createAction.md
      * @param array $body 入参类型
@@ -831,4 +898,304 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/visitScoreStatistic/create", $body);
     }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthFunctionController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthFunctionDetail($body)
+    {
+        return $this->restful("POST", "/v4AuthFunction/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthFunctionController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthFunctionListing($body)
+    {
+        return $this->restful("POST", "/v4AuthFunction/listing", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthMenuController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthMenuDetail($body)
+    {
+        return $this->restful("POST", "/v4AuthMenu/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4AuthMenuController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4AuthMenuListing($body)
+    {
+        return $this->restful("POST", "/v4AuthMenu/listing", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleAuthController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleAuthListing($body)
+    {
+        return $this->restful("POST", "/v4RoleAuth/listing", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleCreate($body)
+    {
+        return $this->restful("POST", "/v4Role/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleDetail($body)
+    {
+        return $this->restful("POST", "/v4Role/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleListing($body)
+    {
+        return $this->restful("POST", "/v4Role/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RolePaging($body)
+    {
+        return $this->restful("POST", "/v4Role/paging", $body);
+    }
+
+    /**
+     * 设置权限
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/setAuthAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleSetAuth($body)
+    {
+        return $this->restful("POST", "/v4Role/setAuth", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/V4Role/V4RoleController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v4RoleUpdate($body)
+    {
+        return $this->restful("POST", "/v4Role/update", $body);
+    }
+
+    /**
+     * 批量指定跟进人
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/bindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyBind($body)
+    {
+        return $this->restful("POST", "/selfApply/bind", $body);
+    }
+
+    /**
+     * 导出列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyExport($body)
+    {
+        return $this->restful("POST", "/selfApply/export", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyPaging($body)
+    {
+        return $this->restful("POST", "/selfApply/paging", $body);
+    }
+
+    /**
+     * 省市列表按字母分类 (地图用)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CommonController/citysAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function CommonCitys($body)
+    {
+        return $this->restful("POST", "/common/citys", $body);
+    }
+
+
+    /**
+     * 获取用户标签
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagSetController/getUserTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserTags($body)
+    {
+        return $this->restful("POST", "/userTagSet/getUserTags", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagCreate($body)
+    {
+        return $this->restful("POST", "/userTag/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagDelete($body)
+    {
+        return $this->restful("POST", "/userTag/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagDetail($body)
+    {
+        return $this->restful("POST", "/userTag/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagListing($body)
+    {
+        return $this->restful("POST", "/userTag/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagPaging($body)
+    {
+        return $this->restful("POST", "/userTag/paging", $body);
+    }
+
+    /**
+     * 给用户设置标签
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagSetController/setTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagSetTags($body)
+    {
+        return $this->restful("POST", "/userTagSet/setTags", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagUpdate($body)
+    {
+        return $this->restful("POST", "/userTag/update", $body);
+    }
+
+    /**
+     * 拜访巡店痕迹创建
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/VisitInspectRecordController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function visitInspectRecordCreate($body)
+    {
+        return $this->restful("POST", "/visitInspectRecord/create", $body);
+    }
+
+    /**
+     * 拜访巡店痕迹分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/VisitInspectRecordController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function visitInspectRecordPaging($body)
+    {
+        return $this->restful("POST", "/visitInspectRecord/paging", $body);
+    }
+
+    /**
+     * 取消跟进
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CloudCustomerController/cancelFollowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerCancelFollow($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/cancelFollow", $body);
+    }
+
+    /**
+     * 取消跟进
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/cancelFollowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyCancelFollow($body)
+    {
+        return $this->restful("POST", "/selfApply/cancelFollow", $body);
+    }
+
+
 }

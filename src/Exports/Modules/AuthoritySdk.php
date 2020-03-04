@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-24
- * @time   Thu, 24 Oct 2019 23:48:12 +0800
+ * @date   2020-03-03
+ * @time   Tue, 03 Mar 2020 17:38:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -206,6 +206,17 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
+     * 角色列表-不分页
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemRoleController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemRoleList($body)
+    {
+        return $this->restful("POST", "/systemRole/list", $body);
+    }
+
+    /**
      * 启用/停用
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemRoleController/modifyStatusAction.md
      * @param array $body 入参类型
@@ -247,6 +258,17 @@ class AuthoritySdk extends SdkBase
     public function systemWorkerMenuPaging($body)
     {
         return $this->restful("POST", "/systemWorkerRole/pagingmenu", $body);
+    }
+
+    /**
+     * 已关联人员
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/countWorkersAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemWorkerRoleCountWorkers($body)
+    {
+        return $this->restful("POST", "/systemWorkerRole/countWorkers", $body);
     }
 
     /**
@@ -324,16 +346,5 @@ class AuthoritySdk extends SdkBase
     public function systemWorkerRolePaging($body)
     {
         return $this->restful("POST", "/systemWorkerRole/paging", $body);
-    }
-
-    /**
-     * 已关联人员
-     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/countWorkersAction.md
-     * @param array|object $body 入参类型
-     * @return ResponseInterface
-     */
-    public function systemWorkerRoleCountWorkers($body)
-    {
-        return $this->restful("POST", "/systemWorkerRole/countWorkers", $body);
     }
 }
