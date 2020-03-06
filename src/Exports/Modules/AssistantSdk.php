@@ -1209,4 +1209,16 @@ class AssistantSdk extends SdkBase
     }
 
 
+    /**
+     * 根据商户ID获取申请信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyMerchantController/getByOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantGetByOrganizationId($body)
+    {
+        return $this->restful("POST", "/apply/merchant/getByOrganizationId", $body);
+    }
+
+
 }
