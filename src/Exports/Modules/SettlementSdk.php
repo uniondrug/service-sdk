@@ -2767,4 +2767,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/capitalReceipt/update", $body);
     }
+
+    /**
+     * 导出待理赔的数据
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportWaitClaimsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimExportWaitClaims($body)
+    {
+        return $this->restful("POST", "/claim/exportWaitClaims", $body);
+    }
 }
