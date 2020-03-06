@@ -1220,5 +1220,15 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/apply/merchant/getByOrganizationId", $body);
     }
 
+    /**
+     * 编辑系统资源
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CloudCustomerController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerEdit($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/edit", $body);
+    }
 
 }
