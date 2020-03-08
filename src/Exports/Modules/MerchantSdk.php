@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-24
- * @time   Mon, 24 Feb 2020 13:11:56 +0800
+ * @date   2020-03-06
+ * @time   Fri, 06 Mar 2020 22:15:23 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -261,6 +261,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 汇总省市
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/cityOrderByAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cityorderby($body)
+    {
+        return $this->restful("POST", "/organizebase/cityorderby", $body);
+    }
+
+    /**
      * 城市查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/cityPagingAction.md
      * @param array $body 入参类型
@@ -471,7 +482,7 @@ class MerchantSdk extends SdkBase
 
     /**
      * 修改O2O状态
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/EditO2OAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editO2OAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
