@@ -52,6 +52,17 @@ class HealthsSdk extends SdkBase
     }
 
     /**
+     * 订单状态回调接口
+     * @link https://uniondrug.coding.net/p/module.healths/git/blob/development/docs/api/Api/Order/OrderController/notifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function notify($body)
+    {
+        return $this->restful("POST", "/api/order/notify", $body);
+    }
+
+    /**
      * 预约体检接口
      * @link https://uniondrug.coding.net/p/module.healths/git/blob/development/docs/api/Api/Order/OrderController/reserveAction.md
      * @param array $body 入参类型
