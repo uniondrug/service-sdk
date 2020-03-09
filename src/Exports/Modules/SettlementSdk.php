@@ -151,6 +151,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 更新状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function announcementUpdateStatus($body)
+    {
+        return $this->restful("POST", "/announcement/updateStatus", $body);
+    }
+
+    /**
      * 省份列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BankHouseController/citiesAction.md
      * @param array $body 入参类型
@@ -2678,5 +2689,104 @@ class SettlementSdk extends SdkBase
     public function organizeAuthorityUpdateStatus($body)
     {
         return $this->restful("POST", "/organizeAuthority/updateStatus", $body);
+    }
+
+    /**
+     * 外部系统申请
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalReceiptController/applyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalReceiptApply($body)
+    {
+        return $this->restful("POST", "/capitalReceipt/apply", $body);
+    }
+
+    /**
+     * 审核
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalReceiptController/auditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalReceiptAudit($body)
+    {
+        return $this->restful("POST", "/capitalReceipt/audit", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalReceiptController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalReceiptDelete($body)
+    {
+        return $this->restful("POST", "/capitalReceipt/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalReceiptController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalReceiptDetail($body)
+    {
+        return $this->restful("POST", "/capitalReceipt/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalReceiptController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalReceiptPaging($body)
+    {
+        return $this->restful("POST", "/capitalReceipt/paging", $body);
+    }
+
+    /**
+     * 资金付款查询分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalReceiptController/searchPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalReceiptSearchPaging($body)
+    {
+        return $this->restful("POST", "/capitalReceipt/searchPaging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalReceiptController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalReceiptUpdate($body)
+    {
+        return $this->restful("POST", "/capitalReceipt/update", $body);
+    }
+
+    /**
+     * 导出待理赔的数据
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/exportWaitClaimsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimExportWaitClaims($body)
+    {
+        return $this->restful("POST", "/claim/exportWaitClaims", $body);
+    }
+
+    /**
+     * 获取连锁权益分组列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrderPayDetailsController/equityGroupsListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderPayDetailsEquityGroupsList($body)
+    {
+        return $this->restful("POST", "/orderPayDetails/equityGroupsLis", $body);
     }
 }

@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-25
- * @time   Tue, 25 Feb 2020 11:22:57 +0800
+ * @date   2020-03-03
+ * @time   Tue, 03 Mar 2020 13:49:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * JwtSdk

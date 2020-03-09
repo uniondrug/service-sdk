@@ -1053,5 +1053,182 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/selfApply/paging", $body);
     }
 
+    /**
+     * 省市列表按字母分类 (地图用)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CommonController/citysAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function CommonCitys($body)
+    {
+        return $this->restful("POST", "/common/citys", $body);
+    }
+
+
+    /**
+     * 获取用户标签
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagSetController/getUserTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUserTags($body)
+    {
+        return $this->restful("POST", "/userTagSet/getUserTags", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagCreate($body)
+    {
+        return $this->restful("POST", "/userTag/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagDelete($body)
+    {
+        return $this->restful("POST", "/userTag/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagDetail($body)
+    {
+        return $this->restful("POST", "/userTag/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagListing($body)
+    {
+        return $this->restful("POST", "/userTag/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagPaging($body)
+    {
+        return $this->restful("POST", "/userTag/paging", $body);
+    }
+
+    /**
+     * 给用户设置标签
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagSetController/setTagsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagSetTags($body)
+    {
+        return $this->restful("POST", "/userTagSet/setTags", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userTagUpdate($body)
+    {
+        return $this->restful("POST", "/userTag/update", $body);
+    }
+
+    /**
+     * 拜访巡店痕迹创建
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/VisitInspectRecordController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function visitInspectRecordCreate($body)
+    {
+        return $this->restful("POST", "/visitInspectRecord/create", $body);
+    }
+
+    /**
+     * 拜访巡店痕迹分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/VisitInspectRecordController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function visitInspectRecordPaging($body)
+    {
+        return $this->restful("POST", "/visitInspectRecord/paging", $body);
+    }
+
+    /**
+     * 取消跟进
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CloudCustomerController/cancelFollowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerCancelFollow($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/cancelFollow", $body);
+    }
+
+    /**
+     * 取消跟进
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/SelfApplyController/cancelFollowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfApplyCancelFollow($body)
+    {
+        return $this->restful("POST", "/selfApply/cancelFollow", $body);
+    }
+
+    /**
+     * 系统资源合并
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CloudCustomerController/mergeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerMerge($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/merge", $body);
+    }
+
+
+    /**
+     * 根据商户ID获取申请信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyMerchantController/getByOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyMerchantGetByOrganizationId($body)
+    {
+        return $this->restful("POST", "/apply/merchant/getByOrganizationId", $body);
+    }
+
+    /**
+     * 编辑系统资源
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CloudCustomerController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cloudCustomerEdit($body)
+    {
+        return $this->restful("POST", "/cloudCustomer/edit", $body);
+    }
 
 }

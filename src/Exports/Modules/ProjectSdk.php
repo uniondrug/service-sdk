@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-06
- * @time   Thu, 06 Feb 2020 11:28:20 +0800
+ * @date   2020-03-06
+ * @time   Fri, 06 Mar 2020 16:58:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -196,6 +196,17 @@ class ProjectSdk extends SdkBase
     public function createGroupV2($body)
     {
         return $this->restful("POST", "/v2/group/create", $body);
+    }
+
+    /**
+     * 创建兑换码V2
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/V2/RedeemController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createRedeemCodeV2($body)
+    {
+        return $this->restful("POST", "/v2/redeem/code/create", $body);
     }
 
     /**
@@ -771,6 +782,28 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 新增分组关联渠道
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupChannelLimitController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupChannelLimitCreate($body)
+    {
+        return $this->restful("POST", "/group/channel/limit/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupChannelLimitController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupChannelLimitDetail($body)
+    {
+        return $this->restful("POST", "/group/channel/limit/detail", $body);
+    }
+
+    /**
      * 查询分组可用金额
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/calculateUsefulMoneyAction.md
      * @param array $body 入参类型
@@ -779,6 +812,17 @@ class ProjectSdk extends SdkBase
     public function groupLeftMoney($body)
     {
         return $this->restful("POST", "/group/groupLeftMoney", $body);
+    }
+
+    /**
+     * 渠道限制增加自定义商家
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupOrganizationController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupOrganizationCreate($body)
+    {
+        return $this->restful("POST", "/group/organization/create", $body);
     }
 
     /**
@@ -933,6 +977,17 @@ class ProjectSdk extends SdkBase
     public function projectTypePaing($body)
     {
         return $this->restful("POST", "/group/projecttypepaing", $body);
+    }
+
+    /**
+     * 绑定激活的兑换码memberId(寿险用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/bindRedeemCodeMemberIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeBindMemberId($body)
+    {
+        return $this->restful("POST", "/redeem/bindMemberId", $body);
     }
 
     /**
@@ -1244,16 +1299,5 @@ class ProjectSdk extends SdkBase
     public function ydbCheckVerify($body)
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
-    }
-
-    /**
-     * 绑定激活的兑换码memberId(寿险用)
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/bindRedeemCodeMemberIdAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function redeemCodeBindMemberId($body)
-    {
-        return $this->restful("POST", "/redeem/bindMemberId", $body);
     }
 }
