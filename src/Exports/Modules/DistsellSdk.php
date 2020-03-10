@@ -140,6 +140,17 @@ class DistsellSdk extends SdkBase
     }
 
     /**
+     * 用商品id获取商品信息和配置的积分
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/packageDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointPackageDetail($body)
+    {
+        return $this->restful("POST", "/point/packageDetail", $body);
+    }
+
+    /**
      * 给app用的列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/appListAction.md
      * @param array $body 入参类型
