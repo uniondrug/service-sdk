@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-15
- * @time   Sat, 15 Feb 2020 21:38:25 +0800
+ * @date   2020-03-09
+ * @time   Mon, 09 Mar 2020 16:19:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -170,6 +170,17 @@ class InsureSdk extends SdkBase
     public function claim($body)
     {
         return $this->restful("POST", "/claim/claim", $body);
+    }
+
+    /**
+     * 赔案总额校验
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimCheckAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimCheckClaimOnline($body)
+    {
+        return $this->restful("POST", "/claimOnline/claimCheck", $body);
     }
 
     /**
@@ -503,7 +514,7 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 投保结果
+     * 保存投保结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/insureResultAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -599,6 +610,17 @@ class InsureSdk extends SdkBase
     public function syncPolicyPay($body)
     {
         return $this->restful("POST", "/policy/syncpolicypay", $body);
+    }
+
+    /**
+     * 同步保单状态
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/syncInsureResultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function syncResultInsure($body)
+    {
+        return $this->restful("POST", "/insure/syncInsureResult", $body);
     }
 
     /**
