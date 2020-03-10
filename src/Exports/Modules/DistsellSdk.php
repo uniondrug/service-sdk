@@ -14,7 +14,7 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * DistsellSdk
@@ -49,6 +49,17 @@ class DistsellSdk extends SdkBase
     public function leadDetail($body)
     {
         return $this->restful("POST", "/lead/detail", $body);
+    }
+
+    /**
+     * 获取一个连锁详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/LeadController/partnerDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function leadPartnerDetail($body)
+    {
+        return $this->restful("POST", "/lead/partnerDetail", $body);
     }
 
     /**
