@@ -2789,4 +2789,59 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/orderPayDetails/equityGroupsLis", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountCreate($body)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountDetail($body)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountPaging($body)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountUpdate($body)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/update", $body);
+    }
+
+    /**
+     * 更新状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/updateStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountUpdateStatus($body)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/updateStatus", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-06
- * @time   Fri, 06 Mar 2020 22:15:23 +0800
+ * @date   2020-03-11
+ * @time   Wed, 11 Mar 2020 10:35:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1622,6 +1622,17 @@ class MerchantSdk extends SdkBase
     public function scoreStoreDetail($body)
     {
         return $this->restful("POST", "/scoreStore/detail", $body);
+    }
+
+    /**
+     * 门店单个查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/storeInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreStoreInfo($body)
+    {
+        return $this->restful("POST", "/scoreStore/scorestoreinfo", $body);
     }
 
     /**
