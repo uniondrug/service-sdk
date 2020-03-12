@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-09
- * @time   Thu, 09 Jan 2020 14:49:06 +0800
+ * @date   2020-03-02
+ * @time   Mon, 02 Mar 2020 17:54:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -96,6 +96,17 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 材料待补充
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/additionalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimAdditional($body)
+    {
+        return $this->restful("POST", "/claim/additional", $body);
+    }
+
+    /**
      * 管理员撤销理赔
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminCancelAction.md
      * @param array $body 入参类型
@@ -104,6 +115,17 @@ class ClaimSdk extends SdkBase
     public function claimAdminCancel($body)
     {
         return $this->restful("POST", "/claim/admin/cancel", $body);
+    }
+
+    /**
+     * 后台理赔分页列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimAdminPaging($body)
+    {
+        return $this->restful("POST", "/claim/admin/paging", $body);
     }
 
     /**
@@ -148,6 +170,17 @@ class ClaimSdk extends SdkBase
     public function claimClaimOld($body)
     {
         return $this->restful("POST", "/claim/claimOld", $body);
+    }
+
+    /**
+     * 待赔付
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/compensateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimCompensate($body)
+    {
+        return $this->restful("POST", "/claim/compensate", $body);
     }
 
     /**
@@ -206,14 +239,47 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 后台理赔分页列表
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminPagingAction.md
+     * 理赔日志记录列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimLogController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimLogDetail($body)
+    {
+        return $this->restful("POST", "/claim/log/detail", $body);
+    }
+
+    /**
+     * 理赔材料补充接口
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimMaterialController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimMaterialCreate($body)
+    {
+        return $this->restful("POST", "/claim/material/create", $body);
+    }
+
+    /**
+     * 用户端理赔分页列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function claimPaging($body)
     {
-        return $this->restful("POST", "/claim/admin/paging", $body);
+        return $this->restful("POST", "/claim/paging", $body);
+    }
+
+    /**
+     * 打款失败
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/payNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimPayNo($body)
+    {
+        return $this->restful("POST", "/claim/pay/no", $body);
     }
 
     /**
@@ -258,5 +324,27 @@ class ClaimSdk extends SdkBase
     public function claimUserCancel($body)
     {
         return $this->restful("POST", "/claim/user/cancel", $body);
+    }
+
+    /**
+     * 打款中
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/waitPayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimWaitPay($body)
+    {
+        return $this->restful("POST", "/claim/wait/pay", $body);
+    }
+
+    /**
+     * 修改理赔保单号
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/policyNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updatePolicyNo($body)
+    {
+        return $this->restful("POST", "/claim/policy/no", $body);
     }
 }

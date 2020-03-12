@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-18
- * @time   Tue, 18 Feb 2020 18:27:26 +0800
+ * @date   2020-03-10
+ * @time   Tue, 10 Mar 2020 10:03:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -129,6 +129,17 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
+     * 连锁对应评分标准的各项得分详情
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePartnerController/detailScoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerDetailScore($body)
+    {
+        return $this->restful("POST", "/scorePartner/detailScore", $body);
+    }
+
+    /**
      * 根据连锁ID和scoreId查找最近的一条评分记录
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePartnerController/latelyAction.md
      * @param array $body 入参类型
@@ -192,6 +203,28 @@ class AiProfitStatisticsSdk extends SdkBase
     public function scorePlanEffect($body)
     {
         return $this->restful("POST", "/scoreplan/effect", $body);
+    }
+
+    /**
+     * 根据方案IDs获取绑定的连锁分页列表
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/getChainAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanGetChain($body)
+    {
+        return $this->restful("POST", "/scoreplan/getChain", $body);
+    }
+
+    /**
+     * 连锁关联方案列表之前的方案判断选择
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/planOnAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanOn($body)
+    {
+        return $this->restful("POST", "/scoreplan/planOn", $body);
     }
 
     /**
