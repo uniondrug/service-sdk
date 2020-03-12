@@ -30,18 +30,6 @@ class PackageSdk extends SdkBase
     protected $serviceName = 'package.module';
 
     /**
-     * 根据增值服务ID 获取增值服务详情
-     * 包括关联的保障信息和权益信息
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getDetail($body)
-    {
-        return $this->restful("POST", "/package/detail", $body);
-    }
-
-    /**
      * 获取最大编号
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/maxCodeAction.md
      * @param array $body 入参类型
@@ -721,5 +709,17 @@ class PackageSdk extends SdkBase
     public function tagsUpdate($body)
     {
         return $this->restful("POST", "/tags/update", $body);
+    }
+
+    /**
+     * 根据增值服务ID 获取增值服务详情
+     * 包括关联的保障信息和权益信息
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDetail($body)
+    {
+        return $this->restful("POST", "/package/detail", $body);
     }
 }
