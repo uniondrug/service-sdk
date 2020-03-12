@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-14
- * @time   Tue, 14 Jan 2020 14:27:02 +0800
+ * @date   2020-03-12
+ * @time   Thu, 12 Mar 2020 18:23:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,17 @@ class PackageSdk extends SdkBase
     public function getMaxTagCode($body)
     {
         return $this->restful("POST", "/tags/max/code", $body);
+    }
+
+    /**
+     * 检查保障名称是否存在
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/checkNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteesCheckGuaranteeName($body)
+    {
+        return $this->restful("POST", "/guarantees/check/guaranteeName", $body);
     }
 
     /**
