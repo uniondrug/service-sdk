@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-14
- * @time   Fri, 14 Feb 2020 10:11:34 +0800
+ * @date   2020-03-10
+ * @time   Tue, 10 Mar 2020 10:03:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -107,6 +107,17 @@ class AiProfitStatisticsSdk extends SdkBase
     }
 
     /**
+     * 次数加1
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScoreClickController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreClickAdd($body)
+    {
+        return $this->restful("POST", "/scoreClick/add", $body);
+    }
+
+    /**
      * 连锁详情
      * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePartnerController/DetailDAction.md
      * @param array $body 入参类型
@@ -115,6 +126,17 @@ class AiProfitStatisticsSdk extends SdkBase
     public function scorePartnerDetailD($body)
     {
         return $this->restful("POST", "/scorePartner/detailD", $body);
+    }
+
+    /**
+     * 连锁对应评分标准的各项得分详情
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePartnerController/detailScoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePartnerDetailScore($body)
+    {
+        return $this->restful("POST", "/scorePartner/detailScore", $body);
     }
 
     /**
@@ -181,6 +203,28 @@ class AiProfitStatisticsSdk extends SdkBase
     public function scorePlanEffect($body)
     {
         return $this->restful("POST", "/scoreplan/effect", $body);
+    }
+
+    /**
+     * 根据方案IDs获取绑定的连锁分页列表
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/getChainAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanGetChain($body)
+    {
+        return $this->restful("POST", "/scoreplan/getChain", $body);
+    }
+
+    /**
+     * 连锁关联方案列表之前的方案判断选择
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/planOnAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanOn($body)
+    {
+        return $this->restful("POST", "/scoreplan/planOn", $body);
     }
 
     /**

@@ -29,4 +29,14 @@ class JavaCommissionSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/comOrder/query/queryComCreditFailedReasonDoByOrderNo', $body);
     }
+
+    /**
+     * 创建积分方案
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function createCommission($body)
+    {
+        return $this->restful(static::METHOD_POST, '/commission/create/productCommission', $body);
+    }
 }

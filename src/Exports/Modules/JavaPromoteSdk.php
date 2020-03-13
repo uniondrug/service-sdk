@@ -472,7 +472,6 @@ class JavaPromoteSdk extends SdkBase
 
 
     /*运费券接口*/
-
     /**
      * 创建运费券方案
      * @link
@@ -592,5 +591,60 @@ class JavaPromoteSdk extends SdkBase
     public function listFreightBear($body)
     {
         return $this->restful("POST", "/promote/freight/bear/list/info", $body);
+    }
+
+    /**
+     * 项目方案创建
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addProject($body)
+    {
+        return $this->restful("POST", "/promote/scheme/project/add", $body);
+    }
+
+    /**
+     * 项目方案详情
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function detailProject($body)
+    {
+        return $this->restful("POST", "/promote/scheme/project/info", $body);
+    }
+
+    /**
+     * 项目方案列表
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pagingProject($body)
+    {
+        return $this->restful("POST", "/promote/scheme/project/paging", $body);
+    }
+
+    /**
+     * 项目方案停用
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function stopProject($body)
+    {
+        return $this->restful("POST", "/promote/scheme/project/stop", $body);
+    }
+
+    /**
+     * 项目方案编辑
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function editProject($body)
+    {
+        return $this->restful("POST", "/promote/scheme/project/edit", $body);
     }
 }

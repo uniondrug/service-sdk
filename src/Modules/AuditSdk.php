@@ -251,4 +251,25 @@ class AuditSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/audit/script/retry", $body);
     }
 
+    /**
+     * 批量回收
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/AuditBatchController/serviceBatchCancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditBatchRecycle($body)
+    {
+        return $this->restful("POST", "/auditBatch/auditBatchRecycle", $body);
+    }
+
+    /**
+     * 批量判断增值服务是否可以回收
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/docs/api/WaiterController/batchAuditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function waiterBatchIsRecycle($body)
+    {
+        return $this->restful("POST", "/waiter/waiterBatchIsRecycle", $body);
+    }
 }

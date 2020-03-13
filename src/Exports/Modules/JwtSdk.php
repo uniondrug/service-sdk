@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-13
- * @time   Thu, 13 Feb 2020 12:52:27 +0800
+ * @date   2020-03-03
+ * @time   Tue, 03 Mar 2020 13:49:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,17 @@ class JwtSdk extends SdkBase
     public function encode($body)
     {
         return $this->restful("POST", "/jwt/encode", $body);
+    }
+
+    /**
+     * 新活动系统code生成openid
+     * @link https://uniondrug.coding.net/p/module.jwt/git/blob/development/docs/api/JwtController/getOpenidAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOpenid($body)
+    {
+        return $this->restful("POST", "/jwt/getOpenid", $body);
     }
 
     /**

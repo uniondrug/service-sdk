@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-08
- * @time   Wed, 08 Jan 2020 11:28:54 +0800
+ * @date   2020-03-11
+ * @time   Wed, 11 Mar 2020 10:35:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -261,6 +261,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 汇总省市
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/cityOrderByAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cityorderby($body)
+    {
+        return $this->restful("POST", "/organizebase/cityorderby", $body);
+    }
+
+    /**
      * 城市查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/cityPagingAction.md
      * @param array $body 入参类型
@@ -448,6 +459,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改地图展示规则
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MapRuleController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editMapRule($body)
+    {
+        return $this->restful("POST", "/maprule/edit", $body);
+    }
+
+    /**
      * 编辑商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/editAction.md
      * @param array $body 入参类型
@@ -456,6 +478,17 @@ class MerchantSdk extends SdkBase
     public function editMerchant($body)
     {
         return $this->restful("POST", "/merchant/edit", $body);
+    }
+
+    /**
+     * 修改O2O状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editO2OAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editO2O($body)
+    {
+        return $this->restful("POST", "/organizebase/edito2o", $body);
     }
 
     /**
@@ -962,6 +995,17 @@ class MerchantSdk extends SdkBase
     public function infoInvoice($body)
     {
         return $this->restful("POST", "/invoice/info", $body);
+    }
+
+    /**
+     * 查询地图展示规则
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MapRuleController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function infoMapRule($body)
+    {
+        return $this->restful("POST", "/maprule/info", $body);
     }
 
     /**
@@ -1578,6 +1622,17 @@ class MerchantSdk extends SdkBase
     public function scoreStoreDetail($body)
     {
         return $this->restful("POST", "/scoreStore/detail", $body);
+    }
+
+    /**
+     * 门店单个查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/storeInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreStoreInfo($body)
+    {
+        return $this->restful("POST", "/scoreStore/scorestoreinfo", $body);
     }
 
     /**

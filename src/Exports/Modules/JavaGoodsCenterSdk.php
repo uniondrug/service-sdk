@@ -104,4 +104,15 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/goodsSalesChannel/queryByChannel", $body);
     }
+
+    /**
+     * 获取打包子商品
+     * @link https://uniondrug.coding.net/p/java.module.goodscenter/git/blob/development/uniondrug-goods-parent/docs/goods-manager/查询/商品查询.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProductBundle($body)
+    {
+        return $this->restful("POST", "/v1/spu/batch/bundle", $body);
+    }
 }
