@@ -1231,4 +1231,15 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/cloudCustomer/edit", $body);
     }
 
+    /**
+     * 根据商户门店ID获取管理者信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresController/getUsersByOrganizationsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userStoreGetUsersByOrganizations($body)
+    {
+        return $this->restful("POST", "/userstores/getUsersByOrganizations", $body);
+    }
+
 }
