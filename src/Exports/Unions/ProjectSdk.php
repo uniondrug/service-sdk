@@ -274,4 +274,25 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/equity/guaranteePaging", $body);
     }
+    /**
+     * 新增产品
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/PackageController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageCreate($body)
+    {
+        return $this->restful("POST", "/package/create", $body);
+    }
+
+    /**
+     * 修改产品
+     * @link https://uniondrug.coding.net/p/union.project/git/blob/development/docs/api/PackageController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageEdit($body)
+    {
+        return $this->restful("POST", "/package/edit", $body);
+    }
 }
