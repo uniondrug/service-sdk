@@ -1248,7 +1248,7 @@ class AssistantSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function StoreQrcodeAdd($body)
+    public function storeQrcodeAdd($body)
     {
         return $this->restful("POST", "/storeQrcode/add", $body);
     }
@@ -1259,7 +1259,7 @@ class AssistantSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function StoreQrcodeDetail($body)
+    public function storeQrcodeDetail($body)
     {
         return $this->restful("POST", "/storeQrcode/detail", $body);
     }
@@ -1270,7 +1270,7 @@ class AssistantSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function StoreQrcodePaging($body)
+    public function storeQrcodePaging($body)
     {
         return $this->restful("POST", "/storeQrcode/paging", $body);
     }
@@ -1281,7 +1281,7 @@ class AssistantSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function StoreQrcodeUpdate($body)
+    public function storeQrcodeUpdate($body)
     {
         return $this->restful("POST", "/storeQrcode/update", $body);
     }
