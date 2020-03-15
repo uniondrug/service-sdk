@@ -1242,4 +1242,48 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userstores/getUsersByOrganizations", $body);
     }
 
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function StoreQrcodeAdd($body)
+    {
+        return $this->restful("POST", "/storeQrcode/add", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function StoreQrcodeDetail($body)
+    {
+        return $this->restful("POST", "/storeQrcode/detail", $body);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function StoreQrcodePaging($body)
+    {
+        return $this->restful("POST", "/storeQrcode/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function StoreQrcodeUpdate($body)
+    {
+        return $this->restful("POST", "/storeQrcode/update", $body);
+    }
+
 }
