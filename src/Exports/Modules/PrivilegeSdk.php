@@ -171,4 +171,14 @@ class PrivilegeSdk extends SdkBase
     {
         return $this->restful("POST", "/task/paging", $body);
     }
+
+    /**
+     * 所有任务
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskAll($body)
+    {
+        return $this->restful("POST", "/task/all", $body);
+    }
 }
