@@ -61,4 +61,15 @@ class ClaimEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/api/policyDownload/", $body);
     }
+
+    /**
+     * 发票登记接口
+     * @link https://uniondrug.coding.net/p/module.equity.claim/git/blob/development/docs/api/Api/InvoiceController/invoiceRegisterAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceRegister($body)
+    {
+        return $this->restful("POST", "/api/invoice/register", $body);
+    }
 }
