@@ -292,4 +292,279 @@ class CompensateSdk extends SdkBase
     {
         return $this->restful("POST", "/redeem/list", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesCreate($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesDelete($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesDetail($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesListing($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesPaging($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/paging", $body);
+    }
+
+    /**
+     * 状态列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/statusListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesStatusList($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/status/list", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesUpdate($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/update", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageCreate($body)
+    {
+        return $this->restful("POST", "/ie/package/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageDelete($body)
+    {
+        return $this->restful("POST", "/ie/package/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageDetail($body)
+    {
+        return $this->restful("POST", "/ie/package/detail", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGroupController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGroupCreate($body)
+    {
+        return $this->restful("POST", "/ie/package/group/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGroupController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGroupDelete($body)
+    {
+        return $this->restful("POST", "/ie/package/group/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGroupController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGroupDetail($body)
+    {
+        return $this->restful("POST", "/ie/package/group/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGroupController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGroupListing($body)
+    {
+        return $this->restful("POST", "/ie/package/group/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGroupController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGroupPaging($body)
+    {
+        return $this->restful("POST", "/ie/package/group/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGroupController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGroupUpdate($body)
+    {
+        return $this->restful("POST", "/ie/package/group/update", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGuaranteeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGuaranteeCreate($body)
+    {
+        return $this->restful("POST", "/ie/package/guarantee/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGuaranteeController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGuaranteeDelete($body)
+    {
+        return $this->restful("POST", "/ie/package/guarantee/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGuaranteeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGuaranteeDetail($body)
+    {
+        return $this->restful("POST", "/ie/package/guarantee/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGuaranteeController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGuaranteeListing($body)
+    {
+        return $this->restful("POST", "/ie/package/guarantee/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGuaranteeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGuaranteePaging($body)
+    {
+        return $this->restful("POST", "/ie/package/guarantee/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageGuaranteeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageGuaranteeUpdate($body)
+    {
+        return $this->restful("POST", "/ie/package/guarantee/update", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageListing($body)
+    {
+        return $this->restful("POST", "/ie/package/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackagePaging($body)
+    {
+        return $this->restful("POST", "/ie/package/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function iePackageUpdate($body)
+    {
+        return $this->restful("POST", "/ie/package/update", $body);
+    }
 }
