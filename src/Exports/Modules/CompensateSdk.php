@@ -567,4 +567,37 @@ class CompensateSdk extends SdkBase
     {
         return $this->restful("POST", "/ie/package/update", $body);
     }
+
+    /**
+     * 禁用
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesDisable($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/disable", $body);
+    }
+
+    /**
+     * 开启
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesEnable($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/enable", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/incrSaleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesIncrSales($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/incr/sale", $body);
+    }
 }
