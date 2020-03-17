@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-17
- * @time   Tue, 17 Mar 2020 10:14:00 +0800
+ * @date   2020-03-18
+ * @time   Wed, 18 Mar 2020 00:27:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,7 +30,7 @@ class VasSdk extends SdkBase
     protected $serviceName = 'vas.module';
 
     /**
-     * 产品类型
+     * 商品类型
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/GoodsController/getTypeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -41,7 +41,40 @@ class VasSdk extends SdkBase
     }
 
     /**
-     * 产品推送上架
+     * 增值服务详情
+     * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/getDetailsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPackDetails($body)
+    {
+        return $this->restful("POST", "/pack/getDetails", $body);
+    }
+
+    /**
+     * 增值服务列表
+     * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/getListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPackList($body)
+    {
+        return $this->restful("POST", "/pack/getList", $body);
+    }
+
+    /**
+     * 增值服务下架
+     * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/offOneAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function offPack($body)
+    {
+        return $this->restful("POST", "/pack/offOne", $body);
+    }
+
+    /**
+     * 商品推送上架
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/GoodsController/postDataAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -52,7 +85,7 @@ class VasSdk extends SdkBase
     }
 
     /**
-     * 查询产品列表
+     * 查询商品列表
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/GoodsController/queryListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -71,5 +104,16 @@ class VasSdk extends SdkBase
     public function registerPack($body)
     {
         return $this->restful("POST", "/pack/registerOne", $body);
+    }
+
+    /**
+     * 增值服务下单
+     * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/subOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrder($body)
+    {
+        return $this->restful("POST", "/pack/subOrder", $body);
     }
 }
