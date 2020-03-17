@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-02
- * @time   Tue, 02 Jul 2019 18:00:50 +0800
+ * @date   2020-03-17
+ * @time   Tue, 17 Mar 2020 22:30:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -52,7 +52,18 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 分页列表
+     * LIST列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function authorizeList($body)
+    {
+        return $this->restful("POST", "/authorize/list", $body);
+    }
+
+    /**
+     * PAGING列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/AuthorizeController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -107,190 +118,14 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/listAction.md
+     * 权益
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/GroupController/equityAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function insuranceBindList($body)
+    public function groupEquityStatistic($body)
     {
-        return $this->restful("POST", "/insurance/bind/list", $body);
-    }
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insuranceCreate($body)
-    {
-        return $this->restful("POST", "/insurance/create", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insuranceDetail($body)
-    {
-        return $this->restful("POST", "/insurance/detail", $body);
-    }
-
-    /**
-     * 禁用
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/disableAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insuranceDisable($body)
-    {
-        return $this->restful("POST", "/insurance/disable", $body);
-    }
-
-    /**
-     * 开启
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/enableAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insuranceEnable($body)
-    {
-        return $this->restful("POST", "/insurance/enable", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function insurancePaging($body)
-    {
-        return $this->restful("POST", "/insurance/paging", $body);
-    }
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/LogsController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function logsCreate($body)
-    {
-        return $this->restful("POST", "/logs/create", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/LogsController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function logsPaging($body)
-    {
-        return $this->restful("POST", "/logs/paging", $body);
-    }
-
-    /**
-     * 列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectList($body)
-    {
-        return $this->restful("POST", "/project/list", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectPaging($body)
-    {
-        return $this->restful("POST", "/project/paging", $body);
-    }
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function reportCreate($body)
-    {
-        return $this->restful("POST", "/report/create", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function reportDetail($body)
-    {
-        return $this->restful("POST", "/report/detail", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function reportPaging($body)
-    {
-        return $this->restful("POST", "/report/paging", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function reportUpdate($body)
-    {
-        return $this->restful("POST", "/report/update", $body);
-    }
-
-    /**
-     * 解绑
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/unbindAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function unbindInsuranceBind($body)
-    {
-        return $this->restful("POST", "/insurance/bind/unbind", $body);
-    }
-
-    /**
-     * customerIds获取项目数
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByCustomerIdAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectCountByCustomerId($body)
-    {
-        return $this->restful("POST", "/project/countByCustomerId", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function redeemListing($body)
-    {
-        return $this->restful("POST", "/redeem/list", $body);
+        return $this->restful("POST", "/group/statistic/equity", $body);
     }
 
     /**
@@ -327,6 +162,39 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 禁用
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesDisable($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/disable", $body);
+    }
+
+    /**
+     * 开启
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesEnable($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/enable", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/incrSaleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesIncrSales($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/incr/sale", $body);
+    }
+
+    /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/listingAction.md
      * @param array $body 入参类型
@@ -360,7 +228,7 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 修改
+     * 修改保障
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -569,35 +437,277 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 禁用
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/disableAction.md
+     * 新增登录日志
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeUserLoginController/userLoginLogAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function ieGuaranteesDisable($body)
+    public function ieUserLoginLog($body)
     {
-        return $this->restful("POST", "/ie/guarantees/disable", $body);
+        return $this->restful("POST", "/ie/userLoginLog", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceBindList($body)
+    {
+        return $this->restful("POST", "/insurance/bind/list", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceCreate($body)
+    {
+        return $this->restful("POST", "/insurance/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceDetail($body)
+    {
+        return $this->restful("POST", "/insurance/detail", $body);
+    }
+
+    /**
+     * 禁用
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceDisable($body)
+    {
+        return $this->restful("POST", "/insurance/disable", $body);
     }
 
     /**
      * 开启
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/enableAction.md
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/enableAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function ieGuaranteesEnable($body)
+    public function insuranceEnable($body)
     {
-        return $this->restful("POST", "/ie/guarantees/enable", $body);
+        return $this->restful("POST", "/insurance/enable", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insurancePaging($body)
+    {
+        return $this->restful("POST", "/insurance/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/LogsController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logsCreate($body)
+    {
+        return $this->restful("POST", "/logs/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/LogsController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logsPaging($body)
+    {
+        return $this->restful("POST", "/logs/paging", $body);
+    }
+
+    /**
+     * 激活曲线图
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/activateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectActivateStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/activate", $body);
+    }
+
+    /**
+     * 理赔柱状图
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimChartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectClaimChartStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/claim/chart", $body);
+    }
+
+    /**
+     * 理赔概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectClaimStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/claim", $body);
+    }
+
+    /**
+     * 消费概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/consumeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectConsumeStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/consume", $body);
+    }
+
+    /**
+     * customerIds获取项目数
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByCustomerIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectCountByCustomerId($body)
+    {
+        return $this->restful("POST", "/project/countByCustomerId", $body);
+    }
+
+    /**
+     * 权益概览
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/equityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectEquityStatistic($body)
+    {
+        return $this->restful("POST", "/project/statistic/equity", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectList($body)
+    {
+        return $this->restful("POST", "/project/list", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectPaging($body)
+    {
+        return $this->restful("POST", "/project/paging", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemListing($body)
+    {
+        return $this->restful("POST", "/redeem/list", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportCreate($body)
+    {
+        return $this->restful("POST", "/report/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportDetail($body)
+    {
+        return $this->restful("POST", "/report/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportPaging($body)
+    {
+        return $this->restful("POST", "/report/paging", $body);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/incrSaleAction.md
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ReportController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function ieGuaranteesIncrSales($body)
+    public function reportUpdate($body)
     {
-        return $this->restful("POST", "/ie/guarantees/incr/sale", $body);
+        return $this->restful("POST", "/report/update", $body);
+    }
+
+    /**
+     * 审核提交
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeReviewController/CommitAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reviewCommit($body)
+    {
+        return $this->restful("POST", "/ie/review/commit", $body);
+    }
+
+    /**
+     * 最近一条记录审核结果
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeReviewController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reviewDetail($body)
+    {
+        return $this->restful("POST", "/ie/review/detail", $body);
+    }
+
+    /**
+     * 解绑
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/unbindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function unbindInsuranceBind($body)
+    {
+        return $this->restful("POST", "/insurance/bind/unbind", $body);
     }
 }
