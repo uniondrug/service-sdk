@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-24
- * @time   Sun, 24 Nov 2019 18:04:20 +0800
+ * @date   2020-03-18
+ * @time   Wed, 18 Mar 2020 11:54:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -162,6 +162,17 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * 获取门店店长数据
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeRoleListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantStoreRoleList($body)
+    {
+        return $this->restful("POST", "/assistant/storeRoleList", $body);
+    }
+
+    /**
      * 检验登录token
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/tokenCheckAction.md
      * @param array $body 入参类型
@@ -250,28 +261,6 @@ class UdappSdk extends SdkBase
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigLogController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function configLogDetail($body)
-    {
-        return $this->restful("POST", "/configLog/detail", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigLogController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function configLogUpdate($body)
-    {
-        return $this->restful("POST", "/configLog/update", $body);
-    }
-
-    /**
      * statusAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/statusAction.md
      * @param array $body 入参类型
@@ -283,61 +272,6 @@ class UdappSdk extends SdkBase
     }
 
     /**
-     * 配置连锁开启
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantPushController/closeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function merchantPushClose($body)
-    {
-        return $this->restful("POST", "/merchantPush/close", $body);
-    }
-
-    /**
-     * 推送详情
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantPushController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function merchantPushDetail($body)
-    {
-        return $this->restful("POST", "/merchantPush/detail", $body);
-    }
-
-    /**
-     * 推送列表
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantPushController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function merchantPushList($body)
-    {
-        return $this->restful("POST", "/merchantPush/list", $body);
-    }
-
-    /**
-     * 配置连锁开启
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantPushController/openAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function merchantPushOpen($body)
-    {
-        return $this->restful("POST", "/merchantPush/open", $body);
-    }
-
-    /**
-     * 开启二次扫码详情
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantSecondController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function merchantSecondDetail($body)
-    {
-        return $this->restful("POST", "/merchantSecond/detail", $body);
-    }
-
-    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/createAction.md
      * @param array $body 入参类型
@@ -346,61 +280,6 @@ class UdappSdk extends SdkBase
     public function messageCreate($body)
     {
         return $this->restful("POST", "/message/create", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messageDelete($body)
-    {
-        return $this->restful("POST", "/message/delete", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messageDetail($body)
-    {
-        return $this->restful("POST", "/message/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messageListing($body)
-    {
-        return $this->restful("POST", "/message/listing", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messagePaging($body)
-    {
-        return $this->restful("POST", "/message/paging", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messageUpdate($body)
-    {
-        return $this->restful("POST", "/message/update", $body);
     }
 
     /**
@@ -456,6 +335,17 @@ class UdappSdk extends SdkBase
     public function releasesUpdate($body)
     {
         return $this->restful("POST", "/releases/update", $body);
+    }
+
+    /**
+     * 获取开启某个开关的所有连锁
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/statusOpenPartnerAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function statusOpenPartner($body)
+    {
+        return $this->restful("POST", "/config/statusOpenPartner", $body);
     }
 
     /**
@@ -558,7 +448,7 @@ class UdappSdk extends SdkBase
     }
 
     /**
-     * 获取门店店员数量
+     * 设置token过期
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/expireAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
