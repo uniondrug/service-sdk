@@ -1364,4 +1364,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/precheckBatch/unlock", $body);
     }
+
+    /**
+     * 获取权益可使用连锁列表(只包含部分连锁，缺少分组设置的连锁暂不对外提供)
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/EquityOrganController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityOrganListing($body)
+    {
+        return $this->restful("POST", "/equity/organ/listing", $body);
+    }
 }

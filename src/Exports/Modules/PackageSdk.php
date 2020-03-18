@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-01-14
- * @time   Tue, 14 Jan 2020 14:27:02 +0800
+ * @date   2020-03-17
+ * @time   Tue, 17 Mar 2020 17:05:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,51 @@ class PackageSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'package.module';
+
+    /**
+     * 批量获取增值服务对应的描述内容
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/ExplainController/ContentsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function explainContents($body)
+    {
+        return $this->restful("POST", "/explain/contents", $body);
+    }
+
+    /**
+     * 通过保障iD 获取保障描述
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/ExplainController/getByGuaranteeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function explainGetByGuaranteeId($body)
+    {
+        return $this->restful("POST", "/explain/guaranteeid", $body);
+    }
+
+    /**
+     * 批量获取增值服务对应的说明
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/ExplainController/NamesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function explainNames($body)
+    {
+        return $this->restful("POST", "/explain/names", $body);
+    }
+
+    /**
+     * 根据增值服务ID 获取增值服务详情
+     * 包括关联的保障信息和权益信息
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDetail($body)
+    {
+        return $this->restful("POST", "/package/detail", $body);
+    }
 
     /**
      * 获取最大编号
@@ -49,6 +94,17 @@ class PackageSdk extends SdkBase
     public function getMaxTagCode($body)
     {
         return $this->restful("POST", "/tags/max/code", $body);
+    }
+
+    /**
+     * 检查保障名称是否存在
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/checkNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteesCheckGuaranteeName($body)
+    {
+        return $this->restful("POST", "/guarantees/check/guaranteeName", $body);
     }
 
     /**
@@ -459,6 +515,28 @@ class PackageSdk extends SdkBase
     }
 
     /**
+     * 批量获取增值服务对应的保障描述名称
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/getPackageGuaranteeExplainAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeGetPackageGuaranteeExplain($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/guarantee/explains", $body);
+    }
+
+    /**
+     * 获取增值服务对应的保障描述详情
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/getPackageGuaranteeExplainDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function packageGuaranteeGetPackageGuaranteeExplainDetail($body)
+    {
+        return $this->restful("POST", "/packageGuarantee/guarantee/explain/detail", $body);
+    }
+
+    /**
      * 全部列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/listingAction.md
      * @param array $body 入参类型
@@ -709,17 +787,5 @@ class PackageSdk extends SdkBase
     public function tagsUpdate($body)
     {
         return $this->restful("POST", "/tags/update", $body);
-    }
-
-    /**
-     * 根据增值服务ID 获取增值服务详情
-     * 包括关联的保障信息和权益信息
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getDetail($body)
-    {
-        return $this->restful("POST", "/package/detail", $body);
     }
 }

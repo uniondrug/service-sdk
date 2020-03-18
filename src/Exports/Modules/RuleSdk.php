@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-07-22
- * @time   Mon, 22 Jul 2019 10:38:43 +0800
+ * @date   2020-03-13
+ * @time   Fri, 13 Mar 2020 15:11:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,17 @@ class RuleSdk extends SdkBase
     public function categoryList($body)
     {
         return $this->restful("POST", "/program/goods/categoryList", $body);
+    }
+
+    /**
+     * 检查产品是否开启方案限制
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/WhiteListRelationsController/checkSwitchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function checkMPPIsOpen($body)
+    {
+        return $this->restful("POST", "/whiteListRelations/check/switch", $body);
     }
 
     /**
@@ -318,7 +329,7 @@ class RuleSdk extends SdkBase
     }
 
     /**
-     * 启用白名单商品
+     * 禁用白名单商品
      * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/docs/api/PackageWhiteItemsController/disableAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

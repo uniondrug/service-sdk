@@ -30,6 +30,17 @@ class AuthoritySdk extends SdkBase
     protected $serviceName = 'authority.module';
 
     /**
+     * 商家服务平台员工角色详情
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/workerRoleDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function businessCenterWorkerRoleDetail($body)
+    {
+        return $this->restful("POST", "/systemWorkerRole/workerRoleDetail", $body);
+    }
+
+    /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemAuthController/batchDeleteAction.md
      * @param array $body 入参类型

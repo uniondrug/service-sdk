@@ -171,4 +171,54 @@ class PrivilegeSdk extends SdkBase
     {
         return $this->restful("POST", "/task/paging", $body);
     }
+
+    /**
+     * 所有任务
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskAll($body)
+    {
+        return $this->restful("POST", "/task/all", $body);
+    }
+
+    /**
+     * 新增资格证
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificateAdd($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/add", $body);
+    }
+
+    /**
+     * 资格证分页
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificatePaging($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/paging", $body);
+    }
+
+    /**
+     * 资格证编辑
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificateEdit($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/edit", $body);
+    }
+
+    /**
+     * 资格证详情
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificateDetail($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/detail", $body);
+    }
 }

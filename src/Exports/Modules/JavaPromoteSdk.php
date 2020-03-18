@@ -473,7 +473,7 @@ class JavaPromoteSdk extends SdkBase
 
     /*运费券接口*/
     /**
-     * 创建运费券券方案
+     * 创建运费券方案
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -484,7 +484,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 运费券券方案停用
+     * 运费券方案停用
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -495,7 +495,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 运费券券方案编辑接口
+     * 运费券方案编辑接口
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -506,7 +506,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 运费券券方案列表查询
+     * 运费券方案列表查询
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -517,7 +517,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 运费券券详情查询
+     * 运费券详情查询
      * @link
      * @param array $body
      * @return ResponseInterface

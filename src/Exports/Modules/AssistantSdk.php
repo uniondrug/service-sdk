@@ -1231,4 +1231,70 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/cloudCustomer/edit", $body);
     }
 
+    /**
+     * 根据商户门店ID获取管理者信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresController/getUsersByOrganizationsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userStoreGetUsersByOrganizations($body)
+    {
+        return $this->restful("POST", "/userstores/getUsersByOrganizations", $body);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeAdd($body)
+    {
+        return $this->restful("POST", "/storeQrcode/add", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeDetail($body)
+    {
+        return $this->restful("POST", "/storeQrcode/detail", $body);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodePaging($body)
+    {
+        return $this->restful("POST", "/storeQrcode/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeUpdate($body)
+    {
+        return $this->restful("POST", "/storeQrcode/update", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userStoresPaging($body)
+    {
+        return $this->restful("POST", "/userstores/paging", $body);
+    }
+
 }
