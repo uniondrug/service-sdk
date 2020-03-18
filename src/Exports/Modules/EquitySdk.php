@@ -1375,4 +1375,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/organ/listing", $body);
     }
+
+    /**
+     * 根据保障ID获取保障描述
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/getGuaranteeExplainAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteeExplain($body)
+    {
+        return $this->restful("POST", "/guarantee/explain", $body);
+    }
 }
