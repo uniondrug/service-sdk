@@ -239,6 +239,17 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 更新SKU
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/updateSkuAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieGuaranteesUpdateSku($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/update/sku", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IePackageController/createAction.md
      * @param array $body 入参类型
