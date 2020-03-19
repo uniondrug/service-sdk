@@ -221,4 +221,15 @@ class PrivilegeSdk extends SdkBase
     {
         return $this->restful("POST", "/pharmacist/certificate/detail", $body);
     }
+
+    /**
+     * 获取特权任务订单列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/OrderRecordController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRecordListing($body)
+    {
+        return $this->restful("POST", "/order/record/listing", $body);
+    }
 }
