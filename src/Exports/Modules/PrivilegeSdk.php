@@ -232,4 +232,24 @@ class PrivilegeSdk extends SdkBase
     {
         return $this->restful("POST", "/order/record/listing", $body);
     }
+
+    /**
+     * 新增赠送增值服务记录
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPackageRecordCreate($body)
+    {
+        return $this->restful("POST", "/add/package/record/create", $body);
+    }
+
+    /**
+     * 修改状态
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPackageRecordEdit($body)
+    {
+        return $this->restful("POST", "/add/package/record/edit", $body);
+    }
 }
