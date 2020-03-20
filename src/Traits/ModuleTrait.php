@@ -47,6 +47,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk         $javaErpPay
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk           $javaPush
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk      $javaUserScore
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk               $jmbs
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JwtSdk                $jwt
  * @property \Uniondrug\ServiceSdk\Exports\Modules\MapSdk                $map
  * @property \Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk          $marketing

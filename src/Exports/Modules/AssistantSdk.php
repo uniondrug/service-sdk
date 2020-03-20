@@ -1297,4 +1297,27 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userstores/paging", $body);
     }
 
+    /**
+     * 根据二维码ID获取申请信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/getByQrcodeIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeGetByQrcodeId($body)
+    {
+        return $this->restful("POST", "/storeQrcode/getByQrcodeId", $body);
+    }
+
+
+    /**
+     * 根据门店ID获取申请信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/getByStoreIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeGetByStoreId($body)
+    {
+        return $this->restful("POST", "/storeQrcode/getByStoreId", $body);
+    }
+
 }
