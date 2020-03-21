@@ -136,7 +136,7 @@ class MapSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function updateAmap($body)
+    public function updateMap($body)
     {
         return $this->restful("POST", "/amap/data/update", $body);
     }
