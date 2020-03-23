@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-20
- * @time   Fri, 20 Mar 2020 14:42:32 +0800
+ * @date   2020-03-23
+ * @time   Mon, 23 Mar 2020 14:51:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -115,6 +115,28 @@ class CompensateSdk extends SdkBase
     public function customerPaging($body)
     {
         return $this->restful("POST", "/customer/paging", $body);
+    }
+
+    /**
+     * 通过sku获取产品信息和保障信息
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeProductController/getProductBySkuAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProductBySku($body)
+    {
+        return $this->restful("POST", "/ie/product/getProductBySku", $body);
+    }
+
+    /**
+     * 根据订单筛选条件获取SPUNos
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeProductController/getSPUNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getSPUNos($body)
+    {
+        return $this->restful("POST", "/ie/product/getSPUNOs", $body);
     }
 
     /**
@@ -566,6 +588,17 @@ class CompensateSdk extends SdkBase
     public function ieProductUpdate($body)
     {
         return $this->restful("POST", "/ie/product/update", $body);
+    }
+
+    /**
+     * 保障修改价格，修改对应商品成本价
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeProductController/updateCostPriceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieProductUpdateCostPrice($body)
+    {
+        return $this->restful("POST", "/ie/product/updateCostPrice", $body);
     }
 
     /**
