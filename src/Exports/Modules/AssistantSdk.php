@@ -1320,4 +1320,15 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/storeQrcode/getByStoreId", $body);
     }
 
+    /**
+     * 设备信息添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DeviceController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function deviceCreate($body)
+    {
+        return $this->restful("POST", "/device/add", $body);
+    }
+
 }
