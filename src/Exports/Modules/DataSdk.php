@@ -78,4 +78,15 @@ class DataSdk extends SdkBase
     {
         return $this->restful("POST", "/areas/search", $body);
     }
+
+    /**
+     * 根据 地区编码/省市区名称 获取上级数组
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function newAreaCode($body)
+    {
+        return $this->restful("POST", "/newarea/code", $body);
+    }
 }
