@@ -1386,4 +1386,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/guarantee/explain", $body);
     }
+
+    /**
+     * 通过保障IDs获取对应的保障信息。不超过10条
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/getGuaranteeByIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function guaranteeGetInfoByIds($body)
+    {
+        return $this->restful("POST", "/guarantee/getGuaranteeByIds", $body);
+    }
 }
