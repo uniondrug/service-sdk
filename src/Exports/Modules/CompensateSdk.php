@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-23
- * @time   Mon, 23 Mar 2020 14:51:13 +0800
+ * @date   2020-03-24
+ * @time   Tue, 24 Mar 2020 10:19:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -280,6 +280,17 @@ class CompensateSdk extends SdkBase
     public function ieGuaranteesUpdateSku($body)
     {
         return $this->restful("POST", "/ie/guarantees/update/sku", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeOrderController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieOrderCreate($body)
+    {
+        return $this->restful("POST", "/ieOrder/create", $body);
     }
 
     /**
