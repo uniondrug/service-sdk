@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-03-24
- * @time   Tue, 24 Mar 2020 10:19:17 +0800
+ * @time   Tue, 24 Mar 2020 15:52:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -148,6 +148,28 @@ class CompensateSdk extends SdkBase
     public function groupEquityStatistic($body)
     {
         return $this->restful("POST", "/group/statistic/equity", $body);
+    }
+
+    /**
+     * 新增渠道
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeChannelController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieChannelCreate($body)
+    {
+        return $this->restful("POST", "/ie/channel/create", $body);
+    }
+
+    /**
+     * 渠道详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeChannelController/DetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieChannelDetail($body)
+    {
+        return $this->restful("POST", "/ie/channel/detail", $body);
     }
 
     /**
@@ -610,6 +632,17 @@ class CompensateSdk extends SdkBase
     public function ieProductUpdateCostPrice($body)
     {
         return $this->restful("POST", "/ie/product/updateCostPrice", $body);
+    }
+
+    /**
+     * 上架后修改分销 goodsId & dstGoodsId
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeProductController/updateDstGoodsIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ieProductUpdateDstGoodsId($body)
+    {
+        return $this->restful("POST", "/ie/product/updateDstGoodsId", $body);
     }
 
     /**
