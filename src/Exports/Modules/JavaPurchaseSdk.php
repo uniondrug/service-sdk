@@ -1,0 +1,109 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: lvchaohui
+ * Date: 2019/12/17
+ * Time: 11:40 AM
+ */
+namespace Uniondrug\ServiceSdk\Exports\Modules;
+
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+
+/**
+ * java
+ * Class JavaDistributionSdk
+ * @package Uniondrug\ServiceSdk\Modules
+ */
+class JavaPurchaseSdk extends SdkBase
+{
+    protected $serviceName = 'java.purchase';
+
+    /**
+     * 添加采购项目
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/project_add.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function createPurchaseProject($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/add', $body);
+    }
+
+    /**
+     * 采购项目详情
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/project_detail.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function detailPurchaseProject($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/detail', $body);
+    }
+
+    /**
+     * 更改项目激活限制策略
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/projectChange.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function strategyPurchaseProject($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/projectChange', $body);
+    }
+
+    /**
+     * 采购项目分页列表
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/projectList.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function listingPurchaseProject($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/list', $body);
+    }
+
+    /**
+     * 创建新批次
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/pile_add.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function createPile($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchasePile/add', $body);
+    }
+
+    /**
+     * 批次分页列表
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/pileList.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pagingPile($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchasePile/pileList', $body);
+    }
+
+    /**
+     * 批次详情
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/pileDetail.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function detailPile($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchasePile/pileDetail', $body);
+    }
+
+    /**
+     * 批次详情
+     * @link https://uniondrug.coding.net/p/java.middlend.equity.purchase/d/java.middlend.equity.purchase/git/tree/development/api-docs/pileCancel.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function cancelPile($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchasePile/cancel', $body);
+    }
+}
