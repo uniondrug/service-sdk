@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-24
- * @time   Tue, 24 Mar 2020 15:52:40 +0800
+ * @date   2020-03-25
+ * @time   Wed, 25 Mar 2020 09:30:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -115,6 +115,17 @@ class CompensateSdk extends SdkBase
     public function customerPaging($body)
     {
         return $this->restful("POST", "/customer/paging", $body);
+    }
+
+    /**
+     * 通过主订单号获取激活权益信息
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/getActiveByOrderNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getActiveByOrderNo($body)
+    {
+        return $this->restful("POST", "/ie/guarantees/getActiveByOrderNo", $body);
     }
 
     /**
