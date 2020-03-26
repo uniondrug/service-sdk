@@ -82,7 +82,7 @@ class JavaPurchaseSdk extends SdkBase
      */
     public function pagingPile($body)
     {
-        return $this->restful(static::METHOD_POST, '/purchasePile/pileList', $body);
+        return $this->restful(static::METHOD_POST, '/purchasePile/list', $body);
     }
 
     /**
@@ -93,7 +93,7 @@ class JavaPurchaseSdk extends SdkBase
      */
     public function detailPile($body)
     {
-        return $this->restful(static::METHOD_POST, '/purchasePile/pileDetail', $body);
+        return $this->restful(static::METHOD_POST, '/purchasePile/detail', $body);
     }
 
     /**
