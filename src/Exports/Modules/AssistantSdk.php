@@ -1331,4 +1331,15 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/device/add", $body);
     }
 
+    /**
+     * 导出excel (调用java接口)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CommonController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function commonExport($body)
+    {
+        return $this->restful("POST", "/common/export", $body);
+    }
+
 }
