@@ -1548,6 +1548,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 检查该连锁下是否有没设置账户的
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/checkIsExistAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountCheckIsExist($body)
+    {
+        return $this->restful("POST", "/organizeBankAccount/checkIsExist", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/createAction.md
      * @param array $body 入参类型
@@ -2788,6 +2799,17 @@ class SettlementSdk extends SdkBase
     public function orderPayDetailsEquityGroupsList($body)
     {
         return $this->restful("POST", "/orderPayDetails/equityGroupsLis", $body);
+    }
+
+    /**
+     * 检查该连锁下是否有没设置账户的
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/checkIsExistAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountCheckIsExist($body)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/checkIsExist", $body);
     }
 
     /**
