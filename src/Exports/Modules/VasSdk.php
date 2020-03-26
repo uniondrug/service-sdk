@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-18
- * @time   Wed, 18 Mar 2020 00:27:17 +0800
+ * @date   2020-03-26
+ * @time   Thu, 26 Mar 2020 15:41:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,17 @@ class VasSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'vas.module';
+
+    /**
+     * 增值服务批量下单
+     * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/batchOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function batchOrder($body)
+    {
+        return $this->restful("POST", "/pack/batchOrder", $body);
+    }
 
     /**
      * 商品类型
