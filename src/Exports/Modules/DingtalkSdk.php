@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-26
- * @time   Thu, 26 Mar 2020 10:26:26 +0800
+ * @date   2020-03-29
+ * @time   Sun, 29 Mar 2020 21:38:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,17 @@ class DingtalkSdk extends SdkBase
     public function callBackGetFailResult($body)
     {
         return $this->restful("POST", "/callback/getfailresult", $body);
+    }
+
+    /**
+     * 回调响应
+     * @link https://uniondrug.coding.net/p/module.dingtalk/git/blob/development/docs/api/CallBackController/notifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function callBackNotify($body)
+    {
+        return $this->restful("POST", "/callback/notify", $body);
     }
 
     /**
