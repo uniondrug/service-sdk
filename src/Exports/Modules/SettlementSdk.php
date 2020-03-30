@@ -2877,4 +2877,37 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/organizeFinanceAccount/invoiceInfoExport", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DrugClearPartnersController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drugClearPartnersCreate($body)
+    {
+        return $this->restful("POST", "/drugClearPartners/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DrugClearPartnersController/resetAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drugClearPartnersReset($body)
+    {
+        return $this->restful("POST", "/drugClearPartners/reset", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DrugClearPartnersController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drugClearPartnersUpdate($body)
+    {
+        return $this->restful("POST", "/drugClearPartners/update", $body);
+    }
 }
