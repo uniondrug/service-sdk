@@ -41,14 +41,14 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 新增保障
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/GuaranteeController/addAction.md
+     * 新增投保用户
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureUserController/addAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function addGuarantee($body)
+    public function addInsureUser($body)
     {
-        return $this->restful("POST", "/guarantee/add", $body);
+        return $this->restful("POST", "/insureUser/add", $body);
     }
 
     /**
