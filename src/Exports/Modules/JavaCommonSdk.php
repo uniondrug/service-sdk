@@ -42,4 +42,22 @@ class JavaCommonSdk extends SdkBase
     {
         return $this->restful("POST","/dict/data",$body);
     }
+    /**
+     * 添加分类
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dictAddClassify($body)
+    {
+        return $this->restful("POST","/dict/addClassify",$body);
+    }
+    /**
+     * 添加分类下子目
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dictAddDictElement($body)
+    {
+        return $this->restful("POST","/dict/addDictElement",$body);
+    }
 }

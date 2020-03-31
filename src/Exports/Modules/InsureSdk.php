@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-18
- * @time   Wed, 18 Mar 2020 16:20:43 +0800
+ * @date   2020-03-28
+ * @time   Sat, 28 Mar 2020 18:22:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class InsureSdk extends SdkBase
     public function addClosePolicyRecord($body)
     {
         return $this->restful("POST", "/policyrecord/addclose", $body);
+    }
+
+    /**
+     * 新增投保用户
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureUserController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addInsureUser($body)
+    {
+        return $this->restful("POST", "/insureUser/add", $body);
     }
 
     /**
@@ -126,6 +137,17 @@ class InsureSdk extends SdkBase
     public function buildPolicyCodeRepairError($body)
     {
         return $this->restful("POST", "/repairError/buildPolicyCode", $body);
+    }
+
+    /**
+     * 更新钉钉审批状态
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeApprovalStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeApprovalStatusPolicy($body)
+    {
+        return $this->restful("POST", "/policy/changeapprovalstatus", $body);
     }
 
     /**
@@ -555,6 +577,17 @@ class InsureSdk extends SdkBase
     public function insurerSummaryPolicy($body)
     {
         return $this->restful("POST", "/policy/insurerSummary", $body);
+    }
+
+    /**
+     * 更新钉钉审批 id
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/modifyApprovalIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function modifyApprovalIdPolicy($body)
+    {
+        return $this->restful("POST", "/policy/modifyapprovalid", $body);
     }
 
     /**
