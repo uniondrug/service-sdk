@@ -11,7 +11,6 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -1064,7 +1063,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/common/citys", $body);
     }
 
-
     /**
      * 获取用户标签
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserTag/UserTagSetController/getUserTagsAction.md
@@ -1208,7 +1206,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/cloudCustomer/merge", $body);
     }
 
-
     /**
      * 根据商户ID获取申请信息
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyMerchantController/getByOrganizationIdAction.md
@@ -1308,7 +1305,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/storeQrcode/getByQrcodeId", $body);
     }
 
-
     /**
      * 根据门店ID获取申请信息
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/getByStoreIdAction.md
@@ -1320,4 +1316,113 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/storeQrcode/getByStoreId", $body);
     }
 
+    /**
+     * 设备信息添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DeviceController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function deviceCreate($body)
+    {
+        return $this->restful("POST", "/device/add", $body);
+    }
+
+    /**
+     * 导出excel (调用java接口)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/CommonController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function commonExport($body)
+    {
+        return $this->restful("POST", "/common/export", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function versionCreate($body)
+    {
+        return $this->restful("POST", "/version/create", $body);
+    }
+
+    /**
+     * 获取版本详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function versionDetail($body)
+    {
+        return $this->restful("POST", "/version/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function versionPaging($body)
+    {
+        return $this->restful("POST", "/version/paging", $body);
+    }
+
+    /**
+     * 状态变更
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function changeVersionStatus($body)
+    {
+        return $this->restful("POST", "/version/changeStatus", $body);
+    }
+
+    /**
+     * 上传安卓安装包
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/uploadSdkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function uploadSdk($body)
+    {
+        return $this->restful("POST", "/version/uploadSdk", $body);
+    }
+
+    /**
+     * 数据统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/dataStatisticsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dataStatistics($body)
+    {
+        return $this->restful("POST", "/storeQrcode/dataStatistics", $body);
+    }
+
+    /**
+     * 数据统计-导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/dataExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function export($body)
+    {
+        return $this->restful("POST", "/storeQrcode/export", $body);
+    }
+
+    /**
+     * 数据统计-查询用户层级
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/StoreQrcodeController/userListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userList($body)
+    {
+        return $this->restful("POST", "/storeQrcode/userList", $body);
+    }
 }

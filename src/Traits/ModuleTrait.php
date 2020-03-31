@@ -90,6 +90,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk              $score
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk     $guaranteeclaimSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk           $exchange
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk           $dingtalk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
