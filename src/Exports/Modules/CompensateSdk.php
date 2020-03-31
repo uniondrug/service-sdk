@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-27
- * @time   Fri, 27 Mar 2020 12:10:22 +0800
+ * @date   2020-03-31
+ * @time   Tue, 31 Mar 2020 12:44:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,17 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 智赔导出兑换码sql
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Project/UserController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportCdCodeSql($body)
+    {
+        return $this->restful("POST", "/project/user/export/cdcode/sql", $body);
+    }
+
+    /**
      * 通过主订单号获取激活权益信息
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/InsuranceEcosphere/IeGuaranteesController/getActiveByOrderNoAction.md
      * @param array $body 入参类型
@@ -126,6 +137,17 @@ class CompensateSdk extends SdkBase
     public function getActiveByOrderNo($body)
     {
         return $this->restful("POST", "/ie/guarantees/getActiveByOrderNo", $body);
+    }
+
+    /**
+     * 智赔兑换码列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Project/UserController/getCompensateUserPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCompensateUserPaging($body)
+    {
+        return $this->restful("POST", "/project/user/compensate/paging", $body);
     }
 
     /**
