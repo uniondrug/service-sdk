@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2018-12-04
- * @time   Tue, 04 Dec 2018 18:26:03 +0800
+ * @date   2020-04-02
+ * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,20 +30,64 @@ class InvoiceSdk extends SdkBase
     protected $serviceName = 'invoice.module';
 
     /**
-     * 新增一个发票
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/addAction.md
-     * @param object|array $body 入参类型
+     * 推送发票订单信息
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/MqController/pushInvoiceOrdersAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function add($body)
     {
-        return $this->restful("POST", "/invoice/add", $body);
+        return $this->restful("POST", "/mq/pushInvoieOrders", $body);
+    }
+
+    /**
+     * 添加快递单
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/ExpressController/editInBatchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addInvoiceExpress($body)
+    {
+        return $this->restful("POST", "/express/add", $body);
+    }
+
+    /**
+     * 发票认证
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/AsyncController/auditInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function auditInvoice($body)
+    {
+        return $this->restful("POST", "/async/auditInvoice", $body);
+    }
+
+    /**
+     * 获取未寄出发票数量
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/countInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function countInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/countInvoice", $body);
+    }
+
+    /**
+     * 删除一个发票
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function delete($body)
+    {
+        return $this->restful("POST", "/invoice/delete", $body);
     }
 
     /**
      * 获取发票的详情
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/detailAction.md
-     * @param object|array $body 入参类型
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function detail($body)
@@ -52,20 +96,130 @@ class InvoiceSdk extends SdkBase
     }
 
     /**
-     * 删除一个发票
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deteleAction.md
-     * @param object|array $body 入参类型
+     * 编辑一个发票
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/updateAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function detele($body)
+    public function edit($body)
     {
-        return $this->restful("POST", "/invoice/detele", $body);
+        return $this->restful("POST", "/invoice/edit", $body);
+    }
+
+    /**
+     * 快递公司列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/ExpressController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function expressList($body)
+    {
+        return $this->restful("POST", "/express/list", $body);
+    }
+
+    /**
+     * 根据发票单号获取发票的详情
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDetail($body)
+    {
+        return $this->restful("POST", "/invoice/getDetail", $body);
+    }
+
+    /**
+     * 通过保司获取发票导出
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getExportByInsureAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceExportByInsure($body)
+    {
+        return $this->restful("POST", "/invoice/getExportByInsure", $body);
+    }
+
+    /**
+     * 通过开票单号获取发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/listingByBillNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceListingByBillNo($body)
+    {
+        return $this->restful("POST", "/invoice/getListingByBillNo", $body);
+    }
+
+    /**
+     * 通过理赔单号获取发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/listingByClaimNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceListingByClaimNo($body)
+    {
+        return $this->restful("POST", "/invoice/getListingByClaimNo", $body);
+    }
+
+    /**
+     * 通过理赔单号获取连锁级发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/listingByClaimNoInMerchantAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoiceListingByClaimNoInMerchant($body)
+    {
+        return $this->restful("POST", "/invoice/getListingByClaimNoInMerchant", $body);
+    }
+
+    /**
+     * 通过开票单号获取发票分页列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByBillNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoicePagingByBillNo($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingByBillNo", $body);
+    }
+
+    /**
+     * 通过理赔单号获取发票分页列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoicePagingByClaimNo($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingByClaimNo", $body);
+    }
+
+    /**
+     * 通过保司获取发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getPagingByInsureAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoicePagingByInsure($body)
+    {
+        return $this->restful("POST", "/invoice/getPagingByInsure", $body);
+    }
+
+    /**
+     * 财税发票池
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingForTaxAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getInvoicePagingForTax($body)
+    {
+        return $this->restful("POST", "/invoice/pagingForTax", $body);
     }
 
     /**
      * 根据开票单号或对账单号获取发票的总和
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getInvoiceSumAction.md
-     * @param object|array $body 入参类型
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function getInvoiceSum($body)
@@ -76,7 +230,7 @@ class InvoiceSdk extends SdkBase
     /**
      * 获取发票分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getListAction.md
-     * @param object|array $body 入参类型
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function getList($body)
@@ -85,46 +239,112 @@ class InvoiceSdk extends SdkBase
     }
 
     /**
-     * 通过理赔单号获取发票分页列表
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
-     * @param object|array $body 入参类型
+     * 获取快递页发票分页列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/getListInExpressAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getInvoicePagingByClaimNo($body)
+    public function getListInExpress($body)
     {
-        return $this->restful("POST", "/invoice/getPagingByClaimNo", $body);
+        return $this->restful("POST", "/invoice/getListInExpress", $body);
     }
 
     /**
-     * 通过理赔单号获取发票列表
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
-     * @param object|array $body 入参类型
+     * 今天第几条
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/countTodayAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getInvoiceListingByClaimNo($body)
+    public function invoiceExpressCountToday($body)
     {
-        return $this->restful("POST", "/invoice/getListingByClaimNo", $body);
+        return $this->restful("POST", "/invoiceExpress/countToday", $body);
     }
 
     /**
-     * 通过理赔单号获取连锁级发票列表
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
-     * @param object|array $body 入参类型
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/createAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getInvoiceListingByClaimNoInMerchant($body)
+    public function invoiceExpressCreate($body)
     {
-        return $this->restful("POST", "/invoice/getListingByClaimNoInMerchant", $body);
+        return $this->restful("POST", "/invoiceExpress/create", $body);
     }
 
     /**
-     * 财税发票池
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingByClaimNoAction.md
-     * @param object|array $body 入参类型
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/deleteAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getInvoicePagingForTax($body)
+    public function invoiceExpressDelete($body)
     {
-        return $this->restful("POST", "/invoice/pagingForTax", $body);
+        return $this->restful("POST", "/invoiceExpress/delete", $body);
+    }
+
+    /**
+     * 批量删除
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/deleteInBatchAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressDeleteInBatch($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/deleteInBatch", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressDetail($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/detail", $body);
+    }
+
+    /**
+     * 批次列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressListing($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressPaging($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceExpressUpdate($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/update", $body);
+    }
+
+    /**
+     * 发票上传
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/AsyncController/uploadInvoiceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function uploadInvoice($body)
+    {
+        return $this->restful("POST", "/async/uploadInvoice", $body);
     }
 }
