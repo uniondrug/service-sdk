@@ -141,13 +141,13 @@ class InsureSdk extends SdkBase
 
     /**
      * 更新钉钉审批状态
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeApprovalStatusAction.md
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/notifyApprovalAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function changeApprovalStatusPolicy($body)
+    public function notifyApprovalPolicy($body)
     {
-        return $this->restful("POST", "/policy/changeapprovalstatus", $body);
+        return $this->restful("POST", "/policy/notifyapproval", $body);
     }
 
     /**
