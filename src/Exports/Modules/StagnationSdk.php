@@ -374,6 +374,17 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 更新回收金额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateRecycleMoneyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateRecycleMoney($body)
+    {
+        return $this->restful("POST", "/code/update/recycle/money", $body);
+    }
+
+    /**
      * 新增驻店员
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
