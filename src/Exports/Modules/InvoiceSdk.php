@@ -369,7 +369,6 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/listingOnWay", $body);
     }
-
     /**
      * 待确认收货分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingOnWayAction.md
