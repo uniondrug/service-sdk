@@ -1350,6 +1350,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function versionEdit($body)
+    {
+        return $this->restful("POST", "/version/edit", $body);
+    }
+
+    /**
      * 获取版本详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/detailAction.md
      * @param array $body 入参类型
