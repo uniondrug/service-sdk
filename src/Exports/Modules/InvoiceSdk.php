@@ -347,4 +347,15 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/async/uploadInvoice", $body);
     }
+
+    /**
+     * 更新发票邮递状态
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/updateExpressStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceUpdateExpressStatus($body)
+    {
+        return $this->restful("POST", "/invoice/updateExpressStatus", $body);
+    }
 }
