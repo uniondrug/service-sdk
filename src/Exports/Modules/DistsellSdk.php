@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-26
- * @time   Wed, 26 Feb 2020 20:45:15 +0800
+ * @date   2020-04-03
+ * @time   Fri, 03 Apr 2020 15:12:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,17 @@ class DistsellSdk extends SdkBase
     public function leadDetail($body)
     {
         return $this->restful("POST", "/lead/detail", $body);
+    }
+
+    /**
+     * 冻结解冻
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/LeadController/freezeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function leadFreeze($body)
+    {
+        return $this->restful("POST", "/lead/freeze", $body);
     }
 
     /**
@@ -118,6 +129,17 @@ class DistsellSdk extends SdkBase
     }
 
     /**
+     * 用商品id获取商品信息和配置的积分
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/packageDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointPackageDetail($body)
+    {
+        return $this->restful("POST", "/point/packageDetail", $body);
+    }
+
+    /**
      * 积分列表（分页）
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/pagingAction.md
      * @param array $body 入参类型
@@ -137,17 +159,6 @@ class DistsellSdk extends SdkBase
     public function pointUpdate($body)
     {
         return $this->restful("POST", "/point/update", $body);
-    }
-
-    /**
-     * 用商品id获取商品信息和配置的积分
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/packageDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pointPackageDetail($body)
-    {
-        return $this->restful("POST", "/point/packageDetail", $body);
     }
 
     /**
