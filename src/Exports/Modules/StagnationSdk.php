@@ -471,4 +471,37 @@ class StagnationSdk extends SdkBase
     {
         return $this->restful("POST", "/user/status", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogCreate($body)
+    {
+        return $this->restful("POST", "/recycle/log/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogDetail($body)
+    {
+        return $this->restful("POST", "/recycle/log/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogPaging($body)
+    {
+        return $this->restful("POST", "/recycle/log/paging", $body);
+    }
 }
