@@ -358,4 +358,15 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/updateExpressStatus", $body);
     }
+
+    /**
+     * 待确认收货列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/listingOnWayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceListingOnWay($body)
+    {
+        return $this->restful("POST", "/invoice/listingOnWay", $body);
+    }
 }
