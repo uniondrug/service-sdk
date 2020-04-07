@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-19
- * @time   Thu, 19 Dec 2019 16:27:31 +0800
+ * @date   2020-04-07
+ * @time   Tue, 07 Apr 2020 10:13:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -511,5 +511,16 @@ class AiPushSdk extends SdkBase
     public function voucherTotal($body)
     {
         return $this->restful("POST", "/weiXin/voucher/voucherTotal", $body);
+    }
+
+    /**
+     * 用户已使用的抵扣券总额
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/usedTotalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function voucherUsedTotal($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/voucherUsedTotal", $body);
     }
 }
