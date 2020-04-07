@@ -106,4 +106,15 @@ class JavaPurchaseSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/purchasePile/cancel', $body);
     }
+
+    /**
+     * 项目导出sql
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function exportProjectSQL($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/exportList', $body);
+    }
 }
