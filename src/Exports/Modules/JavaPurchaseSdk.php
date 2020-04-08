@@ -137,6 +137,6 @@ class JavaPurchaseSdk extends SdkBase
      */
     public function parseExcelContent($body)
     {
-        return $this->restful(static::METHOD_POST, '/purchaseProject/exportList', $body);
+        return $this->restful(static::METHOD_POST, '/purchasePile/checkExcel', $body);
     }
 }
