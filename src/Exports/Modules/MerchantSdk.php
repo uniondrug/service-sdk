@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-11
- * @time   Wed, 11 Mar 2020 10:35:09 +0800
+ * @date   2020-04-03
+ * @time   Fri, 03 Apr 2020 17:27:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class MerchantSdk extends SdkBase
     public function addBalance($body)
     {
         return $this->restful("POST", "/balance/add", $body);
+    }
+
+    /**
+     * 添加财务回推配置
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addFinaceSettlement($body)
+    {
+        return $this->restful("POST", "/financesettlement/add", $body);
     }
 
     /**
@@ -437,6 +448,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改财务回推配置
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editFinaceSettlement($body)
+    {
+        return $this->restful("POST", "/financesettlement/edit", $body);
+    }
+
+    /**
      * 修改开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/editAction.md
      * @param array $body 入参类型
@@ -533,6 +555,17 @@ class MerchantSdk extends SdkBase
     public function editPartners($body)
     {
         return $this->restful("POST", "/partners/edit", $body);
+    }
+
+    /**
+     * 处理rootId修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editRootIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editRootId($body)
+    {
+        return $this->restful("POST", "/organizebase/editrootid", $body);
     }
 
     /**
@@ -973,6 +1006,17 @@ class MerchantSdk extends SdkBase
     public function infoChainBalance($body)
     {
         return $this->restful("POST", "/balance/infochain", $body);
+    }
+
+    /**
+     * 查询财务回推配置
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function infoFinaceSettlement($body)
+    {
+        return $this->restful("POST", "/financesettlement/info", $body);
     }
 
     /**

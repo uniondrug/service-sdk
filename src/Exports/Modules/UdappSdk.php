@@ -468,4 +468,15 @@ class UdappSdk extends SdkBase
     {
         return $this->restful("POST", "/token/expire", $body);
     }
+
+    /**
+     * 导出sql
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/expireAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configExport($body)
+    {
+        return $this->restful("POST", "/config/export", $body);
+    }
 }

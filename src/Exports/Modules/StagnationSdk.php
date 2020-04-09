@@ -504,4 +504,15 @@ class StagnationSdk extends SdkBase
     {
         return $this->restful("POST", "/recycle/log/paging", $body);
     }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogExport($body)
+    {
+        return $this->restful("POST", "/recycle/log/export", $body);
+    }
 }

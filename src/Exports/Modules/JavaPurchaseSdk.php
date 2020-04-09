@@ -106,4 +106,37 @@ class JavaPurchaseSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/purchasePile/cancel', $body);
     }
+
+    /**
+     * 项目导出sql
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function exportProjectSQL($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/exportList', $body);
+    }
+
+    /**
+     * 规格邮件重试
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function sendSpecsMail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/sendMail', $body);
+    }
+
+    /**
+     * 解析导入模板行数和权益总额
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function parseExcelContent($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchasePile/checkExcel', $body);
+    }
 }

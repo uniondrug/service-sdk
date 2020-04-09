@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-19
- * @time   Thu, 19 Dec 2019 16:27:31 +0800
+ * @date   2020-04-08
+ * @time   Wed, 08 Apr 2020 13:28:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -316,6 +316,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 商品销售折线图和店员积分柱形图
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsChartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsChart($body)
+    {
+        return $this->restful("POST", "/planGoods/goodsChart", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/createAction.md
      * @param array $body 入参类型
@@ -324,6 +335,17 @@ class AiPushSdk extends SdkBase
     public function planGoodsCreate($body)
     {
         return $this->restful("POST", "/planGoods/create", $body);
+    }
+
+    /**
+     * 商品销量占比
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsPercentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsPercent($body)
+    {
+        return $this->restful("POST", "/planGoods/goodsPercent", $body);
     }
 
     /**
@@ -492,6 +514,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 按照日期时间段展示抵扣券领取和使用情况（折线图和柱形图）
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/chartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function voucherChart($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/voucherChart", $body);
+    }
+
+    /**
      * 抵扣券统计数据
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/voucherDataAction.md
      * @param array $body 入参类型
@@ -511,5 +544,16 @@ class AiPushSdk extends SdkBase
     public function voucherTotal($body)
     {
         return $this->restful("POST", "/weiXin/voucher/voucherTotal", $body);
+    }
+
+    /**
+     * 用户已使用的抵扣券总额
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/usedTotalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function voucherUsedTotal($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/voucherUsedTotal", $body);
     }
 }
