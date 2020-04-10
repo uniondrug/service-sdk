@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-04-10
- * @time   Fri, 10 Apr 2020 13:58:53 +0800
+ * @time   Fri, 10 Apr 2020 16:47:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -445,6 +445,28 @@ class AiPushSdk extends SdkBase
     public function rechargeCancel($body)
     {
         return $this->restful("POST", "/rechargeLog/cancel", $body);
+    }
+
+    /**
+     * 充值记录审核
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeExamine($body)
+    {
+        return $this->restful("POST", "/rechargeLog/examine", $body);
+    }
+
+    /**
+     * 充值记录审核导出sql
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeExamineSql($body)
+    {
+        return $this->restful("POST", "/rechargeLog/exportExamine", $body);
     }
 
     /**
