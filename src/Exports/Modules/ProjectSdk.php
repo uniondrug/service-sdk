@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-06
- * @time   Fri, 06 Mar 2020 16:58:11 +0800
+ * @date   2020-04-10
+ * @time   Fri, 10 Apr 2020 10:18:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -273,6 +273,17 @@ class ProjectSdk extends SdkBase
     public function downCdCodeSql($body)
     {
         return $this->restful("POST", "/user/down/cdcode/sql", $body);
+    }
+
+    /**
+     * 实体卡获取sql
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getEntityBySqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function downEntitySql($body)
+    {
+        return $this->restful("POST", "/user/down/entity/sql", $body);
     }
 
     /**
@@ -1046,6 +1057,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 验证身份证
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/validateIdCardAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeValidateIdCard($body)
+    {
+        return $this->restful("POST", "/redeem/validateIdCard", $body);
+    }
+
+    /**
      * 拒绝审批
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/refuseAction.md
      * @param array $body 入参类型
@@ -1299,16 +1321,5 @@ class ProjectSdk extends SdkBase
     public function ydbCheckVerify($body)
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
-    }
-
-    /**
-     * 验证身份证
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/validateIdCardAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function redeemCodeValidateIdCard($body)
-    {
-        return $this->restful("POST", "/redeem/validateIdCard", $body);
     }
 }

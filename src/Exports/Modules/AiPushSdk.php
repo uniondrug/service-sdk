@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-08
- * @time   Wed, 08 Apr 2020 13:28:31 +0800
+ * @date   2020-04-10
+ * @time   Fri, 10 Apr 2020 13:58:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,17 @@ class AiPushSdk extends SdkBase
     public function getPoint($body)
     {
         return $this->restful("POST", "/plan/getPoint", $body);
+    }
+
+    /**
+     * 根据工业ID获取资金池信息
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/getPoolByOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPoolByOrganizationId($body)
+    {
+        return $this->restful("POST", "/rechargeLog/getPoolByOrganizationId", $body);
     }
 
     /**
@@ -316,6 +327,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 销售明细分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SaleController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodSalePaging($body)
+    {
+        return $this->restful("POST", "/sale/paging", $body);
+    }
+
+    /**
      * 商品销售折线图和店员积分柱形图
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsChartAction.md
      * @param array $body 入参类型
@@ -412,6 +434,39 @@ class AiPushSdk extends SdkBase
     public function poolRecordsTypeList($body)
     {
         return $this->restful("POST", "/poolRecords/typeList", $body);
+    }
+
+    /**
+     * 充值撤销
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeCancel($body)
+    {
+        return $this->restful("POST", "/rechargeLog/cancel", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeLogCreate($body)
+    {
+        return $this->restful("POST", "/rechargeLog/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeLogPaging($body)
+    {
+        return $this->restful("POST", "/rechargeLog/paging", $body);
     }
 
     /**
