@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-09
- * @time   Thu, 09 Apr 2020 17:14:07 +0800
+ * @date   2020-04-10
+ * @time   Fri, 10 Apr 2020 14:22:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,5 +93,27 @@ class ClerkSdk extends SdkBase
     public function assistantUpdate($body)
     {
         return $this->restful("POST", "/assistant/update", $body);
+    }
+
+    /**
+     * 创建资格
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PharmacistController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCreate($body)
+    {
+        return $this->restful("POST", "/pharmacist/create", $body);
+    }
+
+    /**
+     * 获取资格
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PharmacistController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistDetail($body)
+    {
+        return $this->restful("POST", "/pharmacist/detail", $body);
     }
 }
