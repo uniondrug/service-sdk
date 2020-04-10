@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-04-10
- * @time   Fri, 10 Apr 2020 11:25:15 +0800
+ * @time   Fri, 10 Apr 2020 13:58:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -434,6 +434,17 @@ class AiPushSdk extends SdkBase
     public function poolRecordsTypeList($body)
     {
         return $this->restful("POST", "/poolRecords/typeList", $body);
+    }
+
+    /**
+     * 充值撤销
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeCancel($body)
+    {
+        return $this->restful("POST", "/rechargeLog/cancel", $body);
     }
 
     /**
