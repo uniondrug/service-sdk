@@ -92,6 +92,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk     $guaranteeclaimSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk           $exchange
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk           $dingtalk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk         $zhongSheng
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
