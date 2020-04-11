@@ -74,6 +74,39 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 获取门店店员列表（分页）
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/informationPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantInformationPaging($body)
+    {
+        return $this->restful("POST", "/assistant/information/paging", $body);
+    }
+
+    /**
+     * 获取门店店员列表（分页）
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantPaging($body)
+    {
+        return $this->restful("POST", "/assistant/paging", $body);
+    }
+
+    /**
+     * 获取门店店员数量
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantStoreCount($body)
+    {
+        return $this->restful("POST", "/assistant/store/count", $body);
+    }
+
+    /**
      * 获取门店店长数据
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeRoleListAction.md
      * @param array $body 入参类型
