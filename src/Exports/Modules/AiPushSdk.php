@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-10
- * @time   Fri, 10 Apr 2020 16:47:31 +0800
+ * @date   2020-04-11
+ * @time   Sat, 11 Apr 2020 16:23:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -382,7 +382,7 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 新增
+     * 添加方案关联连锁或者方案取消关联连锁
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -390,6 +390,17 @@ class AiPushSdk extends SdkBase
     public function planPartnerCreate($body)
     {
         return $this->restful("POST", "/planPartners/create", $body);
+    }
+
+    /**
+     * 智推方案关联的连锁列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/planPartnersPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planPartnerPaging($body)
+    {
+        return $this->restful("POST", "/planPartners/planPartnerPaging", $body);
     }
 
     /**
