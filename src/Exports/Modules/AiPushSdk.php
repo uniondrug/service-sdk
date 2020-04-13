@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-11
- * @time   Sat, 11 Apr 2020 17:14:20 +0800
+ * @date   2020-04-13
+ * @time   Mon, 13 Apr 2020 11:49:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -368,6 +368,28 @@ class AiPushSdk extends SdkBase
     public function planGoodsCreate($body)
     {
         return $this->restful("POST", "/planGoods/create", $body);
+    }
+
+    /**
+     * 方案移除商品
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/deleteGoodsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsDeleteOne($body)
+    {
+        return $this->restful("POST", "/planGoods/deleteOne", $body);
+    }
+
+    /**
+     * 方案关联商品列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsList($body)
+    {
+        return $this->restful("POST", "/planGoods/list", $body);
     }
 
     /**
