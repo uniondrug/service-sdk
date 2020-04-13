@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-04-11
- * @time   Sat, 11 Apr 2020 16:23:17 +0800
+ * @time   Sat, 11 Apr 2020 17:14:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class AiPushSdk extends SdkBase
     public function exportPoolRecord($body)
     {
         return $this->restful("POST", "/poolRecords/exportRecord", $body);
+    }
+
+    /**
+     * 根据方案ID和关联状态获取列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/getListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getListByPlanId($body)
+    {
+        return $this->restful("POST", "/planPartners/getListByPlanId", $body);
     }
 
     /**
