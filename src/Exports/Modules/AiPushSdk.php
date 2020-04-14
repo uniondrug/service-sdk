@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-04-14
- * @time   Tue, 14 Apr 2020 16:43:07 +0800
+ * @time   Tue, 14 Apr 2020 18:14:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -555,6 +555,17 @@ class AiPushSdk extends SdkBase
     public function redUsedData($body)
     {
         return $this->restful("POST", "/weiXin/data/redUsed", $body);
+    }
+
+    /**
+     * 销售明细导出
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SaleController/javaExportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function saleJavaExportSql($body)
+    {
+        return $this->restful("POST", "/sale/saleJavaExportSql", $body);
     }
 
     /**
