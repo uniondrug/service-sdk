@@ -1397,4 +1397,26 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/guarantee/getGuaranteeByIds", $body);
     }
+
+    /**
+     * 等待审核
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/pendingAuditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pendingAuditGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/pending/audit", $body);
+    }
+
+    /**
+     * 拒绝审核
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/refusedAuditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refusedAuditGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/refused/audit", $body);
+    }
 }
