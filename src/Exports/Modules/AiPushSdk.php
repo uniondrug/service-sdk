@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-13
- * @time   Mon, 13 Apr 2020 11:49:28 +0800
+ * @date   2020-04-14
+ * @time   Tue, 14 Apr 2020 16:43:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -566,6 +566,28 @@ class AiPushSdk extends SdkBase
     public function sendPoints($body)
     {
         return $this->restful("POST", "/poolRecords/sendPoints", $body);
+    }
+
+    /**
+     * 新增登录记录
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userLoginCreate($body)
+    {
+        return $this->restful("POST", "/userLogin/create", $body);
+    }
+
+    /**
+     * 获取最近的两次登录
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userLoginListing($body)
+    {
+        return $this->restful("POST", "/userLogin/listing", $body);
     }
 
     /**
