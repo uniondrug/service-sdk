@@ -57,18 +57,6 @@ class StagnationSdk extends Sdk implements ServiceSdkInterface
         return $this->restful("POST", "/group/manage/batch/update", $body);
     }
 
-
-    /**
-     * 门店维度脚本
-     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/JobStatisticsDealStoreController/createAction.md
-     * @param array $body 入参类型
-     * @return ClientResponseInterface
-     */
-    public function dealStoreJob($body)
-    {
-        return $this->restful("POST", "/dealStoreStatistic/jobStart", $body);
-    }
-
     /**
      * 校验手机号唯一性
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/checkMobileAction.md
