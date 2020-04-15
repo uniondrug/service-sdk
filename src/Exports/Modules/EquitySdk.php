@@ -1419,4 +1419,15 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/guarantee/refused/audit", $body);
     }
+
+    /**
+     * 获取当天创建分组最新一条权益的有效期
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GroupEquityController/getLatestEquityDateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectLatestEquityDate($body)
+    {
+        return $this->restful("POST", "/equity/group/latest/equity/date", $body);
+    }
 }
