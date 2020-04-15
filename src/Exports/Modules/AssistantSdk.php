@@ -1436,4 +1436,26 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/storeQrcode/userList", $body);
     }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyDelete($body)
+    {
+        return $this->restful("POST", "/apply/delete", $body);
+    }
+
+    /**
+     * 添加草稿
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addDraftAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyAddDraft($body)
+    {
+        return $this->restful("POST", "/apply/add/draft", $body);
+    }
 }
