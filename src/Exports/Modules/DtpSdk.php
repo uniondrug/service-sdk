@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-14
- * @time   Tue, 14 Apr 2020 10:49:01 +0800
+ * @date   2020-04-15
+ * @time   Wed, 15 Apr 2020 15:18:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -239,149 +239,6 @@ class DtpSdk extends SdkBase
     }
 
     /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugImageController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugImageCreate($body)
-    {
-        return $this->restful("POST", "/drugImage/create", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugImageController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugImageDelete($body)
-    {
-        return $this->restful("POST", "/drugImage/delete", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugImageController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugImageDetail($body)
-    {
-        return $this->restful("POST", "/drugImage/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugImageController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugImageListing($body)
-    {
-        return $this->restful("POST", "/drugImage/listing", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugImageController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugImagePaging($body)
-    {
-        return $this->restful("POST", "/drugImage/paging", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugImageController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugImageUpdate($body)
-    {
-        return $this->restful("POST", "/drugImage/update", $body);
-    }
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugIndicationsController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugIndicationsCreate($body)
-    {
-        return $this->restful("POST", "/drugIndications/create", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugIndicationsController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugIndicationsDelete($body)
-    {
-        return $this->restful("POST", "/drugIndications/delete", $body);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugIndicationsController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugIndicationsDetail($body)
-    {
-        return $this->restful("POST", "/drugIndications/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugIndicationsController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugIndicationsListing($body)
-    {
-        return $this->restful("POST", "/drugIndications/listing", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugIndicationsController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugIndicationsPaging($body)
-    {
-        return $this->restful("POST", "/drugIndications/paging", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugIndicationsController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugIndicationsUpdate($body)
-    {
-        return $this->restful("POST", "/drugIndications/update", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugListing($body)
-    {
-        return $this->restful("POST", "/drug/listing", $body);
-    }
-
-    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/DrugController/pagingAction.md
      * @param array $body 入参类型
@@ -515,57 +372,57 @@ class DtpSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufactureController/createAction.md
+     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufacturerController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function manufactureCreate($body)
+    public function manufacturerCreate($body)
     {
-        return $this->restful("POST", "/manufacture/create", $body);
+        return $this->restful("POST", "/manufacturer/create", $body);
     }
 
     /**
      * 删除
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufactureController/deleteAction.md
+     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufacturerController/deleteAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function manufactureDelete($body)
+    public function manufacturerDelete($body)
     {
-        return $this->restful("POST", "/manufacture/delete", $body);
+        return $this->restful("POST", "/manufacturer/delete", $body);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufactureController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufacturerController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function manufactureDetail($body)
+    public function manufacturerDetail($body)
     {
-        return $this->restful("POST", "/manufacture/detail", $body);
+        return $this->restful("POST", "/manufacturer/detail", $body);
     }
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufactureController/pagingAction.md
+     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufacturerController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function manufacturePaging($body)
+    public function manufacturerPaging($body)
     {
-        return $this->restful("POST", "/manufacture/paging", $body);
+        return $this->restful("POST", "/manufacturer/paging", $body);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufactureController/updateAction.md
+     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ManufacturerController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function manufactureUpdate($body)
+    public function manufacturerUpdate($body)
     {
-        return $this->restful("POST", "/manufacture/update", $body);
+        return $this->restful("POST", "/manufacturer/update", $body);
     }
 
     /**
@@ -646,17 +503,6 @@ class DtpSdk extends SdkBase
     }
 
     /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/PharmacyDrugController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pharmacyDrugListing($body)
-    {
-        return $this->restful("POST", "/pharmacyDrug/listing", $body);
-    }
-
-    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/PharmacyDrugController/pagingAction.md
      * @param array $body 入参类型
@@ -668,17 +514,6 @@ class DtpSdk extends SdkBase
     }
 
     /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/PharmacyDrugController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pharmacyDrugUpdate($body)
-    {
-        return $this->restful("POST", "/pharmacyDrug/update", $body);
-    }
-
-    /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/PharmacyController/exportAction.md
      * @param array $body 入参类型
@@ -687,17 +522,6 @@ class DtpSdk extends SdkBase
     public function pharmacyExport($body)
     {
         return $this->restful("POST", "/pharmacy/export", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/PharmacyController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pharmacyListing($body)
-    {
-        return $this->restful("POST", "/pharmacy/listing", $body);
     }
 
     /**
