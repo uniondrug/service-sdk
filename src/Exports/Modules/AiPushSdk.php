@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-10
- * @time   Fri, 10 Apr 2020 13:58:53 +0800
+ * @date   2020-04-14
+ * @time   Tue, 14 Apr 2020 18:14:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class AiPushSdk extends SdkBase
     public function exportPoolRecord($body)
     {
         return $this->restful("POST", "/poolRecords/exportRecord", $body);
+    }
+
+    /**
+     * 根据方案ID和关联状态获取列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/getListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getListByPlanId($body)
+    {
+        return $this->restful("POST", "/planPartners/getListByPlanId", $body);
     }
 
     /**
@@ -360,6 +371,28 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 方案移除商品
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/deleteGoodsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsDeleteOne($body)
+    {
+        return $this->restful("POST", "/planGoods/deleteOne", $body);
+    }
+
+    /**
+     * 方案关联商品列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsList($body)
+    {
+        return $this->restful("POST", "/planGoods/list", $body);
+    }
+
+    /**
      * 商品销量占比
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsPercentAction.md
      * @param array $body 入参类型
@@ -382,7 +415,7 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 新增
+     * 添加方案关联连锁或者方案取消关联连锁
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -390,6 +423,17 @@ class AiPushSdk extends SdkBase
     public function planPartnerCreate($body)
     {
         return $this->restful("POST", "/planPartners/create", $body);
+    }
+
+    /**
+     * 智推方案关联的连锁列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/planPartnersPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planPartnerPaging($body)
+    {
+        return $this->restful("POST", "/planPartners/planPartnerPaging", $body);
     }
 
     /**
@@ -448,6 +492,28 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 充值记录审核
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeExamine($body)
+    {
+        return $this->restful("POST", "/rechargeLog/examine", $body);
+    }
+
+    /**
+     * 充值记录审核导出sql
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeExamineSql($body)
+    {
+        return $this->restful("POST", "/rechargeLog/exportExamine", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/createAction.md
      * @param array $body 入参类型
@@ -492,6 +558,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 销售明细导出
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SaleController/javaExportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function saleJavaExportSql($body)
+    {
+        return $this->restful("POST", "/sale/saleJavaExportSql", $body);
+    }
+
+    /**
      * JAVA调用实发积分
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/sendPointsAction.md
      * @param array $body 入参类型
@@ -500,6 +577,28 @@ class AiPushSdk extends SdkBase
     public function sendPoints($body)
     {
         return $this->restful("POST", "/poolRecords/sendPoints", $body);
+    }
+
+    /**
+     * 新增登录记录
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userLoginCreate($body)
+    {
+        return $this->restful("POST", "/userLogin/create", $body);
+    }
+
+    /**
+     * 获取最近的两次登录
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userLoginListing($body)
+    {
+        return $this->restful("POST", "/userLogin/listing", $body);
     }
 
     /**

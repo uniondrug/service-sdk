@@ -41,6 +41,17 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 冻结/解冻店员
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/destroyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantDestroy($body)
+    {
+        return $this->restful("POST", "/assistant/destroy", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/detailAction.md
      * @param array $body 入参类型
@@ -49,6 +60,50 @@ class ClerkSdk extends SdkBase
     public function assistantDetail($body)
     {
         return $this->restful("POST", "/assistant/detail", $body);
+    }
+
+    /**
+     * 冻结/解冻店员
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/freezeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantFreeze($body)
+    {
+        return $this->restful("POST", "/assistant/freeze", $body);
+    }
+
+    /**
+     * 获取门店店员列表（分页）
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/informationPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantInformationPaging($body)
+    {
+        return $this->restful("POST", "/assistant/information/paging", $body);
+    }
+
+    /**
+     * 获取门店店员列表（分页）
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantPaging($body)
+    {
+        return $this->restful("POST", "/assistant/paging", $body);
+    }
+
+    /**
+     * 获取门店店员数量
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantStoreCount($body)
+    {
+        return $this->restful("POST", "/assistant/store/count", $body);
     }
 
     /**
@@ -93,6 +148,28 @@ class ClerkSdk extends SdkBase
     public function assistantUpdate($body)
     {
         return $this->restful("POST", "/assistant/update", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PayAccountController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function payAccountDetail($body)
+    {
+        return $this->restful("POST", "/pay/account/detail", $body);
+    }
+
+    /**
+     * 修改数据
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PayAccountController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function payAccountUpdate($body)
+    {
+        return $this->restful("POST", "/pay/account/update", $body);
     }
 
     /**
