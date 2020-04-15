@@ -122,6 +122,16 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
+     * 抵扣券抵扣
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function couponTrial($body)
+    {
+        return $this->restful(static::METHOD_POST, '/deductCoupon/couponTrial', $body);
+    }
+
+    /**
      * 查询卡列表接口--微信
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/卡券接口文档.md
      * @param array $body 入参类型
