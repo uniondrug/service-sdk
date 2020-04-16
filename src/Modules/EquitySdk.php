@@ -706,4 +706,15 @@ class EquitySdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/precheckBatch/unlock", $body);
     }
+
+    /**
+     * 根据权益id查询对应数据
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/EquitySerialController/getInfoByEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serialGetByEquityId($body)
+    {
+        return $this->restful("POST", "/equity/serial/getInfoByEquityId", $body);
+    }
 }
