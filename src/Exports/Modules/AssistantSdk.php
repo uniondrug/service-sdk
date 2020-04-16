@@ -1470,4 +1470,26 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/apply/add/draft", $body);
     }
+
+    /**
+     * 绑定
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/bindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerBind($body)
+    {
+        return $this->restful("POST", "/userPartners/bind", $body);
+    }
+
+    /**
+     * 不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/userPartnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerList($body)
+    {
+        return $this->restful("POST", "/userPartners/list", $body);
+    }
 }
