@@ -1504,4 +1504,16 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userPartners/paging", $body);
     }
 
+
+    /**
+     * 商户标签分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/MerchantTagController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchantTagPaging($body)
+    {
+        return $this->restful("POST", "/merchant/tag/paging", $body);
+    }
+
 }
