@@ -41,6 +41,18 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 门店维度脚本
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/JobStatisticsDealStoreController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dealStoreJob($body)
+    {
+        return $this->restful("POST", "/dealStoreStatistic/jobStart", $body);
+    }
+
+
+    /**
      * 校验
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/checkAction.md
      * @param array $body 入参类型

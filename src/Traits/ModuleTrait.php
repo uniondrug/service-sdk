@@ -93,6 +93,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk           $exchange
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk           $dingtalk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk         $zhongSheng
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk $drugstoreStatistic
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
