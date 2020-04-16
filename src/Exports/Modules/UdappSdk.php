@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-09
- * @time   Thu, 09 Apr 2020 11:57:12 +0800
+ * @date   2020-04-16
+ * @time   Thu, 16 Apr 2020 13:58:41 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * UdappSdk
@@ -82,6 +82,17 @@ class UdappSdk extends SdkBase
     public function advertisementUpdate($body)
     {
         return $this->restful("POST", "/advertisement/update", $body);
+    }
+
+    /**
+     * 批量销毁
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/batchDestroyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantBatchDestroy($body)
+    {
+        return $this->restful("POST", "/assistant/batchDestroy", $body);
     }
 
     /**
@@ -247,6 +258,17 @@ class UdappSdk extends SdkBase
     public function configEdit($body)
     {
         return $this->restful("POST", "/config/edit", $body);
+    }
+
+    /**
+     * exportAction()
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configExport($body)
+    {
+        return $this->restful("POST", "/config/export", $body);
     }
 
     /**
@@ -467,16 +489,5 @@ class UdappSdk extends SdkBase
     public function tokenExpire($body)
     {
         return $this->restful("POST", "/token/expire", $body);
-    }
-
-    /**
-     * 导出sql
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/expireAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function configExport($body)
-    {
-        return $this->restful("POST", "/config/export", $body);
     }
 }
