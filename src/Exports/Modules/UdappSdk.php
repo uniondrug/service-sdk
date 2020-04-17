@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-16
- * @time   Thu, 16 Apr 2020 13:58:41 +0800
+ * @date   2020-04-17
+ * @time   Fri, 17 Apr 2020 15:53:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -148,6 +148,17 @@ class UdappSdk extends SdkBase
     public function assistantList($body)
     {
         return $this->restful("POST", "/assistant/list", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantOpenController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantOpenDetail($body)
+    {
+        return $this->restful("POST", "/assistantOpen/detail", $body);
     }
 
     /**
