@@ -51,7 +51,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/dealStoreStatistic/jobStart", $body);
     }
 
-
     /**
      * 校验
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/checkAction.md
@@ -1504,7 +1503,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/userPartners/paging", $body);
     }
 
-
     /**
      * 商户标签分页列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/MerchantTagController/pagingAction.md
@@ -1516,4 +1514,47 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/merchant/tag/paging", $body);
     }
 
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveCreate($body)
+    {
+        return $this->restful("POST", "/approve/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveDetail($body)
+    {
+        return $this->restful("POST", "/approve/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvePaging($body)
+    {
+        return $this->restful("POST", "/approve/paging", $body);
+    }
+
+    /**
+     * 状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveStatus($body)
+    {
+        return $this->restful("POST", "/approve/status", $body);
+    }
 }
