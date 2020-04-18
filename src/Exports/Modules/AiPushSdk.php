@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-14
- * @time   Tue, 14 Apr 2020 18:14:52 +0800
+ * @date   2020-04-17
+ * @time   Fri, 17 Apr 2020 16:10:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,17 @@ class AiPushSdk extends SdkBase
     public function dayList($body)
     {
         return $this->restful("POST", "/poolRecords/dayList", $body);
+    }
+
+    /**
+     * 从资金池里面扣除优惠券
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/decCouponsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function decCoupons($body)
+    {
+        return $this->restful("POST", "/poolRecords/decCoupons", $body);
     }
 
     /**
@@ -236,6 +247,17 @@ class AiPushSdk extends SdkBase
     public function industryCashPoolingRecharge($body)
     {
         return $this->restful("POST", "/industryCashPooling/recharge", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/OrderLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderLogCreate($body)
+    {
+        return $this->restful("POST", "/orderLog/create", $body);
     }
 
     /**
@@ -555,6 +577,50 @@ class AiPushSdk extends SdkBase
     public function redUsedData($body)
     {
         return $this->restful("POST", "/weiXin/data/redUsed", $body);
+    }
+
+    /**
+     * 退单的逻辑处理
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RefundLogController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refundLogCancel($body)
+    {
+        return $this->restful("POST", "/refundLog/cancel", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RefundLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refundLogCreate($body)
+    {
+        return $this->restful("POST", "/refundLog/create", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RelateLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function relateLogCreate($body)
+    {
+        return $this->restful("POST", "/relateLog/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RelateLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function relateLogPaging($body)
+    {
+        return $this->restful("POST", "/relateLog/paging", $body);
     }
 
     /**
