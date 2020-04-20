@@ -77,6 +77,17 @@ class JavaOrderQuerySdk extends SdkBase
     }
 
     /**
+     * 商品维度的订单列表检索
+     * @link
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function orderItemQuery($body)
+    {
+        return $this->restful("POST", "/order/item/query", $body);
+    }
+
+    /**
      * 订单查询
      * @param $body
      * @return ResponseInterface
@@ -85,5 +96,4 @@ class JavaOrderQuerySdk extends SdkBase
     {
         return $this->restful("POST", "/order/v2/sub/query", $body);
     }
-
 }
