@@ -347,4 +347,15 @@ class ClaimSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/policy/no", $body);
     }
+
+    /**
+     * 撤销TPA权益（内部使用）
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/RevocationEquityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function revocationEquity($body)
+    {
+        return $this->restful("POST", "/claim/revocation/equity", $body);
+    }
 }
