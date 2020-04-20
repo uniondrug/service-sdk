@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-17
- * @time   Fri, 17 Apr 2020 16:10:05 +0800
+ * @date   2020-04-18
+ * @time   Sat, 18 Apr 2020 17:34:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -104,6 +104,17 @@ class AiPushSdk extends SdkBase
     public function exportPoolRecord($body)
     {
         return $this->restful("POST", "/poolRecords/exportRecord", $body);
+    }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportSubOrder($body)
+    {
+        return $this->restful("POST", "/subOrderLog/exportSubOrder", $body);
     }
 
     /**
@@ -643,6 +654,28 @@ class AiPushSdk extends SdkBase
     public function sendPoints($body)
     {
         return $this->restful("POST", "/poolRecords/sendPoints", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrderLogCreate($body)
+    {
+        return $this->restful("POST", "/subOrderLog/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrderLogPaging($body)
+    {
+        return $this->restful("POST", "/subOrderLog/paging", $body);
     }
 
     /**
