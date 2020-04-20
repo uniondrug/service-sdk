@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-17
- * @time   Fri, 17 Apr 2020 15:53:30 +0800
+ * @date   2020-04-20
+ * @time   Mon, 20 Apr 2020 16:22:57 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -324,6 +324,39 @@ class UdappSdk extends SdkBase
     public function messageCreate($body)
     {
         return $this->restful("POST", "/message/create", $body);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pollCreate($body)
+    {
+        return $this->restful("POST", "/poll/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pollDetail($body)
+    {
+        return $this->restful("POST", "/poll/detail", $body);
+    }
+
+    /**
+     * 修改状态
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pollUpdate($body)
+    {
+        return $this->restful("POST", "/poll/update", $body);
     }
 
     /**
