@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-03
- * @time   Fri, 03 Apr 2020 15:12:13 +0800
+ * @date   2020-04-17
+ * @time   Fri, 17 Apr 2020 15:00:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -258,6 +258,17 @@ class DistsellSdk extends SdkBase
     public function productMerchantEdit($body)
     {
         return $this->restful("POST", "/product/merchantEdit", $body);
+    }
+
+    /**
+     * 连锁某种商品是否存在
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantProductExistAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productMerchantProductExist($body)
+    {
+        return $this->restful("POST", "/product/merchantProductExist", $body);
     }
 
     /**

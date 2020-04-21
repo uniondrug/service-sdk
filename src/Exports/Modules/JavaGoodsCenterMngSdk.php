@@ -32,5 +32,14 @@ class JavaGoodsCenterMngSdk extends SdkBase
         return $this->restful("POST", "/goods/query", $body);
     }
 
+    /**
+     * 新-子商品查询（SKU）
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function searchGoodsSku($body)
+    {
+        return $this->restful("POST", "/goods/querySku", $body);
+    }
 
 }

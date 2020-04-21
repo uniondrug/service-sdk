@@ -83,6 +83,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\UserSdk               $user
  * @property \Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk             $weixin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DistsellSdk           $distsell
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ClerkSdk              $clerk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\WxSdk                 $wx
  * @property \Uniondrug\ServiceSdk\Exports\Modules\CompanySdk            $company
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaInvoiceSdk        $javaInvoice
@@ -91,6 +92,9 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk     $guaranteeclaimSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk           $exchange
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk           $dingtalk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk         $zhongSheng
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk $drugstoreStatistic
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthSdk               $auth
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

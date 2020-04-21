@@ -41,6 +41,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 门店维度脚本
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/JobStatisticsDealStoreController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dealStoreJob($body)
+    {
+        return $this->restful("POST", "/dealStoreStatistic/jobStart", $body);
+    }
+
+    /**
      * 校验
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/checkAction.md
      * @param array $body 入参类型
@@ -1435,5 +1446,181 @@ class AssistantSdk extends SdkBase
     public function userList($body)
     {
         return $this->restful("POST", "/storeQrcode/userList", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyDelete($body)
+    {
+        return $this->restful("POST", "/apply/delete", $body);
+    }
+
+    /**
+     * 添加草稿
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addDraftAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyAddDraft($body)
+    {
+        return $this->restful("POST", "/apply/add/draft", $body);
+    }
+
+    /**
+     * 绑定
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/bindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerBind($body)
+    {
+        return $this->restful("POST", "/userPartners/bind", $body);
+    }
+
+    /**
+     * 不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/userPartnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerList($body)
+    {
+        return $this->restful("POST", "/userPartners/list", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerPaging($body)
+    {
+        return $this->restful("POST", "/userPartners/paging", $body);
+    }
+
+    /**
+     * 商户标签分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/MerchantTagController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchantTagPaging($body)
+    {
+        return $this->restful("POST", "/merchant/tag/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveCreate($body)
+    {
+        return $this->restful("POST", "/approve/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveDetail($body)
+    {
+        return $this->restful("POST", "/approve/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvePaging($body)
+    {
+        return $this->restful("POST", "/approve/paging", $body);
+    }
+
+    /**
+     * 状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveStatus($body)
+    {
+        return $this->restful("POST", "/approve/status", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeCreate($body)
+    {
+        return $this->restful("POST", "/notice/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeDetail($body)
+    {
+        return $this->restful("POST", "/notice/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogPaging($body)
+    {
+        return $this->restful("POST", "/noticeLog/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogUpdate($body)
+    {
+        return $this->restful("POST", "/noticeLog/update", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticePaging($body)
+    {
+        return $this->restful("POST", "/notice/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeUpdate($body)
+    {
+        return $this->restful("POST", "/notice/update", $body);
     }
 }

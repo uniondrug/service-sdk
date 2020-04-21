@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-07
- * @time   Tue, 07 Apr 2020 10:13:45 +0800
+ * @date   2020-04-18
+ * @time   Sat, 18 Apr 2020 17:34:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -85,6 +85,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 从资金池里面扣除优惠券
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/decCouponsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function decCoupons($body)
+    {
+        return $this->restful("POST", "/poolRecords/decCoupons", $body);
+    }
+
+    /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/exportAction.md
      * @param array $body 入参类型
@@ -96,6 +107,28 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportSubOrder($body)
+    {
+        return $this->restful("POST", "/subOrderLog/exportSubOrder", $body);
+    }
+
+    /**
+     * 根据方案ID和关联状态获取列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/getListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getListByPlanId($body)
+    {
+        return $this->restful("POST", "/planPartners/getListByPlanId", $body);
+    }
+
+    /**
      * 药店宝查看商品给店员发放积分数
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/getPointAction.md
      * @param array $body 入参类型
@@ -104,6 +137,17 @@ class AiPushSdk extends SdkBase
     public function getPoint($body)
     {
         return $this->restful("POST", "/plan/getPoint", $body);
+    }
+
+    /**
+     * 根据工业ID获取资金池信息
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/getPoolByOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPoolByOrganizationId($body)
+    {
+        return $this->restful("POST", "/rechargeLog/getPoolByOrganizationId", $body);
     }
 
     /**
@@ -217,6 +261,17 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/OrderLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderLogCreate($body)
+    {
+        return $this->restful("POST", "/orderLog/create", $body);
+    }
+
+    /**
      * 订单列表数据
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/orderPagingAction.md
      * @param array $body 入参类型
@@ -316,6 +371,28 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 销售明细分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SaleController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodSalePaging($body)
+    {
+        return $this->restful("POST", "/sale/paging", $body);
+    }
+
+    /**
+     * 商品销售折线图和店员积分柱形图
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsChartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsChart($body)
+    {
+        return $this->restful("POST", "/planGoods/goodsChart", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/createAction.md
      * @param array $body 入参类型
@@ -324,6 +401,39 @@ class AiPushSdk extends SdkBase
     public function planGoodsCreate($body)
     {
         return $this->restful("POST", "/planGoods/create", $body);
+    }
+
+    /**
+     * 方案移除商品
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/deleteGoodsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsDeleteOne($body)
+    {
+        return $this->restful("POST", "/planGoods/deleteOne", $body);
+    }
+
+    /**
+     * 方案关联商品列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsList($body)
+    {
+        return $this->restful("POST", "/planGoods/list", $body);
+    }
+
+    /**
+     * 商品销量占比
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsPercentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planGoodsPercent($body)
+    {
+        return $this->restful("POST", "/planGoods/goodsPercent", $body);
     }
 
     /**
@@ -338,7 +448,7 @@ class AiPushSdk extends SdkBase
     }
 
     /**
-     * 新增
+     * 添加方案关联连锁或者方案取消关联连锁
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -346,6 +456,17 @@ class AiPushSdk extends SdkBase
     public function planPartnerCreate($body)
     {
         return $this->restful("POST", "/planPartners/create", $body);
+    }
+
+    /**
+     * 智推方案关联的连锁列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/planPartnersPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function planPartnerPaging($body)
+    {
+        return $this->restful("POST", "/planPartners/planPartnerPaging", $body);
     }
 
     /**
@@ -393,6 +514,61 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 充值撤销
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeCancel($body)
+    {
+        return $this->restful("POST", "/rechargeLog/cancel", $body);
+    }
+
+    /**
+     * 充值记录审核
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeExamine($body)
+    {
+        return $this->restful("POST", "/rechargeLog/examine", $body);
+    }
+
+    /**
+     * 充值记录审核导出sql
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeExamineSql($body)
+    {
+        return $this->restful("POST", "/rechargeLog/exportExamine", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeLogCreate($body)
+    {
+        return $this->restful("POST", "/rechargeLog/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rechargeLogPaging($body)
+    {
+        return $this->restful("POST", "/rechargeLog/paging", $body);
+    }
+
+    /**
      * 红包数据分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/getRedDataPagingAction.md
      * @param array $body 入参类型
@@ -415,6 +591,61 @@ class AiPushSdk extends SdkBase
     }
 
     /**
+     * 退单的逻辑处理
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RefundLogController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refundLogCancel($body)
+    {
+        return $this->restful("POST", "/refundLog/cancel", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RefundLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refundLogCreate($body)
+    {
+        return $this->restful("POST", "/refundLog/create", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RelateLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function relateLogCreate($body)
+    {
+        return $this->restful("POST", "/relateLog/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RelateLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function relateLogPaging($body)
+    {
+        return $this->restful("POST", "/relateLog/paging", $body);
+    }
+
+    /**
+     * 销售明细导出
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SaleController/javaExportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function saleJavaExportSql($body)
+    {
+        return $this->restful("POST", "/sale/saleJavaExportSql", $body);
+    }
+
+    /**
      * JAVA调用实发积分
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/sendPointsAction.md
      * @param array $body 入参类型
@@ -423,6 +654,50 @@ class AiPushSdk extends SdkBase
     public function sendPoints($body)
     {
         return $this->restful("POST", "/poolRecords/sendPoints", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrderLogCreate($body)
+    {
+        return $this->restful("POST", "/subOrderLog/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function subOrderLogPaging($body)
+    {
+        return $this->restful("POST", "/subOrderLog/paging", $body);
+    }
+
+    /**
+     * 新增登录记录
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userLoginCreate($body)
+    {
+        return $this->restful("POST", "/userLogin/create", $body);
+    }
+
+    /**
+     * 获取最近的两次登录
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userLoginListing($body)
+    {
+        return $this->restful("POST", "/userLogin/listing", $body);
     }
 
     /**
@@ -489,6 +764,17 @@ class AiPushSdk extends SdkBase
     public function usersUpdateStatus($body)
     {
         return $this->restful("POST", "/users/updateStatus", $body);
+    }
+
+    /**
+     * 按照日期时间段展示抵扣券领取和使用情况（折线图和柱形图）
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/chartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function voucherChart($body)
+    {
+        return $this->restful("POST", "/weiXin/voucher/voucherChart", $body);
     }
 
     /**
