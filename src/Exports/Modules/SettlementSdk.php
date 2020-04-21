@@ -2910,4 +2910,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/drugClearPartners/update", $body);
     }
+
+    /**
+     * 节假日列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/HolidayController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function holidayListing($body)
+    {
+        return $this->restful("POST", "/holiday/listing", $body);
+    }
 }
