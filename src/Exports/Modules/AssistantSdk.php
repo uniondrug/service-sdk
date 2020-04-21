@@ -1623,4 +1623,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/notice/update", $body);
     }
+
+    /**
+     * 获取可查看公告的详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/getShowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeGetShow($body)
+    {
+        return $this->restful("POST", "/notice/getShow", $body);
+    }
 }
