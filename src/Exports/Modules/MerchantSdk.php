@@ -723,17 +723,6 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 处理rootId修改
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/drugstoreListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugstoreList($body)
-    {
-        return $this->restful("POST", "/organizebase/drugstoreList", $body);
-    }
-
-    /**
      * 开启商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editStatusStartAction.md
      * @param array $body 入参类型
