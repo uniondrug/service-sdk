@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-18
- * @time   Sat, 18 Apr 2020 17:47:39 +0800
+ * @date   2020-04-21
+ * @time   Tue, 21 Apr 2020 16:03:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AuthSdk extends SdkBase
     public function blacklist($body)
     {
         return $this->restful("POST", "/auth/blacklist", $body);
+    }
+
+    /**
+     * 登录
+     * @link https://uniondrug.coding.net/p/module.auth/git/blob/development/docs/api/AuthController/loginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function login($body)
+    {
+        return $this->restful("POST", "/auth/login", $body);
     }
 
     /**
