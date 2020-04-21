@@ -1557,4 +1557,70 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/approve/status", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeCreate($body)
+    {
+        return $this->restful("POST", "/notice/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeDetail($body)
+    {
+        return $this->restful("POST", "/notice/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogPaging($body)
+    {
+        return $this->restful("POST", "/noticeLog/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogUpdate($body)
+    {
+        return $this->restful("POST", "/noticeLog/update", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticePaging($body)
+    {
+        return $this->restful("POST", "/notice/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeUpdate($body)
+    {
+        return $this->restful("POST", "/notice/update", $body);
+    }
 }
