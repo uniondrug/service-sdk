@@ -397,8 +397,8 @@ class InvoiceSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function invoiceExpressBillPaging($body)
+    public function invoiceExpressBillListing($body)
     {
-        return $this->restful("POST", "/invoiceExpress/billPaging", $body);
+        return $this->restful("POST", "/invoiceExpress/billListing", $body);
     }
 }
