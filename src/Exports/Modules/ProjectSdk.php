@@ -1322,4 +1322,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
     }
+
+    /**
+     * 通过cdKey获取兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getDataByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemGetByCdKey($body)
+    {
+        return $this->restful("POST", "/redeem/cdKey", $body);
+    }
 }
