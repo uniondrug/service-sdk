@@ -1634,4 +1634,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/notice/getShow", $body);
     }
+
+    /**
+     * 导出门店
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveStoreExport($body)
+    {
+        return $this->restful("POST", "/approve/store/export", $body);
+    }
 }
