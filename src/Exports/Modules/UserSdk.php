@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-21
- * @time   Tue, 21 Apr 2020 11:10:30 +0800
+ * @date   2020-04-22
+ * @time   Wed, 22 Apr 2020 15:58:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -504,12 +504,23 @@ class UserSdk extends SdkBase
     }
 
     /**
+     * 清空用户openid 和 unionId
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/uniteOpenidAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function uniteOpenid($body)
+    {
+        return $this->restful("POST", "/wxmember/edituniteopenid", $body);
+    }
+
+    /**
      * 黑名单清空用户openid 和 unionId
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/uniteOpenidBlackAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function uniteOpenid($body)
+    public function uniteOpenidBlack($body)
     {
         return $this->restful("POST", "/wxmember/edituniteopenidblack", $body);
     }
