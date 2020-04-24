@@ -29,11 +29,52 @@ class JavaDownloadSdk extends SdkBase
     protected $serviceName = 'java.download';
 
     /**
+     * bill批量导出
      * @param $body
      * @return ResponseInterface
      */
-    public function exportModelOne($body)
+    public function billExportBatch($body)
     {
         return $this->restful("POST", "/excel/model/one", $body);
+    }
+
+    /**
+     * 结算单PDF
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function statementsPDF($body)
+    {
+        return $this->restful("POST", "/create/custom/pdf", $body);
+    }
+
+    /**
+     * 多sheet导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function exportBatch($body)
+    {
+        return $this->restful("POST", "/export/batch", $body);
+    }
+
+    /**
+     * 单sheet导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function export($body)
+    {
+        return $this->restful("POST", "/export", $body);
+    }
+
+    /**
+     * 订单导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function orderExport($body)
+    {
+        return $this->restful("POST", "/export/api", $body);
     }
 }
