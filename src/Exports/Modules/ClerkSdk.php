@@ -216,7 +216,7 @@ class ClerkSdk extends SdkBase
 
 
     /**
-     * ids
+     * ids(限制100条)
      * @param array $body 入参类型
      * @return ResponseInterface
      */
