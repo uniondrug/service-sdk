@@ -34,6 +34,6 @@ class JavaDownloadSdk extends SdkBase
      */
     public function exportModelOne($body)
     {
-        return $this->restful("POST", "/export/model/one", $body);
+        return $this->restful("POST", "/excel/model/one", $body);
     }
 }
