@@ -213,4 +213,15 @@ class ClerkSdk extends SdkBase
     {
         return $this->restful("POST", "/assistant/batchDestroy", $body);
     }
+
+
+    /**
+     * ids
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantIds($body)
+    {
+        return $this->restful("POST", "/assistant/ids", $body);
+    }
 }
