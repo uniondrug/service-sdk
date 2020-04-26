@@ -2921,4 +2921,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/holiday/listing", $body);
     }
+
+    /**
+     * 检测付款单重复
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/checkRepeatAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalPaymentCheckRepeat($body)
+    {
+        return $this->restful("POST", "/capitalPayment/checkRepeat", $body);
+    }
 }
