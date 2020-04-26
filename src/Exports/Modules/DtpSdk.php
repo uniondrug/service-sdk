@@ -41,6 +41,17 @@ class DtpSdk extends SdkBase
     }
 
     /**
+     * 所有分类
+     * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/ProjectController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectListing($body)
+    {
+        return $this->restful("POST", "/project/list", $body);
+    }
+
+    /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.dtp/git/blob/development/docs/api/CategoryController/deleteAction.md
      * @param array $body 入参类型

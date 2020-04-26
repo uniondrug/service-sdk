@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-03
- * @time   Fri, 03 Apr 2020 17:27:42 +0800
+ * @date   2020-04-21
+ * @time   Tue, 21 Apr 2020 18:46:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -415,6 +415,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 处理rootId修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/drugstoreListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function drugstoreList($body)
+    {
+        return $this->restful("POST", "/organizebase/drugstoreList", $body);
+    }
+
+    /**
      * 修改账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editAction.md
      * @param array $body 入参类型
@@ -646,6 +657,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 批量注销状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusOutAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editStatusOut($body)
+    {
+        return $this->restful("POST", "/organizebase/editstatusout", $body);
+    }
+
+    /**
      * 批量开启状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusStartAction.md
      * @param array $body 入参类型
@@ -698,17 +720,6 @@ class MerchantSdk extends SdkBase
     public function editStatusStartAssistants($body)
     {
         return $this->restful("POST", "/assistants/editstatusstart", $body);
-    }
-
-    /**
-     * 处理rootId修改
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/drugstoreListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function drugstoreList($body)
-    {
-        return $this->restful("POST", "/organizebase/drugstoreList", $body);
     }
 
     /**
@@ -1270,6 +1281,17 @@ class MerchantSdk extends SdkBase
     public function listRootidOrganizeBase($body)
     {
         return $this->restful("POST", "/organizebase/listrootid", $body);
+    }
+
+    /**
+     * 读取带顶级组织名称的商户列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listRootNameAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listRootNameOrgabuzeBase($body)
+    {
+        return $this->restful("POST", "/organizebase/listrootname", $body);
     }
 
     /**

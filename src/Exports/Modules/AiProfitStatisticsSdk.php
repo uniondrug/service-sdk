@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-10
- * @time   Tue, 10 Mar 2020 10:03:47 +0800
+ * @date   2020-04-24
+ * @time   Fri, 24 Apr 2020 15:22:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -258,6 +258,17 @@ class AiProfitStatisticsSdk extends SdkBase
     public function scorePlanUpdate($body)
     {
         return $this->restful("POST", "/scoreplan/update", $body);
+    }
+
+    /**
+     * 更新智盈关联商户中心的唯一标示码
+     * @link https://uniondrug.coding.net/p/module.statistics.aiProfit/git/blob/development/docs/api/ScorePlanController/updateUniqueAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scorePlanUpdateUnique($body)
+    {
+        return $this->restful("POST", "/scoreplan/updateUnique", $body);
     }
 
     /**

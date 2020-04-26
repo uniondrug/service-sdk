@@ -6,6 +6,7 @@
 namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
@@ -1027,6 +1028,17 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     public function editStatusStart($body)
     {
         return $this->restful(static::METHOD_POST, "/organizebase/editstatusstart", $body);
+    }
+
+    /**
+     * 批量注销状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusOutAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editStatusOut($body)
+    {
+        return $this->restful("POST", "/organizebase/editstatusout", $body);
     }
 
     /**

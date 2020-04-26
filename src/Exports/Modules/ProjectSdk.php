@@ -1322,4 +1322,26 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
     }
+
+    /**
+     * 通过cdKey获取兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getDataByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemGetByCdKey($body)
+    {
+        return $this->restful("POST", "/redeem/cdKey", $body);
+    }
+
+    /**
+     * 商家限制无分页列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupOrganizationController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupOrganizationListing($body)
+    {
+        return $this->restful("POST", "/group/organization/listing", $body);
+    }
 }
