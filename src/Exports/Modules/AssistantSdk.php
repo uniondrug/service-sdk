@@ -1645,4 +1645,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/approve/store/export", $body);
     }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogDetail($body)
+    {
+        return $this->restful("POST", "/noticeLog/detail", $body);
+    }
 }
