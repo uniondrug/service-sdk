@@ -1656,4 +1656,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/noticeLog/detail", $body);
     }
+
+    /**
+     * 状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeStatus($body)
+    {
+        return $this->restful("POST", "/notice/status", $body);
+    }
 }
