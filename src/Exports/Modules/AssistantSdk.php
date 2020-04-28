@@ -1667,4 +1667,26 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/notice/status", $body);
     }
+
+    /**
+     * 门店上线
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OnlineStoresController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function onlineStoreCreate($body)
+    {
+        return $this->restful("POST", "/onlineStore/create", $body);
+    }
+
+    /**
+     * 门店上线不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OnlineStoresController/listsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function onlineStoreLists($body)
+    {
+        return $this->restful("POST", "/onlineStore/lists", $body);
+    }
 }
