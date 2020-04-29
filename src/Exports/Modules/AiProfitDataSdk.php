@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-26
- * @time   Sun, 26 Apr 2020 15:51:07 +0800
+ * @date   2020-04-29
+ * @time   Wed, 29 Apr 2020 09:23:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -335,6 +335,28 @@ class AiProfitDataSdk extends SdkBase
     public function enableUser($body)
     {
         return $this->restful("POST", "/user/enable", $body);
+    }
+
+    /**
+     * 新增连锁档位
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/chainCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearChainCreate($body)
+    {
+        return $this->restful("POST", "/gear/chainCreate", $body);
+    }
+
+    /**
+     * 连锁档位详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/chainDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearChainDetail($body)
+    {
+        return $this->restful("POST", "/gear/chainDetail", $body);
     }
 
     /**
