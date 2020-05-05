@@ -1689,4 +1689,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/onlineStore/lists", $body);
     }
+
+    /**
+     * 获取商户列表带负责人或标签筛选
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OrganizeBaseController/getPagingWithUserTagAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPagingWithUserTag($body)
+    {
+        return $this->restful("POST", "/organizebase/getPagingWithUserTag", $body);
+    }
 }
