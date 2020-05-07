@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-10
- * @time   Fri, 10 Apr 2020 10:18:46 +0800
+ * @date   2020-05-07
+ * @time   Thu, 07 May 2020 15:49:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * ProjectSdk
@@ -837,6 +837,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 分组连锁列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupOrganizationController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupOrganizationListing($body)
+    {
+        return $this->restful("POST", "/group/organization/listing", $body);
+    }
+
+    /**
      * 回收分组
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/recycleEquityByGroupAction.md
      * @param array $body 入参类型
@@ -1068,6 +1079,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 通过cdKey获取兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/getDataByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemGetByCdKey($body)
+    {
+        return $this->restful("POST", "/redeem/cdKey", $body);
+    }
+
+    /**
      * 拒绝审批
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/refuseAction.md
      * @param array $body 入参类型
@@ -1120,6 +1142,17 @@ class ProjectSdk extends SdkBase
     public function setScanSingle($body)
     {
         return $this->restful("POST", "/group/access/scan/edit/single", $body);
+    }
+
+    /**
+     * 简单分组连锁限制列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupOrganizationController/simpleListingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function simpleOrganizationListing($body)
+    {
+        return $this->restful("POST", "/group/organization/simple/listing", $body);
     }
 
     /**
@@ -1321,38 +1354,5 @@ class ProjectSdk extends SdkBase
     public function ydbCheckVerify($body)
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
-    }
-
-    /**
-     * 通过cdKey获取兑换码信息
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getDataByCdKeyAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function redeemGetByCdKey($body)
-    {
-        return $this->restful("POST", "/redeem/cdKey", $body);
-    }
-
-    /**
-     * 商家限制无分页列表
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupOrganizationController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function groupOrganizationListing($body)
-    {
-        return $this->restful("POST", "/group/organization/listing", $body);
-    }
-
-    /**
-     * 通过保司Id获取对应项目数量
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/ProjectController/getTypeNumsByInsuranceAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function projectGetNumsByInsurance($body)
-    {
-        return $this->restful("POST", "/project/getNumsByInsurance", $body);
     }
 }
