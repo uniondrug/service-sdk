@@ -117,4 +117,14 @@ class JavaPromotecenterServiceSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/superDay/superConsume", $body);
     }
+
+    /**
+     * 查询卡列表接口--微信
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v4.10_%E9%BB%91%E5%90%8D%E5%8D%95%E6%A0%87%E7%AD%BE%E5%92%8C%E8%90%A5%E9%94%80%E8%B5%84%E6%BA%90%E5%8F%91%E6%94%BE%E8%AE%B0%E5%BD%95/doc/%E8%90%A5%E9%94%80%E6%9C%8D%E5%8A%A1%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83v1.0%E5%8D%A1%E5%88%B8%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3.md
+     * @return ClientResponseInterface
+     */
+    public function queryMyRecord($body)
+    {
+        return $this->restful("POST", "/card/queryMyRecord", $body);
+    }
 }
