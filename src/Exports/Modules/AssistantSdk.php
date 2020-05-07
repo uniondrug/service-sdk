@@ -1700,4 +1700,16 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/organizebase/getPagingWithUserTag", $body);
     }
+
+
+    /**
+     * 根据organizationId获取门店详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeDetailByOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreDetailByOrganizationId($body)
+    {
+        return $this->restful("POST", "/apply/store/detailByOrganizationId", $body);
+    }
 }
