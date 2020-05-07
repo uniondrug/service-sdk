@@ -75,6 +75,39 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
+     * 方案暂停/恢复接口
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pauseResume($body)
+    {
+        return $this->restful("POST", "/promote/scheme/pauseResume", $body);
+    }
+
+    /**
+     * 方案下卡列表分页展示
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pagingCardList($body)
+    {
+        return $this->restful("POST", "/promote/scheme/paging/cardList", $body);
+    }
+
+    /**
+     * 方案下卡列表用户领用统计接口
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function countCardList($body)
+    {
+        return $this->restful("POST", "/promote/scheme/count/cardList", $body);
+    }
+
+    /**
      * 合作渠道修改(活动方案)
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/git/blob/development/doc/促销中心接口文档(方案相关).md
      * @param array $body 入参类型
