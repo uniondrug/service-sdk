@@ -1355,4 +1355,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/verify/ydbCheck", $body);
     }
+
+    /**
+     * 通过保司Id获取对应项目数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/ProjectController/getTypeNumsByInsuranceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectGetNumsByInsurance($body)
+    {
+        return $this->restful("POST", "/project/getNumsByInsurance", $body);
+    }
 }
