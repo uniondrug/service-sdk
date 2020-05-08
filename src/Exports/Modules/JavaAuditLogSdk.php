@@ -28,13 +28,4 @@ class JavaAuditLogSdk extends SdkBase
         return $this->restful("POST", "/auditlog/query/data", $body);
     }
 
-    /**
-     * 内审日志记录创建
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function auditLogSend($body)
-    {
-        return $this->restful("POST", "/log/send", $body);
-    }
 }
