@@ -95,7 +95,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk           $dingtalk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk         $zhongSheng
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk $drugstoreStatistic
- * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk  $drugstoreActivitySdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk  $drugstoreActivity
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthSdk               $auth
  * @package Uniondrug\ServiceSdk\Traits
  */
