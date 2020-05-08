@@ -29,6 +29,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InsureSdk             $insure
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk            $invoice
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCashierSdk        $javaCashier
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAuditLogServiceSdk$javaAuditLogServiceSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommonSdk         $javaCommon
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDownloadSdk       $javaDownload
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaExchangeSdk       $javaExchange
