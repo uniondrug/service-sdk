@@ -37,6 +37,17 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundRecordDetail/list", $body);
     }
+
+    /**
+     * 资金流水变更详情记录导出SQL
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordDetailExportSql($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/exportSql", $body);
+    }
+
     /**
      * 资金池账户
      * @param $body
