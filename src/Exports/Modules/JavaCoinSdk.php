@@ -17,7 +17,7 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * Class JavaCoinServiceSdk
+ * Class JavaCoinSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
 class JavaCoinSdk extends SdkBase
