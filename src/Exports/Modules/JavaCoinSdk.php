@@ -20,13 +20,13 @@ use Uniondrug\ServiceSdk\Bases\ResponseInterface;
  * Class JavaCoinServiceSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class JavaCoinServiceSdk extends SdkBase
+class JavaCoinSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.coin.service';
+    protected $serviceName = 'java.coin';
 
     /**
      * 资金流水变更详情记录分页列表
