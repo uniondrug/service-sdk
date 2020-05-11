@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-24
- * @time   Mon, 24 Feb 2020 12:52:32 +0800
+ * @date   2020-04-29
+ * @time   Wed, 29 Apr 2020 09:23:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -335,6 +335,105 @@ class AiProfitDataSdk extends SdkBase
     public function enableUser($body)
     {
         return $this->restful("POST", "/user/enable", $body);
+    }
+
+    /**
+     * 新增连锁档位
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/chainCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearChainCreate($body)
+    {
+        return $this->restful("POST", "/gear/chainCreate", $body);
+    }
+
+    /**
+     * 连锁档位详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/chainDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearChainDetail($body)
+    {
+        return $this->restful("POST", "/gear/chainDetail", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearCreate($body)
+    {
+        return $this->restful("POST", "/gear/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearDetail($body)
+    {
+        return $this->restful("POST", "/gear/detail", $body);
+    }
+
+    /**
+     * 禁用
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearDisable($body)
+    {
+        return $this->restful("POST", "/gear/disable", $body);
+    }
+
+    /**
+     * 启用
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearEnable($body)
+    {
+        return $this->restful("POST", "/gear/enable", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearPaging($body)
+    {
+        return $this->restful("POST", "/gear/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearUpdate($body)
+    {
+        return $this->restful("POST", "/gear/update", $body);
+    }
+
+    /**
+     * 获取当前启用档位
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/GearController/usedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gearUsed($body)
+    {
+        return $this->restful("POST", "/gear/used", $body);
     }
 
     /**

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-18
- * @time   Sat, 18 Apr 2020 17:47:39 +0800
+ * @date   2020-04-24
+ * @time   Fri, 24 Apr 2020 14:11:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,6 +41,17 @@ class AuthSdk extends SdkBase
     }
 
     /**
+     * 登录
+     * @link https://uniondrug.coding.net/p/module.auth/git/blob/development/docs/api/AuthController/loginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function login($body)
+    {
+        return $this->restful("POST", "/auth/login", $body);
+    }
+
+    /**
      * 登出
      * @link https://uniondrug.coding.net/p/module.auth/git/blob/development/docs/api/AuthController/logoutAction.md
      * @param array $body 入参类型
@@ -49,5 +60,16 @@ class AuthSdk extends SdkBase
     public function logout($body)
     {
         return $this->restful("POST", "/auth/logout", $body);
+    }
+
+    /**
+     * 万达用户信息
+     * @link https://uniondrug.coding.net/p/module.auth/git/blob/development/docs/api/MemberController/wandaAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function wandaMember($body)
+    {
+        return $this->restful("POST", "/member/wanda", $body);
     }
 }

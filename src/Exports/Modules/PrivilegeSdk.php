@@ -252,4 +252,14 @@ class PrivilegeSdk extends SdkBase
     {
         return $this->restful("POST", "/add/package/record/edit", $body);
     }
+
+    /**
+     * 领取的任务详情
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function detailMemberTask($body)
+    {
+        return $this->restful("POST", "/member/task/detail", $body);
+    }
 }

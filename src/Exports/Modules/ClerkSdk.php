@@ -193,4 +193,44 @@ class ClerkSdk extends SdkBase
     {
         return $this->restful("POST", "/pharmacist/detail", $body);
     }
+
+    /**
+     * 批量冻结/解冻店员
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantBatchFreeze($body)
+    {
+        return $this->restful("POST", "/assistant/batch/freeze", $body);
+    }
+
+    /**
+     * 批量注销
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantBatchDestroy($body)
+    {
+        return $this->restful("POST", "/assistant/batchDestroy", $body);
+    }
+
+    /**
+     * ids(限制100条)
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantIds($body)
+    {
+        return $this->restful("POST", "/assistant/ids", $body);
+    }
+
+    /**
+     * memberIds(限制100条)
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantMemberIds($body)
+    {
+        return $this->restful("POST", "/assistant/memberIds", $body);
+    }
 }

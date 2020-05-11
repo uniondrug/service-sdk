@@ -2910,4 +2910,48 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/drugClearPartners/update", $body);
     }
+
+    /**
+     * 节假日列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/HolidayController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function holidayListing($body)
+    {
+        return $this->restful("POST", "/holiday/listing", $body);
+    }
+
+    /**
+     * 检测付款单重复
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/checkRepeatAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalPaymentCheckRepeat($body)
+    {
+        return $this->restful("POST", "/capitalPayment/checkRepeat", $body);
+    }
+
+    /**
+     * 资金付款查询导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/searchExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function capitalPaymentSearchExport($body)
+    {
+        return $this->restful("POST", "/capitalPayment/searchExport", $body);
+    }
+
+    /**
+     * 吐槽
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FeedbackController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function feedbackCreate($body)
+    {
+        return $this->restful("POST", "/feedback/create", $body);
+    }
 }

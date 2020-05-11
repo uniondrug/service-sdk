@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-12
- * @time   Wed, 12 Feb 2020 15:45:59 +0800
+ * @date   2020-04-29
+ * @time   Wed, 29 Apr 2020 16:13:06 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -467,6 +467,17 @@ class ScoreSdk extends SdkBase
     public function scoreTemplateinfoListing($body)
     {
         return $this->restful("POST", "/scoreTemplateinfo/listing", $body);
+    }
+
+    /**
+     * 获取评分分类最大值
+     * @link https://uniondrug.coding.net/p/module.score/git/blob/development/docs/api/ScoreTemplateinfoController/maxScoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function scoreTemplateinfoMaxScore($body)
+    {
+        return $this->restful("POST", "/scoreTemplateinfo/maxscore", $body);
     }
 
     /**
