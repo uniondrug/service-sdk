@@ -127,4 +127,14 @@ class DrugstoreActivitySdk extends SdkBase
     {
         return $this->restful("POST", "/activityGuarantee/update", $body);
     }
+
+    /**
+     * 活动产品详情
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityProductDetail($body)
+    {
+        return $this->restful("POST", "/activityProduct/detail", $body);
+    }
 }
