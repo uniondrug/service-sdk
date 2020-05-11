@@ -39,6 +39,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金流水明细统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordDetailStatistics($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/statistics", $body);
+    }
+
+    /**
      * 资金流水变更详情记录导出SQL
      * @param $body
      * @return ResponseInterface
