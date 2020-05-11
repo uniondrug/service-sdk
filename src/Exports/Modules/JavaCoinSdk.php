@@ -57,4 +57,24 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundAccount/getByHolder", $body);
     }
+
+    /**
+     * 发起汇款
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankTransferCreate($body)
+    {
+        return $this->restful("POST", "/bankTransfer/create", $body);
+    }
+
+    /**
+     * 汇款记录查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankTransferGetBySerialId($body)
+    {
+        return $this->restful("POST", "/bankTransfer/getBySerialId", $body);
+    }
 }
