@@ -79,6 +79,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金池变动流水分页列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordPaging($body)
+    {
+        return $this->restful("POST", "/fundRecord/listByAccountHolder", $body);
+    }
+
+    /**
      * 发起汇款
      * @param $body
      * @return ResponseInterface
