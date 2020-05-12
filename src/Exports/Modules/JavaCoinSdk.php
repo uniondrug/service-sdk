@@ -69,6 +69,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金池充值
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateBalance($body)
+    {
+        return $this->restful("POST", "/fundAccount/updateBalance", $body);
+    }
+
+    /**
      * 发起汇款
      * @param $body
      * @return ResponseInterface
