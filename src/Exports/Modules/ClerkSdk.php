@@ -140,6 +140,17 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 新详情
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantNewDetail($body)
+    {
+        return $this->restful("POST", "/assistant/new/detail", $body);
+    }
+
+    /**
      * 新分页列表
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newPagingAction.md
      * @param array $body 入参类型
