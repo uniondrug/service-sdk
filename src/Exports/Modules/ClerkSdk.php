@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-10
- * @time   Fri, 10 Apr 2020 14:22:38 +0800
+ * @date   2020-05-12
+ * @time   Tue, 12 May 2020 09:36:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,8 +30,30 @@ class ClerkSdk extends SdkBase
     protected $serviceName = 'clerk.module';
 
     /**
-     * 调店
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/createAction.md
+     * 批量销毁
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/batchDestroyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantBatchDestroy($body)
+    {
+        return $this->restful("POST", "/assistant/batchDestroy", $body);
+    }
+
+    /**
+     * 冻结/解冻店员
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/batchFreezeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantBatchFreeze($body)
+    {
+        return $this->restful("POST", "/assistant/batch/freeze", $body);
+    }
+
+    /**
+     * 添加店员
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -41,8 +63,8 @@ class ClerkSdk extends SdkBase
     }
 
     /**
-     * 冻结/解冻店员
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/destroyAction.md
+     * 注销店员
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/destroyAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -53,7 +75,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -64,7 +86,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 冻结/解冻店员
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/freezeAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/freezeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -75,7 +97,18 @@ class ClerkSdk extends SdkBase
 
     /**
      * 获取门店店员列表（分页）
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/informationPagingAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/idsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantIds($body)
+    {
+        return $this->restful("POST", "/assistant/ids", $body);
+    }
+
+    /**
+     * 获取门店店员列表（分页）
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/informationPagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -85,8 +118,41 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 店员的等级变化
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/assistantLevelChangeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantLevelChange($body)
+    {
+        return $this->restful("POST", "/level/assistantLevelChange", $body);
+    }
+
+    /**
+     * memberIds
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/memberIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantMemberIds($body)
+    {
+        return $this->restful("POST", "/assistant/memberIds", $body);
+    }
+
+    /**
+     * 新分页列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantNewPaging($body)
+    {
+        return $this->restful("POST", "/assistant/new/paging", $body);
+    }
+
+    /**
      * 获取门店店员列表（分页）
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/pagingAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -97,7 +163,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 获取门店店员数量
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeCountAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/storeCountAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -108,7 +174,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 获取门店店长数据
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeRoleListAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/storeRoleListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -119,7 +185,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 调店
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/transferAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/transferAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -130,7 +196,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 调店历史
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/transferListAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/transferListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -141,7 +207,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 修改数据
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/updateAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -151,8 +217,107 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 创建行为
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/actionCreateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelActionCreate($body)
+    {
+        return $this->restful("POST", "/level/actionCreate", $body);
+    }
+
+    /**
+     * 编辑行为
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/actionEditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelActionEdit($body)
+    {
+        return $this->restful("POST", "/level/actionEdit", $body);
+    }
+
+    /**
+     * 行为分页列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/actionPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelActionPaging($body)
+    {
+        return $this->restful("POST", "/level/actionPaging", $body);
+    }
+
+    /**
+     * 店员的体系详情
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/appAssistantDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelAppAssistantDetail($body)
+    {
+        return $this->restful("POST", "/level/appAssistantDetail", $body);
+    }
+
+    /**
+     * 店员的成长记录列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/appGrowPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelAppGrowPaging($body)
+    {
+        return $this->restful("POST", "/level/appGrowPaging", $body);
+    }
+
+    /**
+     * 店员详情
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/assistantDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelAssistantDetail($body)
+    {
+        return $this->restful("POST", "/level/assistantDetail", $body);
+    }
+
+    /**
+     * 店员列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/assistantPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelAssistantPaging($body)
+    {
+        return $this->restful("POST", "/level/assistantPaging", $body);
+    }
+
+    /**
+     * 配置数据
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/configAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelConfig($body)
+    {
+        return $this->restful("POST", "/level/config", $body);
+    }
+
+    /**
+     * 配置列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/configPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelConfigPaging($body)
+    {
+        return $this->restful("POST", "/level/configPaging", $body);
+    }
+
+    /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PayAccountController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/PayAccountController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -163,7 +328,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 修改数据
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PayAccountController/updateAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/PayAccountController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -174,7 +339,7 @@ class ClerkSdk extends SdkBase
 
     /**
      * 创建资格
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PharmacistController/createAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/PharmacistController/createAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -185,52 +350,12 @@ class ClerkSdk extends SdkBase
 
     /**
      * 获取资格
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PharmacistController/detailAction.md
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/PharmacistController/detailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function pharmacistDetail($body)
     {
         return $this->restful("POST", "/pharmacist/detail", $body);
-    }
-
-    /**
-     * 批量冻结/解冻店员
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function assistantBatchFreeze($body)
-    {
-        return $this->restful("POST", "/assistant/batch/freeze", $body);
-    }
-
-    /**
-     * 批量注销
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function assistantBatchDestroy($body)
-    {
-        return $this->restful("POST", "/assistant/batchDestroy", $body);
-    }
-
-    /**
-     * ids(限制100条)
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function assistantIds($body)
-    {
-        return $this->restful("POST", "/assistant/ids", $body);
-    }
-
-    /**
-     * memberIds(限制100条)
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function assistantMemberIds($body)
-    {
-        return $this->restful("POST", "/assistant/memberIds", $body);
     }
 }
