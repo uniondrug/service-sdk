@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-05-12
- * @time   Tue, 12 May 2020 09:36:42 +0800
+ * @date   2020-05-13
+ * @time   Wed, 13 May 2020 13:57:15 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -140,6 +140,17 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 新详情
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantNewDetail($body)
+    {
+        return $this->restful("POST", "/assistant/new/detail", $body);
+    }
+
+    /**
      * 新分页列表
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newPagingAction.md
      * @param array $body 入参类型
@@ -148,6 +159,39 @@ class ClerkSdk extends SdkBase
     public function assistantNewPaging($body)
     {
         return $this->restful("POST", "/assistant/new/paging", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantOperateDetail($body)
+    {
+        return $this->restful("POST", "/operate/detail", $body);
+    }
+
+    /**
+     * List列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantOperateList($body)
+    {
+        return $this->restful("POST", "/operate/list", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantOperatePaging($body)
+    {
+        return $this->restful("POST", "/operate/paging", $body);
     }
 
     /**
@@ -313,6 +357,17 @@ class ClerkSdk extends SdkBase
     public function levelConfigPaging($body)
     {
         return $this->restful("POST", "/level/configPaging", $body);
+    }
+
+    /**
+     * 配置列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/levelTitleEditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelTitleEdit($body)
+    {
+        return $this->restful("POST", "/level/levelTitleEdit", $body);
     }
 
     /**
