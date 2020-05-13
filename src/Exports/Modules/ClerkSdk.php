@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-05-13
- * @time   Wed, 13 May 2020 13:57:15 +0800
+ * @time   Wed, 13 May 2020 14:56:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -151,6 +151,17 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 新分页列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantNewPaging($body)
+    {
+        return $this->restful("POST", "/assistant/new/paging", $body);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/detailAction.md
      * @param array $body 入参类型
@@ -181,17 +192,6 @@ class ClerkSdk extends SdkBase
     public function assistantOperatePaging($body)
     {
         return $this->restful("POST", "/operate/paging", $body);
-    }
-
-    /**
-     * 新分页列表
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newPagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function assistantNewPaging($body)
-    {
-        return $this->restful("POST", "/assistant/new/paging", $body);
     }
 
     /**
@@ -357,6 +357,17 @@ class ClerkSdk extends SdkBase
     public function levelConfigPaging($body)
     {
         return $this->restful("POST", "/level/configPaging", $body);
+    }
+
+    /**
+     * 后台图标
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/levelLogoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelLogo($body)
+    {
+        return $this->restful("POST", "/level/levelLogo", $body);
     }
 
     /**
