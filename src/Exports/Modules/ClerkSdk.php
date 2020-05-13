@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-05-13
- * @time   Wed, 13 May 2020 14:56:50 +0800
+ * @time   Wed, 13 May 2020 15:37:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -423,5 +423,16 @@ class ClerkSdk extends SdkBase
     public function pharmacistDetail($body)
     {
         return $this->restful("POST", "/pharmacist/detail", $body);
+    }
+
+    /**
+     * v1Action()
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/IndexController/v1Action.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function v1($body)
+    {
+        return $this->restful("POST", "/index/v1", $body);
     }
 }
