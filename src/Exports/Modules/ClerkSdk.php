@@ -85,6 +85,17 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantExport($body)
+    {
+        return $this->restful("POST", "/assistant/export", $body);
+    }
+
+    /**
      * 冻结/解冻店员
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/freezeAction.md
      * @param array $body 入参类型
