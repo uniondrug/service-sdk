@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-05-13
- * @time   Wed, 13 May 2020 15:37:08 +0800
+ * @time   Wed, 13 May 2020 19:20:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -269,6 +269,17 @@ class ClerkSdk extends SdkBase
     public function levelActionCreate($body)
     {
         return $this->restful("POST", "/level/actionCreate", $body);
+    }
+
+    /**
+     * 行为删除
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/actionDeleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function levelActionDelete($body)
+    {
+        return $this->restful("POST", "/level/actionDelete", $body);
     }
 
     /**
