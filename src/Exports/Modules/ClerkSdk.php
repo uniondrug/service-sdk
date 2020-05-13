@@ -151,17 +151,6 @@ class ClerkSdk extends SdkBase
     }
 
     /**
-     * 新分页列表
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newPagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function assistantNewPaging($body)
-    {
-        return $this->restful("POST", "/assistant/new/paging", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/detailAction.md
      * @param array $body 入参类型
@@ -192,6 +181,17 @@ class ClerkSdk extends SdkBase
     public function assistantOperatePaging($body)
     {
         return $this->restful("POST", "/operate/paging", $body);
+    }
+
+    /**
+     * 新分页列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/newPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantNewPaging($body)
+    {
+        return $this->restful("POST", "/assistant/new/paging", $body);
     }
 
     /**
