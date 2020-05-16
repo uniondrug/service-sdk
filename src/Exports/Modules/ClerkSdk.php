@@ -129,6 +129,17 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * java导出
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/javaExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantJavaExport($body)
+    {
+        return $this->restful("POST", "/assistant/java/export", $body);
+    }
+
+    /**
      * 店员的等级变化
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/assistantLevelChangeAction.md
      * @param array $body 入参类型
