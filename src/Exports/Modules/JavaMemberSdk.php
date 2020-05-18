@@ -46,7 +46,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function infoAccount($body)
     {
-        return $this->restful("POST", "/v2/api/userBasic/", $body);
+        return $this->restful("POST", "/v2/api/userBasic/query", $body);
     }
 
     /**
