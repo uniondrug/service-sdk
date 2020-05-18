@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-05-15
- * @time   Fri, 15 May 2020 17:03:22 +0800
+ * @date   2020-05-18
+ * @time   Mon, 18 May 2020 18:01:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AiProfitDataSdk extends SdkBase
     public function addActivity($body)
     {
         return $this->restful("POST", "/activity/add", $body);
+    }
+
+    /**
+     * 增加某个活动报名数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/addApplyCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addApplyCount($body)
+    {
+        return $this->restful("POST", "/activity/addApplyCount", $body);
     }
 
     /**
@@ -118,6 +129,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 增加某个活动转发次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/addShareCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addShareCount($body)
+    {
+        return $this->restful("POST", "/activity/addShareCount", $body);
+    }
+
+    /**
      * 添加
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
@@ -126,6 +148,17 @@ class AiProfitDataSdk extends SdkBase
     public function addUser($body)
     {
         return $this->restful("POST", "/user/add", $body);
+    }
+
+    /**
+     * 增加某个活动查看数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/addVisitCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addVisitCount($body)
+    {
+        return $this->restful("POST", "/activity/addVisitCount", $body);
     }
 
     /**
