@@ -30,6 +30,39 @@ class AssistantSdk extends SdkBase
     protected $serviceName = 'assistant.module';
 
     /**
+     * 商户开通智赔账号数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/WorkerManController/aiCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function aiCount($body)
+    {
+        return $this->restful("POST", "/worker/aiCount", $body);
+    }
+
+    /**
+     * 商户开通智赔账号列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/WorkerManController/aiUserPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function aiUserPaging($body)
+    {
+        return $this->restful("POST", "/worker/aiUserPaging", $body);
+    }
+
+    /**
+     * 竞标系统通过商户ID获取对应城市经理信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersInfo($body)
+    {
+        return $this->restful("POST", "/users/info", $body);
+    }
+
+    /**
      * 添加
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addAction.md
      * @param array $body 入参类型

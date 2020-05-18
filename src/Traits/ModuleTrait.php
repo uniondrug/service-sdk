@@ -39,6 +39,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk       $javaOrderCode
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk      $javaOrderQuery
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk           $javaOrder
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMemberSdk          $javaMember
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk   $javaPromoteCenter
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPneumaticSdk       $javaPneumatic
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMpacenterSdk       $javaMpacenter

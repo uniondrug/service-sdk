@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-29
- * @time   Wed, 29 Apr 2020 09:23:43 +0800
+ * @date   2020-05-18
+ * @time   Mon, 18 May 2020 18:01:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class AiProfitDataSdk extends SdkBase
     public function addActivity($body)
     {
         return $this->restful("POST", "/activity/add", $body);
+    }
+
+    /**
+     * 增加某个活动报名数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/addApplyCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addApplyCount($body)
+    {
+        return $this->restful("POST", "/activity/addApplyCount", $body);
     }
 
     /**
@@ -118,6 +129,17 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 增加某个活动转发次数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/addShareCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addShareCount($body)
+    {
+        return $this->restful("POST", "/activity/addShareCount", $body);
+    }
+
+    /**
      * 添加
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
@@ -126,6 +148,17 @@ class AiProfitDataSdk extends SdkBase
     public function addUser($body)
     {
         return $this->restful("POST", "/user/add", $body);
+    }
+
+    /**
+     * 增加某个活动查看数
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/addVisitCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addVisitCount($body)
+    {
+        return $this->restful("POST", "/activity/addVisitCount", $body);
     }
 
     /**
@@ -203,6 +236,17 @@ class AiProfitDataSdk extends SdkBase
     public function cancelActivityBanner($body)
     {
         return $this->restful("POST", "/activity/banner/cancel", $body);
+    }
+
+    /**
+     * 导出活动报名记录sql
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/exportSqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function contactExportSql($body)
+    {
+        return $this->restful("POST", "/contact/exportSql", $body);
     }
 
     /**
@@ -459,7 +503,7 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * List列表
+     * 正在生效的活动List列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/listAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -470,7 +514,7 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
-     * 列表
+     * 活动分页列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/pagingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

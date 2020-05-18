@@ -5,10 +5,10 @@
  * Date: 2020-05-11
  * Time: 10:58
  */
-namespace Uniondrug\ServiceSdk\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 class JavaMemberSdk extends SdkBase
 {
@@ -46,7 +46,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function infoAccount($body)
     {
-        return $this->restful("POST", "/v2/api/userBasic/", $body);
+        return $this->restful("POST", "/v2/api/userBasic/query", $body);
     }
 
     /**

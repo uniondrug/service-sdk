@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-31
- * @time   Tue, 31 Mar 2020 12:44:11 +0800
+ * @date   2020-05-14
+ * @time   Thu, 14 May 2020 11:18:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -973,5 +973,16 @@ class CompensateSdk extends SdkBase
     public function unbindInsuranceBind($body)
     {
         return $this->restful("POST", "/insurance/bind/unbind", $body);
+    }
+
+    /**
+     * 通过手机号查看竞标系统账号权限
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/WorkerController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function workerInfo($body)
+    {
+        return $this->restful("POST", "/worker/workerInfo", $body);
     }
 }
