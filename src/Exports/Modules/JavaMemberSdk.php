@@ -110,6 +110,16 @@ class JavaMemberSdk extends SdkBase
     }
 
     /**
+     * 添加用户openId
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bindUserBind($body)
+    {
+        return $this->restful("POST", "/v2/api/userThird/bind", $body);
+    }
+
+    /**
      * 注销openid&unionId
      * @param array $body 入参类型
      * @return ResponseInterface
