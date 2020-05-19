@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-05-19
- * @time   Tue, 19 May 2020 10:42:20 +0800
+ * @time   Tue, 19 May 2020 18:18:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -236,6 +236,28 @@ class AiProfitDataSdk extends SdkBase
     public function cancelActivityBanner($body)
     {
         return $this->restful("POST", "/activity/banner/cancel", $body);
+    }
+
+    /**
+     * 报名记录审批修改状态和原因
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function contactCheck($body)
+    {
+        return $this->restful("POST", "/contact/check", $body);
+    }
+
+    /**
+     * 报名记录详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function contactDetail($body)
+    {
+        return $this->restful("POST", "/contact/detail", $body);
     }
 
     /**
