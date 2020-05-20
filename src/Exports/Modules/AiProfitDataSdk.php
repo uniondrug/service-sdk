@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-05-18
- * @time   Mon, 18 May 2020 18:01:25 +0800
+ * @date   2020-05-19
+ * @time   Tue, 19 May 2020 18:18:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -239,6 +239,28 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 报名记录审批修改状态和原因
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function contactCheck($body)
+    {
+        return $this->restful("POST", "/contact/check", $body);
+    }
+
+    /**
+     * 报名记录详情
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function contactDetail($body)
+    {
+        return $this->restful("POST", "/contact/detail", $body);
+    }
+
+    /**
      * 导出活动报名记录sql
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/exportSqlAction.md
      * @param array $body 入参类型
@@ -379,6 +401,17 @@ class AiProfitDataSdk extends SdkBase
     public function enableUser($body)
     {
         return $this->restful("POST", "/user/enable", $body);
+    }
+
+    /**
+     * 根据手机号码和连锁code获取账户信息
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/gainUserAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function gainUser($body)
+    {
+        return $this->restful("POST", "/user/gainUser", $body);
     }
 
     /**
