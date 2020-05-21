@@ -30,6 +30,28 @@ class CustomerserviceSdk extends SdkBase
     protected $serviceName = 'customerservice.module';
 
     /**
+     * 添加投诉记录列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/ComplainController/complainCreatAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function complainCreat($body)
+    {
+        return $this->restful("POST", "/complain/Creat", $body);
+    }
+
+    /**
+     * 投诉记录列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/ComplainController/complainPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function complainPaging($body)
+    {
+        return $this->restful("POST", "/complain/paging", $body);
+    }
+
+    /**
      * 添加操作日志
      * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/OperateLogController/createAction.md
      * @param array $body 入参类型
