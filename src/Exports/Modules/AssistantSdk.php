@@ -1745,4 +1745,48 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/apply/store/detailByOrganizationId", $body);
     }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalAdd($body)
+    {
+        return $this->restful("POST", "/approval/add", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ApprovalDetail($body)
+    {
+        return $this->restful("POST", "/approval/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalPaging($body)
+    {
+        return $this->restful("POST", "/approval/paging", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalUpdate($body)
+    {
+        return $this->restful("POST", "/approval/update", $body);
+    }
 }
