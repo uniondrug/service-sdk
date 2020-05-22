@@ -11,6 +11,7 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -1758,17 +1759,6 @@ class AssistantSdk extends SdkBase
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function ApprovalDetail($body)
-    {
-        return $this->restful("POST", "/approval/detail", $body);
-    }
-
-    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/pagingAction.md
      * @param array $body 入参类型
@@ -1788,5 +1778,27 @@ class AssistantSdk extends SdkBase
     public function approvalUpdate($body)
     {
         return $this->restful("POST", "/approval/update", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalDetail($body)
+    {
+        return $this->restful("POST", "/approval/detail", $body);
+    }
+
+    /**
+     * 详情 (根据业务ID)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/detailRelationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalRelationDetail($body)
+    {
+        return $this->restful("POST", "/approval/detailByRelationId", $body);
     }
 }
