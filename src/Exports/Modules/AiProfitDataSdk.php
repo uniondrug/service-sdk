@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-05-19
- * @time   Tue, 19 May 2020 18:18:40 +0800
+ * @date   2020-05-25
+ * @time   Mon, 25 May 2020 18:16:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -566,6 +566,17 @@ class AiProfitDataSdk extends SdkBase
     public function getChildrenList($body)
     {
         return $this->restful("POST", "/router/childrenList", $body);
+    }
+
+    /**
+     * 根据连锁code和activityId获取报名记录ID
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/getContactIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getContactId($body)
+    {
+        return $this->restful("POST", "/contact/getContactId", $body);
     }
 
     /**
