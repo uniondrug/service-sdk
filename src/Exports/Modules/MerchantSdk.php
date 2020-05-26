@@ -13,6 +13,7 @@
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
+use Uniondrug\Service\ClientResponseInterface;
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
@@ -459,6 +460,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 批量关闭地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsBlackMapAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editEndIsBlackMap($body)
+    {
+        return $this->restful("POST", "/organization/editendisblackmap", $body);
+    }
+
+    /**
      * 修改财务回推配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/editAction.md
      * @param array $body 入参类型
@@ -577,6 +589,17 @@ class MerchantSdk extends SdkBase
     public function editRootId($body)
     {
         return $this->restful("POST", "/organizebase/editrootid", $body);
+    }
+
+    /**
+     * 批量开启地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsBlackMapAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editStartIsBlackMap($body)
+    {
+        return $this->restful("POST", "/organization/editstartisblackmap", $body);
     }
 
     /**
