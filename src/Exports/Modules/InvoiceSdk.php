@@ -410,6 +410,6 @@ class InvoiceSdk extends SdkBase
      */
     public function invoiceExpressReceiveByClaimNo($body)
     {
-        return $this->restful("POST", "/invoiceExpress/receivedByInsure", $body);
+        return $this->restful("POST", "/invoiceExpress/receiveByInsure", $body);
     }
 }
