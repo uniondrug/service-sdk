@@ -468,4 +468,24 @@ class ClerkSdk extends SdkBase
     {
         return $this->restful("POST", "/index/v1", $body);
     }
+
+    /**
+     * 获取资格分页
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistPaging($body)
+    {
+        return $this->restful("POST", "/pharmacist/paging", $body);
+    }
+
+    /**
+     * 资格编辑
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistEdit($body)
+    {
+        return $this->restful("POST", "/pharmacist/edit", $body);
+    }
 }

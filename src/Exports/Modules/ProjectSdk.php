@@ -1357,7 +1357,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 通过保司Id获取对应项目数量
+     * 通过保司Id获取对应项目类型数量
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/ProjectController/getTypeNumsByInsuranceAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -1365,5 +1365,38 @@ class ProjectSdk extends SdkBase
     public function projectGetNumsByInsurance($body)
     {
         return $this->restful("POST", "/project/getNumsByInsurance", $body);
+    }
+
+    /**
+     * 通过保司Id获取对应项目总数量以及总金额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/ProjectController/getMoneyAndNumsByInsuranceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMoneyAndNumsByInsurance($body)
+    {
+        return $this->restful("POST", "/project/getMoneyAndNumsByInsurance", $body);
+    }
+
+    /**
+     * 根据分组ID姓名身份证去查询已激活的数据(自用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getGroupOtherCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupOtherCode($body)
+    {
+        return $this->restful("POST", "/redeem/getGroupOtherCode", $body);
+    }
+
+    /**
+     * 根据分组ID姓名身份证去查询未激活的数据(自用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getUnactivatedCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUnactivatedCode($body)
+    {
+        return $this->restful("POST", "/redeem/getUnactivatedCode", $body);
     }
 }
