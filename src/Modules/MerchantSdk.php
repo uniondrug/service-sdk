@@ -1292,4 +1292,26 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful("POST", "/organizebase/internalcode", $body);
     }
+
+    /**
+     * 批量关闭地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsMapOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editendismapopen($body)
+    {
+        return $this->restful("POST", "/organization/editendismapopen", $body);
+    }
+
+    /**
+     * 批量开启地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsMapOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editstartismapopen($body)
+    {
+        return $this->restful("POST", "/organization/editstartismapopen", $body);
+    }
 }
