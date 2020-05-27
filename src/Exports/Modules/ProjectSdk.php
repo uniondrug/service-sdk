@@ -1377,4 +1377,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/project/getMoneyAndNumsByInsurance", $body);
     }
+
+    /**
+     * 根据分组ID姓名身份证去查询已激活的数据(自用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getGroupOtherCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupOtherCode($body)
+    {
+        return $this->restful("POST", "/redeem/getGroupOtherCode", $body);
+    }
 }
