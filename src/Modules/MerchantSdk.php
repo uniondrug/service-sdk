@@ -590,7 +590,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 批量开启地图
+     * 批量加入地图黑名单
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsBlackMapAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -601,7 +601,7 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
-     * 批量关闭地图
+     * 批量释放地图黑名单
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsBlackMapAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
