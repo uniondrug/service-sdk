@@ -1801,4 +1801,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/approval/detailByRelationId", $body);
     }
+
+    /**
+     * 重置审批人 (根据业务ID)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/resetApproverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalResetApprover($body)
+    {
+        return $this->restful("POST", "/approval/resetApprover", $body);
+    }
 }
