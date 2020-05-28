@@ -127,4 +127,14 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/bankBalance/listBalance", $body);
     }
+
+    /**
+     * 分页查询银行账户
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankAccountPaging($body)
+    {
+        return $this->restful("POST", "/bankAccount/list", $body);
+    }
 }
