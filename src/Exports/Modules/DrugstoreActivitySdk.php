@@ -195,17 +195,6 @@ class DrugstoreActivitySdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rebateAssistantDelete($body)
-    {
-        return $this->restful("POST", "/rebateAssistant/delete", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantController/detailAction.md
      * @param array $body 入参类型
@@ -214,6 +203,39 @@ class DrugstoreActivitySdk extends SdkBase
     public function rebateAssistantDetail($body)
     {
         return $this->restful("POST", "/rebateAssistant/detail", $body);
+    }
+
+    /**
+     * 关闭
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rebateAssistantDisable($body)
+    {
+        return $this->restful("POST", "/rebateAssistant/disable", $body);
+    }
+
+    /**
+     * 开启
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rebateAssistantEnable($body)
+    {
+        return $this->restful("POST", "/rebateAssistant/enable", $body);
+    }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rebateAssistantExport($body)
+    {
+        return $this->restful("POST", "/rebateAssistant/export", $body);
     }
 
     /**
@@ -236,17 +258,6 @@ class DrugstoreActivitySdk extends SdkBase
     public function rebateAssistantMemberCreate($body)
     {
         return $this->restful("POST", "/rebateAssistantMember/create", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantMemberController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rebateAssistantMemberDelete($body)
-    {
-        return $this->restful("POST", "/rebateAssistantMember/delete", $body);
     }
 
     /**
@@ -283,17 +294,6 @@ class DrugstoreActivitySdk extends SdkBase
     }
 
     /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantMemberController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rebateAssistantMemberUpdate($body)
-    {
-        return $this->restful("POST", "/rebateAssistantMember/update", $body);
-    }
-
-    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantController/pagingAction.md
      * @param array $body 入参类型
@@ -324,17 +324,6 @@ class DrugstoreActivitySdk extends SdkBase
     public function rebateCardCreate($body)
     {
         return $this->restful("POST", "/rebateCard/create", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateCardController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rebateCardDelete($body)
-    {
-        return $this->restful("POST", "/rebateCard/delete", $body);
     }
 
     /**
@@ -393,17 +382,6 @@ class DrugstoreActivitySdk extends SdkBase
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateCodeController/deleteAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rebateCodeDelete($body)
-    {
-        return $this->restful("POST", "/rebateCode/delete", $body);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateCodeController/detailAction.md
      * @param array $body 入参类型
@@ -412,28 +390,6 @@ class DrugstoreActivitySdk extends SdkBase
     public function rebateCodeDetail($body)
     {
         return $this->restful("POST", "/rebateCode/detail", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateCodeController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rebateCodeListing($body)
-    {
-        return $this->restful("POST", "/rebateCode/listing", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateCodeController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function rebateCodePaging($body)
-    {
-        return $this->restful("POST", "/rebateCode/paging", $body);
     }
 
     /**
