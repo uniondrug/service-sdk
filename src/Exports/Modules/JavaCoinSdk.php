@@ -115,7 +115,7 @@ class JavaCoinSdk extends SdkBase
      */
     public function bankAccountTransactionHistoryPaging($body)
     {
-        return $this->restful("POST", "/bankAccount/listHistoryBalance", $body);
+        return $this->restful("POST", "/bankRecord/list", $body);
     }
 
     /**
@@ -125,6 +125,6 @@ class JavaCoinSdk extends SdkBase
      */
     public function bankAccountBalancePaging($body)
     {
-        return $this->restful("POST", "/bankAccount/listBalance", $body);
+        return $this->restful("POST", "/bankBalance/listBalance", $body);
     }
 }
