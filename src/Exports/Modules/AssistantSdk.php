@@ -1801,4 +1801,59 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/approval/detailByRelationId", $body);
     }
+
+    /**
+     * 重置审批人 (根据业务ID)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/resetApproverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalResetApprover($body)
+    {
+        return $this->restful("POST", "/approval/resetApprover", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyAdd($body)
+    {
+        return $this->restful("POST", "/insuranceApply/add", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyDetail($body)
+    {
+        return $this->restful("POST", "/insuranceApply/detail", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyEdit($body)
+    {
+        return $this->restful("POST", "/insuranceApply/edit", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyPaging($body)
+    {
+        return $this->restful("POST", "/insuranceApply/paging", $body);
+    }
 }

@@ -107,4 +107,34 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/bankTransfer/getBySerialId", $body);
     }
+
+    /**
+     * 分页查询银行交易流水
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankAccountTransactionHistoryPaging($body)
+    {
+        return $this->restful("POST", "/bankRecord/list", $body);
+    }
+
+    /**
+     * 分页查询指定银行账户的余额记录
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankAccountBalancePaging($body)
+    {
+        return $this->restful("POST", "/bankBalance/listBalance", $body);
+    }
+
+    /**
+     * 分页查询银行账户
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankAccountPaging($body)
+    {
+        return $this->restful("POST", "/bankAccount/list", $body);
+    }
 }
