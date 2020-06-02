@@ -86,7 +86,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function editUserPassword($body)
     {
-        return $this->restful("POST", "/v2/api/resetCredentials", $body);
+        return $this->restful("POST", "/v2/api/user/resetCredentials", $body);
     }
 
     /**
