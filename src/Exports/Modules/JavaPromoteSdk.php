@@ -681,7 +681,7 @@ class JavaPromoteSdk extends SdkBase
         return $this->restful("POST", "/promote/scheme/project/edit", $body);
     }
     /**
-     * 项目方案列表
+     * 项目方案关联
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
      * @param array $body
      * @return ResponseInterface
@@ -692,7 +692,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 项目方案停用
+     * 项目方案取关
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
      * @param array $body
      * @return ResponseInterface
@@ -703,7 +703,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 项目方案编辑
+     * 项目方案列表
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
      * @param array $body
      * @return ResponseInterface
