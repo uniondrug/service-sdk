@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-01
- * @time   Mon, 01 Jun 2020 14:00:37 +0800
+ * @date   2020-06-02
+ * @time   Tue, 02 Jun 2020 13:56:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -811,7 +811,7 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 无分页列表
+     * 根据条件筛选无分页列表
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/listingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -830,6 +830,17 @@ class CompensateSdk extends SdkBase
     public function paymentPaging($body)
     {
         return $this->restful("POST", "/payment/paging", $body);
+    }
+
+    /**
+     * 导出sql
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/sqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentSql($body)
+    {
+        return $this->restful("POST", "/payment/sql", $body);
     }
 
     /**
