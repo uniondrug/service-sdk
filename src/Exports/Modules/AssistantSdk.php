@@ -1856,4 +1856,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/insuranceApply/paging", $body);
     }
+
+    /**
+     * 状态编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/statusEditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyStatusEdit($body)
+    {
+        return $this->restful("POST", "/insuranceApply/statusEdit", $body);
+    }
 }
