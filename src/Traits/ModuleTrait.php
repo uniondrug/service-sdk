@@ -24,6 +24,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\CustomerserviceSdk     $customerservice
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DataSdk                $data
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk             $deliver
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\NotifySdk              $notify
  * @property \Uniondrug\ServiceSdk\Exports\Modules\EquitySdk              $equity
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InsureRankSdk          $insureRank
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InsureSdk              $insure
