@@ -56,7 +56,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function login($body)
     {
-        return $this->restful("POST", "/v2/api/login/", $body);
+        return $this->restful("POST", "/v2/api/user/login/", $body);
     }
 
     /**
