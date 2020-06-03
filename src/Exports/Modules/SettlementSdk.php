@@ -2954,4 +2954,37 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/feedback/create", $body);
     }
+
+    /**
+     * 超期理赔分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/overdueClaimsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimOverdueClaims($body)
+    {
+        return $this->restful("POST", "/claim/overdueClaims", $body);
+    }
+
+    /**
+     * 超期理赔统计信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/overdueClaimsStatisticsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimOverdueClaimsStatistics($body)
+    {
+        return $this->restful("POST", "/claim/overdueClaimsStatistics", $body);
+    }
+
+    /**
+     * 公函数据接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/officialLetterAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimOfficialLetter($body)
+    {
+        return $this->restful("POST", "/claim/officialLetter", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-21
- * @time   Tue, 21 Apr 2020 18:46:02 +0800
+ * @date   2020-05-26
+ * @time   Tue, 26 May 2020 16:02:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -459,6 +459,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 批量关闭地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsMapOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editEndIsBlackMap($body)
+    {
+        return $this->restful("POST", "/organization/editendismapopen", $body);
+    }
+
+    /**
      * 修改财务回推配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/editAction.md
      * @param array $body 入参类型
@@ -577,6 +588,17 @@ class MerchantSdk extends SdkBase
     public function editRootId($body)
     {
         return $this->restful("POST", "/organizebase/editrootid", $body);
+    }
+
+    /**
+     * 批量开启地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsMapOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editStartIsBlackMap($body)
+    {
+        return $this->restful("POST", "/organization/editstartismapopen", $body);
     }
 
     /**

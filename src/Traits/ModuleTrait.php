@@ -101,6 +101,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk  $drugstoreStatistic
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk   $drugstoreActivity
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthSdk                $auth
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPmcCashierSdk      $javaPmcCashier
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

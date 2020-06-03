@@ -30,6 +30,17 @@ class ClerkSdk extends SdkBase
     protected $serviceName = 'clerk.module';
 
     /**
+     * 活动统计
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/activityStatisticAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantActivityStatistic($body)
+    {
+        return $this->restful("POST", "/assistant/activity/statistic", $body);
+    }
+
+    /**
      * 批量销毁
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/batchDestroyAction.md
      * @param array $body 入参类型
@@ -467,5 +478,25 @@ class ClerkSdk extends SdkBase
     public function v1($body)
     {
         return $this->restful("POST", "/index/v1", $body);
+    }
+
+    /**
+     * 获取资格分页
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistPaging($body)
+    {
+        return $this->restful("POST", "/pharmacist/paging", $body);
+    }
+
+    /**
+     * 资格编辑
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistEdit($body)
+    {
+        return $this->restful("POST", "/pharmacist/edit", $body);
     }
 }
