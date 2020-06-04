@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-23
- * @time   Thu, 23 Apr 2020 15:41:52 +0800
+ * @date   2020-06-04
+ * @time   Thu, 04 Jun 2020 15:27:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -459,28 +459,6 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 获取需要执行的上传卡号数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/downloadCodeDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function downloadCodeDataInsure($body)
-    {
-        return $this->restful("POST", "/insure/downloadCodeData", $body);
-    }
-
-    /**
-     * 上传卡号结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/downloadCodeResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function downloadCodeResultInsure($body)
-    {
-        return $this->restful("POST", "/insure/downloadCodeResult", $body);
-    }
-
-    /**
      * 下载卡号
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/CodeController/downloadAction.md
      * @param array $body 入参类型
@@ -742,6 +720,17 @@ class InsureSdk extends SdkBase
     public function notifyApprovalPolicy($body)
     {
         return $this->restful("POST", "/policy/notifyapproval", $body);
+    }
+
+    /**
+     * 获取保司默认银行账户
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/OrganizeBankAccountController/defaultBankAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountDefaultBank($body)
+    {
+        return $this->restful("POST", "/organizeBankAccount/defaultBank", $body);
     }
 
     /**
