@@ -1878,4 +1878,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/insuranceApply/organizationTypeList", $body);
     }
+
+    /**
+     * 列表导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/pagingExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyPagingExport($body)
+    {
+        return $this->restful("POST", "/insuranceApply/pagingExport", $body);
+    }
 }
