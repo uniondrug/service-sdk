@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-03
- * @time   Wed, 03 Jun 2020 14:42:52 +0800
+ * @date   2020-06-04
+ * @time   Thu, 04 Jun 2020 16:14:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * NotifySdk
@@ -93,5 +93,49 @@ class NotifySdk extends SdkBase
     public function messageRead($body)
     {
         return $this->restful("POST", "/message/read", $body);
+    }
+
+    /**
+     * 创建任务
+     * @link https://uniondrug.coding.net/p/module.notify/git/blob/development/docs/api/TaskController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskCreate($body)
+    {
+        return $this->restful("POST", "/task/create", $body);
+    }
+
+    /**
+     * 删除任务
+     * @link https://uniondrug.coding.net/p/module.notify/git/blob/development/docs/api/TaskController/delAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskDel($body)
+    {
+        return $this->restful("POST", "/task/del", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.notify/git/blob/development/docs/api/TaskController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskDetail($body)
+    {
+        return $this->restful("POST", "/task/detail", $body);
+    }
+
+    /**
+     * 任务列表
+     * @link https://uniondrug.coding.net/p/module.notify/git/blob/development/docs/api/TaskController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskPaging($body)
+    {
+        return $this->restful("POST", "/task/paging", $body);
     }
 }
