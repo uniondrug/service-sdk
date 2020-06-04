@@ -298,4 +298,14 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userCard/getCountByNum", $body);
     }
+
+    /**
+     * 统计有openId的数据
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBindCount($body)
+    {
+        return $this->restful("POST", "v2/api/userThird/getBindCount", $body);
+    }
 }
