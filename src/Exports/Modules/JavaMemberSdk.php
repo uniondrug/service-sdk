@@ -308,4 +308,17 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "v2/api/userThird/getBindCount", $body);
     }
+    /**
+     * 统计证件号数量
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCountByNum($body)
+    {
+        return $this->restful("POST", "v2/api/userCard/getCountByNum", $body);
+    }
+
+
+
+
 }
