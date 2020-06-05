@@ -164,7 +164,7 @@ class JavaMemberSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function listUserThird($body)
+    public function listUserBasic($body)
     {
         return $this->restful("POST", "/v2/api/userBasic/batchByIds", $body);
     }
