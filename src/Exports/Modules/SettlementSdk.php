@@ -2998,4 +2998,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/officialLetter", $body);
     }
+
+    /**
+     * 理赔单列表查询
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/getClaimsTpaListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaGetClaimsTpaList($body)
+    {
+        return $this->restful("POST", "/claimsTpa/getClaimsTpaList", $body);
+    }
 }

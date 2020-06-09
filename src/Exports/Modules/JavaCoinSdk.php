@@ -137,4 +137,14 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/bankAccount/list", $body);
     }
+
+    /**
+     * 资金池余额注销清零
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function clearBalance($body)
+    {
+        return $this->restful("POST", "/fundAccount/clearBalance", $body);
+    }
 }
