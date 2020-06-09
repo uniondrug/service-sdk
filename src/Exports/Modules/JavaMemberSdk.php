@@ -318,6 +318,25 @@ class JavaMemberSdk extends SdkBase
         return $this->restful("POST", "v2/api/userCard/getCountByNum", $body);
     }
 
+    /**
+     * 证件号集合返回（带memberId）
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getByNum($body)
+    {
+        return $this->restful("POST", "v2/api/userCard/getByNum", $body);
+    }
+
+    /**
+     * 用户id集合查询证件
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function batchByIds($body)
+    {
+        return $this->restful("POST", "v2/api/userCard/batchByIds", $body);
+    }
 
 
 
