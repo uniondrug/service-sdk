@@ -3000,13 +3000,13 @@ class SettlementSdk extends SdkBase
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimInfoTpaController/detailAction.md
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/listingAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function claimInfoTpaDetail($body)
+    public function claimsTpaListing($body)
     {
-        return $this->restful("POST", "/claimInfoTpa/detail", $body);
+        return $this->restful("POST", "/claimsTpa/listing", $body);
     }
 }
