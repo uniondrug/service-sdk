@@ -1889,4 +1889,15 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/insuranceApply/pagingExport", $body);
     }
+
+    /**
+     * 设置同步状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/syncStatusSetAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplySyncStatusSet($body)
+    {
+        return $this->restful("POST", "/insuranceApply/syncStatusSet", $body);
+    }
 }
