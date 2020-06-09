@@ -139,7 +139,7 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
-     * 资金池余额注销清零
+     * 资金池注销余额清零
      * @param $body
      * @return ResponseInterface
      */
