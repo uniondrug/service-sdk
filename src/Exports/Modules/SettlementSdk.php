@@ -3031,4 +3031,169 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/claimsTpa/getTpaOrderPaging", $body);
     }
+
+    /**
+     * 撤销理赔单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaCancel($body)
+    {
+        return $this->restful("POST", "/claimsTpa/cancel", $body);
+    }
+
+    /**
+     * 提交理赔
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/commitClaimAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaCommitClaim($body)
+    {
+        return $this->restful("POST", "/claimsTpa/commitClaim", $body);
+    }
+
+    /**
+     * 赔付完成
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/completeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaCompletion($body)
+    {
+        return $this->restful("POST", "/claimsTpa/completion", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaCreate($body)
+    {
+        return $this->restful("POST", "/claimsTpa/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaDelete($body)
+    {
+        return $this->restful("POST", "/claimsTpa/delete", $body);
+    }
+
+    /**
+     * 商品销售汇总
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/getTpaGoodsSummaryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaGetTpaGoodsSummary($body)
+    {
+        return $this->restful("POST", "/claimsTpa/getTpaGoodsSummary", $body);
+    }
+
+    /**
+     * 商品明细分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/getTpaGoodsPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaGoodsPaging($body)
+    {
+        return $this->restful("POST", "/claimsTpa/getTpaGoodsPaging", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaListing($body)
+    {
+        return $this->restful("POST", "/claimsTpa/listing", $body);
+    }
+
+    /**
+     * 订单销售汇总
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/relateOrderPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaOrderSummary($body)
+    {
+        return $this->restful("POST", "/claimsTpa/relateOrderPaging", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaPaging($body)
+    {
+        return $this->restful("POST", "/claimsTpa/paging", $body);
+    }
+
+    /**
+     * 理赔单己关联保单列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/policyListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaPolicyList($body)
+    {
+        return $this->restful("POST", "/claimsTpa/policyList", $body);
+    }
+
+    /**
+     * 关联理赔单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/relatePoliciesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaRelatePolicies($body)
+    {
+        return $this->restful("POST", "/claimsTpa/relatePolicies", $body);
+    }
+
+    /**
+     * 一键全部添加
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/relatePoliciesAllAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaRelatePoliciesAll($body)
+    {
+        return $this->restful("POST", "/claimsTpa/relatePoliciesAll", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaUpdate($body)
+    {
+        return $this->restful("POST", "/claimsTpa/update", $body);
+    }
+
+    /**
+     * 获取待理赔的保单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/waitClaimPolicyListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaWaitClaimPolicyList($body)
+    {
+        return $this->restful("POST", "/claimsTpa/waitClaimPolicyList", $body);
+    }
 }
