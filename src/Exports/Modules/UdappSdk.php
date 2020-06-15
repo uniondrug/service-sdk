@@ -545,4 +545,125 @@ class UdappSdk extends SdkBase
     {
         return $this->restful("POST", "/token/expire", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeCreate($body)
+    {
+        return $this->restful("POST", "/storeQrcode/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeDetail($body)
+    {
+        return $this->restful("POST", "/storeQrcode/detail", $body);
+    }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeExport($body)
+    {
+        return $this->restful("POST", "/storeQrcode/export", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodePaging($body)
+    {
+        return $this->restful("POST", "/storeQrcode/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateCreate($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDelete($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDetail($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/detail", $body);
+    }
+
+    /**
+     * 下线
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/downAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDown($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/down", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplatePaging($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/paging", $body);
+    }
+
+    /**
+     * 上线
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/upAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateUp($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/up", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateUpdate($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/update", $body);
+    }
 }
