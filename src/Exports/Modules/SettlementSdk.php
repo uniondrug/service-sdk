@@ -3207,4 +3207,26 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/claimsTpa/getTpaOrderSummary", $body);
     }
+
+    /**
+     * 导出理赔商品
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/claimsTpaExportGoodsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaExportClaimGoods($body)
+    {
+        return $this->restful("POST", "/claimsTpa/exportGoods", $body);
+    }
+
+    /**
+     * 导出理赔订单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/claimsTpaExportOrdersAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaExportClaimOrders($body)
+    {
+        return $this->restful("POST", "/claimsTpa/exportOrders", $body);
+    }
 }
