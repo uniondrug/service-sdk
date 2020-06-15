@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-05-14
- * @time   Thu, 14 May 2020 11:18:05 +0800
+ * @date   2020-06-02
+ * @time   Tue, 02 Jun 2020 13:56:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -786,6 +786,72 @@ class CompensateSdk extends SdkBase
     public function logsPaging($body)
     {
         return $this->restful("POST", "/logs/paging", $body);
+    }
+
+    /**
+     * 新增扣款记录
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentCreate($body)
+    {
+        return $this->restful("POST", "/payment/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentDetail($body)
+    {
+        return $this->restful("POST", "/payment/detail", $body);
+    }
+
+    /**
+     * 根据条件筛选无分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentListing($body)
+    {
+        return $this->restful("POST", "/payment/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentPaging($body)
+    {
+        return $this->restful("POST", "/payment/paging", $body);
+    }
+
+    /**
+     * 导出sql
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/sqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentSql($body)
+    {
+        return $this->restful("POST", "/payment/sql", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function paymentUpdate($body)
+    {
+        return $this->restful("POST", "/payment/update", $body);
     }
 
     /**

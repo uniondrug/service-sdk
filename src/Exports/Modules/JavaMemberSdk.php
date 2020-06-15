@@ -56,7 +56,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function login($body)
     {
-        return $this->restful("POST", "/v2/api/login/", $body);
+        return $this->restful("POST", "/v2/api/user/login/", $body);
     }
 
     /**
@@ -76,7 +76,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function pagingUser($body)
     {
-        return $this->restful("POST", "/v2/api/userBasic/update", $body);
+        return $this->restful("POST", "/v2/api/userBasic/page", $body);
     }
 
     /**
@@ -86,7 +86,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function editUserPassword($body)
     {
-        return $this->restful("POST", "/v2/api/resetPassword", $body);
+        return $this->restful("POST", "/v2/api/user/resetCredentials", $body);
     }
 
     /**
@@ -164,7 +164,7 @@ class JavaMemberSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function listUserThird($body)
+    public function listUserBasic($body)
     {
         return $this->restful("POST", "/v2/api/userBasic/batchByIds", $body);
     }
@@ -298,4 +298,46 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userCard/getCountByNum", $body);
     }
+
+    /**
+     * 统计有openId的数据
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getBindCount($body)
+    {
+        return $this->restful("POST", "v2/api/userThird/getBindCount", $body);
+    }
+    /**
+     * 统计证件号数量
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCountByNum($body)
+    {
+        return $this->restful("POST", "v2/api/userCard/getCountByNum", $body);
+    }
+
+    /**
+     * 证件号集合返回（带memberId）
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getByNum($body)
+    {
+        return $this->restful("POST", "v2/api/userCard/getByNum", $body);
+    }
+
+    /**
+     * 用户id集合查询证件
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function batchByIds($body)
+    {
+        return $this->restful("POST", "v2/api/userCard/batchByIds", $body);
+    }
+
+
+
 }

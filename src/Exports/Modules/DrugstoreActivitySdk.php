@@ -63,6 +63,28 @@ class DrugstoreActivitySdk extends SdkBase
     }
 
     /**
+     * 批量关闭
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigController/batchDisableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityConfigBatchDisable($body)
+    {
+        return $this->restful("POST", "/activity/config/batch/disable", $body);
+    }
+
+    /**
+     * 批量开启
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigController/batchEnableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityConfigBatchEnable($body)
+    {
+        return $this->restful("POST", "/activity/config/batch/enable", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigController/createAction.md
      * @param array $body 入参类型
@@ -70,7 +92,7 @@ class DrugstoreActivitySdk extends SdkBase
      */
     public function activityConfigCreate($body)
     {
-        return $this->restful("POST", "/activityConfig/create", $body);
+        return $this->restful("POST", "/activity/config/create", $body);
     }
 
     /**
@@ -81,7 +103,7 @@ class DrugstoreActivitySdk extends SdkBase
      */
     public function activityConfigDelete($body)
     {
-        return $this->restful("POST", "/activityConfig/delete", $body);
+        return $this->restful("POST", "/activity/config/delete", $body);
     }
 
     /**
@@ -92,7 +114,40 @@ class DrugstoreActivitySdk extends SdkBase
      */
     public function activityConfigDetail($body)
     {
-        return $this->restful("POST", "/activityConfig/detail", $body);
+        return $this->restful("POST", "/activity/config/detail", $body);
+    }
+
+    /**
+     * 关闭
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigController/disableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityConfigDisable($body)
+    {
+        return $this->restful("POST", "/activity/config/disable", $body);
+    }
+
+    /**
+     * 开启
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigController/enableAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityConfigEnable($body)
+    {
+        return $this->restful("POST", "/activity/config/enable", $body);
+    }
+
+    /**
+     * 导入
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigController/importAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityConfigImport($body)
+    {
+        return $this->restful("POST", "/activity/config/import", $body);
     }
 
     /**
@@ -103,7 +158,7 @@ class DrugstoreActivitySdk extends SdkBase
      */
     public function activityConfigListing($body)
     {
-        return $this->restful("POST", "/activityConfig/listing", $body);
+        return $this->restful("POST", "/activity/config/listing", $body);
     }
 
     /**
@@ -114,7 +169,7 @@ class DrugstoreActivitySdk extends SdkBase
      */
     public function activityConfigPaging($body)
     {
-        return $this->restful("POST", "/activityConfig/paging", $body);
+        return $this->restful("POST", "/activity/config/paging", $body);
     }
 
     /**
@@ -125,7 +180,7 @@ class DrugstoreActivitySdk extends SdkBase
      */
     public function activityConfigUpdate($body)
     {
-        return $this->restful("POST", "/activityConfig/update", $body);
+        return $this->restful("POST", "/activity/config/update", $body);
     }
 
     /**
@@ -302,6 +357,17 @@ class DrugstoreActivitySdk extends SdkBase
     public function rebateAssistantPaging($body)
     {
         return $this->restful("POST", "/rebateAssistant/paging", $body);
+    }
+
+    /**
+     * 数据总概览
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantController/statisticAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function rebateAssistantStatistic($body)
+    {
+        return $this->restful("POST", "/rebateAssistant/statistic", $body);
     }
 
     /**

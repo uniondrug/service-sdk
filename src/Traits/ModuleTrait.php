@@ -24,6 +24,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\CustomerserviceSdk     $customerservice
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DataSdk                $data
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk             $deliver
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\NotifySdk              $notify
  * @property \Uniondrug\ServiceSdk\Exports\Modules\EquitySdk              $equity
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InsureRankSdk          $insureRank
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InsureSdk              $insure
@@ -101,6 +102,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk  $drugstoreStatistic
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk   $drugstoreActivity
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthSdk                $auth
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPmcCashierSdk      $javaPmcCashier
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

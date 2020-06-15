@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-24
- * @time   Mon, 24 Feb 2020 15:20:46 +0800
+ * @date   2020-06-15
+ * @time   Mon, 15 Jun 2020 15:47:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -283,6 +283,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 新商品列表
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/newPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goodsGoldNewPaging($body)
+    {
+        return $this->restful("POST", "/goodsGold/newPaging", $body);
+    }
+
+    /**
      * 商品列表
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/pagingAction.md
      * @param array $body 入参类型
@@ -536,6 +547,17 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
+     * 金币兑换(新)
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/goldNewExchangeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderGoldExchange($body)
+    {
+        return $this->restful("POST", "/orderGold/goldNewExchange", $body);
+    }
+
+    /**
      * 分页
      * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/pagingAction.md
      * @param array $body 入参类型
@@ -676,6 +698,17 @@ class MoreActivitySdk extends SdkBase
     public function projectSave($body)
     {
         return $this->restful("POST", "/project/save", $body);
+    }
+
+    /**
+     * 方案详情
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/GoodsGold/GoodsGoldController/schemeIdInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function schemeInfo($body)
+    {
+        return $this->restful("POST", "/goodsGold/schemeIdInfo", $body);
     }
 
     /**

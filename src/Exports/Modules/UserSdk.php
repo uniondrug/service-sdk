@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-22
- * @time   Wed, 22 Apr 2020 15:58:44 +0800
+ * @date   2020-06-08
+ * @time   Mon, 08 Jun 2020 11:06:18 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -361,6 +361,17 @@ class UserSdk extends SdkBase
     }
 
     /**
+     * 查询用户证件集合
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberCardsController/ListMemeberIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listMember($body)
+    {
+        return $this->restful("POST", "/membercards/listmember", $body);
+    }
+
+    /**
      * 手机号加密码登录
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberController/loginAction.md
      * @param array $body 入参类型
@@ -482,7 +493,7 @@ class UserSdk extends SdkBase
     }
 
     /**
-     * smsLoginAction()
+     * 手机号密码登录
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberController/smsLoginAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -526,13 +537,13 @@ class UserSdk extends SdkBase
     }
 
     /**
-     * 查询用户证件集合
-     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberCardsController/ListMemeberIdAction.md
+     * 手机号密码登录
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/smsLoginAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function listMember($body)
+    public function WxmemberSmsLogin($body)
     {
-        return $this->restful("POST", "/membercards/listmember", $body);
+        return $this->restful("POST", "/wxmember/smsLogin", $body);
     }
 }

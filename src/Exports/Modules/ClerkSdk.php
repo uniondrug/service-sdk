@@ -30,6 +30,17 @@ class ClerkSdk extends SdkBase
     protected $serviceName = 'clerk.module';
 
     /**
+     * 活动统计
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/activityStatisticAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantActivityStatistic($body)
+    {
+        return $this->restful("POST", "/assistant/activity/statistic", $body);
+    }
+
+    /**
      * 批量销毁
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/batchDestroyAction.md
      * @param array $body 入参类型
