@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-04
- * @time   Thu, 04 Jun 2020 16:51:28 +0800
+ * @date   2020-06-15
+ * @time   Mon, 15 Jun 2020 11:34:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -547,14 +547,14 @@ class MoreActivitySdk extends SdkBase
     }
 
     /**
-     * 金币兑换
-     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/goldExchangeAction.md
+     * 金币兑换(新)
+     * @link https://uniondrug.coding.net/p/module.activity.more/git/blob/development/docs/api/OrderGold/OrderGoldController/goldNewExchangeAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
     public function orderGoldExchange($body)
     {
-        return $this->restful("POST", "/orderGold/goldExchange", $body);
+        return $this->restful("POST", "/orderGold/goldNewExchange", $body);
     }
 
     /**
