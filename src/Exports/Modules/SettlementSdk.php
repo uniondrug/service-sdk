@@ -3229,4 +3229,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/claimsTpa/exportOrders", $body);
     }
+
+    /**
+     * 移除保单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/removeRelatePoliciesAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsRemoveRelatePolicies($body)
+    {
+        return $this->restful("POST", "/claimsTpa/removeRelatePolicies", $body);
+    }
 }
