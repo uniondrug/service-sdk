@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-06-16
- * @time   Tue, 16 Jun 2020 00:11:56 +0800
+ * @time   Tue, 16 Jun 2020 22:11:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,14 +41,14 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 基本资料
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/basicListAction.md
+     * 获取城市列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CityController/cityListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function basicList($body)
+    public function cityList($body)
     {
-        return $this->restful("GET", "/information-center/basic/list", $body);
+        return $this->restful("POST", "/city/list", $body);
     }
 
     /**
@@ -60,6 +60,17 @@ class InspectionSdk extends SdkBase
     public function geOrderInspectionList($body)
     {
         return $this->restful("POST", "/order/inspectionList", $body);
+    }
+
+    /**
+     * 获取医院列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/HospitalController/getListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getHospitalList($body)
+    {
+        return $this->restful("POST", "/hospital/getList", $body);
     }
 
     /**
@@ -85,12 +96,111 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 基本资料
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/basicListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationBasicList($body)
+    {
+        return $this->restful("GET", "/information/basic", $body);
+    }
+
+    /**
+     * 线路详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationLineDetail($body)
+    {
+        return $this->restful("POST", "/information/line/detail", $body);
+    }
+
+    /**
+     * 环境参数列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineEnvironmentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationLineEnv($body)
+    {
+        return $this->restful("POST", "/information/line/environment", $body);
+    }
+
+    /**
+     * 线路列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationLineList($body)
+    {
+        return $this->restful("POST", "/information/line/list", $body);
+    }
+
+    /**
+     * 室内质控
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineQualityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationLineQuality($body)
+    {
+        return $this->restful("POST", "/information/line/quality", $body);
+    }
+
+    /**
+     * 行驶轨迹接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineTrajectoryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationLineTra($body)
+    {
+        return $this->restful("POST", "/information/line/trajectory", $body);
+    }
+
+    /**
+     * 医废处理接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineWasteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationLineWaste($body)
+    {
+        return $this->restful("POST", "/information/line/waste", $body);
+    }
+
+    /**
+     * 团队人员列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/teamListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationTeamList($body)
+    {
+        return $this->restful("POST", "/information/team/list", $body);
+    }
+
+    /**
+     * 医废轨迹
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/wasteTrajectoryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationWasteTra($body)
+    {
+        return $this->restful("POST", "/information/line/waste/trajectory", $body);
+    }
+
+    /**
      * 车牌列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionVanController/listAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function list($body)
+    public function inspectionVanList($body)
     {
         return $this->restful("GET", "/inspection/van/list", $body);
     }
@@ -129,17 +239,6 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 团队人员列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/teamListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function teamList($body)
-    {
-        return $this->restful("GET", "/information-center/team/list", $body);
-    }
-
-    /**
      * 文件上传
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/UploadController/uploadFileAction.md
      * @param array $body 入参类型
@@ -170,5 +269,16 @@ class InspectionSdk extends SdkBase
     public function uploadFileSignUrlByStr($body)
     {
         return $this->restful("", "/upload", $body);
+    }
+
+    /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/userListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userList($body)
+    {
+        return $this->restful("POST", "/user/list", $body);
     }
 }
