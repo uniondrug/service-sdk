@@ -2022,4 +2022,81 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/insuranceApply/syncStatusSet", $body);
     }
+
+    /**
+     * 门店数据统计 (区域维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/areaListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticAreaList($body)
+    {
+        return $this->restful("POST", "/storeStatistic/areaList", $body);
+    }
+
+    /**
+     * 门店数据统计导出 (区域维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/areaListExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticAreaListExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/areaListExport", $body);
+    }
+
+    /**
+     * 门店整体数据统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/generalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticGeneral($body)
+    {
+        return $this->restful("POST", "/storeStatistic/general", $body);
+    }
+
+    /**
+     * 未绑定/展示门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListOffAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticstoreListOff($body)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListOff", $body);
+    }
+
+    /**
+     * 未绑定/展示门店列表导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListOffExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticstoreListOffExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListOffExport", $body);
+    }
+
+    /**
+     * 门店数据统计 (用户维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserList($body)
+    {
+        return $this->restful("POST", "/storeStatistic/userList", $body);
+    }
+
+    /**
+     * 门店数据统计导出 (用户维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userListExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserListExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/userListExport", $body);
+    }
 }
