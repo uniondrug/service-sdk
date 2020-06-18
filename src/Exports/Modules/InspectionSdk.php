@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-16
- * @time   Tue, 16 Jun 2020 22:11:09 +0800
+ * @date   2020-06-18
+ * @time   Thu, 18 Jun 2020 16:27:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -38,6 +38,17 @@ class InspectionSdk extends SdkBase
     public function add($body)
     {
         return $this->restful("POST", "/inspection/van/add", $body);
+    }
+
+    /**
+     * 订单取消预约
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/cancelAppointmentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cancelAppointmentOrder($body)
+    {
+        return $this->restful("POST", "/order/cancelAppointment", $body);
     }
 
     /**
@@ -217,7 +228,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 订单检查项退单
+     * 订单退单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/refundAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -236,6 +247,39 @@ class InspectionSdk extends SdkBase
     public function repair($body)
     {
         return $this->restful("POST", "/inspection/van/repair", $body);
+    }
+
+    /**
+     * 报告审批列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportApproveList($body)
+    {
+        return $this->restful("POST", "/report/approve/list", $body);
+    }
+
+    /**
+     * 审批状态列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveStatusListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportApproveStatusList($body)
+    {
+        return $this->restful("POST", "/report/approve/status/list", $body);
+    }
+
+    /**
+     * 报告操作记录
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/reportLogAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportOpLogList($body)
+    {
+        return $this->restful("POST", "/report/oplog/list", $body);
     }
 
     /**
