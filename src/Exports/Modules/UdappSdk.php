@@ -666,4 +666,15 @@ class UdappSdk extends SdkBase
     {
         return $this->restful("POST", "/marketingTemplate/update", $body);
     }
+
+    /**
+     * 获取模版
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/defaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDefault($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/default", $body);
+    }
 }
