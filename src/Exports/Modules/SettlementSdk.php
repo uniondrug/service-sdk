@@ -2263,6 +2263,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumFreePriceAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function serviceDetailStatisticsStatistics($body)
+    {
+        return $this->restful("POST", "/serviceDetailStatistics/statistics", $body);
+    }
+
+    /**
      * 资金池扣减金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ServiceDetailStatisticsController/sumOpFundAction.md
      * @param $body
