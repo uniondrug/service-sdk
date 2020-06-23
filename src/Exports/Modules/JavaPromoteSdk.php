@@ -712,4 +712,15 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/scheme/goods/paging", $body);
     }
+
+    /**
+     * 优惠权益商品列表
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function goodsAllListPromote($body)
+    {
+        return $this->restful("POST", "/promote/scheme/goods/allByScheme/info", $body);
+    }
 }

@@ -30,6 +30,128 @@ class AssistantSdk extends SdkBase
      */
     protected $serviceName = 'assistant.module';
 
+
+    /**
+     * 助手用户-导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/assistantExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityAssistantExport($body)
+    {
+        return $this->restful("POST", "/activityStatistic/assistant/export", $body);
+    }
+
+    /**
+     * 助手用户-列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/assistantPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityAssistantPaging($body)
+    {
+        return $this->restful("POST", "/activityStatistic/assistant/paging", $body);
+    }
+
+    /**
+     * 基础数据-折线图接口
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicChartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicChart($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/chart", $body);
+    }
+
+    /**
+     * 基础数据-导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicExport($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/export", $body);
+    }
+
+    /**
+     * 基础数据-列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicPaging($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/paging", $body);
+    }
+
+    /**
+     * 基础数据-昨日统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicYesterdayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicYesterday($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/yesterday", $body);
+    }
+
+    /**
+     * 活动管理-折线图接口
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/manageChartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManageChart($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/chart", $body);
+    }
+
+    /**
+     * 活动管理-汇总
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/manageDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManageData($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/data", $body);
+    }
+
+    /**
+     * 活动管理-导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/manageExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManageExport($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/export", $body);
+    }
+
+    /**
+     * 活动管理-列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/managePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManagePaging($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/paging", $body);
+    }
+
+    /**
+     * 修改智赔账号
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/WorkerManController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function workerEdit($body)
+    {
+        return $this->restful("POST", "/worker/edit", $body);
+    }
+
     /**
      * 商户开通智赔账号数
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/WorkerManController/aiCountAction.md
@@ -1877,5 +1999,104 @@ class AssistantSdk extends SdkBase
     public function insuranceApplyOrganizationTypeList($body)
     {
         return $this->restful("POST", "/insuranceApply/organizationTypeList", $body);
+    }
+
+    /**
+     * 列表导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/pagingExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyPagingExport($body)
+    {
+        return $this->restful("POST", "/insuranceApply/pagingExport", $body);
+    }
+
+    /**
+     * 设置同步状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/syncStatusSetAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplySyncStatusSet($body)
+    {
+        return $this->restful("POST", "/insuranceApply/syncStatusSet", $body);
+    }
+
+    /**
+     * 门店数据统计 (区域维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/areaListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticAreaList($body)
+    {
+        return $this->restful("POST", "/storeStatistic/areaList", $body);
+    }
+
+    /**
+     * 门店数据统计导出 (区域维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/areaListExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticAreaListExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/areaListExport", $body);
+    }
+
+    /**
+     * 门店整体数据统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/generalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticGeneral($body)
+    {
+        return $this->restful("POST", "/storeStatistic/general", $body);
+    }
+
+    /**
+     * 未绑定/展示门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListOffAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticstoreListOff($body)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListOff", $body);
+    }
+
+    /**
+     * 未绑定/展示门店列表导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListOffExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticstoreListOffExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListOffExport", $body);
+    }
+
+    /**
+     * 门店数据统计 (用户维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserList($body)
+    {
+        return $this->restful("POST", "/storeStatistic/userList", $body);
+    }
+
+    /**
+     * 门店数据统计导出 (用户维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userListExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserListExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/userListExport", $body);
     }
 }

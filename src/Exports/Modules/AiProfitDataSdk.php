@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-05-25
- * @time   Mon, 25 May 2020 18:16:45 +0800
+ * @date   2020-06-09
+ * @time   Tue, 09 Jun 2020 10:24:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -247,6 +247,17 @@ class AiProfitDataSdk extends SdkBase
     public function contactCheck($body)
     {
         return $this->restful("POST", "/contact/check", $body);
+    }
+
+    /**
+     * 优惠活动数据统计
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/dataCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function contactDataCount($body)
+    {
+        return $this->restful("POST", "/contact/dataCount", $body);
     }
 
     /**
@@ -1061,6 +1072,17 @@ class AiProfitDataSdk extends SdkBase
     public function redPacketPartner($body)
     {
         return $this->restful("POST", "/redPacket/partner", $body);
+    }
+
+    /**
+     * 活动要到期给用户发消息
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/SendMessageAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function sendMessage($body)
+    {
+        return $this->restful("POST", "/user/sendMessage", $body);
     }
 
     /**
