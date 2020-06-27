@@ -10,7 +10,7 @@ namespace Uniondrug\ServiceSdk\Exports\Modules;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 
-class JavaEquityLogSdk extends SdkBase
+class JavaEquitySdk extends SdkBase
 {
     /**
      * 服务名称
