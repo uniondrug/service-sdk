@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-28
- * @time   Sun, 28 Jun 2020 13:19:58 +0800
+ * @date   2020-06-23
+ * @time   Tue, 23 Jun 2020 17:06:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * PrivilegeSdk
@@ -434,5 +434,15 @@ class PrivilegeSdk extends SdkBase
     public function taskPaging($body)
     {
         return $this->restful("POST", "/task/paging", $body);
+    }
+
+    /**
+     * 任务完成
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeManagerPaging($body)
+    {
+        return $this->restful("POST", "/privilege/manager/paging", $body);
     }
 }
