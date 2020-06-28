@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-02
- * @time   Tue, 02 Jun 2020 13:56:55 +0800
+ * @date   2020-06-23
+ * @time   Tue, 23 Jun 2020 17:32:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -852,6 +852,94 @@ class CompensateSdk extends SdkBase
     public function paymentUpdate($body)
     {
         return $this->restful("POST", "/payment/update", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerAssignController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerAssignCreate($body)
+    {
+        return $this->restful("POST", "/powerAssign/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerAssignController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerAssignDelete($body)
+    {
+        return $this->restful("POST", "/powerAssign/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerAssignController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerAssignDetail($body)
+    {
+        return $this->restful("POST", "/powerAssign/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerAssignController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerAssignPaging($body)
+    {
+        return $this->restful("POST", "/powerAssign/paging", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerDetail($body)
+    {
+        return $this->restful("POST", "/power/detail", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerLogCreate($body)
+    {
+        return $this->restful("POST", "/powerLog/create", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerPaging($body)
+    {
+        return $this->restful("POST", "/power/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerUpdate($body)
+    {
+        return $this->restful("POST", "/power/update", $body);
     }
 
     /**

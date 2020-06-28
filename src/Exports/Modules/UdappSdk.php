@@ -677,4 +677,15 @@ class UdappSdk extends SdkBase
     {
         return $this->restful("POST", "/marketingTemplate/default", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReplyController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function replyCreate($body)
+    {
+        return $this->restful("POST", "/reply/create", $body);
+    }
 }

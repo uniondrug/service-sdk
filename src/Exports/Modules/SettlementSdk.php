@@ -3262,4 +3262,15 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/claimLogTpa/paging", $body);
     }
+
+    /**
+     * 根据理赔单号查找详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/detailByClaimNoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function billDetailByClaimNo($body)
+    {
+        return $this->restful("POST", "/bill/detailByClaimNo", $body);
+    }
 }

@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-24
- * @time   Tue, 24 Dec 2019 11:07:46 +0800
+ * @date   2020-06-23
+ * @time   Tue, 23 Jun 2020 17:06:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * PrivilegeSdk
@@ -28,6 +28,28 @@ class PrivilegeSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'privilege.module';
+
+    /**
+     * 新增任务
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AddPackageRecordController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPackageRecordCreate($body)
+    {
+        return $this->restful("POST", "/add/package/record/create", $body);
+    }
+
+    /**
+     * 任务编辑
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AddPackageRecordController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addPackageRecordEdit($body)
+    {
+        return $this->restful("POST", "/add/package/record/edit", $body);
+    }
 
     /**
      * 创建领取任务
@@ -49,6 +71,17 @@ class PrivilegeSdk extends SdkBase
     public function detailInfoByMidAndPid($body)
     {
         return $this->restful("POST", "/member/task/detail/info", $body);
+    }
+
+    /**
+     * 创建领取任务
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function detailMemberTask($body)
+    {
+        return $this->restful("POST", "/member/task/detail", $body);
     }
 
     /**
@@ -118,6 +151,182 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * 获取特权任务订单详情
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/OrderRecordController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderRecordListing($body)
+    {
+        return $this->restful("POST", "/order/record/listing", $body);
+    }
+
+    /**
+     * 新增资格证
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificateAdd($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/add", $body);
+    }
+
+    /**
+     * 资格证详情
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificateDetail($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/detail", $body);
+    }
+
+    /**
+     * 资格证编辑
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificateEdit($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/edit", $body);
+    }
+
+    /**
+     * 资格证分页
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pharmacistCertificatePaging($body)
+    {
+        return $this->restful("POST", "/pharmacist/certificate/paging", $body);
+    }
+
+    /**
+     * 审核
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeAuditCheck($body)
+    {
+        return $this->restful("POST", "/privilege/audit/check", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeAuditCreate($body)
+    {
+        return $this->restful("POST", "/privilege/audit/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeAuditDetail($body)
+    {
+        return $this->restful("POST", "/privilege/audit/detail", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeAuditListing($body)
+    {
+        return $this->restful("POST", "/privilege/audit/listing", $body);
+    }
+
+    /**
+     * 可领取列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/canReceiveListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeCanReceiveList($body)
+    {
+        return $this->restful("POST", "/privilege/canReceiveList", $body);
+    }
+
+    /**
+     * 后台创建特权任务配置
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeCreate($body)
+    {
+        return $this->restful("POST", "/privilege/create", $body);
+    }
+
+    /**
+     * 详情接口
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeDetail($body)
+    {
+        return $this->restful("POST", "/privilege/detail", $body);
+    }
+
+    /**
+     * 已结束列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/finishListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeFinishList($body)
+    {
+        return $this->restful("POST", "/privilege/finishList", $body);
+    }
+
+    /**
+     * 进行中列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/progressListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeProgressList($body)
+    {
+        return $this->restful("POST", "/privilege/progressList", $body);
+    }
+
+    /**
+     * 店员领取特权
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/receiveAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeReceive($body)
+    {
+        return $this->restful("POST", "/privilege/receive", $body);
+    }
+
+    /**
+     * 后台创建特权任务配置
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeUpdate($body)
+    {
+        return $this->restful("POST", "/privilege/update", $body);
+    }
+
+    /**
      * 根据某一列值求另外一列的和
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/sumColumnByConditionAction.md
      * @param array $body 入参类型
@@ -137,6 +346,17 @@ class PrivilegeSdk extends SdkBase
     public function taskAdd($body)
     {
         return $this->restful("POST", "/task/add", $body);
+    }
+
+    /**
+     * 任务详情
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/TaskController/allAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskAll($body)
+    {
+        return $this->restful("POST", "/task/all", $body);
     }
 
     /**
@@ -170,96 +390,5 @@ class PrivilegeSdk extends SdkBase
     public function taskPaging($body)
     {
         return $this->restful("POST", "/task/paging", $body);
-    }
-
-    /**
-     * 所有任务
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function taskAll($body)
-    {
-        return $this->restful("POST", "/task/all", $body);
-    }
-
-    /**
-     * 新增资格证
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pharmacistCertificateAdd($body)
-    {
-        return $this->restful("POST", "/pharmacist/certificate/add", $body);
-    }
-
-    /**
-     * 资格证分页
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pharmacistCertificatePaging($body)
-    {
-        return $this->restful("POST", "/pharmacist/certificate/paging", $body);
-    }
-
-    /**
-     * 资格证编辑
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pharmacistCertificateEdit($body)
-    {
-        return $this->restful("POST", "/pharmacist/certificate/edit", $body);
-    }
-
-    /**
-     * 资格证详情
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pharmacistCertificateDetail($body)
-    {
-        return $this->restful("POST", "/pharmacist/certificate/detail", $body);
-    }
-
-    /**
-     * 获取特权任务订单列表
-     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/OrderRecordController/listingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function orderRecordListing($body)
-    {
-        return $this->restful("POST", "/order/record/listing", $body);
-    }
-
-    /**
-     * 新增赠送增值服务记录
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function addPackageRecordCreate($body)
-    {
-        return $this->restful("POST", "/add/package/record/create", $body);
-    }
-
-    /**
-     * 修改状态
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function addPackageRecordEdit($body)
-    {
-        return $this->restful("POST", "/add/package/record/edit", $body);
-    }
-
-    /**
-     * 领取的任务详情
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function detailMemberTask($body)
-    {
-        return $this->restful("POST", "/member/task/detail", $body);
     }
 }
