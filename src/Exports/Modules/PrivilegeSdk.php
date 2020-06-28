@@ -435,34 +435,4 @@ class PrivilegeSdk extends SdkBase
     {
         return $this->restful("POST", "/task/paging", $body);
     }
-
-    /**
-     * 任务详情
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function privilegeInfo($body)
-    {
-        return $this->restful("POST", "/privilege/info", $body);
-    }
-
-    /**
-     * 设置任务失败
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function privilegeSetFail($body)
-    {
-        return $this->restful("POST", "/privilege/set/fail", $body);
-    }
-
-    /**
-     * 任务完成
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function privilegeFinish($body)
-    {
-        return $this->restful("POST", "/privilege/finish", $body);
-    }
 }
