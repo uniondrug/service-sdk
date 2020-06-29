@@ -155,7 +155,7 @@ class JavaCoinSdk extends SdkBase
      */
     public function createOfflineBalance($body)
     {
-        return $this->restful("POST", "/bankBalance/saveOfflineTodayBalance", $body);
+        return $this->restful("POST", "/bankBalance/createOfflineTodayBalance", $body);
     }
 
     /**
