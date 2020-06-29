@@ -261,6 +261,17 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * 统计数量
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/countAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeCount($body)
+    {
+        return $this->restful("POST", "/privilege/count", $body);
+    }
+
+    /**
      * 后台创建特权任务配置
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/createAction.md
      * @param array $body 入参类型
@@ -283,6 +294,17 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * 完成任务
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/finishAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeFinish($body)
+    {
+        return $this->restful("POST", "/privilege/finish", $body);
+    }
+
+    /**
      * 已结束列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/finishListAction.md
      * @param array $body 入参类型
@@ -291,6 +313,17 @@ class PrivilegeSdk extends SdkBase
     public function privilegeFinishList($body)
     {
         return $this->restful("POST", "/privilege/finishList", $body);
+    }
+
+    /**
+     * 编辑任务配置
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeInfo($body)
+    {
+        return $this->restful("POST", "/privilege/info", $body);
     }
 
     /**
@@ -316,7 +349,18 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
-     * 后台创建特权任务配置
+     * 编辑任务配置
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/setFailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeSetFail($body)
+    {
+        return $this->restful("POST", "/privilege/set/fail", $body);
+    }
+
+    /**
+     * 编辑任务配置
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/updateAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -390,5 +434,15 @@ class PrivilegeSdk extends SdkBase
     public function taskPaging($body)
     {
         return $this->restful("POST", "/task/paging", $body);
+    }
+
+    /**
+     * 任务完成
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function privilegeManagerPaging($body)
+    {
+        return $this->restful("POST", "/privilege/manager/paging", $body);
     }
 }
