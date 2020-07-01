@@ -33,296 +33,285 @@ class QueryEquitySdk extends SdkBase
      * 获取token
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/AccessController/tokenAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function accessToken($body)
+    public function accessToken($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/access/token", $body);
+        return $this->restful("POST", "/access/token", $body, $query, $extra);
     }
 
     /**
      * 保障列表admin
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/GuaranteeController/adminPagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function adminPaging($body)
+    public function adminPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantee/adminpaging", $body);
+        return $this->restful("POST", "/guarantee/adminpaging", $body, $query, $extra);
     }
 
     /**
      * 项目绑定角色
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/RoleController/bindRoleAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function bindRole($body)
+    public function bindRole($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/role/bindRole", $body);
+        return $this->restful("POST", "/role/bindRole", $body, $query, $extra);
     }
 
     /**
      * 权益详情(根据权益id 或权益卡号 查找权益详情)
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityController/detailAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getEquityByEquityNo($body)
+    public function getEquityByEquityNo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/equity/detail", $body);
+        return $this->restful("POST", "/equity/detail", $body, $query, $extra);
     }
 
     /**
      * 权益详情 (根据权益id  查找权益详情)
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityController/getEquityByIdAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getEquityById($body)
+    public function getEquityById($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/equity/detail/equityId", $body);
+        return $this->restful("POST", "/equity/detail/equityId", $body, $query, $extra);
     }
 
     /**
      * 换新保障列表
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/GuaranteeController/changePagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getGuaranteeChangePaging($body)
+    public function getGuaranteeChangePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantee/change/paging", $body);
+        return $this->restful("POST", "/guarantee/change/paging", $body, $query, $extra);
     }
 
     /**
      * 统计用户换新保障金额
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/GuaranteeController/changeTotalAmountAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getGuaranteeChangeTotalAmount($body)
+    public function getGuaranteeChangeTotalAmount($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantee/change/total/amount", $body);
+        return $this->restful("POST", "/guarantee/change/total/amount", $body, $query, $extra);
     }
 
     /**
      * 保障详情
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/GuaranteeController/detailAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getGuaranteeDetail($body)
+    public function getGuaranteeDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantee/detail", $body);
+        return $this->restful("POST", "/guarantee/detail", $body, $query, $extra);
     }
 
     /**
      * 简单权益分页列表
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityController/simplePagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getSimpleEquityPaging($body)
+    public function getSimpleEquityPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/equity/simple/paging", $body);
+        return $this->restful("POST", "/equity/simple/paging", $body, $query, $extra);
     }
 
     /**
      * 简单保障分页列表
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/GuaranteeController/pagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getSimpleGuaranteePaging($body)
+    public function getSimpleGuaranteePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantee/simple/paging", $body);
-    }
-
-    /**
-     * 分组新增
-     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/GroupController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function groupAdd($body)
-    {
-        return $this->restful("POST", "/group/add", $body);
+        return $this->restful("POST", "/guarantee/simple/paging", $body, $query, $extra);
     }
 
     /**
      * 分组列表
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/GroupController/pagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function groupPaging($body)
+    public function groupPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/group/paging", $body);
-    }
-
-    /**
-     * 新增产品
-     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/PackageController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function packageAdd($body)
-    {
-        return $this->restful("POST", "/package/add", $body);
+        return $this->restful("POST", "/group/paging", $body, $query, $extra);
     }
 
     /**
      * 产品详情
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/PackageController/detailAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageDetail($body)
+    public function packageDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/detail", $body);
-    }
-
-    /**
-     * 产品保障关联
-     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/PackageController/packageGroupRelationAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function packageGroupRelation($body)
-    {
-        return $this->restful("POST", "/package/group/relate", $body);
-    }
-
-    /**
-     * 保障新增
-     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/PackageController/guaranteeAddAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function packageGuaranteeAdd($body)
-    {
-        return $this->restful("POST", "/package/guarantee/add", $body);
-    }
-
-    /**
-     * 产品保障关联
-     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/PackageController/packageGuaranteeRelationAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function packageGuaranteeRelation($body)
-    {
-        return $this->restful("POST", "/package/guarantee/relate", $body);
+        return $this->restful("POST", "/package/detail", $body, $query, $extra);
     }
 
     /**
      * 产品列表
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/PackageController/packagePagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packagePaging($body)
+    public function packagePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/paging", $body);
+        return $this->restful("POST", "/package/paging", $body, $query, $extra);
     }
 
     /**
      * 项目下的用户拥有的权益和总金额计算
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityController/projectMemberAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function projectMember($body)
+    public function projectMember($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/equity/projectmember", $body);
+        return $this->restful("POST", "/equity/projectmember", $body, $query, $extra);
     }
 
     /**
      * 项目列表
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/ProjectController/pagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function projectPaging($body)
+    public function projectPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/project/paging", $body);
+        return $this->restful("POST", "/project/paging", $body, $query, $extra);
     }
 
     /**
      * addRoleAction()
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/RoleController/addRoleAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function roleAdd($body)
+    public function roleAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/role/add", $body);
+        return $this->restful("POST", "/role/add", $body, $query, $extra);
     }
 
     /**
      * 角色列表页
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/RoleController/pagingAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function rolePaging($body)
+    public function rolePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/role/paging", $body);
+        return $this->restful("POST", "/role/paging", $body, $query, $extra);
     }
 
     /**
      * addDataAction()
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/RoleStructController/addDataAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function roleStructAdd($body)
+    public function roleStructAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/role/struct/add", $body);
+        return $this->restful("POST", "/role/struct/add", $body, $query, $extra);
     }
 
     /**
      * delAction()
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/RoleStructController/delAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function roleStructDel($body)
+    public function roleStructDel($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/role/struct/del", $body);
+        return $this->restful("POST", "/role/struct/del", $body, $query, $extra);
     }
 
     /**
      * addDataAction()
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/RoleUrlController/addDataAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function roleUrlAdd($body)
+    public function roleUrlAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/role/url/add", $body);
+        return $this->restful("POST", "/role/url/add", $body, $query, $extra);
     }
 
     /**
      * delAction()
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/RoleUrlController/delAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function roleUrlDel($body)
+    public function roleUrlDel($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/role/url/del", $body);
+        return $this->restful("POST", "/role/url/del", $body, $query, $extra);
     }
 
     /**
      * 获取总金额 和保障总额
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityController/getTotalFeeAction.md
      * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function totalFee($body)
+    public function totalFee($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/equity/totalfee", $body);
+        return $this->restful("POST", "/equity/totalfee", $body, $query, $extra);
     }
 }
