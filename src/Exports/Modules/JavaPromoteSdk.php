@@ -723,4 +723,81 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/scheme/goods/allByScheme/info", $body);
     }
+
+    /**
+     * 扣率方案新建
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeAdd($body)
+    {
+        return $this->restful("POST", "/rate/scheme/add", $body);
+    }
+
+    /**
+     * 扣率方案详情查询
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeInfo($body)
+    {
+        return $this->restful("POST", "/rate/scheme/info", $body);
+    }
+
+    /**
+     * 扣率方案列表展示
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemePaging($body)
+    {
+        return $this->restful("POST", "/rate/scheme/paging", $body);
+    }
+
+    /**
+     * 扣率方案编辑
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeEdit($body)
+    {
+        return $this->restful("POST", "/rate/scheme/edit", $body);
+    }
+
+    /**
+     * 扣率方案停用
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeStop($body)
+    {
+        return $this->restful("POST", "/rate/scheme/stop", $body);
+    }
+
+    /**
+     * 扣率方案商品关联
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeGoodsAdd($body)
+    {
+        return $this->restful("POST", "/rate/scheme/goods/add", $body);
+    }
+
+    /**
+     * 扣率方案商品取消关联
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeGoodsStop($body)
+    {
+        return $this->restful("POST", "/rate/scheme/goods/stop", $body);
+    }
 }
