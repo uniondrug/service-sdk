@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-28
- * @time   Sun, 28 Jun 2020 16:03:06 +0800
+ * @date   2020-07-01
+ * @time   Wed, 01 Jul 2020 16:54:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,39 @@ class InspectionSdk extends SdkBase
     public function createOrder($body)
     {
         return $this->restful("POST", "/openapi/order/create", $body);
+    }
+
+    /**
+     * 导出环境参数数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/exportLineEnvironmentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportLineEnvironment($body)
+    {
+        return $this->restful("POST", "/information/export/line/environment", $body);
+    }
+
+    /**
+     * 导出行驶轨迹数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/exportLineTrajectoryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportLineTrajectory($body)
+    {
+        return $this->restful("POST", "/information/export/line/trajectory", $body);
+    }
+
+    /**
+     * 导出医废轨迹数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/exportWasteTrajectoryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function exportWasteTrajectory($body)
+    {
+        return $this->restful("POST", "/information/export/waste/trajectory", $body);
     }
 
     /**
@@ -181,6 +214,28 @@ class InspectionSdk extends SdkBase
     public function getOrderStatusList($body)
     {
         return $this->restful("POST", "/order/statusList", $body);
+    }
+
+    /**
+     * 查询出库单货品详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/getOutStockAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOutStockCommodity($body)
+    {
+        return $this->restful("POST", "/stock/out/get/commodity", $body);
+    }
+
+    /**
+     * 操作出库单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/handleOutStockAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function handleOutStock($body)
+    {
+        return $this->restful("POST", "/stock/out/handle", $body);
     }
 
     /**
@@ -338,6 +393,39 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 获取指定时间内线路号
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LineController/getLineNoByDateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function lineGetBoByDate($body)
+    {
+        return $this->restful("POST", "/line/search/date", $body);
+    }
+
+    /**
+     * 查询订单患者信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/patientInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderPatientInfo($body)
+    {
+        return $this->restful("POST", "/order/patientinfo", $body);
+    }
+
+    /**
+     * 出库列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/outStockListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function outStockList($body)
+    {
+        return $this->restful("POST", "/stock/out/list", $body);
+    }
+
+    /**
      * 增加质检项
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/itemAddAction.md
      * @param array $body 入参类型
@@ -360,6 +448,17 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 质检项信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/itemInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function qualityControlItemInfo($body)
+    {
+        return $this->restful("POST", "/quality-control/item/info", $body);
+    }
+
+    /**
      * 质检项列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/itemListAction.md
      * @param array $body 入参类型
@@ -367,7 +466,7 @@ class InspectionSdk extends SdkBase
      */
     public function qualityControlItemList($body)
     {
-        return $this->restful("POST", "/quality-control/item", $body);
+        return $this->restful("POST", "/quality-control/item/list", $body);
     }
 
     /**
@@ -404,6 +503,17 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 报告审批详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportApproveDetail($body)
+    {
+        return $this->restful("POST", "/report/approve/detail", $body);
+    }
+
+    /**
      * 报告审批列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveListAction.md
      * @param array $body 入参类型
@@ -423,6 +533,17 @@ class InspectionSdk extends SdkBase
     public function reportApproveStatusList($body)
     {
         return $this->restful("POST", "/report/approve/status/list", $body);
+    }
+
+    /**
+     * 检查报告详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportDetail($body)
+    {
+        return $this->restful("POST", "/report/detail", $body);
     }
 
     /**
@@ -482,7 +603,7 @@ class InspectionSdk extends SdkBase
 
     /**
      * 质控报告版本详情
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/reportVersionDetailAction.md
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/qualityDetailAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
@@ -547,6 +668,17 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 报告版本详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/versionDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function reportVersionDetail($body)
+    {
+        return $this->restful("POST", "/report/version/detail", $body);
+    }
+
+    /**
      * 报告版本列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/reportVersionListAction.md
      * @param array $body 入参类型
@@ -577,6 +709,17 @@ class InspectionSdk extends SdkBase
     public function stockList($body)
     {
         return $this->restful("POST", "/stock/list", $body);
+    }
+
+    /**
+     * 获取出库单状态列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/statusListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function stockOutStatusList($body)
+    {
+        return $this->restful("GET", "/stock/out/status/list", $body);
     }
 
     /**
