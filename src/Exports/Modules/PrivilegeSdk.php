@@ -32,417 +32,507 @@ class PrivilegeSdk extends SdkBase
     /**
      * 新增任务
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AddPackageRecordController/createAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function addPackageRecordCreate($body)
+    public function addPackageRecordCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/add/package/record/create", $body);
+        return $this->restful("POST", "/add/package/record/create", $body, $query, $extra);
     }
 
     /**
      * 任务编辑
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/AddPackageRecordController/editAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function addPackageRecordEdit($body)
+    public function addPackageRecordEdit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/add/package/record/edit", $body);
+        return $this->restful("POST", "/add/package/record/edit", $body, $query, $extra);
     }
 
     /**
      * 创建领取任务
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/createAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function createMemberTask($body)
+    public function createMemberTask($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/create", $body);
+        return $this->restful("POST", "/member/task/create", $body, $query, $extra);
     }
 
     /**
      * 获取用户包含某个增值服务的所有任务详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/detailInfoByMidAndPIdAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function detailInfoByMidAndPid($body)
+    public function detailInfoByMidAndPid($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/detail/info", $body);
+        return $this->restful("POST", "/member/task/detail/info", $body, $query, $extra);
     }
 
     /**
      * 创建领取任务
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/detailAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function detailMemberTask($body)
+    public function detailMemberTask($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/detail", $body);
+        return $this->restful("POST", "/member/task/detail", $body, $query, $extra);
     }
 
     /**
      * 获取明细列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/detailListAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function memberTaskDetailList($body)
+    public function memberTaskDetailList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/detail/list", $body);
+        return $this->restful("POST", "/member/task/detail/list", $body, $query, $extra);
     }
 
     /**
      * 获取特权任务列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/listAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function memberTaskList($body)
+    public function memberTaskList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/list", $body);
+        return $this->restful("POST", "/member/task/list", $body, $query, $extra);
     }
 
     /**
      * 统计任务的领取数量和领取的积分
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/pointCountAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function memberTaskPointCount($body)
+    public function memberTaskPointCount($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/point/count", $body);
+        return $this->restful("POST", "/member/task/point/count", $body, $query, $extra);
     }
 
     /**
      * 更新领取特权任务信息
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/updateAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function memberTaskUpdate($body)
+    public function memberTaskUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/update", $body);
+        return $this->restful("POST", "/member/task/update", $body, $query, $extra);
     }
 
     /**
      * 创建订单记录
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/OrderRecordController/createAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function orderRecordCreate($body)
+    public function orderRecordCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/record/create", $body);
+        return $this->restful("POST", "/order/record/create", $body, $query, $extra);
     }
 
     /**
      * 获取特权任务订单详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/OrderRecordController/infoAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function orderRecordInfo($body)
+    public function orderRecordInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/record/info", $body);
+        return $this->restful("POST", "/order/record/info", $body, $query, $extra);
     }
 
     /**
      * 获取特权任务订单详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/OrderRecordController/listingAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function orderRecordListing($body)
+    public function orderRecordListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/record/listing", $body);
+        return $this->restful("POST", "/order/record/listing", $body, $query, $extra);
     }
 
     /**
      * 新增资格证
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/addAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function pharmacistCertificateAdd($body)
+    public function pharmacistCertificateAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pharmacist/certificate/add", $body);
+        return $this->restful("POST", "/pharmacist/certificate/add", $body, $query, $extra);
     }
 
     /**
      * 资格证详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/detailAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function pharmacistCertificateDetail($body)
+    public function pharmacistCertificateDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pharmacist/certificate/detail", $body);
+        return $this->restful("POST", "/pharmacist/certificate/detail", $body, $query, $extra);
     }
 
     /**
      * 资格证编辑
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/editAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function pharmacistCertificateEdit($body)
+    public function pharmacistCertificateEdit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pharmacist/certificate/edit", $body);
+        return $this->restful("POST", "/pharmacist/certificate/edit", $body, $query, $extra);
     }
 
     /**
      * 资格证分页
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/PharmacistCertificateController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function pharmacistCertificatePaging($body)
+    public function pharmacistCertificatePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pharmacist/certificate/paging", $body);
+        return $this->restful("POST", "/pharmacist/certificate/paging", $body, $query, $extra);
     }
 
     /**
      * 审核
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/checkAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeAuditCheck($body)
+    public function privilegeAuditCheck($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/audit/check", $body);
+        return $this->restful("POST", "/privilege/audit/check", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/createAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeAuditCreate($body)
+    public function privilegeAuditCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/audit/create", $body);
+        return $this->restful("POST", "/privilege/audit/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/detailAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeAuditDetail($body)
+    public function privilegeAuditDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/audit/detail", $body);
+        return $this->restful("POST", "/privilege/audit/detail", $body, $query, $extra);
     }
 
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/listingAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeAuditListing($body)
+    public function privilegeAuditListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/audit/listing", $body);
+        return $this->restful("POST", "/privilege/audit/listing", $body, $query, $extra);
     }
 
     /**
      * 可领取列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/canReceiveListAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeCanReceiveList($body)
+    public function privilegeCanReceiveList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/canReceiveList", $body);
+        return $this->restful("POST", "/privilege/canReceiveList", $body, $query, $extra);
     }
 
     /**
      * 统计数量
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/countAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeCount($body)
+    public function privilegeCount($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/count", $body);
+        return $this->restful("POST", "/privilege/count", $body, $query, $extra);
     }
 
     /**
      * 后台创建特权任务配置
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/createAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeCreate($body)
+    public function privilegeCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/create", $body);
+        return $this->restful("POST", "/privilege/create", $body, $query, $extra);
     }
 
     /**
      * 详情接口
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/detailAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeDetail($body)
+    public function privilegeDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/detail", $body);
+        return $this->restful("POST", "/privilege/detail", $body, $query, $extra);
     }
 
     /**
      * 完成任务
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/finishAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeFinish($body)
+    public function privilegeFinish($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/finish", $body);
+        return $this->restful("POST", "/privilege/finish", $body, $query, $extra);
     }
 
     /**
      * 已结束列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/finishListAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeFinishList($body)
+    public function privilegeFinishList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/finishList", $body);
+        return $this->restful("POST", "/privilege/finishList", $body, $query, $extra);
     }
 
     /**
      * 编辑任务配置
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/infoAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeInfo($body)
+    public function privilegeInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/info", $body);
+        return $this->restful("POST", "/privilege/info", $body, $query, $extra);
+    }
+
+    /**
+     * 任务列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/managerPagingAction.md
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeManagerPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/manager/paging", $body, $query, $extra);
     }
 
     /**
      * 进行中列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/progressListAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeProgressList($body)
+    public function privilegeProgressList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/progressList", $body);
+        return $this->restful("POST", "/privilege/progressList", $body, $query, $extra);
     }
 
     /**
      * 店员领取特权
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/receiveAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeReceive($body)
+    public function privilegeReceive($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/receive", $body);
+        return $this->restful("POST", "/privilege/receive", $body, $query, $extra);
     }
 
     /**
      * 编辑任务配置
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/setFailAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeSetFail($body)
+    public function privilegeSetFail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/set/fail", $body);
+        return $this->restful("POST", "/privilege/set/fail", $body, $query, $extra);
+    }
+
+    /**
+     * 领取任务列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/subManagerPagingAction.md
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeSubManagerPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/sub/manager/paging", $body, $query, $extra);
     }
 
     /**
      * 编辑任务配置
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/updateAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function privilegeUpdate($body)
+    public function privilegeUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/update", $body);
+        return $this->restful("POST", "/privilege/update", $body, $query, $extra);
     }
 
     /**
      * 根据某一列值求另外一列的和
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/MemberTaskController/sumColumnByConditionAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function sumColumnByCondition($body)
+    public function sumColumnByCondition($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/task/sum/column", $body);
+        return $this->restful("POST", "/member/task/sum/column", $body, $query, $extra);
     }
 
     /**
      * 新增任务
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/TaskController/addAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function taskAdd($body)
+    public function taskAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/task/add", $body);
+        return $this->restful("POST", "/task/add", $body, $query, $extra);
     }
 
     /**
      * 任务详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/TaskController/allAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function taskAll($body)
+    public function taskAll($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/task/all", $body);
+        return $this->restful("POST", "/task/all", $body, $query, $extra);
     }
 
     /**
      * 任务详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/TaskController/detailAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function taskDetail($body)
+    public function taskDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/task/detail", $body);
+        return $this->restful("POST", "/task/detail", $body, $query, $extra);
     }
 
     /**
      * 任务编辑
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/TaskController/editAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function taskEdit($body)
+    public function taskEdit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/task/edit", $body);
+        return $this->restful("POST", "/task/edit", $body, $query, $extra);
     }
 
     /**
      * 任务分页
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/TaskController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
      * @return ResponseInterface
      */
-    public function taskPaging($body)
+    public function taskPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/task/paging", $body);
-    }
-
-    /**
-     * 任务完成
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function privilegeManagerPaging($body)
-    {
-        return $this->restful("POST", "/privilege/manager/paging", $body);
+        return $this->restful("POST", "/task/paging", $body, $query, $extra);
     }
 }
