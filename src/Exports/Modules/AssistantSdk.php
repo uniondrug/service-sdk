@@ -2100,47 +2100,4 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/storeStatistic/userListExport", $body);
     }
 
-    /**
-     * 审批流模板 [详情]
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TemplateController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function templateDetail($body)
-    {
-        return $this->restful("POST", "/template/detail", $body);
-    }
-
-    /**
-     * 审批流模板 [修改]
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TemplateController/editAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function templateEdit($body)
-    {
-        return $this->restful("POST", "/template/edit", $body);
-    }
-
-    /**
-     * 审批流模板 [分页列表]
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TemplateController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function templatePaging($body)
-    {
-        return $this->restful("POST", "/template/paging", $body);
-    }
-
-    /**
-     * 审批流模板 [停用/开启]
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TemplateController/editStatusAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function templateStatusEdit($body)
-    {
-        return $this->restful("POST", "/template/editStatus", $body);
-    }
 }
