@@ -803,7 +803,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 扣率方案商品取消关联
+     * 扣率方案商品列表
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
      * @param array $body
      * @return ResponseInterface
