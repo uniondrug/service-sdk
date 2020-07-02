@@ -2099,4 +2099,5 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/storeStatistic/userListExport", $body);
     }
+
 }

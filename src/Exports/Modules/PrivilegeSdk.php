@@ -238,6 +238,32 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAssistantRemindController/detailAction.md
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeAssistantRemindDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilegeAssistantRemind/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAssistantRemindController/updateAction.md
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeAssistantRemindUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilegeAssistantRemind/update", $body, $query, $extra);
+    }
+
+    /**
      * 审核
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAuditController/checkAction.md
      * @param array $body  入参类型
@@ -339,6 +365,19 @@ class PrivilegeSdk extends SdkBase
     public function privilegeDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/privilege/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 领取任务列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/exportAction.md
+     * @param array $body  入参类型
+     * @param null  $query Query数据
+     * @param null  $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/export", $body, $query, $extra);
     }
 
     /**
@@ -534,31 +573,5 @@ class PrivilegeSdk extends SdkBase
     public function taskPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/task/paging", $body, $query, $extra);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAssistantRemindController/detailAction.md
-     * @param array $body  入参类型
-     * @param null  $query Query数据
-     * @param null  $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function privilegeAssistantRemindDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/privilegeAssistantRemind/detail", $body, $query, $extra);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeAssistantRemindController/updateAction.md
-     * @param array $body  入参类型
-     * @param null  $query Query数据
-     * @param null  $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function privilegeAssistantRemindUpdate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/privilegeAssistantRemind/update", $body, $query, $extra);
     }
 }
