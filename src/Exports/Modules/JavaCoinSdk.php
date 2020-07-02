@@ -167,4 +167,14 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/bankAccount/holderList", $body);
     }
+
+    /**
+     * 查询银行账户的总计余额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankBalanceStatistics($body)
+    {
+        return $this->restful("POST", "/bankBalance/statistics", $body);
+    }
 }
