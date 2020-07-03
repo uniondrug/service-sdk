@@ -119,6 +119,17 @@ class ApprovalSdk extends SdkBase
     }
 
     /**
+     * 审批流模板 [不分页列表]
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TemplateController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateList($body)
+    {
+        return $this->restful("POST", "/template/list", $body);
+    }
+
+    /**
      * 审批流模板 [分页列表]
      * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TemplateController/pagingAction.md
      * @param array $body 入参类型
