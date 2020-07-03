@@ -2100,4 +2100,48 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/storeStatistic/userListExport", $body);
     }
 
+    /**
+     * 审批流模板 [发起人列表]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/applicantListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateApplicantList($body)
+    {
+        return $this->restful("POST", "/template/applicantList", $body);
+    }
+
+    /**
+     * 审批流模板 [详情]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateDetail($body)
+    {
+        return $this->restful("POST", "/template/detail", $body);
+    }
+
+    /**
+     * 审批流模板 [编辑]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateEdit($body)
+    {
+        return $this->restful("POST", "/template/edit", $body);
+    }
+
+    /**
+     * 审批流模板 [分页列表]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templatePaging($body)
+    {
+        return $this->restful("POST", "/template/paging", $body);
+    }
+
 }
