@@ -2144,4 +2144,26 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/template/paging", $body);
     }
 
+    /**
+     * 业务审批单创建 [店员解冻]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalUnfreezeAssistantAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalUnfreezeAssistantAdd($body)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalUnfreezeAssistant", $body);
+    }
+
+    /**
+     * 业务审批单创建 [门店解冻]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalUnfreezeStoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalUnfreezeStoreAdd($body)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalUnfreezeStore", $body);
+    }
+
 }
