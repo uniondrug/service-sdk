@@ -31,6 +31,6 @@ class JavaUserServiceSdk extends SdkBase
      */
     public function userInfo($body)
     {
-        return $this->restful("POST", "/api/userMajor/queryBy", $body);
+        return $this->restful("POST", "/v2/api/userMajor/queryBy", $body);
     }
 }
