@@ -182,4 +182,14 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/outScheme/detailInfo", $body);
     }
+
+    /**
+     * 查看是否能抵扣
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function infoCheckGood($body)
+    {
+        return $this->restful("POST", "/info/checkGoods", $body);
+    }
 }
