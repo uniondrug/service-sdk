@@ -2166,4 +2166,15 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/approvalAdd/approvalUnfreezeStore", $body);
     }
 
+    /**
+     * 审批流模板 [根据审批引擎模板ID获取详情]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/detailByApproveSettingIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateDetailByApproveSettingId($body)
+    {
+        return $this->restful("POST", "/template/detailByApproveSettingId", $body);
+    }
+
 }
