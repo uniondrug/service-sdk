@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-23
- * @time   Tue, 23 Jun 2020 17:32:01 +0800
+ * @date   2020-06-28
+ * @time   Sun, 28 Jun 2020 19:49:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -896,6 +896,17 @@ class CompensateSdk extends SdkBase
     public function powerAssignPaging($body)
     {
         return $this->restful("POST", "/powerAssign/paging", $body);
+    }
+
+    /**
+     * 理赔列表是否可以查看,扣款是否可以操作
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PowerAssignController/checkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function powerCheck($body)
+    {
+        return $this->restful("POST", "/powerAssign/check", $body);
     }
 
     /**

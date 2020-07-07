@@ -147,4 +147,34 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundAccount/clearBalance", $body);
     }
+
+    /**
+     * 新增离线账户今日余额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function createOfflineBalance($body)
+    {
+        return $this->restful("POST", "/bankBalance/createOfflineTodayBalance", $body);
+    }
+
+    /**
+     * 查询账户所属者列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankAccountHolderList($body)
+    {
+        return $this->restful("POST", "/bankAccount/holderList", $body);
+    }
+
+    /**
+     * 查询银行账户的总计余额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankBalanceStatistics($body)
+    {
+        return $this->restful("POST", "/bankBalance/statistics", $body);
+    }
 }

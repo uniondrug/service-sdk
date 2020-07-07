@@ -120,9 +120,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 新增超级会员日方案
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function addMemberDay($body)
     {
@@ -131,9 +131,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 超级会员日方案详情展示
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function detailMemberDay($body)
     {
@@ -142,9 +142,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 超级会员日方案分页列表展示
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function pagingMemberDay($body)
     {
@@ -153,9 +153,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 超级会员日方案停用
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function stopMemberDay($body)
     {
@@ -164,9 +164,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 修改超级会员日方案
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function editMemberDay($body)
     {
@@ -175,9 +175,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 新增标签
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryTagAdd($body)
     {
@@ -186,9 +186,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 修改标签
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryTagEdit($body)
     {
@@ -197,9 +197,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 标签删除
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryTagRemove($body)
     {
@@ -208,9 +208,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 标签列表展示
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryTagList($body)
     {
@@ -296,9 +296,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 创建抵用券方案
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function addVoucher($body)
     {
@@ -307,9 +307,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券方案停用
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function stopVoucher($body)
     {
@@ -318,9 +318,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券方案编辑接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function editVoucher($body)
     {
@@ -329,9 +329,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券方案列表查询
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function listVoucher($body)
     {
@@ -340,9 +340,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券详情查询
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function infoVoucher($body)
     {
@@ -351,9 +351,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券成本方案创建
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function addBear($body)
     {
@@ -362,9 +362,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券成本方案编辑接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function editBear($body)
     {
@@ -373,9 +373,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券成本方案停用接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function stopBear($body)
     {
@@ -384,9 +384,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券成本方案查询接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function infoBear($body)
     {
@@ -395,9 +395,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券成本方案列表查询接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function listBear($body)
     {
@@ -406,9 +406,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券商品创建
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function addGoods($body)
     {
@@ -417,9 +417,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券商品编辑接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function editGoods($body)
     {
@@ -428,9 +428,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券商品停用接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function stopGoods($body)
     {
@@ -439,9 +439,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券商品查询接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function infoGoods($body)
     {
@@ -450,9 +450,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券商品列表分页查询接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function listGoods($body)
     {
@@ -461,9 +461,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券商品分配优惠金额接口
-     * @link
      * @param $body
      * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     * @link
      */
     public function assignDiscountGoods($body)
     {
@@ -472,9 +472,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 抵扣券商品列表查询接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function allListGoods($body)
     {
@@ -507,9 +507,9 @@ class JavaPromoteSdk extends SdkBase
     /*运费券接口*/
     /**
      * 创建运费券方案
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function addFreight($body)
     {
@@ -518,9 +518,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券方案停用
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function stopFreight($body)
     {
@@ -529,9 +529,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券方案编辑接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function editFreight($body)
     {
@@ -540,9 +540,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券方案列表查询
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function pagingFreight($body)
     {
@@ -551,9 +551,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券详情查询
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function simpleInfoFreight($body)
     {
@@ -562,9 +562,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 渠道连锁店修改
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function modifyChannelFreight($body)
     {
@@ -573,9 +573,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券成本方案创建
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function addFreightBear($body)
     {
@@ -584,9 +584,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券成本方案编辑接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function editFreightBear($body)
     {
@@ -595,9 +595,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券成本方案停用接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function stopFreightBear($body)
     {
@@ -606,9 +606,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券成本方案查询接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function infoFreightBear($body)
     {
@@ -617,9 +617,9 @@ class JavaPromoteSdk extends SdkBase
 
     /**
      * 运费券成本方案列表查询接口
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function listFreightBear($body)
     {
@@ -680,6 +680,7 @@ class JavaPromoteSdk extends SdkBase
     {
         return $this->restful("POST", "/promote/scheme/project/edit", $body);
     }
+
     /**
      * 项目方案关联
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/blob/v4.8_项目管理/doc/营销后台接口文档/营销中心卡券方案接口v4.8%20增加项目分组概念.md
@@ -722,5 +723,93 @@ class JavaPromoteSdk extends SdkBase
     public function goodsAllListPromote($body)
     {
         return $this->restful("POST", "/promote/scheme/goods/allByScheme/info", $body);
+    }
+
+    /**
+     * 扣率方案新建
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeAdd($body)
+    {
+        return $this->restful("POST", "/rate/scheme/add", $body);
+    }
+
+    /**
+     * 扣率方案详情查询
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeInfo($body)
+    {
+        return $this->restful("POST", "/rate/scheme/info", $body);
+    }
+
+    /**
+     * 扣率方案列表展示
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemePaging($body)
+    {
+        return $this->restful("POST", "/rate/scheme/paging", $body);
+    }
+
+    /**
+     * 扣率方案编辑
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeEdit($body)
+    {
+        return $this->restful("POST", "/rate/scheme/edit", $body);
+    }
+
+    /**
+     * 扣率方案停用
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeStop($body)
+    {
+        return $this->restful("POST", "/rate/scheme/stop", $body);
+    }
+
+    /**
+     * 扣率方案商品关联
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeGoodsAdd($body)
+    {
+        return $this->restful("POST", "/rate/scheme/goods/add", $body);
+    }
+
+    /**
+     * 扣率方案商品取消关联
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeGoodsStop($body)
+    {
+        return $this->restful("POST", "/rate/scheme/goods/stop", $body);
+    }
+
+    /**
+     * 扣率方案商品列表
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function RateSchemeGoodsPaging($body)
+    {
+        return $this->restful("POST", "/rate/scheme/goods/paging", $body);
     }
 }
