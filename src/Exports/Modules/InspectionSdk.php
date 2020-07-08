@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-07
- * @time   Tue, 07 Jul 2020 16:48:00 +0800
+ * @date   2020-07-08
+ * @time   Wed, 08 Jul 2020 15:14:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -852,6 +852,17 @@ class InspectionSdk extends SdkBase
     public function taskInspectionMaterialSearch($body)
     {
         return $this->restful("POST", "/task/inspection/material/search", $body);
+    }
+
+    /**
+     * 确认收样
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/receivedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskInspectionReceived($body)
+    {
+        return $this->restful("POST", "/task/inspection/received", $body);
     }
 
     /**
