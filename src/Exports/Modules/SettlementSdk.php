@@ -2527,6 +2527,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 更新开票单状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/updateBillStatusToInvoiceAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateSingleBillStatus($body)
+    {
+        return $this->restful("POST", "/bill/updateSingleBillStatus", $body);
+    }
+
+    /**
      * 更新对账单下订单的属性接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/updateSettlementAction.md
      * @param $body
