@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-08
- * @time   Wed, 08 Jul 2020 15:14:26 +0800
+ * @date   2020-07-09
+ * @time   Thu, 09 Jul 2020 21:27:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,17 +71,6 @@ class InspectionSdk extends SdkBase
     public function cancelAppointmentOrder($body)
     {
         return $this->restful("POST", "/order/cancelAppointment", $body);
-    }
-
-    /**
-     * 取消订单
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/cancelAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function cancelOrder($body)
-    {
-        return $this->restful("POST", "/openapi/order/cancel", $body);
     }
 
     /**
@@ -283,7 +272,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取支持的检查项
+     * 获取支持的检查项列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/InspectionController/supportListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -456,6 +445,28 @@ class InspectionSdk extends SdkBase
     public function lineGetBoByDate($body)
     {
         return $this->restful("POST", "/line/search/date", $body);
+    }
+
+    /**
+     * Mock检查任务链路数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockInpectionLinkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mockInpectionLink($body)
+    {
+        return $this->restful("POST", "/mock/inspection/link", $body);
+    }
+
+    /**
+     * Mock订单数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mockOrder($body)
+    {
+        return $this->restful("POST", "/mock/mockOrder", $body);
     }
 
     /**
