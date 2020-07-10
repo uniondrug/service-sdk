@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-07-10
- * @time   Fri, 10 Jul 2020 11:36:33 +0800
+ * @time   Fri, 10 Jul 2020 21:00:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -305,6 +305,17 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 团队人员列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/inspectorListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationInspectorList($body)
+    {
+        return $this->restful("POST", "/information/inspector/list", $body);
+    }
+
+    /**
      * 线路详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineAction.md
      * @param array $body 入参类型
@@ -371,14 +382,14 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 团队人员列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/teamListAction.md
+     * 护士人员列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/nurseListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationTeamList($body)
+    public function informationNurseList($body)
     {
-        return $this->restful("POST", "/information/team/list", $body);
+        return $this->restful("POST", "/information/nurse/list", $body);
     }
 
     /**
@@ -456,6 +467,17 @@ class InspectionSdk extends SdkBase
     public function lineGetBoByDate($body)
     {
         return $this->restful("POST", "/line/search/date", $body);
+    }
+
+    /**
+     * 登录接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/loginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function login($body)
+    {
+        return $this->restful("POST", "/login", $body);
     }
 
     /**
@@ -544,6 +566,17 @@ class InspectionSdk extends SdkBase
     public function qualityControlItemShow($body)
     {
         return $this->restful("POST", "/quality-control/item/show", $body);
+    }
+
+    /**
+     * 刷新用户信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/refreshTokenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refreshToken($body)
+    {
+        return $this->restful("POST", "/refresh/token", $body);
     }
 
     /**
@@ -844,6 +877,28 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/inspectorListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemUserInspectorList($body)
+    {
+        return $this->restful("POST", "/system/user/inspector/list", $body);
+    }
+
+    /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/nurseListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemUserNurseList($body)
+    {
+        return $this->restful("POST", "/system/user/nurse/list", $body);
+    }
+
+    /**
      * 获取检查任务基础信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/inspectionTaskInfoAction.md
      * @param array $body 入参类型
@@ -940,16 +995,5 @@ class InspectionSdk extends SdkBase
     public function uploadUrlSignInfo($body)
     {
         return $this->restful("POST", "/upload/url/sign/id", $body);
-    }
-
-    /**
-     * 获取用户列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/userListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userList($body)
-    {
-        return $this->restful("POST", "/user/list", $body);
     }
 }
