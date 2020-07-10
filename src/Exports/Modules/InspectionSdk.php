@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-09
- * @time   Thu, 09 Jul 2020 21:27:12 +0800
+ * @date   2020-07-10
+ * @time   Fri, 10 Jul 2020 11:36:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -390,6 +390,17 @@ class InspectionSdk extends SdkBase
     public function informationWasteTra($body)
     {
         return $this->restful("POST", "/information/line/waste/trajectory", $body);
+    }
+
+    /**
+     * 关联质检项信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/associQualityControlInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function inspectionAssociQuality($body)
+    {
+        return $this->restful("POST", "/inspection/associ/quality", $body);
     }
 
     /**
