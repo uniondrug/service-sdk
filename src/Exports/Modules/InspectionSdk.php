@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-10
- * @time   Fri, 10 Jul 2020 21:00:16 +0800
+ * @date   2020-07-13
+ * @time   Mon, 13 Jul 2020 15:16:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -101,7 +101,7 @@ class InspectionSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function createOrder($body)
+    public function createOrderOpenapi($body)
     {
         return $this->restful("POST", "/openapi/order/create", $body);
     }
@@ -189,7 +189,7 @@ class InspectionSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderInfo($body)
+    public function getOrderInfoOpenapi($body)
     {
         return $this->restful("POST", "/openapi/order/info", $body);
     }
@@ -211,7 +211,7 @@ class InspectionSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderReport($body)
+    public function getOrderReportOpenapi($body)
     {
         return $this->restful("POST", "/openapi/order/report", $body);
     }
@@ -588,6 +588,17 @@ class InspectionSdk extends SdkBase
     public function refundOrder($body)
     {
         return $this->restful("POST", "/order/refund", $body);
+    }
+
+    /**
+     * 退单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/refundAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refundOrderOpenapi($body)
+    {
+        return $this->restful("POST", "/openapi/order/refund", $body);
     }
 
     /**
