@@ -314,4 +314,17 @@ class QueryEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/totalfee", $body, $query, $extra);
     }
+
+    /**
+     * 权益保障产品列表
+     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/PackageController/guaranteesPagingAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function packageGuaranteesPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/package/guarantees/paging", $body, $query, $extra);
+    }
 }
