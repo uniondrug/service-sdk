@@ -2177,4 +2177,15 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/template/detailByApproveSettingId", $body);
     }
 
+    /**
+     * 审批流模板 [不分页列表]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateList($body)
+    {
+        return $this->restful("POST", "/template/list", $body);
+    }
+
 }
