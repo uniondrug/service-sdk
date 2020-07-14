@@ -1399,4 +1399,17 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/redeem/getUnactivatedCode", $body);
     }
+    /**
+     * 批量用户在分组下的领取限制
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/BatchCheckLimitAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getRedeenBatchCheckLimit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeem/batch/check/limit", $body, $query, $extra);
+    }
+
 }
