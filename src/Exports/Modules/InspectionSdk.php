@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-14
- * @time   Tue, 14 Jul 2020 16:06:50 +0800
+ * @date   2020-07-15
+ * @time   Wed, 15 Jul 2020 18:09:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * InspectionSdk
@@ -32,1183 +32,1012 @@ class InspectionSdk extends SdkBase
     /**
      * 新增入库
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/addCommodityAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function addCommodity($body, $query = null, $extra = null)
+    public function addCommodity($body)
     {
-        return $this->restful("POST", "/stock/in/add/commodity", $body, $query, $extra);
+        return $this->restful("POST", "/stock/in/add/commodity", $body);
     }
 
     /**
      * 新增异常单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockAbnormalController/addStockAbnormalAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function addStockAbnormal($body, $query = null, $extra = null)
+    public function addStockAbnormal($body)
     {
-        return $this->restful("POST", "/stock/abnormal/add", $body, $query, $extra);
+        return $this->restful("POST", "/stock/abnormal/add", $body);
     }
 
     /**
      * 新增回仓单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockBackController/addStockBackAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function addStockBack($body, $query = null, $extra = null)
+    public function addStockBack($body)
     {
-        return $this->restful("POST", "/stock/back/add", $body, $query, $extra);
+        return $this->restful("POST", "/stock/back/add", $body);
     }
 
     /**
      * 订单取消预约
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/cancelAppointmentAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function cancelAppointmentOrder($body, $query = null, $extra = null)
+    public function cancelAppointmentOrder($body)
     {
-        return $this->restful("POST", "/order/cancelAppointment", $body, $query, $extra);
+        return $this->restful("POST", "/order/cancelAppointment", $body);
     }
 
     /**
      * 获取城市列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CityController/cityListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function cityList($body, $query = null, $extra = null)
+    public function cityList($body)
     {
-        return $this->restful("POST", "/city/list", $body, $query, $extra);
+        return $this->restful("POST", "/city/list", $body);
     }
 
     /**
      * 获取货品列表接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockController/commodityTypeListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function commodityTypeList($body, $query = null, $extra = null)
+    public function commodityTypeList($body)
     {
-        return $this->restful("GET", "/stock/commodity-type/list", $body, $query, $extra);
+        return $this->restful("GET", "/stock/commodity-type/list", $body);
     }
 
     /**
      * 创建订单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function createOrderOpenapi($body, $query = null, $extra = null)
+    public function createOrderOpenapi($body)
     {
-        return $this->restful("POST", "/openapi/order/create", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/order/create", $body);
     }
 
     /**
      * 导出环境参数数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/exportLineEnvironmentAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function exportLineEnvironment($body, $query = null, $extra = null)
+    public function exportLineEnvironment($body)
     {
-        return $this->restful("POST", "/information/export/line/environment", $body, $query, $extra);
+        return $this->restful("POST", "/information/export/line/environment", $body);
     }
 
     /**
      * 导出行驶轨迹数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/exportLineTrajectoryAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function exportLineTrajectory($body, $query = null, $extra = null)
+    public function exportLineTrajectory($body)
     {
-        return $this->restful("POST", "/information/export/line/trajectory", $body, $query, $extra);
+        return $this->restful("POST", "/information/export/line/trajectory", $body);
     }
 
     /**
      * 导出医废轨迹数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/exportWasteTrajectoryAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function exportWasteTrajectory($body, $query = null, $extra = null)
+    public function exportWasteTrajectory($body)
     {
-        return $this->restful("POST", "/information/export/waste/trajectory", $body, $query, $extra);
+        return $this->restful("POST", "/information/export/waste/trajectory", $body);
     }
 
     /**
      * 获取厂家列表接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockController/factoryListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function factoryList($body, $query = null, $extra = null)
+    public function factoryList($body)
     {
-        return $this->restful("GET", "/stock/factory/list", $body, $query, $extra);
+        return $this->restful("GET", "/stock/factory/list", $body);
     }
 
     /**
      * 获取订单检查项列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/getInspecionListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function geOrderInspectionList($body, $query = null, $extra = null)
+    public function geOrderInspectionList($body)
     {
-        return $this->restful("POST", "/order/inspectionList", $body, $query, $extra);
+        return $this->restful("POST", "/order/inspectionList", $body);
     }
 
     /**
      * 获取医院列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/HospitalController/getListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getHospitalList($body, $query = null, $extra = null)
+    public function getHospitalList($body)
     {
-        return $this->restful("POST", "/hospital/getList", $body, $query, $extra);
+        return $this->restful("POST", "/hospital/getList", $body);
     }
 
     /**
      * 获取医院密钥
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/HospitalController/getSecretAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getHospitalSecret($body, $query = null, $extra = null)
+    public function getHospitalSecret($body)
     {
-        return $this->restful("POST", "/openapi/hospital/getsecret", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/hospital/getsecret", $body);
     }
 
     /**
      * 查询订单信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/getOrderInfoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderInfoOpenapi($body, $query = null, $extra = null)
+    public function getOrderInfoOpenapi($body)
     {
-        return $this->restful("POST", "/openapi/order/info", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/order/info", $body);
     }
 
     /**
      * 查询订单列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/getListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderList($body, $query = null, $extra = null)
+    public function getOrderList($body)
     {
-        return $this->restful("POST", "/order/list", $body, $query, $extra);
+        return $this->restful("POST", "/order/list", $body);
     }
 
     /**
      * 查询订单检查报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/getOrderReportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderReportOpenapi($body, $query = null, $extra = null)
+    public function getOrderReportOpenapi($body)
     {
-        return $this->restful("POST", "/openapi/order/report", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/order/report", $body);
     }
 
     /**
      * 获取订单状态列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/getStatusListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderStatusList($body, $query = null, $extra = null)
+    public function getOrderStatusList($body)
     {
-        return $this->restful("POST", "/order/statusList", $body, $query, $extra);
+        return $this->restful("POST", "/order/statusList", $body);
     }
 
     /**
      * 查询异常单货品详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockAbnormalController/getStockAbnormalAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getStockAbnormalCommodity($body, $query = null, $extra = null)
+    public function getStockAbnormalCommodity($body)
     {
-        return $this->restful("POST", "/stock/abnormal/get/commodity", $body, $query, $extra);
+        return $this->restful("POST", "/stock/abnormal/get/commodity", $body);
     }
 
     /**
      * 查询出库单货品详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockBackController/getStockBackAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getStockBackCommodity($body, $query = null, $extra = null)
+    public function getStockBackCommodity($body)
     {
-        return $this->restful("POST", "/stock/back/get/commodity", $body, $query, $extra);
+        return $this->restful("POST", "/stock/back/get/commodity", $body);
     }
 
     /**
      * 查询出库单货品详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/getStockOutAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getStockOutCommodity($body, $query = null, $extra = null)
+    public function getStockOutCommodity($body)
     {
-        return $this->restful("POST", "/stock/out/get/commodity", $body, $query, $extra);
+        return $this->restful("POST", "/stock/out/get/commodity", $body);
     }
 
     /**
      * 获取支持的城市列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/CityController/supportListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getSupportCitys($body, $query = null, $extra = null)
+    public function getSupportCitys($body)
     {
-        return $this->restful("POST", "/openapi/city/supportlist", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/city/supportlist", $body);
     }
 
     /**
      * 获取支持的检查项列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/InspectionController/supportListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getSupportInspection($body, $query = null, $extra = null)
+    public function getSupportInspection($body)
     {
-        return $this->restful("POST", "/openapi/inspection/supportlist", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/inspection/supportlist", $body);
     }
 
     /**
      * 操作出库单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/handleStockOutAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function handleStockOut($body, $query = null, $extra = null)
+    public function handleStockOut($body)
     {
-        return $this->restful("POST", "/stock/out/handle", $body, $query, $extra);
+        return $this->restful("POST", "/stock/out/handle", $body);
     }
 
     /**
      * 基本资料
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/basicListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationBasicList($body, $query = null, $extra = null)
+    public function informationBasicList($body)
     {
-        return $this->restful("GET", "/information/basic", $body, $query, $extra);
+        return $this->restful("GET", "/information/basic", $body);
     }
 
     /**
      * 画行驶轨迹接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/drawTrajectoryAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationDrawTrajectory($body, $query = null, $extra = null)
+    public function informationDrawTrajectory($body)
     {
-        return $this->restful("POST", "/information/draw/trajectory", $body, $query, $extra);
+        return $this->restful("POST", "/information/draw/trajectory", $body);
     }
 
     /**
      * 团队人员列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/inspectorListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationInspectorList($body, $query = null, $extra = null)
+    public function informationInspectorList($body)
     {
-        return $this->restful("POST", "/information/inspector/list", $body, $query, $extra);
+        return $this->restful("POST", "/information/inspector/list", $body);
     }
 
     /**
      * 线路详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationLineDetail($body, $query = null, $extra = null)
+    public function informationLineDetail($body)
     {
-        return $this->restful("POST", "/information/line/detail", $body, $query, $extra);
+        return $this->restful("POST", "/information/line/detail", $body);
     }
 
     /**
      * 环境参数列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineEnvironmentAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationLineEnv($body, $query = null, $extra = null)
+    public function informationLineEnv($body)
     {
-        return $this->restful("POST", "/information/line/environment", $body, $query, $extra);
+        return $this->restful("POST", "/information/line/environment", $body);
     }
 
     /**
      * 线路列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationLineList($body, $query = null, $extra = null)
+    public function informationLineList($body)
     {
-        return $this->restful("POST", "/information/line/list", $body, $query, $extra);
+        return $this->restful("POST", "/information/line/list", $body);
     }
 
     /**
      * 室内质控
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineQualityAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationLineQuality($body, $query = null, $extra = null)
+    public function informationLineQuality($body)
     {
-        return $this->restful("POST", "/information/line/quality", $body, $query, $extra);
+        return $this->restful("POST", "/information/line/quality", $body);
     }
 
     /**
      * 行驶轨迹接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineTrajectoryAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationLineTra($body, $query = null, $extra = null)
+    public function informationLineTra($body)
     {
-        return $this->restful("POST", "/information/line/trajectory", $body, $query, $extra);
+        return $this->restful("POST", "/information/line/trajectory", $body);
     }
 
     /**
      * 医废处理接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/lineWasteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationLineWaste($body, $query = null, $extra = null)
+    public function informationLineWaste($body)
     {
-        return $this->restful("POST", "/information/line/waste", $body, $query, $extra);
+        return $this->restful("POST", "/information/line/waste", $body);
     }
 
     /**
      * 护士人员列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/nurseListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationNurseList($body, $query = null, $extra = null)
+    public function informationNurseList($body)
     {
-        return $this->restful("POST", "/information/nurse/list", $body, $query, $extra);
+        return $this->restful("POST", "/information/nurse/list", $body);
     }
 
     /**
      * 医废轨迹
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/wasteTrajectoryAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationWasteTra($body, $query = null, $extra = null)
+    public function informationWasteTra($body)
     {
-        return $this->restful("POST", "/information/line/waste/trajectory", $body, $query, $extra);
+        return $this->restful("POST", "/information/line/waste/trajectory", $body);
     }
 
     /**
      * 关联质检项信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/associQualityControlInfoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function inspectionAssociQuality($body, $query = null, $extra = null)
+    public function inspectionAssociQuality($body)
     {
-        return $this->restful("POST", "/inspection/associ/quality", $body, $query, $extra);
+        return $this->restful("POST", "/inspection/associ/quality", $body);
     }
 
     /**
      * 增加检测车
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionVanController/addAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function inspectionVanAdd($body, $query = null, $extra = null)
+    public function inspectionVanAdd($body)
     {
-        return $this->restful("POST", "/inspection/van/add", $body, $query, $extra);
+        return $this->restful("POST", "/inspection/van/add", $body);
     }
 
     /**
      * 车牌列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionVanController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function inspectionVanList($body, $query = null, $extra = null)
+    public function inspectionVanList($body)
     {
-        return $this->restful("GET", "/inspection/van/list", $body, $query, $extra);
+        return $this->restful("GET", "/inspection/van/list", $body);
     }
 
     /**
      * 恢复检测车
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionVanController/recoverAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function inspectionVanRecover($body, $query = null, $extra = null)
+    public function inspectionVanRecover($body)
     {
-        return $this->restful("POST", "/inspection/van/recover", $body, $query, $extra);
+        return $this->restful("POST", "/inspection/van/recover", $body);
     }
 
     /**
      * 修理检测车
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionVanController/repairAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function inspectionVanRepair($body, $query = null, $extra = null)
+    public function inspectionVanRepair($body)
     {
-        return $this->restful("POST", "/inspection/van/repair", $body, $query, $extra);
+        return $this->restful("POST", "/inspection/van/repair", $body);
     }
 
     /**
      * 获取指定时间内线路号
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LineController/getLineNoByDateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function lineGetBoByDate($body, $query = null, $extra = null)
+    public function lineGetBoByDate($body)
     {
-        return $this->restful("POST", "/line/search/date", $body, $query, $extra);
+        return $this->restful("POST", "/line/search/date", $body);
     }
 
     /**
      * 登录接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/loginAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function login($body, $query = null, $extra = null)
+    public function login($body)
     {
-        return $this->restful("POST", "/login", $body, $query, $extra);
+        return $this->restful("POST", "/login", $body);
+    }
+
+    /**
+     * Mock环境参数数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockEnvironmentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mockEnvironment($body)
+    {
+        return $this->restful("POST", "/mock/environment", $body);
     }
 
     /**
      * Mock检查任务链路数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockInpectionLinkAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function mockInpectionLink($body, $query = null, $extra = null)
+    public function mockInpectionLink($body)
     {
-        return $this->restful("POST", "/mock/inspection/link", $body, $query, $extra);
+        return $this->restful("POST", "/mock/inspection/link", $body);
     }
 
     /**
      * Mock订单数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockOrderAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function mockOrder($body, $query = null, $extra = null)
+    public function mockOrder($body)
     {
-        return $this->restful("POST", "/mock/mockOrder", $body, $query, $extra);
+        return $this->restful("POST", "/mock/mockOrder", $body);
     }
 
     /**
      * Mock轨迹数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockTrajectoryAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function mockTrajectory($body, $query = null, $extra = null)
+    public function mockTrajectory($body)
     {
-        return $this->restful("POST", "/mock/trajectory", $body, $query, $extra);
+        return $this->restful("POST", "/mock/trajectory", $body);
     }
 
     /**
      * 查询订单患者信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/patientInfoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function orderPatientInfo($body, $query = null, $extra = null)
+    public function orderPatientInfo($body)
     {
-        return $this->restful("POST", "/order/patientinfo", $body, $query, $extra);
+        return $this->restful("POST", "/order/patientinfo", $body);
     }
 
     /**
      * 增加质检项
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/itemAddAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function qualityControlItemAdd($body, $query = null, $extra = null)
+    public function qualityControlItemAdd($body)
     {
-        return $this->restful("POST", "/quality-control/item", $body, $query, $extra);
+        return $this->restful("POST", "/quality-control/item", $body);
     }
 
     /**
      * 隐藏质检项
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/hideItemAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function qualityControlItemHide($body, $query = null, $extra = null)
+    public function qualityControlItemHide($body)
     {
-        return $this->restful("POST", "/quality-control/item/hide", $body, $query, $extra);
+        return $this->restful("POST", "/quality-control/item/hide", $body);
     }
 
     /**
      * 质检项信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/itemInfoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function qualityControlItemInfo($body, $query = null, $extra = null)
+    public function qualityControlItemInfo($body)
     {
-        return $this->restful("POST", "/quality-control/item/info", $body, $query, $extra);
+        return $this->restful("POST", "/quality-control/item/info", $body);
     }
 
     /**
      * 质检项列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/itemListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function qualityControlItemList($body, $query = null, $extra = null)
+    public function qualityControlItemList($body)
     {
-        return $this->restful("POST", "/quality-control/item/list", $body, $query, $extra);
+        return $this->restful("POST", "/quality-control/item/list", $body);
     }
 
     /**
      * 显示质检项
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/showItemAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function qualityControlItemShow($body, $query = null, $extra = null)
+    public function qualityControlItemShow($body)
     {
-        return $this->restful("POST", "/quality-control/item/show", $body, $query, $extra);
+        return $this->restful("POST", "/quality-control/item/show", $body);
     }
 
     /**
      * 刷新用户信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/refreshTokenAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function refreshToken($body, $query = null, $extra = null)
+    public function refreshToken($body)
     {
-        return $this->restful("POST", "/refresh/token", $body, $query, $extra);
+        return $this->restful("POST", "/refresh/token", $body);
     }
 
     /**
      * 订单退单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/refundAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function refundOrder($body, $query = null, $extra = null)
+    public function refundOrder($body)
     {
-        return $this->restful("POST", "/order/refund", $body, $query, $extra);
+        return $this->restful("POST", "/order/refund", $body);
     }
 
     /**
      * 退单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/refundAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function refundOrderOpenapi($body, $query = null, $extra = null)
+    public function refundOrderOpenapi($body)
     {
-        return $this->restful("POST", "/openapi/order/refund", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/order/refund", $body);
     }
 
     /**
      * 审批报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveReportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportApprove($body, $query = null, $extra = null)
+    public function reportApprove($body)
     {
-        return $this->restful("POST", "/report/approve", $body, $query, $extra);
+        return $this->restful("POST", "/report/approve", $body);
     }
 
     /**
      * 报告审批详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveDetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportApproveDetail($body, $query = null, $extra = null)
+    public function reportApproveDetail($body)
     {
-        return $this->restful("POST", "/report/approve/detail", $body, $query, $extra);
+        return $this->restful("POST", "/report/approve/detail", $body);
     }
 
     /**
      * 报告审批列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportApproveList($body, $query = null, $extra = null)
+    public function reportApproveList($body)
     {
-        return $this->restful("POST", "/report/approve/list", $body, $query, $extra);
+        return $this->restful("POST", "/report/approve/list", $body);
     }
 
     /**
      * 审批状态列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/approveStatusListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportApproveStatusList($body, $query = null, $extra = null)
+    public function reportApproveStatusList($body)
     {
-        return $this->restful("POST", "/report/approve/status/list", $body, $query, $extra);
+        return $this->restful("POST", "/report/approve/status/list", $body);
     }
 
     /**
      * 检查报告详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportDetail($body, $query = null, $extra = null)
+    public function reportDetail($body)
     {
-        return $this->restful("POST", "/report/detail", $body, $query, $extra);
+        return $this->restful("POST", "/report/detail", $body);
     }
 
     /**
      * 添加检查报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/addAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportDetectionAdd($body, $query = null, $extra = null)
+    public function reportDetectionAdd($body)
     {
-        return $this->restful("POST", "/report/detection/add", $body, $query, $extra);
+        return $this->restful("POST", "/report/detection/add", $body);
     }
 
     /**
      * 检查报告列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportDetectionList($body, $query = null, $extra = null)
+    public function reportDetectionList($body)
     {
-        return $this->restful("POST", "/report/detection/list", $body, $query, $extra);
+        return $this->restful("POST", "/report/detection/list", $body);
     }
 
     /**
      * 作废报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/invalidReportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportInvalid($body, $query = null, $extra = null)
+    public function reportInvalid($body)
     {
-        return $this->restful("POST", "/report/invalid", $body, $query, $extra);
+        return $this->restful("POST", "/report/invalid", $body);
     }
 
     /**
      * 报告操作记录
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/reportLogAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportOpLogList($body, $query = null, $extra = null)
+    public function reportOpLogList($body)
     {
-        return $this->restful("POST", "/report/oplog/list", $body, $query, $extra);
+        return $this->restful("POST", "/report/oplog/list", $body);
     }
 
     /**
      * 添加质控报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/qualityAddAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportQualityAdd($body, $query = null, $extra = null)
+    public function reportQualityAdd($body)
     {
-        return $this->restful("POST", "/report/quality/add", $body, $query, $extra);
+        return $this->restful("POST", "/report/quality/add", $body);
     }
 
     /**
      * 质控报告版本详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/qualityDetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportQualityDetail($body, $query = null, $extra = null)
+    public function reportQualityDetail($body)
     {
-        return $this->restful("POST", "/report/quality/detail", $body, $query, $extra);
+        return $this->restful("POST", "/report/quality/detail", $body);
     }
 
     /**
      * 质控报告列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/qualityListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportQualityList($body, $query = null, $extra = null)
+    public function reportQualityList($body)
     {
-        return $this->restful("POST", "/report/quality/list", $body, $query, $extra);
+        return $this->restful("POST", "/report/quality/list", $body);
     }
 
     /**
      * 驳回报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/rejectdReportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportRejected($body, $query = null, $extra = null)
+    public function reportRejected($body)
     {
-        return $this->restful("POST", "/report/rejected", $body, $query, $extra);
+        return $this->restful("POST", "/report/rejected", $body);
     }
 
     /**
      * 增加检查项报告模板
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportTemplateController/itemAddAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportTemplateItemAdd($body, $query = null, $extra = null)
+    public function reportTemplateItemAdd($body)
     {
-        return $this->restful("POST", "/report-template/item/add", $body, $query, $extra);
+        return $this->restful("POST", "/report-template/item/add", $body);
     }
 
     /**
      * 删除检查报告明细模板
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportTemplateController/itemTemplateDeleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportTemplateItemDelete($body, $query = null, $extra = null)
+    public function reportTemplateItemDelete($body)
     {
-        return $this->restful("DELETE", "/report-template/item", $body, $query, $extra);
+        return $this->restful("DELETE", "/report-template/item", $body);
     }
 
     /**
      * 检查项报告模板列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportTemplateController/itemListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportTemplateItemList($body, $query = null, $extra = null)
+    public function reportTemplateItemList($body)
     {
-        return $this->restful("POST", "/report-template/item/list", $body, $query, $extra);
+        return $this->restful("POST", "/report-template/item/list", $body);
     }
 
     /**
      * 报告版本详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/versionDetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportVersionDetail($body, $query = null, $extra = null)
+    public function reportVersionDetail($body)
     {
-        return $this->restful("POST", "/report/version/detail", $body, $query, $extra);
+        return $this->restful("POST", "/report/version/detail", $body);
     }
 
     /**
      * 报告版本列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/reportVersionListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function reportVersionList($body, $query = null, $extra = null)
+    public function reportVersionList($body)
     {
-        return $this->restful("POST", "/report/version/list", $body, $query, $extra);
+        return $this->restful("POST", "/report/version/list", $body);
     }
 
     /**
      * 查询商品信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/searchCommodityAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function searchCommodity($body, $query = null, $extra = null)
+    public function searchCommodity($body)
     {
-        return $this->restful("POST", "/stock/in/search/commodity", $body, $query, $extra);
+        return $this->restful("POST", "/stock/in/search/commodity", $body);
     }
 
     /**
      * 异常单列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockAbnormalController/stockAbnormalListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function stockAbnormalList($body, $query = null, $extra = null)
+    public function stockAbnormalList($body)
     {
-        return $this->restful("POST", "/stock/abnormal/list", $body, $query, $extra);
+        return $this->restful("POST", "/stock/abnormal/list", $body);
     }
 
     /**
      * 回仓列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockBackController/stockBackListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function stockBackList($body, $query = null, $extra = null)
+    public function stockBackList($body)
     {
-        return $this->restful("POST", "/stock/back/list", $body, $query, $extra);
+        return $this->restful("POST", "/stock/back/list", $body);
     }
 
     /**
      * 入库列表接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/stockInListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function stockInList($body, $query = null, $extra = null)
+    public function stockInList($body)
     {
-        return $this->restful("POST", "/stock/in/list", $body, $query, $extra);
+        return $this->restful("POST", "/stock/in/list", $body);
     }
 
     /**
      * 库存列表接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockController/stockListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function stockList($body, $query = null, $extra = null)
+    public function stockList($body)
     {
-        return $this->restful("POST", "/stock/list", $body, $query, $extra);
+        return $this->restful("POST", "/stock/list", $body);
     }
 
     /**
      * 出库列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/stockOutListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function stockOutList($body, $query = null, $extra = null)
+    public function stockOutList($body)
     {
-        return $this->restful("POST", "/stock/out/list", $body, $query, $extra);
+        return $this->restful("POST", "/stock/out/list", $body);
     }
 
     /**
      * 获取出库单状态列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/statusListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function stockOutStatusList($body, $query = null, $extra = null)
+    public function stockOutStatusList($body)
     {
-        return $this->restful("GET", "/stock/out/status/list", $body, $query, $extra);
+        return $this->restful("GET", "/stock/out/status/list", $body);
     }
 
     /**
      * 获取仓库列表接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockController/storageListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function storageList($body, $query = null, $extra = null)
+    public function storageList($body)
     {
-        return $this->restful("POST", "/stock/storage/list", $body, $query, $extra);
+        return $this->restful("POST", "/stock/storage/list", $body);
     }
 
     /**
      * 获取用户列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/inspectorListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function systemUserInspectorList($body, $query = null, $extra = null)
+    public function systemUserInspectorList($body)
     {
-        return $this->restful("POST", "/system/user/inspector/list", $body, $query, $extra);
+        return $this->restful("POST", "/system/user/inspector/list", $body);
     }
 
     /**
      * 获取用户列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/nurseListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function systemUserNurseList($body, $query = null, $extra = null)
+    public function systemUserNurseList($body)
     {
-        return $this->restful("POST", "/system/user/nurse/list", $body, $query, $extra);
+        return $this->restful("POST", "/system/user/nurse/list", $body);
     }
 
     /**
      * 获取检查任务基础信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/inspectionTaskInfoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function taskInspectionInfo($body, $query = null, $extra = null)
+    public function taskInspectionInfo($body)
     {
-        return $this->restful("POST", "/task/inspection/info", $body, $query, $extra);
+        return $this->restful("POST", "/task/inspection/info", $body);
     }
 
     /**
      * 检测任务列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/inspectionTaskListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function taskInspectionList($body, $query = null, $extra = null)
+    public function taskInspectionList($body)
     {
-        return $this->restful("POST", "/task/inspection/list", $body, $query, $extra);
+        return $this->restful("POST", "/task/inspection/list", $body);
     }
 
     /**
      * 根据物料编号查询对应的检查任务
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/materialNoSearchInspectionTaskAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function taskInspectionMaterialSearch($body, $query = null, $extra = null)
+    public function taskInspectionMaterialSearch($body)
     {
-        return $this->restful("POST", "/task/inspection/material/search", $body, $query, $extra);
+        return $this->restful("POST", "/task/inspection/material/search", $body);
     }
 
     /**
      * 确认收样
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/receivedAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function taskInspectionReceived($body, $query = null, $extra = null)
+    public function taskInspectionReceived($body)
     {
-        return $this->restful("POST", "/task/inspection/received", $body, $query, $extra);
+        return $this->restful("POST", "/task/inspection/received", $body);
     }
 
     /**
      * 获取任务对应的检查报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/searchReportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function taskInspectionReport($body, $query = null, $extra = null)
+    public function taskInspectionReport($body)
     {
-        return $this->restful("POST", "/task/inspection/report", $body, $query, $extra);
+        return $this->restful("POST", "/task/inspection/report", $body);
     }
 
     /**
      * 检测任务统计
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/inspectionTaskStatAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function taskInspectionStat($body, $query = null, $extra = null)
+    public function taskInspectionStat($body)
     {
-        return $this->restful("POST", "/task/inspection/stat", $body, $query, $extra);
+        return $this->restful("POST", "/task/inspection/stat", $body);
     }
 
     /**
      * 文件上传
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/UploadController/uploadFileAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function uploadFile($body, $query = null, $extra = null)
+    public function uploadFile($body)
     {
-        return $this->restful("POST", "/upload/file", $body, $query, $extra);
+        return $this->restful("POST", "/upload/file", $body);
     }
 
     /**
      * 获取可下载的连接(oss-url)
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/UploadController/urlSignAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function uploadUrlSign($body, $query = null, $extra = null)
+    public function uploadUrlSign($body)
     {
-        return $this->restful("POST", "/upload/url/sign/oss", $body, $query, $extra);
+        return $this->restful("POST", "/upload/url/sign/oss", $body);
     }
 
     /**
      * 获取可下载的连接(attachment-id)
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/UploadController/urlSignInfoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function uploadUrlSignInfo($body, $query = null, $extra = null)
+    public function uploadUrlSignInfo($body)
     {
-        return $this->restful("POST", "/upload/url/sign/id", $body, $query, $extra);
+        return $this->restful("POST", "/upload/url/sign/id", $body);
     }
 }
