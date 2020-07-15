@@ -2188,4 +2188,37 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/template/list", $body);
     }
 
+    /**
+     * 根据项目ids查询记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Equity/EquityProjectSumDetailController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityProjectSumList($body)
+    {
+        return $this->restful("POST", "/equityProjectSumDetail/list", $body);
+    }
+
+    /**
+     * 根据项目ID查询记录详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Equity/EquityProjectSumDetailController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityProjectSumDetail($body)
+    {
+        return $this->restful("POST", "/equityProjectSumDetail/detail", $body);
+    }
+
+    /**
+     * 根据项目ID获取日维度数据列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Equity/EquityProjectDayDetailController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityProjectDayList($body)
+    {
+        return $this->restful("POST", "/equityProjectDayDetail/list", $body);
+    }
+
 }
