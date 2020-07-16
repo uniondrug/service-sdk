@@ -33,4 +33,15 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userMajor/queryBy", $body);
     }
+
+    /**
+     * 用户列表集合 MemberId[]
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserIdentityApiController/batchInfoByMemberIdsApi.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userList($body)
+    {
+        return $this->restful("POST", "/v2/api/identity/batchInfoByMemberIds", $body);
+    }
 }

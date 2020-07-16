@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-01
- * @time   Wed, 01 Jul 2020 16:54:20 +0800
+ * @date   2020-07-15
+ * @time   Wed, 15 Jul 2020 18:09:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -41,6 +41,28 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 新增异常单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockAbnormalController/addStockAbnormalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addStockAbnormal($body)
+    {
+        return $this->restful("POST", "/stock/abnormal/add", $body);
+    }
+
+    /**
+     * 新增回仓单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockBackController/addStockBackAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addStockBack($body)
+    {
+        return $this->restful("POST", "/stock/back/add", $body);
+    }
+
+    /**
      * 订单取消预约
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/cancelAppointmentAction.md
      * @param array $body 入参类型
@@ -49,17 +71,6 @@ class InspectionSdk extends SdkBase
     public function cancelAppointmentOrder($body)
     {
         return $this->restful("POST", "/order/cancelAppointment", $body);
-    }
-
-    /**
-     * 取消订单
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/cancelAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function cancelOrder($body)
-    {
-        return $this->restful("POST", "/openapi/order/cancel", $body);
     }
 
     /**
@@ -90,7 +101,7 @@ class InspectionSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function createOrder($body)
+    public function createOrderOpenapi($body)
     {
         return $this->restful("POST", "/openapi/order/create", $body);
     }
@@ -151,17 +162,6 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取所有检查项
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/InspectionController/getAllAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getAllInspection($body)
-    {
-        return $this->restful("POST", "/openapi/inspection/getall", $body);
-    }
-
-    /**
      * 获取医院列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/HospitalController/getListAction.md
      * @param array $body 入参类型
@@ -173,12 +173,23 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 获取医院密钥
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/HospitalController/getSecretAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getHospitalSecret($body)
+    {
+        return $this->restful("POST", "/openapi/hospital/getsecret", $body);
+    }
+
+    /**
      * 查询订单信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/getOrderInfoAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderInfo($body)
+    public function getOrderInfoOpenapi($body)
     {
         return $this->restful("POST", "/openapi/order/info", $body);
     }
@@ -200,7 +211,7 @@ class InspectionSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOrderReport($body)
+    public function getOrderReportOpenapi($body)
     {
         return $this->restful("POST", "/openapi/order/report", $body);
     }
@@ -217,23 +228,67 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 查询出库单货品详情
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/getOutStockAction.md
+     * 查询异常单货品详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockAbnormalController/getStockAbnormalAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function getOutStockCommodity($body)
+    public function getStockAbnormalCommodity($body)
+    {
+        return $this->restful("POST", "/stock/abnormal/get/commodity", $body);
+    }
+
+    /**
+     * 查询出库单货品详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockBackController/getStockBackAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStockBackCommodity($body)
+    {
+        return $this->restful("POST", "/stock/back/get/commodity", $body);
+    }
+
+    /**
+     * 查询出库单货品详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/getStockOutAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getStockOutCommodity($body)
     {
         return $this->restful("POST", "/stock/out/get/commodity", $body);
     }
 
     /**
-     * 操作出库单
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/handleOutStockAction.md
+     * 获取支持的城市列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/CityController/supportListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function handleOutStock($body)
+    public function getSupportCitys($body)
+    {
+        return $this->restful("POST", "/openapi/city/supportlist", $body);
+    }
+
+    /**
+     * 获取支持的检查项列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/InspectionController/supportListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getSupportInspection($body)
+    {
+        return $this->restful("POST", "/openapi/inspection/supportlist", $body);
+    }
+
+    /**
+     * 操作出库单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/handleStockOutAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function handleStockOut($body)
     {
         return $this->restful("POST", "/stock/out/handle", $body);
     }
@@ -247,6 +302,28 @@ class InspectionSdk extends SdkBase
     public function informationBasicList($body)
     {
         return $this->restful("GET", "/information/basic", $body);
+    }
+
+    /**
+     * 画行驶轨迹接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/drawTrajectoryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationDrawTrajectory($body)
+    {
+        return $this->restful("POST", "/information/draw/trajectory", $body);
+    }
+
+    /**
+     * 团队人员列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/inspectorListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function informationInspectorList($body)
+    {
+        return $this->restful("POST", "/information/inspector/list", $body);
     }
 
     /**
@@ -316,14 +393,14 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 团队人员列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/teamListAction.md
+     * 护士人员列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Information/InformationController/nurseListAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function informationTeamList($body)
+    public function informationNurseList($body)
     {
-        return $this->restful("POST", "/information/team/list", $body);
+        return $this->restful("POST", "/information/nurse/list", $body);
     }
 
     /**
@@ -335,6 +412,17 @@ class InspectionSdk extends SdkBase
     public function informationWasteTra($body)
     {
         return $this->restful("POST", "/information/line/waste/trajectory", $body);
+    }
+
+    /**
+     * 关联质检项信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/associQualityControlInfoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function inspectionAssociQuality($body)
+    {
+        return $this->restful("POST", "/inspection/associ/quality", $body);
     }
 
     /**
@@ -382,17 +470,6 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 入库列表接口
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/inStockListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function inStockList($body)
-    {
-        return $this->restful("POST", "/stock/in/list", $body);
-    }
-
-    /**
      * 获取指定时间内线路号
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LineController/getLineNoByDateAction.md
      * @param array $body 入参类型
@@ -404,6 +481,61 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 登录接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/loginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function login($body)
+    {
+        return $this->restful("POST", "/login", $body);
+    }
+
+    /**
+     * Mock环境参数数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockEnvironmentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mockEnvironment($body)
+    {
+        return $this->restful("POST", "/mock/environment", $body);
+    }
+
+    /**
+     * Mock检查任务链路数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockInpectionLinkAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mockInpectionLink($body)
+    {
+        return $this->restful("POST", "/mock/inspection/link", $body);
+    }
+
+    /**
+     * Mock订单数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mockOrder($body)
+    {
+        return $this->restful("POST", "/mock/mockOrder", $body);
+    }
+
+    /**
+     * Mock轨迹数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockTrajectoryAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mockTrajectory($body)
+    {
+        return $this->restful("POST", "/mock/trajectory", $body);
+    }
+
+    /**
      * 查询订单患者信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/patientInfoAction.md
      * @param array $body 入参类型
@@ -412,17 +544,6 @@ class InspectionSdk extends SdkBase
     public function orderPatientInfo($body)
     {
         return $this->restful("POST", "/order/patientinfo", $body);
-    }
-
-    /**
-     * 出库列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/outStockListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function outStockList($body)
-    {
-        return $this->restful("POST", "/stock/out/list", $body);
     }
 
     /**
@@ -481,6 +602,17 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 刷新用户信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/refreshTokenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refreshToken($body)
+    {
+        return $this->restful("POST", "/refresh/token", $body);
+    }
+
+    /**
      * 订单退单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/refundAction.md
      * @param array $body 入参类型
@@ -489,6 +621,17 @@ class InspectionSdk extends SdkBase
     public function refundOrder($body)
     {
         return $this->restful("POST", "/order/refund", $body);
+    }
+
+    /**
+     * 退单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/refundAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refundOrderOpenapi($body)
+    {
+        return $this->restful("POST", "/openapi/order/refund", $body);
     }
 
     /**
@@ -701,6 +844,39 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 异常单列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockAbnormalController/stockAbnormalListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function stockAbnormalList($body)
+    {
+        return $this->restful("POST", "/stock/abnormal/list", $body);
+    }
+
+    /**
+     * 回仓列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockBackController/stockBackListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function stockBackList($body)
+    {
+        return $this->restful("POST", "/stock/back/list", $body);
+    }
+
+    /**
+     * 入库列表接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/stockInListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function stockInList($body)
+    {
+        return $this->restful("POST", "/stock/in/list", $body);
+    }
+
+    /**
      * 库存列表接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockController/stockListAction.md
      * @param array $body 入参类型
@@ -709,6 +885,17 @@ class InspectionSdk extends SdkBase
     public function stockList($body)
     {
         return $this->restful("POST", "/stock/list", $body);
+    }
+
+    /**
+     * 出库列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/stockOutListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function stockOutList($body)
+    {
+        return $this->restful("POST", "/stock/out/list", $body);
     }
 
     /**
@@ -731,6 +918,28 @@ class InspectionSdk extends SdkBase
     public function storageList($body)
     {
         return $this->restful("POST", "/stock/storage/list", $body);
+    }
+
+    /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/inspectorListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemUserInspectorList($body)
+    {
+        return $this->restful("POST", "/system/user/inspector/list", $body);
+    }
+
+    /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/nurseListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function systemUserNurseList($body)
+    {
+        return $this->restful("POST", "/system/user/nurse/list", $body);
     }
 
     /**
@@ -764,6 +973,17 @@ class InspectionSdk extends SdkBase
     public function taskInspectionMaterialSearch($body)
     {
         return $this->restful("POST", "/task/inspection/material/search", $body);
+    }
+
+    /**
+     * 确认收样
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/receivedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function taskInspectionReceived($body)
+    {
+        return $this->restful("POST", "/task/inspection/received", $body);
     }
 
     /**
@@ -819,16 +1039,5 @@ class InspectionSdk extends SdkBase
     public function uploadUrlSignInfo($body)
     {
         return $this->restful("POST", "/upload/url/sign/id", $body);
-    }
-
-    /**
-     * 获取用户列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/userListAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userList($body)
-    {
-        return $this->restful("POST", "/user/list", $body);
     }
 }

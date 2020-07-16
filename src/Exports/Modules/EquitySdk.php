@@ -1452,4 +1452,14 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/group/editGroupEquityValueAndTimes", $body);
     }
+    /**
+     * 获取用户要指定增值服务对应的保障数量
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/GuaranteeController/getNumsByProductIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGuaranteeProducts($body)
+    {
+        return $this->restful("POST", "/guarantee/products", $body);
+    }
 }

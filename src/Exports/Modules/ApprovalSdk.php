@@ -36,9 +36,108 @@ class ApprovalSdk extends SdkBase
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function approveUserAdd($body)
+    public function applyAdd($body)
     {
         return $this->restful("POST", "/apply/add", $body);
+    }
+
+    /**
+     * 同意
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/agreeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyAgree($body)
+    {
+        return $this->restful("POST", "/apply/agree", $body);
+    }
+
+    /**
+     * 撤回
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/cancelAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyCancel($body)
+    {
+        return $this->restful("POST", "/apply/cancel", $body);
+    }
+
+    /**
+     * 评论
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/commentAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyComment($body)
+    {
+        return $this->restful("POST", "/apply/comment", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyDetail($body)
+    {
+        return $this->restful("POST", "/apply/detail", $body);
+    }
+
+    /**
+     * 转交
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/forwardAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyForward($body)
+    {
+        return $this->restful("POST", "/apply/forward", $body);
+    }
+
+    /**
+     * 翻页列表
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyPaging($body)
+    {
+        return $this->restful("POST", "/apply/paging", $body);
+    }
+
+    /**
+     * 驳回
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/rejectAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyReject($body)
+    {
+        return $this->restful("POST", "/apply/reject", $body);
+    }
+
+    /**
+     * 提醒当前审批人
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/remindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyRemind($body)
+    {
+        return $this->restful("POST", "/apply/remind", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApproveUserController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveUserAdd($body)
+    {
+        return $this->restful("POST", "/approveUser/add", $body);
     }
 
     /**
@@ -105,6 +204,17 @@ class ApprovalSdk extends SdkBase
     public function templateDetail($body)
     {
         return $this->restful("POST", "/template/detail", $body);
+    }
+
+    /**
+     * 审批流模板 [根据类型获取详情]
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TemplateController/detailByTypeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateDetailByType($body)
+    {
+        return $this->restful("POST", "/template/detailByType", $body);
     }
 
     /**

@@ -803,7 +803,7 @@ class JavaPromoteSdk extends SdkBase
     }
 
     /**
-     * 扣率方案商品列表
+     * 商品扣率方案商品列表接口
      * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/feature%2Ffeature_v5.1_%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E8%B0%83%E8%AF%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83%E5%8D%A1%E5%88%B8%E6%96%B9%E6%A1%88%E6%8E%A5%E5%8F%A3v5.1%20%E6%B4%BB%E5%8A%A8%E6%89%A3%E7%8E%87%E6%96%B9%E6%A1%88.md
      * @param array $body
      * @return ResponseInterface
@@ -811,5 +811,38 @@ class JavaPromoteSdk extends SdkBase
     public function RateSchemeGoodsPaging($body)
     {
         return $this->restful("POST", "/rate/scheme/goods/paging", $body);
+    }
+
+    /**
+     * 黑名单商品标签接口查询
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/v5.4_%E5%90%8C%E6%AD%A5%E5%95%86%E5%93%81%E4%B8%AD%E5%BF%83%E6%A0%87%E7%AD%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%96%B9%E6%A1%88%E5%95%86%E5%93%81%E9%BB%91%E5%90%8D%E5%8D%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83v5.4%20%E5%95%86%E5%93%81%E4%B8%AD%E5%BF%83%E9%BB%91%E5%90%8D%E5%8D%95%E6%A0%87%E7%AD%BE%E6%8E%A5%E5%8F%A3.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function goodsTagList($body)
+    {
+        return $this->restful("POST", "/goodsTag/queryGoodsTag", $body);
+    }
+
+    /**
+     * 方案关联商品模式变更接口
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/v5.4_%E5%90%8C%E6%AD%A5%E5%95%86%E5%93%81%E4%B8%AD%E5%BF%83%E6%A0%87%E7%AD%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%96%B9%E6%A1%88%E5%95%86%E5%93%81%E9%BB%91%E5%90%8D%E5%8D%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83v5.4%20%E5%95%86%E5%93%81%E4%B8%AD%E5%BF%83%E9%BB%91%E5%90%8D%E5%8D%95%E6%A0%87%E7%AD%BE%E6%8E%A5%E5%8F%A3.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function modifyGoodsLimit($body)
+    {
+        return $this->restful("POST", "/promote/scheme/modifyGoodsLimit", $body);
+    }
+
+    /**
+     * 添加黑名单商品分类
+     * @link https://uniondrug.coding.net/p/java.middleend.promotecenter/d/java.middleend.promotecenter/git/tree/v5.4_%E5%90%8C%E6%AD%A5%E5%95%86%E5%93%81%E4%B8%AD%E5%BF%83%E6%A0%87%E7%AD%BE%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%B7%BB%E5%8A%A0%E6%96%B9%E6%A1%88%E5%95%86%E5%93%81%E9%BB%91%E5%90%8D%E5%8D%95/doc/%E8%90%A5%E9%94%80%E5%90%8E%E5%8F%B0%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/%E8%90%A5%E9%94%80%E4%B8%AD%E5%BF%83v5.4%20%E5%95%86%E5%93%81%E4%B8%AD%E5%BF%83%E9%BB%91%E5%90%8D%E5%8D%95%E6%A0%87%E7%AD%BE%E6%8E%A5%E5%8F%A3.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function goodsTagAdd($body)
+    {
+        return $this->restful("POST", "/goodsTag/addGoodsTag", $body);
     }
 }

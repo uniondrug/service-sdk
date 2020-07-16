@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-29
- * @time   Fri, 29 Nov 2019 15:51:56 +0800
+ * @date   2020-07-08
+ * @time   Wed, 08 Jul 2020 15:48:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -31,89 +31,53 @@ class TaxSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/createAction.md
-     * @param object|array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/UploadBillLog/UploadBillLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressCreate($body)
+    public function uploadBillLogCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/create", $body);
+        return $this->restful("POST", "/uploadBillLog/create", $body, $query, $extra);
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/detailAction.md
-     * @param object|array $body 入参类型
+     * 接收开票单上传状态
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/receiveBillStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressDetail($body)
+    public function xForcePlusReceiveBillStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/detail", $body);
+        return $this->restful("POST", "/xForcePlus/receiveBillStatus", $body, $query, $extra);
     }
 
     /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/pagingAction.md
-     * @param object|array $body 入参类型
+     * 接收回传的发票
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/receiveInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressPaging($body)
+    public function xForcePlusReceiveInvoice($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/paging", $body);
+        return $this->restful("POST", "/xForcePlus/receiveInvoice", $body, $query, $extra);
     }
 
     /**
-     * 批次列表
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/pagingAction.md
-     * @param object|array $body 入参类型
+     * 上传开票单信息
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/sendBillAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressListing($body)
+    public function xForcePlusUploadBill($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/listing", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function invoiceExpressUpdate($body)
-    {
-        return $this->restful("POST", "/invoiceExpress/update", $body);
-    }
-
-    /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function invoiceExpressDelete($body)
-    {
-        return $this->restful("POST", "/invoiceExpress/delete", $body);
-    }
-
-    /**
-     * 批量删除
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function invoiceExpressDeleteInBatch($body)
-    {
-        return $this->restful("POST", "/invoiceExpress/deleteInBatch", $body);
-    }
-
-    /**
-     * 今天第几条
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function invoiceExpressCountToday($body)
-    {
-        return $this->restful("POST", "/invoiceExpress/countToday", $body);
+        return $this->restful("POST", "/xForcePlus/uploadBill", $body, $query, $extra);
     }
 }
