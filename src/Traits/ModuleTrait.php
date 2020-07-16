@@ -46,6 +46,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMpacenterSdk       $javaMpacenter
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaIhcenterSdk        $javaIhcenter
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommissionSdk      $javaCommission
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaComsnSdk           $javaComsn
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk            $javaCoinSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDistributionSdk    $javaDistribution
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk         $javaPromote
@@ -103,7 +104,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk   $drugstoreActivity
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthSdk                $auth
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPmcCashierSdk      $javaPmcCashier
- * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk      $outreachResourceApiSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk $outreachResourceApiSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                 $vas
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                 $sms
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ApprovalSdk            $approval
