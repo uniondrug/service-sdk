@@ -2221,4 +2221,16 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/equityProjectDayDetail/list", $body);
     }
 
+
+    /**
+     * 查询保司是否已经存在
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/insuranceIsExistedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyInsuranceIsExisted($body)
+    {
+        return $this->restful("POST", "/insuranceApply/insuranceIsExisted", $body);
+    }
+
 }
