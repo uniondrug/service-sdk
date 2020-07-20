@@ -2586,7 +2586,7 @@ class SettlementSdk extends SdkBase
     /**
      * 获取用户下连锁列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/listByMemberAction.md
-     * @param object|array|object $body 入参类型
+     * @param array|object  $body 入参类型
      * @return ResponseInterface
      */
     public function organizeAccountListByMember($body)
@@ -2597,7 +2597,7 @@ class SettlementSdk extends SdkBase
     /**
      * 商家服务平台版本详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessCenterVersionController/detailAction.md
-     * @param object|array|object $body 入参类型
+     * @param array|object  $body 入参类型
      * @return ResponseInterface
      */
     public function businessCenterVersionDetail($body)
