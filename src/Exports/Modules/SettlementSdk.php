@@ -3397,4 +3397,17 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/financeWorker/update", $body, $query, $extra);
     }
+
+    /**
+     * 发票开票完成添加付款单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/statementCompleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/statementComplete", $body, $query, $extra);
+    }
 }
