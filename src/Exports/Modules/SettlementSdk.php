@@ -1528,9 +1528,9 @@ class SettlementSdk extends SdkBase
     /**
      * 获取用户下连锁列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/memberAccountListingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeAccountMemberAccountListing($body, $query = null, $extra = null)
@@ -2586,7 +2586,7 @@ class SettlementSdk extends SdkBase
     /**
      * 获取用户下连锁列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/listByMemberAction.md
-     * @param array|object  $body 入参类型
+     * @param array|object $body 入参类型
      * @return ResponseInterface
      */
     public function organizeAccountListByMember($body)
@@ -2597,7 +2597,7 @@ class SettlementSdk extends SdkBase
     /**
      * 商家服务平台版本详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessCenterVersionController/detailAction.md
-     * @param array|object  $body 入参类型
+     * @param array|object $body 入参类型
      * @return ResponseInterface
      */
     public function businessCenterVersionDetail($body)
@@ -3323,9 +3323,9 @@ class SettlementSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FinanceWorkerController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function financeWorkerCreate($body, $query = null, $extra = null)
@@ -3336,9 +3336,9 @@ class SettlementSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FinanceWorkerController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function financeWorkerDelete($body, $query = null, $extra = null)
@@ -3349,9 +3349,9 @@ class SettlementSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FinanceWorkerController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function financeWorkerDetail($body, $query = null, $extra = null)
@@ -3362,9 +3362,9 @@ class SettlementSdk extends SdkBase
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FinanceWorkerController/listingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function financeWorkerListing($body, $query = null, $extra = null)
@@ -3375,9 +3375,9 @@ class SettlementSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FinanceWorkerController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function financeWorkerPaging($body, $query = null, $extra = null)
@@ -3388,9 +3388,9 @@ class SettlementSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FinanceWorkerController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function financeWorkerUpdate($body, $query = null, $extra = null)
@@ -3401,13 +3401,117 @@ class SettlementSdk extends SdkBase
     /**
      * 发票开票完成添加付款单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/statementCompleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementComplete($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/statementComplete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增对账单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/addAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/add", $body, $query, $extra);
+    }
+
+    /**
+     * 订单分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementsAddedController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function settlementsAddedPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/settlementsAdded/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/RenewalSettingsController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function renewalSettingsCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renewalSettings/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/RenewalSettingsController/deleteAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function renewalSettingsDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renewalSettings/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/RenewalSettingsController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function renewalSettingsDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renewalSettings/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/RenewalSettingsController/listingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function renewalSettingsListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renewalSettings/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/RenewalSettingsController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function renewalSettingsPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renewalSettings/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/RenewalSettingsController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function renewalSettingsUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renewalSettings/update", $body, $query, $extra);
     }
 }
