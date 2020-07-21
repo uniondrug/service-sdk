@@ -571,9 +571,9 @@ class DrugstoreActivitySdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigDimensionController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function activityConfigDimensionCreate($body, $query = null, $extra = null)
@@ -584,13 +584,52 @@ class DrugstoreActivitySdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigDimensionController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function activityConfigDimensionDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activityConfigDimension/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebatePointController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function rebatePointCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rebatePoint/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebatePointController/getAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function rebatePointGet($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rebatePoint/get", $body, $query, $extra);
+    }
+
+    /**
+     * 解除
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantMemberController/removeAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function rebateAssistantMemberRemove($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rebateAssistantMember/paging", $body, $query, $extra);
     }
 }
