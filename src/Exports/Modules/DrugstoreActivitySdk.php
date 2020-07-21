@@ -580,4 +580,17 @@ class DrugstoreActivitySdk extends SdkBase
     {
         return $this->restful("POST", "/activityConfigDimension/create", $body, $query, $extra);
     }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/ActivityConfigDimensionController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function activityConfigDimensionDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activityConfigDimension/detail", $body, $query, $extra);
+    }
 }
