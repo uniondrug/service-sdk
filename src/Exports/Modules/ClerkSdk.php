@@ -394,6 +394,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * exportSql
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/BlacklistController/exportSqlAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function blacklistExportSql($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/blacklist/exportSql", $body, $query, $extra);
+    }
+
+    /**
      * freeze
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/BlacklistController/freezeAction.md
      * @param array|object $body  入参类型
@@ -417,6 +430,19 @@ class ClerkSdk extends SdkBase
     public function blacklistLogPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/blacklistLog/paging", $body, $query, $extra);
+    }
+
+    /**
+     * pages
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/BlacklistController/pagesAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function blacklistPages($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/blacklist/pages", $body, $query, $extra);
     }
 
     /**
@@ -656,11 +682,13 @@ class ClerkSdk extends SdkBase
     /**
      * v1Action()
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/IndexController/v1Action.md
-     * @param array $body 入参类型
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function v1($body)
+    public function v1($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/index/v1", $body);
+        return $this->restful("POST", "/index/v1", $body, $query, $extra);
     }
 }
