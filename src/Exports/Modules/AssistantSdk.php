@@ -11,7 +11,6 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -30,6 +29,31 @@ class AssistantSdk extends SdkBase
      */
     protected $serviceName = 'assistant.module';
 
+    /**
+     * 店员解冻
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/unfreezeAssistantAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskUnfreezeAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/unfreezeAssistant", $body, $query, $extra);
+    }
+
+    /**
+     * 门店解冻
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/unfreezeStoreAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskUnfreezeStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/unfreezeStore", $body, $query, $extra);
+    }
 
     /**
      * 助手用户-导出
@@ -1857,7 +1881,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/organizebase/getPagingWithUserTag", $body);
     }
 
-
     /**
      * 根据organizationId获取门店详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeDetailByOrganizationIdAction.md
@@ -2221,7 +2244,6 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/equityProjectDayDetail/list", $body);
     }
 
-
     /**
      * 查询保司是否已经存在
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/insuranceIsExistedAction.md
@@ -2232,5 +2254,4 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/insuranceApply/insuranceIsExisted", $body);
     }
-
 }
