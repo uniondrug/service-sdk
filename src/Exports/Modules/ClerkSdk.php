@@ -290,6 +290,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * sendCommission
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/sendCommissionAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantSendCommission($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/sendCommission", $body, $query, $extra);
+    }
+
+    /**
      * 获取门店店员数量
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/storeCountAction.md
      * @param array|object $body  入参类型
@@ -355,6 +368,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * check
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/BlacklistController/checkAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function blacklistCheck($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/blacklist/check", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/BlacklistController/createAction.md
      * @param array|object $body  入参类型
@@ -404,6 +430,19 @@ class ClerkSdk extends SdkBase
     public function blacklistExportSql($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/blacklist/exportSql", $body, $query, $extra);
+    }
+
+    /**
+     * addLog
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/BlacklistLogController/addLogAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function blacklistForbiddenLogAddLog($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/blacklistLog/addLog", $body, $query, $extra);
     }
 
     /**
