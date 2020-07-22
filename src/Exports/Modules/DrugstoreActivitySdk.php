@@ -630,7 +630,7 @@ class DrugstoreActivitySdk extends SdkBase
      */
     public function rebateAssistantMemberRemove($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rebateAssistantMember/paging", $body, $query, $extra);
+        return $this->restful("POST", "/rebateAssistantMember/remove", $body, $query, $extra);
     }
 
     /**
