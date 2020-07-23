@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-22
- * @time   Wed, 22 Jul 2020 23:38:57 +0800
+ * @date   2020-07-23
+ * @time   Thu, 23 Jul 2020 15:35:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1200,6 +1200,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 关联用户城市
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/associateCityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserAssociateCity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/associate/city", $body, $query, $extra);
+    }
+
+    /**
      * 关联用户角色
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/associateRoleAction.md
      * @param array|object $body 入参类型
@@ -1249,6 +1262,19 @@ class InspectionSdk extends SdkBase
     public function systemUserNurseList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/nurse/list", $body, $query, $extra);
+    }
+
+    /**
+     * 解除用户城市
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/relieveCityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserRelieveCity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/relieve/city", $body, $query, $extra);
     }
 
     /**
