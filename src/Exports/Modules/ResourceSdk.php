@@ -9,12 +9,12 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-07-24
- * @time   Fri, 24 Jul 2020 11:29:36 +0800
+ * @time   Fri, 24 Jul 2020 15:38:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * ResourceSdk
@@ -49,6 +49,17 @@ class ResourceSdk extends SdkBase
     public function resourceDetail($body)
     {
         return $this->restful("POST", "/resource/detail", $body);
+    }
+
+    /**
+     * 修改接口
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourceList($body)
+    {
+        return $this->restful("POST", "/resource/list", $body);
     }
 
     /**
