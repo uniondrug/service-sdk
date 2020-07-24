@@ -57,4 +57,14 @@ class JavaPneumaticSdk extends SdkBase
             'timeout' => 1
         ]);
     }
+
+    /**
+     * 权益风控
+     * @param $body
+     */
+    public function riskAssessmentEquity($body){
+        return $this->restful(static::METHOD_POST, '/risk/assessment/equity', $body, null, [
+            'timeout' => 1
+        ]);
+    }
 }

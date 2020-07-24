@@ -108,7 +108,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk $outreachResourceApiSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                 $vas
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                 $sms
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ApprovalSdk            $approval
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk            $approval
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-03
- * @time   Fri, 03 Jul 2020 13:38:56 +0800
+ * @date   2020-07-24
+ * @time   Fri, 24 Jul 2020 00:18:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -186,6 +186,19 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 任务单绑定保单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/bindPolicyAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bindPolicyInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/bindpolicy", $body, $query, $extra);
+    }
+
+    /**
      * 卡号没有创建完，创建卡号同时并导出excel
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/RepairErrorController/buildPolicyCodeAction.md
      * @param array $body 入参类型
@@ -209,6 +222,19 @@ class InsureSdk extends SdkBase
     public function changeStatusPolicy($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policy/changeStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 获取当日渠道任务详情
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/channelTaskAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function channelTaskInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/channeltask", $body, $query, $extra);
     }
 
     /**
@@ -391,6 +417,19 @@ class InsureSdk extends SdkBase
     public function cooperationInsure($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insure/cooperation", $body, $query, $extra);
+    }
+
+    /**
+     * 保司合作编号
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/cooperationAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cooperationInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/cooperation", $body, $query, $extra);
     }
 
     /**
@@ -862,6 +901,19 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 编辑任务单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/modifyAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function modifyInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/modify", $body, $query, $extra);
+    }
+
+    /**
      * 配置修改
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskConfigController/modifyAction.md
      * @param array $body 入参类型
@@ -898,6 +950,32 @@ class InsureSdk extends SdkBase
     public function organizeBankAccountDefaultBank($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeBankAccount/defaultBank", $body, $query, $extra);
+    }
+
+    /**
+     * 保单扩展分页浏览
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/pagingExtendAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingExtendPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pagingExtend", $body, $query, $extra);
+    }
+
+    /**
+     * 投保任务单列表分页
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/pagingAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/paging", $body, $query, $extra);
     }
 
     /**
@@ -1015,6 +1093,19 @@ class InsureSdk extends SdkBase
     public function revokeNotify($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/claim/revokeNotify", $body, $query, $extra);
+    }
+
+    /**
+     * 任务单生效
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/setEnabledAction.md
+     * @param array $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function setEnabledInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/setenabled", $body, $query, $extra);
     }
 
     /**
