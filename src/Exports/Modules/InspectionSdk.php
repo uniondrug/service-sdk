@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-23
- * @time   Thu, 23 Jul 2020 15:35:05 +0800
+ * @date   2020-07-27
+ * @time   Mon, 27 Jul 2020 18:15:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1239,7 +1239,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取用户列表
+     * 获取检测员列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/inspectorListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1253,6 +1253,19 @@ class InspectionSdk extends SdkBase
 
     /**
      * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/userListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/list", $body, $query, $extra);
+    }
+
+    /**
+     * 获取护士列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/nurseListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1288,6 +1301,19 @@ class InspectionSdk extends SdkBase
     public function systemUserRelieveRole($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/relieve/role", $body, $query, $extra);
+    }
+
+    /**
+     * 任务人员指派列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/taskAssignListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskAssignList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/task/inspection/assign/list", $body, $query, $extra);
     }
 
     /**
