@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-09
- * @time   Tue, 09 Jun 2020 11:34:00 +0800
+ * @date   2020-07-28
+ * @time   Tue, 28 Jul 2020 13:20:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -456,6 +456,17 @@ class MerchantSdk extends SdkBase
     public function editBalance($body)
     {
         return $this->restful("POST", "/balance/edit", $body);
+    }
+
+    /**
+     * 修改DTP状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editDtpAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editDtp($body)
+    {
+        return $this->restful("POST", "/organizebase/editdtp", $body);
     }
 
     /**
