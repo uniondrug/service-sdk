@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-28
- * @time   Tue, 28 Jul 2020 13:20:16 +0800
+ * @date   2020-07-29
+ * @time   Wed, 29 Jul 2020 10:53:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -302,6 +302,17 @@ class MerchantSdk extends SdkBase
     public function clerkNum($body)
     {
         return $this->restful("POST", "/organizebase/clerkNum", $body);
+    }
+
+    /**
+     * 汇总DTP数量
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/CountIsDTPAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function countIsDTP($body)
+    {
+        return $this->restful("POST", "/organization/countisdtp", $body);
     }
 
     /**
