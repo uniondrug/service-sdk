@@ -110,4 +110,15 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userThird/bind", $body);
     }
+
+    /**
+     * 微信登录
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/cd9f92752a158be69410bfb759893a72ff90adee/api-docs/uniondrug.usercenter.provider/UserMajorApiController/queryByOpenIdApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function weChatLogin($body)
+    {
+        return $this->restful("POST", "/v2/api/userMajor/queryByOpenId", $body);
+    }
 }
