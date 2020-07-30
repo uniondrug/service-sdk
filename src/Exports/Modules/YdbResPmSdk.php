@@ -17,7 +17,7 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * YdbResPmSdk
+ * YdbResPmSdk1
  * @package Uniondrug\ServiceSdk\Modules
  */
 class YdbResPmSdk extends SdkBase
