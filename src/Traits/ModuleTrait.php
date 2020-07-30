@@ -93,7 +93,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ClerkSdk               $clerk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\WxSdk                  $wx
  * @property \Uniondrug\ServiceSdk\Exports\Modules\CompanySdk             $company
- * @property \Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk            $resource
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk            $ydbResPm
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaInvoiceSdk         $javaInvoice
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaHealthSdk          $javaHealth
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk               $score
