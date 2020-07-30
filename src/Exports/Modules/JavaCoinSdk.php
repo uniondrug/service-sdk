@@ -177,4 +177,14 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/bankBalance/statistics", $body);
     }
+
+    /**
+     * 查询资金池月统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function monthPoolStatistics($body)
+    {
+        return $this->restful("POST", "/fundAccount/statisticsRangeDate", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-23
- * @time   Thu, 23 Jul 2020 15:35:05 +0800
+ * @date   2020-07-30
+ * @time   Thu, 30 Jul 2020 16:41:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -92,6 +92,19 @@ class InspectionSdk extends SdkBase
     public function cancelAppointmentOrder($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/cancelAppointment", $body, $query, $extra);
+    }
+
+    /**
+     * 获取城市信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CityController/cityInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cityInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/city/info", $body, $query, $extra);
     }
 
     /**
@@ -196,6 +209,19 @@ class InspectionSdk extends SdkBase
     public function geOrderInspectionList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/inspectionList", $body, $query, $extra);
+    }
+
+    /**
+     * 出库时根据线路号和城市id查询接货人列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockOutController/getAcceptUserAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getAcceptUser($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/stock/out/accept/list", $body, $query, $extra);
     }
 
     /**
@@ -1057,6 +1083,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 根据sku查询商品信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/skuSearchCommodityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function skuSearchCommodity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/stock/in/sku/search/commodity", $body, $query, $extra);
+    }
+
+    /**
      * 异常单列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockAbnormalController/stockAbnormalListAction.md
      * @param array|object $body 入参类型
@@ -1239,7 +1278,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取用户列表
+     * 获取检测员列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/inspectorListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1253,6 +1292,19 @@ class InspectionSdk extends SdkBase
 
     /**
      * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/userListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/list", $body, $query, $extra);
+    }
+
+    /**
+     * 获取护士列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/nurseListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1288,6 +1340,19 @@ class InspectionSdk extends SdkBase
     public function systemUserRelieveRole($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/relieve/role", $body, $query, $extra);
+    }
+
+    /**
+     * 任务人员指派列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/TaskController/taskAssignListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskAssignList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/task/inspection/assign/list", $body, $query, $extra);
     }
 
     /**

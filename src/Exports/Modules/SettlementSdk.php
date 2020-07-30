@@ -1563,9 +1563,9 @@ class SettlementSdk extends SdkBase
     /**
      * 切换选中
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateCheckedAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeAccountUpdateChecked($body, $query = null, $extra = null)
@@ -3448,6 +3448,19 @@ class SettlementSdk extends SdkBase
     public function settlementsAddedPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/settlementsAdded/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 订单分页导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementsAddedController/exportAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function settlementsAddedExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/settlementsAdded/export", $body, $query, $extra);
     }
 
     /**

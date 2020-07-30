@@ -26,7 +26,7 @@ class JavaUserServiceSdk extends SdkBase
     /**
      * 用户详情 MemberId
      * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserMajorApiController/queryByApi.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @return ResponseInterface
      */
     public function userInfo($body)
@@ -37,11 +37,88 @@ class JavaUserServiceSdk extends SdkBase
     /**
      * 用户列表集合 MemberId[]
      * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserIdentityApiController/batchInfoByMemberIdsApi.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @return ResponseInterface
      */
     public function userList($body)
     {
         return $this->restful("POST", "/v2/api/identity/batchInfoByMemberIds", $body);
+    }
+
+    /**
+     * 编辑用户基本信息
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserBasicApiController/updateApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateUserBasic($body)
+    {
+        return $this->restful("POST", "/v2/api/userBasic/update", $body);
+    }
+
+    /**
+     * 登录(密码或短信验证码)
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserLoginApiController/loginApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function login($body)
+    {
+        return $this->restful("POST", "/v2/api/user/login", $body);
+    }
+
+    /**
+     * 查询用户详情
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserBasicApiController/queryApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryUserBasic($body)
+    {
+        return $this->restful("POST", "/v2/api/userBasic/query", $body);
+    }
+
+    /**
+     * 重置密码
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserLoginApiController/resetCredentialsApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resetCredentials($body)
+    {
+        return $this->restful("POST", "/v2/api/user/resetCredentials", $body);
+    }
+
+    /**
+     * 新增用户
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserBasicApiController/addApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createUserBasic($body)
+    {
+        return $this->restful("POST", "/v2/api/userBasic/add", $body);
+    }
+
+    /**
+     * 绑定微信
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserThirdApiController/bindApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function bindWeChat($body)
+    {
+        return $this->restful("POST", "/v2/api/userThird/bind", $body);
+    }
+
+    /**
+     * 微信登录
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/cd9f92752a158be69410bfb759893a72ff90adee/api-docs/uniondrug.usercenter.provider/UserMajorApiController/queryByOpenIdApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function weChatLogin($body)
+    {
+        return $this->restful("POST", "/v2/api/userMajor/queryByOpenId", $body);
     }
 }

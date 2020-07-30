@@ -30,6 +30,58 @@ class AssistantSdk extends SdkBase
     protected $serviceName = 'assistant.module';
 
     /**
+     * 店员注销
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/destroyAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskDestroyAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/destroyAssistant", $body, $query, $extra);
+    }
+
+    /**
+     * 门店注销
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/destroyStoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskDestroyStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/destroyStore", $body, $query, $extra);
+    }
+
+    /**
+     * 店员冻结
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/freezeAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskFreezeAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/freezeAssistant", $body, $query, $extra);
+    }
+
+    /**
+     * 门店冻结
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/freezeStoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskFreezeStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/freezeStore", $body, $query, $extra);
+    }
+
+    /**
      * 店员解冻
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/unfreezeAssistantAction.md
      * @param array|object $body  入参类型
