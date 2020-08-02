@@ -1673,6 +1673,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 更新审核状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/updateAuditStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountUpdateAuditStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBankAccount/update", $body, $query, $extra);
+    }
+
+    /**
      * 获取连锁订单统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/partnerCountAction.md
      * @param $body
@@ -2924,6 +2937,19 @@ class SettlementSdk extends SdkBase
     public function organizeFinanceAccountUpdateStatus($body)
     {
         return $this->restful("POST", "/organizeFinanceAccount/updateStatus", $body);
+    }
+
+    /**
+     * 更新审核状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/updateAuditStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountUpdateAuditStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/updateAuditStatus", $body, $query, $extra);
     }
 
     /**
