@@ -3566,4 +3566,17 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/renewalSettings/update", $body, $query, $extra);
     }
+
+    /**
+     * 审核列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/auditListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function auditListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/director/auditListing", $body, $query, $extra);
+    }
 }
