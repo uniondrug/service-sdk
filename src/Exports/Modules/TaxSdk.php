@@ -208,7 +208,7 @@ class TaxSdk extends SdkBase
      */
     public function taxRateUpdateStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/taxRate/update", $body, $query, $extra);
+        return $this->restful("POST", "/taxRate/updateStatus", $body, $query, $extra);
     }
 
     /**
