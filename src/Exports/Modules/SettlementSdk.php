@@ -2964,6 +2964,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 更新连锁在线开票状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/updateOnlineInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountUpdateOnlineInvoice($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/updateOnlineInvoice", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DrugClearPartnersController/createAction.md
      * @param $body
