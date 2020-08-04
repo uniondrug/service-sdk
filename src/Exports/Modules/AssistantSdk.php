@@ -2306,4 +2306,43 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/insuranceApply/insuranceIsExisted", $body);
     }
+
+    /**
+     * 业务审批单创建 [权益发放]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalEquityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalEquityAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalEquity", $body, $query, $extra);
+    }
+
+    /**
+     * 业务审批单创建 [项目申请]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalUnfreezeStoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalProject", $body, $query, $extra);
+    }
+
+    /**
+     * 业务审批单创建 [项目提额]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalProjectTieAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectTieAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalProjectTie", $body, $query, $extra);
+    }
 }
