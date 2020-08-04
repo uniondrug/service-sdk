@@ -1682,7 +1682,7 @@ class SettlementSdk extends SdkBase
      */
     public function organizeBankAccountUpdateAuditStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeBankAccount/update", $body, $query, $extra);
+        return $this->restful("POST", "/organizeBankAccount/updateAuditStatus", $body, $query, $extra);
     }
 
     /**
