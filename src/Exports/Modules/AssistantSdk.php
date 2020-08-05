@@ -11,6 +11,7 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -33,8 +34,8 @@ class AssistantSdk extends SdkBase
      * 店员注销
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/destroyAssistantAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taskDestroyAssistant($body, $query = null, $extra = null)
@@ -46,8 +47,8 @@ class AssistantSdk extends SdkBase
      * 门店注销
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/destroyStoreAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taskDestroyStore($body, $query = null, $extra = null)
@@ -59,8 +60,8 @@ class AssistantSdk extends SdkBase
      * 店员冻结
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/freezeAssistantAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taskFreezeAssistant($body, $query = null, $extra = null)
@@ -72,8 +73,8 @@ class AssistantSdk extends SdkBase
      * 门店冻结
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/freezeStoreAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taskFreezeStore($body, $query = null, $extra = null)
@@ -84,9 +85,9 @@ class AssistantSdk extends SdkBase
     /**
      * 店员解冻
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/unfreezeAssistantAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taskUnfreezeAssistant($body, $query = null, $extra = null)
@@ -97,9 +98,9 @@ class AssistantSdk extends SdkBase
     /**
      * 门店解冻
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/unfreezeStoreAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taskUnfreezeStore($body, $query = null, $extra = null)
@@ -2311,8 +2312,8 @@ class AssistantSdk extends SdkBase
      * 业务审批单创建 [权益发放]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalEquityAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalEquityAdd($body, $query = null, $extra = null)
@@ -2324,8 +2325,8 @@ class AssistantSdk extends SdkBase
      * 业务审批单创建 [项目申请]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalUnfreezeStoreAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalProjectAdd($body, $query = null, $extra = null)
@@ -2337,12 +2338,64 @@ class AssistantSdk extends SdkBase
      * 业务审批单创建 [项目提额]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalProjectTieAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalProjectTieAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/approvalAdd/approvalProjectTie", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/update", $body, $query, $extra);
     }
 }
