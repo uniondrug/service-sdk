@@ -38,7 +38,7 @@ class JavaFinanceCommonServiceSdk extends SdkBase
      * @param array|object $body 入参类型
      * @return ResponseInterface
      */
-    public function userInfo($body)
+    public function merchantGoodsPaging($body)
     {
         return $this->restful("POST", "/fincom/merchantGoods/queryMerchantGoods", $body);
     }
