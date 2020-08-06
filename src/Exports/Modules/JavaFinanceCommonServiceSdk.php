@@ -51,7 +51,7 @@ class JavaFinanceCommonServiceSdk extends SdkBase
      */
     public function merchantGoodsExportSQL($body)
     {
-        return $this->restful("POST", "/fincom/merchantGoods/queryMerchantGoods", $body);
+        return $this->restful("POST", "/fincom/merchantGoods/getMerchantSql", $body);
     }
 
     /**
