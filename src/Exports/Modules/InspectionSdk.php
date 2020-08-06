@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-05
- * @time   Wed, 05 Aug 2020 16:45:45 +0800
+ * @date   2020-08-06
+ * @time   Thu, 06 Aug 2020 14:09:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -144,6 +144,58 @@ class InspectionSdk extends SdkBase
     public function createOrderOpenapi($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/order/create", $body, $query, $extra);
+    }
+
+    /**
+     * 绑定仁科环境设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/bindRenkeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceBindRenke($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/renke/bind", $body, $query, $extra);
+    }
+
+    /**
+     * 禁用仁科环境设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/disableRenkeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceDisableRenke($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/renke/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 启用仁科环境设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/enableRenkeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceEnableRenke($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/renke/enable", $body, $query, $extra);
+    }
+
+    /**
+     * 解绑仁科环境设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/unbindRenkeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceUnbindRenke($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/renke/unbind", $body, $query, $extra);
     }
 
     /**
