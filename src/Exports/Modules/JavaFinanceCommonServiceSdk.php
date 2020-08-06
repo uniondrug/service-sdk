@@ -33,12 +33,23 @@ class JavaFinanceCommonServiceSdk extends SdkBase
     }
 
     /**
-     * 连锁商品列表
+     * 连锁商品分页列表
      * @link https://uniondrug.coding.net/p/js-finance-common/d/js-finance-common/git/tree/development/api-doc/uniondrug-fincom-service/queryMerchentGoods.md
      * @param array|object $body 入参类型
      * @return ResponseInterface
      */
     public function merchantGoodsPaging($body)
+    {
+        return $this->restful("POST", "/fincom/merchantGoods/queryMerchantGoods", $body);
+    }
+
+    /**
+     * 连锁商品列表SQL
+     * @link https://uniondrug.coding.net/p/js-finance-common/d/js-finance-common/git/tree/development/api-doc/uniondrug-fincom-service/queryMerchentGoods.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchantGoodsExportSQL($body)
     {
         return $this->restful("POST", "/fincom/merchantGoods/queryMerchantGoods", $body);
     }
