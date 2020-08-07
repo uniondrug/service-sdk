@@ -139,4 +139,15 @@ class JavaPurchaseSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/purchasePile/checkExcel', $body);
     }
+
+    /**
+     * 规格列表
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function specsList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/listing', $body);
+    }
 }
