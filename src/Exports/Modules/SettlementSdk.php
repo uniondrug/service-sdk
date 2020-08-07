@@ -305,6 +305,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 上传开票单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/uploadBillAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billUploadToPYT($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/uploadBill", $body, $query, $extra);
+    }
+
+    /**
      * 预生成对账单下的项目列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ProjectController/buildAction.md
      * @param $body
