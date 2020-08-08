@@ -1231,6 +1231,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 获取未结算金额
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/unSettledAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function settlementQueryUnSettledAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/settlement/unSettledAmount", $body, $query, $extra);
+    }
+
+    /**
      * 结算审核汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/settlementAuditSummaryAction.md
      * @param $body
