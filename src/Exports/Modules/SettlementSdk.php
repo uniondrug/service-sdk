@@ -1231,6 +1231,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 获取未结算金额
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/unSettledAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function settlementQueryUnSettledAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/settlement/unSettledAmount", $body, $query, $extra);
+    }
+
+    /**
      * 结算审核汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/settlementAuditSummaryAction.md
      * @param $body
@@ -1642,6 +1655,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 核算单位详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/unitDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBankAccount/unitDetail", $body, $query, $extra);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/pagingAction.md
      * @param $body
@@ -1650,6 +1676,19 @@ class SettlementSdk extends SdkBase
     public function organizeBankAccountPaging($body)
     {
         return $this->restful("POST", "/organizeBankAccount/paging", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBankAccount/listing", $body, $query, $extra);
     }
 
     /**
@@ -2941,6 +2980,19 @@ class SettlementSdk extends SdkBase
     public function organizeFinanceAccountPaging($body)
     {
         return $this->restful("POST", "/organizeFinanceAccount/paging", $body);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/listing", $body, $query, $extra);
     }
 
     /**
