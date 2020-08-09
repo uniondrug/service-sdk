@@ -150,4 +150,15 @@ class JavaPurchaseSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/purchaseSpecs/listing', $body);
     }
+
+    /**
+     * 导出规格
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function specsExport($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/export', $body);
+    }
 }
