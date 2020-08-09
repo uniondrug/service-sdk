@@ -107,6 +107,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 结算单订单数据统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/statisticsOrdersAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementStatisticsOrders($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/statisticsOrders", $body, $query, $extra);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/detailAction.md
      * @param $body
