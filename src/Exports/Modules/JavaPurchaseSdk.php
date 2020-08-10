@@ -161,4 +161,15 @@ class JavaPurchaseSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/purchaseSpecs/export', $body);
     }
+
+    /**
+     * 项目提额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function purchaseIncreaseQuota($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/increaseQuota', $body);
+
+    }
 }
