@@ -2424,4 +2424,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/visitScoreStatistic/userList", $body, $query, $extra);
     }
+
+    /**
+     * 统计导出 [员工维度详细]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/VisitScoreStatisticController/visitScoreStatisticUserListExportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function visitScoreStatisticUserListExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visitScoreStatistic/userListExport", $body, $query, $extra);
+    }
 }
