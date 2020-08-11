@@ -348,4 +348,14 @@ class JavaMemberSdk extends SdkBase
         return $this->restful("POST", "v2/api/userMajor/queryByOpenId", $body);
     }
 
+    /**
+     * 通过memberId和account查询
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryBy($body)
+    {
+        return $this->restful("POST", "v2/api/userMajor/queryBy", $body);
+    }
+
 }
