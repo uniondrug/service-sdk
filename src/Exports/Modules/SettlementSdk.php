@@ -1532,6 +1532,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 批量新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/createInBatchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeAccountCreateInBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeAccount/createInBatch", $body, $query, $extra);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/detailAction.md
      * @param $body
