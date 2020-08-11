@@ -2226,6 +2226,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 统计接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/reportStatisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function reportStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/report/statistics", $body, $query, $extra);
+    }
+
+    /**
      * 优惠金额统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/sumDiscountAmountAction.md
      * @param $body
