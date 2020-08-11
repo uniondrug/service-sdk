@@ -2437,4 +2437,30 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/visitScoreStatistic/userListExport", $body, $query, $extra);
     }
+
+    /**
+     * 门店列表 [未展示] (来源: 门店宽表)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/StoreListUnShowAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreListUnShow($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListUnShow", $body, $query, $extra);
+    }
+
+    /**
+     * 未展示门店列表导出 (数据宽表)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListUnShowExportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreListUnShowExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListUnShowExport", $body, $query, $extra);
+    }
 }
