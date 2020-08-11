@@ -3503,16 +3503,16 @@ class SettlementSdk extends SdkBase
     }
 
     /**
-     * 删除
+     * 通过手机号或姓名查询员工信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/FinanceWorkerController/deleteAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function financeWorkerDelete($body, $query = null, $extra = null)
+    public function financeWorkerAccountNameDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/financeWorker/delete", $body, $query, $extra);
+        return $this->restful("POST", "/financeWorker/accountNameDetail", $body, $query, $extra);
     }
 
     /**
