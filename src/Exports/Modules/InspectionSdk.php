@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-10
- * @time   Mon, 10 Aug 2020 15:56:48 +0800
+ * @date   2020-08-11
+ * @time   Tue, 11 Aug 2020 16:55:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -472,8 +472,8 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 查询订单检查报告
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/getOrderReportAction.md
+     * 获取订单检查报告
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/ReportController/getOrderReportAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -481,7 +481,7 @@ class InspectionSdk extends SdkBase
      */
     public function getOrderReportOpenapi($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/openapi/order/report", $body, $query, $extra);
+        return $this->restful("POST", "/openapi/report/info", $body, $query, $extra);
     }
 
     /**
