@@ -29,7 +29,18 @@ class JavaParserServiceSdk extends SdkBase
      */
     public function analysisExcel($body)
     {
-        return $this->restful("POST", "/task/excelSql/Create", $body);
+        return $this->restful("POST", "/task/excelSql/create", $body);
+    }
+
+    /**
+     * 发起一个 mbs 消息推送任务
+     * @link https://uniondrug.coding.net/p/jx-parser/d/jx-parser/git/tree/master/docs-api/uniondrug-parser-service/TaskController/excelSqlCreate.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function analysisExcelAndMbsPush($body)
+    {
+        return $this->restful("POST", "/task/mbsPush/create", $body);
     }
 
     /**
