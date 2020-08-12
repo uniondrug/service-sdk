@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-08-12
- * @time   Wed, 12 Aug 2020 21:22:58 +0800
+ * @time   Wed, 12 Aug 2020 22:07:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1077,7 +1077,7 @@ class InspectionSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function PerformanceNoteConflict($body, $query = null, $extra = null)
+    public function performanceNoteConflict($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/performance/conflict", $body, $query, $extra);
     }
