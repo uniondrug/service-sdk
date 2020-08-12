@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-11
- * @time   Tue, 11 Aug 2020 16:55:49 +0800
+ * @date   2020-08-12
+ * @time   Wed, 12 Aug 2020 20:14:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -40,19 +40,6 @@ class InspectionSdk extends SdkBase
     public function addAppointmentNote($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/appointment/add", $body, $query, $extra);
-    }
-
-    /**
-     * 确认履约
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/addAppointmentNoteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function addAppointmentNoteAction($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/dispatch/addAppointmentNoteAction", $body, $query, $extra);
     }
 
     /**
@@ -1080,6 +1067,19 @@ class InspectionSdk extends SdkBase
     public function performanceDispatchList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/dispatch/performance", $body, $query, $extra);
+    }
+
+    /**
+     * 判断履约冲突
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/PerformanceController/conflictPerformanceNoteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function PerformanceNoteConflict($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/performance/conflict", $body, $query, $extra);
     }
 
     /**
