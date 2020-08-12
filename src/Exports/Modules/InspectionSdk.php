@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-08-12
- * @time   Wed, 12 Aug 2020 20:14:49 +0800
+ * @time   Wed, 12 Aug 2020 21:22:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1899,6 +1899,32 @@ class InspectionSdk extends SdkBase
     public function uploadFile($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/upload/file", $body, $query, $extra);
+    }
+
+    /**
+     * 获取指定文件名的可下载链接(attachemnt_id)
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/UploadController/signUrlByIdAssignFileNameAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function uploadIdDownloadInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/upload/id/download/filename", $body, $query, $extra);
+    }
+
+    /**
+     * 获取指定文件名的可下载链接(url)
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/UploadController/signUrlByStrAssignFileNameAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function uploadUrlDownload($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/upload/url/download/filename", $body, $query, $extra);
     }
 
     /**
