@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-12
- * @time   Wed, 12 Aug 2020 22:07:48 +0800
+ * @date   2020-08-13
+ * @time   Thu, 13 Aug 2020 17:58:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,7 +30,7 @@ class InspectionSdk extends SdkBase
     protected $serviceName = 'inspection.module';
 
     /**
-     * 保存推荐线路
+     * 保存预约单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/addAppointmentNoteAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -66,19 +66,6 @@ class InspectionSdk extends SdkBase
     public function addPerformanceNote($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/performance/add", $body, $query, $extra);
-    }
-
-    /**
-     * 保存推荐线路
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/addRecommendedLineListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function addRecommendedLineList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/dispatch/addRecommendedLine", $body, $query, $extra);
     }
 
     /**
@@ -264,7 +251,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取每一天的待处理行程列表
+     * 获取一天的待处理行程列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getOneDayListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -391,6 +378,19 @@ class InspectionSdk extends SdkBase
     public function getHospitalInfoByAppId($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/hospital/getInfo", $body, $query, $extra);
+    }
+
+    /**
+     * 根据订单号获取互联网医院信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/HospitalController/getInfoByOrderNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getHospitalInfoByOrderNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/hospital/getInfoByOrderNo", $body, $query, $extra);
     }
 
     /**
@@ -901,7 +901,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 履约行程地图接口
+     * 确认行程地图接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getMapPerformanceAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -992,7 +992,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 保存推荐线路
+     * 修改预约单状态
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/modifyAppointmentNoteAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1018,7 +1018,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 保存推荐线路
+     * 修改推荐状态
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/RecommendedNoteController/modifyRecommendeListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1028,19 +1028,6 @@ class InspectionSdk extends SdkBase
     public function modifyRecommendedLineList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/recommended/modify", $body, $query, $extra);
-    }
-
-    /**
-     * 获取每一条待处理行程列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getOneListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function oneDispatchList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/dispatch/one", $body, $query, $extra);
     }
 
     /**
@@ -1057,7 +1044,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取每一天的履约行程列表
+     * 获取已确认行程列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getPerformanceListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
