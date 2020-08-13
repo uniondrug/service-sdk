@@ -27,7 +27,7 @@ class YdbResPmSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ydb.res.pm.module';
+    protected $serviceName = 'ydb-res-pm.module';
 
     /**
      * 配置连锁门店店员层级的开关
