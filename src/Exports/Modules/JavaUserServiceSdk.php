@@ -121,4 +121,26 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userMajor/queryByOpenId", $body);
     }
+
+    /**
+     * 用户列表集合 MemberId[]
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserMajorApiController/batchInfoByMemberIdsApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userListByMenberIds($body)
+    {
+        return $this->restful("POST", "/v2/api/userMajor/batchByMemberIds", $body);
+    }
+
+    /**
+     * 根据身份证获取用户信息
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/userCardApiController/getByNumApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userInfoByCardNo($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getByNum", $body);
+    }
 }

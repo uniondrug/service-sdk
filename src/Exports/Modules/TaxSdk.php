@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-28
- * @time   Tue, 28 Jul 2020 17:43:17 +0800
+ * @date   2020-08-12
+ * @time   Wed, 12 Aug 2020 15:16:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -173,6 +173,19 @@ class TaxSdk extends SdkBase
     }
 
     /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/listing", $body, $query, $extra);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/pagingAction.md
      * @param array|object $body 入参类型
@@ -208,7 +221,7 @@ class TaxSdk extends SdkBase
      */
     public function taxRateUpdateStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/taxRate/update", $body, $query, $extra);
+        return $this->restful("POST", "/taxRate/updateStatus", $body, $query, $extra);
     }
 
     /**

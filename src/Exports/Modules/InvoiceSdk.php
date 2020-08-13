@@ -412,4 +412,17 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoiceExpress/receiveByInsure", $body);
     }
+
+    /**
+     * 发票详情
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/billPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceDetail($body)
+    {
+        return $this->restful("POST", "/invoice/detail", $body);
+    }
+
+
 }
