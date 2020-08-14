@@ -1426,7 +1426,7 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * getListByOutOrderNoAction()
+     * 根据outOrderNo获取批量创建兑换码
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getListByOutOrderNoAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
