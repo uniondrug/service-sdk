@@ -187,4 +187,14 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundAccount/statisticsRangeDate", $body);
     }
+
+    /**
+     * 创建收款确认单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptCreate($body)
+    {
+        return $this->restful("POST", "/receipt/create", $body);
+    }
 }
