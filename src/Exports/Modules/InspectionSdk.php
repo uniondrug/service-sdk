@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-13
- * @time   Thu, 13 Aug 2020 17:58:05 +0800
+ * @date   2020-08-17
+ * @time   Mon, 17 Aug 2020 10:08:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1613,6 +1613,32 @@ class InspectionSdk extends SdkBase
     public function storageList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/stock/storage/list", $body, $query, $extra);
+    }
+
+    /**
+     * 保存ID生成器业务项
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/System/IdGeneratorController/saveBusinesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemIdGeneratorSave($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/id/save", $body, $query, $extra);
+    }
+
+    /**
+     * 修复reportNo
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/System/AsycRaskController/fixReportNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemSyncFixReportNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/sync/fix-report-no", $body, $query, $extra);
     }
 
     /**
