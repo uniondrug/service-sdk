@@ -109,9 +109,9 @@ class SettlementSdk extends SdkBase
     /**
      * 结算单订单数据统计
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/statisticsOrdersAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementStatisticsOrders($body, $query = null, $extra = null)
@@ -320,9 +320,9 @@ class SettlementSdk extends SdkBase
     /**
      * 上传开票单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/uploadBillAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function billUploadToPYT($body, $query = null, $extra = null)
@@ -1246,9 +1246,9 @@ class SettlementSdk extends SdkBase
     /**
      * 获取未结算金额
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/unSettledAmountAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function settlementQueryUnSettledAmount($body, $query = null, $extra = null)
@@ -1534,9 +1534,9 @@ class SettlementSdk extends SdkBase
     /**
      * 批量新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/createInBatchAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeAccountCreateInBatch($body, $query = null, $extra = null)
@@ -1683,9 +1683,9 @@ class SettlementSdk extends SdkBase
     /**
      * 核算单位详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/unitDetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeBankAccountUnitDetail($body, $query = null, $extra = null)
@@ -1707,9 +1707,9 @@ class SettlementSdk extends SdkBase
     /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/listingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeBankAccountListing($body, $query = null, $extra = null)
@@ -1753,9 +1753,9 @@ class SettlementSdk extends SdkBase
     /**
      * 更新审核状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/updateAuditStatusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeBankAccountUpdateAuditStatus($body, $query = null, $extra = null)
@@ -2228,9 +2228,9 @@ class SettlementSdk extends SdkBase
     /**
      * 统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ReportController/reportStatisticsAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function reportStatistics($body, $query = null, $extra = null)
@@ -3000,9 +3000,9 @@ class SettlementSdk extends SdkBase
     /**
      * 核算单位级详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/unitDetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeFinanceAccountUnitDetail($body, $query = null, $extra = null)
@@ -3024,9 +3024,9 @@ class SettlementSdk extends SdkBase
     /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/listingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeFinanceAccountListing($body, $query = null, $extra = null)
@@ -3059,9 +3059,9 @@ class SettlementSdk extends SdkBase
     /**
      * 更新审核状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/updateAuditStatusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeFinanceAccountUpdateAuditStatus($body, $query = null, $extra = null)
@@ -3083,9 +3083,9 @@ class SettlementSdk extends SdkBase
     /**
      * 更新连锁在线开票状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/updateOnlineInvoiceAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeFinanceAccountUpdateOnlineInvoice($body, $query = null, $extra = null)
@@ -3700,9 +3700,9 @@ class SettlementSdk extends SdkBase
     /**
      * 审核列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/DirectorController/auditListingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function auditListing($body, $query = null, $extra = null)
@@ -3713,9 +3713,9 @@ class SettlementSdk extends SdkBase
     /**
      * 在线开票协议
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OnlineInvoiceProtocolController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function onlineInvoiceProtocolCreate($body, $query = null, $extra = null)
@@ -3726,9 +3726,9 @@ class SettlementSdk extends SdkBase
     /**
      * 结算单订单扣率级汇总
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/ordersSummaryAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementOrdersSummary($body, $query = null, $extra = null)
@@ -3739,13 +3739,26 @@ class SettlementSdk extends SdkBase
     /**
      * 结算单柱状图
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/barGraphAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementBarGraph($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/barGraph", $body, $query, $extra);
+    }
+
+    /**
+     * 资金付款核算单位汇总查询
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/unitSummaryAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function capitalPaymentUnitSummary($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/capitalPayment/unitSummary", $body, $query, $extra);
     }
 }
