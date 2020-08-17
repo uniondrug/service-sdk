@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-24
- * @time   Fri, 24 Jul 2020 00:18:46 +0800
+ * @date   2020-08-17
+ * @time   Mon, 17 Aug 2020 15:51:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,7 +32,7 @@ class InsureSdk extends SdkBase
     /**
      * 添加保单关闭记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/addCloseAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -45,7 +45,7 @@ class InsureSdk extends SdkBase
     /**
      * 新建投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -58,7 +58,7 @@ class InsureSdk extends SdkBase
     /**
      * 新增投保用户
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureUserController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -71,7 +71,7 @@ class InsureSdk extends SdkBase
     /**
      * 新增一个发票
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InvoiceController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -84,7 +84,7 @@ class InsureSdk extends SdkBase
     /**
      * 分配发票
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InvoiceDistributionController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -97,7 +97,7 @@ class InsureSdk extends SdkBase
     /**
      * 创建投保计划
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -110,7 +110,7 @@ class InsureSdk extends SdkBase
     /**
      * 添加保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -123,7 +123,7 @@ class InsureSdk extends SdkBase
     /**
      * 添加保单变更记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -134,9 +134,22 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 添加手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/addProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/addProcedures", $body, $query, $extra);
+    }
+
+    /**
      * 创建投保方案
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -149,7 +162,7 @@ class InsureSdk extends SdkBase
     /**
      * 创建关联方案保司
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -162,7 +175,7 @@ class InsureSdk extends SdkBase
     /**
      * 投保任务单重新试算
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/againTrailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -175,7 +188,7 @@ class InsureSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -188,7 +201,7 @@ class InsureSdk extends SdkBase
     /**
      * 任务单绑定保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/bindPolicyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -201,7 +214,7 @@ class InsureSdk extends SdkBase
     /**
      * 卡号没有创建完，创建卡号同时并导出excel
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/RepairErrorController/buildPolicyCodeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -214,7 +227,7 @@ class InsureSdk extends SdkBase
     /**
      * 更新保单状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeStatusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -227,7 +240,7 @@ class InsureSdk extends SdkBase
     /**
      * 获取当日渠道任务详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/channelTaskAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -240,7 +253,7 @@ class InsureSdk extends SdkBase
     /**
      * 保单关闭审核提交
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/checkClosePolicyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -253,7 +266,7 @@ class InsureSdk extends SdkBase
     /**
      * 检测保单是否存在
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/checkExistAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -266,7 +279,7 @@ class InsureSdk extends SdkBase
     /**
      * 校验提交投保结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/checkAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -279,7 +292,7 @@ class InsureSdk extends SdkBase
     /**
      * 保单审核提交
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/checkPolicyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -292,7 +305,7 @@ class InsureSdk extends SdkBase
     /**
      * 保单变更审核提交
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/checkPolicyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -305,7 +318,7 @@ class InsureSdk extends SdkBase
     /**
      * 发起理赔1-3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -318,7 +331,7 @@ class InsureSdk extends SdkBase
     /**
      * 赔案总额校验
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimCheckAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -329,22 +342,9 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 获取需要执行的理赔数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimDataAction.md
-     * @param array $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function claimDataClaimOnline($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/claimOnline/claimData", $body, $query, $extra);
-    }
-
-    /**
      * 计算保单理赔上限比例
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimMaxRatioAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -357,7 +357,7 @@ class InsureSdk extends SdkBase
     /**
      * 异步发起理赔-支持版本3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimNotifyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -370,7 +370,7 @@ class InsureSdk extends SdkBase
     /**
      * 保单理赔属性
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimPropertyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -381,22 +381,9 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 推送理赔数据的结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimPushResultAction.md
-     * @param array $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function claimPushResultClaimOnline($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/claimOnline/claimPushResult", $body, $query, $extra);
-    }
-
-    /**
      * 通知理赔的结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimResultAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -409,7 +396,7 @@ class InsureSdk extends SdkBase
     /**
      * 保司合作编号
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/cooperationAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -422,7 +409,7 @@ class InsureSdk extends SdkBase
     /**
      * 保司合作编号
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/cooperationAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -435,7 +422,7 @@ class InsureSdk extends SdkBase
     /**
      * 创建投保方案编号
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/createSchemeNoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -448,7 +435,7 @@ class InsureSdk extends SdkBase
     /**
      * 删除投保计划
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -461,7 +448,7 @@ class InsureSdk extends SdkBase
     /**
      * 删除保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -474,7 +461,7 @@ class InsureSdk extends SdkBase
     /**
      * 删除保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -485,9 +472,22 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 删除手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/deleteProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deleteProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/deleteProcedures", $body, $query, $extra);
+    }
+
+    /**
      * 删除投保方案
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -500,7 +500,7 @@ class InsureSdk extends SdkBase
     /**
      * 删除关联方案保司
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -513,7 +513,7 @@ class InsureSdk extends SdkBase
     /**
      * 理赔详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -526,7 +526,7 @@ class InsureSdk extends SdkBase
     /**
      * 投单详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -539,7 +539,7 @@ class InsureSdk extends SdkBase
     /**
      * 投保方案详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -552,7 +552,7 @@ class InsureSdk extends SdkBase
     /**
      * 关联方案保司详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -565,7 +565,7 @@ class InsureSdk extends SdkBase
     /**
      * 保单明细汇总
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/detailSummaryAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -578,7 +578,7 @@ class InsureSdk extends SdkBase
     /**
      * 停用投保方案
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/disableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -591,7 +591,7 @@ class InsureSdk extends SdkBase
     /**
      * 停用方案关联的保司
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/disableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -604,7 +604,7 @@ class InsureSdk extends SdkBase
     /**
      * 下载卡号
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/CodeController/downloadAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -617,7 +617,7 @@ class InsureSdk extends SdkBase
     /**
      * 修改保单关闭记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/editCloseAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -630,7 +630,7 @@ class InsureSdk extends SdkBase
     /**
      * 编辑投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -643,7 +643,7 @@ class InsureSdk extends SdkBase
     /**
      * 修改保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -656,7 +656,7 @@ class InsureSdk extends SdkBase
     /**
      * 修改保单变更记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -669,7 +669,7 @@ class InsureSdk extends SdkBase
     /**
      * 编辑投保方案详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -682,7 +682,7 @@ class InsureSdk extends SdkBase
     /**
      * 编辑关联方案保司
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -695,7 +695,7 @@ class InsureSdk extends SdkBase
     /**
      * 启用投保方案
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/enableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -708,7 +708,7 @@ class InsureSdk extends SdkBase
     /**
      * 启用方案关联的保司
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/enableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -721,7 +721,7 @@ class InsureSdk extends SdkBase
     /**
      * 正常投保导出
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/originalExportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -734,7 +734,7 @@ class InsureSdk extends SdkBase
     /**
      * 花都换药投保导出
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/exportOfHuaDuAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -747,7 +747,7 @@ class InsureSdk extends SdkBase
     /**
      * 卡号已创建完，导出excel
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/RepairErrorController/exportPolicyCodeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -760,7 +760,7 @@ class InsureSdk extends SdkBase
     /**
      * 发起理赔v4
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionClaimAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -773,7 +773,7 @@ class InsureSdk extends SdkBase
     /**
      * 撤销理赔v4
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionRevokeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -786,7 +786,7 @@ class InsureSdk extends SdkBase
     /**
      * 获取投保单列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -799,7 +799,7 @@ class InsureSdk extends SdkBase
     /**
      * 理赔明细
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -812,7 +812,7 @@ class InsureSdk extends SdkBase
     /**
      * 获取投保计划详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -825,7 +825,7 @@ class InsureSdk extends SdkBase
     /**
      * 获取投保计划操作日志列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/logPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -838,7 +838,7 @@ class InsureSdk extends SdkBase
     /**
      * 获取投保计划列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -849,35 +849,9 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 获取需要执行的投保的数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/insureDataAction.md
-     * @param array $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function insureDataInsure($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/insure/insureData", $body, $query, $extra);
-    }
-
-    /**
-     * 保存投保结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/insureResultAction.md
-     * @param array $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function insureResultInsure($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/insure/insureResult", $body, $query, $extra);
-    }
-
-    /**
      * 保司数据汇总
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerSummaryAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -890,7 +864,7 @@ class InsureSdk extends SdkBase
     /**
      * 更新钉钉审批 id
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/modifyApprovalIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -903,7 +877,7 @@ class InsureSdk extends SdkBase
     /**
      * 编辑任务单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/modifyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -916,7 +890,7 @@ class InsureSdk extends SdkBase
     /**
      * 配置修改
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskConfigController/modifyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -929,7 +903,7 @@ class InsureSdk extends SdkBase
     /**
      * 更新钉钉审批状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/notifyApprovalAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -940,9 +914,22 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 通知手续费收款结果
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/notifyProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function notifyProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/notifyProcedures", $body, $query, $extra);
+    }
+
+    /**
      * 获取保司默认银行账户
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/OrganizeBankAccountController/defaultBankAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -955,7 +942,7 @@ class InsureSdk extends SdkBase
     /**
      * 保单扩展分页浏览
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/pagingExtendAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -968,7 +955,7 @@ class InsureSdk extends SdkBase
     /**
      * 投保任务单列表分页
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -981,7 +968,7 @@ class InsureSdk extends SdkBase
     /**
      * 保单分页浏览
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -992,9 +979,35 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 手续费应收款列表
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingPolicyIncome($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncome/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/paging", $body, $query, $extra);
+    }
+
+    /**
      * 保单分页浏览
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1007,7 +1020,7 @@ class InsureSdk extends SdkBase
     /**
      * 投保方案分页
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1020,7 +1033,7 @@ class InsureSdk extends SdkBase
     /**
      * 关联方案保司分页
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1033,7 +1046,7 @@ class InsureSdk extends SdkBase
     /**
      * 投保任务单列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/panelAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1046,7 +1059,7 @@ class InsureSdk extends SdkBase
     /**
      * 可投保金额列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskAmountController/panelAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1059,7 +1072,7 @@ class InsureSdk extends SdkBase
     /**
      * 付款
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/payAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1070,9 +1083,22 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 重复申请手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/repeatProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function repeatProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/repeatProcedures", $body, $query, $extra);
+    }
+
+    /**
      * 撤销理赔1-3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1085,7 +1111,7 @@ class InsureSdk extends SdkBase
     /**
      * 异步撤销理赔-支持版本3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeNotifyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1098,7 +1124,7 @@ class InsureSdk extends SdkBase
     /**
      * 任务单生效
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/setEnabledAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1111,7 +1137,7 @@ class InsureSdk extends SdkBase
     /**
      * 提交投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/submitAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1124,7 +1150,7 @@ class InsureSdk extends SdkBase
     /**
      * 同步付款计划状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/syncPolicyPayAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1137,7 +1163,7 @@ class InsureSdk extends SdkBase
     /**
      * 同步保单状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/syncInsureResultAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1150,7 +1176,7 @@ class InsureSdk extends SdkBase
     /**
      * 配置详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskConfigController/viewAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1163,7 +1189,7 @@ class InsureSdk extends SdkBase
     /**
      * 查看保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/viewAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1174,9 +1200,22 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/viewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function viewPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/view", $body, $query, $extra);
+    }
+
+    /**
      * 查看保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/viewAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
