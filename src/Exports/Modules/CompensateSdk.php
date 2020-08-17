@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-14
- * @time   Fri, 14 Aug 2020 15:49:48 +0800
+ * @date   2020-08-17
+ * @time   Mon, 17 Aug 2020 09:46:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -131,6 +131,19 @@ class CompensateSdk extends SdkBase
     public function customerPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/customer/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 未激活权益列表（未激活的兑换码列表）
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/EquityController/codePagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function equityCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/equity/code", $body, $query, $extra);
     }
 
     /**
