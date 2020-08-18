@@ -252,4 +252,13 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/export", $body);
     }
+    /**
+     * 分页查询向药联付款的组织已认领交易记录
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankChaimPageByPayer($body)
+    {
+        return $this->restful("POST", "/bankChaim/pageByPayer", $body);
+    }
 }
