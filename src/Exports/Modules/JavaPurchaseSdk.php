@@ -183,4 +183,15 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseProject/pause', $body);
 
     }
+
+    /**
+     * 项目获取采购项目ID
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function payerId($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/pause', $body);
+
+    }
 }

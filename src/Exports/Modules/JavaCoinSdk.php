@@ -197,4 +197,68 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/create", $body);
     }
+
+    /**
+     * 收款单分页查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptPage($body)
+    {
+        return $this->restful("POST", "/receipt/page", $body);
+    }
+    /**
+     * 收款单根据单号查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptGet($body)
+    {
+        return $this->restful("POST", "/receipt/get", $body);
+    }
+    /**
+     * 收款单审核通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptAuditSuccess($body)
+    {
+        return $this->restful("POST", "/receipt/auditSuccess", $body);
+    }
+    /**
+     * 收款单审核
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptAuditFail($body)
+    {
+        return $this->restful("POST", "/receipt/auditFail", $body);
+    }
+    /**
+     * 分页查询资金收款单附件
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptAnnexPage($body)
+    {
+        return $this->restful("POST", "/receiptAnnex/page", $body);
+    }
+    /**
+     * 收款单导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptExport($body)
+    {
+        return $this->restful("POST", "/receipt/export", $body);
+    }
+    /**
+     * 分页查询向药联付款的组织已认领交易记录
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankChaimPageByPayer($body)
+    {
+        return $this->restful("POST", "/bankChaim/pageByPayer", $body);
+    }
 }
