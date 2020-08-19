@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-08-19
- * @time   Wed, 19 Aug 2020 18:32:02 +0800
+ * @time   Wed, 19 Aug 2020 19:15:57 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1161,8 +1161,8 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 用户推荐行程列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getUserRecommendedListAction.md
+     * 获取推荐行程列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getRecommendedListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -1170,7 +1170,7 @@ class InspectionSdk extends SdkBase
      */
     public function recommendDispatchList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/dispatch/user/recommended", $body, $query, $extra);
+        return $this->restful("POST", "/dispatch/recommended", $body, $query, $extra);
     }
 
     /**
