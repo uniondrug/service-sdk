@@ -3783,7 +3783,7 @@ class SettlementSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function organizeBillsApply($body, $query = null, $extra = null)
+    public function organizeBillApply($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeBill/apply", $body, $query, $extra);
     }
