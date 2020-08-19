@@ -143,4 +143,15 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userCard/getByNum", $body);
     }
+
+    /**
+     * 添加用户已存在则查询用户
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserBasicApiController/addOrQueryApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userInfoAddOr($body)
+    {
+        return $this->restful("POST", "/v2/api/userBasic/addOrQuery", $body);
+    }
 }
