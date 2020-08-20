@@ -191,7 +191,7 @@ class JavaPurchaseSdk extends SdkBase
      */
     public function payerId($body)
     {
-        return $this->restful(static::METHOD_POST, '/purchaseProject/pause', $body);
+        return $this->restful(static::METHOD_POST, '/purchaseProject/payerId', $body);
 
     }
 }
