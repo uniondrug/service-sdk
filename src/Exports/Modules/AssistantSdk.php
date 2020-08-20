@@ -2463,4 +2463,56 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/storeStatistic/storeListUnShowExport", $body, $query, $extra);
     }
+
+    /**
+     * 出单门店数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeCountOfOrderAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreCountOfOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeCountOfOrder", $body, $query, $extra);
+    }
+
+    /**
+     * 出单门店数 [增值服务]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeCountOfServiceOrderAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreCountOfServiceOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeCountOfServiceOrder", $body, $query, $extra);
+    }
+
+    /**
+     * 管辖店员数统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/UserStatisticController/statisticAssistantCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function usersStatisticAssistantCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userStatistic/statisticAssistantCount", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表 (带统计数据)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/UserStatisticController/statisticPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function usersStatisticPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userStatistic/statisticPaging", $body, $query, $extra);
+    }
 }
