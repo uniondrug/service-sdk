@@ -2403,8 +2403,8 @@ class AssistantSdk extends SdkBase
      * 统计 [汇总数据]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/VisitScoreStatisticController/statisticGeneralAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function visitScoreStatisticGeneral($body, $query = null, $extra = null)
@@ -2416,8 +2416,8 @@ class AssistantSdk extends SdkBase
      * 统计 [员工维度详细]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/VisitScoreStatisticController/visitScoreStatisticUserListAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function visitScoreStatisticUserList($body, $query = null, $extra = null)
@@ -2429,8 +2429,8 @@ class AssistantSdk extends SdkBase
      * 统计导出 [员工维度详细]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/VisitScoreStatisticController/visitScoreStatisticUserListExportAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function visitScoreStatisticUserListExport($body, $query = null, $extra = null)
@@ -2442,8 +2442,8 @@ class AssistantSdk extends SdkBase
      * 门店列表 [未展示] (来源: 门店宽表)
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/StoreListUnShowAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function storeStatisticStoreListUnShow($body, $query = null, $extra = null)
@@ -2455,8 +2455,8 @@ class AssistantSdk extends SdkBase
      * 未展示门店列表导出 (数据宽表)
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListUnShowExportAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function storeStatisticStoreListUnShowExport($body, $query = null, $extra = null)
@@ -2468,8 +2468,8 @@ class AssistantSdk extends SdkBase
      * 出单门店数
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeCountOfOrderAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function storeStatisticStoreCountOfOrder($body, $query = null, $extra = null)
@@ -2481,8 +2481,8 @@ class AssistantSdk extends SdkBase
      * 出单门店数 [增值服务]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeCountOfServiceOrderAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function storeStatisticStoreCountOfServiceOrder($body, $query = null, $extra = null)
@@ -2494,8 +2494,8 @@ class AssistantSdk extends SdkBase
      * 管辖店员数统计
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/UserStatisticController/statisticAssistantCountAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function usersStatisticAssistantCount($body, $query = null, $extra = null)
@@ -2507,12 +2507,65 @@ class AssistantSdk extends SdkBase
      * 分页列表 (带统计数据)
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/UserStatisticController/statisticPagingAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function usersStatisticPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/userStatistic/statisticPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 门店明细
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeOrderListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreOrderList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeOrderList", $body, $query, $extra);
+    }
+
+    /**
+     * 门店开单数据统计[门店负责人纬度]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userStoreOrderManagerListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserStoreOrderList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/userStoreOrderList", $body, $query, $extra);
+    }
+
+    /**
+     * 月每天门店开单数据
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeMonthOrderCountListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreMonthOrderCountList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeMonthOrderCountList", $body, $query, $extra);
+    }
+
+    /**
+     * 门店开单数据统计[门店纬度]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeBillingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreBilling($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeBilling", $body, $query, $extra);
+
     }
 }
