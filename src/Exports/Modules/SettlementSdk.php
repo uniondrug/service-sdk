@@ -3594,6 +3594,32 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 新增健康服务结算单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/applyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsApply($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/apply", $body, $query, $extra);
+    }
+
+    /**
+     * 审批健康服务结算单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/auditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsAudit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/audit", $body, $query, $extra);
+    }
+
+    /**
      * 订单分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementsAddedController/pagingAction.md
      * @param array|object $body  入参类型
@@ -3786,5 +3812,31 @@ class SettlementSdk extends SdkBase
     public function organizeBillApply($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeBill/apply", $body, $query, $extra);
+    }
+
+    /**
+     * 新增健康服务明细接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementsHealthyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function settlementsHealthyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/settlementsHealthy/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取健康服务明细分页列表接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementsHealthyController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function settlementsHealthyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/settlementsHealthy/paging", $body, $query, $extra);
     }
 }
