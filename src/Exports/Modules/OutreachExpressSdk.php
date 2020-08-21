@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-16
- * @time   Mon, 16 Mar 2020 10:20:40 +0800
+ * @date   2020-07-30
+ * @time   Thu, 30 Jul 2020 13:16:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -63,6 +63,17 @@ class OutreachExpressSdk extends SdkBase
     }
 
     /**
+     * 运单取消原因列表
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/cancelReasonsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function CancelReasons($body)
+    {
+        return $this->restful("POST", "/api/order/cancel/reasons", $body);
+    }
+
+    /**
      * 运单取消
      * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/formalCancelAction.md
      * @param array $body 入参类型
@@ -74,7 +85,18 @@ class OutreachExpressSdk extends SdkBase
     }
 
     /**
-     * 订单状态回调
+     * 国内物流订单状态回调
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/logisticsOrderNotifyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function logisticsOrderNotify($body)
+    {
+        return $this->restful("POST", "/api/order/logisticsOrderNotify", $body);
+    }
+
+    /**
+     * 同城物流订单状态回调
      * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/orderNotifyAction.md
      * @param array $body 入参类型
      * @return ResponseInterface

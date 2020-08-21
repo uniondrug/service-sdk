@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-28
- * @time   Sun, 28 Jun 2020 19:49:33 +0800
+ * @date   2020-08-17
+ * @time   Mon, 17 Aug 2020 14:16:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -115,6 +115,28 @@ class CompensateSdk extends SdkBase
     public function customerPaging($body)
     {
         return $this->restful("POST", "/customer/paging", $body);
+    }
+
+    /**
+     * 未激活权益列表（未激活的兑换码列表）
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/EquityController/codePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityCode($body)
+    {
+        return $this->restful("POST", "/equity/code", $body);
+    }
+
+    /**
+     * 用户管理权益列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/EquityController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityPaging($body)
+    {
+        return $this->restful("POST", "/equity/paging", $body);
     }
 
     /**
@@ -962,6 +984,17 @@ class CompensateSdk extends SdkBase
     public function projectActivateStatistic($body)
     {
         return $this->restful("POST", "/project/statistic/activate", $body);
+    }
+
+    /**
+     * merchantIds获取项目数
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectByMerchantIdsAndMonthAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function projectByMerchantIdsAndMonth($body)
+    {
+        return $this->restful("POST", "/project/projectByMerchantIdsAndMonth", $body);
     }
 
     /**

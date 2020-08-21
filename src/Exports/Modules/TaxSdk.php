@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-22
- * @time   Wed, 22 Jul 2020 14:27:13 +0800
+ * @date   2020-08-12
+ * @time   Wed, 12 Aug 2020 15:16:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -157,6 +157,71 @@ class TaxSdk extends SdkBase
     public function taxCodeTree($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/taxCode/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/create", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRatePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/update", $body, $query, $extra);
+    }
+
+    /**
+     * 修改状态
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/updateStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/updateStatus", $body, $query, $extra);
     }
 
     /**
