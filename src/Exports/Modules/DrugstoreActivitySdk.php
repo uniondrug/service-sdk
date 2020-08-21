@@ -645,4 +645,32 @@ class DrugstoreActivitySdk extends SdkBase
     {
         return $this->restful("POST", "/activityConfigDimension/listing", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateRedPacketController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rebateRedPacketCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rebate/red/packet/create", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateRedPacketController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rebateRedPacketListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rebate/red/packet/listing", $body, $query, $extra);
+    }
 }
+
+
