@@ -358,4 +358,24 @@ class JavaMemberSdk extends SdkBase
         return $this->restful("POST", "v2/api/userMajor/queryBy", $body);
     }
 
+
+    /**
+     * 根据身份获取用户列表
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMemberListByIdentity($body)
+    {
+        return $this->restful("POST", "/v2/api/identity/getByCode", $body);
+    }
+
+    /**
+     * 获取组织通过用户Id
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getOrgByMemberId($body)
+    {
+        return $this->restful("POST", "/v2/api/org/queryBy", $body);
+    }
 }

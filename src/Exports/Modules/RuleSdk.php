@@ -602,4 +602,30 @@ class RuleSdk extends SdkBase
     {
         return $this->restful("POST", "/whiteListRelations/update", $body);
     }
+
+    /**
+     * 商品列表更新
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/GoodsListController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateGoodsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsList/update", $body, $query, $extra);
+    }
+
+    /**
+     * 商品批量新增
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/ProgramGoodsController/batchWhiteAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchWhiteListAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/program/goods/addGoodsAdd", $body, $query, $extra);
+    }
 }
