@@ -1224,4 +1224,30 @@ class InsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policyrecord/view", $body, $query, $extra);
     }
+
+    /**
+     * 保司保单分页
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerPagingPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/insurerPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 保司统计保单数和保费总额
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerStatAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerStatPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/insurerStat", $body, $query, $extra);
+    }
 }
