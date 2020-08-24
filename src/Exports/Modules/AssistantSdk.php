@@ -2573,12 +2573,25 @@ class AssistantSdk extends SdkBase
      * 出单数统计
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeOrderCountAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function storeStatisticStoreOrderCount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/storeStatistic/storeOrderCount", $body, $query, $extra);
+    }
+
+    /**
+     * 出单门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/orderStoreListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticOrderStoreList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/orderStoreList", $body, $query, $extra);
     }
 }
