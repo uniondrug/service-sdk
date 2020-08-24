@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-30
- * @time   Thu, 30 Jul 2020 19:25:46 +0800
+ * @date   2020-08-24
+ * @time   Mon, 24 Aug 2020 15:19:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -17,7 +17,7 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * YdbResPmSdk1
+ * YdbResPmSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
 class YdbResPmSdk extends SdkBase
@@ -82,6 +82,17 @@ class YdbResPmSdk extends SdkBase
     public function resourcePaging($body)
     {
         return $this->restful("POST", "/resource/paging", $body);
+    }
+
+    /**
+     * 设置排序
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/sortAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourceSort($body)
+    {
+        return $this->restful("POST", "/resource/sort", $body);
     }
 
     /**
