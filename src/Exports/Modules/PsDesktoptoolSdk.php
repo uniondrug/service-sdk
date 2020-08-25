@@ -56,6 +56,19 @@ class PsDesktoptoolSdk extends SdkBase
     }
 
     /**
+     * 到家订单查询
+     * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/HomeOrderController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function homeOrderPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/homeOrder/paging", $body, $query, $extra);
+    }
+
+    /**
      * 登录
      * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/UserController/loginAction.md
      * @param array|object $body  入参类型
