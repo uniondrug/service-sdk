@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-19
- * @time   Wed, 19 Aug 2020 19:15:57 +0800
+ * @date   2020-08-25
+ * @time   Tue, 25 Aug 2020 11:52:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -446,6 +446,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 获取订单检测信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/DetectController/getOrderDetectInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getOrderDetectInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/detect/info", $body, $query, $extra);
+    }
+
+    /**
      * 查询订单信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/getOrderInfoAction.md
      * @param array|object $body 入参类型
@@ -482,6 +495,19 @@ class InspectionSdk extends SdkBase
     public function getOrderReportOpenapi($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/report/info", $body, $query, $extra);
+    }
+
+    /**
+     * 获取订单采样信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/SampledController/getOrderSampledInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getOrderSampledInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/sampled/info", $body, $query, $extra);
     }
 
     /**
