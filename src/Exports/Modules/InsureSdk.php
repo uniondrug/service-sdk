@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-17
- * @time   Mon, 17 Aug 2020 15:51:31 +0800
+ * @date   2020-08-26
+ * @time   Wed, 26 Aug 2020 14:03:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -797,6 +797,19 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 手续费收款操作权限
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeController/getManagerAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getManagerPolicyIncome($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncome/getManager", $body, $query, $extra);
+    }
+
+    /**
      * 理赔明细
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/pagingAction.md
      * @param array|object $body 入参类型
@@ -846,6 +859,32 @@ class InsureSdk extends SdkBase
     public function getPlanPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/plan/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 保司保单分页
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerPagingPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/insurerPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 保司统计保单数和保费总额
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerStatAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerStatPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/insurerStat", $body, $query, $extra);
     }
 
     /**
@@ -992,7 +1031,7 @@ class InsureSdk extends SdkBase
     }
 
     /**
-     * 收款明细
+     * 收款明细分页列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/pagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1223,31 +1262,5 @@ class InsureSdk extends SdkBase
     public function viewPolicyRecord($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policyrecord/view", $body, $query, $extra);
-    }
-
-    /**
-     * 保司保单分页
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerPagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function insurerPagingPolicy($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/policy/insurerPaging", $body, $query, $extra);
-    }
-
-    /**
-     * 保司统计保单数和保费总额
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerStatAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function insurerStatPolicy($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/policy/insurerStat", $body, $query, $extra);
     }
 }
