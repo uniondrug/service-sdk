@@ -684,6 +684,32 @@ class DrugstoreActivitySdk extends SdkBase
     {
         return $this->restful("POST", "/rebate/red/packet/listing", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantRateController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rebateAssistantRateCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rebateAssistantRate/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.activity.drugstore/git/blob/development/docs/api/RebateAssistantRateController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rebateAssistantRateDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rebateAssistantRate/detail", $body, $query, $extra);
+    }
 }
 
 
