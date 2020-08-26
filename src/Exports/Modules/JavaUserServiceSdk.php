@@ -165,4 +165,15 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userCard/batchByIds", $body);
     }
+
+    /**
+     * 身份证新增
+     * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserBasicApiController/addOrQueryApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userCardAdd($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/add", $body);
+    }
 }
