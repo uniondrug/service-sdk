@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-26
- * @time   Wed, 26 Aug 2020 20:04:38 +0800
+ * @date   2020-08-27
+ * @time   Thu, 27 Aug 2020 20:48:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Bases\ResponseInterface;
+use Uniondrug\ServiceSdk\Responses\ResponseInterface;
 
 /**
  * YdbResPmSdk
@@ -28,6 +28,17 @@ class YdbResPmSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ydb-res-pm.module';
+
+    /**
+     * changeAction()
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/changeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourceChange($body)
+    {
+        return $this->restful("POST", "/resource/change", $body);
+    }
 
     /**
      * 配置连锁门店店员层级的开关
@@ -85,7 +96,7 @@ class YdbResPmSdk extends SdkBase
     }
 
     /**
-     * 设置排序
+     * 设置组织层面的排序
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/organSortAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -115,6 +126,17 @@ class YdbResPmSdk extends SdkBase
     public function resourceSort($body)
     {
         return $this->restful("POST", "/resource/sort", $body);
+    }
+
+    /**
+     * 排序资源列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/sortListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourceSortList($body)
+    {
+        return $this->restful("POST", "/resource/sortList", $body);
     }
 
     /**
