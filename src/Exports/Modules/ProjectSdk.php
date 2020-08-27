@@ -1437,4 +1437,16 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/redeem/listRedeemCode", $body, $query, $extra);
     }
+
+    /**
+     * 采购导出sql
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getPurchaseSql($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/purchase/sql", $body, $query, $extra);
+    }
 }
