@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-27
- * @time   Thu, 27 Aug 2020 20:48:20 +0800
+ * @date   2020-08-31
+ * @time   Mon, 31 Aug 2020 19:44:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -93,6 +93,17 @@ class YdbResPmSdk extends SdkBase
     public function resourceListAll($body)
     {
         return $this->restful("POST", "/resource/listAll", $body);
+    }
+
+    /**
+     * 资源组织列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/resourceOrganPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourceOrganPaging($body)
+    {
+        return $this->restful("POST", "/resource/resourceOrganPaging", $body);
     }
 
     /**
