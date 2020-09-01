@@ -1425,4 +1425,28 @@ class ProjectSdk extends SdkBase
         return $this->restful("POST", "/redeem/bind/memberId", $body, $query, $extra);
     }
 
+    /**
+     * 根据outOrderNo获取批量创建兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getListByOutOrderNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function redeemCodeListByOutOrderNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeem/listRedeemCode", $body, $query, $extra);
+    }
+
+    /**
+     * 采购导出sql
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getPurchaseSql($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/purchase/sql", $body, $query, $extra);
+    }
 }

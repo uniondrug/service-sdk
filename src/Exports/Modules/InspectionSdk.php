@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-13
- * @time   Thu, 13 Aug 2020 17:58:05 +0800
+ * @date   2020-08-25
+ * @time   Tue, 25 Aug 2020 11:52:09 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -183,6 +183,19 @@ class InspectionSdk extends SdkBase
     public function commodityTypeList($body, $query = null, $extra = null)
     {
         return $this->restful("GET", "/stock/commodity-type/list", $body, $query, $extra);
+    }
+
+    /**
+     * 推荐单确认
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/RecommendedNoteController/confirmRecommendedAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function confirmRecommended($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommended/confirm", $body, $query, $extra);
     }
 
     /**
@@ -433,6 +446,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 获取订单检测信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/DetectController/getOrderDetectInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getOrderDetectInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/detect/info", $body, $query, $extra);
+    }
+
+    /**
      * 查询订单信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/getOrderInfoAction.md
      * @param array|object $body 入参类型
@@ -469,6 +495,19 @@ class InspectionSdk extends SdkBase
     public function getOrderReportOpenapi($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/report/info", $body, $query, $extra);
+    }
+
+    /**
+     * 获取订单采样信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/SampledController/getOrderSampledInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getOrderSampledInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/sampled/info", $body, $query, $extra);
     }
 
     /**
@@ -927,6 +966,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * Mock任务
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockDispatchTaskAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function mockDispatchTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/mock/dispatch/task", $body, $query, $extra);
+    }
+
+    /**
      * Mock环境参数数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockEnvironmentAction.md
      * @param array|object $body 入参类型
@@ -1025,7 +1077,7 @@ class InspectionSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function modifyRecommendedLineList($body, $query = null, $extra = null)
+    public function modifyRecommendeLineList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/recommended/modify", $body, $query, $extra);
     }
@@ -1135,8 +1187,8 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 用户推荐行程列表
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getUserRecommendedListAction.md
+     * 获取推荐行程列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/getRecommendedListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -1144,7 +1196,7 @@ class InspectionSdk extends SdkBase
      */
     public function recommendDispatchList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/dispatch/user/recommended", $body, $query, $extra);
+        return $this->restful("POST", "/dispatch/recommended", $body, $query, $extra);
     }
 
     /**
@@ -1613,6 +1665,32 @@ class InspectionSdk extends SdkBase
     public function storageList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/stock/storage/list", $body, $query, $extra);
+    }
+
+    /**
+     * 保存ID生成器业务项
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/System/IdGeneratorController/saveBusinesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemIdGeneratorSave($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/id/save", $body, $query, $extra);
+    }
+
+    /**
+     * 修复reportNo
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/System/AsycRaskController/fixReportNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemSyncFixReportNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/sync/fix-report-no", $body, $query, $extra);
     }
 
     /**
