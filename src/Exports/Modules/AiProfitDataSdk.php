@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-17
- * @time   Mon, 17 Aug 2020 17:15:47 +0800
+ * @date   2020-09-01
+ * @time   Tue, 01 Sep 2020 18:16:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -888,6 +888,19 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 智盈白名单用户导出sql
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/userListExportSqlAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getUserListExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/userListExportSql", $body, $query, $extra);
+    }
+
+    /**
      * PAGING列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/pagingAction.md
      * @param array|object $body 入参类型
@@ -1262,6 +1275,19 @@ class AiProfitDataSdk extends SdkBase
     public function pcDiscount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/daySum/getDiscount", $body, $query, $extra);
+    }
+
+    /**
+     * 获取普惠活动配置的药联补贴
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PcDaySumDetailsController/getUnionSubsidyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pcUnionSubsidy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/daySum/getUnionSubsidy", $body, $query, $extra);
     }
 
     /**
