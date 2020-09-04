@@ -63,6 +63,16 @@ class JavaGoodsCenterSdk extends SdkBase
     }
 
     /**
+     * 获取药品图片等信息
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listStandardByTitle($body)
+    {
+        return $this->restful("POST", "/queryGoods/listStandardByTitle", $body);
+    }
+
+    /**
      * SKU查询商品详情
      * @param array $body 入参类型
      * @return ResponseInterface

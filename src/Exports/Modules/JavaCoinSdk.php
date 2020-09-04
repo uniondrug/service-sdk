@@ -261,4 +261,16 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/bankChaim/pageByPayer", $body);
     }
+
+    /**
+     * 统计实收金额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptSumRealReceiveAmount($body)
+    {
+        return $this->restful("POST", "/receipt/sumRealReceiveAmount", $body);
+    }
+
+
 }

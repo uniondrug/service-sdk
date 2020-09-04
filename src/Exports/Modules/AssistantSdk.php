@@ -31,6 +31,32 @@ class AssistantSdk extends SdkBase
     protected $serviceName = 'assistant.module';
 
     /**
+     * 智赔账号权限新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/compensateUserAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskCompensateUserAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/compensateUserAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 智盈账号新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/profitUserAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskProfitUserAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/profitUserAdd", $body, $query, $extra);
+    }
+
+    /**
      * 店员注销
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/destroyAssistantAction.md
      * @param array|object $body 入参类型

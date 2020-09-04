@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-26
- * @time   Wed, 26 Aug 2020 20:04:38 +0800
+ * @date   2020-09-03
+ * @time   Thu, 03 Sep 2020 14:53:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,68 +30,58 @@ class YdbResPmSdk extends SdkBase
     protected $serviceName = 'ydb-res-pm.module';
 
     /**
-     * 设置排序
+     * changeAction()
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/changeAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceChange($body, $query = null, $extra = null)
+    public function resourceChange($body)
     {
-        return $this->restful("POST", "/resource/change", $body, $query, $extra);
+        return $this->restful("POST", "/resource/change", $body);
     }
 
     /**
      * 配置连锁门店店员层级的开关
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/configAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceConfig($body, $query = null, $extra = null)
+    public function resourceConfig($body)
     {
-        return $this->restful("POST", "/resource/config", $body, $query, $extra);
+        return $this->restful("POST", "/resource/config", $body);
     }
 
     /**
      * 创建接口
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceCreate($body, $query = null, $extra = null)
+    public function resourceCreate($body)
     {
-        return $this->restful("POST", "/resource/create", $body, $query, $extra);
+        return $this->restful("POST", "/resource/create", $body);
     }
 
     /**
      * 详情接口
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceDetail($body, $query = null, $extra = null)
+    public function resourceDetail($body)
     {
-        return $this->restful("POST", "/resource/detail", $body, $query, $extra);
+        return $this->restful("POST", "/resource/detail", $body);
     }
 
     /**
      * 修改接口
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/listAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceList($body, $query = null, $extra = null)
+    public function resourceList($body)
     {
-        return $this->restful("POST", "/resource/list", $body, $query, $extra);
+        return $this->restful("POST", "/resource/list", $body);
     }
 
     /**
@@ -106,7 +96,18 @@ class YdbResPmSdk extends SdkBase
     }
 
     /**
-     * 设置排序
+     * 资源组织列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/resourceOrganPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourceOrganPaging($body)
+    {
+        return $this->restful("POST", "/resource/resourceOrganPaging", $body);
+    }
+
+    /**
+     * 设置组织层面的排序
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/organSortAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -117,54 +118,68 @@ class YdbResPmSdk extends SdkBase
     }
 
     /**
-     * 资源分页
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/pagingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * 资源组织列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/organSortRecordAction.md
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourcePaging($body, $query = null, $extra = null)
+    public function resourceOrganSortRecord($body)
     {
-        return $this->restful("POST", "/resource/paging", $body, $query, $extra);
+        return $this->restful("POST", "/resource/organSortRecord", $body);
+    }
+
+    /**
+     * 资源分页
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourcePaging($body)
+    {
+        return $this->restful("POST", "/resource/paging", $body);
     }
 
     /**
      * 设置排序
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/sortAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceSort($body, $query = null, $extra = null)
+    public function resourceSort($body)
     {
-        return $this->restful("POST", "/resource/sort", $body, $query, $extra);
+        return $this->restful("POST", "/resource/sort", $body);
+    }
+
+    /**
+     * 排序资源列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/sortListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function resourceSortList($body)
+    {
+        return $this->restful("POST", "/resource/sortList", $body);
     }
 
     /**
      * 同步接口
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/syncAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceSync($body, $query = null, $extra = null)
+    public function resourceSync($body)
     {
-        return $this->restful("POST", "/resource/sync", $body, $query, $extra);
+        return $this->restful("POST", "/resource/sync", $body);
     }
 
     /**
      * 修改接口
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/ResourceController/updateAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function resourceUpdate($body, $query = null, $extra = null)
+    public function resourceUpdate($body)
     {
-        return $this->restful("POST", "/resource/update", $body, $query, $extra);
+        return $this->restful("POST", "/resource/update", $body);
     }
 }
