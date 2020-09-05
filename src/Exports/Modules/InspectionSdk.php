@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-25
- * @time   Tue, 25 Aug 2020 11:52:09 +0800
+ * @date   2020-09-05
+ * @time   Sat, 05 Sep 2020 19:18:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -53,6 +53,19 @@ class InspectionSdk extends SdkBase
     public function addCommodity($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/stock/in/add/commodity", $body, $query, $extra);
+    }
+
+    /**
+     * 检测项目添加
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/addInspctionInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addInspctionInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspection/add", $body, $query, $extra);
     }
 
     /**
@@ -131,6 +144,19 @@ class InspectionSdk extends SdkBase
     public function cancelAppointmentOrder($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/cancelAppointment", $body, $query, $extra);
+    }
+
+    /**
+     * 判断检测项目是否需要质控检测
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/checkInspectionInfoQualityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function checkInspectionInfoQuality($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspection/checkQuality", $body, $query, $extra);
     }
 
     /**
@@ -287,6 +313,19 @@ class InspectionSdk extends SdkBase
     public function dispatchPendingList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/dispatch/pendingList", $body, $query, $extra);
+    }
+
+    /**
+     * 检测项目编辑
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/editInspctionInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editInspctionInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspection/edit", $body, $query, $extra);
     }
 
     /**
@@ -485,7 +524,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取订单检查报告
+     * 获取订单检测报告
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/ReportController/getOrderReportAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -771,6 +810,58 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 根据检测项目获取模板信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/inspectionInfoTemplateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function inspectionInfoTemplate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspection/template", $body, $query, $extra);
+    }
+
+    /**
+     * 检测项目列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/getListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function inspectionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspection/all/list", $body, $query, $extra);
+    }
+
+    /**
+     * 根据检测项目id和模板类型获取模板详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/InspectionTemplateController/getTemplateDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function inspectionTemplateDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspect-template/itemDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据模板id获取检测项模板详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/InspectionTemplateController/inspectionTemplateDetailByidAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function inspectionTemplateDetailByid($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspect-template/detail", $body, $query, $extra);
+    }
+
+    /**
      * 增加检测车
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionVanController/addAction.md
      * @param array|object $body 入参类型
@@ -1044,6 +1135,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * Mock任务
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockUpdateDispatchTaskAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function mockUpdateDispatchTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/mock/update/dispatch/task", $body, $query, $extra);
+    }
+
+    /**
      * 修改预约单状态
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/modifyAppointmentNoteAction.md
      * @param array|object $body 入参类型
@@ -1184,6 +1288,110 @@ class InspectionSdk extends SdkBase
     public function qualityControlItemShow($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/quality-control/item/show", $body, $query, $extra);
+    }
+
+    /**
+     * 根据质控项目id获取质控液批次号
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotInformationController/getItemListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotByItemId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-iot/iotByItemId", $body, $query, $extra);
+    }
+
+    /**
+     * 增加质控液信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotInformationController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotInformationAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-iot/add", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑质控液模板
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotInformationController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotInformationEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-iot/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 质控液模板列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotInformationController/getListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotInformationList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-iot/list", $body, $query, $extra);
+    }
+
+    /**
+     * 增加质控项目质控液关联
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotInformationController/addQualityIotRelateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotRelateAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-iot/addRelate", $body, $query, $extra);
+    }
+
+    /**
+     * 增加质控液模板
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotTemplateController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotTemplateAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-template/add", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑质控液模板
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotTemplateController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotTemplateEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-template/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 根据质控液批次号查询参考值
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityIotTemplateController/qualityReferenceValueByIotNumberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityReferenceValueByIotNumber($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-template/referenceValue", $body, $query, $extra);
     }
 
     /**
@@ -1353,6 +1561,45 @@ class InspectionSdk extends SdkBase
     public function reportDetectionList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/report/detection/list", $body, $query, $extra);
+    }
+
+    /**
+     * 检测模板添加
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/InspectionTemplateController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function reportInspectionAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspect-template/add", $body, $query, $extra);
+    }
+
+    /**
+     * 检测模板明细添加
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/InspectionTemplateController/addDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function reportInspectionDetailAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspect-template/detail/add", $body, $query, $extra);
+    }
+
+    /**
+     * 检测项模板编辑
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/InspectionTemplateController/reportInspectionEditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function reportInspectionEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspect-template/edit", $body, $query, $extra);
     }
 
     /**
@@ -1574,6 +1821,19 @@ class InspectionSdk extends SdkBase
     public function skuSearchCommodity($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/stock/in/sku/search/commodity", $body, $query, $extra);
+    }
+
+    /**
+     * 检测项目状态修改
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/statusInspctionInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statusInspctionInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/inspection/status", $body, $query, $extra);
     }
 
     /**
@@ -2016,5 +2276,161 @@ class InspectionSdk extends SdkBase
     public function uploadUrlSignInfo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/upload/url/sign/id", $body, $query, $extra);
+    }
+
+    /**
+     * 小程序登录
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatLoginController/accountLoginAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatAccountLogin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/account/login", $body, $query, $extra);
+    }
+
+    /**
+     * 小程序首页日历数据接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/indexAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatCalendarIndex($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/calendar/index", $body, $query, $extra);
+    }
+
+    /**
+     * 确认线路
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/confirmLineAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatConfirmLine($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/confirm/line", $body, $query, $extra);
+    }
+
+    /**
+     * 获取openid
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatLoginController/getOpenidAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatGetOpenid($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/get/openid", $body, $query, $extra);
+    }
+
+    /**
+     * 线路基本信息接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/lineBasicAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatLineBasic($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/line/basic", $body, $query, $extra);
+    }
+
+    /**
+     * 线路明细
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/lineDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatLineDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/line/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 获取短信验证码
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatLoginController/sendSmsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatSendSms($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/send/sms", $body, $query, $extra);
+    }
+
+    /**
+     * 采样样提交任务
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/submitSamplingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatSubmitSampling($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/task/submit/sampling", $body, $query, $extra);
+    }
+
+    /**
+     * 司机完成任务
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/submitTransportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatSubmitTransport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/task/submit/transport", $body, $query, $extra);
+    }
+
+    /**
+     * 任务详情接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/taskDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatTaskDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/task/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 任务列表接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/taskListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatTaskList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/task/list", $body, $query, $extra);
+    }
+
+    /**
+     * 修改条码
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/updateMaterialNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatUpdateMaterialNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/task/update/material", $body, $query, $extra);
     }
 }
