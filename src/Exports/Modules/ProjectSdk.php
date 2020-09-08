@@ -1411,10 +1411,7 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/redeem/batch/check/limit", $body, $query, $extra);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> d680dd13ac50a3a03f4919b8a7427ff410aed863
     /**
      * 给兑换码绑定用户信息
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/bindMemberIdAction.md
@@ -1427,8 +1424,6 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/redeem/bind/memberId", $body, $query, $extra);
     }
-<<<<<<< HEAD
-=======
 
     /**
      * 根据outOrderNo获取批量创建兑换码
@@ -1454,5 +1449,4 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/user/purchase/sql", $body, $query, $extra);
     }
->>>>>>> d680dd13ac50a3a03f4919b8a7427ff410aed863
 }
