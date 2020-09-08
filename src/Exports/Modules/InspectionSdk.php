@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-05
- * @time   Sat, 05 Sep 2020 19:18:51 +0800
+ * @date   2020-09-08
+ * @time   Tue, 08 Sep 2020 10:59:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2279,7 +2279,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 小程序登录
+     * 小程序手机短信验证登录
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatLoginController/accountLoginAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -2289,6 +2289,19 @@ class InspectionSdk extends SdkBase
     public function wechatAccountLogin($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/wechat/account/login", $body, $query, $extra);
+    }
+
+    /**
+     * 小程序手机号授权登录
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatLoginController/authLoginAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatAuthLogin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/auth/login", $body, $query, $extra);
     }
 
     /**
@@ -2328,6 +2341,19 @@ class InspectionSdk extends SdkBase
     public function wechatGetOpenid($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/wechat/get/openid", $body, $query, $extra);
+    }
+
+    /**
+     * 用户授权获取手机号
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatLoginController/getPhoneAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatGetPhone($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/get/phone", $body, $query, $extra);
     }
 
     /**
