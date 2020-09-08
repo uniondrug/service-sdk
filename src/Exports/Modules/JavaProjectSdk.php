@@ -27,5 +27,8 @@ class JavaProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/code/search", $body);
     }
-
+    public function autoCheck($body)
+    {
+        return $this->restful("POST", "/code/autoCheck", $body);
+    }
 }

@@ -272,6 +272,28 @@ class DistsellSdk extends SdkBase
     }
 
     /**
+     * 单连锁商品关联
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantSingleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productMerchantSingle($body)
+    {
+        return $this->restful("POST", "/product/merchant/single", $body);
+    }
+
+    /**
+     * 单连锁商品关联
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/productOrganizationListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ProductOrganizationList($body)
+    {
+        return $this->restful("POST", "/product/organization/list", $body);
+    }
+
+    /**
      * 商品列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/pagingAction.md
      * @param array $body 入参类型
@@ -280,6 +302,17 @@ class DistsellSdk extends SdkBase
     public function productPaging($body)
     {
         return $this->restful("POST", "/product/paging", $body);
+    }
+
+    /**
+     * 商品简单查询
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/simpleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productSimple($body)
+    {
+        return $this->restful("POST", "/product/simple", $body);
     }
 
     /**
@@ -302,25 +335,5 @@ class DistsellSdk extends SdkBase
     public function productSyncCreate($body)
     {
         return $this->restful("POST", "/product/syncCreate", $body);
-    }
-
-    /**
-     * 商品简单查询
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function productSimple($body)
-    {
-        return $this->restful("POST", "/product/simple", $body);
-    }
-
-    /**
-     * 单连锁商品关联
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function productMerchantSingle($body)
-    {
-        return $this->restful("POST", "/product/merchant/single", $body);
     }
 }

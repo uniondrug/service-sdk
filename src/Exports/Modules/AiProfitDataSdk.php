@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-07
- * @time   Fri, 07 Aug 2020 11:07:28 +0800
+ * @date   2020-09-01
+ * @time   Tue, 01 Sep 2020 18:16:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -277,6 +277,32 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 截止当前的剩余可以使用的数量，额度
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PcCardReceiveController/presentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cardReceivePresent($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cardReceive/present", $body, $query, $extra);
+    }
+
+    /**
+     * 累积领取优惠权益（数量）和累积领取优惠权益（金额）
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PcCardReceiveController/totalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cardReceiveTotal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cardReceive/total", $body, $query, $extra);
+    }
+
+    /**
      * 报名记录审批修改状态和原因
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/checkAction.md
      * @param array|object $body 入参类型
@@ -378,6 +404,32 @@ class AiProfitDataSdk extends SdkBase
     public function dayDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/pk/dayDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 折线图数据
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PcDaySumDetailsController/lineAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function daySumLine($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/daySum/line", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PcDaySumDetailsController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function daySumList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/daySum/list", $body, $query, $extra);
     }
 
     /**
@@ -836,6 +888,19 @@ class AiProfitDataSdk extends SdkBase
     }
 
     /**
+     * 智盈白名单用户导出sql
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/userListExportSqlAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getUserListExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/userListExportSql", $body, $query, $extra);
+    }
+
+    /**
      * PAGING列表
      * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/UserController/pagingAction.md
      * @param array|object $body 入参类型
@@ -1197,6 +1262,32 @@ class AiProfitDataSdk extends SdkBase
     public function partnerTask($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/task", $body, $query, $extra);
+    }
+
+    /**
+     * 获取大数据的折扣下拉列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PcDaySumDetailsController/getDiscountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pcDiscount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/daySum/getDiscount", $body, $query, $extra);
+    }
+
+    /**
+     * 获取普惠活动配置的药联补贴
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/PcDaySumDetailsController/getUnionSubsidyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pcUnionSubsidy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/daySum/getUnionSubsidy", $body, $query, $extra);
     }
 
     /**

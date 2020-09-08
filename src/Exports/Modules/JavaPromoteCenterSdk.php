@@ -192,4 +192,14 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/info/checkGoods", $body);
     }
+
+    /**
+     * 查询project详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function infoQueryProjectInfo($body)
+    {
+        return $this->restful("POST", "/info/queryProjectInfo", $body);
+    }
 }

@@ -223,4 +223,17 @@ class GoPartnersSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, "/store/searchStoreDrugs", $body);
     }
+
+    /**
+     * 内码/条形码搜索药品
+     * @link https://uniondrug.coding.net/p/module.partners/git/blob/develop/docs/GoodsController/searchByNos.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function searchDrugsByCodeOrNo($body)
+    {
+        return $this->restful(static::METHOD_POST, "/api/goods/search", $body, null, [
+            'timeout' => 10
+        ]);
+    }
 }

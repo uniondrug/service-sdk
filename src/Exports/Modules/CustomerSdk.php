@@ -151,6 +151,17 @@ class CustomerSdk extends SdkBase
     }
 
     /**
+     * detailAction()
+     * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/CustomerController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getCustomerDetail($body)
+    {
+        return $this->restful("POST", "/customer/detail", $body);
+    }
+
+    /**
      * numberAction()
      * @link https://uniondrug.coding.net/p/module.customer/git/blob/development/docs/api/CustomerController/numberAction.md
      * @param array $body 入参类型

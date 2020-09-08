@@ -602,4 +602,82 @@ class RuleSdk extends SdkBase
     {
         return $this->restful("POST", "/whiteListRelations/update", $body);
     }
+
+    /**
+     * 商品列表更新
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/GoodsListController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateGoodsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsList/update", $body, $query, $extra);
+    }
+
+    /**
+     * 商品批量新增
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/ProgramGoodsController/batchWhiteAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchWhiteListAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/program/goods/addGoodsAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 属性关联方案批量新增
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/ProgramAttrController/BatchInsertAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function programAttrBatchInsert($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/program/attr/batch/insert", $body, $query, $extra);
+    }
+
+    /**
+     * 属性关联方案批量修改
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/ProgramAttrController/BatchUpdateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function programAttrBatchUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/program/attr/batch/update", $body, $query, $extra);
+    }
+
+    /**
+     * 分页
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/ProgramAttrController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function programAttrPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/program/attr/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 删除方案ID下的商品
+     * @link https://uniondrug.coding.net/p/module.rule/git/blob/development/module.rule/api/ProgramGoodsController/deleteGoodsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function programGoodsDeleteGoods($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/program/goods/deleteGoods", $body, $query, $extra);
+    }
 }

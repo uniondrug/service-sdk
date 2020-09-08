@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-07-29
- * @time   Wed, 29 Jul 2020 10:53:40 +0800
+ * @date   2020-09-01
+ * @time   Tue, 01 Sep 2020 14:16:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -126,6 +126,17 @@ class MerchantSdk extends SdkBase
     public function addOrganization($body)
     {
         return $this->restful("POST", "/organization/add", $body);
+    }
+
+    /**
+     * 添加商户组织快照
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseSnapshotController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function addOrganizeBaseSnapshot($body)
+    {
+        return $this->restful("POST", "/organizebasesnapshot/add", $body);
     }
 
     /**
@@ -1163,6 +1174,17 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 读取商户组织快照
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseSnapshotController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function infoOrganizeBaseSnapshot($body)
+    {
+        return $this->restful("POST", "/organizebasesnapshot/info", $body);
+    }
+
+    /**
      * 查询商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/infoAction.md
      * @param array $body 入参类型
@@ -1446,6 +1468,72 @@ class MerchantSdk extends SdkBase
     public function moblieWorkerMan($body)
     {
         return $this->restful("POST", "/workerman/moblie", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeDtpBindCreate($body)
+    {
+        return $this->restful("POST", "/organizeDtpBind/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeDtpBindDetail($body)
+    {
+        return $this->restful("POST", "/organizeDtpBind/detail", $body);
+    }
+
+    /**
+     * 单条记录结果集合
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/idsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeDtpBindIds($body)
+    {
+        return $this->restful("POST", "/organizeDtpBind/ids", $body);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeDtpBindListing($body)
+    {
+        return $this->restful("POST", "/organizeDtpBind/listing", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeDtpBindPaging($body)
+    {
+        return $this->restful("POST", "/organizeDtpBind/paging", $body);
+    }
+
+    /**
+     * 解除绑定
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/UnBindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function organizeDtpUnBind($body)
+    {
+        return $this->restful("POST", "/organizeDtpBind/unbind", $body);
     }
 
     /**
