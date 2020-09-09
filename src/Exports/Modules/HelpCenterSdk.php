@@ -11,7 +11,7 @@
  * @date   2020-09-09
  * @time   Wed, 09 Sep 2020 17:19:21 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Pss;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
