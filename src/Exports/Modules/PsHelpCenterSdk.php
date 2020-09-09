@@ -17,10 +17,10 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * HelpCenterSdk
+ * PsHelpCenterSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class HelpCenterSdk extends SdkBase
+class PsHelpCenterSdk extends SdkBase
 {
     /**
      * 服务名称
