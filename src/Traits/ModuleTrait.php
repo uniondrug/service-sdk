@@ -112,6 +112,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
