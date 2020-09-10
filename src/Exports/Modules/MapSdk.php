@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-20
- * @time   Fri, 20 Mar 2020 09:51:04 +0800
+ * @date   2020-05-27
+ * @time   Wed, 27 May 2020 16:23:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,28 @@ class MapSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'map.module';
+
+    /**
+     * 搜索周边
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/searchMapAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function amapSearch($body)
+    {
+        return $this->restful("POST", "/amap/searchmap", $body);
+    }
+
+    /**
+     * 查询
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/WeatherController/byCityAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function cityWeather($body)
+    {
+        return $this->restful("POST", "/location/weather", $body);
+    }
 
     /**
      * 坐标系转换
@@ -65,6 +87,17 @@ class MapSdk extends SdkBase
     }
 
     /**
+     * 返回查询
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/District/ByKeywordsController/byKeywordsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function districtByKeywords($body)
+    {
+        return $this->restful("POST", "/district/byKeyword", $body);
+    }
+
+    /**
      * 同步商户中心数据
      * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/editMapAction.md
      * @param array $body 入参类型
@@ -95,6 +128,50 @@ class MapSdk extends SdkBase
     public function infoAmap($body)
     {
         return $this->restful("POST", "/amap/data/info", $body);
+    }
+
+    /**
+     * 查询
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ByAddressController/byAddressAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function locationByAddress($body)
+    {
+        return $this->restful("POST", "/location/byAddress", $body);
+    }
+
+    /**
+     * 转为坐标系
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ConvertController/convertAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function locationConvert($body)
+    {
+        return $this->restful("POST", "/location/convert", $body);
+    }
+
+    /**
+     * 获取详情
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/DetailController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function locationDetail($body)
+    {
+        return $this->restful("POST", "/location/detail", $body);
+    }
+
+    /**
+     * 查询
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/GetDistanceController/distanceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function locationDistance($body)
+    {
+        return $this->restful("POST", "/location/distance", $body);
     }
 
     /**

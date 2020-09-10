@@ -29,4 +29,14 @@ class JavaMpacenterSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/drugDiscount/goodsTrial', $body);
     }
+
+    /**
+     * 会员活动价
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function unifyGoodsTrial($body)
+    {
+        return $this->restful(static::METHOD_POST, '/drugDiscount/unifyGoodsTrial', $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-18
- * @time   Wed, 18 Mar 2020 11:54:13 +0800
+ * @date   2020-05-18
+ * @time   Mon, 18 May 2020 21:13:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -85,6 +85,17 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * 批量销毁
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/batchDestroyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantBatchDestroy($body)
+    {
+        return $this->restful("POST", "/assistant/batchDestroy", $body);
+    }
+
+    /**
      * 学习
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/completeAction.md
      * @param array $body 入参类型
@@ -140,6 +151,17 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantOpenController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantOpenDetail($body)
+    {
+        return $this->restful("POST", "/assistantOpen/detail", $body);
+    }
+
+    /**
      * 获取门店店员列表（分页）
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/pagingAction.md
      * @param array $body 入参类型
@@ -170,6 +192,17 @@ class UdappSdk extends SdkBase
     public function assistantStoreRoleList($body)
     {
         return $this->restful("POST", "/assistant/storeRoleList", $body);
+    }
+
+    /**
+     * 同步店员
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/syncAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function assistantSync($body)
+    {
+        return $this->restful("POST", "/assistant/sync", $body);
     }
 
     /**
@@ -239,6 +272,17 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * exportAction()
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configExport($body)
+    {
+        return $this->restful("POST", "/config/export", $body);
+    }
+
+    /**
      * idsAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/idsAction.md
      * @param array $body 入参类型
@@ -272,6 +316,17 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * typePartnerStatusAction()
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/typePartnerStatusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function configTypePartnerStatus($body)
+    {
+        return $this->restful("POST", "/config/typePartnerStatus", $body);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/createAction.md
      * @param array $body 入参类型
@@ -280,6 +335,39 @@ class UdappSdk extends SdkBase
     public function messageCreate($body)
     {
         return $this->restful("POST", "/message/create", $body);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pollCreate($body)
+    {
+        return $this->restful("POST", "/poll/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pollDetail($body)
+    {
+        return $this->restful("POST", "/poll/detail", $body);
+    }
+
+    /**
+     * 修改状态
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pollUpdate($body)
+    {
+        return $this->restful("POST", "/poll/update", $body);
     }
 
     /**
@@ -456,5 +544,148 @@ class UdappSdk extends SdkBase
     public function tokenExpire($body)
     {
         return $this->restful("POST", "/token/expire", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeCreate($body)
+    {
+        return $this->restful("POST", "/storeQrcode/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeDetail($body)
+    {
+        return $this->restful("POST", "/storeQrcode/detail", $body);
+    }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodeExport($body)
+    {
+        return $this->restful("POST", "/storeQrcode/export", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeQrcodePaging($body)
+    {
+        return $this->restful("POST", "/storeQrcode/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateCreate($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/create", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDelete($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/delete", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDetail($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/detail", $body);
+    }
+
+    /**
+     * 下线
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/downAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDown($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/down", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplatePaging($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/paging", $body);
+    }
+
+    /**
+     * 上线
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/upAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateUp($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/up", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateUpdate($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/update", $body);
+    }
+
+    /**
+     * 获取模版
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/defaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function marketingTemplateDefault($body)
+    {
+        return $this->restful("POST", "/marketingTemplate/default", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReplyController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function replyCreate($body)
+    {
+        return $this->restful("POST", "/reply/create", $body);
     }
 }

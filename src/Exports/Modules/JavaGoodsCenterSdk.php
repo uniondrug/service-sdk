@@ -63,6 +63,16 @@ class JavaGoodsCenterSdk extends SdkBase
     }
 
     /**
+     * 获取药品图片等信息
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listStandardByTitle($body)
+    {
+        return $this->restful("POST", "/queryGoods/listStandardByTitle", $body);
+    }
+
+    /**
      * SKU查询商品详情
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -114,5 +124,27 @@ class JavaGoodsCenterSdk extends SdkBase
     public function getProductBundle($body)
     {
         return $this->restful("POST", "/v1/spu/batch/bundle", $body);
+    }
+
+    /**
+     * 根据连锁获取sku分页列表
+     * @link https://uniondrug.coding.net/p/docs/d/docs/git/tree/development/java/goods-center/商品中心3.1/根据连锁获取sku.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function findSkuByMerchantId($body)
+    {
+        return $this->restful("POST", "/service/sku/findSkuByMerchantId", $body);
+    }
+
+    /**
+     * 批量编辑SKU扣率税率
+     * @link https://uniondrug.coding.net/p/docs/d/docs/git/tree/development/java/goods-center/商品中心3.1/编辑SKU扣率税率.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateSkuInBatch($body)
+    {
+        return $this->restful("POST", "/service/sku/edit", $body);
     }
 }

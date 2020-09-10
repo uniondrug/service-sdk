@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-10-16
- * @time   Wed, 16 Oct 2019 14:00:57 +0800
+ * @date   2020-05-22
+ * @time   Fri, 22 May 2020 14:13:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,39 @@ class CustomerserviceSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'customerservice.module';
+
+    /**
+     * 投诉记录统计
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/ComplainController/complainCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function complainCount($body)
+    {
+        return $this->restful("POST", "/complain/count", $body);
+    }
+
+    /**
+     * 添加投诉记录列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/ComplainController/complainCreatAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function complainCreat($body)
+    {
+        return $this->restful("POST", "/complain/Creat", $body);
+    }
+
+    /**
+     * 投诉记录列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/ComplainController/complainPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function complainPaging($body)
+    {
+        return $this->restful("POST", "/complain/paging", $body);
+    }
 
     /**
      * 添加操作日志

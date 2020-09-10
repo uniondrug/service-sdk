@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-02-26
- * @time   Wed, 26 Feb 2020 20:45:15 +0800
+ * @date   2020-04-17
+ * @time   Fri, 17 Apr 2020 15:00:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -49,6 +49,17 @@ class DistsellSdk extends SdkBase
     public function leadDetail($body)
     {
         return $this->restful("POST", "/lead/detail", $body);
+    }
+
+    /**
+     * 冻结解冻
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/LeadController/freezeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function leadFreeze($body)
+    {
+        return $this->restful("POST", "/lead/freeze", $body);
     }
 
     /**
@@ -118,6 +129,17 @@ class DistsellSdk extends SdkBase
     }
 
     /**
+     * 用商品id获取商品信息和配置的积分
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/packageDetailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pointPackageDetail($body)
+    {
+        return $this->restful("POST", "/point/packageDetail", $body);
+    }
+
+    /**
      * 积分列表（分页）
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/pagingAction.md
      * @param array $body 入参类型
@@ -137,17 +159,6 @@ class DistsellSdk extends SdkBase
     public function pointUpdate($body)
     {
         return $this->restful("POST", "/point/update", $body);
-    }
-
-    /**
-     * 用商品id获取商品信息和配置的积分
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PointController/packageDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function pointPackageDetail($body)
-    {
-        return $this->restful("POST", "/point/packageDetail", $body);
     }
 
     /**
@@ -250,6 +261,39 @@ class DistsellSdk extends SdkBase
     }
 
     /**
+     * 连锁某种商品是否存在
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantProductExistAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productMerchantProductExist($body)
+    {
+        return $this->restful("POST", "/product/merchantProductExist", $body);
+    }
+
+    /**
+     * 单连锁商品关联
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/merchantSingleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productMerchantSingle($body)
+    {
+        return $this->restful("POST", "/product/merchant/single", $body);
+    }
+
+    /**
+     * 单连锁商品关联
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/productOrganizationListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function ProductOrganizationList($body)
+    {
+        return $this->restful("POST", "/product/organization/list", $body);
+    }
+
+    /**
      * 商品列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/pagingAction.md
      * @param array $body 入参类型
@@ -258,6 +302,17 @@ class DistsellSdk extends SdkBase
     public function productPaging($body)
     {
         return $this->restful("POST", "/product/paging", $body);
+    }
+
+    /**
+     * 商品简单查询
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ProductController/simpleAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function productSimple($body)
+    {
+        return $this->restful("POST", "/product/simple", $body);
     }
 
     /**

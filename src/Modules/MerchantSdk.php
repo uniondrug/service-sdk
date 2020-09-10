@@ -5,7 +5,7 @@
  */
 namespace Uniondrug\ServiceSdk\Modules;
 
-use Uniondrug\Service\ClientResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 use Uniondrug\ServiceSdk\Sdk;
 use Uniondrug\ServiceSdk\ServiceSdkInterface;
 
@@ -590,6 +590,28 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 批量加入地图黑名单
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsBlackMapAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editStartIsBlackMap($body)
+    {
+        return $this->restful("POST", "/organization/editstartisblackmap", $body);
+    }
+
+    /**
+     * 批量释放地图黑名单
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsBlackMapAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editEndIsBlackMap($body)
+    {
+        return $this->restful("POST", "/organization/editendisblackmap", $body);
+    }
+
+    /**
      * 用户启用
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusStartAction.md
      * @param object|array $body
@@ -1030,6 +1052,17 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 批量注销状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusOutAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editStatusOut($body)
+    {
+        return $this->restful("POST", "/organizebase/editstatusout", $body);
+    }
+
+    /**
      * id查询费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/detailAction.md
      * @param object|array $body
@@ -1258,5 +1291,27 @@ class MerchantSdk extends Sdk implements ServiceSdkInterface
     public function internalcode($body)
     {
         return $this->restful("POST", "/organizebase/internalcode", $body);
+    }
+
+    /**
+     * 批量关闭地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsMapOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editendismapopen($body)
+    {
+        return $this->restful("POST", "/organization/editendismapopen", $body);
+    }
+
+    /**
+     * 批量开启地图
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsMapOpenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editstartismapopen($body)
+    {
+        return $this->restful("POST", "/organization/editstartismapopen", $body);
     }
 }

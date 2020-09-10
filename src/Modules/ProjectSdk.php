@@ -672,4 +672,15 @@ class ProjectSdk extends Sdk implements ServiceSdkInterface
     {
         return $this->restful(static::METHOD_POST, "/verify/ydbCheck", $body);
     }
+
+    /**
+     * 验证身份证
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/validateIdCardAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeValidateIdCard($body)
+    {
+        return $this->restful("POST", "/redeem/validateIdCard", $body);
+    }
 }

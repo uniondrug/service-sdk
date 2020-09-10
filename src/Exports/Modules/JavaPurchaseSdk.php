@@ -106,4 +106,92 @@ class JavaPurchaseSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/purchasePile/cancel', $body);
     }
+
+    /**
+     * 项目导出sql
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function exportProjectSQL($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/exportList', $body);
+    }
+
+    /**
+     * 规格邮件重试
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function sendSpecsMail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/sendMail', $body);
+    }
+
+    /**
+     * 解析导入模板行数和权益总额
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function parseExcelContent($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchasePile/checkExcel', $body);
+    }
+
+    /**
+     * 规格列表
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function specsList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/listing', $body);
+    }
+
+    /**
+     * 导出规格
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function specsExport($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/export', $body);
+    }
+
+    /**
+     * 项目提额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function purchaseIncreaseQuota($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/increaseQuota', $body);
+
+    }
+
+    /**
+     * 项目暂停
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function purchaseProjectPause($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/pause', $body);
+
+    }
+
+    /**
+     * 项目获取采购项目ID
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function payerId($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/payerId', $body);
+
+    }
 }

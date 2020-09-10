@@ -1397,4 +1397,69 @@ class EquitySdk extends SdkBase
     {
         return $this->restful("POST", "/guarantee/getGuaranteeByIds", $body);
     }
+
+    /**
+     * 等待审核
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/pendingAuditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function pendingAuditGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/pending/audit", $body);
+    }
+
+    /**
+     * 拒绝审核
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GuaranteeController/refusedAuditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function refusedAuditGuarantee($body)
+    {
+        return $this->restful("POST", "/guarantee/refused/audit", $body);
+    }
+
+    /**
+     * 获取当天创建分组最新一条权益的有效期
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/docs/api/GroupEquityController/getLatestEquityDateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getProjectLatestEquityDate($body)
+    {
+        return $this->restful("POST", "/equity/group/latest/equity/date", $body);
+    }
+
+    /**
+     * 根据权益id查询对应数据
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/EquitySerialController/getInfoByEquityIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function serialGetByEquityId($body)
+    {
+        return $this->restful("POST", "/equity/serial/getInfoByEquityId", $body);
+    }
+
+    /**
+     * 更新分组权益金额与次数
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/GroupEquityController/editGroupEquityNominalValueAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function editGroupEquityValueAndTimes($body)
+    {
+        return $this->restful("POST", "/equity/group/editGroupEquityValueAndTimes", $body);
+    }
+    /**
+     * 获取用户要指定增值服务对应的保障数量
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/GuaranteeController/getNumsByProductIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGuaranteeProducts($body)
+    {
+        return $this->restful("POST", "/guarantee/products", $body);
+    }
 }

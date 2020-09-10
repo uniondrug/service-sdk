@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-29
- * @time   Fri, 29 Nov 2019 15:51:56 +0800
+ * @date   2020-08-12
+ * @time   Wed, 12 Aug 2020 15:16:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -31,89 +31,248 @@ class TaxSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/createAction.md
-     * @param object|array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/Invoice/InvoiceController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressCreate($body)
+    public function invoiceCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/create", $body);
+        return $this->restful("POST", "/invoice/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceDetails/InvoiceDetailsController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceDetailsCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoiceDetails/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantGoodsCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchantGoods/create", $body, $query, $extra);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/detailAction.md
-     * @param object|array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressDetail($body)
+    public function merchantGoodsDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/detail", $body);
+        return $this->restful("POST", "/merchantGoods/detail", $body, $query, $extra);
     }
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/pagingAction.md
-     * @param object|array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressPaging($body)
+    public function merchantGoodsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/paging", $body);
-    }
-
-    /**
-     * 批次列表
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/pagingAction.md
-     * @param object|array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function invoiceExpressListing($body)
-    {
-        return $this->restful("POST", "/invoiceExpress/listing", $body);
+        return $this->restful("POST", "/merchantGoods/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressUpdate($body)
+    public function merchantGoodsUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/update", $body);
+        return $this->restful("POST", "/merchantGoods/update", $body, $query, $extra);
     }
 
     /**
-     * 删除
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
+     * 批量修改
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/updateInBatchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressDelete($body)
+    public function merchantGoodsUpdateInBatch($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/delete", $body);
+        return $this->restful("POST", "/merchantGoods/update", $body, $query, $extra);
     }
 
     /**
-     * 批量删除
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressDeleteInBatch($body)
+    public function taxCodeCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/deleteInBatch", $body);
+        return $this->restful("POST", "/taxCode/create", $body, $query, $extra);
     }
 
     /**
-     * 今天第几条
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/updateAction.md
-     * @param object|array $body 入参类型
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function invoiceExpressCountToday($body)
+    public function taxCodePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceExpress/countToday", $body);
+        return $this->restful("POST", "/taxCode/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 树形结构
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/treeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxCodeTree($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxCode/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/create", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRatePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/update", $body, $query, $extra);
+    }
+
+    /**
+     * 修改状态
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/updateStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxRateUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/taxRate/updateStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/UploadBillLog/UploadBillLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function uploadBillLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/uploadBillLog/create", $body, $query, $extra);
+    }
+
+    /**
+     * 接收开票单上传状态
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/receiveBillStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function xForcePlusReceiveBillStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/xForcePlus/receiveBillStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 接收回传的发票
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/receiveInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function xForcePlusReceiveInvoice($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/xForcePlus/receiveInvoice", $body, $query, $extra);
+    }
+
+    /**
+     * 上传开票单信息
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/sendBillAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function xForcePlusUploadBill($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/xForcePlus/uploadBill", $body, $query, $extra);
     }
 }

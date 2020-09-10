@@ -30,6 +30,28 @@ class CustomerserviceSdk extends Sdk implements ServiceSdkInterface
     protected $serviceName = 'customerservice';
 
     /**
+     * 添加投诉记录列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/ComplainController/complainCreatAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function complainCreat($body)
+    {
+        return $this->restful("POST", "/complain/Creat", $body);
+    }
+
+    /**
+     * 投诉记录列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/ComplainController/complainPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function complainPaging($body)
+    {
+        return $this->restful("POST", "/complain/paging", $body);
+    }
+
+    /**
      * 退款申请记录添加
      * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/createAction.md
      * @param array $body 入参类型

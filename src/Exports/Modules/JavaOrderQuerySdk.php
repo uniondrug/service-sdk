@@ -49,7 +49,9 @@ class JavaOrderQuerySdk extends SdkBase
      */
     public function statisticsByMerchant($body)
     {
-        return $this->restful("POST", "/order/query/statisticsByMerchant", $body);
+        return $this->restful("POST", "/order/query/statisticsByMerchant", $body, null, [
+            'timeout' => 10
+        ]);
     }
 
     /**
@@ -83,5 +85,15 @@ class JavaOrderQuerySdk extends SdkBase
     public function orderItemQuery($body)
     {
         return $this->restful("POST", "/order/item/query", $body);
+    }
+
+    /**
+     * 订单查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function orderSubQuery($body)
+    {
+        return $this->restful("POST", "/order/v2/sub/query", $body);
     }
 }

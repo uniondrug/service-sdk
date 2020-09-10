@@ -374,6 +374,17 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 更新回收金额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateRecycleMoneyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateRecycleMoney($body)
+    {
+        return $this->restful("POST", "/code/update/recycle/money", $body);
+    }
+
+    /**
      * 新增驻店员
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
      * @param array $body 入参类型
@@ -459,5 +470,49 @@ class StagnationSdk extends SdkBase
     public function userStatus($body)
     {
         return $this->restful("POST", "/user/status", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogCreate($body)
+    {
+        return $this->restful("POST", "/recycle/log/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogDetail($body)
+    {
+        return $this->restful("POST", "/recycle/log/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogPaging($body)
+    {
+        return $this->restful("POST", "/recycle/log/paging", $body);
+    }
+
+    /**
+     * 导出
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function recycleLogExport($body)
+    {
+        return $this->restful("POST", "/recycle/log/export", $body);
     }
 }

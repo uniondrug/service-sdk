@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-28
- * @time   Sat, 28 Mar 2020 18:22:00 +0800
+ * @date   2020-08-26
+ * @time   Wed, 26 Aug 2020 14:03:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,671 +32,1235 @@ class InsureSdk extends SdkBase
     /**
      * 添加保单关闭记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/addCloseAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addClosePolicyRecord($body)
+    public function addClosePolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/addclose", $body);
-    }
-
-    /**
-     * 新增投保用户
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureUserController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function addInsureUser($body)
-    {
-        return $this->restful("POST", "/insureUser/add", $body);
+        return $this->restful("POST", "/policyrecord/addclose", $body, $query, $extra);
     }
 
     /**
      * 新建投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addInsurePolicy($body)
+    public function addInsurePolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insurePolicy/add", $body);
+        return $this->restful("POST", "/insurePolicy/add", $body, $query, $extra);
+    }
+
+    /**
+     * 新增投保用户
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureUserController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addInsureUser($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureUser/add", $body, $query, $extra);
     }
 
     /**
      * 新增一个发票
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InvoiceController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addInvoice($body)
+    public function addInvoice($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoice/add", $body);
+        return $this->restful("POST", "/invoice/add", $body, $query, $extra);
     }
 
     /**
      * 分配发票
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InvoiceDistributionController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addInvoiceDistribution($body)
+    public function addInvoiceDistribution($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoiceDistribution/add", $body);
+        return $this->restful("POST", "/invoiceDistribution/add", $body, $query, $extra);
     }
 
     /**
      * 创建投保计划
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addPlan($body)
+    public function addPlan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/add", $body);
+        return $this->restful("POST", "/plan/add", $body, $query, $extra);
     }
 
     /**
      * 添加保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addPolicy($body)
+    public function addPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/add", $body);
+        return $this->restful("POST", "/policy/add", $body, $query, $extra);
     }
 
     /**
      * 添加保单变更记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addPolicyRecord($body)
+    public function addPolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/add", $body);
+        return $this->restful("POST", "/policyrecord/add", $body, $query, $extra);
+    }
+
+    /**
+     * 添加手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/addProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/addProcedures", $body, $query, $extra);
+    }
+
+    /**
+     * 创建投保方案
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addScheme($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/add", $body, $query, $extra);
+    }
+
+    /**
+     * 创建关联方案保司
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addSchemeInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/schemeInsurer/add", $body, $query, $extra);
+    }
+
+    /**
+     * 投保任务单重新试算
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/againTrailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function againTrailInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/againTrail", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function auditDetailPaging($body)
+    public function auditDetailPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/auditDetail/paging", $body);
+        return $this->restful("POST", "/auditDetail/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 任务单绑定保单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/bindPolicyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bindPolicyInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/bindpolicy", $body, $query, $extra);
     }
 
     /**
      * 卡号没有创建完，创建卡号同时并导出excel
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/RepairErrorController/buildPolicyCodeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function buildPolicyCodeRepairError($body)
+    public function buildPolicyCodeRepairError($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/repairError/buildPolicyCode", $body);
-    }
-
-    /**
-     * 更新钉钉审批状态
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeApprovalStatusAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function changeApprovalStatusPolicy($body)
-    {
-        return $this->restful("POST", "/policy/changeapprovalstatus", $body);
+        return $this->restful("POST", "/repairError/buildPolicyCode", $body, $query, $extra);
     }
 
     /**
      * 更新保单状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeStatusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function changeStatusPolicy($body)
+    public function changeStatusPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/changeStatus", $body);
+        return $this->restful("POST", "/policy/changeStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 获取当日渠道任务详情
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/channelTaskAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function channelTaskInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/channeltask", $body, $query, $extra);
     }
 
     /**
      * 保单关闭审核提交
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/checkClosePolicyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function checkClosePolicyRecord($body)
+    public function checkClosePolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/checkclose", $body);
+        return $this->restful("POST", "/policyrecord/checkclose", $body, $query, $extra);
+    }
+
+    /**
+     * 检测保单是否存在
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/checkExistAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function checkExistPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/checkExist", $body, $query, $extra);
     }
 
     /**
      * 校验提交投保结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/checkAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function checkInsurePolicyResult($body)
+    public function checkInsurePolicyResult($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insurePolicy/check", $body);
+        return $this->restful("POST", "/insurePolicy/check", $body, $query, $extra);
     }
 
     /**
      * 保单审核提交
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/checkPolicyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function checkPolicy($body)
+    public function checkPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/check", $body);
+        return $this->restful("POST", "/policy/check", $body, $query, $extra);
     }
 
     /**
      * 保单变更审核提交
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/checkPolicyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function checkPolicyRecord($body)
+    public function checkPolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/check", $body);
+        return $this->restful("POST", "/policyrecord/check", $body, $query, $extra);
     }
 
     /**
      * 发起理赔1-3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claim($body)
+    public function claim($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/claim", $body);
+        return $this->restful("POST", "/claim/claim", $body, $query, $extra);
     }
 
     /**
      * 赔案总额校验
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimCheckAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimCheckClaimOnline($body)
+    public function claimCheckClaimOnline($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claimOnline/claimCheck", $body);
-    }
-
-    /**
-     * 获取需要执行的理赔数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimDataAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimDataClaimOnline($body)
-    {
-        return $this->restful("POST", "/claimOnline/claimData", $body);
+        return $this->restful("POST", "/claimOnline/claimCheck", $body, $query, $extra);
     }
 
     /**
      * 计算保单理赔上限比例
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimMaxRatioAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimMaxRatioPolicy($body)
+    public function claimMaxRatioPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/claimMaxRatio", $body);
+        return $this->restful("POST", "/policy/claimMaxRatio", $body, $query, $extra);
     }
 
     /**
      * 异步发起理赔-支持版本3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/claimNotifyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimNotify($body)
+    public function claimNotify($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/claimNotify", $body);
+        return $this->restful("POST", "/claim/claimNotify", $body, $query, $extra);
     }
 
     /**
      * 保单理赔属性
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimPropertyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimPropertyPolicy($body)
+    public function claimPropertyPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/claimProperty", $body);
-    }
-
-    /**
-     * 推送理赔数据的结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimPushResultAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function claimPushResultClaimOnline($body)
-    {
-        return $this->restful("POST", "/claimOnline/claimPushResult", $body);
+        return $this->restful("POST", "/policy/claimProperty", $body, $query, $extra);
     }
 
     /**
      * 通知理赔的结果
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineController/claimResultAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimResultClaimOnline($body)
+    public function claimResultClaimOnline($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claimOnline/claimResult", $body);
+        return $this->restful("POST", "/claimOnline/claimResult", $body, $query, $extra);
+    }
+
+    /**
+     * 保司合作编号
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/cooperationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cooperationInsure($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insure/cooperation", $body, $query, $extra);
+    }
+
+    /**
+     * 保司合作编号
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/cooperationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cooperationInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/cooperation", $body, $query, $extra);
+    }
+
+    /**
+     * 创建投保方案编号
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/createSchemeNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createSchemeNoScheme($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/createSchemeNo", $body, $query, $extra);
     }
 
     /**
      * 删除投保计划
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function deletePlan($body)
+    public function deletePlan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/delete", $body);
+        return $this->restful("POST", "/plan/delete", $body, $query, $extra);
     }
 
     /**
      * 删除保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function deletePolicy($body)
+    public function deletePolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/delete", $body);
+        return $this->restful("POST", "/policy/delete", $body, $query, $extra);
     }
 
     /**
      * 删除保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function deletePolicyRecord($body)
+    public function deletePolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/delete", $body);
+        return $this->restful("POST", "/policyrecord/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 删除手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/deleteProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deleteProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/deleteProcedures", $body, $query, $extra);
+    }
+
+    /**
+     * 删除投保方案
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deleteScheme($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 删除关联方案保司
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deleteSchemeInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/schemeInsurer/delete", $body, $query, $extra);
     }
 
     /**
      * 理赔详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function detailClaim($body)
+    public function detailClaim($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/detail", $body);
+        return $this->restful("POST", "/claim/detail", $body, $query, $extra);
     }
 
     /**
      * 投单详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function detailInsurePolicy($body)
+    public function detailInsurePolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insurePolicy/detail", $body);
+        return $this->restful("POST", "/insurePolicy/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 投保方案详情
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function detailScheme($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 关联方案保司详情
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function detailSchemeInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/schemeInsurer/detail", $body, $query, $extra);
     }
 
     /**
      * 保单明细汇总
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/detailSummaryAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function detailSummaryPolicy($body)
+    public function detailSummaryPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/detailSummary", $body);
+        return $this->restful("POST", "/policy/detailSummary", $body, $query, $extra);
     }
 
     /**
-     * 获取需要执行的上传卡号数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/downloadCodeDataAction.md
-     * @param array $body 入参类型
+     * 停用投保方案
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function downloadCodeDataInsure($body)
+    public function disableScheme($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insure/downloadCodeData", $body);
+        return $this->restful("POST", "/scheme/disable", $body, $query, $extra);
     }
 
     /**
-     * 上传卡号结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/downloadCodeResultAction.md
-     * @param array $body 入参类型
+     * 停用方案关联的保司
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function downloadCodeResultInsure($body)
+    public function disableSchemeInsurer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insure/downloadCodeResult", $body);
+        return $this->restful("POST", "/schemeInsurer/disable", $body, $query, $extra);
     }
 
     /**
      * 下载卡号
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/CodeController/downloadAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function downloadCodes($body)
+    public function downloadCodes($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/code/download", $body);
+        return $this->restful("POST", "/code/download", $body, $query, $extra);
     }
 
     /**
      * 修改保单关闭记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/editCloseAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editClosePolicyRecord($body)
+    public function editClosePolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/editclose", $body);
+        return $this->restful("POST", "/policyrecord/editclose", $body, $query, $extra);
     }
 
     /**
      * 编辑投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editInsurePolicy($body)
+    public function editInsurePolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insurePolicy/edit", $body);
+        return $this->restful("POST", "/insurePolicy/edit", $body, $query, $extra);
     }
 
     /**
      * 修改保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editPolicy($body)
+    public function editPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/edit", $body);
+        return $this->restful("POST", "/policy/edit", $body, $query, $extra);
     }
 
     /**
      * 修改保单变更记录
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editPolicyRecord($body)
+    public function editPolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/edit", $body);
+        return $this->restful("POST", "/policyrecord/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑投保方案详情
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editScheme($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑关联方案保司
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editSchemeInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/schemeInsurer/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 启用投保方案
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function enableScheme($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/enable", $body, $query, $extra);
+    }
+
+    /**
+     * 启用方案关联的保司
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function enableSchemeInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/schemeInsurer/enable", $body, $query, $extra);
     }
 
     /**
      * 正常投保导出
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/originalExportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportAuditDetail($body)
+    public function exportAuditDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/auditDetail/originalExport", $body);
+        return $this->restful("POST", "/auditDetail/originalExport", $body, $query, $extra);
     }
 
     /**
      * 花都换药投保导出
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/AuditDetailController/exportOfHuaDuAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportAuditDetailOfHuaDu($body)
+    public function exportAuditDetailOfHuaDu($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/auditDetail/exportOfHuaDu", $body);
+        return $this->restful("POST", "/auditDetail/exportOfHuaDu", $body, $query, $extra);
     }
 
     /**
      * 卡号已创建完，导出excel
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/RepairErrorController/exportPolicyCodeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportPolicyCodeRepairError($body)
+    public function exportPolicyCodeRepairError($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/repairError/exportPolicyCode", $body);
+        return $this->restful("POST", "/repairError/exportPolicyCode", $body, $query, $extra);
     }
 
     /**
      * 发起理赔v4
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionClaimAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function fourthVersionClaim($body)
+    public function fourthVersionClaim($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/claim/fourthVersion", $body);
+        return $this->restful("POST", "/claim/claim/fourthVersion", $body, $query, $extra);
     }
 
     /**
      * 撤销理赔v4
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/fourthVersionRevokeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function fourthVersionRevoke($body)
+    public function fourthVersionRevoke($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/revoke/fourthVersion", $body);
+        return $this->restful("POST", "/claim/revoke/fourthVersion", $body, $query, $extra);
     }
 
     /**
      * 获取投保单列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getInsurePolicyPaging($body)
+    public function getInsurePolicyPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insurePolicy/paging", $body);
+        return $this->restful("POST", "/insurePolicy/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 手续费收款操作权限
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeController/getManagerAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getManagerPolicyIncome($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncome/getManager", $body, $query, $extra);
     }
 
     /**
      * 理赔明细
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPagingClaim($body)
+    public function getPagingClaim($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/paging", $body);
+        return $this->restful("POST", "/claim/paging", $body, $query, $extra);
     }
 
     /**
      * 获取投保计划详情
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPlanDetail($body)
+    public function getPlanDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/detail", $body);
+        return $this->restful("POST", "/plan/detail", $body, $query, $extra);
     }
 
     /**
      * 获取投保计划操作日志列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/logPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPlanLogPaging($body)
+    public function getPlanLogPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/logPaging", $body);
+        return $this->restful("POST", "/plan/logPaging", $body, $query, $extra);
     }
 
     /**
      * 获取投保计划列表
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PlanController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPlanPaging($body)
+    public function getPlanPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/paging", $body);
+        return $this->restful("POST", "/plan/paging", $body, $query, $extra);
     }
 
     /**
-     * 获取需要执行的投保的数据
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/insureDataAction.md
-     * @param array $body 入参类型
+     * 保司保单分页
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function insureDataInsure($body)
+    public function insurerPagingPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insure/insureData", $body);
+        return $this->restful("POST", "/policy/insurerPaging", $body, $query, $extra);
     }
 
     /**
-     * 保存投保结果
-     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/insureResultAction.md
-     * @param array $body 入参类型
+     * 保司统计保单数和保费总额
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerStatAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function insureResultInsure($body)
+    public function insurerStatPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insure/insureResult", $body);
+        return $this->restful("POST", "/policy/insurerStat", $body, $query, $extra);
     }
 
     /**
      * 保司数据汇总
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/insurerSummaryAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function insurerSummaryPolicy($body)
+    public function insurerSummaryPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/insurerSummary", $body);
+        return $this->restful("POST", "/policy/insurerSummary", $body, $query, $extra);
     }
 
     /**
      * 更新钉钉审批 id
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/modifyApprovalIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function modifyApprovalIdPolicy($body)
+    public function modifyApprovalIdPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/modifyapprovalid", $body);
+        return $this->restful("POST", "/policy/modifyapprovalid", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑任务单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/modifyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function modifyInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/modify", $body, $query, $extra);
+    }
+
+    /**
+     * 配置修改
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskConfigController/modifyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function modifyInsureTaskConfig($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTaskConfig/modify", $body, $query, $extra);
+    }
+
+    /**
+     * 更新钉钉审批状态
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/notifyApprovalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function notifyApprovalPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/notifyapproval", $body, $query, $extra);
+    }
+
+    /**
+     * 通知手续费收款结果
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/notifyProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function notifyProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/notifyProcedures", $body, $query, $extra);
+    }
+
+    /**
+     * 获取保司默认银行账户
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/OrganizeBankAccountController/defaultBankAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountDefaultBank($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBankAccount/defaultBank", $body, $query, $extra);
+    }
+
+    /**
+     * 保单扩展分页浏览
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/pagingExtendAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingExtendPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pagingExtend", $body, $query, $extra);
+    }
+
+    /**
+     * 投保任务单列表分页
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/paging", $body, $query, $extra);
     }
 
     /**
      * 保单分页浏览
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingPolicy($body)
+    public function pagingPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/paging", $body);
+        return $this->restful("POST", "/policy/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 手续费应收款列表
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingPolicyIncome($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncome/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 收款明细分页列表
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/paging", $body, $query, $extra);
     }
 
     /**
      * 保单分页浏览
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingPolicyRecord($body)
+    public function pagingPolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/paging", $body);
+        return $this->restful("POST", "/policyrecord/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 投保方案分页
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingScheme($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 关联方案保司分页
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/SchemeInsurerController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingSchemeInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/schemeInsurer/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 投保任务单列表
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/panelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function panelInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/panel", $body, $query, $extra);
+    }
+
+    /**
+     * 可投保金额列表
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskAmountController/panelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function panelInsureTaskAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTaskAmount/panel", $body, $query, $extra);
     }
 
     /**
      * 付款
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/payAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function payInsurePolicy($body)
+    public function payInsurePolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insurePolicy/pay", $body);
+        return $this->restful("POST", "/insurePolicy/pay", $body, $query, $extra);
+    }
+
+    /**
+     * 重复申请手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/repeatProceduresAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function repeatProceduresPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/repeatProcedures", $body, $query, $extra);
     }
 
     /**
      * 撤销理赔1-3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function revoke($body)
+    public function revoke($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/revoke", $body);
+        return $this->restful("POST", "/claim/revoke", $body, $query, $extra);
     }
 
     /**
      * 异步撤销理赔-支持版本3
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/revokeNotifyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function revokeNotify($body)
+    public function revokeNotify($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/revokeNotify", $body);
+        return $this->restful("POST", "/claim/revokeNotify", $body, $query, $extra);
+    }
+
+    /**
+     * 任务单生效
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskController/setEnabledAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function setEnabledInsureTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTask/setenabled", $body, $query, $extra);
     }
 
     /**
      * 提交投单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsurePolicyController/submitAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function submitInsurePolicy($body)
+    public function submitInsurePolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insurePolicy/submit", $body);
+        return $this->restful("POST", "/insurePolicy/submit", $body, $query, $extra);
     }
 
     /**
      * 同步付款计划状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/syncPolicyPayAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function syncPolicyPay($body)
+    public function syncPolicyPay($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/syncpolicypay", $body);
+        return $this->restful("POST", "/policy/syncpolicypay", $body, $query, $extra);
     }
 
     /**
      * 同步保单状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/syncInsureResultAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function syncResultInsure($body)
+    public function syncResultInsure($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insure/syncInsureResult", $body);
+        return $this->restful("POST", "/insure/syncInsureResult", $body, $query, $extra);
+    }
+
+    /**
+     * 配置详情
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureTaskConfigController/viewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function viewInsureTaskConfig($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insureTaskConfig/view", $body, $query, $extra);
     }
 
     /**
      * 查看保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/viewAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function viewPolicy($body)
+    public function viewPolicy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policy/view", $body);
+        return $this->restful("POST", "/policy/view", $body, $query, $extra);
+    }
+
+    /**
+     * 收款明细
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/viewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function viewPolicyIncomeItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyIncomeItems/view", $body, $query, $extra);
     }
 
     /**
      * 查看保单
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/viewAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function viewPolicyRecord($body)
+    public function viewPolicyRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/policyrecord/view", $body);
+        return $this->restful("POST", "/policyrecord/view", $body, $query, $extra);
     }
 }

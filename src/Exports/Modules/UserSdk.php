@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-12-02
- * @time   Mon, 02 Dec 2019 23:48:53 +0800
+ * @date   2020-06-08
+ * @time   Mon, 08 Jun 2020 11:06:18 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -240,6 +240,17 @@ class UserSdk extends SdkBase
     }
 
     /**
+     * 获取用户地址分页列表(包含默认地址)
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberAddressController/pagingDefaultAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getAddressPagingDefault($body)
+    {
+        return $this->restful("POST", "/member/address/pagingdefault", $body);
+    }
+
+    /**
      * 获取带openid 的用户数量
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/getCountHasOpenIdAction.md
      * @param array $body 入参类型
@@ -347,6 +358,17 @@ class UserSdk extends SdkBase
     public function infoWxMembers($body)
     {
         return $this->restful("POST", "/wxmember/info", $body);
+    }
+
+    /**
+     * 查询用户证件集合
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberCardsController/ListMemeberIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listMember($body)
+    {
+        return $this->restful("POST", "/membercards/listmember", $body);
     }
 
     /**
@@ -471,7 +493,7 @@ class UserSdk extends SdkBase
     }
 
     /**
-     * smsLoginAction()
+     * 手机号密码登录
      * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/MemberController/smsLoginAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -501,5 +523,27 @@ class UserSdk extends SdkBase
     public function uniteOpenid($body)
     {
         return $this->restful("POST", "/wxmember/edituniteopenid", $body);
+    }
+
+    /**
+     * 黑名单清空用户openid 和 unionId
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/uniteOpenidBlackAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function uniteOpenidBlack($body)
+    {
+        return $this->restful("POST", "/wxmember/edituniteopenidblack", $body);
+    }
+
+    /**
+     * 手机号密码登录
+     * @link https://uniondrug.coding.net/p/module.user/git/blob/development/docs/api/WxMembersController/smsLoginAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function WxmemberSmsLogin($body)
+    {
+        return $this->restful("POST", "/wxmember/smsLogin", $body);
     }
 }

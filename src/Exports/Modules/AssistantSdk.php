@@ -11,6 +11,7 @@
  * @date   2019-07-16
  * @time   Tue, 16 Jul 2019 11:00:25 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -30,6 +31,264 @@ class AssistantSdk extends SdkBase
     protected $serviceName = 'assistant.module';
 
     /**
+     * 智赔账号权限新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/compensateUserAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskCompensateUserAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/compensateUserAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 智盈账号新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/profitUserAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskProfitUserAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/profitUserAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 店员注销
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/destroyAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskDestroyAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/destroyAssistant", $body, $query, $extra);
+    }
+
+    /**
+     * 门店注销
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/destroyStoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskDestroyStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/destroyStore", $body, $query, $extra);
+    }
+
+    /**
+     * 店员冻结
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/freezeAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskFreezeAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/freezeAssistant", $body, $query, $extra);
+    }
+
+    /**
+     * 门店冻结
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/freezeStoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskFreezeStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/freezeStore", $body, $query, $extra);
+    }
+
+    /**
+     * 店员解冻
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/unfreezeAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskUnfreezeAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/unfreezeAssistant", $body, $query, $extra);
+    }
+
+    /**
+     * 门店解冻
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/unfreezeStoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskUnfreezeStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/unfreezeStore", $body, $query, $extra);
+    }
+
+    /**
+     * 助手用户-导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/assistantExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityAssistantExport($body)
+    {
+        return $this->restful("POST", "/activityStatistic/assistant/export", $body);
+    }
+
+    /**
+     * 助手用户-列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/assistantPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityAssistantPaging($body)
+    {
+        return $this->restful("POST", "/activityStatistic/assistant/paging", $body);
+    }
+
+    /**
+     * 基础数据-折线图接口
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicChartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicChart($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/chart", $body);
+    }
+
+    /**
+     * 基础数据-导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicExport($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/export", $body);
+    }
+
+    /**
+     * 基础数据-列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicPaging($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/paging", $body);
+    }
+
+    /**
+     * 基础数据-昨日统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/basicYesterdayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityBasicYesterday($body)
+    {
+        return $this->restful("POST", "/activityStatistic/basic/yesterday", $body);
+    }
+
+    /**
+     * 活动管理-折线图接口
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/manageChartAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManageChart($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/chart", $body);
+    }
+
+    /**
+     * 活动管理-汇总
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/manageDataAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManageData($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/data", $body);
+    }
+
+    /**
+     * 活动管理-导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/manageExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManageExport($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/export", $body);
+    }
+
+    /**
+     * 活动管理-列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/ActivityController/managePagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function activityManagePaging($body)
+    {
+        return $this->restful("POST", "/activityStatistic/manage/paging", $body);
+    }
+
+    /**
+     * 修改智赔账号
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/WorkerManController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function workerEdit($body)
+    {
+        return $this->restful("POST", "/worker/edit", $body);
+    }
+
+    /**
+     * 商户开通智赔账号数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/WorkerManController/aiCountAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function aiCount($body)
+    {
+        return $this->restful("POST", "/worker/aiCount", $body);
+    }
+
+    /**
+     * 商户开通智赔账号列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/WorkerManController/aiUserPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function aiUserPaging($body)
+    {
+        return $this->restful("POST", "/worker/aiUserPaging", $body);
+    }
+
+    /**
+     * 竞标系统通过商户ID获取对应城市经理信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/infoAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function usersInfo($body)
+    {
+        return $this->restful("POST", "/users/info", $body);
+    }
+
+    /**
      * 添加
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addAction.md
      * @param array $body 入参类型
@@ -38,6 +297,17 @@ class AssistantSdk extends SdkBase
     public function applyAdd($body)
     {
         return $this->restful("POST", "/apply/add", $body);
+    }
+
+    /**
+     * 门店维度脚本
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/JobStatisticsDealStoreController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function dealStoreJob($body)
+    {
+        return $this->restful("POST", "/dealStoreStatistic/jobStart", $body);
     }
 
     /**
@@ -1350,6 +1620,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function versionEdit($body)
+    {
+        return $this->restful("POST", "/version/edit", $body);
+    }
+
+    /**
      * 获取版本详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/VersionController/detailAction.md
      * @param array $body 入参类型
@@ -1424,5 +1705,946 @@ class AssistantSdk extends SdkBase
     public function userList($body)
     {
         return $this->restful("POST", "/storeQrcode/userList", $body);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/deleteAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyDelete($body)
+    {
+        return $this->restful("POST", "/apply/delete", $body);
+    }
+
+    /**
+     * 添加草稿
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addDraftAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyAddDraft($body)
+    {
+        return $this->restful("POST", "/apply/add/draft", $body);
+    }
+
+    /**
+     * 绑定
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/bindAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerBind($body)
+    {
+        return $this->restful("POST", "/userPartners/bind", $body);
+    }
+
+    /**
+     * 不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/userPartnerListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerList($body)
+    {
+        return $this->restful("POST", "/userPartners/list", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userPartnerPaging($body)
+    {
+        return $this->restful("POST", "/userPartners/paging", $body);
+    }
+
+    /**
+     * 商户标签分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/MerchantTagController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function merchantTagPaging($body)
+    {
+        return $this->restful("POST", "/merchant/tag/paging", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveCreate($body)
+    {
+        return $this->restful("POST", "/approve/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveDetail($body)
+    {
+        return $this->restful("POST", "/approve/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvePaging($body)
+    {
+        return $this->restful("POST", "/approve/paging", $body);
+    }
+
+    /**
+     * 状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveStatus($body)
+    {
+        return $this->restful("POST", "/approve/status", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeCreate($body)
+    {
+        return $this->restful("POST", "/notice/create", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeDetail($body)
+    {
+        return $this->restful("POST", "/notice/detail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogPaging($body)
+    {
+        return $this->restful("POST", "/noticeLog/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogUpdate($body)
+    {
+        return $this->restful("POST", "/noticeLog/update", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticePaging($body)
+    {
+        return $this->restful("POST", "/notice/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeUpdate($body)
+    {
+        return $this->restful("POST", "/notice/update", $body);
+    }
+
+    /**
+     * 获取可查看公告的详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/getShowAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeGetShow($body)
+    {
+        return $this->restful("POST", "/notice/getShow", $body);
+    }
+
+    /**
+     * 导出门店
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/exportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approveStoreExport($body)
+    {
+        return $this->restful("POST", "/approve/store/export", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeLogDetail($body)
+    {
+        return $this->restful("POST", "/noticeLog/detail", $body);
+    }
+
+    /**
+     * 状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/statusAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function noticeStatus($body)
+    {
+        return $this->restful("POST", "/notice/status", $body);
+    }
+
+    /**
+     * 门店上线
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OnlineStoresController/createAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function onlineStoreCreate($body)
+    {
+        return $this->restful("POST", "/onlineStore/create", $body);
+    }
+
+    /**
+     * 门店上线不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OnlineStoresController/listsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function onlineStoreLists($body)
+    {
+        return $this->restful("POST", "/onlineStore/lists", $body);
+    }
+
+    /**
+     * 获取商户列表带负责人或标签筛选
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OrganizeBaseController/getPagingWithUserTagAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getPagingWithUserTag($body)
+    {
+        return $this->restful("POST", "/organizebase/getPagingWithUserTag", $body);
+    }
+
+    /**
+     * 根据organizationId获取门店详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeDetailByOrganizationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function applyStoreDetailByOrganizationId($body)
+    {
+        return $this->restful("POST", "/apply/store/detailByOrganizationId", $body);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalAdd($body)
+    {
+        return $this->restful("POST", "/approval/add", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalPaging($body)
+    {
+        return $this->restful("POST", "/approval/paging", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/updateAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalUpdate($body)
+    {
+        return $this->restful("POST", "/approval/update", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalDetail($body)
+    {
+        return $this->restful("POST", "/approval/detail", $body);
+    }
+
+    /**
+     * 详情 (根据业务ID)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/detailRelationIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalRelationDetail($body)
+    {
+        return $this->restful("POST", "/approval/detailByRelationId", $body);
+    }
+
+    /**
+     * 重置审批人 (根据业务ID)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalController/resetApproverAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalResetApprover($body)
+    {
+        return $this->restful("POST", "/approval/resetApprover", $body);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/addAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyAdd($body)
+    {
+        return $this->restful("POST", "/insuranceApply/add", $body);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyDetail($body)
+    {
+        return $this->restful("POST", "/insuranceApply/detail", $body);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyEdit($body)
+    {
+        return $this->restful("POST", "/insuranceApply/edit", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyPaging($body)
+    {
+        return $this->restful("POST", "/insuranceApply/paging", $body);
+    }
+
+    /**
+     * 状态编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/statusEditAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyStatusEdit($body)
+    {
+        return $this->restful("POST", "/insuranceApply/statusEdit", $body);
+    }
+
+    /**
+     * 商户类型列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/organizationTypeListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyOrganizationTypeList($body)
+    {
+        return $this->restful("POST", "/insuranceApply/organizationTypeList", $body);
+    }
+
+    /**
+     * 列表导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/pagingExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyPagingExport($body)
+    {
+        return $this->restful("POST", "/insuranceApply/pagingExport", $body);
+    }
+
+    /**
+     * 设置同步状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/syncStatusSetAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplySyncStatusSet($body)
+    {
+        return $this->restful("POST", "/insuranceApply/syncStatusSet", $body);
+    }
+
+    /**
+     * 门店数据统计 (区域维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/areaListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticAreaList($body)
+    {
+        return $this->restful("POST", "/storeStatistic/areaList", $body);
+    }
+
+    /**
+     * 门店数据统计导出 (区域维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/areaListExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticAreaListExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/areaListExport", $body);
+    }
+
+    /**
+     * 门店整体数据统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/generalAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticGeneral($body)
+    {
+        return $this->restful("POST", "/storeStatistic/general", $body);
+    }
+
+    /**
+     * 未绑定/展示门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListOffAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticstoreListOff($body)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListOff", $body);
+    }
+
+    /**
+     * 未绑定/展示门店列表导出
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListOffExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticstoreListOffExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListOffExport", $body);
+    }
+
+    /**
+     * 门店数据统计 (用户维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserList($body)
+    {
+        return $this->restful("POST", "/storeStatistic/userList", $body);
+    }
+
+    /**
+     * 门店数据统计导出 (用户维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userListExportAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserListExport($body)
+    {
+        return $this->restful("POST", "/storeStatistic/userListExport", $body);
+    }
+
+    /**
+     * 审批流模板 [发起人列表]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/applicantListAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateApplicantList($body)
+    {
+        return $this->restful("POST", "/template/applicantList", $body);
+    }
+
+    /**
+     * 审批流模板 [详情]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateDetail($body)
+    {
+        return $this->restful("POST", "/template/detail", $body);
+    }
+
+    /**
+     * 审批流模板 [编辑]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/editAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateEdit($body)
+    {
+        return $this->restful("POST", "/template/edit", $body);
+    }
+
+    /**
+     * 审批流模板 [分页列表]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/pagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templatePaging($body)
+    {
+        return $this->restful("POST", "/template/paging", $body);
+    }
+
+    /**
+     * 业务审批单创建 [店员解冻]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalUnfreezeAssistantAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalUnfreezeAssistantAdd($body)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalUnfreezeAssistant", $body);
+    }
+
+    /**
+     * 业务审批单创建 [门店解冻]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalUnfreezeStoreAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function approvalUnfreezeStoreAdd($body)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalUnfreezeStore", $body);
+    }
+
+    /**
+     * 审批流模板 [根据审批引擎模板ID获取详情]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/detailByApproveSettingIdAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateDetailByApproveSettingId($body)
+    {
+        return $this->restful("POST", "/template/detailByApproveSettingId", $body);
+    }
+
+    /**
+     * 审批流模板 [不分页列表]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/TemplateApproveController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function templateList($body)
+    {
+        return $this->restful("POST", "/template/list", $body);
+    }
+
+    /**
+     * 根据项目ids查询记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Equity/EquityProjectSumDetailController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityProjectSumList($body)
+    {
+        return $this->restful("POST", "/equityProjectSumDetail/list", $body);
+    }
+
+    /**
+     * 根据项目ID查询记录详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Equity/EquityProjectSumDetailController/detailAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityProjectSumDetail($body)
+    {
+        return $this->restful("POST", "/equityProjectSumDetail/detail", $body);
+    }
+
+    /**
+     * 根据项目ID获取日维度数据列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Equity/EquityProjectDayDetailController/listAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityProjectDayList($body)
+    {
+        return $this->restful("POST", "/equityProjectDayDetail/list", $body);
+    }
+
+    /**
+     * 查询保司是否已经存在
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/InsuranceApplyController/insuranceIsExistedAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function insuranceApplyInsuranceIsExisted($body)
+    {
+        return $this->restful("POST", "/insuranceApply/insuranceIsExisted", $body);
+    }
+
+    /**
+     * 业务审批单创建 [权益发放]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalEquityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalEquityAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalEquity", $body, $query, $extra);
+    }
+
+    /**
+     * 业务审批单创建 [项目申请]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalUnfreezeStoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalProject", $body, $query, $extra);
+    }
+
+    /**
+     * 业务审批单创建 [项目提额]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalBusinessController/approvalProjectTieAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectTieAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalAdd/approvalProjectTie", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/update", $body, $query, $extra);
+    }
+
+    /**
+     * 统计 [汇总数据]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/VisitScoreStatisticController/statisticGeneralAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function visitScoreStatisticGeneral($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visitScoreStatistic/general", $body, $query, $extra);
+    }
+
+    /**
+     * 统计 [员工维度详细]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/VisitScoreStatisticController/visitScoreStatisticUserListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function visitScoreStatisticUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visitScoreStatistic/userList", $body, $query, $extra);
+    }
+
+    /**
+     * 统计导出 [员工维度详细]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/VisitScoreStatisticController/visitScoreStatisticUserListExportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function visitScoreStatisticUserListExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visitScoreStatistic/userListExport", $body, $query, $extra);
+    }
+
+    /**
+     * 门店列表 [未展示] (来源: 门店宽表)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/StoreListUnShowAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreListUnShow($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListUnShow", $body, $query, $extra);
+    }
+
+    /**
+     * 未展示门店列表导出 (数据宽表)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeListUnShowExportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreListUnShowExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeListUnShowExport", $body, $query, $extra);
+    }
+
+    /**
+     * 出单门店数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeCountOfOrderAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreCountOfOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeCountOfOrder", $body, $query, $extra);
+    }
+
+    /**
+     * 出单门店数 [增值服务]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeCountOfServiceOrderAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreCountOfServiceOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeCountOfServiceOrder", $body, $query, $extra);
+    }
+
+    /**
+     * 管辖店员数统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/UserStatisticController/statisticAssistantCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function usersStatisticAssistantCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userStatistic/statisticAssistantCount", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表 (带统计数据)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/UserStatisticController/statisticPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function usersStatisticPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userStatistic/statisticPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 门店明细
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeOrderListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreOrderList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeOrderList", $body, $query, $extra);
+    }
+
+    /**
+     * 门店开单数据统计[门店负责人纬度]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/userStoreOrderManagerListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserStoreOrderList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/userStoreOrderList", $body, $query, $extra);
+    }
+
+    /**
+     * 月每天门店开单数据
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeMonthOrderCountListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreMonthOrderCountList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeMonthOrderCountList", $body, $query, $extra);
+    }
+
+    /**
+     * 门店开单数据统计[门店纬度]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeBillingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreBilling($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeBilling", $body, $query, $extra);
+
+    }
+
+    /**
+     * 出单数统计
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/storeOrderCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticStoreOrderCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/storeOrderCount", $body, $query, $extra);
+    }
+
+    /**
+     * 出单门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/orderStoreListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticOrderStoreList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/orderStoreList", $body, $query, $extra);
+    }
+
+    /**
+     * 获取待确认总数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/countAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/count", $body, $query, $extra);
+    }
+
+
+    /**
+     * 添加执行记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addErrorMsgAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyAddErrorMsg($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/addErrorMsg", $body, $query, $extra);
     }
 }

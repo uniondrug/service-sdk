@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-06
- * @time   Fri, 06 Mar 2020 16:58:11 +0800
+ * @date   2020-05-07
+ * @time   Thu, 07 May 2020 15:49:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -273,6 +273,17 @@ class ProjectSdk extends SdkBase
     public function downCdCodeSql($body)
     {
         return $this->restful("POST", "/user/down/cdcode/sql", $body);
+    }
+
+    /**
+     * 实体卡获取sql
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/UserController/getEntityBySqlAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function downEntitySql($body)
+    {
+        return $this->restful("POST", "/user/down/entity/sql", $body);
     }
 
     /**
@@ -826,6 +837,17 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 分组连锁列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupOrganizationController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function groupOrganizationListing($body)
+    {
+        return $this->restful("POST", "/group/organization/listing", $body);
+    }
+
+    /**
      * 回收分组
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupController/recycleEquityByGroupAction.md
      * @param array $body 入参类型
@@ -1046,6 +1068,28 @@ class ProjectSdk extends SdkBase
     }
 
     /**
+     * 验证身份证
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/validateIdCardAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemCodeValidateIdCard($body)
+    {
+        return $this->restful("POST", "/redeem/validateIdCard", $body);
+    }
+
+    /**
+     * 通过cdKey获取兑换码信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/getDataByCdKeyAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function redeemGetByCdKey($body)
+    {
+        return $this->restful("POST", "/redeem/cdKey", $body);
+    }
+
+    /**
      * 拒绝审批
      * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/ProjectController/refuseAction.md
      * @param array $body 入参类型
@@ -1098,6 +1142,17 @@ class ProjectSdk extends SdkBase
     public function setScanSingle($body)
     {
         return $this->restful("POST", "/group/access/scan/edit/single", $body);
+    }
+
+    /**
+     * 简单分组连锁限制列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/GroupOrganizationController/simpleListingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function simpleOrganizationListing($body)
+    {
+        return $this->restful("POST", "/group/organization/simple/listing", $body);
     }
 
     /**
@@ -1302,13 +1357,96 @@ class ProjectSdk extends SdkBase
     }
 
     /**
-     * 验证身份证
-     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/docs/api/RedeemCodeController/validateIdCardAction.md
+     * 通过保司Id获取对应项目类型数量
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/ProjectController/getTypeNumsByInsuranceAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
      */
-    public function redeemCodeValidateIdCard($body)
+    public function projectGetNumsByInsurance($body)
     {
-        return $this->restful("POST", "/redeem/validateIdCard", $body);
+        return $this->restful("POST", "/project/getNumsByInsurance", $body);
+    }
+
+    /**
+     * 通过保司Id获取对应项目总数量以及总金额
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/ProjectController/getMoneyAndNumsByInsuranceAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMoneyAndNumsByInsurance($body)
+    {
+        return $this->restful("POST", "/project/getMoneyAndNumsByInsurance", $body);
+    }
+
+    /**
+     * 根据分组ID姓名身份证去查询已激活的数据(自用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getGroupOtherCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupOtherCode($body)
+    {
+        return $this->restful("POST", "/redeem/getGroupOtherCode", $body);
+    }
+
+    /**
+     * 根据分组ID姓名身份证去查询未激活的数据(自用)
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getUnactivatedCodeAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getUnactivatedCode($body)
+    {
+        return $this->restful("POST", "/redeem/getUnactivatedCode", $body);
+    }
+    /**
+     * 批量用户在分组下的领取限制
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/BatchCheckLimitAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getRedeenBatchCheckLimit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeem/batch/check/limit", $body, $query, $extra);
+    }
+
+    /**
+     * 给兑换码绑定用户信息
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/bindMemberIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function redeemBindMemberId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeem/bind/memberId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据outOrderNo获取批量创建兑换码
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/RedeemCodeController/getListByOutOrderNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function redeemCodeListByOutOrderNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeem/listRedeemCode", $body, $query, $extra);
+    }
+
+    /**
+     * 采购导出sql
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getPurchaseSql($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/purchase/sql", $body, $query, $extra);
     }
 }
