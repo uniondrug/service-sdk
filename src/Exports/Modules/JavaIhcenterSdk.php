@@ -40,4 +40,15 @@ class JavaIhcenterSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/elecrx/changeState', $body);
     }
+
+    /**
+     * 用流水号获取处方信息
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function getElecrxApplyByWaterNo($body)
+    {
+        return $this->restful(static::METHOD_POST, '/elecrx/getElecrxApplyByWaterNo', $body);
+    }
 }
