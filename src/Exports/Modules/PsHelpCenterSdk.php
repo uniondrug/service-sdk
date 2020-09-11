@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-09-10
- * @time   Thu, 10 Sep 2020 15:12:50 +0800
+ * @time   Thu, 10 Sep 2020 20:12:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -66,6 +66,19 @@ class PsHelpCenterSdk extends SdkBase
     public function articleChangeStatus($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/article/changeStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 文章详情
+     * @link https://uniondrug.coding.net/p/ps-help-center/git/blob/development/ps-help-center/api/ArticleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function articleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/article/detail", $body, $query, $extra);
     }
 
     /**
