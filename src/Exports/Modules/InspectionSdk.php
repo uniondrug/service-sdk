@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-09
- * @time   Wed, 09 Sep 2020 15:37:17 +0800
+ * @date   2020-09-11
+ * @time   Fri, 11 Sep 2020 13:59:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -823,16 +823,16 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 根据模板id获取检测项模板详情
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/InspectionTemplateController/inspectionTemplateDetailByidAction.md
+     * 检测模板明细修改可用
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/InspectionTemplateController/inspectionTemplateModifyUseAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function inspectionTemplateDetailByid($body, $query = null, $extra = null)
+    public function inspectionTemplateModifyUse($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/inspect-template/detail", $body, $query, $extra);
+        return $this->restful("POST", "/inspect-template/modifyuse", $body, $query, $extra);
     }
 
     /**
@@ -1291,6 +1291,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 添加编辑质控液相关信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/qualityIotInfoAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotInfoAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-control/iotinfo/add", $body, $query, $extra);
+    }
+
+    /**
      * 增加质控液信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/addIotAction.md
      * @param array|object $body 入参类型
@@ -1327,6 +1340,19 @@ class InspectionSdk extends SdkBase
     public function qualityIotRelateAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/quality-control/addrelate", $body, $query, $extra);
+    }
+
+    /**
+     * 增加质控液信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/qualityIotRelateInfoAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function qualityIotRelateInfoAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/quality-control/iotinfo/add", $body, $query, $extra);
     }
 
     /**
