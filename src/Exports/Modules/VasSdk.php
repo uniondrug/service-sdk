@@ -8,13 +8,13 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-30
- * @time   Mon, 30 Mar 2020 12:13:06 +0800
+ * @date   2020-09-12
+ * @time   Sat, 12 Sep 2020 11:17:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
-use Uniondrug\ServiceSdk\Responses\ResponseInterface;
+use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * VasSdk
@@ -30,112 +30,156 @@ class VasSdk extends SdkBase
     protected $serviceName = 'vas.module';
 
     /**
-     * 增值服务批量下单
+     * 增值服务批量下单 /pack/batchOrder
+     * v1.5
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/batchOrderAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function batchOrder($body)
+    public function batchOrder($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pack/batchOrder", $body);
+        return $this->restful("POST", "/pack/batchOrder", $body, $query, $extra);
     }
 
     /**
-     * 商品类型
+     * 批量查询商品 /goods/getDetails
+     * v2.3
+     * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/GoodsController/getDetailsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getGoodsDetails($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goods/getDetails", $body, $query, $extra);
+    }
+
+    /**
+     * 商品类型 /goods/getType
+     * v1.5
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/GoodsController/getTypeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getGoodsType($body)
+    public function getGoodsType($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/goods/getType", $body);
+        return $this->restful("POST", "/goods/getType", $body, $query, $extra);
     }
 
     /**
-     * 增值服务详情
+     * 增值服务详情 /pack/getDetails
+     * v2.3
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/getDetailsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPackDetails($body)
+    public function getPackDetails($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pack/getDetails", $body);
+        return $this->restful("POST", "/pack/getDetails", $body, $query, $extra);
     }
 
     /**
-     * 增值服务列表
+     * 增值服务列表 /pack/getList
+     * v2.3
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/getListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPackList($body)
+    public function getPackList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pack/getList", $body);
+        return $this->restful("POST", "/pack/getList", $body, $query, $extra);
     }
 
     /**
-     * 增值服务下架
+     * 增值服务下架 /pack/offOne
+     * v1.5
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/offOneAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function offPack($body)
+    public function offPack($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pack/offOne", $body);
+        return $this->restful("POST", "/pack/offOne", $body, $query, $extra);
     }
 
     /**
-     * 商品推送上架
+     * 商品推送上架 /goods/postData
+     * v1.5
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/GoodsController/postDataAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function postGoodsData($body)
+    public function postGoodsData($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/goods/postData", $body);
+        return $this->restful("POST", "/goods/postData", $body, $query, $extra);
     }
 
     /**
-     * 查询商品列表
+     * 查询商品列表 /goods/queryList
+     * v2.3
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/GoodsController/queryListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function queryGoodsList($body)
+    public function queryGoodsList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/goods/queryList", $body);
+        return $this->restful("POST", "/goods/queryList", $body, $query, $extra);
     }
 
     /**
-     * 增值服务组包
+     * 增值服务组包 /pack/registerOne
+     * v2.3
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/registerOneAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function registerPack($body)
+    public function registerPack($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pack/registerOne", $body);
+        return $this->restful("POST", "/pack/registerOne", $body, $query, $extra);
     }
 
     /**
-     * 增值服务下单
+     * 增值服务下单 /pack/subOrder
+     * v1.5
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/subOrderAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function subOrder($body)
+    public function subOrder($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pack/subOrder", $body);
+        return $this->restful("POST", "/pack/subOrder", $body, $query, $extra);
     }
 
     /**
-     * 更新增值服务头图
+     * 更新增值服务 /pack/updateOne
+     * v1.5
      * @link https://uniondrug.coding.net/p/module.vas/git/blob/development/docs/api/PackController/updateOneAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function updatePack($body)
+    public function updatePack($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/pack/updateOne", $body);
+        return $this->restful("POST", "/pack/updateOne", $body, $query, $extra);
     }
 }
