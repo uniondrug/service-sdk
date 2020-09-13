@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-11
- * @time   Fri, 11 Sep 2020 13:59:00 +0800
+ * @date   2020-09-13
+ * @time   Sun, 13 Sep 2020 20:52:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1886,6 +1886,19 @@ class InspectionSdk extends SdkBase
     public function systemIdGeneratorSave($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/id/save", $body, $query, $extra);
+    }
+
+    /**
+     * 初始化检测项目模板
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/System/AsycRaskController/initDetectionTemplateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemInitDetectionTemplate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/sync/init-detection-template", $body, $query, $extra);
     }
 
     /**
