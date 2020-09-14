@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-11
- * @time   Fri, 11 Sep 2020 09:39:44 +0800
+ * @date   2020-09-14
+ * @time   Mon, 14 Sep 2020 18:01:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -404,6 +404,19 @@ class MerchantSdk extends SdkBase
     public function countTypeOrganize($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/counttype", $body, $query, $extra);
+    }
+
+    /**
+     * 图片统计
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/CountTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function countTypeStoreImages($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeimages/counttype", $body, $query, $extra);
     }
 
     /**
