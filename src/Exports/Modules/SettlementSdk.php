@@ -3250,6 +3250,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 新增理赔单发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/addTpaInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaAddTpaInvoice($body)
+    {
+        return $this->restful("POST", "/claimsTpa/invoice/add", $body);
+    }
+
+    /**
      * 撤销理赔单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/cancelAction.md
      * @param array|object $body 入参类型
@@ -3313,6 +3324,17 @@ class SettlementSdk extends SdkBase
     public function claimsTpaGetTpaGoodsSummary($body)
     {
         return $this->restful("POST", "/claimsTpa/getTpaGoodsSummary", $body);
+    }
+
+    /**
+     * 获取理赔单开票信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/getTpaInvoiceInfoAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaGetTpaInvoiceInfo($body)
+    {
+        return $this->restful("POST", "/claimsTpa/invoice/info/get", $body);
     }
 
     /**
@@ -3986,9 +4008,9 @@ class SettlementSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlineCreate($body, $query = null, $extra = null)
@@ -3999,9 +4021,9 @@ class SettlementSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlineDetail($body, $query = null, $extra = null)
@@ -4012,9 +4034,9 @@ class SettlementSdk extends SdkBase
     /**
      * paging
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlinePaging($body, $query = null, $extra = null)
@@ -4025,9 +4047,9 @@ class SettlementSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlineUpdate($body, $query = null, $extra = null)
@@ -4038,9 +4060,9 @@ class SettlementSdk extends SdkBase
     /**
      * 撤销应收结算单待审核明细
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsReceiveController/cancelAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementsReceiveCancel($body, $query = null, $extra = null)
