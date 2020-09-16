@@ -3261,6 +3261,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 更新理赔单发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/updateTpaInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaUpdateTpaInvoice($body)
+    {
+        return $this->restful("POST", "/claimsTpa/invoice/update", $body);
+    }
+
+    /**
      * 撤销理赔单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/cancelAction.md
      * @param array|object $body 入参类型
