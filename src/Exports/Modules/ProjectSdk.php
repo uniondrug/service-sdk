@@ -1449,4 +1449,15 @@ class ProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/user/purchase/sql", $body, $query, $extra);
     }
+
+    /**
+     * 分组验证激活字段列表
+     * @link https://uniondrug.coding.net/p/module.project/git/blob/development/module.project/api/GroupActivateController/listingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGroupActiveListing($body)
+    {
+        return $this->restful("POST", "/group/activate/listing", $body);
+    }
 }
