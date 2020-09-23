@@ -207,6 +207,7 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/page", $body);
     }
+
     /**
      * 收款单根据单号查询
      * @param $body
@@ -216,6 +217,7 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/get", $body);
     }
+
     /**
      * 收款单审核通过
      * @param $body
@@ -225,6 +227,7 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/auditSuccess", $body);
     }
+
     /**
      * 收款单审核
      * @param $body
@@ -234,6 +237,7 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/auditFail", $body);
     }
+
     /**
      * 分页查询资金收款单附件
      * @param $body
@@ -243,6 +247,7 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receiptAnnex/page", $body);
     }
+
     /**
      * 收款单导出
      * @param $body
@@ -252,6 +257,7 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/export", $body);
     }
+
     /**
      * 分页查询向药联付款的组织已认领交易记录
      * @param $body
@@ -272,5 +278,54 @@ class JavaCoinSdk extends SdkBase
         return $this->restful("POST", "/receipt/sumRealReceiveAmount", $body);
     }
 
+    /**
+     * 积分提现发起申请
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function integralToCashCreate($body)
+    {
+        return $this->restful("POST", "/integralToCash/create", $body);
+    }
 
+    /**
+     * 积分提现审批操作
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function integralToCashAudit($body)
+    {
+        return $this->restful("POST", "/integralToCash/audit", $body);
+    }
+
+    /**
+     * 积分提现详情查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function integralToCashGet($body)
+    {
+        return $this->restful("POST", "/integralToCash/get", $body);
+    }
+
+    /**
+     * 积分提现分页查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function integralToCashList($body)
+    {
+        return $this->restful("POST", "/integralToCash/list", $body);
+    }
+
+    /**
+     * 积分提现导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function integralToCashExport($body)
+    {
+        return $this->restful("POST", "/integralToCash/export", $body);
+    }
 }
+
