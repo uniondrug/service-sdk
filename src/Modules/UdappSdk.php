@@ -11,7 +11,7 @@
  * @date   2020-04-20
  * @time   Mon, 20 Apr 2020 16:22:57 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
+namespace Uniondrug\ServiceSdk\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
