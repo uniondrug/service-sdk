@@ -46,7 +46,7 @@ class JavaTagServiceSdk extends SdkBase
      */
     public function storePackageGet($body)
     {
-        return $this->restful("POST", "/store/package/store/get", $body);
+        return $this->restful("POST", "/store/package/stores/get", $body);
     }
 
     /**
