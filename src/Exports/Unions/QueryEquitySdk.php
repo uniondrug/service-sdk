@@ -379,4 +379,17 @@ class QueryEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/usage/simpleUser", $body, $query, $extra);
     }
+
+    /**
+     * 查询账户下未激活权益数及总额度
+     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityCardIssueWideEsController/notActiveEquityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function notActiveEquity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/equity/issue/notActiveEquity", $body, $query, $extra);
+    }
 }

@@ -43,6 +43,6 @@ class JavaEquitySdk extends SdkBase
      */
     public function getDetailByOutorderNo($body)
     {
-        return $this->restful("POST", "/equity/batch/backend/active", $body);
+        return $this->restful("POST", "/equity/detail/outorderno", $body);
     }
 }
