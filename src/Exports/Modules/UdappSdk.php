@@ -809,4 +809,95 @@ class UdappSdk extends SdkBase
     {
         return $this->restful("POST", "/token/expire", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function throwManageCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/throwManage/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function throwManageDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/throwManage/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function throwManagePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/throwManage/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function throwManageUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/throwManage/update", $body, $query, $extra);
+    }
+
+    /**
+     * List列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowMerchantController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function throwMerchantList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/throwMerchant/list", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DownloadPageController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function downloadPageCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/downloadPage/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DownloadPageController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function downloadPageDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/downloadPage/detail", $body, $query, $extra);
+    }
 }

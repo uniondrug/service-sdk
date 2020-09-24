@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-01
- * @time   Tue, 01 Sep 2020 14:16:40 +0800
+ * @date   2020-09-23
+ * @time   Wed, 23 Sep 2020 17:49:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,2079 +32,2509 @@ class MerchantSdk extends SdkBase
     /**
      * 通过名称和手机号获取用户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/AccountAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function account($body)
+    public function account($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/account", $body);
+        return $this->restful("POST", "/assistants/account", $body, $query, $extra);
     }
 
     /**
      * 添加账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addAccountNumber($body)
+    public function addAccountNumber($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountnumber/add", $body);
+        return $this->restful("POST", "/accountnumber/add", $body, $query, $extra);
     }
 
     /**
      * 添加用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addAssistants($body)
+    public function addAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/add", $body);
+        return $this->restful("POST", "/assistants/add", $body, $query, $extra);
     }
 
     /**
      * 添加费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addBalance($body)
+    public function addBalance($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/balance/add", $body);
+        return $this->restful("POST", "/balance/add", $body, $query, $extra);
     }
 
     /**
      * 添加财务回推配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addFinaceSettlement($body)
+    public function addFinaceSettlement($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/financesettlement/add", $body);
+        return $this->restful("POST", "/financesettlement/add", $body, $query, $extra);
     }
 
     /**
      * 添加开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addInvoice($body)
+    public function addInvoice($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoice/add", $body);
+        return $this->restful("POST", "/invoice/add", $body, $query, $extra);
     }
 
     /**
      * 添加商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addMerchant($body)
+    public function addMerchant($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchant/add", $body);
+        return $this->restful("POST", "/merchant/add", $body, $query, $extra);
     }
 
     /**
      * 添加商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addOrgabuzeBase($body)
+    public function addOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/add", $body);
+        return $this->restful("POST", "/organizebase/add", $body, $query, $extra);
     }
 
     /**
      * 添加组织架构
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addOrganization($body)
+    public function addOrganization($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/add", $body);
+        return $this->restful("POST", "/organization/add", $body, $query, $extra);
     }
 
     /**
      * 添加商户组织快照
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseSnapshotController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addOrganizeBaseSnapshot($body)
+    public function addOrganizeBaseSnapshot($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebasesnapshot/add", $body);
+        return $this->restful("POST", "/organizebasesnapshot/add", $body, $query, $extra);
     }
 
     /**
      * 添加商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addPartners($body)
+    public function addPartners($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/add", $body);
+        return $this->restful("POST", "/partners/add", $body, $query, $extra);
     }
 
     /**
      * 添加图片
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addStoreImages($body)
+    public function addStoreImages($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeimages/add", $body);
+        return $this->restful("POST", "/storeimages/add", $body, $query, $extra);
     }
 
     /**
      * 添加连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addStores($body)
+    public function addStores($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/stores/add", $body);
+        return $this->restful("POST", "/stores/add", $body, $query, $extra);
     }
 
     /**
      * 添加员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addWorker($body)
+    public function addWorker($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/add", $body);
+        return $this->restful("POST", "/worker/add", $body, $query, $extra);
     }
 
     /**
      * 添加员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function addWorkerMan($body)
+    public function addWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/add", $body);
+        return $this->restful("POST", "/workerman/add", $body, $query, $extra);
     }
 
     /**
      * 基于商户查询用户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/listsStoreIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantsListsStoreId($body)
+    public function assistantsListsStoreId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/listsstoreid", $body);
+        return $this->restful("POST", "/assistants/listsstoreid", $body, $query, $extra);
     }
 
     /**
      * 获取连锁集合的人员数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/sumMemberLogicAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantsSumMember($body)
+    public function assistantsSumMember($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/summember", $body);
+        return $this->restful("POST", "/assistants/summember", $body, $query, $extra);
     }
 
     /**
      * ids查询费率集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/idsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function balanceIds($body)
+    public function balanceIds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/balance/ids", $body);
+        return $this->restful("POST", "/balance/ids", $body, $query, $extra);
     }
 
     /**
      * 银行目录
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/bankListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function bankListAccountNumber($body)
+    public function bankListAccountNumber($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountnumber/bankList", $body);
+        return $this->restful("POST", "/accountnumber/bankList", $body, $query, $extra);
     }
 
     /**
      * 查找连锁下的店员id
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainAssAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function chainAss($body)
+    public function chainAss($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/chainAss", $body);
+        return $this->restful("POST", "/organizebase/chainAss", $body, $query, $extra);
     }
 
     /**
      * 统计全网一共有多少连锁
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainNumAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function chainNum($body)
+    public function chainNum($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/chainNum", $body);
+        return $this->restful("POST", "/organizebase/chainNum", $body, $query, $extra);
     }
 
     /**
      * 读取连锁列表（有门店数量）
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function chainPaging($body)
+    public function chainPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/chainPaging", $body);
+        return $this->restful("POST", "/organizebase/chainPaging", $body, $query, $extra);
     }
 
     /**
      * 查找连锁下有多少门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/chainStoreAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function chainStore($body)
+    public function chainStore($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/chainStore", $body);
+        return $this->restful("POST", "/organizebase/chainStore", $body, $query, $extra);
     }
 
     /**
      * 汇总省市
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/cityOrderByAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function cityorderby($body)
+    public function cityorderby($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/cityorderby", $body);
+        return $this->restful("POST", "/organizebase/cityorderby", $body, $query, $extra);
     }
 
     /**
      * 城市查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/cityPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function cityPaging($body)
+    public function cityPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/citypaging", $body);
+        return $this->restful("POST", "/organizebase/citypaging", $body, $query, $extra);
     }
 
     /**
      * 统计全网一共有多少门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/clerkNumAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function clerkNum($body)
+    public function clerkNum($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/clerkNum", $body);
+        return $this->restful("POST", "/organizebase/clerkNum", $body, $query, $extra);
     }
 
     /**
      * 汇总DTP数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/CountIsDTPAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function countIsDTP($body)
+    public function countIsDTP($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/countisdtp", $body);
+        return $this->restful("POST", "/organization/countisdtp", $body, $query, $extra);
     }
 
     /**
      * 获取所有下级组织数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/countAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function countOrganize($body)
+    public function countOrganize($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/count", $body);
+        return $this->restful("POST", "/organizebase/count", $body, $query, $extra);
     }
 
     /**
      * 获取某类型下的组织数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/countTypeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function countTypeOrganize($body)
+    public function countTypeOrganize($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/counttype", $body);
+        return $this->restful("POST", "/organizebase/counttype", $body, $query, $extra);
+    }
+
+    /**
+     * 图片统计
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/CountTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function countTypeStoreImages($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeimages/counttype", $body, $query, $extra);
     }
 
     /**
      * 删除商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/delAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function delMerchant($body)
+    public function delMerchant($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchant/del", $body);
+        return $this->restful("POST", "/merchant/del", $body, $query, $extra);
     }
 
     /**
      * 删除商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/delAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function delOrgabuzeBase($body)
+    public function delOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/del", $body);
+        return $this->restful("POST", "/organizebase/del", $body, $query, $extra);
     }
 
     /**
      * 删除组织架构
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/delAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function delOrganization($body)
+    public function delOrganization($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/del", $body);
+        return $this->restful("POST", "/organization/del", $body, $query, $extra);
     }
 
     /**
      * 删除图片
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/DelAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function delStoreImages($body)
+    public function delStoreImages($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeimages/del", $body);
+        return $this->restful("POST", "/storeimages/del", $body, $query, $extra);
     }
 
     /**
      * id查询费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function detailBalance($body)
+    public function detailBalance($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/balance/detail", $body);
+        return $this->restful("POST", "/balance/detail", $body, $query, $extra);
     }
 
     /**
      * 修改组织直付类型
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/DirectAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function directOrgabuzeBase($body)
+    public function directOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/direct", $body);
+        return $this->restful("POST", "/organizebase/direct", $body, $query, $extra);
     }
 
     /**
      * 停用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/disableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function disableWorker($body)
+    public function disableWorker($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/disable", $body);
+        return $this->restful("POST", "/worker/disable", $body, $query, $extra);
     }
 
     /**
      * 停用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/disableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function disableWorkerMan($body)
+    public function disableWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/disable", $body);
+        return $this->restful("POST", "/workerman/disable", $body, $query, $extra);
     }
 
     /**
      * 简称查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/drugstoreListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function drugstoreList($body)
+    public function drugstoreList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/drugstoreList", $body);
+        return $this->restful("POST", "/organizebase/drugstoreList", $body, $query, $extra);
     }
 
     /**
      * 修改账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editAccountNumber($body)
+    public function editAccountNumber($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountnumber/edit", $body);
+        return $this->restful("POST", "/accountnumber/edit", $body, $query, $extra);
     }
 
     /**
      * 编辑用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editAssistants($body)
+    public function editAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/edit", $body);
+        return $this->restful("POST", "/assistants/edit", $body, $query, $extra);
     }
 
     /**
      * 修改费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editBalance($body)
+    public function editBalance($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/balance/edit", $body);
+        return $this->restful("POST", "/balance/edit", $body, $query, $extra);
     }
 
     /**
      * 修改DTP状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editDtpAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editDtp($body)
+    public function editDtp($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/editdtp", $body);
+        return $this->restful("POST", "/organizebase/editdtp", $body, $query, $extra);
+    }
+
+    /**
+     * 修改电子处方状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editElectronicAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editElectronic($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/editelectronic", $body, $query, $extra);
     }
 
     /**
      * 关闭黑名单
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsBlackMapAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editEndIsBlackMap($body)
+    public function editEndIsBlackMap($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/editendisblackmap", $body);
+        return $this->restful("POST", "/organization/editendisblackmap", $body, $query, $extra);
     }
 
     /**
      * 批量关闭地图
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditEndIsMapOpenAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editEndIsMapOpen($body)
+    public function editEndIsMapOpen($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/editendismapopen", $body);
+        return $this->restful("POST", "/organization/editendismapopen", $body, $query, $extra);
     }
 
     /**
      * 修改财务回推配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editFinaceSettlement($body)
+    public function editFinaceSettlement($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/financesettlement/edit", $body);
+        return $this->restful("POST", "/financesettlement/edit", $body, $query, $extra);
     }
 
     /**
      * 修改开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editInvoice($body)
+    public function editInvoice($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoice/edit", $body);
+        return $this->restful("POST", "/invoice/edit", $body, $query, $extra);
     }
 
     /**
      * 地图打点信息调整
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editMapAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editmap($body)
+    public function editmap($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/editmap", $body);
+        return $this->restful("POST", "/organizebase/editmap", $body, $query, $extra);
     }
 
     /**
      * 修改地图展示规则
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MapRuleController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editMapRule($body)
+    public function editMapRule($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/maprule/edit", $body);
+        return $this->restful("POST", "/maprule/edit", $body, $query, $extra);
     }
 
     /**
      * 编辑商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editMerchant($body)
+    public function editMerchant($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchant/edit", $body);
+        return $this->restful("POST", "/merchant/edit", $body, $query, $extra);
     }
 
     /**
      * 修改O2O状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editO2OAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editO2O($body)
+    public function editO2O($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/edito2o", $body);
+        return $this->restful("POST", "/organizebase/edito2o", $body, $query, $extra);
     }
 
     /**
      * 编辑商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editOrgabuzeBase($body)
+    public function editOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/edit", $body);
+        return $this->restful("POST", "/organizebase/edit", $body, $query, $extra);
     }
 
     /**
      * 编辑组织架构
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editOrganization($body)
+    public function editOrganization($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/edit", $body);
+        return $this->restful("POST", "/organization/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑商户组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/edit", $body, $query, $extra);
     }
 
     /**
      * 修改上级组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editParentIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editParentId($body)
+    public function editParentId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/editparentid", $body);
+        return $this->restful("POST", "/organizebase/editparentid", $body, $query, $extra);
     }
 
     /**
      * 编辑商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editPartners($body)
+    public function editPartners($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/edit", $body);
+        return $this->restful("POST", "/partners/edit", $body, $query, $extra);
     }
 
     /**
      * 处理rootId修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editRootIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editRootId($body)
+    public function editRootId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/editrootid", $body);
+        return $this->restful("POST", "/organizebase/editrootid", $body, $query, $extra);
     }
 
     /**
      * 开启黑名单
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsBlackMapAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStartIsBlackMap($body)
+    public function editStartIsBlackMap($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/editstartisblackmap", $body);
+        return $this->restful("POST", "/organization/editstartisblackmap", $body, $query, $extra);
     }
 
     /**
      * 批量开启地图
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/EditStartIsMapOpenAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStartIsMapOpen($body)
+    public function editStartIsMapOpen($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/editstartismapopen", $body);
+        return $this->restful("POST", "/organization/editstartismapopen", $body, $query, $extra);
     }
 
     /**
      * 批量关闭状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusEndAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusEnd($body)
+    public function editStatusEnd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/editstatusend", $body);
+        return $this->restful("POST", "/organizebase/editstatusend", $body, $query, $extra);
     }
 
     /**
      * 停用账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editStatusEndAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusEndAccountNumber($body)
+    public function editStatusEndAccountNumber($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountnumber/editstatusend", $body);
+        return $this->restful("POST", "/accountnumber/editstatusend", $body, $query, $extra);
     }
 
     /**
      * 停用用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusEndAllAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusEndAllAssistants($body)
+    public function editStatusEndAllAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/editstatusendall", $body);
+        return $this->restful("POST", "/assistants/editstatusendall", $body, $query, $extra);
     }
 
     /**
      * 批量停用用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/editStatusEndAllAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusEndAllWorkerMan($body)
+    public function editStatusEndAllWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/editstatusendall", $body);
+        return $this->restful("POST", "/workerman/editstatusendall", $body, $query, $extra);
     }
 
     /**
      * 停用用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusEndAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusEndAssistants($body)
+    public function editStatusEndAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/editstatusend", $body);
+        return $this->restful("POST", "/assistants/editstatusend", $body, $query, $extra);
     }
 
     /**
      * 关闭商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editStatusEndAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusEndPartners($body)
+    public function editStatusEndPartners($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/editstatusend", $body);
+        return $this->restful("POST", "/partners/editstatusend", $body, $query, $extra);
     }
 
     /**
      * 关闭连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editStatusEndAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusEndStores($body)
+    public function editStatusEndStores($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/stores/editstatusend", $body);
+        return $this->restful("POST", "/stores/editstatusend", $body, $query, $extra);
     }
 
     /**
      * 批量注销状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusOutAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusOut($body)
+    public function editStatusOut($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/editstatusout", $body);
+        return $this->restful("POST", "/organizebase/editstatusout", $body, $query, $extra);
     }
 
     /**
      * 批量开启状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editStatusStartAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusStart($body)
+    public function editStatusStart($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/editstatusstart", $body);
+        return $this->restful("POST", "/organizebase/editstatusstart", $body, $query, $extra);
     }
 
     /**
      * 开启账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/editStatusStartAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusStartAccountNumber($body)
+    public function editStatusStartAccountNumber($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountnumber/editstatusstart", $body);
+        return $this->restful("POST", "/accountnumber/editstatusstart", $body, $query, $extra);
     }
 
     /**
      * 开启用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusStartAllAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusStartAllAssistants($body)
+    public function editStatusStartAllAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/editstatusstartall", $body);
+        return $this->restful("POST", "/assistants/editstatusstartall", $body, $query, $extra);
     }
 
     /**
      * 批量开启用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/editStatusStartAllAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusStartAllWorkerMan($body)
+    public function editStatusStartAllWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/editstatusstartall", $body);
+        return $this->restful("POST", "/workerman/editstatusstartall", $body, $query, $extra);
     }
 
     /**
      * 开启用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/editStatusStartAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusStartAssistants($body)
+    public function editStatusStartAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/editstatusstart", $body);
+        return $this->restful("POST", "/assistants/editstatusstart", $body, $query, $extra);
     }
 
     /**
      * 开启商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/editStatusStartAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusStartPartners($body)
+    public function editStatusStartPartners($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/editstatusstart", $body);
+        return $this->restful("POST", "/partners/editstatusstart", $body, $query, $extra);
     }
 
     /**
      * 开启连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editStatusStartAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStatusStartStores($body)
+    public function editStatusStartStores($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/stores/editstatusstart", $body);
+        return $this->restful("POST", "/stores/editstatusstart", $body, $query, $extra);
     }
 
     /**
      * 编辑图片
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStoreImages($body)
+    public function editStoreImages($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeimages/edit", $body);
+        return $this->restful("POST", "/storeimages/edit", $body, $query, $extra);
     }
 
     /**
      * 修改连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editStores($body)
+    public function editStores($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/stores/edit", $body);
+        return $this->restful("POST", "/stores/edit", $body, $query, $extra);
     }
 
     /**
      * 编辑员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editWorker($body)
+    public function editWorker($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/edit", $body);
+        return $this->restful("POST", "/worker/edit", $body, $query, $extra);
     }
 
     /**
      * 编辑员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function editWorkerMan($body)
+    public function editWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/edit", $body);
+        return $this->restful("POST", "/workerman/edit", $body, $query, $extra);
     }
 
     /**
      * 启用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/enableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function enableWorker($body)
+    public function enableWorker($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/enable", $body);
+        return $this->restful("POST", "/worker/enable", $body, $query, $extra);
     }
 
     /**
      * 启用员工
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/enableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function enableWorkerMan($body)
+    public function enableWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/enable", $body);
+        return $this->restful("POST", "/workerman/enable", $body, $query, $extra);
     }
 
     /**
      * 导出sql
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/exportSqlAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportSql($body)
+    public function exportSql($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/exportSql", $body);
+        return $this->restful("POST", "/organizebase/exportSql", $body, $query, $extra);
     }
 
     /**
      * 读取保司列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/insureListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getInsureList($body)
+    public function getInsureList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/insureList", $body);
+        return $this->restful("POST", "/organizebase/insureList", $body, $query, $extra);
     }
 
     /**
      * 读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/idsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getMerchantByIds($body)
+    public function getMerchantByIds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchant/ids", $body);
+        return $this->restful("POST", "/merchant/ids", $body, $query, $extra);
     }
 
     /**
      * 读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getMerchantInfo($body)
+    public function getMerchantInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchant/info", $body);
+        return $this->restful("POST", "/merchant/info", $body, $query, $extra);
     }
 
     /**
      * 读取商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getMerchantList($body)
+    public function getMerchantList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchant/list", $body);
+        return $this->restful("POST", "/merchant/list", $body, $query, $extra);
     }
 
     /**
      * 用以前的连锁id获取现在的组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/getByPartnerAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getOrganByPartnerId($body)
+    public function getOrganByPartnerId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/getbypartner", $body);
+        return $this->restful("POST", "/organizebase/getbypartner", $body, $query, $extra);
     }
 
     /**
      * 查看组织组织架构
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getOrganizationInfo($body)
+    public function getOrganizationInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/info", $body);
+        return $this->restful("POST", "/organization/info", $body, $query, $extra);
     }
 
     /**
      * 读取组织架构树
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationController/treeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getOrganizationTree($body)
+    public function getOrganizationTree($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organization/tree", $body);
+        return $this->restful("POST", "/organization/tree", $body, $query, $extra);
     }
 
     /**
      * 连锁及门店列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnerSwitchController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPartnerSwitchList($body)
+    public function getPartnerSwitchList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partner/switch/list", $body);
+        return $this->restful("POST", "/partner/switch/list", $body, $query, $extra);
     }
 
     /**
      * roleCountAction()
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/roleCountAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getRoleCount($body)
+    public function getRoleCount($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/roleCount", $body);
+        return $this->restful("POST", "/worker/roleCount", $body, $query, $extra);
     }
 
     /**
      * 读取员工信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getWorkerInfo($body)
+    public function getWorkerInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/info", $body);
+        return $this->restful("POST", "/worker/info", $body, $query, $extra);
     }
 
     /**
      * 读取员工列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getWorkerList($body)
+    public function getWorkerList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/list", $body);
+        return $this->restful("POST", "/worker/list", $body, $query, $extra);
     }
 
     /**
      * 读取员工分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getWorkerPaging($body)
+    public function getWorkerPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/paging", $body);
+        return $this->restful("POST", "/worker/paging", $body, $query, $extra);
     }
 
     /**
      * 获取用户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/IdsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function ids($body)
+    public function ids($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/ids", $body);
+        return $this->restful("POST", "/assistants/ids", $body, $query, $extra);
     }
 
     /**
      * 通过ids读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/idsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function idsOrgabuzeBase($body)
+    public function idsOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/ids", $body);
+        return $this->restful("POST", "/organizebase/ids", $body, $query, $extra);
     }
 
     /**
      * 简易ids读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/idsSmallAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function idsSmallOrganizeBase($body)
+    public function idsSmallOrganizeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/idssmall", $body);
+        return $this->restful("POST", "/organizebase/idssmall", $body, $query, $extra);
     }
 
     /**
      * 查询账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoAccountNumber($body)
+    public function infoAccountNumber($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountnumber/info", $body);
+        return $this->restful("POST", "/accountnumber/info", $body, $query, $extra);
     }
 
     /**
      * 查询用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoAssistants($body)
+    public function infoAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/info", $body);
+        return $this->restful("POST", "/assistants/info", $body, $query, $extra);
     }
 
     /**
      * 查询费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoBalance($body)
+    public function infoBalance($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/balance/info", $body);
+        return $this->restful("POST", "/balance/info", $body, $query, $extra);
     }
 
     /**
      * 查询上级费率
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/infoChainAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoChainBalance($body)
+    public function infoChainBalance($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/balance/infochain", $body);
+        return $this->restful("POST", "/balance/infochain", $body, $query, $extra);
     }
 
     /**
      * 查询财务回推配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/FinanceSettlementController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoFinaceSettlement($body)
+    public function infoFinaceSettlement($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/financesettlement/info", $body);
+        return $this->restful("POST", "/financesettlement/info", $body, $query, $extra);
     }
 
     /**
      * 最近上级独立结算组织查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/infoIndependentAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoIndependent($body)
+    public function infoIndependent($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/infoindependent", $body);
+        return $this->restful("POST", "/organizebase/infoindependent", $body, $query, $extra);
     }
 
     /**
      * 查询internalName internalCode 组合接口
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/infoInternalAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoInternalAll($body)
+    public function infoInternalAll($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/infointernalall", $body);
+        return $this->restful("POST", "/organizebase/infointernalall", $body, $query, $extra);
     }
 
     /**
      * 查询开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoInvoice($body)
+    public function infoInvoice($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoice/info", $body);
+        return $this->restful("POST", "/invoice/info", $body, $query, $extra);
     }
 
     /**
      * 查询地图展示规则
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MapRuleController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoMapRule($body)
+    public function infoMapRule($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/maprule/info", $body);
+        return $this->restful("POST", "/maprule/info", $body, $query, $extra);
     }
 
     /**
      * 读取商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoOrgabuzeBase($body)
+    public function infoOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/info", $body);
+        return $this->restful("POST", "/organizebase/info", $body, $query, $extra);
     }
 
     /**
      * 读取商户组织快照
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseSnapshotController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoOrganizeBaseSnapshot($body)
+    public function infoOrganizeBaseSnapshot($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebasesnapshot/info", $body);
+        return $this->restful("POST", "/organizebasesnapshot/info", $body, $query, $extra);
     }
 
     /**
      * 查询商户组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoPartners($body)
+    public function infoPartners($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/info", $body);
+        return $this->restful("POST", "/partners/info", $body, $query, $extra);
     }
 
     /**
      * 查询图片
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/InfoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoStoreImages($body)
+    public function infoStoreImages($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeimages/info", $body);
+        return $this->restful("POST", "/storeimages/info", $body, $query, $extra);
     }
 
     /**
      * 查询连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoStores($body)
+    public function infoStores($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/stores/info", $body);
+        return $this->restful("POST", "/stores/info", $body, $query, $extra);
     }
 
     /**
      * 读取员工信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoWorkerMan($body)
+    public function infoWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/info", $body);
+        return $this->restful("POST", "/workerman/info", $body, $query, $extra);
     }
 
     /**
      * 通过internalCode获取连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalCodeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function internalcode($body)
+    public function internalcode($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/internalcode", $body);
+        return $this->restful("POST", "/organizebase/internalcode", $body, $query, $extra);
     }
 
     /**
      * 通过默认编码获取组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalCodeInfoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function internalCodeInfo($body)
+    public function internalCodeInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/internalcodeinfo", $body);
+        return $this->restful("POST", "/organizebase/internalcodeinfo", $body, $query, $extra);
     }
 
     /**
      * 通过internalName获取连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalNameAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function internalNameInfo($body)
+    public function internalNameInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/internalnameinfo", $body);
+        return $this->restful("POST", "/organizebase/internalnameinfo", $body, $query, $extra);
     }
 
     /**
      * 查询门店是否存在
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/isExistAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function isExistStore($body)
+    public function isExistStore($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/stores/isExist", $body);
+        return $this->restful("POST", "/stores/isExist", $body, $query, $extra);
     }
 
     /**
      * 获取某类型下的组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listAllOrganize($body)
+    public function listAllOrganize($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listall", $body);
+        return $this->restful("POST", "/organizebase/listall", $body, $query, $extra);
     }
 
     /**
      * 通过partnerId读取下级商户集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllStoreAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listAllStoreOrgabuzeBase($body)
+    public function listAllStoreOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listallstore", $body);
+        return $this->restful("POST", "/organizebase/listallstore", $body, $query, $extra);
     }
 
     /**
      * 通过partnerId读取简略下级商户集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAllStoreSmallAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listAllStoreSmallOrgabuzeBase($body)
+    public function listAllStoreSmallOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listallstoresmall", $body);
+        return $this->restful("POST", "/organizebase/listallstoresmall", $body, $query, $extra);
     }
 
     /**
      * 查询对应的图片信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listImageAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listImage($body)
+    public function listImage($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listimage", $body);
+        return $this->restful("POST", "/organizebase/listimage", $body, $query, $extra);
     }
 
     /**
      * ROOT下独立结算组织查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listIsIndependentAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listIsIndependent($body)
+    public function listIsIndependent($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listisindependent", $body);
+        return $this->restful("POST", "/organizebase/listisindependent", $body, $query, $extra);
     }
 
     /**
      * 简洁查询连锁
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listNameAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listName($body)
+    public function listName($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listname", $body);
+        return $this->restful("POST", "/organizebase/listname", $body, $query, $extra);
     }
 
     /**
      * 读取商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listOrgabuzeBase($body)
+    public function listOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/list", $body);
+        return $this->restful("POST", "/organizebase/list", $body, $query, $extra);
     }
 
     /**
      * 简洁查询连锁名称返回门店名称
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listParentNameAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listParentname($body)
+    public function listParentname($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listparentname", $body);
+        return $this->restful("POST", "/organizebase/listparentname", $body, $query, $extra);
     }
 
     /**
      * 通过名称获取连锁下的门店简易信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listRootIdNameAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listRootIdName($body)
+    public function listRootIdName($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listrootidname", $body);
+        return $this->restful("POST", "/organizebase/listrootidname", $body, $query, $extra);
     }
 
     /**
      * 读取root商户集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listRootIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listRootidOrganizeBase($body)
+    public function listRootidOrganizeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listrootid", $body);
+        return $this->restful("POST", "/organizebase/listrootid", $body, $query, $extra);
     }
 
     /**
      * 读取带顶级组织名称的商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listRootNameAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listRootNameOrgabuzeBase($body)
+    public function listRootNameOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listrootname", $body);
+        return $this->restful("POST", "/organizebase/listrootname", $body, $query, $extra);
     }
 
     /**
      * 读取商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listSmallAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listSmallOrgabuzeBase($body)
+    public function listSmallOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/listsmall", $body);
+        return $this->restful("POST", "/organizebase/listsmall", $body, $query, $extra);
     }
 
     /**
      * 图片集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/ListsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listsStoreImages($body)
+    public function listsStoreImages($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeimages/lists", $body);
+        return $this->restful("POST", "/storeimages/lists", $body, $query, $extra);
     }
 
     /**
      * 获取连锁下的门店简易信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listStoreSmallOrgAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listStoreSmallOrg($body)
+    public function listStoreSmallOrg($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/liststoresmall", $body);
+        return $this->restful("POST", "/organizebase/liststoresmall", $body, $query, $extra);
     }
 
     /**
      * 读取员工列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function listWorkerMan($body)
+    public function listWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/list", $body);
+        return $this->restful("POST", "/workerman/list", $body, $query, $extra);
     }
 
     /**
      * 员工登录
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/loginAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function login($body)
+    public function login($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/login", $body);
+        return $this->restful("POST", "/worker/login", $body, $query, $extra);
     }
 
     /**
      * 用户查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/memberIdInfoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function memberIdInfoAssistants($body)
+    public function memberIdInfoAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/memberidinfo", $body);
+        return $this->restful("POST", "/assistants/memberidinfo", $body, $query, $extra);
     }
 
     /**
      * 通过手机号查询用户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/MoblieAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function moblieWorkerMan($body)
+    public function moblieWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/moblie", $body);
+        return $this->restful("POST", "/workerman/moblie", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function organizeDtpBindCreate($body)
+    public function organizeDtpBindCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeDtpBind/create", $body);
+        return $this->restful("POST", "/organizeDtpBind/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function organizeDtpBindDetail($body)
+    public function organizeDtpBindDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeDtpBind/detail", $body);
+        return $this->restful("POST", "/organizeDtpBind/detail", $body, $query, $extra);
     }
 
     /**
      * 单条记录结果集合
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/idsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function organizeDtpBindIds($body)
+    public function organizeDtpBindIds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeDtpBind/ids", $body);
+        return $this->restful("POST", "/organizeDtpBind/ids", $body, $query, $extra);
     }
 
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function organizeDtpBindListing($body)
+    public function organizeDtpBindListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeDtpBind/listing", $body);
+        return $this->restful("POST", "/organizeDtpBind/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function organizeDtpBindPaging($body)
+    public function organizeDtpBindPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeDtpBind/paging", $body);
+        return $this->restful("POST", "/organizeDtpBind/paging", $body, $query, $extra);
     }
 
     /**
      * 解除绑定
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeDtpBindController/UnBindAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function organizeDtpUnBind($body)
+    public function organizeDtpUnBind($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeDtpBind/unbind", $body);
+        return $this->restful("POST", "/organizeDtpBind/unbind", $body, $query, $extra);
     }
 
     /**
      * 查询账号列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/PagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingAccountNumber($body)
+    public function pagingAccountNumber($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/accountnumber/paging", $body);
+        return $this->restful("POST", "/accountnumber/paging", $body, $query, $extra);
     }
 
     /**
      * 查询用户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/PagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingAssistants($body)
+    public function pagingAssistants($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistants/paging", $body);
+        return $this->restful("POST", "/assistants/paging", $body, $query, $extra);
     }
 
     /**
      * 查询费率列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/BalanceController/PagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingBalance($body)
+    public function pagingBalance($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/balance/paging", $body);
+        return $this->restful("POST", "/balance/paging", $body, $query, $extra);
     }
 
     /**
      * 获取ids范围数据
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/pagingIdsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingIds($body)
+    public function pagingIds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/pagingIds", $body);
+        return $this->restful("POST", "/organizebase/pagingIds", $body, $query, $extra);
     }
 
     /**
      * 读取商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingPartners($body)
+    public function pagingPartners($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/paging", $body);
+        return $this->restful("POST", "/partners/paging", $body, $query, $extra);
     }
 
     /**
      * 图片列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/PagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingStoreImages($body)
+    public function pagingStoreImages($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeimages/paging", $body);
+        return $this->restful("POST", "/storeimages/paging", $body, $query, $extra);
     }
 
     /**
      * 查询连锁门店列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoresController/PagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingStores($body)
+    public function pagingStores($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/stores/paging", $body);
+        return $this->restful("POST", "/stores/paging", $body, $query, $extra);
     }
 
     /**
      * 读取员工分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingWorkerMan($body)
+    public function pagingWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/paging", $body);
+        return $this->restful("POST", "/workerman/paging", $body, $query, $extra);
     }
 
     /**
      * 通过partnerid读取组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/partnerIdInfoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function partnerIdInfoOrganizeBase($body)
+    public function partnerIdInfoOrganizeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/partneridinfo", $body);
+        return $this->restful("POST", "/organizebase/partneridinfo", $body, $query, $extra);
     }
 
     /**
      * 通过partnerIds读取商户信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/partnerIdsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function partnerIdsOrgabuzeBase($body)
+    public function partnerIdsOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/partnerids", $body);
+        return $this->restful("POST", "/organizebase/partnerids", $body, $query, $extra);
     }
 
     /**
      * 获取连锁&门店id
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/cooperationInfoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function partnersCooperationInfo($body)
+    public function partnersCooperationInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/cooperationinfo", $body);
+        return $this->restful("POST", "/partners/cooperationinfo", $body, $query, $extra);
     }
 
     /**
      * 获取连锁集合的资金池
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/fundPoolsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function partnersFundPools($body)
+    public function partnersFundPools($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/fundpools", $body);
+        return $this->restful("POST", "/partners/fundpools", $body, $query, $extra);
     }
 
     /**
      * relationAction()
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/relationAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function relationWorker($body)
+    public function relationWorker($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/relation", $body);
+        return $this->restful("POST", "/worker/relation", $body, $query, $extra);
     }
 
     /**
      * 用户关联权限
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/relationAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function relationWorkerMan($body)
+    public function relationWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/relation", $body);
+        return $this->restful("POST", "/workerman/relation", $body, $query, $extra);
     }
 
     /**
      * removeAction()
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/removeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function removeWorker($body)
+    public function removeWorker($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/worker/remove", $body);
+        return $this->restful("POST", "/worker/remove", $body, $query, $extra);
     }
 
     /**
      * 删除权限
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/removeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function removeWorkerMan($body)
+    public function removeWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/remove", $body);
+        return $this->restful("POST", "/workerman/remove", $body, $query, $extra);
     }
 
     /**
      * 获取权限下用户数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/roleCountAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function roleCountWorkerMan($body)
+    public function roleCountWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/roleCount", $body);
+        return $this->restful("POST", "/workerman/roleCount", $body, $query, $extra);
     }
 
     /**
      * 修改用户权限组
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/roleIdEditAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function roleIdEditWorkerMan($body)
+    public function roleIdEditWorkerMan($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/workerman/roleidedit", $body);
+        return $this->restful("POST", "/workerman/roleidedit", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerCreate($body)
+    public function scorePartnerCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/create", $body);
+        return $this->restful("POST", "/scorePartner/create", $body, $query, $extra);
     }
 
     /**
      * 分页多天列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/partnerPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerDayPaging($body)
+    public function scorePartnerDayPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/partnerdaypaging", $body);
+        return $this->restful("POST", "/scoreStore/partnerdaypaging", $body, $query, $extra);
     }
 
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerDelete($body)
+    public function scorePartnerDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/delete", $body);
+        return $this->restful("POST", "/scorePartner/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerDetail($body)
+    public function scorePartnerDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/detail", $body);
+        return $this->restful("POST", "/scorePartner/detail", $body, $query, $extra);
     }
 
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerListing($body)
+    public function scorePartnerListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/listing", $body);
+        return $this->restful("POST", "/scorePartner/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerPaging($body)
+    public function scorePartnerPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/paging", $body);
+        return $this->restful("POST", "/scorePartner/paging", $body, $query, $extra);
     }
 
     /**
      * 获取评分区间数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/rankAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerRank($body)
+    public function scorePartnerRank($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/rank", $body);
+        return $this->restful("POST", "/scorePartner/rank", $body, $query, $extra);
     }
 
     /**
      * 获取最近总分的
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/scoreDayAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerScoreDay($body)
+    public function scorePartnerScoreDay($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/scoreDay", $body);
+        return $this->restful("POST", "/scorePartner/scoreDay", $body, $query, $extra);
     }
 
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScorePartnerController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scorePartnerUpdate($body)
+    public function scorePartnerUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scorePartner/update", $body);
+        return $this->restful("POST", "/scorePartner/update", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreCreate($body)
+    public function scoreStoreCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/create", $body);
+        return $this->restful("POST", "/scoreStore/create", $body, $query, $extra);
     }
 
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreDelete($body)
+    public function scoreStoreDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/delete", $body);
+        return $this->restful("POST", "/scoreStore/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreDetail($body)
+    public function scoreStoreDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/detail", $body);
+        return $this->restful("POST", "/scoreStore/detail", $body, $query, $extra);
     }
 
     /**
      * 门店单个查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/storeInfoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreInfo($body)
+    public function scoreStoreInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/scorestoreinfo", $body);
+        return $this->restful("POST", "/scoreStore/scorestoreinfo", $body, $query, $extra);
     }
 
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreListing($body)
+    public function scoreStoreListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/listing", $body);
+        return $this->restful("POST", "/scoreStore/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStorePaging($body)
+    public function scoreStorePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/paging", $body);
+        return $this->restful("POST", "/scoreStore/paging", $body, $query, $extra);
     }
 
     /**
      * 获取评分区间数量
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/rankAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreRank($body)
+    public function scoreStoreRank($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStoreSum/rank", $body);
+        return $this->restful("POST", "/scoreStoreSum/rank", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreSumCreate($body)
+    public function scoreStoreSumCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStoreSum/create", $body);
+        return $this->restful("POST", "/scoreStoreSum/create", $body, $query, $extra);
     }
 
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreSumDelete($body)
+    public function scoreStoreSumDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStoreSum/delete", $body);
+        return $this->restful("POST", "/scoreStoreSum/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreSumDetail($body)
+    public function scoreStoreSumDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStoreSum/detail", $body);
+        return $this->restful("POST", "/scoreStoreSum/detail", $body, $query, $extra);
     }
 
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreSumListing($body)
+    public function scoreStoreSumListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStoreSum/listing", $body);
+        return $this->restful("POST", "/scoreStoreSum/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreSumPaging($body)
+    public function scoreStoreSumPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStoreSum/paging", $body);
+        return $this->restful("POST", "/scoreStoreSum/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreSumController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreSumUpdate($body)
+    public function scoreStoreSumUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStoreSum/update", $body);
+        return $this->restful("POST", "/scoreStoreSum/update", $body, $query, $extra);
     }
 
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/ScoreStoreController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function scoreStoreUpdate($body)
+    public function scoreStoreUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/scoreStore/update", $body);
+        return $this->restful("POST", "/scoreStore/update", $body, $query, $extra);
     }
 
     /**
      * 更具名称查找连锁
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/searchAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function searchOrganizeBase($body)
+    public function searchOrganizeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/search", $body);
+        return $this->restful("POST", "/organizebase/search", $body, $query, $extra);
     }
 
     /**
      * 查找门店下有多少店员
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/storeAssAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function storeAss($body)
+    public function storeAss($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/storeAss", $body);
+        return $this->restful("POST", "/organizebase/storeAss", $body, $query, $extra);
     }
 
     /**
      * 统计全网一共有多少门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/storeNumAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function storeNum($body)
+    public function storeNum($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/storeNum", $body);
+        return $this->restful("POST", "/organizebase/storeNum", $body, $query, $extra);
     }
 
     /**
      * 同步门店信息
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function sync($body)
+    public function sync($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/sync", $body);
+        return $this->restful("POST", "/organizebase/sync", $body, $query, $extra);
     }
 
     /**
      * 商户中心双向同步添加
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function syncadd($body)
+    public function syncadd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/syncadd", $body);
+        return $this->restful("POST", "/organizebase/syncadd", $body, $query, $extra);
     }
 
     /**
      * 商户中心双向添加
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddErpAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function syncAddErp($body)
+    public function syncAddErp($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/syncadderp", $body);
+        return $this->restful("POST", "/organizebase/syncadderp", $body, $query, $extra);
     }
 
     /**
      * 商户中心接受erp回推添加门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncAddStroeErpAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function syncAddStoreErp($body)
+    public function syncAddStoreErp($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/syncaddstoreerp", $body);
+        return $this->restful("POST", "/organizebase/syncaddstoreerp", $body, $query, $extra);
     }
 
     /**
      * 商户中心接受erp回推修改门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/syncEditStoreErpAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function syncEditStoreErp($body)
+    public function syncEditStoreErp($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/synceditstoreerp", $body);
+        return $this->restful("POST", "/organizebase/synceditstoreerp", $body, $query, $extra);
     }
 
     /**
      * 商户中心同步internal
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/synEditInternalErpAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function synEditInternalErp($body)
+    public function synEditInternalErp($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/syneditinternalerp", $body);
+        return $this->restful("POST", "/organizebase/syneditinternalerp", $body, $query, $extra);
     }
 
     /**
      * 读取组织架构树
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/treeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function treeOrgabuzeBase($body)
+    public function treeOrgabuzeBase($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizebase/tree", $body);
+        return $this->restful("POST", "/organizebase/tree", $body, $query, $extra);
     }
 
     /**
      * 读取商户列表树
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/treeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function treePartners($body)
+    public function treePartners($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partners/tree", $body);
+        return $this->restful("POST", "/partners/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 根据类型获取图片
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/StoreImagesController/typeListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function typeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeimages/typelist", $body, $query, $extra);
     }
 }

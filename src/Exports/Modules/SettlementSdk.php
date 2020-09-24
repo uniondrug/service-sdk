@@ -1626,6 +1626,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 开启在线开票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function organizeAccountUpdateOnlineInvoice($body)
+    {
+        return $this->restful("POST", "/organizeAccount/updateOnlineInvoice", $body);
+    }
+
+    /**
      * 切换选中
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateCheckedAction.md
      * @param array|object $body  入参类型
@@ -3250,6 +3261,28 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 新增理赔单发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/addTpaInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaAddTpaInvoice($body)
+    {
+        return $this->restful("POST", "/claimsTpa/invoice/add", $body);
+    }
+
+    /**
+     * 更新理赔单发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/updateTpaInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaUpdateTpaInvoice($body)
+    {
+        return $this->restful("POST", "/claimsTpa/invoice/update", $body);
+    }
+
+    /**
      * 撤销理赔单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/cancelAction.md
      * @param array|object $body 入参类型
@@ -3313,6 +3346,17 @@ class SettlementSdk extends SdkBase
     public function claimsTpaGetTpaGoodsSummary($body)
     {
         return $this->restful("POST", "/claimsTpa/getTpaGoodsSummary", $body);
+    }
+
+    /**
+     * 获取理赔单开票信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/getTpaInvoiceInfoAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaGetTpaInvoiceInfo($body)
+    {
+        return $this->restful("POST", "/claimsTpa/invoice/info/get", $body);
     }
 
     /**
@@ -3986,9 +4030,9 @@ class SettlementSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlineCreate($body, $query = null, $extra = null)
@@ -3999,9 +4043,9 @@ class SettlementSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlineDetail($body, $query = null, $extra = null)
@@ -4012,9 +4056,9 @@ class SettlementSdk extends SdkBase
     /**
      * paging
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlinePaging($body, $query = null, $extra = null)
@@ -4025,13 +4069,65 @@ class SettlementSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyOnlineController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyOnlineUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/apply/online/update", $body, $query, $extra);
+    }
+
+    /**
+     * 撤销应收结算单待审核明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsReceiveController/cancelAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsReceiveCancel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statementsReceive/cancel", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司/单体店分页结算列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/singlePagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function statementSinglePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/singlePaging", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司合并对账单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/summaryAddAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsSummaryAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/summaryAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 设置付款单自动充值状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/setAutoRechargeStatusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function capitalPaymentSetAutoRechargeStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/capitalPayment/setAutoRechargeStatus", $body, $query, $extra);
     }
 }
