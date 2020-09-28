@@ -822,4 +822,17 @@ class UdappSdk extends SdkBase
     {
         return $this->restful("POST", "/token/expire", $body);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DownloadLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function downloadLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/downloadLog/create", $body, $query, $extra);
+    }
 }
