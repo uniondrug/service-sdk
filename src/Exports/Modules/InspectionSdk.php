@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-13
- * @time   Sun, 13 Sep 2020 20:52:30 +0800
+ * @date   2020-09-27
+ * @time   Sun, 27 Sep 2020 18:02:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -121,6 +121,32 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 预约页面信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/appointmentInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function appointmentInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appointment/info", $body, $query, $extra);
+    }
+
+    /**
+     * 预约成功
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/appointmentSuccessAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function appointmentSuccess($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appointment/success", $body, $query, $extra);
+    }
+
+    /**
      * 权限关联角色
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/PrivilegesController/associatedRoleAction.md
      * @param array|object $body 入参类型
@@ -199,6 +225,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 推荐预约单确认
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/confirmRecommendAppointmentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function confirmRecommendAppointment($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appointment/confirm", $body, $query, $extra);
+    }
+
+    /**
      * 推荐单确认
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/RecommendedNoteController/confirmRecommendedAction.md
      * @param array|object $body 入参类型
@@ -212,6 +251,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 提交预约
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/createAppointmentInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createAppointmentInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appointment/create", $body, $query, $extra);
+    }
+
+    /**
      * 创建订单
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/createAction.md
      * @param array|object $body 入参类型
@@ -222,6 +274,84 @@ class InspectionSdk extends SdkBase
     public function createOrderOpenapi($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/order/create", $body, $query, $extra);
+    }
+
+    /**
+     * c端用户登录
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/customerLoginAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function customerLogin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/customer/login", $body, $query, $extra);
+    }
+
+    /**
+     * C端订单详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/customerOrderDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function customerOrderDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/customerdetail", $body, $query, $extra);
+    }
+
+    /**
+     * C端订单列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/customerOrderListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function customerOrderList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/customerlist", $body, $query, $extra);
+    }
+
+    /**
+     * 检测注意事项管理
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/DetectionInfoController/saveAttentionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function detectionAttentionSave($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/detection/attention/save", $body, $query, $extra);
+    }
+
+    /**
+     * 检测进度写入
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/DetectionInfoController/createScheduleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function detectionScheduleSave($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/detection/schedule/record", $body, $query, $extra);
+    }
+
+    /**
+     * 检测进度展示
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/DetectionInfoController/showScheduleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function detectionScheduleShow($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/detection/schedule/show", $body, $query, $extra);
     }
 
     /**
@@ -391,6 +521,19 @@ class InspectionSdk extends SdkBase
     public function getAcceptUser($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/stock/out/accept/list", $body, $query, $extra);
+    }
+
+    /**
+     * 获取 AccessToken 关联的用户信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/UserController/getUserInfoByAccessTokenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getAccessTokenOpenapi($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/user/getAccessToken", $body, $query, $extra);
     }
 
     /**
@@ -1135,6 +1278,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 更改订单联系人
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/modifyContactAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function modifyOrderContact($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/modifycontact", $body, $query, $extra);
+    }
+
+    /**
      * 修改履约单状态
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/PerformanceController/modifyPerformanceNoteAction.md
      * @param array|object $body 入参类型
@@ -1171,6 +1327,19 @@ class InspectionSdk extends SdkBase
     public function modifyRecommendeLineList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/recommended/modify", $body, $query, $extra);
+    }
+
+    /**
+     * 用户订单预约信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/customerAppointmentInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderAppointmentInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/appointmentinfo", $body, $query, $extra);
     }
 
     /**
@@ -1340,19 +1509,6 @@ class InspectionSdk extends SdkBase
     public function qualityIotRelateAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/quality-control/addrelate", $body, $query, $extra);
-    }
-
-    /**
-     * 增加质控液信息
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/QualityControlController/qualityIotRelateInfoAddAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function qualityIotRelateInfoAdd($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/quality-control/iotinfo/add", $body, $query, $extra);
     }
 
     /**
@@ -1772,6 +1928,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 发送验证码
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SmsController/sendCaptchaAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function smsSendVerify($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/sms/send/veriy", $body, $query, $extra);
+    }
+
+    /**
      * 检测项目状态修改
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/InspectionInfoController/statusInspctionInfoAction.md
      * @param array|object $body 入参类型
@@ -1902,6 +2071,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 获取角色列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/roleListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleList($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/system/role/list", $body, $query, $extra);
+    }
+
+    /**
      * 修复reportNo
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/System/AsycRaskController/fixReportNoAction.md
      * @param array|object $body 入参类型
@@ -2016,6 +2198,19 @@ class InspectionSdk extends SdkBase
     public function systemUserDriverList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/driver/list", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/getUserListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserGetUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/get/list", $body, $query, $extra);
     }
 
     /**
@@ -2341,19 +2536,6 @@ class InspectionSdk extends SdkBase
     public function wechatLineDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/wechat/line/detail", $body, $query, $extra);
-    }
-
-    /**
-     * 获取短信验证码
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatLoginController/sendSmsAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function wechatSendSms($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/wechat/send/sms", $body, $query, $extra);
     }
 
     /**

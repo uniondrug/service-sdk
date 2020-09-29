@@ -4095,13 +4095,52 @@ class SettlementSdk extends SdkBase
     /**
      * 商业公司/单体店分页结算列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/singlePagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementSinglePaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/singlePaging", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司合并对账单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/summaryAddAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsSummaryAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/summaryAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 设置付款单自动充值状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/setAutoRechargeStatusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function capitalPaymentSetAutoRechargeStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/capitalPayment/setAutoRechargeStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 不分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessSingleUnit/businessSingleUnitList", $body, $query, $extra);
     }
 }

@@ -1484,4 +1484,30 @@ class CompensateSdk extends SdkBase
     {
         return $this->restful("POST", "/worker/workerInfo", $body, $query, $extra);
     }
+
+    /**
+     * 记录发放失败原因
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemUserController/updateFailReasonAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateFailReason($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeemUser/updateFailReason", $body, $query, $extra);
+    }
+
+    /**
+     * 统计某个批次发放结果
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemUserController/getBatchResultAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getBatchResult($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeemUser/getBatchResult", $body, $query, $extra);
+    }
 }
