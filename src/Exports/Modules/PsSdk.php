@@ -11,14 +11,14 @@
  * @date   2020-09-29
  * @time   Tue, 29 Sep 2020 10:30:08 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Bsdatas;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * PsSdk
- * @package Uniondrug\ServiceSdk\Modules
+ * Class PsSdk
+ * @package Uniondrug\ServiceSdk\Exports\Modules
  */
 class PsSdk extends SdkBase
 {
