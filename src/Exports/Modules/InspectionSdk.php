@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-27
- * @time   Sun, 27 Sep 2020 18:02:11 +0800
+ * @date   2020-09-30
+ * @time   Wed, 30 Sep 2020 18:28:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -131,6 +131,19 @@ class InspectionSdk extends SdkBase
     public function appointmentInfo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/appointment/info", $body, $query, $extra);
+    }
+
+    /**
+     * 根据经纬度获取位置
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/AppointmentNoteController/appointmentInfoLocationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function appointmentInfoLocation($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appointment/location", $body, $query, $extra);
     }
 
     /**
@@ -524,8 +537,8 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取 AccessToken 关联的用户信息
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/UserController/getUserInfoByAccessTokenAction.md
+     * 获取用户登录授权 AccessToken
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/UserController/getAccessTokenAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -755,6 +768,19 @@ class InspectionSdk extends SdkBase
     public function getSupportInspection($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/inspection/supportlist", $body, $query, $extra);
+    }
+
+    /**
+     * 获取 AccessToken 关联的用户信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/UserController/getUserInfoByAccessTokenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getUserInfoByAccessTokenOpenapi($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/user/getUserInfoByAccessToken", $body, $query, $extra);
     }
 
     /**
