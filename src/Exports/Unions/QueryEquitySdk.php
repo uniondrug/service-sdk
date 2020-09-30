@@ -405,4 +405,18 @@ class QueryEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/equity/issue/equityStatusList", $body, $query, $extra);
     }
+
+    /**
+     * 查询账户下未激活的兑换码列表
+     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityCardIssueWideEsController/accountRedeemCodeListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function accountRedeemCodeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/equity/issue/accountRedeemCodeList", $body, $query, $extra);
+    }
+
 }
