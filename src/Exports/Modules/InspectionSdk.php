@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-30
- * @time   Wed, 30 Sep 2020 18:28:43 +0800
+ * @date   2020-10-08
+ * @time   Thu, 08 Oct 2020 14:40:22 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -368,6 +368,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 绑定DTU设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/bindDtuAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceBindDtu($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/dtu/bind", $body, $query, $extra);
+    }
+
+    /**
      * 绑定仁科环境设备
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/bindRenkeAction.md
      * @param array|object $body 入参类型
@@ -381,6 +394,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 禁用DTU设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/disableDtuAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceDisableDtu($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/dtu/disable", $body, $query, $extra);
+    }
+
+    /**
      * 禁用仁科环境设备
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/disableRenkeAction.md
      * @param array|object $body 入参类型
@@ -391,6 +417,32 @@ class InspectionSdk extends SdkBase
     public function deviceDisableRenke($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/device/renke/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 解绑DTU设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/unbindDtuAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceDtuRenke($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/dtu/unbind", $body, $query, $extra);
+    }
+
+    /**
+     * 启用DTU设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/enableDtuAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceEnableDtu($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/dtu/enable", $body, $query, $extra);
     }
 
     /**
@@ -1197,6 +1249,84 @@ class InspectionSdk extends SdkBase
     public function mapRecommendedDispatchList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/dispatch/mapRecommended", $body, $query, $extra);
+    }
+
+    /**
+     * 修改RFID数据
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MedicalController/modifyRfidEpcAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function medicalModifyRfidEpc($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/medical/rfidepc/modify", $body, $query, $extra);
+    }
+
+    /**
+     * 护士箱列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MedicalController/getNurseBoxListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function medicalNurseBoxList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/medical/nursebox/list", $body, $query, $extra);
+    }
+
+    /**
+     * RFID物料列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MedicalController/getRfidListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function medicalRfidList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/medical/rfid/list", $body, $query, $extra);
+    }
+
+    /**
+     * 保存护士箱
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MedicalController/saveNurseBoxAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function medicalSaveNurseBox($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/medical/nursebox/save", $body, $query, $extra);
+    }
+
+    /**
+     * 保存医废桶
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MedicalController/saveWasteBarrelsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function medicalSaveWasteBarrels($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/medical/wastebarrels/save", $body, $query, $extra);
+    }
+
+    /**
+     * 医废桶列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MedicalController/getWasteBarrelsListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function medicalWasteBarrelsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/medical/wastebarrels/list", $body, $query, $extra);
     }
 
     /**
