@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-17
- * @time   Tue, 17 Mar 2020 17:05:20 +0800
+ * @date   2020-10-10
+ * @time   Sat, 10 Oct 2020 17:18:41 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -31,761 +31,912 @@ class PackageSdk extends SdkBase
 
     /**
      * 批量获取增值服务对应的描述内容
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/ExplainController/ContentsAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/ExplainController/ContentsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function explainContents($body)
+    public function explainContents($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/explain/contents", $body);
+        return $this->restful("POST", "/explain/contents", $body, $query, $extra);
     }
 
     /**
      * 通过保障iD 获取保障描述
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/ExplainController/getByGuaranteeAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/ExplainController/getByGuaranteeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function explainGetByGuaranteeId($body)
+    public function explainGetByGuaranteeId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/explain/guaranteeid", $body);
+        return $this->restful("POST", "/explain/guaranteeid", $body, $query, $extra);
     }
 
     /**
      * 批量获取增值服务对应的说明
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/ExplainController/NamesAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/ExplainController/NamesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function explainNames($body)
+    public function explainNames($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/explain/names", $body);
+        return $this->restful("POST", "/explain/names", $body, $query, $extra);
     }
 
     /**
      * 根据增值服务ID 获取增值服务详情
      * 包括关联的保障信息和权益信息
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getDetail($body)
+    public function getDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/detail", $body);
+        return $this->restful("POST", "/package/detail", $body, $query, $extra);
     }
 
     /**
      * 获取最大编号
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/maxCodeAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/maxCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getMaxGuaranteeCode($body)
+    public function getMaxGuaranteeCode($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/max/code", $body);
+        return $this->restful("POST", "/guarantees/max/code", $body, $query, $extra);
     }
 
     /**
      * 获取最大编号
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/maxCodeAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/maxCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getMaxTagCode($body)
+    public function getMaxTagCode($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tags/max/code", $body);
+        return $this->restful("POST", "/tags/max/code", $body, $query, $extra);
     }
 
     /**
      * 检查保障名称是否存在
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/checkNameAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/checkNameAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function guaranteesCheckGuaranteeName($body)
+    public function guaranteesCheckGuaranteeName($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/check/guaranteeName", $body);
+        return $this->restful("POST", "/guarantees/check/guaranteeName", $body, $query, $extra);
     }
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function guaranteesCreate($body)
+    public function guaranteesCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/create", $body);
+        return $this->restful("POST", "/guarantees/create", $body, $query, $extra);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function guaranteesDetail($body)
+    public function guaranteesDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/detail", $body);
+        return $this->restful("POST", "/guarantees/detail", $body, $query, $extra);
     }
 
     /**
      * 导出sql
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/exportSqlAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/exportSqlAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function guaranteesExportSql($body)
+    public function guaranteesExportSql($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/export/sql", $body);
+        return $this->restful("POST", "/guarantees/export/sql", $body, $query, $extra);
     }
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/pagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function guaranteesPaging($body)
+    public function guaranteesPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/paging", $body);
+        return $this->restful("POST", "/guarantees/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesSpecsController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteesSpecsDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteesSpecs/detail", $body, $query, $extra);
     }
 
     /**
      * 统计保障总额
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/sumAmountAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/sumAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function guaranteesSumAmount($body)
+    public function guaranteesSumAmount($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/sum/amount", $body);
+        return $this->restful("POST", "/guarantees/sum/amount", $body, $query, $extra);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesController/updateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function guaranteesUpdate($body)
+    public function guaranteesUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/update", $body);
+        return $this->restful("POST", "/guarantees/update", $body, $query, $extra);
     }
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/LogsController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logsCreate($body)
+    public function logsCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/logs/create", $body);
+        return $this->restful("POST", "/logs/create", $body, $query, $extra);
     }
 
     /**
      * 删除
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/LogsController/deleteAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logsDelete($body)
+    public function logsDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/logs/delete", $body);
+        return $this->restful("POST", "/logs/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/LogsController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logsDetail($body)
+    public function logsDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/logs/detail", $body);
+        return $this->restful("POST", "/logs/detail", $body, $query, $extra);
     }
 
     /**
      * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/LogsController/listingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logsListing($body)
+    public function logsListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/logs/listing", $body);
+        return $this->restful("POST", "/logs/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/LogsController/pagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logsPaging($body)
+    public function logsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/logs/paging", $body);
+        return $this->restful("POST", "/logs/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/LogsController/updateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logsUpdate($body)
+    public function logsUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/logs/update", $body);
+        return $this->restful("POST", "/logs/update", $body, $query, $extra);
     }
 
     /**
      * 老表增值服务列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/Old/OldPackageController/listingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/Old/OldPackageController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function oldPackageListing($body)
+    public function oldPackageListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/old/package/listing", $body);
+        return $this->restful("POST", "/old/package/listing", $body, $query, $extra);
     }
 
     /**
      * 老表增值服务分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/Old/OldPackageController/pagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/Old/OldPackageController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function oldPackagePaging($body)
+    public function oldPackagePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/old/package/paging", $body);
+        return $this->restful("POST", "/old/package/paging", $body, $query, $extra);
     }
 
     /**
      * 添加风险保障分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/addsPagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/addsPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageAddsPaging($body)
+    public function packageAddsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/addsPaging", $body);
+        return $this->restful("POST", "/packageGuarantee/addsPaging", $body, $query, $extra);
     }
 
     /**
      * 新增产品
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageCreate($body)
+    public function packageCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/create", $body);
+        return $this->restful("POST", "/package/create", $body, $query, $extra);
     }
 
     /**
      * 产品状态关闭
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/disableStatusAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/disableStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageDisableStatus($body)
+    public function packageDisableStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/disableStatus", $body);
+        return $this->restful("POST", "/package/disableStatus", $body, $query, $extra);
     }
 
     /**
      * 产品状态开启
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/enableStatusAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/enableStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageEnableStatus($body)
+    public function packageEnableStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/enableStatus", $body);
+        return $this->restful("POST", "/package/enableStatus", $body, $query, $extra);
     }
 
     /**
      * 导出
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/exportAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/exportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageExport($body)
+    public function packageExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/export", $body);
+        return $this->restful("POST", "/package/export", $body, $query, $extra);
     }
 
     /**
      * 增值服务对应的权益和保障相关信息
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getListAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGetDetailList($body)
+    public function packageGetDetailList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/getDetailList", $body);
+        return $this->restful("POST", "/package/getDetailList", $body, $query, $extra);
     }
 
     /**
      * 获取分组关联ID
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getGroupIdAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getGroupIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGetGroupId($body)
+    public function packageGetGroupId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/getGroupId", $body);
+        return $this->restful("POST", "/package/getGroupId", $body, $query, $extra);
     }
 
     /**
      * 获取保障
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getGuaranteeIdAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getGuaranteeIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGetGuaranteeId($body)
+    public function packageGetGuaranteeId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/getGuaranteeId", $body);
+        return $this->restful("POST", "/package/getGuaranteeId", $body, $query, $extra);
     }
 
     /**
      * 产品编号单条信息查询
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getPackAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGetPack($body)
+    public function packageGetPack($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/getPack", $body);
+        return $this->restful("POST", "/package/getPack", $body, $query, $extra);
     }
 
     /**
      * 产品ID单条信息查询
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getPackIdAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getPackIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGetPackId($body)
+    public function packageGetPackId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/getPackId", $body);
+        return $this->restful("POST", "/package/getPackId", $body, $query, $extra);
     }
 
     /**
      * 获取标签
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/getTagsAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getTagsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGetTags($body)
+    public function packageGetTags($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/getTags", $body);
+        return $this->restful("POST", "/package/getTags", $body, $query, $extra);
     }
 
     /**
      * 新增集合
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/addsAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/addsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGroupAdds($body)
+    public function packageGroupAdds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/adds", $body);
+        return $this->restful("POST", "/packageGroup/adds", $body, $query, $extra);
     }
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGroupCreate($body)
+    public function packageGroupCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/create", $body);
+        return $this->restful("POST", "/packageGroup/create", $body, $query, $extra);
     }
 
     /**
      * 删除
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/deleteAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGroupDelete($body)
+    public function packageGroupDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/delete", $body);
+        return $this->restful("POST", "/packageGroup/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGroupDetail($body)
+    public function packageGroupDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/detail", $body);
+        return $this->restful("POST", "/packageGroup/detail", $body, $query, $extra);
     }
 
     /**
      * 全部列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/listingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGroupListing($body)
+    public function packageGroupListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/listing", $body);
+        return $this->restful("POST", "/packageGroup/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/pagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGroupPaging($body)
+    public function packageGroupPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/paging", $body);
+        return $this->restful("POST", "/packageGroup/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/updateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGroupUpdate($body)
+    public function packageGroupUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/update", $body);
+        return $this->restful("POST", "/packageGroup/update", $body, $query, $extra);
     }
 
     /**
      * 新增集合
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/addsAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/addsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeAdds($body)
+    public function packageGuaranteeAdds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/adds", $body);
+        return $this->restful("POST", "/packageGuarantee/adds", $body, $query, $extra);
     }
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeCreate($body)
+    public function packageGuaranteeCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/create", $body);
+        return $this->restful("POST", "/packageGuarantee/create", $body, $query, $extra);
     }
 
     /**
      * 删除
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/deleteAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeDelete($body)
+    public function packageGuaranteeDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/delete", $body);
+        return $this->restful("POST", "/packageGuarantee/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeDetail($body)
+    public function packageGuaranteeDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/detail", $body);
+        return $this->restful("POST", "/packageGuarantee/detail", $body, $query, $extra);
     }
 
     /**
      * 获取保障有效期开始时间和结束时间
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/getAvailableDateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/getAvailableDateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeGetAvailableDate($body)
+    public function packageGuaranteeGetAvailableDate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/getAvailableDate", $body);
+        return $this->restful("POST", "/packageGuarantee/getAvailableDate", $body, $query, $extra);
     }
 
     /**
      * 批量获取增值服务对应的保障描述名称
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/getPackageGuaranteeExplainAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/getPackageGuaranteeExplainAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeGetPackageGuaranteeExplain($body)
+    public function packageGuaranteeGetPackageGuaranteeExplain($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/guarantee/explains", $body);
+        return $this->restful("POST", "/packageGuarantee/guarantee/explains", $body, $query, $extra);
     }
 
     /**
      * 获取增值服务对应的保障描述详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/getPackageGuaranteeExplainDetailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/getPackageGuaranteeExplainDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeGetPackageGuaranteeExplainDetail($body)
+    public function packageGuaranteeGetPackageGuaranteeExplainDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/guarantee/explain/detail", $body);
+        return $this->restful("POST", "/packageGuarantee/guarantee/explain/detail", $body, $query, $extra);
     }
 
     /**
      * 全部列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/listingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeListing($body)
+    public function packageGuaranteeListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/listing", $body);
+        return $this->restful("POST", "/packageGuarantee/listing", $body, $query, $extra);
     }
 
     /**
      * 风险保障分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/pagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteePaging($body)
+    public function packageGuaranteePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/paging", $body);
+        return $this->restful("POST", "/packageGuarantee/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGuaranteeController/updateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageGuaranteeUpdate($body)
+    public function packageGuaranteeUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGuarantee/update", $body);
+        return $this->restful("POST", "/packageGuarantee/update", $body, $query, $extra);
     }
 
     /**
      * 产品信息分页查询查询
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/packPagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/packPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packagePackPaging($body)
+    public function packagePackPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/packPaging", $body);
+        return $this->restful("POST", "/package/packPaging", $body, $query, $extra);
     }
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramCreate($body)
+    public function packageProgramCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/create", $body);
+        return $this->restful("POST", "/packageProgram/create", $body, $query, $extra);
     }
 
     /**
      * 删除
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/deleteAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramDelete($body)
+    public function packageProgramDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/delete", $body);
+        return $this->restful("POST", "/packageProgram/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramDetail($body)
+    public function packageProgramDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/detail", $body);
+        return $this->restful("POST", "/packageProgram/detail", $body, $query, $extra);
     }
 
     /**
      * 禁用用增值服务方案
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/disableAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramDisable($body)
+    public function packageProgramDisable($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/disable", $body);
+        return $this->restful("POST", "/packageProgram/disable", $body, $query, $extra);
     }
 
     /**
      * 启用增值服务方案
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/enableAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramEnable($body)
+    public function packageProgramEnable($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/enable", $body);
+        return $this->restful("POST", "/packageProgram/enable", $body, $query, $extra);
     }
 
     /**
      * 全部列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/listingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramListing($body)
+    public function packageProgramListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/listing", $body);
+        return $this->restful("POST", "/packageProgram/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/pagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramPaging($body)
+    public function packageProgramPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/paging", $body);
+        return $this->restful("POST", "/packageProgram/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageProgramController/updateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageProgramUpdate($body)
+    public function packageProgramUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageProgram/update", $body);
+        return $this->restful("POST", "/packageProgram/update", $body, $query, $extra);
     }
 
     /**
      * 产品信息修改
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/updateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageUpdate($body)
+    public function packageUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/update", $body);
+        return $this->restful("POST", "/package/update", $body, $query, $extra);
     }
 
     /**
      * 修改权益、保障金额
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/updateNumAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/updateNumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageUpdateNum($body)
+    public function packageUpdateNum($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/updateNum", $body);
+        return $this->restful("POST", "/package/updateNum", $body, $query, $extra);
     }
 
     /**
      * 更新标签
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageController/updateTagsAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/updateTagsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function packageUpdateTags($body)
+    public function packageUpdateTags($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/package/updateTags", $body);
+        return $this->restful("POST", "/package/updateTags", $body, $query, $extra);
     }
 
     /**
      * 关闭即买即用
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/readyToUseCloseAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/readyToUseCloseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function ReadyToUseClose($body)
+    public function ReadyToUseClose($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/readytouseclose", $body);
+        return $this->restful("POST", "/packageGroup/readytouseclose", $body, $query, $extra);
     }
 
     /**
      * 开启即买即用
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/PackageGroupController/readyToUseOpenAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/readyToUseOpenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function ReadyToUseOpen($body)
+    public function ReadyToUseOpen($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/packageGroup/readytouseopen", $body);
+        return $this->restful("POST", "/packageGroup/readytouseopen", $body, $query, $extra);
     }
 
     /**
      * 移除标签下产品列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/removePackageAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/removePackageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function removeTagPackages($body)
+    public function removeTagPackages($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tags/remove/package", $body);
+        return $this->restful("POST", "/tags/remove/package", $body, $query, $extra);
     }
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tagsCreate($body)
+    public function tagsCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tags/create", $body);
+        return $this->restful("POST", "/tags/create", $body, $query, $extra);
     }
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tagsDetail($body)
+    public function tagsDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tags/detail", $body);
+        return $this->restful("POST", "/tags/detail", $body, $query, $extra);
     }
 
     /**
      * 获取产品列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/packageAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/packageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tagsPackage($body)
+    public function tagsPackage($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tags/package", $body);
+        return $this->restful("POST", "/tags/package", $body, $query, $extra);
     }
 
     /**
      * 树列表
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/treesAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/treesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tagsTree($body)
+    public function tagsTree($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tags/tree", $body);
+        return $this->restful("POST", "/tags/tree", $body, $query, $extra);
     }
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/TagsController/updateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tagsUpdate($body)
+    public function tagsUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tags/update", $body);
+        return $this->restful("POST", "/tags/update", $body, $query, $extra);
     }
 }
