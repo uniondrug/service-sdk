@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-08
- * @time   Thu, 08 Oct 2020 14:40:22 +0800
+ * @date   2020-10-10
+ * @time   Sat, 10 Oct 2020 10:33:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -664,6 +664,19 @@ class InspectionSdk extends SdkBase
     public function getHospitalSecret($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/hospital/getsecret", $body, $query, $extra);
+    }
+
+    /**
+     * 查询商户订单信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Openapi/OrderController/getInfoByMerchantOrderNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getInfoByMerchantOrderNoOpenapi($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/openapi/order/getInfoByMerchantOrderNo", $body, $query, $extra);
     }
 
     /**
