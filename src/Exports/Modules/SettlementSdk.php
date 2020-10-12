@@ -4134,13 +4134,52 @@ class SettlementSdk extends SdkBase
     /**
      * 不分页列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function businessSingleUnitList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/businessSingleUnit/businessSingleUnitList", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyVipController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyVip/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyVipController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyVip/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyVipController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyVip/update", $body, $query, $extra);
     }
 }
