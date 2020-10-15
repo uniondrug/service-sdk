@@ -278,4 +278,17 @@ class CustomerserviceSdk extends SdkBase
     {
         return $this->restful("POST", "/workorder/paging", $body, $query, $extra);
     }
+
+    /**
+     * mbs撤回工单
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/WorkOrderController/recallAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workOrderRecall($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workorder/recall", $body, $query, $extra);
+    }
 }
