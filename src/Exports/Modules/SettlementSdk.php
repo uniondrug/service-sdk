@@ -749,6 +749,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 保司开票信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/editAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function insurerInvoiceInfoDetail($body)
+    {
+        return $this->restful("POST", "/insurerInvoiceInfo/detail", $body);
+    }
+
+    /**
      * 导出商品清单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/exportBillGoodsListAction.md
      * @param $body
