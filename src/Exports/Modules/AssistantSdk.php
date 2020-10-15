@@ -2700,4 +2700,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/businessStatistic/userCustomerCount", $body, $query, $extra);
     }
+
+    /**
+     * 业绩排行
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/BusinessStatisticController/userAchievementListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function businessStatisticUserAchievementList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessStatistic/userAchievementList", $body, $query, $extra);
+    }
 }
