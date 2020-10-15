@@ -1637,6 +1637,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 开启在线开票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function organizeAccountEnableOnlineInvoice($body)
+    {
+        return $this->restful("POST", "/organizeAccount/enableOnlineInvoice", $body);
+    }
+
+    /**
      * 切换选中
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateCheckedAction.md
      * @param array|object $body  入参类型
