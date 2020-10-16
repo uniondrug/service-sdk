@@ -1523,4 +1523,43 @@ class CompensateSdk extends SdkBase
     {
         return $this->restful("POST", "/worker/workerInfo", $body, $query, $extra);
     }
+
+    /**
+     * 创建批次
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createBatchHandle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/create", $body, $query, $extra);
+    }
+
+    /**
+     * 更新批次
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateBatchHandle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/update", $body, $query, $extra);
+    }
+
+    /**
+     * 批次详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchHandleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/detail", $body, $query, $extra);
+    }
 }
