@@ -4217,4 +4217,17 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/orderGoods/updateTaxRate", $body, $query, $extra);
     }
+
+    /**
+     * 根据核算单位id批量查询
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/listByUnitIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountListByUnitIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/listByUnitIds", $body, $query, $extra);
+    }
 }
