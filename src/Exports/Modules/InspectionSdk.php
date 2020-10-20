@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-10-20
- * @time   Tue, 20 Oct 2020 17:18:15 +0800
+ * @time   Tue, 20 Oct 2020 21:44:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -326,6 +326,19 @@ class InspectionSdk extends SdkBase
     public function customerOrderList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/customerlist", $body, $query, $extra);
+    }
+
+    /**
+     * 刷新用户信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/refreshCustomerTokenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function customerRefreshToken($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/customer/refresh/token", $body, $query, $extra);
     }
 
     /**
