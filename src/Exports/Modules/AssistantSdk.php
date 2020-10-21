@@ -2739,4 +2739,69 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/businessStatistic/userAchievementDetail", $body, $query, $extra);
     }
+
+    /**
+     * 发行权益
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalEquityController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalEquityCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalEquity/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新建项目
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalProjectController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalProject/create", $body, $query, $extra);
+    }
+
+    /**
+     * 项目提额
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalProjectIncreaseQuotaController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectIncreaseQuotaCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalProjectIncreaseQuota/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增品牌连锁
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalBrandChainController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalBrandChainCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalBrandChain/create", $body, $query, $extra);
+    }
+
+    /**
+     * 保险公司入驻
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalInsuranceCompanyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalInsuranceCompanyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalInsuranceCompany/create", $body, $query, $extra);
+    }
 }
