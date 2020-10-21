@@ -278,6 +278,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 获取用户对应项目
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/projectIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userProjectIds($body)
+    {
+        return $this->restful("POST", "/users/projectIds", $body);
+    }
+
+    /**
      * 竞标系统通过商户ID获取对应城市经理信息
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/infoAction.md
      * @param array $body 入参类型
