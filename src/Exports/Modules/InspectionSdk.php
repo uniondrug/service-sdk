@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-10
- * @time   Sat, 10 Oct 2020 10:33:59 +0800
+ * @date   2020-10-21
+ * @time   Wed, 21 Oct 2020 11:39:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -329,6 +329,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 刷新用户信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/LoginController/refreshCustomerTokenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function customerRefreshToken($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/customer/refresh/token", $body, $query, $extra);
+    }
+
+    /**
      * 检测注意事项管理
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/DetectionInfoController/saveAttentionAction.md
      * @param array|object $body 入参类型
@@ -349,9 +362,22 @@ class InspectionSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function detectionScheduleSave($body, $query = null, $extra = null)
+    public function detectionScheduleRecord($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/detection/schedule/record", $body, $query, $extra);
+    }
+
+    /**
+     * 检测进度文案管理
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/DetectionInfoController/saveScheduleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function detectionScheduleSave($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/detection/schedule/save", $body, $query, $extra);
     }
 
     /**
@@ -1002,6 +1028,19 @@ class InspectionSdk extends SdkBase
     public function informationWasteTra($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/information/line/waste/trajectory", $body, $query, $extra);
+    }
+
+    /**
+     * 预约地址初始化
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CityController/initializeCityInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function initializeCityCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/city/citycode", $body, $query, $extra);
     }
 
     /**
