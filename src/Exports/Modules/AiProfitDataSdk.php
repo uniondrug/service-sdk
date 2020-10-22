@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-21
- * @time   Wed, 21 Oct 2020 15:36:09 +0800
+ * @date   2020-10-22
+ * @time   Thu, 22 Oct 2020 15:24:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1080,6 +1080,19 @@ class AiProfitDataSdk extends SdkBase
     public function monthDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/pk/monthDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据连锁code获取可以报名的普惠活动列表
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ActivityController/newProfitListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function newProfitList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/newProfitList", $body, $query, $extra);
     }
 
     /**
