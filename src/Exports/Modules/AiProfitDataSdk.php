@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-22
- * @time   Thu, 22 Oct 2020 15:24:10 +0800
+ * @date   2020-10-26
+ * @time   Mon, 26 Oct 2020 16:01:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -313,6 +313,19 @@ class AiProfitDataSdk extends SdkBase
     public function contactCheck($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/contact/check", $body, $query, $extra);
+    }
+
+    /**
+     * 新版智盈活动报名
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/contactCreateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function contactCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contact/contactCreate", $body, $query, $extra);
     }
 
     /**
@@ -1483,6 +1496,19 @@ class AiProfitDataSdk extends SdkBase
     public function storeTask($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/task", $body, $query, $extra);
+    }
+
+    /**
+     * 普惠活动补贴停止
+     * @link https://uniondrug.coding.net/p/module.data.aiProfit/git/blob/development/docs/api/ContactController/subsidyStopAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function subsidyStop($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contact/subsidyStop", $body, $query, $extra);
     }
 
     /**
