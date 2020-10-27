@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-10-27
- * @time   Tue, 27 Oct 2020 16:23:15 +0800
+ * @time   Tue, 27 Oct 2020 17:44:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -250,6 +250,19 @@ class MapSdk extends SdkBase
     public function partnerOrganIdSearch($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/amap/data/partnerorganidsearch", $body, $query, $extra);
+    }
+
+    /**
+     * pio查询
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/placeTextAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function placeText($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/amap/data/placetext", $body, $query, $extra);
     }
 
     /**
