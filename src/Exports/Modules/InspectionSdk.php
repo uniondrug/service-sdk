@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-21
- * @time   Wed, 21 Oct 2020 11:39:48 +0800
+ * @date   2020-10-27
+ * @time   Tue, 27 Oct 2020 17:50:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -446,19 +446,6 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 解绑DTU设备
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/unbindDtuAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function deviceDtuRenke($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/device/dtu/unbind", $body, $query, $extra);
-    }
-
-    /**
      * 启用DTU设备
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/enableDtuAction.md
      * @param array|object $body 入参类型
@@ -482,6 +469,19 @@ class InspectionSdk extends SdkBase
     public function deviceEnableRenke($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/device/renke/enable", $body, $query, $extra);
+    }
+
+    /**
+     * 解绑DTU设备
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/DeviceController/unbindDtuAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deviceUnbindDtu($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/device/dtu/unbind", $body, $query, $extra);
     }
 
     /**
