@@ -56,6 +56,32 @@ class PsDstoreCartSdk extends SdkBase
     }
 
     /**
+     * 购物车列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/CartRecordsController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cartRecordsPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cart/records/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 使其列表展示
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/CartRecordsController/showAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cartRecordsShow($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cart/records/show", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/CartRecordsController/updateAction.md
      * @param array|object $body 入参类型
