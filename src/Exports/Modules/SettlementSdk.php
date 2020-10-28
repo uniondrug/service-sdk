@@ -749,6 +749,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 保司开票信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/editAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function insurerInvoiceInfoDetail($body)
+    {
+        return $this->restful("POST", "/insurerInvoiceInfo/detail", $body);
+    }
+
+    /**
      * 导出商品清单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/exportBillGoodsListAction.md
      * @param $body
@@ -1634,6 +1645,17 @@ class SettlementSdk extends SdkBase
     public function organizeAccountUpdateOnlineInvoice($body)
     {
         return $this->restful("POST", "/organizeAccount/updateOnlineInvoice", $body);
+    }
+
+    /**
+     * 开启在线开票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAccountController/updateAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function organizeAccountEnableOnlineInvoice($body)
+    {
+        return $this->restful("POST", "/organizeAccount/enableOnlineInvoice", $body);
     }
 
     /**
@@ -4119,6 +4141,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 对账单付款进度
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/summaryAddAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsPaymentProgress($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/paymentProgress", $body, $query, $extra);
+    }
+
+    /**
      * 设置付款单自动充值状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/setAutoRechargeStatusAction.md
      * @param array|object $body  入参类型
@@ -4129,5 +4164,96 @@ class SettlementSdk extends SdkBase
     public function capitalPaymentSetAutoRechargeStatus($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/capitalPayment/setAutoRechargeStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 不分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessSingleUnit/businessSingleUnitList", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyVipController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyVip/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyVipController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyVip/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyVipController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyVip/update", $body, $query, $extra);
+    }
+
+    /**
+     * 更新税率
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ApplyVipController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function orderGoodsUpdateTaxRate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/orderGoods/updateTaxRate", $body, $query, $extra);
+    }
+
+    /**
+     * 根据核算单位id批量查询
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/listByUnitIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountListByUnitIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/listByUnitIds", $body, $query, $extra);
+    }
+
+    /**
+     * 同步批次付款状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/syncDirectPaymentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function paymentSyncDirect($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/payment/syncDirectPayment", $body, $query, $extra);
     }
 }

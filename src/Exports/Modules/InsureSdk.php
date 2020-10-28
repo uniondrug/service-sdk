@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-11
- * @time   Fri, 11 Sep 2020 15:41:20 +0800
+ * @date   2020-10-09
+ * @time   Fri, 09 Oct 2020 13:34:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -40,6 +40,19 @@ class InsureSdk extends SdkBase
     public function addClosePolicyRecord($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policyrecord/addclose", $body, $query, $extra);
+    }
+
+    /**
+     * 开始投单
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureOnlineController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addInsureOnline($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insure/online/add", $body, $query, $extra);
     }
 
     /**
@@ -368,6 +381,19 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 核对赔案
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimOnlineRegistController/checkAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimOnlineRegistCheck($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/online/regist/check", $body, $query, $extra);
+    }
+
+    /**
      * 保单理赔属性
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/claimPropertyAction.md
      * @param array|object $body 入参类型
@@ -521,6 +547,19 @@ class InsureSdk extends SdkBase
     public function detailClaim($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/claim/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 查看统计
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimPoolStatisticController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function detailClaimPoolStatistic($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claimPoolStatistic/detail", $body, $query, $extra);
     }
 
     /**
@@ -872,6 +911,19 @@ class InsureSdk extends SdkBase
     public function infoBase($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/base/info", $body, $query, $extra);
+    }
+
+    /**
+     * 获取保单的保费和服务费计划
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/infoPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function infoPagingPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/infoPaging", $body, $query, $extra);
     }
 
     /**

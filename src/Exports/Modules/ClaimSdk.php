@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-03-02
- * @time   Mon, 02 Mar 2020 17:54:16 +0800
+ * @date   2020-10-22
+ * @time   Thu, 22 Oct 2020 11:28:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -31,331 +31,404 @@ class ClaimSdk extends SdkBase
 
     /**
      * 换新执行审核流程
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/claimAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/claimAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function changeAudit($body)
+    public function changeAudit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/change/audit", $body);
+        return $this->restful("POST", "/change/audit", $body, $query, $extra);
     }
 
     /**
      * 创建换新理赔申请
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function changeCreate($body)
+    public function changeCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/change/create", $body);
+        return $this->restful("POST", "/change/create", $body, $query, $extra);
     }
 
     /**
      * 获取换新理赔单详情
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function changeDetail($body)
+    public function changeDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/change/detail", $body);
+        return $this->restful("POST", "/change/detail", $body, $query, $extra);
     }
 
     /**
      * 保障ID获取换新理赔单详情
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/detail2Action.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/detail2Action.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function changeDetail2($body)
+    public function changeDetail2($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/change/detail2", $body);
+        return $this->restful("POST", "/change/detail2", $body, $query, $extra);
     }
 
     /**
      * 获取最新的理赔单详情
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/detailGuaranteeIdAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/detailGuaranteeIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function changeNewDetail($body)
+    public function changeNewDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/change/new/detail", $body);
+        return $this->restful("POST", "/change/new/detail", $body, $query, $extra);
     }
 
     /**
      * 换新拒绝审核流程
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ChangeController/rejectAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/rejectAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function changeReject($body)
+    public function changeReject($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/change/reject", $body);
+        return $this->restful("POST", "/change/reject", $body, $query, $extra);
     }
 
     /**
      * 材料待补充
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/additionalAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/additionalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimAdditional($body)
+    public function claimAdditional($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/additional", $body);
+        return $this->restful("POST", "/claim/additional", $body, $query, $extra);
     }
 
     /**
      * 管理员撤销理赔
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminCancelAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/adminCancelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimAdminCancel($body)
+    public function claimAdminCancel($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/admin/cancel", $body);
+        return $this->restful("POST", "/claim/admin/cancel", $body, $query, $extra);
     }
 
     /**
      * 后台理赔分页列表
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/adminPagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/adminPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimAdminPaging($body)
+    public function claimAdminPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/admin/paging", $body);
+        return $this->restful("POST", "/claim/admin/paging", $body, $query, $extra);
     }
 
     /**
      * 理赔材料回调sdk
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/callbackAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/callbackAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimCallBack($body)
+    public function claimCallBack($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/call/back", $body);
+        return $this->restful("POST", "/claim/call/back", $body, $query, $extra);
     }
 
     /**
      * 查询是否有理赔记录接口
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/checkHasRecordAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/checkHasRecordAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimCheckHasData($body)
+    public function claimCheckHasData($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/checkHasData", $body);
+        return $this->restful("POST", "/claim/checkHasData", $body, $query, $extra);
     }
 
     /**
      * 批量扣除（新）
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/claimBatchNewAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/claimBatchNewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimClaimNew($body)
+    public function claimClaimNew($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/claimNew", $body);
+        return $this->restful("POST", "/claim/claimNew", $body, $query, $extra);
     }
 
     /**
      * 批量扣除（老）
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/claimBatchOldAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/claimBatchOldAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimClaimOld($body)
+    public function claimClaimOld($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/claimOld", $body);
+        return $this->restful("POST", "/claim/claimOld", $body, $query, $extra);
     }
 
     /**
      * 待赔付
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/compensateAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/compensateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimCompensate($body)
+    public function claimCompensate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/compensate", $body);
+        return $this->restful("POST", "/claim/compensate", $body, $query, $extra);
     }
 
     /**
      * 发起理赔
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimCreate($body)
+    public function claimCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/create", $body);
+        return $this->restful("POST", "/claim/create", $body, $query, $extra);
     }
 
     /**
      * 理赔详情
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimDetail($body)
+    public function claimDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/detail", $body);
+        return $this->restful("POST", "/claim/detail", $body, $query, $extra);
     }
 
     /**
      * 理赔通过
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/finishAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/finishAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimFinish($body)
+    public function claimFinish($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/finish", $body);
+        return $this->restful("POST", "/claim/finish", $body, $query, $extra);
     }
 
     /**
      * 寿险批量冻结(创建理赔)
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/frozeForSxAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/frozeForSxAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimFrozeForSx($body)
+    public function claimFrozeForSx($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/claimFrozeForSx", $body);
+        return $this->restful("POST", "/claim/claimFrozeForSx", $body, $query, $extra);
     }
 
     /**
      * 查询流水号数据
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/getDataByOperatorAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/getDataByOperatorAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimGetOperatorNoData($body)
+    public function claimGetOperatorNoData($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/getOperatorNoData", $body);
+        return $this->restful("POST", "/claim/getOperatorNoData", $body, $query, $extra);
     }
 
     /**
      * 理赔日志记录列表
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimLogController/detailAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimLogController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimLogDetail($body)
+    public function claimLogDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/log/detail", $body);
+        return $this->restful("POST", "/claim/log/detail", $body, $query, $extra);
     }
 
     /**
      * 理赔材料补充接口
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimMaterialController/createAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimMaterialController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimMaterialCreate($body)
+    public function claimMaterialCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/material/create", $body);
+        return $this->restful("POST", "/claim/material/create", $body, $query, $extra);
     }
 
     /**
      * 用户端理赔分页列表
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/pagingAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimPaging($body)
+    public function claimPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/paging", $body);
+        return $this->restful("POST", "/claim/paging", $body, $query, $extra);
     }
 
     /**
      * 打款失败
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/payNoAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/payNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimPayNo($body)
+    public function claimPayNo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/pay/no", $body);
+        return $this->restful("POST", "/claim/pay/no", $body, $query, $extra);
+    }
+
+    /**
+     * 初审通过
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/preliminaryTrialAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimPreliminaryTrial($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/preliminaryTrial", $body, $query, $extra);
     }
 
     /**
      * 理赔拒绝
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/refusedAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/refusedAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimRefused($body)
+    public function claimRefused($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/refused", $body);
+        return $this->restful("POST", "/claim/refused", $body, $query, $extra);
     }
 
     /**
      * 寿险批量驳回新
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchNewAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/rejectBatchNewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimRejectNew($body)
+    public function claimRejectNew($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/rejectNew", $body);
+        return $this->restful("POST", "/claim/rejectNew", $body, $query, $extra);
     }
 
     /**
      * 寿险批量驳回老
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/rejectBatchAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/rejectBatchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimRejectOld($body)
+    public function claimRejectOld($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/claimRejectOld", $body);
+        return $this->restful("POST", "/claim/claimRejectOld", $body, $query, $extra);
     }
 
     /**
      * 用户撤销理赔
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/userCancelAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/userCancelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimUserCancel($body)
+    public function claimUserCancel($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/user/cancel", $body);
+        return $this->restful("POST", "/claim/user/cancel", $body, $query, $extra);
     }
 
     /**
      * 打款中
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/waitPayAction.md
-     * @param array $body 入参类型
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/waitPayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function claimWaitPay($body)
+    public function claimWaitPay($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/wait/pay", $body);
-    }
-
-    /**
-     * 修改理赔保单号
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/docs/api/ClaimController/policyNoAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function updatePolicyNo($body)
-    {
-        return $this->restful("POST", "/claim/policy/no", $body);
+        return $this->restful("POST", "/claim/wait/pay", $body, $query, $extra);
     }
 
     /**
      * 撤销TPA权益（内部使用）
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/RevocationEquityAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function revocationEquity($body)
+    public function revocationEquity($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/revocation/equity", $body);
+        return $this->restful("POST", "/claim/revocation/equity", $body, $query, $extra);
+    }
+
+    /**
+     * 修改理赔保单号
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/policyNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updatePolicyNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/policy/no", $body, $query, $extra);
     }
 }

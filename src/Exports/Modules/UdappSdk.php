@@ -32,781 +32,1105 @@ class UdappSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function advertisementCreate($body)
+    public function advertisementCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/advertisement/create", $body);
+        return $this->restful("POST", "/advertisement/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function advertisementDetail($body)
+    public function advertisementDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/advertisement/detail", $body);
+        return $this->restful("POST", "/advertisement/detail", $body, $query, $extra);
     }
 
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function advertisementListing($body)
+    public function advertisementListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/advertisement/listing", $body);
+        return $this->restful("POST", "/advertisement/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function advertisementPaging($body)
+    public function advertisementPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/advertisement/paging", $body);
+        return $this->restful("POST", "/advertisement/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AdvertisementController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function advertisementUpdate($body)
+    public function advertisementUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/advertisement/update", $body);
+        return $this->restful("POST", "/advertisement/update", $body, $query, $extra);
     }
 
     /**
      * 批量销毁
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/batchDestroyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantBatchDestroy($body)
+    public function assistantBatchDestroy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/batchDestroy", $body);
+        return $this->restful("POST", "/assistant/batchDestroy", $body, $query, $extra);
     }
 
     /**
      * 学习
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/completeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantComplete($body)
+    public function assistantComplete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/complete", $body);
+        return $this->restful("POST", "/assistant/complete", $body, $query, $extra);
     }
 
     /**
      * 创建店员
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantCreate($body)
+    public function assistantCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/create", $body);
+        return $this->restful("POST", "/assistant/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantDetail($body)
+    public function assistantDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/detail", $body);
+        return $this->restful("POST", "/assistant/detail", $body, $query, $extra);
     }
 
     /**
      * 冻结/解冻
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/freezeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantFreeze($body)
+    public function assistantFreeze($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/freeze", $body);
+        return $this->restful("POST", "/assistant/freeze", $body, $query, $extra);
     }
 
     /**
      * 获取门店店员列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantList($body)
+    public function assistantList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/list", $body);
+        return $this->restful("POST", "/assistant/list", $body, $query, $extra);
     }
 
     /**
      * 创建记录
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantOpenController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantOpenCreate($body)
+    public function assistantOpenCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistantOpen/create", $body);
+        return $this->restful("POST", "/assistantOpen/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantOpenController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantOpenDetail($body)
+    public function assistantOpenDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistantOpen/detail", $body);
+        return $this->restful("POST", "/assistantOpen/detail", $body, $query, $extra);
     }
 
     /**
      * 获取门店店员列表（分页）
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantPaging($body)
+    public function assistantPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/paging", $body);
+        return $this->restful("POST", "/assistant/paging", $body, $query, $extra);
     }
 
     /**
      * 获取门店店员数量
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeCountAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantStoreCount($body)
+    public function assistantStoreCount($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/storeCount", $body);
+        return $this->restful("POST", "/assistant/storeCount", $body, $query, $extra);
     }
 
     /**
      * 获取门店店长数据
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/storeRoleListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantStoreRoleList($body)
+    public function assistantStoreRoleList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/storeRoleList", $body);
+        return $this->restful("POST", "/assistant/storeRoleList", $body, $query, $extra);
     }
 
     /**
      * 同步店员
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/syncAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantSync($body)
+    public function assistantSync($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/sync", $body);
+        return $this->restful("POST", "/assistant/sync", $body, $query, $extra);
     }
 
     /**
      * 检验登录token
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/tokenCheckAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantTokenCheck($body)
+    public function assistantTokenCheck($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/tokenCheck", $body);
+        return $this->restful("POST", "/assistant/tokenCheck", $body, $query, $extra);
     }
 
     /**
      * 调店
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/transferAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantTransfer($body)
+    public function assistantTransfer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/transfer", $body);
+        return $this->restful("POST", "/assistant/transfer", $body, $query, $extra);
     }
 
     /**
      * 调店
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/transferListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantTransferList($body)
+    public function assistantTransferList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/transferList", $body);
+        return $this->restful("POST", "/assistant/transferList", $body, $query, $extra);
     }
 
     /**
      * 修改店员信息
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantUpdate($body)
+    public function assistantUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/update", $body);
+        return $this->restful("POST", "/assistant/update", $body, $query, $extra);
     }
 
     /**
      * 配置
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/cacheConfigAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function cacheConfig($body)
+    public function cacheConfig($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/cacheConfig", $body);
+        return $this->restful("POST", "/config/cacheConfig", $body, $query, $extra);
     }
 
     /**
      * editAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configEdit($body)
+    public function configEdit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/edit", $body);
+        return $this->restful("POST", "/config/edit", $body, $query, $extra);
     }
 
     /**
      * exportAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/exportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configExport($body)
+    public function configExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/export", $body);
+        return $this->restful("POST", "/config/export", $body, $query, $extra);
     }
 
     /**
      * idsAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/idsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configIds($body)
+    public function configIds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/ids", $body);
+        return $this->restful("POST", "/config/ids", $body, $query, $extra);
     }
 
     /**
      * listingAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configListing($body)
+    public function configListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/listing", $body);
+        return $this->restful("POST", "/config/listing", $body, $query, $extra);
     }
 
     /**
      * statusAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/statusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configStatus($body)
+    public function configStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/status", $body);
+        return $this->restful("POST", "/config/status", $body, $query, $extra);
     }
 
     /**
      * typePartnerStatusAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/typePartnerStatusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configTypePartnerStatus($body)
+    public function configTypePartnerStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/typePartnerStatus", $body);
+        return $this->restful("POST", "/config/typePartnerStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DownloadLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function downloadLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/downloadLog/create", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DownloadPageController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function downloadPageCreate($body)
+    public function downloadPageCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/downloadPage/create", $body);
+        return $this->restful("POST", "/downloadPage/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DownloadPageController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function downloadPageDetail($body)
+    public function downloadPageDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/downloadPage/detail", $body);
+        return $this->restful("POST", "/downloadPage/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpContentController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpContentCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/content/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpContentController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpContentDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/content/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpContentController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpContentDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/content/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpContentController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpContentPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/content/page", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpContentController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpContentUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/content/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpQuestionController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpQuestionCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/question/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpQuestionController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpQuestionDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/question/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpQuestionController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpQuestionDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/question/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpQuestionController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpQuestionListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/question/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpQuestionController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpQuestionPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/question/page", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/HelpQuestionController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function helpQuestionUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/help/question/update", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplateCreate($body)
+    public function marketingTemplateCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/create", $body);
+        return $this->restful("POST", "/marketingTemplate/create", $body, $query, $extra);
     }
 
     /**
      * 获取模版
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/defaultAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplateDefault($body)
+    public function marketingTemplateDefault($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/default", $body);
+        return $this->restful("POST", "/marketingTemplate/default", $body, $query, $extra);
     }
 
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplateDelete($body)
+    public function marketingTemplateDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/delete", $body);
+        return $this->restful("POST", "/marketingTemplate/delete", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplateDetail($body)
+    public function marketingTemplateDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/detail", $body);
+        return $this->restful("POST", "/marketingTemplate/detail", $body, $query, $extra);
     }
 
     /**
      * 下线
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/downAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplateDown($body)
+    public function marketingTemplateDown($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/down", $body);
+        return $this->restful("POST", "/marketingTemplate/down", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplatePaging($body)
+    public function marketingTemplatePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/paging", $body);
+        return $this->restful("POST", "/marketingTemplate/paging", $body, $query, $extra);
     }
 
     /**
      * 上线
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/upAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplateUp($body)
+    public function marketingTemplateUp($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/up", $body);
+        return $this->restful("POST", "/marketingTemplate/up", $body, $query, $extra);
     }
 
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MarketingTemplateController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function marketingTemplateUpdate($body)
+    public function marketingTemplateUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/marketingTemplate/update", $body);
+        return $this->restful("POST", "/marketingTemplate/update", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MessageController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function messageCreate($body)
+    public function messageCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/message/create", $body);
+        return $this->restful("POST", "/message/create", $body, $query, $extra);
     }
 
     /**
      * 创建
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pollCreate($body)
+    public function pollCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poll/create", $body);
+        return $this->restful("POST", "/poll/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pollDetail($body)
+    public function pollDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poll/detail", $body);
+        return $this->restful("POST", "/poll/detail", $body, $query, $extra);
     }
 
     /**
      * 修改状态
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PollController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pollUpdate($body)
+    public function pollUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poll/update", $body);
+        return $this->restful("POST", "/poll/update", $body, $query, $extra);
     }
 
     /**
      * 创建
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PrescriptionController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function prescriptionCreate($body)
+    public function prescriptionCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/prescription/create", $body);
+        return $this->restful("POST", "/prescription/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PrescriptionController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function prescriptionDetail($body)
+    public function prescriptionDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/prescription/detail", $body);
+        return $this->restful("POST", "/prescription/detail", $body, $query, $extra);
     }
 
     /**
      * 修改状态
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/PrescriptionController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function prescriptionUpdate($body)
+    public function prescriptionUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/prescription/update", $body);
+        return $this->restful("POST", "/prescription/update", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReleasesController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function releasesCreate($body)
+    public function releasesCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/releases/create", $body);
+        return $this->restful("POST", "/releases/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReleasesController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function releasesDetail($body)
+    public function releasesDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/releases/detail", $body);
+        return $this->restful("POST", "/releases/detail", $body, $query, $extra);
     }
 
     /**
      * app获取详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReleasesController/getReleasesAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function releasesGetReleases($body)
+    public function releasesGetReleases($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/releases/get/releases", $body);
+        return $this->restful("POST", "/releases/get/releases", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReleasesController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function releasesPaging($body)
+    public function releasesPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/releases/paging", $body);
+        return $this->restful("POST", "/releases/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReleasesController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function releasesUpdate($body)
+    public function releasesUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/releases/update", $body);
+        return $this->restful("POST", "/releases/update", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ReplyController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function replyCreate($body)
+    public function replyCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/reply/create", $body);
+        return $this->restful("POST", "/reply/create", $body, $query, $extra);
     }
 
     /**
      * 获取开启某个开关的所有连锁
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/statusOpenPartnerAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function statusOpenPartner($body)
+    public function statusOpenPartner($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/statusOpenPartner", $body);
+        return $this->restful("POST", "/config/statusOpenPartner", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function storeQrcodeCreate($body)
+    public function storeQrcodeCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeQrcode/create", $body);
+        return $this->restful("POST", "/storeQrcode/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function storeQrcodeDetail($body)
+    public function storeQrcodeDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeQrcode/detail", $body);
+        return $this->restful("POST", "/storeQrcode/detail", $body, $query, $extra);
     }
 
     /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/exportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function storeQrcodeExport($body)
+    public function storeQrcodeExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeQrcode/export", $body);
+        return $this->restful("POST", "/storeQrcode/export", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/StoreQrcodeController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function storeQrcodePaging($body)
+    public function storeQrcodePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/storeQrcode/paging", $body);
+        return $this->restful("POST", "/storeQrcode/paging", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/SuggestionController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function suggestionCreate($body)
+    public function suggestionCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/suggestion/create", $body);
+        return $this->restful("POST", "/suggestion/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/SuggestionController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function suggestionDetail($body)
+    public function suggestionDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/suggestion/detail", $body);
+        return $this->restful("POST", "/suggestion/detail", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/SuggestionController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function suggestionPaging($body)
+    public function suggestionPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/suggestion/paging", $body);
+        return $this->restful("POST", "/suggestion/paging", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function throwManageCreate($body)
+    public function throwManageCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/throwManage/create", $body);
+        return $this->restful("POST", "/throwManage/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function throwManageDetail($body)
+    public function throwManageDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/throwManage/detail", $body);
+        return $this->restful("POST", "/throwManage/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function throwManageListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/throwManage/listing", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function throwManagePaging($body)
+    public function throwManagePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/throwManage/paging", $body);
+        return $this->restful("POST", "/throwManage/paging", $body, $query, $extra);
     }
 
     /**
      * 更新
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowManageController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function throwManageUpdate($body)
+    public function throwManageUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/throwManage/update", $body);
+        return $this->restful("POST", "/throwManage/update", $body, $query, $extra);
     }
 
     /**
      * List列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowMerchantController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function throwMerchantList($body)
+    public function throwMerchantList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/throwMerchant/list", $body);
+        return $this->restful("POST", "/throwMerchant/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ThrowMerchantController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function throwMerchantPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/throwMerchant/paging", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TipsController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tipsCreate($body)
+    public function tipsCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tips/create", $body);
+        return $this->restful("POST", "/tips/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TipsController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tipsDetail($body)
+    public function tipsDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tips/detail", $body);
+        return $this->restful("POST", "/tips/detail", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TipsController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tipsPaging($body)
+    public function tipsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tips/paging", $body);
+        return $this->restful("POST", "/tips/paging", $body, $query, $extra);
     }
 
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TipsController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tipsUpdate($body)
+    public function tipsUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/tips/update", $body);
+        return $this->restful("POST", "/tips/update", $body, $query, $extra);
     }
 
     /**
      * 获取门店店员数量
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tokenCreate($body)
+    public function tokenCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/token/create", $body);
+        return $this->restful("POST", "/token/create", $body, $query, $extra);
     }
 
     /**
      * 获取门店店员数量
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tokenDetail($body)
+    public function tokenDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/token/detail", $body);
+        return $this->restful("POST", "/token/detail", $body, $query, $extra);
     }
 
     /**
      * 设置token过期
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/TokenController/expireAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function tokenExpire($body)
+    public function tokenExpire($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/token/expire", $body);
+        return $this->restful("POST", "/token/expire", $body, $query, $extra);
     }
 }

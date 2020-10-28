@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-18
- * @time   Sat, 18 Apr 2020 17:34:26 +0800
+ * @date   2020-10-13
+ * @time   Tue, 13 Oct 2020 11:43:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,781 +32,962 @@ class AiPushSdk extends SdkBase
     /**
      * JAVA调用 取消发放积分
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/cancelPointsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function cancelPoints($body)
+    public function cancelPoints($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/cancelPoints", $body);
+        return $this->restful("POST", "/poolRecords/cancelPoints", $body, $query, $extra);
     }
 
     /**
      * JAVA调用是否发放积分(预发)
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/issuePointsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function checkIssuePoints($body)
+    public function checkIssuePoints($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/checkIssuePoints", $body);
+        return $this->restful("POST", "/poolRecords/checkIssuePoints", $body, $query, $extra);
     }
 
     /**
      * 发放统计
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/countAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function count($body)
+    public function count($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/count", $body);
+        return $this->restful("POST", "/poolRecords/count", $body, $query, $extra);
     }
 
     /**
      * 近30天的红包折线图
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/redLineAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function dataRedLine($body)
+    public function dataRedLine($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/data/redLine", $body);
+        return $this->restful("POST", "/weiXin/data/redLine", $body, $query, $extra);
     }
 
     /**
      * 每日记录列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/dayListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function dayList($body)
+    public function dayList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/dayList", $body);
+        return $this->restful("POST", "/poolRecords/dayList", $body, $query, $extra);
     }
 
     /**
      * 从资金池里面扣除优惠券
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/decCouponsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function decCoupons($body)
+    public function decCoupons($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/decCoupons", $body);
+        return $this->restful("POST", "/poolRecords/decCoupons", $body, $query, $extra);
     }
 
     /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/exportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportPoolRecord($body)
+    public function exportPoolRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/exportRecord", $body);
+        return $this->restful("POST", "/poolRecords/exportRecord", $body, $query, $extra);
     }
 
     /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/exportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportSubOrder($body)
+    public function exportSubOrder($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/subOrderLog/exportSubOrder", $body);
+        return $this->restful("POST", "/subOrderLog/exportSubOrder", $body, $query, $extra);
     }
 
     /**
      * 根据方案ID和关联状态获取列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/getListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getListByPlanId($body)
+    public function getListByPlanId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planPartners/getListByPlanId", $body);
+        return $this->restful("POST", "/planPartners/getListByPlanId", $body, $query, $extra);
     }
 
     /**
      * 药店宝查看商品给店员发放积分数
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/getPointAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPoint($body)
+    public function getPoint($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/getPoint", $body);
+        return $this->restful("POST", "/plan/getPoint", $body, $query, $extra);
     }
 
     /**
      * 根据工业ID获取资金池信息
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/getPoolByOrganizationIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getPoolByOrganizationId($body)
+    public function getPoolByOrganizationId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rechargeLog/getPoolByOrganizationId", $body);
+        return $this->restful("POST", "/rechargeLog/getPoolByOrganizationId", $body, $query, $extra);
     }
 
     /**
      * 根据organizationId获取projectIds
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/getProjectIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getProjectId($body)
+    public function getProjectId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/data/getProjectId", $body);
+        return $this->restful("POST", "/weiXin/data/getProjectId", $body, $query, $extra);
     }
 
     /**
      * 根据organizationId获取getSchemeIds
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/getSchemeIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getSchemeId($body)
+    public function getSchemeId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/getSchemeId", $body);
+        return $this->restful("POST", "/weiXin/voucher/getSchemeId", $body, $query, $extra);
     }
 
     /**
      * 订单商品数据
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/goodsListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function goodsList($body)
+    public function goodsList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/goodsList", $body);
+        return $this->restful("POST", "/weiXin/voucher/goodsList", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function industryCashPoolingCreate($body)
+    public function industryCashPoolingCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/industryCashPooling/create", $body);
+        return $this->restful("POST", "/industryCashPooling/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function industryCashPoolingDetail($body)
+    public function industryCashPoolingDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/industryCashPooling/detail", $body);
+        return $this->restful("POST", "/industryCashPooling/detail", $body, $query, $extra);
     }
 
     /**
      * 资金池停用
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/disableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function industryCashPoolingDisable($body)
+    public function industryCashPoolingDisable($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/industryCashPooling/disable", $body);
+        return $this->restful("POST", "/industryCashPooling/disable", $body, $query, $extra);
     }
 
     /**
      * 资金池启用
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/enableRatioAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function industryCashPoolingEnable($body)
+    public function industryCashPoolingEnable($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/industryCashPooling/enable", $body);
+        return $this->restful("POST", "/industryCashPooling/enable", $body, $query, $extra);
     }
 
     /**
      * 修改服务费比例
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/modifyRatioAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function industryCashPoolingModifyRatio($body)
+    public function industryCashPoolingModifyRatio($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/industryCashPooling/modifyRatio", $body);
+        return $this->restful("POST", "/industryCashPooling/modifyRatio", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function industryCashPoolingPaging($body)
+    public function industryCashPoolingPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/industryCashPooling/paging", $body);
+        return $this->restful("POST", "/industryCashPooling/paging", $body, $query, $extra);
     }
 
     /**
      * 充值
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/IndustryCashPoolingController/rechargeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function industryCashPoolingRecharge($body)
+    public function industryCashPoolingRecharge($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/industryCashPooling/recharge", $body);
+        return $this->restful("POST", "/industryCashPooling/recharge", $body, $query, $extra);
+    }
+
+    /**
+     * 药店宝根据商品条形码和优惠券查询获得的积分
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/newPointAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function newPoint($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/plan/newPoint", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/OrderLogController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function orderLogCreate($body)
+    public function orderLogCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/orderLog/create", $body);
+        return $this->restful("POST", "/orderLog/create", $body, $query, $extra);
     }
 
     /**
      * 订单列表数据
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/orderPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function orderPaging($body)
+    public function orderPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/orderPaging", $body);
+        return $this->restful("POST", "/weiXin/voucher/orderPaging", $body, $query, $extra);
     }
 
     /**
      * 获取订单连锁
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/partnerListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function partnerList($body)
+    public function partnerList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/partnerList", $body);
+        return $this->restful("POST", "/weiXin/voucher/partnerList", $body, $query, $extra);
     }
 
     /**
      * 方案关联商户商品回调
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/createPlanCallbackAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planCallback($body)
+    public function planCallback($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/createCallback", $body);
+        return $this->restful("POST", "/plan/createCallback", $body, $query, $extra);
     }
 
     /**
      * 检查冲突
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/checkClashAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planCheckClash($body)
+    public function planCheckClash($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/checkClash", $body);
+        return $this->restful("POST", "/plan/checkClash", $body, $query, $extra);
     }
 
     /**
      * 方案冲突 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/clashPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planClashPaging($body)
+    public function planClashPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/clashPaging", $body);
+        return $this->restful("POST", "/plan/clashPaging", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planCreate($body)
+    public function planCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/create", $body);
+        return $this->restful("POST", "/plan/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planDetail($body)
+    public function planDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/detail", $body);
+        return $this->restful("POST", "/plan/detail", $body, $query, $extra);
     }
 
     /**
      * 方案停用
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/disableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planDisable($body)
+    public function planDisable($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/disable", $body);
+        return $this->restful("POST", "/plan/disable", $body, $query, $extra);
     }
 
     /**
      * 方案启用
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/enableRatioAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planEnable($body)
+    public function planEnable($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/enable", $body);
+        return $this->restful("POST", "/plan/enable", $body, $query, $extra);
     }
 
     /**
      * 销售明细分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SaleController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planGoodSalePaging($body)
+    public function planGoodSalePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/sale/paging", $body);
+        return $this->restful("POST", "/sale/paging", $body, $query, $extra);
     }
 
     /**
      * 商品销售折线图和店员积分柱形图
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsChartAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planGoodsChart($body)
+    public function planGoodsChart($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planGoods/goodsChart", $body);
+        return $this->restful("POST", "/planGoods/goodsChart", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planGoodsCreate($body)
+    public function planGoodsCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planGoods/create", $body);
+        return $this->restful("POST", "/planGoods/create", $body, $query, $extra);
     }
 
     /**
      * 方案移除商品
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/deleteGoodsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planGoodsDeleteOne($body)
+    public function planGoodsDeleteOne($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planGoods/deleteOne", $body);
+        return $this->restful("POST", "/planGoods/deleteOne", $body, $query, $extra);
     }
 
     /**
      * 方案关联商品列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planGoodsList($body)
+    public function planGoodsList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planGoods/list", $body);
+        return $this->restful("POST", "/planGoods/list", $body, $query, $extra);
     }
 
     /**
      * 商品销量占比
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanGoodsController/goodsPercentAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planGoodsPercent($body)
+    public function planGoodsPercent($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planGoods/goodsPercent", $body);
+        return $this->restful("POST", "/planGoods/goodsPercent", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planPaging($body)
+    public function planPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/paging", $body);
+        return $this->restful("POST", "/plan/paging", $body, $query, $extra);
     }
 
     /**
      * 添加方案关联连锁或者方案取消关联连锁
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planPartnerCreate($body)
+    public function planPartnerCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planPartners/create", $body);
+        return $this->restful("POST", "/planPartners/create", $body, $query, $extra);
     }
 
     /**
      * 智推方案关联的连锁列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanPartnersController/planPartnersPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planPartnerPaging($body)
+    public function planPartnerPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/planPartners/planPartnerPaging", $body);
+        return $this->restful("POST", "/planPartners/planPartnerPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 药店宝下单查询积分
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/planPointListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function planPointList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/plan/pointList", $body, $query, $extra);
     }
 
     /**
      * 编辑方案
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PlanController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function planUpdate($body)
+    public function planUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/plan/update", $body);
+        return $this->restful("POST", "/plan/update", $body, $query, $extra);
     }
 
     /**
      * 流水新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function poolRecordsCreate($body)
+    public function poolRecordsCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/create", $body);
+        return $this->restful("POST", "/poolRecords/create", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function poolRecordsPaging($body)
+    public function poolRecordsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/paging", $body);
+        return $this->restful("POST", "/poolRecords/paging", $body, $query, $extra);
     }
 
     /**
      * 流水类型
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/typeListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function poolRecordsTypeList($body)
+    public function poolRecordsTypeList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/typeList", $body);
+        return $this->restful("POST", "/poolRecords/typeList", $body, $query, $extra);
+    }
+
+    /**
+     * 接收佣金发放的通知的回调地址
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/receivePointSendAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function receivePointSend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolRecords/receivePointSend", $body, $query, $extra);
     }
 
     /**
      * 充值撤销
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/cancelAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function rechargeCancel($body)
+    public function rechargeCancel($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rechargeLog/cancel", $body);
+        return $this->restful("POST", "/rechargeLog/cancel", $body, $query, $extra);
     }
 
     /**
      * 充值记录审核
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function rechargeExamine($body)
+    public function rechargeExamine($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rechargeLog/examine", $body);
+        return $this->restful("POST", "/rechargeLog/examine", $body, $query, $extra);
     }
 
     /**
      * 充值记录审核导出sql
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/examineSqlAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function rechargeExamineSql($body)
+    public function rechargeExamineSql($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rechargeLog/exportExamine", $body);
+        return $this->restful("POST", "/rechargeLog/exportExamine", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function rechargeLogCreate($body)
+    public function rechargeLogCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rechargeLog/create", $body);
+        return $this->restful("POST", "/rechargeLog/create", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RechargeLogController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function rechargeLogPaging($body)
+    public function rechargeLogPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rechargeLog/paging", $body);
+        return $this->restful("POST", "/rechargeLog/paging", $body, $query, $extra);
     }
 
     /**
      * 红包数据分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/getRedDataPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function redDataPaging($body)
+    public function redDataPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/data/getRedDataPaging", $body);
+        return $this->restful("POST", "/weiXin/data/getRedDataPaging", $body, $query, $extra);
     }
 
     /**
      * 已消费的权益红包总额
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/DataController/redUsedAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function redUsedData($body)
+    public function redUsedData($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/data/redUsed", $body);
+        return $this->restful("POST", "/weiXin/data/redUsed", $body, $query, $extra);
     }
 
     /**
      * 退单的逻辑处理
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RefundLogController/cancelAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function refundLogCancel($body)
+    public function refundLogCancel($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/refundLog/cancel", $body);
+        return $this->restful("POST", "/refundLog/cancel", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RefundLogController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function refundLogCreate($body)
+    public function refundLogCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/refundLog/create", $body);
+        return $this->restful("POST", "/refundLog/create", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RelateLogController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function relateLogCreate($body)
+    public function relateLogCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/relateLog/create", $body);
+        return $this->restful("POST", "/relateLog/create", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/RelateLogController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function relateLogPaging($body)
+    public function relateLogPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/relateLog/paging", $body);
+        return $this->restful("POST", "/relateLog/paging", $body, $query, $extra);
     }
 
     /**
      * 销售明细导出
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SaleController/javaExportSqlAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function saleJavaExportSql($body)
+    public function saleJavaExportSql($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/sale/saleJavaExportSql", $body);
+        return $this->restful("POST", "/sale/saleJavaExportSql", $body, $query, $extra);
     }
 
     /**
      * JAVA调用实发积分
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/PoolRecordsController/sendPointsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function sendPoints($body)
+    public function sendPoints($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/poolRecords/sendPoints", $body);
+        return $this->restful("POST", "/poolRecords/sendPoints", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function subOrderLogCreate($body)
+    public function subOrderLogCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/subOrderLog/create", $body);
+        return $this->restful("POST", "/subOrderLog/create", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/SubOrderLogController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function subOrderLogPaging($body)
+    public function subOrderLogPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/subOrderLog/paging", $body);
+        return $this->restful("POST", "/subOrderLog/paging", $body, $query, $extra);
     }
 
     /**
      * 新增登录记录
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function userLoginCreate($body)
+    public function userLoginCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/userLogin/create", $body);
+        return $this->restful("POST", "/userLogin/create", $body, $query, $extra);
     }
 
     /**
      * 获取最近的两次登录
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UserLoginController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function userLoginListing($body)
+    public function userLoginListing($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/userLogin/listing", $body);
+        return $this->restful("POST", "/userLogin/listing", $body, $query, $extra);
     }
 
     /**
      * 根据手机获取用户详情
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/getUserByMobileAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function usersByMobile($body)
+    public function usersByMobile($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/users/getUserByMobile", $body);
+        return $this->restful("POST", "/users/getUserByMobile", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function usersCreate($body)
+    public function usersCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/users/create", $body);
+        return $this->restful("POST", "/users/create", $body, $query, $extra);
     }
 
     /**
      * 用户详情
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function usersDetail($body)
+    public function usersDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/users/detail", $body);
+        return $this->restful("POST", "/users/detail", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function usersPaging($body)
+    public function usersPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/users/paging", $body);
+        return $this->restful("POST", "/users/paging", $body, $query, $extra);
     }
 
     /**
      * 更新用户信息
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function usersUpdate($body)
+    public function usersUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/users/update", $body);
+        return $this->restful("POST", "/users/update", $body, $query, $extra);
     }
 
     /**
      * 启用或关闭用户
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/UsersController/updateStatusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function usersUpdateStatus($body)
+    public function usersUpdateStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/users/updateStatus", $body);
+        return $this->restful("POST", "/users/updateStatus", $body, $query, $extra);
     }
 
     /**
      * 按照日期时间段展示抵扣券领取和使用情况（折线图和柱形图）
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/chartAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function voucherChart($body)
+    public function voucherChart($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/voucherChart", $body);
+        return $this->restful("POST", "/weiXin/voucher/voucherChart", $body, $query, $extra);
     }
 
     /**
      * 抵扣券统计数据
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/voucherDataAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function voucherData($body)
+    public function voucherData($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/voucherData", $body);
+        return $this->restful("POST", "/weiXin/voucher/voucherData", $body, $query, $extra);
     }
 
     /**
      * 抵扣券总额
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/totalAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function voucherTotal($body)
+    public function voucherTotal($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/voucherTotal", $body);
+        return $this->restful("POST", "/weiXin/voucher/voucherTotal", $body, $query, $extra);
     }
 
     /**
      * 用户已使用的抵扣券总额
      * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/WeiXin/VoucherController/usedTotalAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function voucherUsedTotal($body)
+    public function voucherUsedTotal($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/weiXin/voucher/voucherUsedTotal", $body);
+        return $this->restful("POST", "/weiXin/voucher/voucherUsedTotal", $body, $query, $extra);
     }
 }

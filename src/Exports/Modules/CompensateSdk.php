@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-08-27
- * @time   Thu, 27 Aug 2020 15:05:58 +0800
+ * @date   2020-09-30
+ * @time   Wed, 30 Sep 2020 17:34:20 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -183,6 +183,19 @@ class CompensateSdk extends SdkBase
     public function getActiveByOrderNo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/ie/guarantees/getActiveByOrderNo", $body, $query, $extra);
+    }
+
+    /**
+     * 统计某个批次发放结果
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemUserController/getBatchResultAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getBatchResult($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeemUser/getBatchResult", $body, $query, $extra);
     }
 
     /**
@@ -1460,6 +1473,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 根据条件获取对应状态的账户扣款详情列表
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/PaymentController/statusAccountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statusAccount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/payment/statusAccount", $body, $query, $extra);
+    }
+
+    /**
      * 解绑
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BindController/unbindAction.md
      * @param array|object $body 入参类型
@@ -1473,6 +1499,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 记录发放失败原因
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemUserController/updateFailReasonAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateFailReason($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/redeemUser/updateFailReason", $body, $query, $extra);
+    }
+
+    /**
      * 通过手机号查看竞标系统账号权限
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/WorkerController/createAction.md
      * @param array|object $body 入参类型
@@ -1483,5 +1522,44 @@ class CompensateSdk extends SdkBase
     public function workerInfo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/worker/workerInfo", $body, $query, $extra);
+    }
+
+    /**
+     * 创建批次
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createBatchHandle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/create", $body, $query, $extra);
+    }
+
+    /**
+     * 更新批次
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateBatchHandle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/update", $body, $query, $extra);
+    }
+
+    /**
+     * 批次详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchHandleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/detail", $body, $query, $extra);
     }
 }

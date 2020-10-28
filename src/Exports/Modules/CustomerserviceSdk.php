@@ -226,4 +226,69 @@ class CustomerserviceSdk extends SdkBase
     {
         return $this->restful("POST", "/userJobNumber/detail", $body);
     }
+
+    /**
+     * 创建工单
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/WorkOrderController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createWorkOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workorder/create", $body, $query, $extra);
+    }
+
+    /**
+     * 工单详情
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/WorkOrderController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workOrderDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workorder/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 处理工单
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/WorkOrderController/handleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workOrderHandle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workorder/handle", $body, $query, $extra);
+    }
+
+    /**
+     * 工单列表
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/WorkOrderController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workOrderPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workorder/paging", $body, $query, $extra);
+    }
+
+    /**
+     * mbs撤回工单
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/WorkOrderController/recallAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workOrderRecall($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workorder/recall", $body, $query, $extra);
+    }
 }

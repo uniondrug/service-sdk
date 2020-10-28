@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-10
- * @time   Thu, 10 Sep 2020 18:00:22 +0800
+ * @date   2020-10-21
+ * @time   Wed, 21 Oct 2020 16:20:23 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,6 +30,32 @@ class PsFinanceDataSdk extends SdkBase
     protected $serviceName = 'ps-finance-data';
 
     /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/viewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountView($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/view", $body, $query, $extra);
+    }
+
+    /**
      * 公司信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/CompanyController/infoAction.md
      * @param array|object $body 入参类型
@@ -40,6 +66,19 @@ class PsFinanceDataSdk extends SdkBase
     public function infoCompany($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/company/info", $body, $query, $extra);
+    }
+
+    /**
+     * 保司信息详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function infoInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/info", $body, $query, $extra);
     }
 
     /**

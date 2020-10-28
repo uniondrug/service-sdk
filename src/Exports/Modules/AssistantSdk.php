@@ -278,6 +278,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 获取用户对应项目
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/projectIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userProjectIds($body)
+    {
+        return $this->restful("POST", "/users/projectIds", $body);
+    }
+
+    /**
      * 竞标系统通过商户ID获取对应城市经理信息
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/infoAction.md
      * @param array $body 入参类型
@@ -2625,8 +2636,8 @@ class AssistantSdk extends SdkBase
      * 获取待确认总数
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/countAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function externalApplyCount($body, $query = null, $extra = null)
@@ -2639,8 +2650,8 @@ class AssistantSdk extends SdkBase
      * 添加执行记录
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/addErrorMsgAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyAddErrorMsg($body, $query = null, $extra = null)
@@ -2653,8 +2664,8 @@ class AssistantSdk extends SdkBase
      * 添加执行记录
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/applyStoreSyncIsFinishedAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyStoreSyncIsFinished($body, $query = null, $extra = null)
@@ -2666,12 +2677,155 @@ class AssistantSdk extends SdkBase
      * 保司入住
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/TaskInsuranceAddAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taskInsuranceAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/approvalTask/insuranceAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 客户入住完成[用户纬度]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/BusinessStatisticController/userCustomerSettlementAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function businessStatisticUserCustomerSettlement($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessStatistic/userCustomerSettlement", $body, $query, $extra);
+    }
+
+    /**
+     * 客户总数[根据客户状态区分]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/BusinessStatisticController/userCustomerCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function businessStatisticUserCustomerCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessStatistic/userCustomerCount", $body, $query, $extra);
+    }
+
+    /**
+     * 业绩排行
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/BusinessStatisticController/userAchievementListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function businessStatisticUserAchievementList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessStatistic/userAchievementList", $body, $query, $extra);
+    }
+
+    /**
+     * 管辖店员分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresController/assistantPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function userStoresAssistantPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userstores/assistantPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 业绩明细
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/BusinessStatisticController/userAchievementDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function businessStatisticUserAchievementDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessStatistic/userAchievementDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 发行权益
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalEquityController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalEquityCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalEquity/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新建项目
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalProjectController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalProject/create", $body, $query, $extra);
+    }
+
+    /**
+     * 项目提额
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalProjectIncreaseQuotaController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalProjectIncreaseQuotaCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalProjectIncreaseQuota/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增品牌连锁
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalBrandChainController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalBrandChainCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalBrandChain/create", $body, $query, $extra);
+    }
+
+    /**
+     * 保险公司入驻
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalInsuranceCompanyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approvalInsuranceCompanyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalInsuranceCompany/create", $body, $query, $extra);
+    }
+
+    /**
+     * 使token失效
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/TokenController/revokeTokenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function revokeTokensByUserIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/token/revokeToken", $body, $query, $extra);
     }
 }

@@ -114,6 +114,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
