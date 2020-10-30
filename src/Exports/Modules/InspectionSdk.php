@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-27
- * @time   Tue, 27 Oct 2020 17:50:20 +0800
+ * @date   2020-10-29
+ * @time   Thu, 29 Oct 2020 20:27:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -196,6 +196,19 @@ class InspectionSdk extends SdkBase
     public function cityAllList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/city/all", $body, $query, $extra);
+    }
+
+    /**
+     * 获取带全国的所有城市列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CityController/cityCountryAllListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cityCountryAllList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/city/all/list", $body, $query, $extra);
     }
 
     /**
@@ -2097,19 +2110,6 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 保存角色信息
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/PrivilegesController/saveRoleAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function saveRole($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/privilege/save/role", $body, $query, $extra);
-    }
-
-    /**
      * 查询商品信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/searchCommodityAction.md
      * @param array|object $body 入参类型
@@ -2279,6 +2279,97 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 新建角色
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/addRoleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/add", $body, $query, $extra);
+    }
+
+    /**
+     * 角色关联用户
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/associateUserAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleAssociateUser($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/associate/user", $body, $query, $extra);
+    }
+
+    /**
+     * 角色关联用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/associateUserListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleAssociateUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/associate/userlist", $body, $query, $extra);
+    }
+
+    /**
+     * 删除角色
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/delRoleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleDel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/del", $body, $query, $extra);
+    }
+
+    /**
+     * 查看角色详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/roleDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑角色
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/editRoleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 获取分页角色列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/getRoleListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleGetRoleList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/get/list", $body, $query, $extra);
+    }
+
+    /**
      * 获取角色列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/roleListAction.md
      * @param array|object $body 入参类型
@@ -2289,6 +2380,19 @@ class InspectionSdk extends SdkBase
     public function systemRoleList($body, $query = null, $extra = null)
     {
         return $this->restful("GET", "/system/role/list", $body, $query, $extra);
+    }
+
+    /**
+     * 查询角色是否关联了用户
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemRolesController/searchUserRoleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemRoleSearchUserRole($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/role/search/user/role", $body, $query, $extra);
     }
 
     /**
@@ -2370,7 +2474,20 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 关联用户角色
+     * 关联用户城市列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/associateCityListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserAssociateCityList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/associate/citylist", $body, $query, $extra);
+    }
+
+    /**
+     * 用户关联角色
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/associateRoleAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -2380,6 +2497,19 @@ class InspectionSdk extends SdkBase
     public function systemUserAssociateRole($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/associate/role", $body, $query, $extra);
+    }
+
+    /**
+     * 用户关联角色列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/associateUserListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserAssociateRoleList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/associate/rolelist", $body, $query, $extra);
     }
 
     /**
@@ -2406,6 +2536,32 @@ class InspectionSdk extends SdkBase
     public function systemUserDriverList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/driver/list", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑用户
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/editUserAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用户详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/getUserDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserGetDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/get/detail", $body, $query, $extra);
     }
 
     /**
@@ -2448,6 +2604,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 锁定用户
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/lockAccountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserLockAccount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/lock/account", $body, $query, $extra);
+    }
+
+    /**
      * 获取护士列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/nurseListAction.md
      * @param array|object $body 入参类型
@@ -2461,29 +2630,16 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 解除用户城市
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/relieveCityAction.md
+     * 解除微信绑定
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/unbindWechatAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function systemUserRelieveCity($body, $query = null, $extra = null)
+    public function systemUserUnbindWechat($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/system/user/relieve/city", $body, $query, $extra);
-    }
-
-    /**
-     * 解除用户角色
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/relieveRoleAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemUserRelieveRole($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/system/user/relieve/role", $body, $query, $extra);
+        return $this->restful("POST", "/system/user/unbind/wechat", $body, $query, $extra);
     }
 
     /**

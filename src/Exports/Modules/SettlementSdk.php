@@ -4256,4 +4256,17 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/payment/syncDirectPayment", $body, $query, $extra);
     }
+
+    /**
+     * 对账函确认
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/pdfConfirmAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsPdfConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/pdfConfirm", $body, $query, $extra);
+    }
 }
