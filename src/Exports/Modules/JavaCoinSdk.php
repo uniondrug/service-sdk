@@ -327,5 +327,125 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/integralToCash/export", $body);
     }
+
+    /**
+     * 资金付款单创建
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentCreate($body)
+    {
+        return $this->restful("POST", "/payment/create", $body);
+    }
+
+    /**
+     * 资金付款单修改
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentUpdate($body)
+    {
+        return $this->restful("POST", "/payment/update", $body);
+    }
+
+    /**
+     * 资金付款单删除
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentRemove($body)
+    {
+        return $this->restful("POST", "/payment/remove", $body);
+    }
+
+    /**
+     * 资金付款单分页查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentPage($body)
+    {
+        return $this->restful("POST", "/payment/page", $body);
+    }
+
+    /**
+     * 资金付款单详情明细
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentDetail($body)
+    {
+        return $this->restful("POST", "/payment/detail", $body);
+    }
+
+    /**
+     * 资金付款单导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentExport($body)
+    {
+        return $this->restful("POST", "/payment/export", $body);
+    }
+
+    /**
+     * 资金付款单提交
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentCommit($body)
+    {
+        return $this->restful("POST", "/payment/commit", $body);
+    }
+
+    /**
+     * 查询待提交的付款单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentPageForWaitCommit($body)
+    {
+        return $this->restful("POST", "/payment/pageForWaitCommit", $body);
+    }
+
+    /**
+     * 资金付款单审批
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentApprove($body)
+    {
+        return $this->restful("POST", "/payment/approve", $body);
+    }
+
+    /**
+     * 审批人查询待其审批的付款单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentPageForWaitAudit($body)
+    {
+        return $this->restful("POST", "/payment/pageForWaitAudit", $body);
+    }
+
+    /**
+     * 资金付款单执行
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentExecute($body)
+    {
+        return $this->restful("POST", "/payment/execute", $body);
+    }
+
+    /**
+     * 执行人查询待其执行的付款单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentPageForWaitExecute($body)
+    {
+        return $this->restful("POST", "/payment/pageForWaitExecute", $body);
+    }
 }
 
