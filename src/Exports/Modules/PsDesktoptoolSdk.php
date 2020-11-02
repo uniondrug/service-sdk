@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-30
- * @time   Fri, 30 Oct 2020 11:11:02 +0800
+ * @date   2020-11-02
+ * @time   Mon, 02 Nov 2020 09:51:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -40,6 +40,19 @@ class PsDesktoptoolSdk extends SdkBase
     public function countInstalls($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statistics/countInstalls", $body, $query, $extra);
+    }
+
+    /**
+     * 创建电子处方
+     * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/ElectronicPrescriptionController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function create($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/electronicPrescription/create", $body, $query, $extra);
     }
 
     /**
