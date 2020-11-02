@@ -447,5 +447,15 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/payment/pageForWaitExecute", $body);
     }
+
+    /**
+     * 查询资金余额变更流水明细
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordDetail($body)
+    {
+        return $this->restful("POST", "/fundRecord/getBySerialId", $body);
+    }
 }
 
