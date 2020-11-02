@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-29
- * @time   Thu, 29 Oct 2020 20:27:45 +0800
+ * @date   2020-11-02
+ * @time   Mon, 02 Nov 2020 17:48:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2549,6 +2549,19 @@ class InspectionSdk extends SdkBase
     public function systemUserEdit($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 获取所有用户列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/getAllUserListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserGetAllUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/get/all", $body, $query, $extra);
     }
 
     /**
