@@ -1477,6 +1477,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 订单明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/ordersAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function settlementDetail($body)
+    {
+        return $this->restful("POST", "/settlement/detail", $body);
+    }
+
+    /**
      * 获取指定连锁订单统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/ordersCountAction.md
      * @param $body
