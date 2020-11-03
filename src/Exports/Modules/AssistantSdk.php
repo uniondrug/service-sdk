@@ -278,6 +278,17 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 获取用户对应项目
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/projectIdsAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function userProjectIds($body)
+    {
+        return $this->restful("POST", "/users/projectIds", $body);
+    }
+
+    /**
      * 竞标系统通过商户ID获取对应城市经理信息
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/infoAction.md
      * @param array $body 入参类型
@@ -2803,5 +2814,32 @@ class AssistantSdk extends SdkBase
     public function approvalInsuranceCompanyCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/approvalInsuranceCompany/create", $body, $query, $extra);
+    }
+
+    /**
+     * 使token失效
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/TokenController/revokeTokenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function revokeTokensByUserIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/token/revokeToken", $body, $query, $extra);
+    }
+
+
+    /**
+     * 门店数据统计 (连锁维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/partnerListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticPartnerList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/partnerList", $body, $query, $extra);
     }
 }
