@@ -1477,6 +1477,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 订单明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/SettlementController/ordersAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function settlementDetail($body)
+    {
+        return $this->restful("POST", "/settlement/detail", $body);
+    }
+
+    /**
      * 获取指定连锁订单统计接口
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PartnerController/ordersCountAction.md
      * @param $body
@@ -4255,5 +4266,18 @@ class SettlementSdk extends SdkBase
     public function paymentSyncDirect($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/payment/syncDirectPayment", $body, $query, $extra);
+    }
+
+    /**
+     * 对账函确认
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/pdfConfirmAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsPdfConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/pdfConfirm", $body, $query, $extra);
     }
 }

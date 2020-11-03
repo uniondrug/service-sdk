@@ -2828,4 +2828,18 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/token/revokeToken", $body, $query, $extra);
     }
+
+
+    /**
+     * 门店数据统计 (连锁维度)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/partnerListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticPartnerList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/partnerList", $body, $query, $extra);
+    }
 }
