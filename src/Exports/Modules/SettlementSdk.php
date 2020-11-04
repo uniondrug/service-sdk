@@ -4280,4 +4280,30 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/statements/pdfConfirm", $body, $query, $extra);
     }
+
+    /**
+     * 审核对比
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBankAccountController/changeConfirmAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountChangeConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBankAccount/changeConfirm", $body, $query, $extra);
+    }
+
+    /**
+     * 修改确认对比接口
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeFinanceAccountController/changeConfirmAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeFinanceAccountChangeConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeFinanceAccount/changeConfirm", $body, $query, $extra);
+    }
 }
