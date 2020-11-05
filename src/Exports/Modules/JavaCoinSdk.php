@@ -449,6 +449,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 撤销付款单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentNndo($body)
+    {
+        return $this->restful("POST", "/payment/undo", $body);
+    }
+
+    /**
      * 查询资金余额变更流水明细
      * @param $body
      * @return ResponseInterface
