@@ -147,4 +147,15 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/service/sku/edit", $body);
     }
+
+    /**
+     * 商品中心药品搜索
+     * @link https://uniondrug.coding.net/p/docs/d/docs/git/tree/development/java/goods-center/商品中心3.1/编辑SKU扣率税率.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function search($body)
+    {
+        return $this->restful("POST", "/goodsSearch/search", $body);
+    }
 }
