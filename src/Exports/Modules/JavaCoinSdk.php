@@ -453,7 +453,7 @@ class JavaCoinSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function paymentNndo($body)
+    public function paymentUndo($body)
     {
         return $this->restful("POST", "/payment/undo", $body);
     }
