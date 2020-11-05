@@ -172,4 +172,108 @@ class PsSdk extends SdkBase
         return $this->restful("POST", "/workStatistic/list", $body, $query, $extra);
     }
 
+    /**
+     * 超期理赔
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingOverClaimAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticPagingClaim($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/pagingOverClaim", $body, $query, $extra);
+    }
+
+    /**
+     * 保险项目待收款
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingPendClaimRcptAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticPagingPendClaimRcpt($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/pagingPendClaimRcpt", $body, $query, $extra);
+    }
+
+    /**
+     * 权益采购待收款
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingPendRcvAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticPagingPendRcv($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/pagingPendRcv", $body, $query, $extra);
+    }
+
+    /**
+     * 用户保单业绩数据
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyCountListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticPolicyCountList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/policyCountList", $body, $query, $extra);
+    }
+
+    /**
+     * 用户保单业绩数据列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticPolicyList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/policyList", $body, $query, $extra);
+    }
+
+    /**
+     * 用户项目业绩数据
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectCountListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticProjectCountList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/projectCountList", $body, $query, $extra);
+    }
+
+    /**
+     * 用户项目业绩数据列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticProjectList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/projectList", $body, $query, $extra);
+    }
+
+    /**
+     * 业务汇总
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/userPendCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticUserPendCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/userPendCount", $body, $query, $extra);
+    }
+
 }
