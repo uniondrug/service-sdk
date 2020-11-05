@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-30
- * @time   Fri, 30 Oct 2020 11:11:02 +0800
+ * @date   2020-11-04
+ * @time   Wed, 04 Nov 2020 16:04:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -40,6 +40,32 @@ class PsDesktoptoolSdk extends SdkBase
     public function countInstalls($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statistics/countInstalls", $body, $query, $extra);
+    }
+
+    /**
+     * 创建电子处方
+     * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/ElectronicPrescriptionController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function create($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/electronicPrescription/create", $body, $query, $extra);
+    }
+
+    /**
+     * 创建线下处方
+     * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/ElectronicPrescriptionController/createOffLineAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createOffLine($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/electronicPrescription/createOffLine", $body, $query, $extra);
     }
 
     /**
@@ -121,6 +147,19 @@ class PsDesktoptoolSdk extends SdkBase
     }
 
     /**
+     * 处方分页查询
+     * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/ElectronicPrescriptionController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function prescriptionPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/electronicPrescription/paging", $body, $query, $extra);
+    }
+
+    /**
      * 打印电子处方
      * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/ElectronicPrescriptionController/printAction.md
      * @param array|object $body 入参类型
@@ -128,7 +167,7 @@ class PsDesktoptoolSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function print($body, $query = null, $extra = null)
+    public function printPrescription($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/electronicPrescription/print", $body, $query, $extra);
     }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-09
- * @time   Fri, 09 Oct 2020 18:52:52 +0800
+ * @date   2020-11-04
+ * @time   Wed, 04 Nov 2020 14:38:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -664,6 +664,32 @@ class MerchantSdk extends SdkBase
     public function editInvoice($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/invoice/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 修改直付
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsDirectPayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsDirectPayBackend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisdirectpay", $body, $query, $extra);
+    }
+
+    /**
+     * 修改直付附加换新
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsDirectRenewalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsDirectRenewal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisDirectRenewal", $body, $query, $extra);
     }
 
     /**
@@ -1886,6 +1912,84 @@ class MerchantSdk extends SdkBase
     public function organizeDtpUnBind($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeDtpBind/unbind", $body, $query, $extra);
+    }
+
+    /**
+     * 商户资质新增
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeQualificationController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeQualificationCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeQualification/create", $body, $query, $extra);
+    }
+
+    /**
+     * 商户资质删除
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeQualificationController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeQualificationDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeQualification/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 商户资质详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeQualificationController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeQualificationDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeQualification/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 商户资质无分页列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeQualificationController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeQualificationListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeQualification/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 商户资质分页列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeQualificationController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeQualificationPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeQualification/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 商户资质修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeQualificationController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeQualificationUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeQualification/update", $body, $query, $extra);
     }
 
     /**

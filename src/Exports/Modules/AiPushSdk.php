@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-13
- * @time   Tue, 13 Oct 2020 11:43:17 +0800
+ * @date   2020-11-04
+ * @time   Wed, 04 Nov 2020 16:08:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class AiPushSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'aiPush.module';
+
+    /**
+     * 一键取消所有连锁到某个方案
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/OrganizeBaseController/cancelAllAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cancelAll($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organize/base/cancelAll", $body, $query, $extra);
+    }
 
     /**
      * JAVA调用 取消发放积分
@@ -339,6 +352,19 @@ class AiPushSdk extends SdkBase
     public function orderPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/weiXin/voucher/orderPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 根据智推带金方案ID获取跟方案有冲突的连锁列表
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/OrganizeBaseController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBaseList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organize/base/list", $body, $query, $extra);
     }
 
     /**
@@ -755,6 +781,19 @@ class AiPushSdk extends SdkBase
     public function refundLogCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/refundLog/create", $body, $query, $extra);
+    }
+
+    /**
+     * 一键关联所有连锁到某个方案
+     * @link https://uniondrug.coding.net/p/module.aiPush/git/blob/development/docs/api/OrganizeBaseController/relateAllAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relateAll($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organize/base/relateAll", $body, $query, $extra);
     }
 
     /**

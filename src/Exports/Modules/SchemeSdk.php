@@ -151,4 +151,43 @@ class SchemeSdk extends SdkBase
     {
         return $this->restful("POST", "/scheme/partner/paging", $body, $query, $extra);
     }
+
+    /**
+     * 批量添加
+     * @link https://uniondrug.coding.net/p/module.scheme/git/blob/development/docs/api/Scheme/PartnerController/batchCreateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function schemePartnerBatchCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/partner/batchCreate", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.scheme/git/blob/development/docs/api/Scheme/PartnerController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function schemePartnerCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/partner/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.scheme/git/blob/development/docs/api/Scheme/PartnerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function schemePartnerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/partner/detail", $body, $query, $extra);
+    }
 }
