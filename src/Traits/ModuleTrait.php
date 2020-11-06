@@ -67,6 +67,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk            $moreActivity
  * @property \Uniondrug\ServiceSdk\Exports\Modules\MsgSdk                     $msg
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OrderSdk                   $order
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JmbslSdk                   $jmbsl
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OssSdk                     $oss
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PackageSdk                 $package
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ProductSdk                 $product
