@@ -202,4 +202,13 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/info/queryProjectInfo", $body);
     }
+
+    /**
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function outActivity($body)
+    {
+        return $this->restful("POST", "/outActivity/outTrial", $body);
+    }
 }
