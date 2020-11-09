@@ -308,6 +308,7 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "v2/api/userThird/getBindCount", $body);
     }
+
     /**
      * 统计证件号数量
      * @param array $body 入参类型
@@ -358,7 +359,6 @@ class JavaMemberSdk extends SdkBase
         return $this->restful("POST", "v2/api/userMajor/queryBy", $body);
     }
 
-
     /**
      * 根据身份获取用户列表
      * @param array $body 入参类型
@@ -377,5 +377,15 @@ class JavaMemberSdk extends SdkBase
     public function getOrgByMemberId($body)
     {
         return $this->restful("POST", "/v2/api/org/queryBy", $body);
+    }
+
+    /**
+     * 非身份证添加
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function mbsCardAddByNo($body)
+    {
+        return $this->restful("POST", "/v2/mbs/card/addByNo", $body);
     }
 }
