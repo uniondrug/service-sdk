@@ -176,6 +176,4 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userCard/add", $body);
     }
-
-
 }
