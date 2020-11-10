@@ -331,31 +331,34 @@ class JavaCoinSdk extends SdkBase
     /**
      * 资金付款单创建
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function paymentCreate($body)
+    public function paymentCreate($body, $header)
     {
-        return $this->restful("POST", "/payment/create", $body);
+        return $this->restful("POST", "/payment/create", $body, null, $header);
     }
 
     /**
      * 资金付款单修改
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function paymentUpdate($body)
+    public function paymentUpdate($body, $header)
     {
-        return $this->restful("POST", "/payment/update", $body);
+        return $this->restful("POST", "/payment/update", $body, null, $header);
     }
 
     /**
      * 资金付款单删除
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function paymentRemove($body)
+    public function paymentRemove($body, $header)
     {
-        return $this->restful("POST", "/payment/remove", $body);
+        return $this->restful("POST", "/payment/remove", $body, null, $header);
     }
 
     /**
@@ -391,11 +394,12 @@ class JavaCoinSdk extends SdkBase
     /**
      * 资金付款单提交
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function paymentCommit($body)
+    public function paymentCommit($body, $header)
     {
-        return $this->restful("POST", "/payment/commit", $body);
+        return $this->restful("POST", "/payment/commit", $body, null, $header);
     }
 
     /**
@@ -411,11 +415,12 @@ class JavaCoinSdk extends SdkBase
     /**
      * 资金付款单审批
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function paymentApprove($body)
+    public function paymentApprove($body, $header)
     {
-        return $this->restful("POST", "/payment/approve", $body);
+        return $this->restful("POST", "/payment/approve", $body, null, $header);
     }
 
     /**
@@ -446,6 +451,17 @@ class JavaCoinSdk extends SdkBase
     public function paymentPageForWaitExecute($body)
     {
         return $this->restful("POST", "/payment/pageForWaitExecute", $body);
+    }
+
+    /**
+     * 撤销付款单
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function paymentUndo($body, $header)
+    {
+        return $this->restful("POST", "/payment/undo", $body, null, $header);
     }
 
     /**

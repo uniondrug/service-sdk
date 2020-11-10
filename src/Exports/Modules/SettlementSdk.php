@@ -4306,4 +4306,30 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/organizeFinanceAccount/changeConfirm", $body, $query, $extra);
     }
+
+    /**
+     * addConfirmLog
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceConfirmController/addConfirmLogAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerInvoiceConfirmAddConfirmLog($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/invoice/confirm/addConfirmLog", $body, $query, $extra);
+    }
+
+    /**
+     * 保司修改确认对比
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InsurerInvoiceInfoController/changeConfirmAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerInvoiceInfoChangeConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurerInvoiceInfo/changeConfirm", $body, $query, $extra);
+    }
 }

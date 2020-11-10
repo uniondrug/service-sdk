@@ -288,4 +288,14 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userCard/getCountByNum", $body);
     }
+
+    /**
+     * 更换手机号
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateAccountApi($body)
+    {
+        return $this->restful("POST", "/v2/api/userBasic/updateAccount", $body);
+    }
 }
