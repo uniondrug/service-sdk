@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-05
- * @time   Thu, 05 Nov 2020 14:35:35 +0800
+ * @date   2020-11-10
+ * @time   Tue, 10 Nov 2020 16:50:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2929,7 +2929,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 采样样提交任务
+     * 采样提交任务
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/submitSamplingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -2978,6 +2978,19 @@ class InspectionSdk extends SdkBase
     public function wechatTaskList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/wechat/task/list", $body, $query, $extra);
+    }
+
+    /**
+     * 运输任务详情接口
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/transportTaskDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatTransportTaskDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/task/transport/detail", $body, $query, $extra);
     }
 
     /**

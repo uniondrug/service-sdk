@@ -2742,8 +2742,8 @@ class AssistantSdk extends SdkBase
      * 业绩明细
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/BusinessStatisticController/userAchievementDetailAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function businessStatisticUserAchievementDetail($body, $query = null, $extra = null)
@@ -2755,8 +2755,8 @@ class AssistantSdk extends SdkBase
      * 发行权益
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalEquityController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalEquityCreate($body, $query = null, $extra = null)
@@ -2768,8 +2768,8 @@ class AssistantSdk extends SdkBase
      * 新建项目
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalProjectController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalProjectCreate($body, $query = null, $extra = null)
@@ -2781,8 +2781,8 @@ class AssistantSdk extends SdkBase
      * 项目提额
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalProjectIncreaseQuotaController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalProjectIncreaseQuotaCreate($body, $query = null, $extra = null)
@@ -2794,8 +2794,8 @@ class AssistantSdk extends SdkBase
      * 新增品牌连锁
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalBrandChainController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalBrandChainCreate($body, $query = null, $extra = null)
@@ -2807,8 +2807,8 @@ class AssistantSdk extends SdkBase
      * 保险公司入驻
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApprovalInsuranceCompanyController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function approvalInsuranceCompanyCreate($body, $query = null, $extra = null)
@@ -2820,8 +2820,8 @@ class AssistantSdk extends SdkBase
      * 使token失效
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/TokenController/revokeTokenAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function revokeTokensByUserIds($body, $query = null, $extra = null)
@@ -2834,12 +2834,39 @@ class AssistantSdk extends SdkBase
      * 门店数据统计 (连锁维度)
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/StoreStatisticController/partnerListAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function storeStatisticPartnerList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/storeStatistic/partnerList", $body, $query, $extra);
+    }
+
+
+    /**
+     * 未读消息总数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/totalNoReadAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeLogTotalNoRead($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/noticeLog/totalNoRead", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogCheckController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeLogCheckUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/noticeLogCheck/update", $body, $query, $extra);
     }
 }

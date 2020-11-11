@@ -156,6 +156,6 @@ class JavaGoodsCenterSdk extends SdkBase
      */
     public function search($body)
     {
-        return $this->restful("POST", "/goodsSearch/search", $body);
+        return $this->restful("POST", "/goods/search", $body);
     }
 }
