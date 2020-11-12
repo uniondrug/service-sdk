@@ -2869,4 +2869,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/noticeLogCheck/update", $body, $query, $extra);
     }
+
+    /**
+     * 公告阅读/查看情况列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeController/readCheckListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeReadCheckList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/notice/readCheckList", $body, $query, $extra);
+    }
 }
