@@ -194,4 +194,15 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseProject/payerId', $body);
 
     }
+
+    /**
+     * 采购项目提额记录
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function increaseMoneyRecords($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/incrHisList', $body, $query = null, $extra = null);
+    }
 }
