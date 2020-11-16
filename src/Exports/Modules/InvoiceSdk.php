@@ -360,7 +360,7 @@ class InvoiceSdk extends SdkBase
     }
 
     /**
-     * 待确认收货列表
+     * 在途发票列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/listingOnWayAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -369,8 +369,9 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/listingOnWay", $body);
     }
+
     /**
-     * 待确认收货分页列表
+     * 在途发票分页列表
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingOnWayAction.md
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -378,6 +379,28 @@ class InvoiceSdk extends SdkBase
     public function invoicePagingOnWay($body)
     {
         return $this->restful("POST", "/invoice/pagingOnWay", $body);
+    }
+
+    /**
+     * 待确认收货列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/listingOnWayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceListingReturnable($body)
+    {
+        return $this->restful("POST", "/invoice/listingReturnable", $body);
+    }
+
+    /**
+     * 待确认收货分页列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/pagingOnWayAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoicePagingReturnable($body)
+    {
+        return $this->restful("POST", "/invoice/pagingReturnable", $body);
     }
 
     /**
@@ -423,6 +446,4 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/detail", $body);
     }
-
-
 }
