@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-27
- * @time   Tue, 27 Oct 2020 17:44:21 +0800
+ * @date   2020-11-16
+ * @time   Mon, 16 Nov 2020 10:01:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -107,6 +107,19 @@ class MapSdk extends SdkBase
     public function districtByKeywords($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/district/byKeyword", $body, $query, $extra);
+    }
+
+    /**
+     * 搜索周边DTP
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/DTPDistanceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function DTPDistance($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/amap/dtpdistance", $body, $query, $extra);
     }
 
     /**
