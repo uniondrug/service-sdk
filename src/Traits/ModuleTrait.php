@@ -117,6 +117,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk                      $javaPurchase
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
