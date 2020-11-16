@@ -436,11 +436,12 @@ class JavaCoinSdk extends SdkBase
     /**
      * 资金付款单执行
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function paymentExecute($body)
+    public function paymentExecute($body, $header)
     {
-        return $this->restful("POST", "/payment/execute", $body);
+        return $this->restful("POST", "/payment/execute", $body, null, $header);
     }
 
     /**
