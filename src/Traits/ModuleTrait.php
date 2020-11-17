@@ -7,6 +7,8 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfromtSdk;
+
 /**
  * Module
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk                $activity
@@ -117,7 +119,8 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk                      $javaPurchase
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk            $javaPurchase
+ * @property JavaAdvfromtSdk                                                  $javaAdvfromtSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
