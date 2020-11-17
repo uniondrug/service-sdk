@@ -216,4 +216,15 @@ class JavaPurchaseSdk extends SdkBase
     public function coinReceiptCreate($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseFinance/coinReceiptCreate', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 回款与开票 列表查询
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function coinReceiptPage($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseFinance/coinReceiptPage', $body, $query = null, $extra = null);
+    }
 }
