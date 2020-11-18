@@ -1,6 +1,6 @@
 <?php
 /**
- * @name   JavaAdvfromtSdk
+ * @name   JavaAdvfrontSdk
  * @date   2018-12-04
  * @time   Tue, 04 Dec 2018 18:29:57 +0800
  */
@@ -10,15 +10,16 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * @package Uniondrug\ServiceSdk\Modules
+ * Class JavaAdvfrontSdk
+ * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class JavaAdvfromtSdk extends SdkBase
+class JavaAdvfrontSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.advfromt';
+    protected $serviceName = 'java.advfront';
 
     /**
      * 关怀会员列表
