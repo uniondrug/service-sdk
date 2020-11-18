@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-16
- * @time   Mon, 16 Nov 2020 15:26:57 +0800
+ * @date   2020-11-18
+ * @time   Wed, 18 Nov 2020 15:12:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -31,10 +31,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/ApplyAuditLogController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ApplyAuditLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function applyAuditLogCreate($body, $query = null, $extra = null)
@@ -44,10 +44,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 无分页列表
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/ApplyAuditLogController/listingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ApplyAuditLogController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function applyAuditLogListing($body, $query = null, $extra = null)
@@ -57,10 +57,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careCreate($body, $query = null, $extra = null)
@@ -70,10 +70,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 删除
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareController/deleteAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careDelete($body, $query = null, $extra = null)
@@ -83,10 +83,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careDetail($body, $query = null, $extra = null)
@@ -96,10 +96,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 无分页列表
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareController/listingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careListing($body, $query = null, $extra = null)
@@ -109,10 +109,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareController/pageAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function carePage($body, $query = null, $extra = null)
@@ -122,10 +122,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * setFail
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareController/setFailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/setFailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careSetFail($body, $query = null, $extra = null)
@@ -135,10 +135,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareTemplateController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareTemplateController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careTemplateCreate($body, $query = null, $extra = null)
@@ -148,10 +148,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 删除
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareTemplateController/deleteAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareTemplateController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careTemplateDelete($body, $query = null, $extra = null)
@@ -161,10 +161,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareTemplateController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareTemplateController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careTemplateDetail($body, $query = null, $extra = null)
@@ -174,10 +174,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 无分页列表
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareTemplateController/listingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareTemplateController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careTemplateListing($body, $query = null, $extra = null)
@@ -187,10 +187,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 分页列表
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareTemplateController/pageAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareTemplateController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careTemplatePage($body, $query = null, $extra = null)
@@ -200,10 +200,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareTemplateController/updateAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareTemplateController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careTemplateUpdate($body, $query = null, $extra = null)
@@ -213,10 +213,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareTemplateUrlController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareTemplateUrlController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careTemplateUrlDetail($body, $query = null, $extra = null)
@@ -226,10 +226,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/CareController/updateAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careUpdate($body, $query = null, $extra = null)
@@ -239,10 +239,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 信息完善
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/MerchantController/completeInfoAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/completeInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function completeInfo($body, $query = null, $extra = null)
@@ -251,11 +251,24 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 获取连锁/门店/店员下的新会员数及交易额
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/getMemberCountAndGmvAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getMemberCountAndGmv($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/getMemberCountAndGmv", $body, $query, $extra);
+    }
+
+    /**
      * 开通商保新会员
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/MerchantController/openAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/openAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function merchantApplyOpen($body, $query = null, $extra = null)
@@ -265,10 +278,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 资料审核
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/MerchantController/auditAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/auditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function merchantAudit($body, $query = null, $extra = null)
@@ -278,10 +291,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 连锁详情
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/MerchantController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function merchantDetail($body, $query = null, $extra = null)
@@ -291,10 +304,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 连锁分页查询
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/MerchantController/listAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function merchantPaging($body, $query = null, $extra = null)
@@ -304,10 +317,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/TransferLogController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TransferLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function transferLogCreate($body, $query = null, $extra = null)
@@ -317,10 +330,10 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 无分页列表
-     * @link https://uniondrug.coding.net/p/member.dstore.ps/git/blob/development/docs/api/TransferLogController/listingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TransferLogController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function transferLogListing($body, $query = null, $extra = null)
