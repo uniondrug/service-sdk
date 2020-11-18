@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2018-12-04
- * @time   Tue, 04 Dec 2018 18:29:57 +0800
+ * @date   2020-11-17
+ * @time   Tue, 17 Nov 2020 15:02:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,165 +32,208 @@ class BillSdk extends SdkBase
     /**
      * 开票信息商品分页
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billGoodsListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function billGoodsList($body)
+    public function billGoodsList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billGoodsList", $body);
+        return $this->restful("POST", "/bill/billGoodsList", $body, $query, $extra);
     }
 
     /**
      * 更具投保id查询开票单已用多少投保金额
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureAmountAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function billInsureAmount($body)
+    public function billInsureAmount($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billInsureAmount", $body);
+        return $this->restful("POST", "/bill/billInsureAmount", $body, $query, $extra);
     }
 
     /**
      * 开票单投保id分组信息
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureIdGroupAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function billInsureIdGroup($body)
+    public function billInsureIdGroup($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billInsureIdGroup", $body);
+        return $this->restful("POST", "/bill/billInsureIdGroup", $body, $query, $extra);
     }
 
     /**
      * 开票单
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billInsureListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function billInsureList($body)
+    public function billInsureList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billInsureList", $body);
+        return $this->restful("POST", "/bill/billInsureList", $body, $query, $extra);
     }
 
     /**
      * 订单列表
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/billOrderListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function billOrderList($body)
+    public function billOrderList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billOrderList", $body);
+        return $this->restful("POST", "/bill/billOrderList", $body, $query, $extra);
+    }
+
+    /**
+     * 更新开票单+结算单状态
+     * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/updateStatus", $body, $query, $extra);
     }
 
     /**
      * 读取开票单详情
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function detail($body)
+    public function detail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/detail", $body);
+        return $this->restful("POST", "/bill/detail", $body, $query, $extra);
     }
 
     /**
      * 导出商品清单
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillGoodsListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportBillGoodsList($body)
+    public function exportBillGoodsList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/exportBillGoodsList", $body);
+        return $this->restful("POST", "/bill/exportBillGoodsList", $body, $query, $extra);
     }
 
     /**
      * exportBillOrderListAction()
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/exportBillOrderListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportBillOrderList($body)
+    public function exportBillOrderList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/exportBillOrderList", $body);
+        return $this->restful("POST", "/bill/exportBillOrderList", $body, $query, $extra);
     }
 
     /**
      * 生成开票单
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/indexAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function index($body)
+    public function index($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/index", $body);
+        return $this->restful("POST", "/bill/index", $body, $query, $extra);
     }
 
     /**
      * 开票单列表
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function list($body)
+    public function list($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/list", $body);
+        return $this->restful("POST", "/bill/list", $body, $query, $extra);
     }
 
     /**
      * 订单详情
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderDetailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function orderDetail($body)
+    public function orderDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/orderDetail", $body);
+        return $this->restful("POST", "/bill/orderDetail", $body, $query, $extra);
     }
 
     /**
      * 订单信息商品列表
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/orderGoodsListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function orderGoodsList($body)
+    public function orderGoodsList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/orderGoodsList", $body);
+        return $this->restful("POST", "/bill/orderGoodsList", $body, $query, $extra);
     }
 
     /**
      * 提交开票
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/submitBillAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function submitBill($body)
+    public function submitBill($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/submitBill", $body);
+        return $this->restful("POST", "/bill/submitBill", $body, $query, $extra);
     }
 
     /**
      * 更新开票单信息
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function update($body)
+    public function update($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/update", $body);
+        return $this->restful("POST", "/bill/update", $body, $query, $extra);
     }
 
     /**
      * 开发票时更新开票单状态
      * @link https://uniondrug.coding.net/p/module.bill/git/blob/development/docs/api/BillController/updateBillStatusToInvoiceAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function updateBillStatusToInvoice($body)
+    public function updateBillStatusToInvoice($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/updateBillStatusToInvoice", $body);
+        return $this->restful("POST", "/bill/updateBillStatusToInvoice", $body, $query, $extra);
     }
 }
