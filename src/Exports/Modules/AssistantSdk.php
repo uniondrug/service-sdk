@@ -2967,4 +2967,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/approvalEquitySpecs/create", $body, $query, $extra);
     }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeDeleteByCustomerIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyStoreDeleteByCustomerId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/store/deleteByCustomerId", $body, $query, $extra);
+    }
 }
