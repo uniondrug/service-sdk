@@ -221,11 +221,12 @@ class JavaCoinSdk extends SdkBase
     /**
      * 收款单审核通过
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function receiptAuditSuccess($body)
+    public function receiptAuditSuccess($body, $header)
     {
-        return $this->restful("POST", "/receipt/auditSuccess", $body);
+        return $this->restful("POST", "/receipt/auditSuccess", $body, null, $header);
     }
 
     /**
