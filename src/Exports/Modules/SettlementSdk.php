@@ -4358,4 +4358,56 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/businessSingleUnit/getListByIds", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoicePoolController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoicePoolCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/pool/create", $body, $query, $extra);
+    }
+
+    /**
+     * paging
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoicePoolController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoicePoolPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/pool/paging", $body, $query, $extra);
+    }
+
+    /**
+     * relate
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoicePoolController/relateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoicePoolRelate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/pool/relate", $body, $query, $extra);
+    }
+
+    /**
+     * 删除发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceController/receiveDeleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receiveDelete", $body, $query, $extra);
+    }
 }
