@@ -39,6 +39,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk                 $javaFin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterMngSdk      $javaGoodsCenterMng
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk         $javaGoodsCenter
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterApiSdk      $javaGoodsCenterApi
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsReplaceServiceSdk $javaGoodsReplace
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk           $javaOrderCode
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk          $javaOrderQuery
