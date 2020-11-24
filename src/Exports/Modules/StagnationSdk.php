@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-04-01
- * @time   Mon, 01 Apr 2019 17:52:45 +0800
+ * @date   2020-11-24
+ * @time   Tue, 24 Nov 2020 11:00:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,14 +30,16 @@ class StagnationSdk extends SdkBase
     protected $serviceName = 'stagnation.module';
 
     /**
-     * 批量添加分组信息
+     * 批量添加
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/batchCreateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function batchCreateGroupManage($body)
+    public function batchCreateGroupManage($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/group/manage/batch/create", $body);
+        return $this->restful("POST", "/group/manage/batch/create", $body, $query, $extra);
     }
 
     /**
@@ -46,473 +48,702 @@ class StagnationSdk extends SdkBase
      * 支持禁用/启用单个用户配置
      * 支持禁用/启用某分组下的多个用户配置
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/batchUpdateConfigAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function batchUpdateConfig($body)
+    public function batchUpdateConfig($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/batch/update/config", $body);
+        return $this->restful("POST", "/config/batch/update/config", $body, $query, $extra);
     }
 
     /**
-     * 批量修改分组信息
+     * 批量修改
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/batchUpdateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function batchUpdateGroupManage($body)
+    public function batchUpdateGroupManage($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/group/manage/batch/update", $body);
+        return $this->restful("POST", "/group/manage/batch/update", $body, $query, $extra);
+    }
+
+    /**
+     * 校验手机号唯一性
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/checkMobileAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function checkMobile($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/check/mobile", $body, $query, $extra);
     }
 
     /**
      * 新增权益码
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function codeAdd($body)
+    public function codeAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/code/add", $body);
+        return $this->restful("POST", "/code/add", $body, $query, $extra);
     }
 
     /**
-     * 权益码信息详情
+     * 权益码详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function codeDetail($body)
+    public function codeDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/code/detail", $body);
+        return $this->restful("POST", "/code/detail", $body, $query, $extra);
     }
 
     /**
-     * 更新权益码数据
+     * 分组发放总额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/giveOutAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function codeGiveOutAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/give/out/amount", $body, $query, $extra);
+    }
+
+    /**
+     * 更新权益码
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function codeUpdate($body)
+    public function codeUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/code/update", $body);
+        return $this->restful("POST", "/code/update", $body, $query, $extra);
     }
 
     /**
-     * 新增配置（支持批量）
+     * 新增（支持批量）
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configAdd($body)
+    public function configAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/add", $body);
+        return $this->restful("POST", "/config/add", $body, $query, $extra);
     }
 
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configDelete($body)
+    public function configDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/delete", $body);
+        return $this->restful("POST", "/config/delete", $body, $query, $extra);
     }
 
     /**
-     * 权益码信息详情
+     * 详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configDetail($body)
+    public function configDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/detail", $body);
+        return $this->restful("POST", "/config/detail", $body, $query, $extra);
     }
 
     /**
-     * 编辑配置（支持批量）
+     * 编辑（支持批量）
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/editAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configEdit($body)
+    public function configEdit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/edit", $body);
+        return $this->restful("POST", "/config/edit", $body, $query, $extra);
     }
 
     /**
-     * 驻店员下的分组列表
+     * 无分页列表(userId条件)
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/listAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configList($body)
+    public function configList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/list", $body);
+        return $this->restful("POST", "/config/list", $body, $query, $extra);
     }
 
     /**
-     * 分组下的驻店员分页
+     * 无分页列表(memberId条件)
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/listByMemberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function configListByMember($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/config/list/member", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function configPaging($body)
+    public function configPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/config/paging", $body);
+        return $this->restful("POST", "/config/paging", $body, $query, $extra);
     }
 
     /**
-     * 获取驻店员发放记录导出数据
+     * 微信配置类型(计次|计费)
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/typeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function configType($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/config/type", $body, $query, $extra);
+    }
+
+    /**
+     * 导出
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/exportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function exportUserRecord($body)
+    public function exportUserRecord($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/record/user/export", $body);
+        return $this->restful("POST", "/record/user/export", $body, $query, $extra);
     }
 
     /**
-     * 积分列表查询接口
+     * 智赔所需 根据CDKEY获取发放记录
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/cdKeyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getRecordByCDKey($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/record/cdKey", $body, $query, $extra);
+    }
+
+    /**
+     * 积分列表
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/getRecordPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getRecordPaging($body)
+    public function getRecordPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/record/get/record/paging", $body);
+        return $this->restful("POST", "/record/get/record/paging", $body, $query, $extra);
     }
 
     /**
-     * 获取驻店宝分组列表（支持给定参数查询）
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/indexAction.md
-     * @param array $body 入参类型
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function groupManageIndex($body)
+    public function groupManageAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/group/manage/index", $body);
+        return $this->restful("POST", "/group/manage/add", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/indexAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupManageIndex($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/manage/index", $body, $query, $extra);
     }
 
     /**
      * 迁移
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/moveAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function groupManageMove($body)
+    public function groupManageMove($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/group/manage/move", $body);
+        return $this->restful("POST", "/group/manage/move", $body, $query, $extra);
     }
 
     /**
      * 获取权益分组占用情况
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/occupyAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function groupManageOccupy($body)
+    public function groupManageOccupy($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/group/manage/occupy", $body);
+        return $this->restful("POST", "/group/manage/occupy", $body, $query, $extra);
     }
 
     /**
-     * 获取分组详情
+     * 详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/infoAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoGroupManage($body)
+    public function infoGroupManage($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/group/manage/info", $body);
+        return $this->restful("POST", "/group/manage/info", $body, $query, $extra);
+    }
+
+    /**
+     * userIds[]是否关联groupManage
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/isReleatedGroupManageByUserIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function isReleatedGroupManageByuserIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/manage/isreleated/by/userIds", $body, $query, $extra);
     }
 
     /**
      * 新增行驶证
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LicenseController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function licenseAdd($body)
+    public function licenseAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/license/add", $body);
+        return $this->restful("POST", "/license/add", $body, $query, $extra);
     }
 
     /**
      * 行驶证详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LicenseController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function licenseDetail($body)
+    public function licenseDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/license/detail", $body);
+        return $this->restful("POST", "/license/detail", $body, $query, $extra);
     }
 
     /**
-     * 新增日志
+     * 新增
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LogController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logAdd($body)
+    public function logAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/log/add", $body);
+        return $this->restful("POST", "/log/add", $body, $query, $extra);
     }
 
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/LogController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function logPaging($body)
+    public function logPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/log/paging", $body);
+        return $this->restful("POST", "/log/paging", $body, $query, $extra);
     }
 
     /**
-     * 新增驻店员数据统计
+     * 新增
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function recordAdd($body)
+    public function recordAdd($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/record/add", $body);
+        return $this->restful("POST", "/record/add", $body, $query, $extra);
     }
 
     /**
-     * 权益查询接口
+     * 详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function recordDetail($body)
+    public function recordDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/record/detail", $body);
+        return $this->restful("POST", "/record/detail", $body, $query, $extra);
     }
 
     /**
-     * 方法记录列表接口（支持按条件查询）
+     * 发放列表
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/indexAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function recordIndex($body)
+    public function recordIndex($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/record/index", $body);
+        return $this->restful("POST", "/record/index", $body, $query, $extra);
     }
 
     /**
-     * 驻店员数据统计
+     * 数据统计
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecordController/statisticsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function recordStatistics($body)
+    public function recordStatistics($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/record/statistics", $body);
-    }
-
-    /**
-     * 通过groupManageIds[]统计分组下用户数量
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/statisticsUserAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function statisticsGroupManageUser($body)
-    {
-        return $this->restful("POST", "/group/manage/statistics/user", $body);
-    }
-
-    /**
-     * 通过stagnationMemberId统计某一列发放记录数
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statisticsUserAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function statisticsRecordColumn($body)
-    {
-        return $this->restful("POST", "/user/statistics/record/column", $body);
-    }
-
-    /**
-     * 根据grouManageIds[]统计记录表某一列值
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/sumRecordColumnAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function sumRecordColumnByGroupManageIds($body)
-    {
-        return $this->restful("POST", "/group/manage/sum/record/column", $body);
-    }
-
-    /**
-     * 未激活数据
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/unactiveAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function tmpUnactive($body)
-    {
-        return $this->restful("POST", "/tmp/unactive", $body);
-    }
-
-    /**
-     * 更新
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function tmpUpdate($body)
-    {
-        return $this->restful("POST", "/tmp/update", $body);
-    }
-
-    /**
-     * 更新回收金额
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateRecycleMoneyAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function updateRecycleMoney($body)
-    {
-        return $this->restful("POST", "/code/update/recycle/money", $body);
-    }
-
-    /**
-     * 新增驻店员
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userAdd($body)
-    {
-        return $this->restful("POST", "/user/add", $body);
-    }
-
-    /**
-     * 驻店员信息详情
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/detailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userDetail($body)
-    {
-        return $this->restful("POST", "/user/detail", $body);
-    }
-
-    /**
-     * 编辑驻店员信息
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/editAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userEdit($body)
-    {
-        return $this->restful("POST", "/user/edit", $body);
-    }
-
-    /**
-     * 获取驻店员发放金额
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/giveOutAmountAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userGiveOutAmount($body)
-    {
-        return $this->restful("POST", "/user/give/out/amount", $body);
-    }
-
-    /**
-     * 获取驻店员获取积分
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/givePointAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userGivePoint($body)
-    {
-        return $this->restful("POST", "/user/give/point", $body);
-    }
-
-    /**
-     * 驻店员列表
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userList($body)
-    {
-        return $this->restful("POST", "/user/list", $body);
-    }
-
-    /**
-     * 驻店员分页
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userPaging($body)
-    {
-        return $this->restful("POST", "/user/paging", $body);
-    }
-
-    /**
-     * 驻店员状态变更
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statusAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function userStatus($body)
-    {
-        return $this->restful("POST", "/user/status", $body);
+        return $this->restful("POST", "/record/statistics", $body, $query, $extra);
     }
 
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function recycleLogCreate($body)
+    public function recycleLogCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/recycle/log/create", $body);
+        return $this->restful("POST", "/recycle/log/create", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function recycleLogDetail($body)
+    public function recycleLogDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/recycle/log/detail", $body);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/pagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function recycleLogPaging($body)
-    {
-        return $this->restful("POST", "/recycle/log/paging", $body);
+        return $this->restful("POST", "/recycle/log/detail", $body, $query, $extra);
     }
 
     /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/exportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function recycleLogExport($body)
+    public function recycleLogExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/recycle/log/export", $body);
+        return $this->restful("POST", "/recycle/log/export", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RecycleLogController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recycleLogPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recycle/log/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 通过groupManageIds[]统计分组下用户数量
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/statisticsUserAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statisticsGroupManageUser($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/manage/statistics/user", $body, $query, $extra);
+    }
+
+    /**
+     * 通过stagnationMemberId统计某一列发放记录数
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statisticsUserAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statisticsRecordColumn($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/statistics/record/column", $body, $query, $extra);
+    }
+
+    /**
+     * 根据grouManageIds[]统计记录表某一列值
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/sumRecordColumnAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function sumRecordColumnByGroupManageIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/manage/sum/record/column", $body, $query, $extra);
+    }
+
+    /**
+     * 未激活数据
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/unactiveAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tmpUnactive($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tmp/unactive", $body, $query, $extra);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/TmpController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tmpUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tmp/update", $body, $query, $extra);
+    }
+
+    /**
+     * 通过cdKey更新权益码
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateEquityNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateEquityNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/updateEquityNo", $body, $query, $extra);
+    }
+
+    /**
+     * 更新回收金额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/updateRecycleMoneyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateRecycleMoney($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/update/recycle/money", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/add", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 获取驻店员发放金额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/giveOutAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userGiveOutAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/give/out/amount", $body, $query, $extra);
+    }
+
+    /**
+     * 获取驻店员获取积分
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/givePointAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userGivePoint($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/give/point", $body, $query, $extra);
+    }
+
+    /**
+     * 单个驻店员信息
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/info", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/list", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/log/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserLogController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userLogPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/log/page", $body, $query, $extra);
+    }
+
+    /**
+     * 分页
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 状态变更
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/statusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/status", $body, $query, $extra);
     }
 }
