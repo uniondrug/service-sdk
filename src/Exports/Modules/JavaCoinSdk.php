@@ -475,5 +475,25 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundRecord/getBySerialId", $body);
     }
+
+    /**
+     * 连锁资金池订单汇总查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordStatisticsOrder($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/statisticsOrder", $body);
+    }
+
+    /**
+     * 导出连锁资金池订单汇总记录
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordExportStatisticsOrder($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/exportStatisticsOrder", $body);
+    }
 }
 
