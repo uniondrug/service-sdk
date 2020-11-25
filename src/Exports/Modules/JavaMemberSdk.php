@@ -398,4 +398,14 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userBasic/updateAccount", $body);
     }
+
+    /**
+     * 通过memberId查询实名证件
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRealCard($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getReal", $body);
+    }
 }
