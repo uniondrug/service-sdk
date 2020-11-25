@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-22
- * @time   Thu, 22 Oct 2020 11:28:21 +0800
+ * @date   2020-11-25
+ * @time   Wed, 25 Nov 2020 10:55:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -329,7 +329,7 @@ class ClaimSdk extends SdkBase
     }
 
     /**
-     * 初审通过
+     * 目前没有这个场景
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/preliminaryTrialAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -404,6 +404,19 @@ class ClaimSdk extends SdkBase
     public function claimWaitPay($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/claim/wait/pay", $body, $query, $extra);
+    }
+
+    /**
+     * 获取理赔数据
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/getDataByClaimNosAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getDataByClaimNos($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/getDataByClaimNos", $body, $query, $extra);
     }
 
     /**
