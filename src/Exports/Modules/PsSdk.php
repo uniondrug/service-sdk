@@ -32,9 +32,9 @@ class PsSdk extends SdkBase
     /**
      * 业务汇总
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/BusinessStatisticController/countAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function businessStatisticCount($body, $query = null, $extra = null)
@@ -45,9 +45,9 @@ class PsSdk extends SdkBase
     /**
      * 详细数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/BusinessStatisticController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function businessStatisticPaging($body, $query = null, $extra = null)
@@ -58,9 +58,9 @@ class PsSdk extends SdkBase
     /**
      * 数据总和
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PharmacyStatisticController/countAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function pharmacyStatisticCount($body, $query = null, $extra = null)
@@ -71,9 +71,9 @@ class PsSdk extends SdkBase
     /**
      * 详细数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PharmacyStatisticController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function pharmacyStatisticList($body, $query = null, $extra = null)
@@ -84,9 +84,9 @@ class PsSdk extends SdkBase
     /**
      * 审核统计
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/RenewalStatisticController/countAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function renewalStatisticCount($body, $query = null, $extra = null)
@@ -97,9 +97,9 @@ class PsSdk extends SdkBase
     /**
      * 详细数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/RenewalStatisticController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function renewalStatisticPaging($body, $query = null, $extra = null)
@@ -110,9 +110,9 @@ class PsSdk extends SdkBase
     /**
      * 数据汇总
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorKStatisticController/countAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workStatisticCount($body, $query = null, $extra = null)
@@ -123,9 +123,9 @@ class PsSdk extends SdkBase
     /**
      * 详细数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorKStatisticController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workStatisticPaging($body, $query = null, $extra = null)
@@ -136,9 +136,9 @@ class PsSdk extends SdkBase
     /**
      * 用户详细数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PharmacyStatisticController/userListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function pharmacyStatisticUserList($body, $query = null, $extra = null)
@@ -149,9 +149,9 @@ class PsSdk extends SdkBase
     /**
      * 用户详细数据(不分页)
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PharmacyStatisticController/userListsAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function pharmacyStatisticUserLists($body, $query = null, $extra = null)
@@ -162,9 +162,9 @@ class PsSdk extends SdkBase
     /**
      * 详细数据不分页（日纬度）
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorKStatisticController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workStatisticList($body, $query = null, $extra = null)
@@ -175,9 +175,9 @@ class PsSdk extends SdkBase
     /**
      * 超期理赔
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingOverClaimAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticPagingClaim($body, $query = null, $extra = null)
@@ -188,9 +188,9 @@ class PsSdk extends SdkBase
     /**
      * 保险项目待收款
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingPendClaimRcptAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticPagingPendClaimRcpt($body, $query = null, $extra = null)
@@ -201,9 +201,9 @@ class PsSdk extends SdkBase
     /**
      * 权益采购待收款
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingPendRcvAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticPagingPendRcv($body, $query = null, $extra = null)
@@ -214,9 +214,9 @@ class PsSdk extends SdkBase
     /**
      * 用户保单业绩数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyCountListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticPolicyCountList($body, $query = null, $extra = null)
@@ -227,9 +227,9 @@ class PsSdk extends SdkBase
     /**
      * 用户保单业绩数据列表
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticPolicyList($body, $query = null, $extra = null)
@@ -240,9 +240,9 @@ class PsSdk extends SdkBase
     /**
      * 用户项目业绩数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectCountListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticProjectCountList($body, $query = null, $extra = null)
@@ -253,9 +253,9 @@ class PsSdk extends SdkBase
     /**
      * 用户项目业绩数据列表
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticProjectList($body, $query = null, $extra = null)
@@ -266,9 +266,9 @@ class PsSdk extends SdkBase
     /**
      * 待收款
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/userPendCountAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticUserPendCount($body, $query = null, $extra = null)
@@ -279,9 +279,9 @@ class PsSdk extends SdkBase
     /**
      * 业务汇总
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/CountAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticCount($body, $query = null, $extra = null)
@@ -289,4 +289,68 @@ class PsSdk extends SdkBase
         return $this->restful("POST", "/policyStatistic/count", $body, $query, $extra);
     }
 
+    /**
+     * 截止当前的剩余可以使用的数量，额度
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/AiProfitStatisticController/presentAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function aiProfitStatisticCardReceivePresent($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiProfitStatistic/present", $body, $query, $extra);
+    }
+
+    /**
+     * 累积领取优惠权益（数量）和累积领取优惠权益（金额）
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/AiProfitStatisticController/totalAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function aiProfitStatisticCardReceiveTotal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiProfitStatistic/total", $body, $query, $extra);
+    }
+
+    /**
+     * 折线图数据
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/AiProfitStatisticController/lineAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function aiProfitStatisticDaySumLine($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiProfitStatistic/line", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/AiProfitStatisticController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function aiProfitStatisticDaySumList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiProfitStatistic/list", $body, $query, $extra);
+    }
+
+    /**
+     * 获取大数据的折扣下拉列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/AiProfitStatisticController/getDiscountAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function aiProfitStatisticPcDiscount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiProfitStatistic/getDiscount", $body, $query, $extra);
+    }
 }
