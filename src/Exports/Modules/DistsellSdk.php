@@ -340,9 +340,9 @@ class DistsellSdk extends SdkBase
     /**
      * 商品连锁列表
      * @link https://uniondrug.coding.net/p/module.distsell/git/blob/development/docs/api/Product/MerchantController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function productMerchangPaging($body, $query = null, $extra = null)
@@ -353,9 +353,9 @@ class DistsellSdk extends SdkBase
     /**
      * 单个/批量新增/导入
      * @link https://uniondrug.coding.net/p/module.distsell/git/blob/development/docs/api/PointController/batchCreateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function pointBatchCreate($body, $query = null, $extra = null)

@@ -264,7 +264,7 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 业务汇总
+     * 待收款
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/userPendCountAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -274,6 +274,19 @@ class PsSdk extends SdkBase
     public function policyStatisticUserPendCount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policyStatistic/userPendCount", $body, $query, $extra);
+    }
+
+    /**
+     * 业务汇总
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/CountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/count", $body, $query, $extra);
     }
 
 }

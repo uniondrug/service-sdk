@@ -7,14 +7,16 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
+
 /**
  * Module
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk                $activity
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk            $aiProfitData
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk      $aiProfitStatistics
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk                  $aiPush
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk               $assistant
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditSdk                   $audit
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk           $activity
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk       $aiProfitData
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk $aiProfitStatistics
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk             $aiPush
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk          $assistant
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditSdk              $audit
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthoritySdk               $authority
  * @property \Uniondrug\ServiceSdk\Exports\Modules\BillSdk                    $bill
  * @property \Uniondrug\ServiceSdk\Exports\Modules\CarSdk                     $car
@@ -37,6 +39,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk                 $javaFin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterMngSdk      $javaGoodsCenterMng
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk         $javaGoodsCenter
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterApiSdk      $javaGoodsCenterApi
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsReplaceServiceSdk $javaGoodsReplace
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk           $javaOrderCode
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk          $javaOrderQuery
@@ -103,6 +106,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk          $guaranteeclaimSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk                $exchange
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk                $dingtalk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderErpSdk            $javaOrderErp
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk              $zhongSheng
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk      $drugstoreStatistic
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk       $drugstoreActivity
@@ -111,11 +115,13 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk     $outreachResourceApiSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                     $vas
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk           $approval
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk      $psDesktoptool
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk           $auditLog
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk       $psDstoreCart
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                 $ps
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk       $javaPurchase
+ * @property JavaAdvfrontSdk                                             $javaAdvfrontSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

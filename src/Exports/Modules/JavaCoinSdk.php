@@ -221,11 +221,12 @@ class JavaCoinSdk extends SdkBase
     /**
      * 收款单审核通过
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function receiptAuditSuccess($body)
+    public function receiptAuditSuccess($body, $header)
     {
-        return $this->restful("POST", "/receipt/auditSuccess", $body);
+        return $this->restful("POST", "/receipt/auditSuccess", $body, null, $header);
     }
 
     /**
@@ -436,11 +437,12 @@ class JavaCoinSdk extends SdkBase
     /**
      * 资金付款单执行
      * @param $body
+     * @param $header
      * @return ResponseInterface
      */
-    public function paymentExecute($body)
+    public function paymentExecute($body, $header)
     {
-        return $this->restful("POST", "/payment/execute", $body);
+        return $this->restful("POST", "/payment/execute", $body, null, $header);
     }
 
     /**
@@ -472,6 +474,26 @@ class JavaCoinSdk extends SdkBase
     public function fundRecordDetail($body)
     {
         return $this->restful("POST", "/fundRecord/getBySerialId", $body);
+    }
+
+    /**
+     * 连锁资金池订单汇总查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordStatisticsOrder($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/statisticsOrder", $body);
+    }
+
+    /**
+     * 导出连锁资金池订单汇总记录
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordExportStatisticsOrder($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/exportStatisticsOrder", $body);
     }
 }
 

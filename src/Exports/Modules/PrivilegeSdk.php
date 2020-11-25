@@ -459,6 +459,19 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * 领取任务列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/privilegeProgressPageAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeProgressPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/progress/page", $body, $query, $extra);
+    }
+
+    /**
      * 店员领取特权
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/receiveAction.md
      * @param array|object $body  入参类型

@@ -4332,4 +4332,82 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/insurerInvoiceInfo/changeConfirm", $body, $query, $extra);
     }
+
+    /**
+     * 结算单导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/exportStatementAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/exportStatement", $body, $query, $extra);
+    }
+
+    /**
+     * 根据组织id批量获取列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BusinessSingleUnitController/getListByIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function businessSingleUnitGetListByIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/businessSingleUnit/getListByIds", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoicePoolController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoicePoolCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/pool/create", $body, $query, $extra);
+    }
+
+    /**
+     * paging
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoicePoolController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoicePoolPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/pool/paging", $body, $query, $extra);
+    }
+
+    /**
+     * relate
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoicePoolController/relateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoicePoolRelate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/pool/relate", $body, $query, $extra);
+    }
+
+    /**
+     * 删除发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceController/receiveDeleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receiveDelete", $body, $query, $extra);
+    }
 }

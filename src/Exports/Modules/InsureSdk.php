@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-30
- * @time   Fri, 30 Oct 2020 16:15:05 +0800
+ * @date   2020-11-11
+ * @time   Wed, 11 Nov 2020 11:51:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -365,6 +365,19 @@ class InsureSdk extends SdkBase
     public function claimEquityAddAmount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/claimEquity/addAmount", $body, $query, $extra);
+    }
+
+    /**
+     * 代扣分页列表
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimEquityController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimEquityPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claimEquity/paging", $body, $query, $extra);
     }
 
     /**

@@ -194,4 +194,37 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseProject/payerId', $body);
 
     }
+
+    /**
+     * 采购项目提额记录
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function increaseMoneyRecords($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/incrHisList', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 发起回款
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function coinReceiptCreate($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseFinance/coinReceiptCreate', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 回款与开票 列表查询
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function coinReceiptPage($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseFinance/coinReceiptPage', $body, $query = null, $extra = null);
+    }
 }
