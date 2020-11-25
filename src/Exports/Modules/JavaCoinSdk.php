@@ -352,6 +352,17 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 强制修改付款单收付账户
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function paymentForcedUpdateAccount($body, $header)
+    {
+        return $this->restful("POST", "/payment/forcedUpdateAccount", $body, null, $header);
+    }
+
+    /**
      * 资金付款单删除
      * @param $body
      * @param $header
