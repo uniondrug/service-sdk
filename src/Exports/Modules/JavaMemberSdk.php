@@ -416,7 +416,7 @@ class JavaMemberSdk extends SdkBase
      */
     public function addUserRole($body)
     {
-        return $this->restful("POST", "/v2/api/userCard/getReal", $body);
+        return $this->restful("POST", "/v2/api/userRole/add", $body);
     }
 
     /**
