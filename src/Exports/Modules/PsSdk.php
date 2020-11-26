@@ -353,4 +353,17 @@ class PsSdk extends SdkBase
     {
         return $this->restful("POST", "/aiProfitStatistic/getDiscount", $body, $query, $extra);
     }
+
+    /**
+     * 开单门店列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PharmacyStatisticController/userStoreListAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function pharmacyStatisticUserStoreList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/pharmacyStatistic/userStoreList", $body, $query, $extra);
+    }
 }
