@@ -27,7 +27,8 @@ class AiprofitNewSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'aiprofit.new.backend';
+//    protected $serviceName = 'aiprofit.new.backend';
+    protected $serviceName = 'backend-new-aiprofit';
 
     /**
      * 用户添加连锁
