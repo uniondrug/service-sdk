@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-12-02
- * @time   Wed, 02 Dec 2020 15:15:37 +0800
+ * @time   Wed, 02 Dec 2020 16:48:41 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -537,16 +537,16 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 门店-会员数/交易额排行榜前十名
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/rankingListAction.md
+     * 连锁-会员数/交易额排行榜前十名
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/rankingListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function rankingList($body, $query = null, $extra = null)
+    public function merchantRankingList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/store/rankingList", $body, $query, $extra);
+        return $this->restful("POST", "/merchant/rankingList", $body, $query, $extra);
     }
 
     /**
@@ -560,6 +560,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function storeData($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/storeData", $body, $query, $extra);
+    }
+
+    /**
+     * 门店-会员数/交易额排行榜前十名
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/rankingListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeRankingList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/rankingList", $body, $query, $extra);
     }
 
     /**
