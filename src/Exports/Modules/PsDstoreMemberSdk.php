@@ -522,4 +522,82 @@ class PsDstoreMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/transfer/log/listing", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/detail", $body, $query, $extra);
+    }
+
+    /**
+     * batch
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupMemberController/batchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupMemberBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/member/batch", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/page", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/update", $body, $query, $extra);
+    }
 }
