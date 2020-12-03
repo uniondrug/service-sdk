@@ -2971,9 +2971,9 @@ class AssistantSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyStoreController/storeDeleteByCustomerIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyStoreDeleteByCustomerId($body, $query = null, $extra = null)
@@ -2984,13 +2984,52 @@ class AssistantSdk extends SdkBase
     /**
      * 审批单状态配置
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Apply/ApplyController/applyStatusSettingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function applyApplyStatusSetting($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/apply/applyStatusSetting", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/SuggestController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function suggestCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/suggest/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/SuggestController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function suggestDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/suggest/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/SuggestController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function suggestPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/suggest/paging", $body, $query, $extra);
     }
 }
