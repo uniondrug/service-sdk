@@ -4447,4 +4447,17 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/statements/goodsReplace", $body, $query, $extra);
     }
+
+    /**
+     * 结算单订单数据统计-换新服务结算单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/statisticsOrders2Action.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementStatisticsOrders2($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/statisticsOrders2", $body, $query, $extra);
+    }
 }
