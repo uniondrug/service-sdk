@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-12-03
- * @time   Thu, 03 Dec 2020 15:02:23 +0800
+ * @time   Thu, 03 Dec 2020 15:56:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function activitySetFail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/set/fail", $body, $query, $extra);
+    }
+
+    /**
+     * 优惠数据分析
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/statisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function activityStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/statistics", $body, $query, $extra);
     }
 
     /**
@@ -365,6 +378,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function completeInfo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/merchant/completeInfo", $body, $query, $extra);
+    }
+
+    /**
+     * 获取不同状态活动数量
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/getStatusCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getActivityStatusCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/getStatusCount", $body, $query, $extra);
     }
 
     /**
