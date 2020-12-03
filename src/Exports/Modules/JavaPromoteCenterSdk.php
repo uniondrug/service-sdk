@@ -212,7 +212,6 @@ class JavaPromoteCenterSdk extends SdkBase
         return $this->restful("POST", "/outActivity/outTrial", $body);
     }
 
-
     /**
      * @param $body
      * @return ResponseInterface
@@ -220,5 +219,14 @@ class JavaPromoteCenterSdk extends SdkBase
     public function outActivityInfo($body)
     {
         return $this->restful("POST", "/outActivity/queryActivityInfo", $body);
+    }
+
+    /**
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryMerchantScheme($body)
+    {
+        return $this->restful("POST", "/outScheme/queryMerchantScheme", $body);
     }
 }
