@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-02
- * @time   Wed, 02 Dec 2020 16:48:41 +0800
+ * @date   2020-12-03
+ * @time   Thu, 03 Dec 2020 15:02:23 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsDstoreMemberSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-member';
+
+    /**
+     * assistantStatistic
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/assistantStatisticAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function activityAssistantStatistic($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/assistant/statistic", $body, $query, $extra);
+    }
 
     /**
      * 新增
@@ -95,7 +108,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * setFail
+     * 停用方案
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/setFailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -368,6 +381,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * getGroupByMemberIds
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupMemberController/getGroupByMemberIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function GetGroupByMemberIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/member/getGroupByMemberIds", $body, $query, $extra);
+    }
+
+    /**
      * 获取连锁/门店/店员下的新会员数及交易额
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/getMemberCountAndGmvAction.md
      * @param array|object $body 入参类型
@@ -599,18 +625,5 @@ class PsDstoreMemberSdk extends SdkBase
     public function transferLogListing($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/transfer/log/listing", $body, $query, $extra);
-    }
-
-    /**
-     * getGroupByMemberIds
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupMemberController/getGroupByMemberIdsAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function GetGroupByMemberIds($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/group/member/getGroupByMemberIds", $body, $query, $extra);
     }
 }
