@@ -3578,6 +3578,39 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 添加理赔单手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/addTpaIncomeItemsAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaIncomeItemsAdd($body)
+    {
+        return $this->restful("POST", "/claimsTpa/incomeItems/add", $body);
+    }
+
+    /**
+     * 通知理赔单手续费收款结果
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/notifyTpaIncomeItemsAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaIncomeItemsNotify($body)
+    {
+        return $this->restful("POST", "/claimsTpa/incomeItems/notify", $body);
+    }
+
+    /**
+     * 理赔单收款明细分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/pagingTpaIncomeItemsAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaIncomeItemsPaging($body)
+    {
+        return $this->restful("POST", "/claimsTpa/incomeItems/paging", $body);
+    }
+
+    /**
      * 移除保单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/removeRelatePoliciesAction.md
      * @param array|object $body 入参类型
