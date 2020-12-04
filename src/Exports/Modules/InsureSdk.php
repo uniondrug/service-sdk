@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-11
- * @time   Wed, 11 Nov 2020 11:51:53 +0800
+ * @date   2020-11-27
+ * @time   Fri, 27 Nov 2020 15:15:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -238,6 +238,19 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 变更项目信息（TPA和PBM)
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeProjectAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function changeProjectPolicy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/changeProject", $body, $query, $extra);
+    }
+
+    /**
      * 更新保单状态
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyController/changeStatusAction.md
      * @param array|object $body 入参类型
@@ -261,6 +274,19 @@ class InsureSdk extends SdkBase
     public function channelTaskInsureTask($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insureTask/channeltask", $body, $query, $extra);
+    }
+
+    /**
+     * 理赔数据校验
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/checkAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function checkClaim($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/check", $body, $query, $extra);
     }
 
     /**
@@ -1288,6 +1314,19 @@ class InsureSdk extends SdkBase
     public function setEnabledInsureTask($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insureTask/setenabled", $body, $query, $extra);
+    }
+
+    /**
+     * 提交理赔数据
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/ClaimController/submitAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function submitClaim($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/submit", $body, $query, $extra);
     }
 
     /**

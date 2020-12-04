@@ -398,4 +398,56 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userBasic/updateAccount", $body);
     }
+
+    /**
+     * 通过memberId查询实名证件
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getRealCard($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getReal", $body);
+    }
+
+    /**
+     * 添加用户组织、身份
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function addUserRole($body)
+    {
+        return $this->restful("POST", "/v2/api/userRole/add", $body);
+    }
+
+    /**
+     * 查询用户组织(结果只会展示一条)
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getOneUserRole($body)
+    {
+        return $this->restful("POST", "/v2/api/userRole/getOne", $body);
+    }
+
+    /**
+     * 查询用户组织集合
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryUserRole($body)
+    {
+        return $this->restful("POST", "/v2/api/userRole/query", $body);
+    }
+
+    /**
+     * 编辑用户组织
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateUserRole($body)
+    {
+        return $this->restful("POST", "/v2/api/userRole/update", $body);
+    }
+
+
 }
