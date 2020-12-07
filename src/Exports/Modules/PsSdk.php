@@ -264,6 +264,19 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * 用户项目数据
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectMoreAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticProjectMore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/projectMore", $body, $query, $extra);
+    }
+
+    /**
      * 待收款
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/userPendCountAction.md
      * @param array|object $body  入参类型
