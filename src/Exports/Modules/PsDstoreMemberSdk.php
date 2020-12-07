@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-12-07
- * @time   Mon, 07 Dec 2020 11:09:23 +0800
+ * @time   Mon, 07 Dec 2020 13:49:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -92,6 +92,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function activityListing($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/listing", $body, $query, $extra);
+    }
+
+    /**
+     * organList
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/organListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function activityOrganList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/organ/list", $body, $query, $extra);
     }
 
     /**
@@ -602,6 +615,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 发红包
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function sendCard($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/sendCard", $body, $query, $extra);
+    }
+
+    /**
      * 门店管理页数据
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/storeDataAction.md
      * @param array|object $body 入参类型
@@ -755,5 +781,18 @@ class PsDstoreMemberSdk extends SdkBase
     public function transferLogListing($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/transfer/log/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 更新红包记录的订单号等信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/updateBonusUseLogAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateBonusUseLog($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
     }
 }
