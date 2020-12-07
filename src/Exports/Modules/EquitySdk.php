@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-24
- * @time   Tue, 24 Nov 2020 14:17:20 +0800
+ * @date   2020-12-04
+ * @time   Fri, 04 Dec 2020 15:12:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1163,6 +1163,19 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 对接组投保回调
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/GuaranteeController/policyNotifyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteePolicyNotify($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guarantee/policyNotify", $body, $query, $extra);
+    }
+
+    /**
      * 保障理赔操作
      * 用于恢复数据使用，慎用！！！
      * 更新保障对应的权益数据
@@ -1468,6 +1481,19 @@ class EquitySdk extends SdkBase
     public function read($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/equity/read", $body, $query, $extra);
+    }
+
+    /**
+     * 重新消费试算记录（订单与权益内部使用，请勿随便接入，如果需要先与宗明慧沟通）
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/PrecheckController/reConsumeByPrecheckAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function reConsume($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/precheck/reConsumeByPrecheck", $body, $query, $extra);
     }
 
     /**

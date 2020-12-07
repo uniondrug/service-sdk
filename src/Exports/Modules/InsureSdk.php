@@ -1326,7 +1326,7 @@ class InsureSdk extends SdkBase
      */
     public function submitClaim($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/claim/sumbit", $body, $query, $extra);
+        return $this->restful("POST", "/claim/submit", $body, $query, $extra);
     }
 
     /**

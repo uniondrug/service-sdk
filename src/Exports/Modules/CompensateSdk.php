@@ -1187,6 +1187,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 获取执行中项目数量
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByProjectIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectCountByProjectIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/projectCountByProjectIds", $body, $query, $extra);
+    }
+
+    /**
      * 理赔柱状图
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimChartAction.md
      * @param array|object $body 入参类型
