@@ -115,6 +115,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk     $outreachResourceApiSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaEquityTrialSdk         $javaEquityTrial
  * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                     $vas
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\HsSdk                      $hs
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
