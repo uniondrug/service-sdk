@@ -2882,6 +2882,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 商家未读公告数量
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/merchantPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerCountUnread($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcementPartner/countUnread", $body, $query, $extra);
+    }
+
+    /**
      * 已读
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/readAction.md
      * @param array|object $body 入参类型
