@@ -3602,6 +3602,17 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 重复申请理赔单收款明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/addTpaIncomeItemsAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaIncomeItemsRepeat($body)
+    {
+        return $this->restful("POST", "/claimsTpa/incomeItems/repeat", $body);
+    }
+
+    /**
      * 删除理赔单手续费收款明细
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/addTpaIncomeItemsAction.md
      * @param array|object $body 入参类型
