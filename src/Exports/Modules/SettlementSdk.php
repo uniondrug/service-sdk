@@ -4583,4 +4583,17 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/statements/statistics/paging", $body, $query, $extra);
     }
+
+    /**
+     * 历史数据同步
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsStatisticsController/syncHistoryAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsStatisticsSyncHistory($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/statistics/syncHistory", $body, $query, $extra);
+    }
 }
