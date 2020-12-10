@@ -8,6 +8,7 @@
 namespace Uniondrug\ServiceSdk\Traits;
 
 use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
 
 /**
  * Module
@@ -115,7 +116,6 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk     $outreachResourceApiSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaEquityTrialSdk         $javaEquityTrial
  * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                     $vas
- * @property \Uniondrug\ServiceSdk\Exports\Modules\HsSdk                      $hs
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
@@ -124,7 +124,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk          $psDstoreMember
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk            $javaPurchase
- * @property JavaAdvfrontSdk                                                  $javaAdvfrontSdk
+ * @property JavaAdvfrontSdk                                                  $javaAdvfront
+ * @property JavaImSdk                                                        $javaIm
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
