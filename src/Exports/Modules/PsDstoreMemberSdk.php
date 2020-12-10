@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-07
- * @time   Mon, 07 Dec 2020 13:49:54 +0800
+ * @date   2020-12-10
+ * @time   Thu, 10 Dec 2020 15:49:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -745,6 +745,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 查询会员不同状态下标签的数量
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TagMemberController/tagStatusCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tagStatusCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/member/tagStatusCount", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TagController/updateAction.md
      * @param array|object $body 入参类型
@@ -784,7 +797,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 更新红包记录的订单号等信息
+     * 创建红包使用记录
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/updateBonusUseLogAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
