@@ -79,6 +79,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金池扣减
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function deleteBalance($body)
+    {
+        return $this->restful("POST", "/fundAccount/delBalance", $body);
+    }
+
+    /**
      * 资金池变动流水分页列表
      * @param $body
      * @return ResponseInterface
