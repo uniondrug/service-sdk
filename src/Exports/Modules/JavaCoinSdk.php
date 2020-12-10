@@ -99,6 +99,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金池充值流水列表查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordPagingByRecharge($body)
+    {
+        return $this->restful("POST", "/fundRecord/listByRecharge", $body);
+    }
+
+    /**
      * 发起汇款
      * @param $body
      * @return ResponseInterface
