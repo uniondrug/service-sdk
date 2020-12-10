@@ -79,6 +79,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金池扣减
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function deleteBalance($body)
+    {
+        return $this->restful("POST", "/fundAccount/delBalance", $body);
+    }
+
+    /**
      * 资金池变动流水分页列表
      * @param $body
      * @return ResponseInterface
@@ -86,6 +96,16 @@ class JavaCoinSdk extends SdkBase
     public function fundRecordPaging($body)
     {
         return $this->restful("POST", "/fundRecord/listByAccountHolder", $body);
+    }
+
+    /**
+     * 资金池充值流水列表查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordPagingByRecharge($body)
+    {
+        return $this->restful("POST", "/fundRecord/listByRecharge", $body);
     }
 
     /**

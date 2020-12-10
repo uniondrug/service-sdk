@@ -2882,6 +2882,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 商家未读公告数量
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/merchantPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerCountUnread($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcementPartner/countUnread", $body, $query, $extra);
+    }
+
+    /**
      * 已读
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/readAction.md
      * @param array|object $body 入参类型
@@ -2892,6 +2905,19 @@ class SettlementSdk extends SdkBase
     public function announcementPartnerRead($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/announcementPartner/read", $body, $query, $extra);
+    }
+
+    /**
+     * 获取未读公告
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/readAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerAvailable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcementPartner/available", $body, $query, $extra);
     }
 
     /**
@@ -3586,6 +3612,28 @@ class SettlementSdk extends SdkBase
     public function claimsTpaIncomeItemsAdd($body)
     {
         return $this->restful("POST", "/claimsTpa/incomeItems/add", $body);
+    }
+
+    /**
+     * 重复申请理赔单收款明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/addTpaIncomeItemsAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaIncomeItemsRepeat($body)
+    {
+        return $this->restful("POST", "/claimsTpa/incomeItems/repeat", $body);
+    }
+
+    /**
+     * 删除理赔单手续费收款明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimsTpaController/addTpaIncomeItemsAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function claimsTpaIncomeItemsDelete($body)
+    {
+        return $this->restful("POST", "/claimsTpa/incomeItems/delete", $body);
     }
 
     /**
@@ -4521,5 +4569,31 @@ class SettlementSdk extends SdkBase
     public function statementStatisticsOrders2($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/statisticsOrders2", $body, $query, $extra);
+    }
+
+    /**
+     * 非药结算单统计
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsStatisticsController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsStatisticsPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/statistics/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 历史数据同步
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsStatisticsController/syncHistoryAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsStatisticsSyncHistory($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/statistics/syncHistory", $body, $query, $extra);
     }
 }

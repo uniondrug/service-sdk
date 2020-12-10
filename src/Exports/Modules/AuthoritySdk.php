@@ -43,6 +43,19 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
+     * xxx平台员工角色列表
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/workerRoleDetailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workerRoleListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/systemWorkerRole/workerRoleListing", $body, $query, $extra);
+    }
+
+    /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemAuthController/batchDeleteAction.md
      * @param array|object $body  入参类型
