@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-10
- * @time   Thu, 10 Dec 2020 20:46:13 +0800
+ * @date   2020-12-11
+ * @time   Fri, 11 Dec 2020 10:49:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -615,19 +615,6 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 检查能否领取
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/checkCanReceiveAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function packageCheckCanReceive($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/package/checkCanReceive", $body, $query, $extra);
-    }
-
-    /**
      * 创建包
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/createAction.md
      * @param array|object $body 入参类型
@@ -859,5 +846,18 @@ class PsDstoreMemberSdk extends SdkBase
     public function updateBonusUseLog($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
+    }
+
+    /**
+     * 更新关注数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/updateFollowAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateFollow($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/updateFollow", $body, $query, $extra);
     }
 }
