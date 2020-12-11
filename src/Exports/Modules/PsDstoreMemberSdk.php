@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-12-11
- * @time   Fri, 11 Dec 2020 10:49:50 +0800
+ * @time   Fri, 11 Dec 2020 13:45:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -768,6 +768,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function tagMemberListing($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/tag/member/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TagMemberController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tagMemberPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/member/page", $body, $query, $extra);
     }
 
     /**
