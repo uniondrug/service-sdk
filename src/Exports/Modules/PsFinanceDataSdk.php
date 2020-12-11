@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-21
- * @time   Wed, 21 Oct 2020 16:20:23 +0800
+ * @date   2020-12-11
+ * @time   Fri, 11 Dec 2020 10:56:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -56,6 +56,71 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 城市列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/citiesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankHouseCities($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bankHouse/cities", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankHouseDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bankHouse/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankHousePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bankHouse/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 省份列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/provincesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankHouseProvinces($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bankHouse/provinces", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/paging", $body, $query, $extra);
+    }
+
+    /**
      * 公司信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/CompanyController/infoAction.md
      * @param array|object $body 入参类型
@@ -82,19 +147,6 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 保司分页列表
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/infoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function insurerPaging($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/insurer/paging", $body, $query, $extra);
-    }
-
-    /**
      * 连锁信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/infoAction.md
      * @param array|object $body 入参类型
@@ -108,8 +160,34 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁配置信息
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantSettingsController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function infoMerchantSettings($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchantsettings/info", $body, $query, $extra);
+    }
+
+    /**
+     * 保司分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/paging", $body, $query, $extra);
+    }
+
+    /**
      * 连锁分页列表
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/infoAction.md
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/pagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -135,7 +213,7 @@ class PsFinanceDataSdk extends SdkBase
 
     /**
      * 更新连锁负责人
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/infoAction.md
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/updateLeaderAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -147,16 +225,146 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 连锁配置信息
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantSettingsController/infoAction.md
+     * 审核对比
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/changeConfirmAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function infoMerchantSettings($body, $query = null, $extra = null)
+    public function organizeBankAccountChangeConfirm($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchantsettings/info", $body, $query, $extra);
+        return $this->restful("POST", "/bank/account/change/confirm", $body, $query, $extra);
+    }
+
+    /**
+     * 检查该连锁下是否有没设置账户的
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/checkIsExistAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountCheckIsExist($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/check/exists", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 设为默认
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/setIsDefaultAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountSetIsDefault($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/set/default", $body, $query, $extra);
+    }
+
+    /**
+     * 设置状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/setStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountSetStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/set/status", $body, $query, $extra);
+    }
+
+    /**
+     * 核算单位详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/unitDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/unit/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/update", $body, $query, $extra);
+    }
+
+    /**
+     * 更新审核状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/updateAuditStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBankAccountUpdateAuditStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/update/audit/status", $body, $query, $extra);
     }
 
     /**
