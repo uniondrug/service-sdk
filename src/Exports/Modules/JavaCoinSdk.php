@@ -79,6 +79,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金池扣减
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function deleteBalance($body)
+    {
+        return $this->restful("POST", "/fundAccount/delBalance", $body);
+    }
+
+    /**
      * 资金池变动流水分页列表
      * @param $body
      * @return ResponseInterface
@@ -86,6 +96,16 @@ class JavaCoinSdk extends SdkBase
     public function fundRecordPaging($body)
     {
         return $this->restful("POST", "/fundRecord/listByAccountHolder", $body);
+    }
+
+    /**
+     * 资金池充值流水列表查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordPagingByRecharge($body)
+    {
+        return $this->restful("POST", "/fundRecord/listByRecharge", $body);
     }
 
     /**
@@ -352,6 +372,17 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 强制修改付款单收付账户
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function paymentForcedUpdateAccount($body, $header)
+    {
+        return $this->restful("POST", "/payment/forcedUpdateAccount", $body, null, $header);
+    }
+
+    /**
      * 资金付款单删除
      * @param $body
      * @param $header
@@ -474,6 +505,26 @@ class JavaCoinSdk extends SdkBase
     public function fundRecordDetail($body)
     {
         return $this->restful("POST", "/fundRecord/getBySerialId", $body);
+    }
+
+    /**
+     * 连锁资金池订单汇总查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordStatisticsOrder($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/statisticsOrder", $body);
+    }
+
+    /**
+     * 导出连锁资金池订单汇总记录
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordExportStatisticsOrder($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/exportStatisticsOrder", $body);
     }
 }
 

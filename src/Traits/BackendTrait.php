@@ -11,6 +11,7 @@ namespace Uniondrug\ServiceSdk\Traits;
 /**
  * Backend
  * @package Uniondrug\ServiceSdk\Exports\Backends\CaseSdk $case
+ * @package Uniondrug\ServiceSdk\Exports\Backends\AiprofitNewSdk $aiprofitNew
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait BackendTrait

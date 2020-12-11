@@ -8,15 +8,16 @@
 namespace Uniondrug\ServiceSdk\Traits;
 
 use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
 
 /**
  * Module
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk           $activity
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk       $aiProfitData
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk $aiProfitStatistics
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk             $aiPush
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk          $assistant
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditSdk              $audit
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk                $activity
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk            $aiProfitData
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk      $aiProfitStatistics
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk                  $aiPush
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk               $assistant
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditSdk                   $audit
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthoritySdk               $authority
  * @property \Uniondrug\ServiceSdk\Exports\Modules\BillSdk                    $bill
  * @property \Uniondrug\ServiceSdk\Exports\Modules\CarSdk                     $car
@@ -39,6 +40,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk                 $javaFin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterMngSdk      $javaGoodsCenterMng
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk         $javaGoodsCenter
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterApiSdk      $javaGoodsCenterApi
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsReplaceServiceSdk $javaGoodsReplace
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk           $javaOrderCode
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk          $javaOrderQuery
@@ -112,15 +114,18 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthSdk                    $auth
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPmcCashierSdk          $javaPmcCashier
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk     $outreachResourceApiSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaEquityTrialSdk         $javaEquityTrial
  * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                     $vas
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk           $approval
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk      $psDesktoptool
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk           $auditLog
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk       $psDstoreCart
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                 $ps
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk       $javaPurchase
- * @property JavaAdvfrontSdk                                             $javaAdvfrontSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk          $psDstoreMember
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk            $javaPurchase
+ * @property JavaAdvfrontSdk                                                  $javaAdvfront
+ * @property JavaImSdk                                                        $javaIm
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

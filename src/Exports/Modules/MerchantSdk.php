@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-19
- * @time   Thu, 19 Nov 2020 09:55:45 +0800
+ * @date   2020-11-26
+ * @time   Thu, 26 Nov 2020 11:42:32 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -664,6 +664,19 @@ class MerchantSdk extends SdkBase
     public function editFinaceSettlement($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/financesettlement/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 修改商户组织（村医）
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/EditHealthServicesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editHealthServicesOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/edithealthservices", $body, $query, $extra);
     }
 
     /**
@@ -1665,6 +1678,19 @@ class MerchantSdk extends SdkBase
     public function listAllStoreSmallOrgabuzeBase($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/listallstoresmall", $body, $query, $extra);
+    }
+
+    /**
+     * 查询村医组织列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/ListHealthServicesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function listHealthServicesOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/listhealthservices", $body, $query, $extra);
     }
 
     /**

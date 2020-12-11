@@ -160,6 +160,19 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/CashierController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cashierDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cashier/detail", $body, $query, $extra);
+    }
+
+    /**
      * 获取门店店员列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/listAction.md
      * @param array|object $body 入参类型
