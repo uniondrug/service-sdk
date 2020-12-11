@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-07
- * @time   Mon, 07 Dec 2020 13:49:54 +0800
+ * @date   2020-12-11
+ * @time   Fri, 11 Dec 2020 13:45:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -615,6 +615,45 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 创建包
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function packageCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/package/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取包数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function packageDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/package/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改包数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function packageUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/package/update", $body, $query, $extra);
+    }
+
+    /**
      * 发红包
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
      * @param array|object $body 入参类型
@@ -733,6 +772,19 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TagMemberController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tagMemberPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/member/page", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TagController/pageAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -742,6 +794,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function tagPage($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/tag/page", $body, $query, $extra);
+    }
+
+    /**
+     * 查询会员不同状态下标签的数量
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TagMemberController/tagStatusCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tagStatusCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/member/tagStatusCount", $body, $query, $extra);
     }
 
     /**
@@ -784,7 +849,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 更新红包记录的订单号等信息
+     * 创建红包使用记录
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/updateBonusUseLogAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
