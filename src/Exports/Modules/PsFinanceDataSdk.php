@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-11
- * @time   Fri, 11 Dec 2020 17:48:43 +0800
+ * @date   2020-12-13
+ * @time   Sun, 13 Dec 2020 17:38:13 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -105,6 +105,19 @@ class PsFinanceDataSdk extends SdkBase
     public function bankAccountGetDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/bank/account/get/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 获取指定类型账号
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/getDetailByTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountGetDetailByType($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/detail/by/type", $body, $query, $extra);
     }
 
     /**
@@ -339,6 +352,19 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/listing", $body, $query, $extra);
     }
 
     /**
