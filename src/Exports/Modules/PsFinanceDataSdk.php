@@ -427,7 +427,7 @@ class PsFinanceDataSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingCompany($body, $query = null, $extra = null)
+    public function pagingCompany($body, $query = null, $extra =  null)
     {
         return $this->restful("POST", "/company/paging", $body, $query, $extra);
     }
