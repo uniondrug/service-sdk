@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-12-14
- * @time   Mon, 14 Dec 2020 10:20:01 +0800
+ * @time   Mon, 14 Dec 2020 11:33:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -391,6 +391,19 @@ class MerchantSdk extends SdkBase
     public function countIsDTP($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organization/countisdtp", $body, $query, $extra);
+    }
+
+    /**
+     * 服务收款数量统计
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/countIsServiceCollectionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function countIsServiceCollection($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/countisservicecollection", $body, $query, $extra);
     }
 
     /**
