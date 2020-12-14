@@ -50,4 +50,14 @@ class JavaAdvfrontSdk extends SdkBase
     {
         return $this->restful("POST", "/advAdvertisement/getMembersByStoreId", $body);
     }
+
+    /**
+     * 我的会员列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getMyMembers($body)
+    {
+        return $this->restful("POST", "/commercial/members/myMembers", $body);
+    }
 }
