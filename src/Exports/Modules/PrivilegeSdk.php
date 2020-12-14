@@ -362,7 +362,7 @@ class PrivilegeSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function PrivilegeCounting($body, $query = null, $extra = null)
+    public function privilegeCounting($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/privilege/counting", $body, $query, $extra);
     }
