@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-13
- * @time   Sun, 13 Dec 2020 18:09:16 +0800
+ * @date   2020-12-14
+ * @time   Mon, 14 Dec 2020 11:27:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,6 +118,19 @@ class PsFinanceDataSdk extends SdkBase
     public function bankAccountGetDetailByType($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/bank/account/detail/by/type", $body, $query, $extra);
+    }
+
+    /**
+     * 根据商户ID集合查询你账号列表（含银行及开户行）
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/getListByOrganizationIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountListByOrganizationIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/list/by/organizationIds", $body, $query, $extra);
     }
 
     /**
