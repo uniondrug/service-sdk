@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-26
- * @time   Thu, 26 Nov 2020 11:42:32 +0800
+ * @date   2020-12-14
+ * @time   Mon, 14 Dec 2020 10:20:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -602,6 +602,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 变更组织类型
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/editBusinessTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editBusinessTypeOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/editbusinesstype", $body, $query, $extra);
+    }
+
+    /**
      * 修改DTP状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editDtpAction.md
      * @param array|object $body 入参类型
@@ -693,7 +706,7 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 修改直付
+     * 白名单
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsBlackMapAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -742,6 +755,19 @@ class MerchantSdk extends SdkBase
     public function editIsInvoice($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editinvoice", $body, $query, $extra);
+    }
+
+    /**
+     * 服务收款操作
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsServiceCollectionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsServiceCollection($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisservicecollection", $body, $query, $extra);
     }
 
     /**
