@@ -3071,4 +3071,30 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/operationLog/paging", $body, $query, $extra);
     }
+
+    /**
+     * 日志操作类型列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/OperationLog/OperationLogController/actionListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function operationLogActionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/operationLog/actionList", $body, $query, $extra);
+    }
+
+    /**
+     * 日志模块列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/OperationLog/OperationLogController/moduleListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function operationLogModuleList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/operationLog/moduleList", $body, $query, $extra);
+    }
 }
