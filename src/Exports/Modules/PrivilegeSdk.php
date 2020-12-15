@@ -459,6 +459,32 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * profitAssistant
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/profitAssistantAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeProfitAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/profit/listing", $body, $query, $extra);
+    }
+
+    /**
+     * profitListing
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/profitListingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeProfitListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/profit/listing", $body, $query, $extra);
+    }
+
+    /**
      * 进行中列表
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/progressListAction.md
      * @param array|object $body  入参类型
