@@ -33,4 +33,59 @@ class JavaImSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/im/msg/msgSend', $body);
     }
+
+    /**
+     * 创建群聊
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function createGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, '/group/chat/createGroup', $body);
+    }
+
+    /**
+     * 修改群名
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function updateGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, '/group/chat/updateGroup', $body);
+    }
+
+    /**
+     * 群聊踢人
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function disMissGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, '/group/chat/disMissGroup', $body);
+    }
+
+    /**
+     * 群聊加人
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addGroupMember($body)
+    {
+        return $this->restful(static::METHOD_POST, '/group/chat/addGroupMember', $body);
+    }
+
+    /**
+     * 群聊踢人
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function kickGroupMember($body)
+    {
+        return $this->restful(static::METHOD_POST, '/group/chat/kickGroupMember', $body);
+    }
 }
