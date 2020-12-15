@@ -60,4 +60,5 @@ class JavaAdvfrontSdk extends SdkBase
     {
         return $this->restful("POST", "/commercial/members/myMembers", $body);
     }
+
 }
