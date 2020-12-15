@@ -61,4 +61,13 @@ class JavaAdvfrontSdk extends SdkBase
         return $this->restful("POST", "/commercial/members/myMembers", $body);
     }
 
+    /**
+     * 根据顾问memberId集合获取其会员数及头像等信息
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getAdvMembers($body)
+    {
+        return $this->restful("POST", "/commercial/members/getAdvMembers", $body);
+    }
 }
