@@ -29,4 +29,15 @@ class JavaImpsSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/group/push/sendGroupMsg', $body);
     }
+
+    /**
+     * 初始化token
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function imStartAdvice($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/chat/imStartAdvice', $body);
+    }
 }
