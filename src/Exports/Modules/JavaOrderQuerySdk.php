@@ -27,7 +27,7 @@ class JavaOrderQuerySdk extends SdkBase
      */
     public function queryMainOrderList($body)
     {
-        return $this->restful("POST", "/customer/query/queryMainOrderList", $body);
+        return $this->restful("POST", "/order/v2/main/list", $body);
     }
 
     /**
