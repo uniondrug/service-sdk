@@ -191,15 +191,15 @@ class JavaUserServiceSdk extends SdkBase
     }
 
     /**
-     * 获取用户中心绑定的最新生效的实名信息
+     * 用ids获取用户
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/EquitySerialController/updateAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getRealUserInfo($body, $query = null, $extra = null)
+    public function getByBatchByIds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/v2/api/userCard/getReal", $body, $query, $extra);
+        return $this->restful("POST", "/v2/api/userBasic/batchByIds", $body, $query, $extra);
     }
 }
