@@ -70,4 +70,24 @@ class JavaAdvfrontSdk extends SdkBase
     {
         return $this->restful("POST", "/commercial/members/getAdvMembers", $body);
     }
+
+    /**
+     * 顾问详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getAdvisor($body)
+    {
+        return $this->restful("POST", "/advisor/getAdvisor", $body);
+    }
+
+    /**
+     * 更新顾问
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateAdvisor($body)
+    {
+        return $this->restful("POST", "/advisor/advRegister", $body);
+    }
 }
