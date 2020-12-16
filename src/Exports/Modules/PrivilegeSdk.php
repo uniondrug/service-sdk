@@ -459,6 +459,19 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * profitOragnPageAction()
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/profitOragnPageAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeOrganPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/profit/organ/page", $body, $query, $extra);
+    }
+
+    /**
      * profitAssistant
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/profitAssistantAction.md
      * @param array|object $body  入参类型
