@@ -53,7 +53,18 @@ class JavaImSdk extends SdkBase
      */
     public function updateGroup($body)
     {
-        return $this->restful(static::METHOD_POST, '/group/chat/updateGroup', $body);
+        return $this->restful(static::METHOD_POST, '/group/chat/modifyGroup', $body);
+    }
+
+    /**
+     * 获取群成员
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryGroupMember($body)
+    {
+        return $this->restful(static::METHOD_POST, '/group/chat/queryGroupMember', $body);
     }
 
     /**
