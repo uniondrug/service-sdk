@@ -121,6 +121,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImpsSdk                $javaImps
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaimmidSdk               $javaImmid
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk          $psDstoreMember
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
