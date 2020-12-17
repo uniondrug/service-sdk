@@ -90,4 +90,14 @@ class JavaAdvfrontSdk extends SdkBase
     {
         return $this->restful("POST", "/advisor/advRegister", $body);
     }
+
+    /**
+     * 查询在线状态
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryOnlineEffectReply($body)
+    {
+        return $this->restful("POST", "/commercial/members/queryOnlineEffectReply", $body);
+    }
 }

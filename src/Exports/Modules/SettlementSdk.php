@@ -4620,4 +4620,16 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/organizeFinanceAccount/updateEmail", $body, $query, $extra);
     }
+    /**
+     * 申请电子发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ElectronicInvoiceController/applyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function ElectronicInvoiceApply($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/electronicInvoice/apply", $body, $query, $extra);
+    }
 }
