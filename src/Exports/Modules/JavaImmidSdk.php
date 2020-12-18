@@ -51,4 +51,26 @@ class JavaImmidSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/im/sysMsg/couponMsg', $body);
     }
+
+    /**
+     * 会话列表
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function chatList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/chat/currencyList', $body);
+    }
+
+    /**
+     * 创建群聊
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E7%94%B3%E8%AF%B7%E5%88%9B%E5%BB%BA%E7%BE%A4%E8%81%8A.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function applyGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/chat/applyGroup', $body);
+    }
 }
