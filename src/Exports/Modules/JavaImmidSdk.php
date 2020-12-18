@@ -12,10 +12,10 @@ use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
  * java
- * Class JavaimmidSdk
+ * Class JavaImmidSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class JavaimmidSdk extends SdkBase
+class JavaImmidSdk extends SdkBase
 {
     protected $serviceName = 'java.immid';
 
