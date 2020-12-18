@@ -481,7 +481,7 @@ class PrivilegeSdk extends SdkBase
      */
     public function privilegeProfitAssistant($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/privilege/profit/listing", $body, $query, $extra);
+        return $this->restful("POST", "/privilege/profit/assistant", $body, $query, $extra);
     }
 
     /**
