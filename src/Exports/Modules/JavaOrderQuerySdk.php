@@ -120,6 +120,17 @@ class JavaOrderQuerySdk extends SdkBase
     }
 
     /**
+     * 订单主订单详情
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function orderQueryMainOriginal($body)
+    {
+        return $this->restful("POST", "/order/query/original/main", $body);
+    }
+
+    /**
      * 订单退款查询接口
      * @link
      * @param array $body 入参类型
