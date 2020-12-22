@@ -29,4 +29,15 @@ class JavaCreditQuerySdk extends SdkBase
     {
         return $this->restful("POST", "/creditIntegralQuery/getWithdrawRecords", $body);
     }
+
+    /**
+     * 获取统计金额
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getMemberAccount($body)
+    {
+        return $this->restful("POST", "/preAccountRecords/memberAccount/query", $body);
+    }
 }
