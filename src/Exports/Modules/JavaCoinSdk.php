@@ -435,16 +435,6 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
-     * 查询待提交的付款单
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function paymentPageForWaitCommit($body)
-    {
-        return $this->restful("POST", "/payment/pageForWaitCommit", $body);
-    }
-
-    /**
      * 资金付款单审批
      * @param $body
      * @param $header
@@ -477,6 +467,17 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金付款单执行不通过
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function paymentExecuteRefuse($body, $header)
+    {
+        return $this->restful("POST", "/payment/executeRefuse", $body, null, $header);
+    }
+
+    /**
      * 执行人查询待其执行的付款单
      * @param $body
      * @return ResponseInterface
@@ -495,6 +496,17 @@ class JavaCoinSdk extends SdkBase
     public function paymentUndo($body, $header)
     {
         return $this->restful("POST", "/payment/undo", $body, null, $header);
+    }
+
+    /**
+     * 取消支付
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function paymentAbandon($body, $header)
+    {
+        return $this->restful("POST", "/payment/abandon", $body, null, $header);
     }
 
     /**
