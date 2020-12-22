@@ -164,17 +164,6 @@ class JavaUserScoreSdk extends SdkBase
     }
 
     /**
-     * 获取退款列表
-     * @link
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getWithdrawRecords($body)
-    {
-        return $this->restful("POST", "/creditIntegralQuery/getWithdrawRecords", $body);
-    }
-
-    /**
      * 导入积分excel并解析
      * @link
      * @param array $body 入参类型
