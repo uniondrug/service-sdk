@@ -431,4 +431,30 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/company/paging", $body, $query, $extra);
     }
+
+    /**
+     * 根据名称获取字典分组
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/detailByNameAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function dictGroupDetailByName($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/group/detail/name", $body, $query, $extra);
+    }
+
+    /**
+     * 获取字典列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/listing", $body, $query, $extra);
+    }
 }
