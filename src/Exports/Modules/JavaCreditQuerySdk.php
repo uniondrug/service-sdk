@@ -38,6 +38,6 @@ class JavaCreditQuerySdk extends SdkBase
      */
     public function getMemberAccount($body)
     {
-        return $this->restful("POST", "/preAccountRecords/memberAccount/query", $body);
+        return $this->restful("POST", "/creditAccountQuery/memberAccount/query", $body);
     }
 }
