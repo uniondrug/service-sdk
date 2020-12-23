@@ -4644,4 +4644,16 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/electronicInvoice/pdfMerge", $body, $query, $extra);
     }
+    /**
+     * 手动触发申请电子发票
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/AutoCreateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBillAutoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBill/autoCreate", $body, $query, $extra);
+    }
 }
