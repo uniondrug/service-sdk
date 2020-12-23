@@ -31,4 +31,15 @@ class JavaGoodsReplaceServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/goodsInformation/checkMerchantGoodsHaveNoTax", $body);
     }
+
+    /**
+     * 获取订单是否换新
+     * @link https://uniondrug.coding.net/p/jx-parser/d/jx-parser/git/tree/master/docs-api/uniondrug-parser-service/TaskController/excelSqlCreate.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryRenewal($body)
+    {
+        return $this->restful("POST", "/replace/queryRenewal", $body);
+    }
 }
