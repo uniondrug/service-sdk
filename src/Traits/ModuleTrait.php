@@ -8,6 +8,7 @@
 namespace Uniondrug\ServiceSdk\Traits;
 
 use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityAnalysisSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
 
 /**
@@ -131,6 +132,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk              $inspection
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
+ * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
