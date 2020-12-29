@@ -3110,4 +3110,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/users/userWhiteList", $body, $query, $extra);
     }
+
+    /**
+     * 拜访(拜访巡店)总结配置不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/VisitSummaryController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function visitSummaryList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visitSummary/list", $body, $query, $extra);
+    }
 }
