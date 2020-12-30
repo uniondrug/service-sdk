@@ -3123,4 +3123,43 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/visitSummary/list", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecord/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecord/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecord/paging", $body, $query, $extra);
+    }
 }
