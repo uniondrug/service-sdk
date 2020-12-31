@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-12-31
- * @time   Thu, 31 Dec 2020 10:13:31 +0800
+ * @time   Thu, 31 Dec 2020 10:44:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -161,19 +161,6 @@ class PackageSdk extends SdkBase
     }
 
     /**
-     * 获取激活材料名称
-     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getActiveMaterialTypeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function GuaranteesGetActiveMaterialsNames($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/guarantees/activeMaterialsNames", $body, $query, $extra);
-    }
-
-    /**
      * 理赔材料名称
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getClaimMaterialsTypeAction.md
      * @param array|object $body 入参类型
@@ -184,6 +171,19 @@ class PackageSdk extends SdkBase
     public function GuaranteesGetClaimMaterialsNames($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantees/claimMaterialsNames", $body, $query, $extra);
+    }
+
+    /**
+     * 获取材料名称
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getMaterialTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function GuaranteesGetMaterialsTypes($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guarantees/MaterialsTypes", $body, $query, $extra);
     }
 
     /**
