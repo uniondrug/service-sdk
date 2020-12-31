@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2020-12-31
- * @time   Thu, 31 Dec 2020 10:44:50 +0800
+ * @time   Thu, 31 Dec 2020 13:32:15 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -183,7 +183,7 @@ class PackageSdk extends SdkBase
      */
     public function GuaranteesGetMaterialsTypes($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/guarantees/MaterialsTypes", $body, $query, $extra);
+        return $this->restful("POST", "/guarantees/materialsTypes", $body, $query, $extra);
     }
 
     /**
