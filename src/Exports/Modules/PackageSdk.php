@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-21
- * @time   Wed, 21 Oct 2020 18:54:39 +0800
+ * @date   2020-12-31
+ * @time   Thu, 31 Dec 2020 10:13:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -158,6 +158,19 @@ class PackageSdk extends SdkBase
     public function guaranteesExportSql($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantees/export/sql", $body, $query, $extra);
+    }
+
+    /**
+     * 获取激活材料名称
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getActiveMaterialTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function GuaranteesGetActiveMaterialsNames($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guarantees/activeMaterialsNames", $body, $query, $extra);
     }
 
     /**
