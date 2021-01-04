@@ -80,6 +80,19 @@ class DataSdk extends SdkBase
     }
 
     /**
+     * 新增区域
+     * @link https://uniondrug.coding.net/p/module.data/git/blob/development/docs/api/NewAreaController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function newAreaAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/newarea/add", $body, $query, $extra);
+    }
+
+    /**
      * 根据 地区编码/省市区名称 获取上级数组
      * @link
      * @param array $body
@@ -88,5 +101,31 @@ class DataSdk extends SdkBase
     public function newAreaCode($body)
     {
         return $this->restful("POST", "/newarea/code", $body);
+    }
+
+    /**
+     * 父级区域列表
+     * @link https://uniondrug.coding.net/p/module.data/git/blob/development/docs/api/NewAreaController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function newAreaCodeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/newarea/newarealist", $body, $query, $extra);
+    }
+
+    /**
+     * 修改区域
+     * @link https://uniondrug.coding.net/p/module.data/git/blob/development/docs/api/NewAreaController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function newAreaEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/newarea/add", $body, $query, $extra);
     }
 }
