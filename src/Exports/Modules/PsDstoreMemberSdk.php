@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-05
- * @time   Tue, 05 Jan 2021 16:11:01 +0800
+ * @time   Tue, 05 Jan 2021 15:08:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -121,7 +121,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 停用方案-已废弃
+     * 停用方案
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/setFailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -719,6 +719,45 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/NoticeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/notice/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/NoticeController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/notice/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/NoticeController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function noticePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/notice/page", $body, $query, $extra);
+    }
+
+    /**
      * 检查能否领取
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/checkCanReceiveAction.md
      * @param array|object $body 入参类型
@@ -810,7 +849,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 关注送红包
+     * 发红包
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
