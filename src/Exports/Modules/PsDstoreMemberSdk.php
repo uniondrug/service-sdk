@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-30
- * @time   Wed, 30 Dec 2020 10:58:09 +0800
+ * @date   2021-01-05
+ * @time   Tue, 05 Jan 2021 14:03:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -407,6 +407,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 活动方案停用/启用
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/changeStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function changeSchemeStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/changeStatus", $body, $query, $extra);
+    }
+
+    /**
      * 信息完善
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/completeInfoAction.md
      * @param array|object $body 入参类型
@@ -745,6 +758,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 根据会员ID获取客户与店员的双向绑定
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/relationByMemberIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationByMemberId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/relationByMemberId", $body, $query, $extra);
+    }
+
+    /**
      * 关联详情
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/existRelationAction.md
      * @param array|object $body 入参类型
@@ -771,7 +797,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 发红包
+     * 关注送红包
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
