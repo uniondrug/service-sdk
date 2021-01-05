@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-04
- * @time   Mon, 04 Jan 2021 16:02:46 +0800
+ * @date   2021-01-05
+ * @time   Tue, 05 Jan 2021 11:15:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -171,6 +171,19 @@ class PackageSdk extends SdkBase
     public function GuaranteesGetClaimMaterialsNames($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantees/claimMaterialsNames", $body, $query, $extra);
+    }
+
+    /**
+     * 获取材料名称
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getMaterialTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function GuaranteesGetMaterialsTypes($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guarantees/materialsTypes", $body, $query, $extra);
     }
 
     /**
