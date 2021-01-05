@@ -784,6 +784,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 根据会员ID获取客户与店员的双向绑定
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/relationByMemberIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationByMemberId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/relationByMemberId", $body, $query, $extra);
+    }
+
+    /**
      * 关联详情
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/existRelationAction.md
      * @param array|object $body 入参类型
