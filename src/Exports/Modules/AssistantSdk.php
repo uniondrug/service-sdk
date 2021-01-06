@@ -3110,4 +3110,134 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/users/userWhiteList", $body, $query, $extra);
     }
+
+    /**
+     * 拜访(拜访巡店)总结配置不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/VisitSummaryController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function visitSummaryList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visitSummary/list", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecord/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecord/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecord/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分配总次数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/timesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workTimes($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/times", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/update", $body, $query, $extra);
+    }
+
+    /**
+     * 记录用户经纬度
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UsersController/setUserTrajectoryAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function setUserTrajectory($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/users/setUserTrajectory", $body, $query, $extra);
+    }
 }

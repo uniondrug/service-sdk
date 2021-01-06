@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-14
- * @time   Mon, 14 Dec 2020 11:33:47 +0800
+ * @date   2021-01-05
+ * @time   Tue, 05 Jan 2021 15:27:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -238,6 +238,32 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 非代理商列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/agentNotPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function AgentNotPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/agentnotpaging", $body, $query, $extra);
+    }
+
+    /**
+     * 对应代理商户操作
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/agentPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function agentPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/agentpaging", $body, $query, $extra);
+    }
+
+    /**
      * 基于商户查询用户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/listsStoreIdAction.md
      * @param array|object $body 入参类型
@@ -378,6 +404,19 @@ class MerchantSdk extends SdkBase
     public function clerkNum($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/clerkNum", $body, $query, $extra);
+    }
+
+    /**
+     * 服务收款数量统计
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/countAgentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function CountAgent($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/agentnotpaging", $body, $query, $extra);
     }
 
     /**
@@ -586,6 +625,19 @@ class MerchantSdk extends SdkBase
     public function editAdviser($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebaseadviser/editadviser", $body, $query, $extra);
+    }
+
+    /**
+     * 对应代理商户操作
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editAgentOrganIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editAgentOrganId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editagentorganid", $body, $query, $extra);
     }
 
     /**

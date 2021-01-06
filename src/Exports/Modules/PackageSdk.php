@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-10-21
- * @time   Wed, 21 Oct 2020 18:54:39 +0800
+ * @date   2021-01-05
+ * @time   Tue, 05 Jan 2021 11:15:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -174,6 +174,19 @@ class PackageSdk extends SdkBase
     }
 
     /**
+     * 获取材料名称
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getMaterialTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function GuaranteesGetMaterialsTypes($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guarantees/materialsTypes", $body, $query, $extra);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/pagingAction.md
      * @param array|object $body 入参类型
@@ -249,6 +262,58 @@ class PackageSdk extends SdkBase
     public function guaranteesUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantees/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增白名单
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteeWhiteListAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteeWhiteList/add", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/getDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteeWhiteListDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteeWhiteList/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 白名单列表
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteeWhiteListpaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteeWhiteList/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改白名单
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteeWhiteListUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteeWhiteList/update", $body, $query, $extra);
     }
 
     /**
