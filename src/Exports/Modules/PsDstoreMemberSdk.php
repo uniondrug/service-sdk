@@ -719,6 +719,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * config
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/NoticeController/configAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeConfig($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/notice/config", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/NoticeController/createAction.md
      * @param array|object $body 入参类型
