@@ -238,4 +238,13 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/outScheme/queryAllSchemeByMerchantIdList", $body);
     }
+
+    /**
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryAllSchemeListByMerchantIdAndTypeList($body)
+    {
+        return $this->restful("POST", "/outScheme/queryAllSchemeListByMerchantIdAndTypeList", $body);
+    }
 }
