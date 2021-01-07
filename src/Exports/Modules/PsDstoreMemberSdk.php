@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-06
- * @time   Wed, 06 Jan 2021 19:06:33 +0800
+ * @date   2021-01-07
+ * @time   Thu, 07 Jan 2021 13:26:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsDstoreMemberSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-member';
+
+    /**
+     * 获取连锁生效中的活动方案列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/activeListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function activeListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/activeListing", $body, $query, $extra);
+    }
 
     /**
      * assistantStatistic
@@ -485,16 +498,16 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 获取店员的实时会员数
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getAssistantMembersAction.md
+     * 获取店员的一些实时数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getAssistantDataAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function getAssistantMembers($body, $query = null, $extra = null)
+    public function getAssistantData($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/member/getAssistantMembers", $body, $query, $extra);
+        return $this->restful("POST", "/member/getAssistantData", $body, $query, $extra);
     }
 
     /**
@@ -651,6 +664,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function memberSendAccept($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/memberSend/accept", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用户回复时间
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/sendTimeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendSendTime($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/memberSendTime", $body, $query, $extra);
     }
 
     /**
