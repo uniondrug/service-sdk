@@ -126,7 +126,7 @@ class DataSdk extends SdkBase
      */
     public function newAreaEdit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/newarea/add", $body, $query, $extra);
+        return $this->restful("POST", "/newarea/edit", $body, $query, $extra);
     }
 
     /**
