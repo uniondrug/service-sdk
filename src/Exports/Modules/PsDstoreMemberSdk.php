@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-07
- * @time   Thu, 07 Jan 2021 14:50:50 +0800
+ * @time   Thu, 07 Jan 2021 17:29:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -573,6 +573,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function getMemberCountAndGmv($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/merchant/getMemberCountAndGmv", $body, $query, $extra);
+    }
+
+    /**
+     * 获取所有开通商保新会员的连锁列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/getOpenListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getMerchantOpenList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/getOpenList", $body, $query, $extra);
     }
 
     /**
