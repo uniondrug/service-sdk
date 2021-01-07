@@ -128,4 +128,17 @@ class DataSdk extends SdkBase
     {
         return $this->restful("POST", "/newarea/add", $body, $query, $extra);
     }
+
+    /**
+     * 区域id查询
+     * @link https://uniondrug.coding.net/p/module.data/git/blob/development/docs/api/NewAreaController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function newAreaInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/newarea/info", $body, $query, $extra);
+    }
 }
