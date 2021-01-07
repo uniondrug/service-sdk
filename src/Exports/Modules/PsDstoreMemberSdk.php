@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-07
- * @time   Thu, 07 Jan 2021 13:26:21 +0800
+ * @time   Thu, 07 Jan 2021 14:50:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -482,6 +482,45 @@ class PsDstoreMemberSdk extends SdkBase
     public function enableSendCard($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/enableSendCard", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function evaluateCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/evaluate/create", $body, $query, $extra);
+    }
+
+    /**
+     * 不分页列表（默认是审核通过的评价）
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function evaluateList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/evaluate/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function evaluatePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/evaluate/page", $body, $query, $extra);
     }
 
     /**
