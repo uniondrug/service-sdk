@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-11
- * @time   Mon, 11 Jan 2021 11:56:04 +0800
+ * @time   Mon, 11 Jan 2021 14:47:03 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -771,6 +771,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 获取某个店员回复了多少个用户
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/replyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendReply($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/reply", $body, $query, $extra);
+    }
+
+    /**
      * 获取用户回复时间
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/sendTimeAction.md
      * @param array|object $body 入参类型
@@ -940,6 +953,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 店员在线时长统计
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/onlineStatisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function onlineStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/onlineStatistics", $body, $query, $extra);
+    }
+
+    /**
      * 检查能否领取
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/checkCanReceiveAction.md
      * @param array|object $body 入参类型
@@ -1028,6 +1054,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function relationTransfer($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/relationTransfer", $body, $query, $extra);
+    }
+
+    /**
+     * 店员回复率统计
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/responseRateStatisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function responseRateStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/responseRateStatistics", $body, $query, $extra);
     }
 
     /**
