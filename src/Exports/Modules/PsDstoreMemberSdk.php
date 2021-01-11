@@ -693,6 +693,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/listing", $body, $query, $extra);
+    }
+
+    /**
      * 会员管理
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/memberManageAction.md
      * @param array|object $body 入参类型
@@ -781,6 +794,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function memberTransfer($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/transfer", $body, $query, $extra);
+    }
+
+    /**
+     * 未关注店员分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/unfocusPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberUnfocusPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/unfocus/page", $body, $query, $extra);
     }
 
     /**
