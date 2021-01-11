@@ -433,20 +433,111 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 根据名称获取字典分组
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/detailByNameAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function dictGroupDetailByName($body, $query = null, $extra = null)
+    public function dictCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/dict/group/detail/name", $body, $query, $extra);
+        return $this->restful("POST", "/dict/create", $body, $query, $extra);
     }
 
     /**
-     * 获取字典列表
+     * 删除
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictGroupCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/group/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictGroupDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/group/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 获取一级字典分组
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/rootAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictGroupRootGroup($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/group/root", $body, $query, $extra);
+    }
+
+    /**
+     * 获取二级及以后的字典分组树
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/treeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictGroupTree($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/group/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictGroupUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/group/update", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/listingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -456,5 +547,31 @@ class PsFinanceDataSdk extends SdkBase
     public function dictListing($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/dict/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dictUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dict/update", $body, $query, $extra);
     }
 }

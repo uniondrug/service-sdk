@@ -231,11 +231,32 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
+     * 获取连锁下生效中的优惠权益
      * @param $body
      * @return ResponseInterface
      */
     public function queryAllSchemeByMerchantIdList($body)
     {
         return $this->restful("POST", "/outScheme/queryAllSchemeByMerchantIdList", $body);
+    }
+
+    /**
+     * 获取连锁下生效中的优惠券和运费券
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryAllSchemeListByMerchantIdAndTypeList($body)
+    {
+        return $this->restful("POST", "/outScheme/queryAllSchemeListByMerchantIdAndTypeList", $body);
+    }
+
+    /**
+     * 获取方案的成本方案
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryCouponCostBySchemeId($body)
+    {
+        return $this->restful("POST", "/outScheme/queryCouponCostByschemeId", $body);
     }
 }
