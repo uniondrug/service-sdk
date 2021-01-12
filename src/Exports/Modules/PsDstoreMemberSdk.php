@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-11
- * @time   Mon, 11 Jan 2021 17:40:36 +0800
+ * @date   2021-01-12
+ * @time   Tue, 12 Jan 2021 11:16:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -693,16 +693,16 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 会员数据
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/memberDataAction.md
+     * 会员明细数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/memberDetailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function memberData($body, $query = null, $extra = null)
+    public function memberDetailStatistics($body, $query = null, $extra = null)
     {
-        return $this->restful("", "/statistics", $body, $query, $extra);
+        return $this->restful("POST", "/statistics/memberDetail", $body, $query, $extra);
     }
 
     /**
@@ -797,6 +797,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 首次发送店员详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/firstSendAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendFirstSend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/firstSend", $body, $query, $extra);
+    }
+
+    /**
      * 初始化
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/initActAction.md
      * @param array|object $body 入参类型
@@ -846,6 +859,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function memberSendSendTime($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/memberSend/memberSendTime", $body, $query, $extra);
+    }
+
+    /**
+     * 会员汇总数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/memberTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberTotalStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/memberTotal", $body, $query, $extra);
     }
 
     /**
