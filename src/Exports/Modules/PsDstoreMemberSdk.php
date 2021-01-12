@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-12
- * @time   Tue, 12 Jan 2021 11:16:45 +0800
+ * @time   Tue, 12 Jan 2021 13:32:02 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1032,7 +1032,7 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 店员在线时长统计
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/onlineStatisticsAction.md
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/onlineStatisticsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -1040,7 +1040,7 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function onlineStatistics($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/store/onlineStatistics", $body, $query, $extra);
+        return $this->restful("POST", "/statistics/onlineStatistics", $body, $query, $extra);
     }
 
     /**
@@ -1136,7 +1136,7 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 店员回复率统计
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/responseRateStatisticsAction.md
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/responseRateStatisticsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -1144,7 +1144,7 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function responseRateStatistics($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/store/responseRateStatistics", $body, $query, $extra);
+        return $this->restful("POST", "/statistics/responseRateStatistics", $body, $query, $extra);
     }
 
     /**
