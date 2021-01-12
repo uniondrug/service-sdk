@@ -3240,4 +3240,30 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/users/setUserTrajectory", $body, $query, $extra);
     }
+
+    /**
+     * 根据商户ID获取商户业务线
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/MerchantLobController/getMerchantLobByOrganizationIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getMerchantLobByOrganizationId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchantLob/getByOrganizationId", $body, $query, $extra);
+    }
+
+    /**
+     * 设置商户业务线
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/MerchantLobController/setMerchantLobAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function setMerchantLob($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchantLob/setMerchantLob", $body, $query, $extra);
+    }
 }
