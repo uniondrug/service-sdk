@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-07
- * @time   Thu, 07 Jan 2021 17:29:49 +0800
+ * @date   2021-01-11
+ * @time   Mon, 11 Jan 2021 17:40:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -485,6 +485,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/auditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function evaluateAudit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/evaluate/audit", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/createAction.md
      * @param array|object $body 入参类型
@@ -534,6 +547,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function getActivityStatusCount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/getStatusCount", $body, $query, $extra);
+    }
+
+    /**
+     * 获取连锁不同活动类型方案配置数量
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/getActivityTypeCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getActivityTypeCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/activity/getActivityTypeCount", $body, $query, $extra);
     }
 
     /**
@@ -667,6 +693,32 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 会员数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/memberDataAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberData($body, $query = null, $extra = null)
+    {
+        return $this->restful("", "/statistics", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/listing", $body, $query, $extra);
+    }
+
+    /**
      * 会员管理
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/memberManageAction.md
      * @param array|object $body 入参类型
@@ -719,6 +771,71 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 编辑首次关注状态
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/editAttentionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendEditAttention($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/editAttention", $body, $query, $extra);
+    }
+
+    /**
+     * 是否是首次关注
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/firstAttentionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendFirstAttention($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/firstAttention", $body, $query, $extra);
+    }
+
+    /**
+     * 初始化
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/initActAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendInitAct($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/initAct", $body, $query, $extra);
+    }
+
+    /**
+     * 获取某个店员回复了多少个用户
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/replyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendReply($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/reply", $body, $query, $extra);
+    }
+
+    /**
+     * 发送
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/sendAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendSend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/send", $body, $query, $extra);
+    }
+
+    /**
      * 获取用户回复时间
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/sendTimeAction.md
      * @param array|object $body 入参类型
@@ -742,6 +859,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function memberTransfer($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/transfer", $body, $query, $extra);
+    }
+
+    /**
+     * 未关注店员分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/unfocusPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberUnfocusPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/unfocus/page", $body, $query, $extra);
     }
 
     /**
@@ -875,6 +1005,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 店员在线时长统计
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/onlineStatisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function onlineStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/onlineStatistics", $body, $query, $extra);
+    }
+
+    /**
      * 检查能否领取
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/checkCanReceiveAction.md
      * @param array|object $body 入参类型
@@ -941,7 +1084,7 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 关联详情
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/existRelationAction.md
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/relationDetailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -963,6 +1106,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function relationTransfer($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/relationTransfer", $body, $query, $extra);
+    }
+
+    /**
+     * 店员回复率统计
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/responseRateStatisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function responseRateStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/responseRateStatistics", $body, $query, $extra);
     }
 
     /**
