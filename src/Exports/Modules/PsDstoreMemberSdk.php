@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-11
- * @time   Mon, 11 Jan 2021 17:40:36 +0800
+ * @date   2021-01-13
+ * @time   Wed, 13 Jan 2021 16:53:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -212,6 +212,45 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 店员明细数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantDetailStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/assistantDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantInfoController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantInfoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/info/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantInfoController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantInfoPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/info/page", $body, $query, $extra);
+    }
+
+    /**
      * 店员-会员数/交易额排行榜前十名
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/assistantRankingListAction.md
      * @param array|object $body 入参类型
@@ -222,6 +261,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function assistantRankingList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/assistantRankingList", $body, $query, $extra);
+    }
+
+    /**
+     * 店员汇总数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantTotalStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/assistantTotal", $body, $query, $extra);
     }
 
     /**
@@ -485,7 +537,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 分页列表
+     * 审核
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/auditAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -693,16 +745,29 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 会员数据
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/memberDataAction.md
+     * 判断用户和店员是否已绑定
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/isExistRelationAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function memberData($body, $query = null, $extra = null)
+    public function isExistRelation($body, $query = null, $extra = null)
     {
-        return $this->restful("", "/statistics", $body, $query, $extra);
+        return $this->restful("POST", "/member/isExistRelation", $body, $query, $extra);
+    }
+
+    /**
+     * 会员明细数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/memberDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberDetailStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/memberDetail", $body, $query, $extra);
     }
 
     /**
@@ -797,6 +862,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 首次发送店员详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/firstSendAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendFirstSend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/memberSend/firstSend", $body, $query, $extra);
+    }
+
+    /**
      * 初始化
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/initActAction.md
      * @param array|object $body 入参类型
@@ -846,6 +924,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function memberSendSendTime($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/memberSend/memberSendTime", $body, $query, $extra);
+    }
+
+    /**
+     * 会员汇总数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/memberTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberTotalStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/memberTotal", $body, $query, $extra);
     }
 
     /**
@@ -1006,7 +1097,7 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 店员在线时长统计
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/onlineStatisticsAction.md
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/onlineStatisticsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -1014,7 +1105,7 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function onlineStatistics($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/store/onlineStatistics", $body, $query, $extra);
+        return $this->restful("POST", "/statistics/onlineStatistics", $body, $query, $extra);
     }
 
     /**
@@ -1110,7 +1201,7 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 店员回复率统计
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/responseRateStatisticsAction.md
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/responseRateStatisticsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -1118,7 +1209,7 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function responseRateStatistics($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/store/responseRateStatistics", $body, $query, $extra);
+        return $this->restful("POST", "/statistics/responseRateStatistics", $body, $query, $extra);
     }
 
     /**
@@ -1132,6 +1223,45 @@ class PsDstoreMemberSdk extends SdkBase
     public function sendCard($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/sendCard", $body, $query, $extra);
+    }
+
+    /**
+     * 服务汇总数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/serviceTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function serviceTotalStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/serviceTotal", $body, $query, $extra);
+    }
+
+    /**
+     * 查询特权需要的数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantDataAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statisticsAssistantData($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/assistant/data", $body, $query, $extra);
+    }
+
+    /**
+     * 查询特权需要的数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/privilegeDataAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statisticsPrivilegeData($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/privilege/data", $body, $query, $extra);
     }
 
     /**

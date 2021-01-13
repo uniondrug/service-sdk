@@ -30,32 +30,6 @@ class PsKingdeeSdk extends SdkBase
     protected $serviceName = 'ps-kingdee';
 
     /**
-     * 分录无分页列表
-     * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/EntryController/listingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function entryListing($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/entry/listing", $body, $query, $extra);
-    }
-
-    /**
-     * 分录分页
-     * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/EntryController/pagingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function entryPaging($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/entry/paging", $body, $query, $extra);
-    }
-
-    /**
      * 提交
      * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/VoucherController/commitAction.md
      * @param array|object $body  入参类型
@@ -222,5 +196,70 @@ class PsKingdeeSdk extends SdkBase
     public function voucherUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/voucher/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function entryCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/entry/create", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function entryUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/entry/update", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function entryDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/entry/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function entryDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/entry/detail", $body, $query, $extra);
+    }
+
+    /**
+     * paging
+     * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function entryPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/entry/paging", $body, $query, $extra);
     }
 }
