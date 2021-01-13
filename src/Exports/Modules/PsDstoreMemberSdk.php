@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-13
- * @time   Wed, 13 Jan 2021 13:48:35 +0800
+ * @time   Wed, 13 Jan 2021 16:53:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -222,6 +222,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function assistantDetailStatistics($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statistics/assistantDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantInfoController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantInfoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/info/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantInfoController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantInfoPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/info/page", $body, $query, $extra);
     }
 
     /**
@@ -1210,6 +1236,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function serviceTotalStatistics($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statistics/serviceTotal", $body, $query, $extra);
+    }
+
+    /**
+     * 查询特权需要的数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantDataAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statisticsAssistantData($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/assistant/data", $body, $query, $extra);
     }
 
     /**
