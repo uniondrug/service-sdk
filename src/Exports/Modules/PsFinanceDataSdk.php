@@ -574,4 +574,30 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/dict/update", $body, $query, $extra);
     }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/update", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/update", $body, $query, $extra);
+    }
 }
