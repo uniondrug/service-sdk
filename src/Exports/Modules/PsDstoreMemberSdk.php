@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-12
- * @time   Tue, 12 Jan 2021 13:32:02 +0800
+ * @date   2021-01-13
+ * @time   Wed, 13 Jan 2021 13:48:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -212,6 +212,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 店员明细数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantDetailStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/assistantDetail", $body, $query, $extra);
+    }
+
+    /**
      * 店员-会员数/交易额排行榜前十名
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/assistantRankingListAction.md
      * @param array|object $body 入参类型
@@ -222,6 +235,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function assistantRankingList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/assistantRankingList", $body, $query, $extra);
+    }
+
+    /**
+     * 店员汇总数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantTotalStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/assistantTotal", $body, $query, $extra);
     }
 
     /**
@@ -485,7 +511,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 分页列表
+     * 审核
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/auditAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -690,6 +716,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function groupUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/group/update", $body, $query, $extra);
+    }
+
+    /**
+     * 判断用户和店员是否已绑定
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/isExistRelationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function isExistRelation($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/isExistRelation", $body, $query, $extra);
     }
 
     /**
@@ -1158,6 +1197,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function sendCard($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/sendCard", $body, $query, $extra);
+    }
+
+    /**
+     * 服务汇总数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/serviceTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function serviceTotalStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/serviceTotal", $body, $query, $extra);
+    }
+
+    /**
+     * 查询特权需要的数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/privilegeDataAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statisticsPrivilegeData($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/privilege/data", $body, $query, $extra);
     }
 
     /**
