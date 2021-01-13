@@ -1214,6 +1214,19 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 查询特权需要的数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantDataAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statisticsAssistantData($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/assistant/data", $body, $query, $extra);
+    }
+
+    /**
+     * 查询特权需要的数据
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/privilegeDataAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
