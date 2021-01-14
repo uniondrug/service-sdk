@@ -3487,4 +3487,30 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/work/chain/department/update", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainContactController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainContactCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/contact/create", $body, $query, $extra);
+    }
+
+    /**
+     * 职务类型
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainContactController/gradeListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainContactPositionType($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/contact/positionType", $body, $query, $extra);
+    }
 }
