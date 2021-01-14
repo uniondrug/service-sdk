@@ -3266,4 +3266,225 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/merchantLob/setMerchantLob", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/create", $body, $query, $extra);
+    }
+
+    /**
+     * 显示/不显示
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/displayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalDisplay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/display", $body, $query, $extra);
+    }
+
+    /**
+     * ids获取列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/idsListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalIdsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/idsList", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/info", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/page", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainTypeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainTypeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/type/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainTypeController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainTypeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/type/detail", $body, $query, $extra);
+    }
+
+    /**
+     * list
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainTypeController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainTypeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/type/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainTypeController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainTypePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/type/page", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainTypeController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainTypeUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/type/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainDepartmentController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainDepartmentCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/department/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainDepartmentController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainDepartmentDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/department/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainDepartmentController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainDepartmentList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/department/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainDepartmentController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainDepartmentPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/department/page", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainDepartmentController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainDepartmentUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/department/update", $body, $query, $extra);
+    }
 }
