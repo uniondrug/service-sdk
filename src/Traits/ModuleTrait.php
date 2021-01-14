@@ -120,6 +120,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk           $psFinanceData
  * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImpsSdk                $javaImps
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCreditQuerySdk         $javaCreditQuery
