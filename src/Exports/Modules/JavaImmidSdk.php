@@ -21,9 +21,9 @@ class JavaImmidSdk extends SdkBase
 
     /**
      * 初始化token
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function imStartAdvice($body)
     {
@@ -32,9 +32,9 @@ class JavaImmidSdk extends SdkBase
 
     /**
      * memberId换取顾问id
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function memberIdToAdviserId($body)
     {
@@ -43,9 +43,9 @@ class JavaImmidSdk extends SdkBase
 
     /**
      * 发送优惠券消息
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function sendCouponMsg($body)
     {
@@ -54,13 +54,24 @@ class JavaImmidSdk extends SdkBase
 
     /**
      * 会话列表
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function chatList($body)
     {
         return $this->restful(static::METHOD_POST, '/im/chat/currencyList', $body);
+    }
+
+    /**
+     * 新咨询列表
+     * @param array $body
+     * @return ResponseInterface
+     * @link
+     */
+    public function newChatList($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/chat/currencyNewList', $body);
     }
 
     /**
