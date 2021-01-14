@@ -614,4 +614,30 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/dict/group/dicts", $body, $query, $extra);
     }
+
+    /**
+     * 审核通过
+     * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/VoucherController/acceptAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function voucherAccept($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/voucher/accept", $body, $query, $extra);
+    }
+
+    /**
+     * 审核不通过
+     * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/VoucherController/refuseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function voucherRefuse($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/voucher/refuse", $body, $query, $extra);
+    }
 }
