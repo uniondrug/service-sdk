@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-14
- * @time   Thu, 14 Jan 2021 13:42:18 +0800
+ * @time   Thu, 14 Jan 2021 15:51:06 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -586,6 +586,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function evaluateCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/evaluate/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取店员与顾客的某次评价记录
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/EvaluateController/getEvaluateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function evaluateGetEvaluate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/evaluate/getEvaluate", $body, $query, $extra);
     }
 
     /**
