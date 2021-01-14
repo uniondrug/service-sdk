@@ -139,4 +139,48 @@ class JavaImmidSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/im/chat/disMissGroup', $body);
     }
+
+    /**
+     * 创建群聊
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7IM%E4%BF%A1%E6%81%AF.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function createGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/chat/createGroup', $body);
+    }
+
+    /**
+     * 创建im用户
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7IM%E4%BF%A1%E6%81%AF.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function createAcct($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/user/createAcct', $body);
+    }
+
+    /**
+     * 修改im用户
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7IM%E4%BF%A1%E6%81%AF.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function modifyAcct($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/user/modifyAcct', $body);
+    }
+
+    /**
+     * 添加好友
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7IM%E4%BF%A1%E6%81%AF.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function addFriendTo($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/user/addFriendTo', $body);
+    }
 }
