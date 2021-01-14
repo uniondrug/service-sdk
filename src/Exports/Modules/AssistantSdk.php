@@ -3526,4 +3526,32 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/work/visitCount", $body, $query, $extra);
     }
+
+
+    /**
+     * 完成拜访任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitController/completeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisit/complete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增拜访任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisit/create", $body, $query, $extra);
+    }
+
 }
