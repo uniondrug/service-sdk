@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-14
- * @time   Thu, 14 Jan 2021 15:51:06 +0800
+ * @time   Thu, 14 Jan 2021 20:31:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -937,6 +937,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function memberSendLogPage($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/memberSend/logPage", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendReceiveController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendReceiveCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/send/receive/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendReceiveController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendReceivePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/send/receive/page", $body, $query, $extra);
     }
 
     /**
