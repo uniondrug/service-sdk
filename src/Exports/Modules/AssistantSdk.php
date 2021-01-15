@@ -3554,4 +3554,42 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/workRecordVisit/create", $body, $query, $extra);
     }
 
+    /**
+     * 连锁签约任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskWorkChainSignAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskWorkChainSign($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/workChainSign", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁培训任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskWorkChainTrainAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskWorkChainTrain($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/workChainTrain", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁拜访任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskWorkChainVisitAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskWorkChainVisit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/workChainVisit", $body, $query, $extra);
+    }
 }
