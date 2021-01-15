@@ -32,9 +32,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 审核对比
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/changeConfirmAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountChangeConfirm($body, $query = null, $extra = null)
@@ -45,9 +45,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 检查该连锁下是否有没设置账户的
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/checkIsExistAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountCheckIsExist($body, $query = null, $extra = null)
@@ -58,9 +58,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountCreate($body, $query = null, $extra = null)
@@ -71,9 +71,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountDelete($body, $query = null, $extra = null)
@@ -84,9 +84,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountDetail($body, $query = null, $extra = null)
@@ -97,9 +97,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 账号详情（含银行及开户行）
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/getDetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountGetDetail($body, $query = null, $extra = null)
@@ -110,9 +110,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 获取指定类型账号
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/getDetailByTypeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountGetDetailByType($body, $query = null, $extra = null)
@@ -123,9 +123,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 根据商户ID集合查询你账号列表（含银行及开户行）
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/getListByOrganizationIdsAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountListByOrganizationIds($body, $query = null, $extra = null)
@@ -136,9 +136,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/listingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountListing($body, $query = null, $extra = null)
@@ -149,9 +149,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountPaging($body, $query = null, $extra = null)
@@ -162,9 +162,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 设为默认
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/setIsDefaultAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountSetIsDefault($body, $query = null, $extra = null)
@@ -175,9 +175,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 设置状态
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/setStatusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountSetStatus($body, $query = null, $extra = null)
@@ -188,9 +188,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 获取待审核列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/toAuditListingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountToAuditListing($body, $query = null, $extra = null)
@@ -201,9 +201,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 核算单位详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/unitDetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountUnitDetail($body, $query = null, $extra = null)
@@ -214,9 +214,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountUpdate($body, $query = null, $extra = null)
@@ -227,9 +227,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 更新审核状态
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/updateAuditStatusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountUpdateAuditStatus($body, $query = null, $extra = null)
@@ -240,9 +240,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/viewAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankAccountView($body, $query = null, $extra = null)
@@ -253,9 +253,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 城市列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/citiesAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankHouseCities($body, $query = null, $extra = null)
@@ -266,9 +266,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankHouseDetail($body, $query = null, $extra = null)
@@ -279,9 +279,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankHousePaging($body, $query = null, $extra = null)
@@ -292,9 +292,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 省份列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/provincesAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankHouseProvinces($body, $query = null, $extra = null)
@@ -305,9 +305,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function bankPaging($body, $query = null, $extra = null)
@@ -318,9 +318,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 公司信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/CompanyController/infoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function infoCompany($body, $query = null, $extra = null)
@@ -331,9 +331,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 保司信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/infoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function infoInsurer($body, $query = null, $extra = null)
@@ -344,9 +344,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/infoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function infoMerchant($body, $query = null, $extra = null)
@@ -357,9 +357,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁配置信息
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantSettingsController/infoAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function infoMerchantSettings($body, $query = null, $extra = null)
@@ -370,9 +370,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 保司分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerPaging($body, $query = null, $extra = null)
@@ -383,9 +383,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/listingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantListing($body, $query = null, $extra = null)
@@ -396,9 +396,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantPaging($body, $query = null, $extra = null)
@@ -409,9 +409,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 更新连锁负责人
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/updateLeaderAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantUpdateLeader($body, $query = null, $extra = null)
@@ -422,12 +422,12 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 药联公司分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/CompanyController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function pagingCompany($body, $query = null, $extra =  null)
+    public function pagingCompany($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/company/paging", $body, $query, $extra);
     }
@@ -435,9 +435,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictCreate($body, $query = null, $extra = null)
@@ -448,9 +448,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictDelete($body, $query = null, $extra = null)
@@ -461,9 +461,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictDetail($body, $query = null, $extra = null)
@@ -474,9 +474,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictGroupCreate($body, $query = null, $extra = null)
@@ -487,9 +487,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictGroupDelete($body, $query = null, $extra = null)
@@ -500,9 +500,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 获取一级字典分组
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/rootAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictGroupRootGroup($body, $query = null, $extra = null)
@@ -513,9 +513,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 获取二级及以后的字典分组树
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/treeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictGroupTree($body, $query = null, $extra = null)
@@ -526,9 +526,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictGroupUpdate($body, $query = null, $extra = null)
@@ -539,9 +539,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 字典分组详情，按名称查询
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/detailByNameAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictGroupDetailByName($body, $query = null, $extra = null)
@@ -552,9 +552,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/listingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictListing($body, $query = null, $extra = null)
@@ -565,9 +565,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictPaging($body, $query = null, $extra = null)
@@ -578,9 +578,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictUpdate($body, $query = null, $extra = null)
@@ -591,9 +591,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerUpdate($body, $query = null, $extra = null)
@@ -604,9 +604,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantUpdate($body, $query = null, $extra = null)
@@ -618,9 +618,9 @@ class PsFinanceDataSdk extends SdkBase
      * 获取分录配置字典列表
      * dicts
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictGroupController/dictsAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictGroupDicts($body, $query = null, $extra = null)
@@ -631,9 +631,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 审核通过
      * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/VoucherController/acceptAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function voucherAccept($body, $query = null, $extra = null)
@@ -644,13 +644,26 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 审核不通过
      * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/VoucherController/refuseAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function voucherRefuse($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/voucher/refuse", $body, $query, $extra);
+    }
+
+    /**
+     * 生成金蝶凭证
+     * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/VoucherController/generateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function voucherGenerate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/voucher/generate", $body, $query, $extra);
     }
 }
