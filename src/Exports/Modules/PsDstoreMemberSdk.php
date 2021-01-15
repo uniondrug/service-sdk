@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-14
- * @time   Thu, 14 Jan 2021 20:31:12 +0800
+ * @date   2021-01-15
+ * @time   Fri, 15 Jan 2021 14:51:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -953,6 +953,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendReceiveController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberSendReceiveDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/send/receive/detail", $body, $query, $extra);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendReceiveController/pageAction.md
      * @param array|object $body 入参类型
@@ -1343,7 +1356,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 店员服务明细数据
+     * 店员服务监控明细数据
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/serviceMonitorDetailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
