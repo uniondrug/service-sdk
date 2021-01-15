@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-01-15
- * @time   Fri, 15 Jan 2021 14:51:45 +0800
+ * @time   Fri, 15 Jan 2021 18:55:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -706,6 +706,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 根据店员ids获取回复率
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/getResponseRateByAssistantIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getResponseRateByAssistantIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/getResponseRateByAssistantIds", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupController/createAction.md
      * @param array|object $body 入参类型
@@ -1330,7 +1343,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 关注送红包
+     * 关注送红包-已废弃
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
