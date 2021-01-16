@@ -121,4 +121,15 @@ class JavaImSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/group/chat/kickGroupMember', $body);
     }
+
+    /**
+     * IM分页查询会话列表
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-中台/IM%20V1.3/IM分页查询会话列表.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pageQueryMsgNotify($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/msg/pageQueryMsgNotify', $body);
+    }
 }
