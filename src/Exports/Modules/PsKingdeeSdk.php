@@ -201,9 +201,9 @@ class PsKingdeeSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function entryCreate($body, $query = null, $extra = null)
@@ -214,9 +214,9 @@ class PsKingdeeSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function entryUpdate($body, $query = null, $extra = null)
@@ -227,9 +227,9 @@ class PsKingdeeSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function entryDelete($body, $query = null, $extra = null)
@@ -240,9 +240,9 @@ class PsKingdeeSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function entryDetail($body, $query = null, $extra = null)
@@ -253,13 +253,26 @@ class PsKingdeeSdk extends SdkBase
     /**
      * paging
      * @link https://uniondrug.coding.net/p/kingdee.ps/git/blob/development/docs/api/EntryController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function entryPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/entry/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 生成金蝶凭证
+     * @link https://uniondrug.coding.net/p/ps-kingdee/git/blob/development/docs/api/VoucherController/generateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function voucherGenerate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/voucher/generate", $body, $query, $extra);
     }
 }
