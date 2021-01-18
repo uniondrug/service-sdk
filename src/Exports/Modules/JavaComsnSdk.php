@@ -39,4 +39,14 @@ class JavaComsnSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/commission/create/productCommission', $body);
     }
+
+    /**
+     * 获取积分方案
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryAssistantCommission($body)
+    {
+        return $this->restful(static::METHOD_POST, '/commission/query/queryAssistantCommission', $body);
+    }
 }
