@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-27
- * @time   Fri, 27 Nov 2020 15:15:11 +0800
+ * @date   2021-01-15
+ * @time   Fri, 15 Jan 2021 09:52:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1262,6 +1262,32 @@ class InsureSdk extends SdkBase
     public function payInsurePolicy($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurePolicy/pay", $body, $query, $extra);
+    }
+
+    /**
+     * 查询可投保交易
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/queryDealAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function queryDealInsure($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insure/queryDeal", $body, $query, $extra);
+    }
+
+    /**
+     * 退一个发票
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InvoiceController/refundAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function refundInvoice($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/refund", $body, $query, $extra);
     }
 
     /**
