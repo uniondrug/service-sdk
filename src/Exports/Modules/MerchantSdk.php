@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-08
- * @time   Fri, 08 Jan 2021 10:33:36 +0800
+ * @date   2021-01-19
+ * @time   Tue, 19 Jan 2021 14:34:17 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -768,6 +768,19 @@ class MerchantSdk extends SdkBase
     public function editInvoice($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/invoice/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 对应代理属性开关
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsAgentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsAgent($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisagent", $body, $query, $extra);
     }
 
     /**
