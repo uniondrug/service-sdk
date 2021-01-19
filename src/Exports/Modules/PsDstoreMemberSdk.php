@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-15
- * @time   Fri, 15 Jan 2021 18:55:08 +0800
+ * @date   2021-01-19
+ * @time   Tue, 19 Jan 2021 17:32:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -524,6 +524,149 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 总概览
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisKpiController/generalOverviewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisKpiGeneralOverview($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/kpi/general/overview", $body, $query, $extra);
+    }
+
+    /**
+     * 普惠订单明细
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisKpiController/inclusiveOrderAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisKpiInclusiveOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/kpi/inclusive/order", $body, $query, $extra);
+    }
+
+    /**
+     * 交互会话数
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisKpiController/interactiveSessionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisKpiInteractiveSession($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/kpi/interactive/session", $body, $query, $extra);
+    }
+
+    /**
+     * 会员增长数
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisKpiController/memberIncrAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisKpiMemberIncr($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/kpi/member/incr", $body, $query, $extra);
+    }
+
+    /**
+     * 线上复购数
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisKpiController/onlineRepurchaseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisKpiOnlineRepurchase($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/kpi/online/repurchase", $body, $query, $extra);
+    }
+
+    /**
+     * 增值服务订单
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisKpiController/ServiceOrderAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisKpiServiceOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/kpi/Service/order", $body, $query, $extra);
+    }
+
+    /**
+     * 总概览
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisProcessController/generalOverviewAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisProcessGeneralOverview($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/process/generalOverview", $body, $query, $extra);
+    }
+
+    /**
+     * 交易转化率
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisProcessController/orderConversionRateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisProcessOrderConversionRate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/process/order/conversion/rate", $body, $query, $extra);
+    }
+
+    /**
+     * 单均价
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisProcessController/orderGmvAvgAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisProcessOrderGmvAvg($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/process/order/gmv/avg", $body, $query, $extra);
+    }
+
+    /**
+     * 会话发起率
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisProcessController/sessionLaunchRateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisProcessSessionLaunchRate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/process/session/launch/rate", $body, $query, $extra);
+    }
+
+    /**
+     * 会话成功率
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisProcessController/sessionSuccessRateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dataAnalysisProcessSessionSuccessRate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/data/analysis/process/session/success/rate", $body, $query, $extra);
+    }
+
+    /**
      * 常购药品
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/drugListAction.md
      * @param array|object $body 入参类型
@@ -794,6 +937,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function groupUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/group/update", $body, $query, $extra);
+    }
+
+    /**
+     * 检查是否发送消息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/checkCouponReceiveAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function imMemberCheckCouponReceive($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/checkCouponReceive", $body, $query, $extra);
     }
 
     /**
