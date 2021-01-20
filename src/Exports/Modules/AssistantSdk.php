@@ -3633,4 +3633,56 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/workRecordVisit/getByWorkId", $body, $query, $extra);
     }
 
+    /**
+     * 完成签约任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/completeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSign/complete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增签约任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSign/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSign/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据workId获取详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/getByWorkIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignGetByWorkId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSign/getByWorkId", $body, $query, $extra);
+    }
+
 }
