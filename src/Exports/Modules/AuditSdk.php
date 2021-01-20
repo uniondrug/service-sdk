@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-10
- * @time   Thu, 10 Dec 2020 15:18:57 +0800
+ * @date   2021-01-20
+ * @time   Wed, 20 Jan 2021 19:42:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -148,7 +148,7 @@ class AuditSdk extends SdkBase
     }
 
     /**
-     * canBuyRenewAction()
+     * 检测是否可以买换新
      * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/module.audit/api/QueryController/canBuyRenewAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -262,6 +262,19 @@ class AuditSdk extends SdkBase
     public function orderGoodsRejectReason($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/query/orderGoodsRejectReason", $body, $query, $extra);
+    }
+
+    /**
+     * 根据换新保障ID获取auditItem详情
+     * @link https://uniondrug.coding.net/p/module.audit/git/blob/development/module.audit/api/QueryController/queryAuditItemByGuaranteeIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function queryAuditItemByGuaranteeId($body, $query = null, $extra = null)
+    {
+        return $this->restful("", "/query", $body, $query, $extra);
     }
 
     /**
