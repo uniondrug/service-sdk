@@ -259,4 +259,14 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/outScheme/queryCouponCostByschemeId", $body);
     }
+
+    /**
+     * 批量获取方案详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function detailList($body)
+    {
+        return $this->restful("POST", "/outScheme/detailList", $body);
+    }
 }
