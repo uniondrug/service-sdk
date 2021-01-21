@@ -3637,8 +3637,8 @@ class AssistantSdk extends SdkBase
      * 完成签约任务
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/completeAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignComplete($body, $query = null, $extra = null)
@@ -3650,8 +3650,8 @@ class AssistantSdk extends SdkBase
      * 新增签约任务
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignCreate($body, $query = null, $extra = null)
@@ -3663,8 +3663,8 @@ class AssistantSdk extends SdkBase
      * 详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/detailAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignDetail($body, $query = null, $extra = null)
@@ -3676,8 +3676,8 @@ class AssistantSdk extends SdkBase
      * 根据workId获取详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/getByWorkIdAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignGetByWorkId($body, $query = null, $extra = null)
@@ -3689,12 +3689,64 @@ class AssistantSdk extends SdkBase
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/pageAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workListPage($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/work/page", $body, $query, $extra);
+    }
+
+    /**
+     * 完成培训任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordTrainController/completeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordTrainComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordTrain/complete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增培训任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordTrainController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordTrainCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordTrain/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordTrainController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordTrainDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordTrain/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据workId获取详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordTrainController/getByWorkIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordTrainGetByWorkId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordTrain/getByWorkId", $body, $query, $extra);
     }
 }
