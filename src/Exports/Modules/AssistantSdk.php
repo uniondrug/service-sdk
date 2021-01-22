@@ -3749,4 +3749,43 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/workRecordTrain/getByWorkId", $body, $query, $extra);
     }
+
+    /**
+     * 连锁拜访任务记录列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisit/list", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁签约任务记录列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSign/list", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁培训任务记录列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordTrainController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordTrainList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordTrain/list", $body, $query, $extra);
+    }
 }
