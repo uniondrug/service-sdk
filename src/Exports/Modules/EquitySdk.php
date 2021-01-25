@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-04
- * @time   Fri, 04 Dec 2020 15:12:47 +0800
+ * @date   2021-01-24
+ * @time   Sun, 24 Jan 2021 19:31:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1005,6 +1005,19 @@ class EquitySdk extends SdkBase
     }
 
     /**
+     * 根据主订单号和用户ID查询保障详情
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/GuaranteeController/getInfoByOrderNoAndMemberIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getInfoByOrderNoAndMemberId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guarantee/getInfoByOrderNoAndMemberId", $body, $query, $extra);
+    }
+
+    /**
      * 获取用户有几个权益
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/EquityController/memberCountAction.md
      * @param array|object $body 入参类型
@@ -1560,6 +1573,45 @@ class EquitySdk extends SdkBase
     public function renew($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantee/renew", $body, $query, $extra);
+    }
+
+    /**
+     * 第一版新增审核规则
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/RenewRuleController/addRuleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function renewAddRuleV1($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renew/v1/add/rule", $body, $query, $extra);
+    }
+
+    /**
+     * 获取规则
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/RenewRuleController/getRuleV1Action.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function renewGetRuleV1($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renew/v1/getRule", $body, $query, $extra);
+    }
+
+    /**
+     * 更新规则
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/RenewRuleController/updateRuleV1Action.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function renewUpdateRuleV1($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/renew/v1/update/rule", $body, $query, $extra);
     }
 
     /**

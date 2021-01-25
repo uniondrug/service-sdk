@@ -598,7 +598,7 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function dataAnalysisKpiServiceOrder($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/data/analysis/kpi/Service/order", $body, $query, $extra);
+        return $this->restful("POST", "/data/analysis/kpi/service/order", $body, $query, $extra);
     }
 
     /**
@@ -611,7 +611,7 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function dataAnalysisProcessGeneralOverview($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/data/analysis/process/generalOverview", $body, $query, $extra);
+        return $this->restful("POST", "/data/analysis/process/general/overview", $body, $query, $extra);
     }
 
     /**

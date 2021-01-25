@@ -123,6 +123,17 @@ class JavaImSdk extends SdkBase
     }
 
     /**
+     * 是否在线
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryIsOnline($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/acct/queryIsOnline', $body);
+    }
+
+    /**
      * IM分页查询会话列表
      * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-中台/IM%20V1.3/IM分页查询会话列表.md
      * @param array $body

@@ -474,9 +474,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 详情(根据dictKey查询)
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/detailByNameAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function dictDetailByName($body, $query = null, $extra = null)
@@ -678,5 +678,96 @@ class PsFinanceDataSdk extends SdkBase
     public function voucherGenerate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/voucher/generate", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/DetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增连锁开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/create", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁开票详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 导出商户开票信息
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/exportAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/export", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁开票分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改连锁开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/update", $body, $query, $extra);
     }
 }
