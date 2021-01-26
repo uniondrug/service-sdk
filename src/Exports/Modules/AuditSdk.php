@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-20
- * @time   Wed, 20 Jan 2021 19:42:47 +0800
+ * @date   2021-01-25
+ * @time   Mon, 25 Jan 2021 18:35:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -274,7 +274,7 @@ class AuditSdk extends SdkBase
      */
     public function queryAuditItemByGuaranteeId($body, $query = null, $extra = null)
     {
-        return $this->restful("", "/query", $body, $query, $extra);
+        return $this->restful("POST", "/query/auditItemByGuaranteeId", $body, $query, $extra);
     }
 
     /**
