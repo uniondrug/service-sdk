@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-24
- * @time   Tue, 24 Nov 2020 11:00:07 +0800
+ * @date   2021-01-25
+ * @time   Mon, 25 Jan 2021 17:25:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -745,5 +745,57 @@ class StagnationSdk extends SdkBase
     public function userStatus($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/user/status", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareCodeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCodeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/code/create", $body, $query, $extra);
+    }
+
+    /**
+     * 展示某个采购单下面的某张未领取的兑换码并修改兑换码状态
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareCodeController/displayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCodeDisplay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/code/display", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfarePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/page", $body, $query, $extra);
     }
 }
