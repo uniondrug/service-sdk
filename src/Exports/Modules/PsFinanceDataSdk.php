@@ -615,6 +615,32 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 保司负责人列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/DirectorController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerDirectorList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/director/list", $body, $query, $extra);
+    }
+
+    /**
+     * 修改保司负责人
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/DirectorController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerDirectorUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/director/update", $body, $query, $extra);
+    }
+
+    /**
      * 新增保司用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/createAction.md
      * @param array|object $body 入参类型
@@ -847,6 +873,32 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerBillInfoUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/bill/info/update", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁负责人列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DirectorController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDirectorList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/director/list", $body, $query, $extra);
+    }
+
+    /**
+     * 修改连锁负责人
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DirectorController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDirectorUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/director/update", $body, $query, $extra);
     }
 
     /**

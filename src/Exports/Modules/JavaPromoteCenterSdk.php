@@ -216,6 +216,15 @@ class JavaPromoteCenterSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
+    public function queryActivityByPartnerId($body)
+    {
+        return $this->restful("POST", "/outScheme/queryActivityByPartnerId", $body);
+    }
+
+    /**
+     * @param $body
+     * @return ResponseInterface
+     */
     public function outActivityInfo($body)
     {
         return $this->restful("POST", "/outActivity/queryActivityInfo", $body);
