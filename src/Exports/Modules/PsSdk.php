@@ -266,9 +266,9 @@ class PsSdk extends SdkBase
     /**
      * 用户项目数据
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectMoreAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticProjectMore($body, $query = null, $extra = null)
@@ -396,9 +396,9 @@ class PsSdk extends SdkBase
     /**
      * 用户保单数据状态总数
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyStatusCountAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function policyStatisticPolicyStatusCount($body, $query = null, $extra = null)
@@ -409,9 +409,9 @@ class PsSdk extends SdkBase
     /**
      * 店员订单数
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/countAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workAssistant($body, $query = null, $extra = null)
@@ -422,9 +422,9 @@ class PsSdk extends SdkBase
     /**
      * 任务门店列表
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/storeListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workStoreList($body, $query = null, $extra = null)
@@ -435,9 +435,9 @@ class PsSdk extends SdkBase
     /**
      * 业务汇总
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/dataAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workData($body, $query = null, $extra = null)
@@ -448,9 +448,9 @@ class PsSdk extends SdkBase
     /**
      * 业绩排行榜
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/rankAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRank($body, $query = null, $extra = null)
@@ -461,13 +461,26 @@ class PsSdk extends SdkBase
     /**
      * 大数据各表任务执行情况
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/TableDataController/tableDataAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function tableData($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/table/data", $body, $query, $extra);
+    }
+
+    /**
+     * 门店分布列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/storeDistributedAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workStoreDistributed($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/storeDistributed", $body, $query, $extra);
     }
 }
