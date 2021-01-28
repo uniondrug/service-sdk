@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-25
- * @time   Mon, 25 Jan 2021 10:34:29 +0800
+ * @date   2021-01-27
+ * @time   Wed, 27 Jan 2021 16:41:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -429,7 +429,7 @@ class ClaimSdk extends SdkBase
      */
     public function claimRenewRecheckAudit($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/renew/claim/recheck/auidt", $body, $query, $extra);
+        return $this->restful("POST", "/renew/claim/recheck/audit", $body, $query, $extra);
     }
 
     /**

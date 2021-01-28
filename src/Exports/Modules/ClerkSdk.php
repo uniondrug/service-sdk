@@ -316,6 +316,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 简单结果集型店员列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/simplePageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantSimplePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/simplePage", $body, $query, $extra);
+    }
+
+    /**
      * 获取门店店员数量
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/storeCountAction.md
      * @param array|object $body 入参类型
