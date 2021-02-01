@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-02-01
- * @time   Mon, 01 Feb 2021 09:52:25 +0800
+ * @time   Mon, 01 Feb 2021 13:36:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -690,6 +690,19 @@ class MerchantSdk extends SdkBase
     public function editBusinessTypeOrganizeBaseJoin($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasejoin/editbusinesstype", $body, $query, $extra);
+    }
+
+    /**
+     * 转换操作
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editConversionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editConversionOrganizeBaseBackend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editconversion", $body, $query, $extra);
     }
 
     /**
