@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-19
- * @time   Tue, 19 Jan 2021 17:32:44 +0800
+ * @date   2021-02-01
+ * @time   Mon, 01 Feb 2021 11:51:26 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -157,19 +157,6 @@ class PsDstoreMemberSdk extends SdkBase
     public function activityStatistics($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/statistics", $body, $query, $extra);
-    }
-
-    /**
-     * 顾问数据迁移
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/advisorTransferAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function advisorTransfer($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/member/advisorTransfer", $body, $query, $extra);
     }
 
     /**
@@ -798,7 +785,7 @@ class PsDstoreMemberSdk extends SdkBase
 
     /**
      * 获取店员的一些实时数据
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getAssistantDataAction.md
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getAssistantMembersAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -1018,6 +1005,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 推荐店员
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/recommendAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberRecommendAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/recommendAssistant", $body, $query, $extra);
+    }
+
+    /**
      * 关联
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/relationAction.md
      * @param array|object $body 入参类型
@@ -1070,7 +1070,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 首次发送店员详情
+     * 首次发送店员详情或者是首次邀请店员关注
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberSendController/firstSendAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1421,6 +1421,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 获取包数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ProductController/saleCreateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function packageSaleCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/product/detail", $body, $query, $extra);
+    }
+
+    /**
      * 修改包数据
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/updateAction.md
      * @param array|object $body 入参类型
@@ -1431,6 +1444,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function packageUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/package/update", $body, $query, $extra);
+    }
+
+    /**
+     * 创建包
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ProductController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function productCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/product/create", $body, $query, $extra);
     }
 
     /**
@@ -1457,19 +1483,6 @@ class PsDstoreMemberSdk extends SdkBase
     public function relationDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/relationDetail", $body, $query, $extra);
-    }
-
-    /**
-     * 绑定关系数据迁移
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/relationTransferAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function relationTransfer($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/member/relationTransfer", $body, $query, $extra);
     }
 
     /**
