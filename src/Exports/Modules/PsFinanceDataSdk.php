@@ -615,6 +615,45 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 新增保司开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/create", $body, $query, $extra);
+    }
+
+    /**
+     * 保司开票详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改保司开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/update", $body, $query, $extra);
+    }
+
+    /**
      * 保司负责人列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/DirectorController/listAction.md
      * @param array|object $body 入参类型
@@ -902,6 +941,188 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 添加折扣率
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDiscountCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/discount/create", $body, $query, $extra);
+    }
+
+    /**
+     * 折扣详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDiscountDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/discount/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 折扣率分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDiscountPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/discount/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑折扣
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDiscountUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/discount/update", $body, $query, $extra);
+    }
+
+    /**
+     * 开启增值服务扣减
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerFundCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/fund/create", $body, $query, $extra);
+    }
+
+    /**
+     * 关闭增值服务扣减
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/DeleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerFundDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/fund/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 增值服务扣减详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerFundDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/fund/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增换新补贴
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerRenewalCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/renewal/create", $body, $query, $extra);
+    }
+
+    /**
+     * 换新补贴详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerRenewalDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/renewal/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 换新补贴分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerRenewalPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/renewal/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改换新补贴
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerRenewalUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/renewal/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增连锁配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSettingCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/create", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁配置详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSettingDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改连锁配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSettingUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/update", $body, $query, $extra);
+    }
+
+    /**
      * 新增连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/createAction.md
      * @param array|object $body 入参类型
@@ -977,5 +1198,96 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerWorkerPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 新增商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司与商户详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/DetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 停用商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipDisable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 启用商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipEnable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/enable", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司与商户分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 更新商业公司与商户比例
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/update", $body, $query, $extra);
     }
 }
