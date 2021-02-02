@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-18
- * @time   Mon, 18 Jan 2021 13:59:56 +0800
+ * @date   2021-02-02
+ * @time   Tue, 02 Feb 2021 11:16:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,7 +32,7 @@ class PackageSdk extends SdkBase
     /**
      * 批量获取增值服务对应的描述内容
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/ExplainController/ContentsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -45,7 +45,7 @@ class PackageSdk extends SdkBase
     /**
      * 通过保障iD 获取保障描述
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/ExplainController/getByGuaranteeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -58,7 +58,7 @@ class PackageSdk extends SdkBase
     /**
      * 批量获取增值服务对应的说明
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/ExplainController/NamesAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -72,7 +72,7 @@ class PackageSdk extends SdkBase
      * 根据增值服务ID 获取增值服务详情
      * 包括关联的保障信息和权益信息
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -85,7 +85,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取最大编号
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/maxCodeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -98,7 +98,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取最大编号
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/maxCodeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -111,7 +111,7 @@ class PackageSdk extends SdkBase
     /**
      * 检查保障名称是否存在
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/checkNameAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -124,7 +124,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -137,7 +137,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -150,7 +150,7 @@ class PackageSdk extends SdkBase
     /**
      * 导出sql
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/exportSqlAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -163,7 +163,7 @@ class PackageSdk extends SdkBase
     /**
      * 理赔材料名称
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getClaimMaterialsTypeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -176,7 +176,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取材料名称
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/getMaterialTypeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -189,7 +189,7 @@ class PackageSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -202,7 +202,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesSpecsController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -215,7 +215,7 @@ class PackageSdk extends SdkBase
     /**
      * 分页
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesSpecsController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -228,7 +228,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改状态
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesSpecsController/changeStatusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -241,7 +241,7 @@ class PackageSdk extends SdkBase
     /**
      * 统计保障总额
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/sumAmountAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -254,7 +254,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -267,7 +267,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增白名单
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/addAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -280,7 +280,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/getDetailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -291,9 +291,22 @@ class PackageSdk extends SdkBase
     }
 
     /**
+     * 列表（20个以内）
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/getListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteeWhiteListList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteeWhiteList/list", $body, $query, $extra);
+    }
+
+    /**
      * 白名单列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -306,7 +319,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改白名单
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteeWhiteListController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -319,7 +332,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -332,7 +345,7 @@ class PackageSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -345,7 +358,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -358,7 +371,7 @@ class PackageSdk extends SdkBase
     /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -371,7 +384,7 @@ class PackageSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -384,7 +397,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/LogsController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -397,7 +410,7 @@ class PackageSdk extends SdkBase
     /**
      * 老表增值服务列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/Old/OldPackageController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -410,7 +423,7 @@ class PackageSdk extends SdkBase
     /**
      * 老表增值服务分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/Old/OldPackageController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -423,7 +436,7 @@ class PackageSdk extends SdkBase
     /**
      * 添加风险保障分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/addsPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -436,7 +449,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增产品
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -449,7 +462,7 @@ class PackageSdk extends SdkBase
     /**
      * 产品状态关闭
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/disableStatusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -462,7 +475,7 @@ class PackageSdk extends SdkBase
     /**
      * 产品状态开启
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/enableStatusAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -475,7 +488,7 @@ class PackageSdk extends SdkBase
     /**
      * 导出
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/exportAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -488,7 +501,7 @@ class PackageSdk extends SdkBase
     /**
      * 增值服务对应的权益和保障相关信息
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getListAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -501,7 +514,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取分组关联ID
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getGroupIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -514,7 +527,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取保障
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getGuaranteeIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -527,7 +540,7 @@ class PackageSdk extends SdkBase
     /**
      * 产品编号单条信息查询
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getPackAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -540,7 +553,7 @@ class PackageSdk extends SdkBase
     /**
      * 产品ID单条信息查询
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getPackIdAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -553,7 +566,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取标签
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/getTagsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -566,7 +579,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增集合
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/addsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -579,7 +592,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -592,7 +605,7 @@ class PackageSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -605,7 +618,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -618,7 +631,7 @@ class PackageSdk extends SdkBase
     /**
      * 全部列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -631,7 +644,7 @@ class PackageSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -644,7 +657,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -657,7 +670,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增集合
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/addsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -670,7 +683,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -683,7 +696,7 @@ class PackageSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -696,7 +709,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -709,7 +722,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取保障有效期开始时间和结束时间
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/getAvailableDateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -722,7 +735,7 @@ class PackageSdk extends SdkBase
     /**
      * 批量获取增值服务对应的保障描述名称
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/getPackageGuaranteeExplainAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -735,7 +748,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取增值服务对应的保障描述详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/getPackageGuaranteeExplainDetailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -748,7 +761,7 @@ class PackageSdk extends SdkBase
     /**
      * 全部列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -761,7 +774,7 @@ class PackageSdk extends SdkBase
     /**
      * 风险保障分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -774,7 +787,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取保障有效期开始时间和结束时间
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/GuaranteesSpecsController/getAvailableDateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -787,7 +800,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGuaranteeController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -800,7 +813,7 @@ class PackageSdk extends SdkBase
     /**
      * 产品信息分页查询查询
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/packPagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -813,7 +826,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -826,7 +839,7 @@ class PackageSdk extends SdkBase
     /**
      * 删除
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/deleteAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -839,7 +852,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -852,7 +865,7 @@ class PackageSdk extends SdkBase
     /**
      * 禁用用增值服务方案
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/disableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -865,7 +878,7 @@ class PackageSdk extends SdkBase
     /**
      * 启用增值服务方案
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/enableAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -878,7 +891,7 @@ class PackageSdk extends SdkBase
     /**
      * 全部列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/listingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -891,7 +904,7 @@ class PackageSdk extends SdkBase
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -904,7 +917,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageProgramController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -917,7 +930,7 @@ class PackageSdk extends SdkBase
     /**
      * 产品信息修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -930,7 +943,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改权益、保障金额
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/updateNumAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -943,7 +956,7 @@ class PackageSdk extends SdkBase
     /**
      * 更新标签
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageController/updateTagsAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -956,7 +969,7 @@ class PackageSdk extends SdkBase
     /**
      * 关闭即买即用
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/readyToUseCloseAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -969,7 +982,7 @@ class PackageSdk extends SdkBase
     /**
      * 开启即买即用
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/PackageGroupController/readyToUseOpenAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -982,7 +995,7 @@ class PackageSdk extends SdkBase
     /**
      * 移除标签下产品列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/removePackageAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -995,7 +1008,7 @@ class PackageSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/createAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1008,7 +1021,7 @@ class PackageSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1021,7 +1034,7 @@ class PackageSdk extends SdkBase
     /**
      * 获取产品列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/packageAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1034,7 +1047,7 @@ class PackageSdk extends SdkBase
     /**
      * 树列表
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/treesAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
@@ -1047,7 +1060,7 @@ class PackageSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.package/git/blob/development/module.package/api/TagsController/updateAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
