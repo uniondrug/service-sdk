@@ -130,6 +130,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OtcSdk                     $otc
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk            $javaPurchase
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk              $jsArchivesSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk              $inspection
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
