@@ -3754,8 +3754,8 @@ class AssistantSdk extends SdkBase
      * 连锁拜访任务记录列表 [不分页]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitController/listAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordVisitList($body, $query = null, $extra = null)
@@ -3767,8 +3767,8 @@ class AssistantSdk extends SdkBase
      * 连锁签约任务记录列表 [不分页]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignController/listAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignList($body, $query = null, $extra = null)
@@ -3780,8 +3780,8 @@ class AssistantSdk extends SdkBase
      * 连锁培训任务记录列表 [不分页]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordTrainController/listAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordTrainList($body, $query = null, $extra = null)
@@ -3793,13 +3793,91 @@ class AssistantSdk extends SdkBase
      * 新增拜访任务
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordImageController/getImagesAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function getWorkRecordImages($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/workRecordImage/getImages", $body, $query, $extra);
+    }
+
+    /**
+     * 商户详情
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PartnerStatisticController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerStatisticDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partnerStatistic/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 商户列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PartnerStatisticController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerStatisticPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partnerStatistic/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 店员详情
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/AssistantStatisticController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantStatisticDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistantStatistic/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 店员列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/AssistantStatisticController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantStatisticPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistantStatistic/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 门店详情
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreStatisticController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 门店列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreStatisticController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/paging", $body, $query, $extra);
     }
 
 }
