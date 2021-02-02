@@ -28,7 +28,7 @@ class JsArchivesSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function archivePaging(array $body, $query = null, $extra = null)
+    public function archivePaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/archive/page", $body);
     }
