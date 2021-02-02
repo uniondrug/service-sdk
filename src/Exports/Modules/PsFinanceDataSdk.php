@@ -1199,4 +1199,95 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/partner/worker/paging", $body, $query, $extra);
     }
+
+    /**
+     * 新增商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司与商户详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/DetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 停用商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipDisable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 启用商业公司与商户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipEnable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/enable", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司与商户分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 更新商业公司与商户比例
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/update", $body, $query, $extra);
+    }
 }
