@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-24
- * @time   Sun, 24 Jan 2021 19:31:53 +0800
+ * @date   2021-02-02
+ * @time   Tue, 02 Feb 2021 13:20:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -803,6 +803,19 @@ class EquitySdk extends SdkBase
     public function getDrugGuaranteePaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantee/drugpaging", $body, $query, $extra);
+    }
+
+    /**
+     * 换新保障列表
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/GuaranteeController/drugPagingV2Action.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getDrugGuaranteePagingV2($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guarantee/v2/drugpaging", $body, $query, $extra);
     }
 
     /**
