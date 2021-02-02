@@ -1430,7 +1430,7 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function packageSaleCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/product/detail", $body, $query, $extra);
+        return $this->restful("POST", "/product/saleCreate", $body, $query, $extra);
     }
 
     /**
