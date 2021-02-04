@@ -4791,4 +4791,30 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/statements/integral/amount", $body, $query, $extra);
     }
+
+    /**
+     * 新增佣金对账单
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/commissionAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsCommissionAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/commission/add", $body, $query, $extra);
+    }
+
+    /**
+     * 佣金对账单审核
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/commissionChangeStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsCommissionChangeStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/commission/change/status", $body, $query, $extra);
+    }
 }
