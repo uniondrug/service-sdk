@@ -316,6 +316,32 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 停用药联公司
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/CompanyController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyDisable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 启用药联公司
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/CompanyController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyEnable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/enable", $body, $query, $extra);
+    }
+
+    /**
      * 公司信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/CompanyController/infoAction.md
      * @param array|object $body  入参类型
