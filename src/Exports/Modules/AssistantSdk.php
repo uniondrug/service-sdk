@@ -3916,4 +3916,68 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/approvalTask/workInsuranceVisit", $body, $query, $extra);
     }
+    /**
+     * 完成签约任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/completeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignInsuranceComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSignInsurance/complete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignInsuranceCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSignInsurance/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignInsuranceDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSignInsurance/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据workId获取详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/getByWorkIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignInsuranceGetByWorkId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSignInsurance/getByWorkId", $body, $query, $extra);
+    }
+
+    /**
+     * 保司签约任务记录列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordSignInsuranceList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordSignInsurance/list", $body, $query, $extra);
+    }
 }
