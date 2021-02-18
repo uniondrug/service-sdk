@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-02-02
- * @time   Tue, 02 Feb 2021 11:35:16 +0800
+ * @date   2021-02-18
+ * @time   Thu, 18 Feb 2021 16:44:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsDesktoptoolSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps.desktoptool.module';
+
+    /**
+     * 短信验证码登录
+     * @link https://uniondrug.coding.net/p/module.desktoptool.ps/git/blob/development/docs/api/UserController/codeLoginAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function codeLogin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/codeLogin", $body, $query, $extra);
+    }
 
     /**
      * 统计安装量
