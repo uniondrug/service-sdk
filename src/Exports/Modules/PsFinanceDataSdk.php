@@ -819,7 +819,7 @@ class PsFinanceDataSdk extends SdkBase
      */
     public function companyWorkerDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/company/worker/create", $body, $query, $extra);
+        return $this->restful("POST", "/company/worker/detail", $body, $query, $extra);
     }
 
     /**
