@@ -318,9 +318,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 停用药联公司
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/CompanyController/disableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function companyDisable($body, $query = null, $extra = null)
@@ -331,9 +331,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 启用药联公司
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/CompanyController/enableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function companyEnable($body, $query = null, $extra = null)
@@ -643,9 +643,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增保司开票
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerBillInfoCreate($body, $query = null, $extra = null)
@@ -656,9 +656,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 保司开票详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerBillInfoDetail($body, $query = null, $extra = null)
@@ -669,9 +669,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改保司开票
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerBillInfoUpdate($body, $query = null, $extra = null)
@@ -682,9 +682,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 保司负责人列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/DirectorController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerDirectorList($body, $query = null, $extra = null)
@@ -695,9 +695,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改保司负责人
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/DirectorController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerDirectorUpdate($body, $query = null, $extra = null)
@@ -708,9 +708,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增保司用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerWorkerCreate($body, $query = null, $extra = null)
@@ -721,9 +721,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 保司用户详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerWorkerDetail($body, $query = null, $extra = null)
@@ -734,9 +734,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 停用保司用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/disableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerWorkerDisable($body, $query = null, $extra = null)
@@ -747,9 +747,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 启用保司用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/enableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerWorkerEnable($body, $query = null, $extra = null)
@@ -760,9 +760,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 开通保司用户财税账号
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/financeAccountOpenAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerWorkerFinanceAccountOpen($body, $query = null, $extra = null)
@@ -773,14 +773,66 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 保司用户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function insurerWorkerPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/worker/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 药联用户分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function companyWorkerPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/worker/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 新增药联用户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function companyWorkerCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/worker/create", $body, $query, $extra);
+    }
+
+    /**
+     * 药联用户详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function companyWorkerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/worker/create", $body, $query, $extra);
+    }
+
+    /**
+     * 药联用户更新状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function companyWorkerUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/worker/update/status", $body, $query, $extra);
     }
 
     /**
@@ -852,9 +904,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerPaging($body, $query = null, $extra = null)
@@ -865,9 +917,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/DetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerDetail($body, $query = null, $extra = null)
@@ -943,9 +995,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 更新连锁开票状态
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/updateStatusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerBillInfoUpdateStatus($body, $query = null, $extra = null)
@@ -956,9 +1008,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁负责人列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DirectorController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerDirectorList($body, $query = null, $extra = null)
@@ -969,9 +1021,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改连锁负责人
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DirectorController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerDirectorUpdate($body, $query = null, $extra = null)
@@ -982,9 +1034,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 添加折扣率
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerDiscountCreate($body, $query = null, $extra = null)
@@ -995,9 +1047,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 折扣详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerDiscountDetail($body, $query = null, $extra = null)
@@ -1008,9 +1060,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 折扣率分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerDiscountPaging($body, $query = null, $extra = null)
@@ -1021,9 +1073,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 编辑折扣
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerDiscountUpdate($body, $query = null, $extra = null)
@@ -1034,9 +1086,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 开启增值服务扣减
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerFundCreate($body, $query = null, $extra = null)
@@ -1047,9 +1099,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 关闭增值服务扣减
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/DeleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerFundDelete($body, $query = null, $extra = null)
@@ -1060,9 +1112,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 增值服务扣减详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerFundDetail($body, $query = null, $extra = null)
@@ -1073,9 +1125,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增换新补贴
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerRenewalCreate($body, $query = null, $extra = null)
@@ -1086,9 +1138,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 换新补贴详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerRenewalDetail($body, $query = null, $extra = null)
@@ -1099,9 +1151,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 换新补贴分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerRenewalPaging($body, $query = null, $extra = null)
@@ -1112,9 +1164,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改换新补贴
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerRenewalUpdate($body, $query = null, $extra = null)
@@ -1125,9 +1177,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增连锁配置
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerSettingCreate($body, $query = null, $extra = null)
@@ -1138,9 +1190,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁配置详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerSettingDetail($body, $query = null, $extra = null)
@@ -1151,9 +1203,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 修改连锁配置
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerSettingUpdate($body, $query = null, $extra = null)
@@ -1164,9 +1216,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerWorkerCreate($body, $query = null, $extra = null)
@@ -1177,9 +1229,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁用户详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerWorkerDetail($body, $query = null, $extra = null)
@@ -1190,9 +1242,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 停用连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/disableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerWorkerDisable($body, $query = null, $extra = null)
@@ -1203,9 +1255,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 启用连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/enableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerWorkerEnable($body, $query = null, $extra = null)
@@ -1216,9 +1268,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 开通连锁用户财税账号
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/financeAccountOpenAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerWorkerFinanceAccountOpen($body, $query = null, $extra = null)
@@ -1229,9 +1281,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 连锁用户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerWorkerPaging($body, $query = null, $extra = null)
@@ -1242,9 +1294,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 新增商业公司与商户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function relationshipCreate($body, $query = null, $extra = null)
@@ -1255,9 +1307,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 删除商业公司与商户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function relationshipDelete($body, $query = null, $extra = null)
@@ -1268,9 +1320,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 商业公司与商户详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/DetailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function relationshipDetail($body, $query = null, $extra = null)
@@ -1281,9 +1333,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 停用商业公司与商户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/disableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function relationshipDisable($body, $query = null, $extra = null)
@@ -1294,9 +1346,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 启用商业公司与商户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/enableAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function relationshipEnable($body, $query = null, $extra = null)
@@ -1307,9 +1359,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 商业公司与商户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function relationshipPaging($body, $query = null, $extra = null)
@@ -1320,9 +1372,9 @@ class PsFinanceDataSdk extends SdkBase
     /**
      * 更新商业公司与商户比例
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function relationshipUpdate($body, $query = null, $extra = null)
