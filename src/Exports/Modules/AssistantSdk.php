@@ -3980,4 +3980,70 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/workRecordSignInsurance/list", $body, $query, $extra);
     }
+
+
+    /**
+     * 完成拜访任务 [保司拜访]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/completeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitInsuranceComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisitInsurance/complete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增拜访任务 [保司拜访]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitInsuranceCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisitInsurance/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情 [保司拜访]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitInsuranceDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisitInsurance/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据workId获取详情 [保司拜访]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/getByWorkIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitInsuranceGetByWorkId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisitInsurance/getByWorkId", $body, $query, $extra);
+    }
+
+    /**
+     * 拜访任务记录列表 [不分页] [保司拜访]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordVisitInsuranceList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordVisitInsurance/list", $body, $query, $extra);
+    }
 }
