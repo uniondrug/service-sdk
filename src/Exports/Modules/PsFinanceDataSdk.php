@@ -941,6 +941,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 修改连锁
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/update", $body, $query, $extra);
+    }
+
+    /**
      * 新增连锁开票
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/createAction.md
      * @param array|object $body  入参类型
