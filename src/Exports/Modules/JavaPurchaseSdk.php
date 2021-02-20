@@ -227,4 +227,26 @@ class JavaPurchaseSdk extends SdkBase
     public function coinReceiptPage($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseFinance/coinReceiptPage', $body, $query = null, $extra = null);
     }
+
+
+    /**
+     * 在项目创建/提额时，存入"回款与开票"初稿，在审批通过时，直接发起回款
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseFinanceInitCoinReceiptDraft($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseFinance/initCoinReceiptDraft', $body, $query = null, $extra = null);
+    }
+    /**
+     * 根据权益企业/保司查询历史合同和企业联系人信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseProjectQueryHisContract($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/queryHisContract', $body, $query = null, $extra = null);
+    }
 }
