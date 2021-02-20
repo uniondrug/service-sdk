@@ -4072,4 +4072,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/workRecordInsuranceDepartment/list", $body, $query, $extra);
     }
+
+    /**
+     * 列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecord/list", $body, $query, $extra);
+    }
 }
