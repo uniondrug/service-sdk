@@ -1407,4 +1407,147 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/relationship/update", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/create", $body, $query, $extra);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/update", $body, $query, $extra);
+    }
+
+    /**
+     * 更新状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/updateStatusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/update/status", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/partner/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 财务中心看的列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/financePagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerFinancePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcementP/partner/finance/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 商家服务平台看的列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/merchantPagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerMerchantPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/partner/merchant/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 商家未读公告数量
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/merchantPagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerCountUnread($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/partner/count/unread", $body, $query, $extra);
+    }
+
+    /**
+     * 已读
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/readAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerRead($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/partner/read", $body, $query, $extra);
+    }
+
+    /**
+     * 获取未读公告
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/readAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function announcementPartnerAvailable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/announcement/partner/available", $body, $query, $extra);
+    }
 }
