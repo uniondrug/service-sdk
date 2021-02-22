@@ -680,6 +680,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 保司详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/detail", $body, $query, $extra);
+    }
+
+    /**
      * 保司负责人列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/DirectorController/listAction.md
      * @param array|object $body  入参类型
