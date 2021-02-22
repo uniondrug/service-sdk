@@ -1460,6 +1460,32 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/RecommendBlacklistController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recommendBlacklistCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommend/blacklist/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/RecommendWhitelistController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recommendWhitelistCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommend/whitelist/create", $body, $query, $extra);
+    }
+
+    /**
      * 根据会员ID获取客户与店员的双向绑定
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/relationByMemberIdAction.md
      * @param array|object $body 入参类型
