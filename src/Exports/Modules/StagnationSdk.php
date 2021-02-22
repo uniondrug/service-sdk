@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-02-22
- * @time   Mon, 22 Feb 2021 09:36:57 +0800
+ * @time   Mon, 22 Feb 2021 10:04:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -680,6 +680,19 @@ class StagnationSdk extends SdkBase
     public function userEdit($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/user/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 通过手机号查询驻店宝店员是否存在
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/getByMobileAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userGetByMobile($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/getByMobile", $body, $query, $extra);
     }
 
     /**
