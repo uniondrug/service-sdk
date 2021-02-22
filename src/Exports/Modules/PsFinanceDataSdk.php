@@ -836,32 +836,6 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 药联用户更新状态
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function companyWorkerUpdateStatus($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/company/worker/update/status", $body, $query, $extra);
-    }
-
-    /**
-     * 药联用户更新选中
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function companyWorkerUpdateChecked($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/company/worker/update/checked", $body, $query, $extra);
-    }
-
-    /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/updateAction.md
      * @param array|object $body  入参类型
@@ -1279,32 +1253,6 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 停用连锁用户
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/disableAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerWorkerDisable($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partner/worker/disable", $body, $query, $extra);
-    }
-
-    /**
-     * 启用连锁用户
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/enableAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerWorkerEnable($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partner/worker/enable", $body, $query, $extra);
-    }
-
-    /**
      * 开通连锁用户财税账号
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/financeAccountOpenAction.md
      * @param array|object $body  入参类型
@@ -1318,16 +1266,42 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 连锁用户分页列表
+     * 用户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/pagingAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function partnerWorkerPaging($body, $query = null, $extra = null)
+    public function workerPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partner/worker/paging", $body, $query, $extra);
+        return $this->restful("POST", "/worker/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 用户更新状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workerUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/update/status", $body, $query, $extra);
+    }
+
+    /**
+     * 用户更新选中
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workerUpdateChecked($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/update/checked", $body, $query, $extra);
     }
 
     /**
