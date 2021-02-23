@@ -1006,11 +1006,24 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 更新连锁开票状态
+     * 更新连锁在线开票状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/updateOnlineInvoiceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoUpdateOnlineInvoice($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/update/onlineinvoice", $body, $query, $extra);
+    }
+
+    /**
+     * 更新连锁开票信息状态
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/updateStatusAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function partnerBillInfoUpdateStatus($body, $query = null, $extra = null)
