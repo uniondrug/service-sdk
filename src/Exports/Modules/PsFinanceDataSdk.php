@@ -1084,45 +1084,6 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 开启增值服务扣减
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerFundCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partner/fund/create", $body, $query, $extra);
-    }
-
-    /**
-     * 关闭增值服务扣减
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/DeleteAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerFundDelete($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partner/fund/delete", $body, $query, $extra);
-    }
-
-    /**
-     * 增值服务扣减详情
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/FundController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerFundDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partner/fund/detail", $body, $query, $extra);
-    }
-
-    /**
      * 新增换新补贴
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/createAction.md
      * @param array|object $body  入参类型
