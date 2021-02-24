@@ -342,6 +342,58 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 新增药联公司开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/BillInfoController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyBillInfoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/bill/info/create", $body, $query, $extra);
+    }
+
+    /**
+     * 药联公司开票详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/BillInfoController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyBillInfoDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/bill/info/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 药联公司开票分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/BillInfoController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyBillInfoPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/bill/info/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改药联公司开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/BillInfoController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyBillInfoUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/bill/info/update", $body, $query, $extra);
+    }
+
+    /**
      * 公司信息详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/CompanyController/infoAction.md
      * @param array|object $body  入参类型
