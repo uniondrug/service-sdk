@@ -758,45 +758,6 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 停用保司用户
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/disableAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function insurerWorkerDisable($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/insurer/worker/disable", $body, $query, $extra);
-    }
-
-    /**
-     * 启用保司用户
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/enableAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function insurerWorkerEnable($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/insurer/worker/enable", $body, $query, $extra);
-    }
-
-    /**
-     * 开通保司用户财税账号
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/financeAccountOpenAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function insurerWorkerFinanceAccountOpen($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/insurer/worker/finance/account/open", $body, $query, $extra);
-    }
-
-    /**
      * 保司用户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
      * @param array|object $body  入参类型
@@ -1276,6 +1237,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerWorkerDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁用户分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/paging", $body, $query, $extra);
     }
 
     /**
