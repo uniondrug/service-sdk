@@ -463,6 +463,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 批量更新付款单银行账号信息
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/updateOrganizeBankAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function capitalPaymentUpdateOrganizeBank($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/capitalPayment/update/organizebank", $body, $query, $extra);
+    }
+
+    /**
      * 检测理赔导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/checkClaimExportAction.md
      * @param $body
