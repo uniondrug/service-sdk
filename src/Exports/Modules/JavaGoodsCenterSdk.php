@@ -147,4 +147,15 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/service/sku/edit", $body);
     }
+
+    /**
+     * 查询标准商品信息
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDrugRemindV2($body)
+    {
+        return $this->restful("POST", "/drugRemind/getDrugRemindV2", $body);
+    }
+
 }
