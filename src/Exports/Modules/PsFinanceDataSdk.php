@@ -1318,6 +1318,32 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 停用连锁用户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerDisable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 启用连锁用户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerEnable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/enable", $body, $query, $extra);
+    }
+
+    /**
      * 用户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/pagingAction.md
      * @param array|object $body  入参类型
