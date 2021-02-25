@@ -1240,6 +1240,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 统计连锁人员数量
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/countAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/count", $body, $query, $extra);
+    }
+
+    /**
      * 新增连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/createAction.md
      * @param array|object $body  入参类型
@@ -1406,6 +1419,19 @@ class PsFinanceDataSdk extends SdkBase
     public function relationshipEnable($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/relationship/enable", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司与商户列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/listing", $body, $query, $extra);
     }
 
     /**
