@@ -5,6 +5,10 @@
  */
 namespace Uniondrug\ServiceSdk\Bases;
 
+use Hyperf\Config\Annotation\Value;
+use Hyperf\Contract\ConfigInterface;
+use Hyperf\Di\Annotation\Inject;
+use Hyperf\Di\Container;
 use Phalcon\Config;
 use Uniondrug\ServiceSdk\ServiceSdk;
 
@@ -31,19 +35,40 @@ class Setting
     private $_contentType;
 
     /**
+     * @Inject()
+     * @var ConfigInterface
+     */
+    public $hyperfConfig;
+
+    /**
+     * @Value("sdk")
+     */
+    private $sdkConfig;
+
+    /**
      * constructor.
      * @param ServiceSdk $sdk
      */
     public function __construct(ServiceSdk $sdk)
     {
-        $config = $sdk->getContainer()->getConfig()->path('sdk');
-        $this->_contentType = self::DEFAULT_CONTENT_TYPE;
-        if ($config instanceof Config) {
+        if ($sdk->getContainer() instanceof Container){
+            $config = $sdk->getContainer()->get(ConfigInterface::class);
+            $arr = $config->get('sdk');
+            $config = json_decode(json_encode($arr));
             $this->initBase($config);
             $this->initConsul($config);
             $this->initConsulHosts($config);
-            $this->initNs($config);
+        }else{
+            $config = $sdk->getContainer()->getConfig()->path('sdk');
+            if ($config instanceof Config) {
+                $this->initBase($config);
+                $this->initConsul($config);
+                $this->initConsulHosts($config);
+                $this->initNs($config);
+            }
         }
+        $this->_contentType = self::DEFAULT_CONTENT_TYPE;
+
     }
 
     /**
@@ -140,7 +165,24 @@ class Setting
      * 初始化基础
      * @param Config $config
      */
-    private function initBase(Config $config)
+    private function initBase($config)
+    {
+        if (isset($config->domain) && is_string($config->domain) && $config->domain !== '') {
+            $this->_domain = $config->domain;
+        }
+        if (isset($config->timeout) && is_numeric($config->timeout) && $config->timeout > 0) {
+            $this->_timeout = $config->timeout;
+        }
+        if (isset($config->contentType) && is_string($config->contentType)) {
+            $this->_contentType = $config->contentType;
+        }
+    }
+
+    /**
+     * 初始化基础
+     * @param Config $config
+     */
+    private function initBase2($config)
     {
         if (isset($config->domain) && is_string($config->domain) && $config->domain !== '') {
             $this->_domain = $config->domain;
@@ -157,11 +199,12 @@ class Setting
      * 初始化Consul配置
      * @param Config $config
      */
-    private function initConsul(Config $config)
+    private function initConsul($config)
     {
         if (isset($config->consulApiAddress) && is_string($config->consulApiAddress) && $config->consulApiAddress !== '') {
             $this->_consulApi = $this->parseDomain($config->consulApiAddress);
         }
+        echo PHP_EOL.$this->_consulApi.PHP_EOL;
         if (isset($config->consulApiTimeout) && is_numeric($config->consulApiTimeout) && $config->consulApiTimeout > 0) {
             $this->_consulTimeout = $config->consulApiTimeout;
         }
@@ -171,7 +214,7 @@ class Setting
      * 初始化ConsulKV配置
      * @param Config $config
      */
-    private function initConsulHosts(Config $config)
+    private function initConsulHosts($config)
     {
         if (isset($config->consulHosts) && $config->consulHosts instanceof Config) {
             $this->_consulHosts = $config->consulHosts;
