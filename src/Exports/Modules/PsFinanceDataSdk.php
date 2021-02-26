@@ -823,6 +823,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 保司用户启用停用
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerWorkerUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/worker/update/status", $body, $query, $extra);
+    }
+
+    /**
      * 药联用户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
      * @param array|object $body  入参类型
