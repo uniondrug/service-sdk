@@ -5,7 +5,13 @@
  */
 namespace Uniondrug\ServiceSdk\Bases;
 
+use GuzzleHttp\Client;
+use Hyperf\Di\Annotation\Inject;
+use Hyperf\Guzzle\ClientFactory;
+use Hyperf\Guzzle\HandlerStackFactory;
 use Uniondrug\ServiceSdk\ServiceSdk;
+use HyperfGuzzleHandlerStackFactory;
+use GuzzleHttpClient;
 
 /**
  * V1/Host管理器
@@ -19,6 +25,12 @@ class Host
     private static $_nsCache = [];
     private static $_nsHosts = [];
     private static $_cacheSeconds = 180;
+
+    /**
+     * @Inject()
+     * @var Hyperf\Guzzle\ClientFactory
+     */
+    private $clientFactory;
 
     /**
      * 从KV中读取

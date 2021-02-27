@@ -5,6 +5,12 @@
  */
 namespace Uniondrug\ServiceSdk;
 
+use App\Service\LoggerService;
+use GuzzleHttp\HandlerStack;
+use Hyperf\Contract\ContainerInterface;
+use Hyperf\Di\Annotation\Inject;
+use Hyperf\Guzzle\ClientFactory;
+use Hyperf\Guzzle\CoroutineHandler;
 use Uniondrug\Framework\Container;
 use Uniondrug\HttpClient\Client;
 use Uniondrug\Phar\Server\Logs\Logger;
@@ -16,6 +22,7 @@ use Uniondrug\ServiceSdk\Bases\Sdk as BootSdk;
 use Uniondrug\ServiceSdk\Bases\Setting;
 use Uniondrug\ServiceSdk\Bases\WithTrait;
 use Uniondrug\ServiceSdk\Exceptions\UnknownRestfulException;
+use Uniondrug\ServiceSdk\Exports\Abstracts\Export;
 use Uniondrug\ServiceSdk\Traits\BootTrait;
 
 /**
@@ -34,18 +41,27 @@ class ServiceSdk
      */
     private $container;
     /**
-     * @var Client
+     * @Inject()
+     * @var ClientFactory
      */
-    private $httpClient;
+    private $clientFactory;
     /**
      * @var Host
      */
     private $host;
     /**
      * 日志
-     * @var Logger|LoggerAdapter
+     * @Inject()
+     * @var Logger|LoggerAdapter|LoggerService
      */
     private $logger;
+
+    /**
+     * @Inject()
+     * @var \GuzzleHttp\Client
+     */
+    private $httpClient;
+
     /**
      * 设置
      * @var Setting
@@ -63,12 +79,17 @@ class ServiceSdk
         $this->setting = new Setting($this);
         $this->host = new Host();
         // 3. http client
-        $this->httpClient = $this->container->getShared('httpClient');
-        // 2. logger
-        if ($this->container->hasSharedInstance('server')) {
-            $this->logger = $this->container->getShared('server')->getLogger();
-        } else {
-            $this->logger = $this->container->getLogger();
+        if ($this->container instanceof ContainerInterface){
+            $this->httpClient = $this->container->get('Hyperf\Guzzle\ClientFactory')->create();
+            $this->logger = $this->container->get('App\Service\LoggerService');
+        }else{
+            $this->httpClient = $this->container->getShared('httpClient');
+            // 2. logger
+            if ($this->container->hasSharedInstance('server')) {
+                $this->logger = $this->container->getShared('server')->getLogger();
+            } else {
+                $this->logger = $this->container->getLogger();
+            }
         }
     }
 
