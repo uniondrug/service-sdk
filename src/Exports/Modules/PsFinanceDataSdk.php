@@ -1578,29 +1578,29 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 财务中心看的列表
+     * 已读未读列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/financePagingAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function announcementPartnerFinancePaging($body, $query = null, $extra = null)
+    public function announcementPartnerReadPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/announcementP/partner/finance/paging", $body, $query, $extra);
+        return $this->restful("POST", "/announcementP/partner/read/paging", $body, $query, $extra);
     }
 
     /**
-     * 商家服务平台看的列表
+     * 列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/merchantPagingAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function announcementPartnerMerchantPaging($body, $query = null, $extra = null)
+    public function announcementPartnerPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/announcement/partner/merchant/paging", $body, $query, $extra);
+        return $this->restful("POST", "/announcement/partner/paging", $body, $query, $extra);
     }
 
     /**
