@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-03-01
- * @time   Mon, 01 Mar 2021 18:06:51 +0800
+ * @time   Mon, 01 Mar 2021 18:40:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -39,7 +39,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directChangeStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/change/status", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/change/status", $body, $query, $extra);
     }
 
     /**
@@ -52,7 +52,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directDirectOrders($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/orders", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/orders", $body, $query, $extra);
     }
 
     /**
@@ -65,7 +65,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directExportStatementGoods($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/exportStatementGoods", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/exportStatementGoods", $body, $query, $extra);
     }
 
     /**
@@ -78,7 +78,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directOrderGoods($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/orderGoods", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/orderGoods", $body, $query, $extra);
     }
 
     /**
@@ -91,7 +91,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directOrderPayMethod($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/orderPayMethod", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/orderPayMethod", $body, $query, $extra);
     }
 
     /**
@@ -104,7 +104,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directOrdersExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/orderExport", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/orderExport", $body, $query, $extra);
     }
 
     /**
@@ -117,7 +117,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directReportGoodsExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/goodsExport", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/goodsExport", $body, $query, $extra);
     }
 
     /**
@@ -130,7 +130,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directReportOrdersExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/ordersExport", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/ordersExport", $body, $query, $extra);
     }
 
     /**
@@ -143,7 +143,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directReportOrdersList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/ordersList", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/ordersList", $body, $query, $extra);
     }
 
     /**
@@ -156,7 +156,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directSettlementTotal($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/settlementTotal", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/settlementTotal", $body, $query, $extra);
     }
 
     /**
@@ -169,7 +169,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementGoods($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/statementGoods", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/statementGoods", $body, $query, $extra);
     }
 
     /**
@@ -182,7 +182,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementPayMethod($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/statementPayMethod", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/statementPayMethod", $body, $query, $extra);
     }
 
     /**
@@ -195,7 +195,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementsDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/detail", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/detail", $body, $query, $extra);
     }
 
     /**
@@ -208,7 +208,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementsExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/export/statement", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/export/statement", $body, $query, $extra);
     }
 
     /**
@@ -221,7 +221,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementsList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/list", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/list", $body, $query, $extra);
     }
 
     /**
@@ -234,7 +234,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/paging", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/paging", $body, $query, $extra);
     }
 
     /**
@@ -247,7 +247,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementsPaymentProgress($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/paymentProgress", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/paymentProgress", $body, $query, $extra);
     }
 
     /**
@@ -260,7 +260,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementsPdfConfirm($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/pdf/confirm", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/pdf/confirm", $body, $query, $extra);
     }
 
     /**
@@ -273,7 +273,7 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directStatementStatisticsOrders($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/statements/statisticsOrders", $body, $query, $extra);
+        return $this->restful("POST", "/direct/statements/statisticsOrders", $body, $query, $extra);
     }
 
     /**
@@ -286,6 +286,19 @@ class PsFinanceStatementSdk extends SdkBase
      */
     public function directUpdateSettlementStatus($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/fsDirectSettlement/updateSettlementStatus", $body, $query, $extra);
+        return $this->restful("POST", "/direct/fsDirectSettlement/updateSettlementStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 结算单详情
+     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/StatementsController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/detail", $body, $query, $extra);
     }
 }
