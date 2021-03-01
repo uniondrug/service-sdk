@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-03-01
- * @time   Mon, 01 Mar 2021 18:09:15 +0800
+ * @time   Mon, 01 Mar 2021 19:31:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsFinBillSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-fin-bill';
+
+    /**
+     * 读取开票单详情
+     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/BillController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/detail", $body, $query, $extra);
+    }
 
     /**
      * 获取开票信息检测结果
