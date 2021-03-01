@@ -151,4 +151,15 @@ class JavaOrderQuerySdk extends SdkBase
     {
         return $this->restful("POST", "/cashier/cancel/query", $body);
     }
+
+    /**
+     * 订单memberId查询主订单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryMember($body)
+    {
+        return $this->restful("POST", "/order/query/member", $body);
+    }
 }
