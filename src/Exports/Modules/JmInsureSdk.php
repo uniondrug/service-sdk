@@ -43,7 +43,7 @@ class JmInsureSdk extends SdkBase
      */
     public function directClaimPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/archive/page", $body);
+        return $this->restful("POST", "/ipackage/direct/page", $body);
     }
 
     /**
@@ -67,9 +67,9 @@ class JmInsureSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function unionDrugPaging($body, $query = null, $extra = null)
+    public function unionDrugClaimPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/uniondrug/page", $body);
+        return $this->restful("POST", "/ipackage/uniondrug/page", $body);
     }
 
     /**
