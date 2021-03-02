@@ -29,6 +29,6 @@ class JavaGoodsCenterExternalSdk extends SdkBase
      */
     public function findHealth($body)
     {
-        return $this->restful("POST", "/chain/findHealth", $body);
+        return $this->restful("POST", "/chain/findHealthToDstore", $body);
     }
 }
