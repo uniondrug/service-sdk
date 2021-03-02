@@ -67,7 +67,7 @@ class JmInsureSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function unionDrugPaging($body, $query = null, $extra = null)
+    public function unionDrugClaimPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/uniondrug/page", $body);
     }
