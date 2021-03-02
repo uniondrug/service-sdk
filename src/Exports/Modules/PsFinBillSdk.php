@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-01
- * @time   Mon, 01 Mar 2021 19:31:10 +0800
+ * @date   2021-03-02
+ * @time   Tue, 02 Mar 2021 14:40:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -248,5 +248,18 @@ class PsFinBillSdk extends SdkBase
     public function directSaleListSummary($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/bill/saleListSummary", $body, $query, $extra);
+    }
+
+    /**
+     * 提交开票
+     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/Direct/BillController/submitBillAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function directSubmitBill($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/submitBill", $body, $query, $extra);
     }
 }
