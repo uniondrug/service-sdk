@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-02-01
- * @time   Mon, 01 Feb 2021 13:36:54 +0800
+ * @date   2021-03-03
+ * @time   Wed, 03 Mar 2021 10:05:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -352,6 +352,19 @@ class MerchantSdk extends SdkBase
     public function chainNum($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/chainNum", $body, $query, $extra);
+    }
+
+    /**
+     * 添加商户组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePcController/chainNumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function chainNumPc($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasepc/chainnum", $body, $query, $extra);
     }
 
     /**
@@ -859,6 +872,19 @@ class MerchantSdk extends SdkBase
     public function editIsInvoice($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editinvoice", $body, $query, $extra);
+    }
+
+    /**
+     * 修改采购开关
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsProcurementAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsProcurement($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisprocurement", $body, $query, $extra);
     }
 
     /**
@@ -1535,6 +1561,19 @@ class MerchantSdk extends SdkBase
     public function infoAccountNumber($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/accountnumber/info", $body, $query, $extra);
+    }
+
+    /**
+     * 读取商户代理关系
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AgentDetailController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function infoAgentDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/agentdetail/info", $body, $query, $extra);
     }
 
     /**
@@ -2744,6 +2783,19 @@ class MerchantSdk extends SdkBase
     public function searchOrganizeBase($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/search", $body, $query, $extra);
+    }
+
+    /**
+     * 关闭顶级组织操作
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/statusEndRootAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statusEndRoot($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/statusendroot", $body, $query, $extra);
     }
 
     /**

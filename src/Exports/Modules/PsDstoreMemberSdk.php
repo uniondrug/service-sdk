@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-02-25
- * @time   Thu, 25 Feb 2021 14:28:40 +0800
+ * @date   2021-03-02
+ * @time   Tue, 02 Mar 2021 14:40:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -329,6 +329,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 无分页列表(新)
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function careList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/care/list", $body, $query, $extra);
+    }
+
+    /**
      * 无分页列表
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareController/listingAction.md
      * @param array|object $body 入参类型
@@ -352,6 +365,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function carePage($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/care/page", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareRuleController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function careRuleListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/careRule/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareRuleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function careRuleUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/careRule/update", $body, $query, $extra);
     }
 
     /**
@@ -758,6 +797,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 好评率及日联系会员数
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/favorableRateAndContactAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function favorableRateAndContact($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/favorableRateAndContact", $body, $query, $extra);
+    }
+
+    /**
      * 获取不同状态活动数量
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/getStatusCountAction.md
      * @param array|object $body 入参类型
@@ -950,6 +1002,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function isExistRelation($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/isExistRelation", $body, $query, $extra);
+    }
+
+    /**
+     * 批量查询连锁信息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/listByBatchMerchantIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function listByBatchMerchantIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/listByBatchMerchantIds", $body, $query, $extra);
     }
 
     /**
@@ -1395,6 +1460,45 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 订单分布明细数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/orderDistributionDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderDistributionDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/orderDistributionDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 订单分布汇总数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/orderDistributionTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderDistributionTotal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/orderDistributionTotal", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/OrdersController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function ordersLisiting($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/orders/listing", $body, $query, $extra);
+    }
+
+    /**
      * 检查能否领取
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/PackageController/checkCanReceiveAction.md
      * @param array|object $body 入参类型
@@ -1470,6 +1574,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function productCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/product/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/RecommendBlacklistController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recommendBlacklistCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommend/blacklist/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/RecommendWhitelistController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recommendWhitelistCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommend/whitelist/create", $body, $query, $extra);
     }
 
     /**

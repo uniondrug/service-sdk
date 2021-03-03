@@ -680,11 +680,11 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/updateAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * 修改保司
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function insurerUpdate($body, $query = null, $extra = null)
@@ -820,6 +820,19 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerWorkerPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/worker/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 保司用户启用停用
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerWorkerUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/worker/update/status", $body, $query, $extra);
     }
 
     /**
@@ -1240,6 +1253,32 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁树形结构
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/treeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTree($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 统计连锁人员数量
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/countAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/count", $body, $query, $extra);
+    }
+
+    /**
      * 新增连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/createAction.md
      * @param array|object $body  入参类型
@@ -1302,6 +1341,32 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerWorkerFinanceAccountOpen($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/finance/account/open", $body, $query, $extra);
+    }
+
+    /**
+     * 停用连锁用户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/disableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerDisable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 启用连锁用户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/enableAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerEnable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/enable", $body, $query, $extra);
     }
 
     /**
@@ -1409,6 +1474,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 商业公司与商户列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/listing", $body, $query, $extra);
+    }
+
+    /**
      * 商业公司与商户分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/pagingAction.md
      * @param array|object $body  入参类型
@@ -1513,29 +1591,29 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 财务中心看的列表
+     * 已读未读列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/financePagingAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function announcementPartnerFinancePaging($body, $query = null, $extra = null)
+    public function announcementPartnerReadPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/announcementP/partner/finance/paging", $body, $query, $extra);
+        return $this->restful("POST", "/announcementP/partner/read/paging", $body, $query, $extra);
     }
 
     /**
-     * 商家服务平台看的列表
+     * 列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/AnnouncementPartnerController/merchantPagingAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function announcementPartnerMerchantPaging($body, $query = null, $extra = null)
+    public function announcementPartnerPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/announcement/partner/merchant/paging", $body, $query, $extra);
+        return $this->restful("POST", "/announcement/partner/paging", $body, $query, $extra);
     }
 
     /**

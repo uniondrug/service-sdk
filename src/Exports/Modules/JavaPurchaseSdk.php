@@ -249,4 +249,15 @@ class JavaPurchaseSdk extends SdkBase
     public function purchaseProjectQueryHisContract($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseProject/queryHisContract', $body, $query = null, $extra = null);
     }
+    /**
+     * 驻店宝用户信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseStagnationList($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseStagnation/list', $body, $query = null, $extra = null);
+    }
+
 }
