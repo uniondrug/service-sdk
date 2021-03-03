@@ -993,6 +993,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 核算单位列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/unitListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerUnitListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/unit/listing", $body, $query, $extra);
+    }
+
+    /**
      * 修改连锁
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/updateAction.md
      * @param array|object $body 入参类型
