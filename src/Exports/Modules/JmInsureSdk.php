@@ -184,7 +184,7 @@ class JmInsureSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function schemeGet($body, $query = null, $extra = null)
+    public function schemeDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/scheme/get", $body);
     }
@@ -223,7 +223,7 @@ class JmInsureSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function schemeRemove($body, $query = null, $extra = null)
+    public function schemeDelete($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/scheme/remove", $body);
     }
@@ -294,6 +294,19 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 方案关联保司组详情
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/SchemeInsurerController/get.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function schemeInsurerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/schemeInsurer/get", $body);
+    }
+
+    /**
      * 删除方案关联保司组
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/SchemeInsurerController/remove.md
      * @param array|object $body  入参类型
@@ -301,7 +314,7 @@ class JmInsureSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function schemeInsurerRemove($body, $query = null, $extra = null)
+    public function schemeInsurerDelete($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/schemeInsurer/remove", $body);
     }
