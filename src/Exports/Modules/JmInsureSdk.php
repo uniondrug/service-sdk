@@ -344,4 +344,134 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/schemeInsurer/disable", $body);
     }
+
+    /**
+     * 保单分页列表
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/page", $body);
+    }
+
+    /**
+     * 保单新增
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/save", $body);
+    }
+
+    /**
+     * 保单详情
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/get", $body);
+    }
+
+    /**
+     * 保单编辑
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/update", $body);
+    }
+
+    /**
+     * 保单变更
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyChange($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/change", $body);
+    }
+
+    /**
+     * 保单删除
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/remove", $body);
+    }
+
+    /**
+     * 保单审批
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyAudit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/check", $body);
+    }
+
+    /**
+     * 保单关闭
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyClose($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/close", $body);
+    }
+
+    /**
+     * 保单生效
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyEnable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/enable", $body);
+    }
+
+    /**
+     * 保单失效
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyDisable($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/disable", $body);
+    }
 }
