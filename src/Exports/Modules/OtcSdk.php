@@ -11,6 +11,7 @@
  * @date   2020-12-15
  * @time   Tue, 15 Dec 2020 09:56:07 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -33,8 +34,8 @@ class OtcSdk extends SdkBase
      * 开方接口
      * @link https://uniondrug.coding.net/p/module.otc/git/blob/development/docs/api/OtcElecrxController/applyAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function apply($body, $query = null, $extra = null)
@@ -46,8 +47,8 @@ class OtcSdk extends SdkBase
      * 处方详情接口
      * @link https://uniondrug.coding.net/p/module.otc/git/blob/development/docs/api/OtcElecrxController/detailAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function detail($body, $query = null, $extra = null)
@@ -59,8 +60,8 @@ class OtcSdk extends SdkBase
      * 用户处方列表
      * @link https://uniondrug.coding.net/p/module.otc/git/blob/development/docs/api/OtcElecrxController/listAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function list($body, $query = null, $extra = null)
@@ -72,12 +73,25 @@ class OtcSdk extends SdkBase
      * 核销处方接口
      * @link https://uniondrug.coding.net/p/module.otc/git/blob/development/docs/api/OtcElecrxController/verifyAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function verify($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/otcElecrx/verify", $body, $query, $extra);
+    }
+
+    /**
+     * 线下上传处方图片分配处方号
+     * @link https://uniondrug.coding.net/p/module.otc/git/blob/development/docs/api/OtcElecrxController/newApplyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function newApply($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/otcElecrx/newApply", $body, $query, $extra);
     }
 }
