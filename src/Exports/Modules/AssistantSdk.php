@@ -4074,6 +4074,45 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHistoryController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workHistoryCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workHistory/create", $body, $query, $extra);
+    }
+
+    /**
+     * 列表 [分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHistoryController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workHistoryPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workHistory/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 状态变更
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHistoryController/statusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workHistoryStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workHistory/status", $body, $query, $extra);
+    }
+
+    /**
      * 列表 [不分页]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/listAction.md
      * @param array|object $body 入参类型
