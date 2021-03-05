@@ -74,6 +74,7 @@ namespace Uniondrug\ServiceSdk\Traits;
  * @property \Uniondrug\ServiceSdk\Modules\SettlementLogSdk $settlementLog
  * @property \Uniondrug\ServiceSdk\Modules\SettlementSdk $settlement
  * @property \Uniondrug\ServiceSdk\Modules\SettlementSheetSdk $settlementSheet
+ * @property \Uniondrug\ServiceSdk\Modules\PsFinanceStatementSdk $psFinanceStatementSdk
  * @property \Uniondrug\ServiceSdk\Modules\SmsSdk $sms
  * @property \Uniondrug\ServiceSdk\Modules\StagnationSdk $stagnation
  * @property \Uniondrug\ServiceSdk\Modules\TagSdk $tag
