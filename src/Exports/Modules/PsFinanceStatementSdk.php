@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-01
- * @time   Mon, 01 Mar 2021 18:40:59 +0800
+ * @date   2021-03-05
+ * @time   Fri, 05 Mar 2021 09:58:00 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsFinanceStatementSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-finance-statement';
+
+    /**
+     * 接收直赔开票单生成消息，生成对应付款记录信息
+     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/MbsController/createDirectPaymentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createDirectPayment($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/mbs/create/payment", $body, $query, $extra);
+    }
 
     /**
      * 结算单状态变更接口
@@ -238,7 +251,7 @@ class PsFinanceStatementSdk extends SdkBase
     }
 
     /**
-     * 对账单付款进度
+     * 对账单付款进度-商家
      * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/paymentProgressAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -264,7 +277,7 @@ class PsFinanceStatementSdk extends SdkBase
     }
 
     /**
-     * 结算单订单数据统计
+     * 结算单订单数据统计-商家
      * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/statisticsOrdersAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -274,6 +287,32 @@ class PsFinanceStatementSdk extends SdkBase
     public function directStatementStatisticsOrders($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/direct/statements/statisticsOrders", $body, $query, $extra);
+    }
+
+    /**
+     * 统计接口
+     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/reportStatisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function directStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/fsDirectSettlement/statistics", $body, $query, $extra);
+    }
+
+    /**
+     * 获取未结算金额
+     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/unSettledAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function directUnSettledAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/fsDirectSettlement/unSettledAmount", $body, $query, $extra);
     }
 
     /**
@@ -300,5 +339,31 @@ class PsFinanceStatementSdk extends SdkBase
     public function statementsDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司/单体店分页结算列表-商家
+     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/singlePagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementSinglePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/statements/singlePaging", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司合并对账单
+     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/summaryAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsSummaryAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/statements/summaryAdd", $body, $query, $extra);
     }
 }
