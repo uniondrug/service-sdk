@@ -47,6 +47,58 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 直付理赔单回款
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackagePolicyController/page.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function directPolicyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackagePolicy/page", $body);
+    }
+
+    /**
+     * 创建直付理赔单草稿
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/directSave.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function directClaimCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/direct/save", $body);
+    }
+
+    /**
+     * 直付理赔单添加开票单
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/updateDirectAddBills.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function directClaimUpdateBills($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/direct/updateDirectAddBills", $body);
+    }
+
+    /**
+     * 直付理赔单移除开票单
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/updateDirectRemoveBills.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function directClaimRemoveBills($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/direct/updateDirectRemoveBills", $body);
+    }
+
+    /**
      * 直付理赔单详情
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/directGet.md
      * @param array|object $body  入参类型
@@ -70,6 +122,19 @@ class JmInsureSdk extends SdkBase
     public function unionDrugClaimPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/ipackage/uniondrug/page", $body);
+    }
+
+    /**
+     * 药联理赔单创建
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/uniondrugSave.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function unionDrugClaimCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/uniondrug/save", $body);
     }
 
     /**
