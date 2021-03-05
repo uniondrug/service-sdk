@@ -414,7 +414,7 @@ class PsDstoreMemberSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function CareSendLogMessageLimitCheck($body, $query = null, $extra = null)
+    public function careSendLogMessageLimitCheck($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/care/send/log/messageLimitCheck", $body, $query, $extra);
     }
