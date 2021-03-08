@@ -515,6 +515,32 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 已变更保单列表
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyModifiedPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pagePolicyChange", $body);
+    }
+
+    /**
+     * 已变更保单详情
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyModifiedDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/policyChangeDetail", $body);
+    }
+
+    /**
      * 保单删除
      * @link
      * @param array|object $body  入参类型
@@ -577,31 +603,5 @@ class JmInsureSdk extends SdkBase
     public function policyDisable($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policy/disable", $body);
-    }
-
-    /**
-     * 已变更保单列表
-     * @link
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function policyModifyPaging($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/policy/pagePolicyChange", $body);
-    }
-
-    /**
-     * 已变更保单详情
-     * @link
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function policyModifyDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/policy/policyChangeDetail", $body);
     }
 }
