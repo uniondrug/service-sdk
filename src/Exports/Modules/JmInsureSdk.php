@@ -412,7 +412,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单分页列表
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/page.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -425,7 +425,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单新增
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/save.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -438,7 +438,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单新增并发起审批
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/saveAndApproval.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -451,7 +451,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单详情
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/get.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -464,7 +464,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单编辑
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/update.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -503,7 +503,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单变更
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/change.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -516,7 +516,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 已变更保单列表
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/pageChange.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -529,7 +529,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 已变更保单详情
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/changeDetail.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -542,7 +542,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单删除
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/remove.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -555,7 +555,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单审批
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/check.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -568,7 +568,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单关闭
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/close.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -581,7 +581,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单生效
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/enable.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -594,7 +594,7 @@ class JmInsureSdk extends SdkBase
 
     /**
      * 保单失效
-     * @link
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/disable.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -603,5 +603,18 @@ class JmInsureSdk extends SdkBase
     public function policyDisable($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policy/disable", $body);
+    }
+
+    /**
+     * 数据化理赔下载
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/policyDataDownload.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyDataDownload($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/policyDataDownload", $body);
     }
 }
