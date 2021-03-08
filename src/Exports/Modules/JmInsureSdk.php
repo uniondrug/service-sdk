@@ -437,6 +437,19 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 保单新增并发起审批
+     * @link
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyCreateAndApproval($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/saveAndApproval", $body);
+    }
+
+    /**
      * 保单详情
      * @link
      * @param array|object $body  入参类型
@@ -460,6 +473,32 @@ class JmInsureSdk extends SdkBase
     public function policyUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policy/update", $body);
+    }
+
+    /**
+     * 保单编辑并发起审批
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/updateAndApproval.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyUpdateAndApproval($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/updateAndApproval", $body);
+    }
+
+    /**
+     * 保单编辑并提交
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/updateAndSubmit.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyUpdateAndSubmit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/updateAndSubmit", $body);
     }
 
     /**
