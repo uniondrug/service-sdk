@@ -617,4 +617,30 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policy/policyDataDownload", $body);
     }
+
+    /**
+     * 保单付款计划
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyPayController/list.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyPayPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyPay/list", $body);
+    }
+
+    /**
+     * 保费手费费用
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyProceduresController/list.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyProceduresPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyProcedures/list", $body);
+    }
 }
