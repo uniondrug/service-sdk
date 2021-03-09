@@ -260,4 +260,15 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseStagnation/list', $body, $query = null, $extra = null);
     }
 
+
+    /**
+     * 根据发行项目ID获取采购项目杠杆比例信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function queryRatioByPublishProjectId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/queryByPublishProjectId', $body, $query = null, $extra = null);
+    }
 }
