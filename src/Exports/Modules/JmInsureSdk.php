@@ -593,6 +593,19 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 保单关闭确认
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/closeConfirm.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyCloseConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/closeConfirm", $body);
+    }
+
+    /**
      * 保单生效
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/enable.md
      * @param array|object $body  入参类型
