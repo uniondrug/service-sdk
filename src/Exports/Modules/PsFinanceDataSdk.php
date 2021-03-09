@@ -1344,6 +1344,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁树形缓存结构
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/treeByRedisAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTreeByRedis($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tree/by/redis", $body, $query, $extra);
+    }
+
+    /**
      * 统计连锁人员数量
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/countAction.md
      * @param array|object $body 入参类型
