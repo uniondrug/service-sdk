@@ -719,6 +719,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 保司树形缓存结构
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/treeByRedisAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerTreeByRedis($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/tree/by/redis", $body, $query, $extra);
+    }
+
+    /**
      * 修改保司
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/updateAction.md
      * @param array|object $body 入参类型
