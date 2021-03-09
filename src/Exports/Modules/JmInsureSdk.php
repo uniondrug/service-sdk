@@ -671,14 +671,14 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
-     * 日志列表
+     * 保单日志列表
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyOperationRecordController/page.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function logPaging($body, $query = null, $extra = null)
+    public function policyLogPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policyOperationRecord/page", $body);
     }
