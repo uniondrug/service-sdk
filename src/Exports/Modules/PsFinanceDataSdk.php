@@ -667,6 +667,32 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 保司列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 根据保司名称查询保司ID列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/listByNameAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerListByName($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/list/by/name", $body, $query, $extra);
+    }
+
+    /**
      * 保司分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/pagingAction.md
      * @param array|object $body  入参类型
@@ -690,6 +716,19 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerTree($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 保司树形缓存结构
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/treeByRedisAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerTreeByRedis($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/tree/by/redis", $body, $query, $extra);
     }
 
     /**
@@ -755,6 +794,19 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerBillInfoUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/bill/info/update", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsureConfigController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerConfigDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/config/detail", $body, $query, $extra);
     }
 
     /**
@@ -1289,6 +1341,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerTree($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁树形缓存结构
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/treeByRedisAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTreeByRedis($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tree/by/redis", $body, $query, $extra);
     }
 
     /**
