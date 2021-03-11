@@ -271,4 +271,15 @@ class JavaPurchaseSdk extends SdkBase
     public function queryRatioByPublishProjectId($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseProject/queryByPublishProjectId', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 生成提额单
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function generatePromote($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/generatePromote', $body, $query = null, $extra = null);
+    }
 }
