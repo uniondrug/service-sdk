@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-01
- * @time   Mon, 01 Mar 2021 18:40:59 +0800
+ * @date   2021-03-05
+ * @time   Fri, 05 Mar 2021 11:44:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -17,21 +17,34 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * PsFinanceStatementSdk
+ * PsFinStatementSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class PsFinanceStatementSdk extends SdkBase
+class PsFinStatementSdk extends SdkBase
 {
     /**
      * 服务名称
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ps-finance-statement';
+    protected $serviceName = 'ps-fin-statement';
+
+    /**
+     * 接收直赔开票单生成消息，生成对应付款记录信息
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/MbsController/createDirectPaymentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createDirectPayment($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/mbs/create/payment", $body, $query, $extra);
+    }
 
     /**
      * 结算单状态变更接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/changeStatusAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/changeStatusAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -44,7 +57,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 获取结算单订单列表接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/ordersAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/ordersAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -57,7 +70,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 导出指定对账单内商品列表接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/exportStatementGoodsAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/exportStatementGoodsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -70,7 +83,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 获取指定订单内商品列表接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/orderGoodsAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/orderGoodsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -83,7 +96,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 订单结算明细
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/orderPayMethodAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/orderPayMethodAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -96,7 +109,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 导出结算单订单列表接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/orderExportAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/orderExportAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -109,7 +122,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 导出订单的商品列表接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/goodsExportAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/goodsExportAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -122,7 +135,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 导出直付订单列表接口-商家
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/ordersExportAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/ordersExportAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -135,7 +148,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 直付订单列表接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/ordersListAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/ordersListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -148,7 +161,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 获取结算数据汇总
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/settlementTotalAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/settlementTotalAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -161,7 +174,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 获取原商品列表接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/statementGoodsAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/statementGoodsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -174,7 +187,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 结算单按支付方式，扣率统计接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/statementPayMethodAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/statementPayMethodAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -187,7 +200,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 结算单详情
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/detailAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/detailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -200,7 +213,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 结算单导出
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/exportStatementAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/exportStatementAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -213,7 +226,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 获取结算单分页列表-商家
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/listAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/listAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -226,7 +239,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 结算单分页列表
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/pagingAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/pagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -238,8 +251,8 @@ class PsFinanceStatementSdk extends SdkBase
     }
 
     /**
-     * 对账单付款进度
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/paymentProgressAction.md
+     * 对账单付款进度-商家
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/paymentProgressAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -252,7 +265,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 对账函确认
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/pdfConfirmAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/pdfConfirmAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -264,8 +277,8 @@ class PsFinanceStatementSdk extends SdkBase
     }
 
     /**
-     * 结算单订单数据统计
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/StatementsController/statisticsOrdersAction.md
+     * 结算单订单数据统计-商家
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/statisticsOrdersAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -277,8 +290,34 @@ class PsFinanceStatementSdk extends SdkBase
     }
 
     /**
+     * 统计接口
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/reportStatisticsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function directStatistics($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/fsDirectSettlement/statistics", $body, $query, $extra);
+    }
+
+    /**
+     * 获取未结算金额
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/unSettledAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function directUnSettledAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/fsDirectSettlement/unSettledAmount", $body, $query, $extra);
+    }
+
+    /**
      * 更新对账单下订单的状态接口
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/updateSettlementStatusAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/updateSettlementStatusAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -291,7 +330,7 @@ class PsFinanceStatementSdk extends SdkBase
 
     /**
      * 结算单详情
-     * @link https://uniondrug.coding.net/p/ps-finance-statement/git/blob/development/docs/api/StatementsController/detailAction.md
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/StatementsController/detailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -300,5 +339,44 @@ class PsFinanceStatementSdk extends SdkBase
     public function statementsDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司/单体店分页结算列表-商家
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/singlePagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementSinglePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/statements/singlePaging", $body, $query, $extra);
+    }
+
+    /**
+     * 商业公司合并对账单
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/StatementsController/summaryAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsSummaryAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/statements/summaryAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 结算单详情list
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/StatementsController/detailListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statementsDetailList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statements/detailList", $body, $query, $extra);
     }
 }

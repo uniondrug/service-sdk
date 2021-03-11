@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-01-08
- * @time   Fri, 08 Jan 2021 16:23:15 +0800
+ * @date   2021-03-02
+ * @time   Tue, 02 Mar 2021 23:39:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -70,6 +70,19 @@ class ClerkSdk extends SdkBase
 
     /**
      * 冻结/解冻店员
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/batchDestroyByMerchantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantBatchDestroyByMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/batchDestroyByMerchant", $body, $query, $extra);
+    }
+
+    /**
+     * 冻结/解冻店员
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/batchFreezeAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -79,6 +92,19 @@ class ClerkSdk extends SdkBase
     public function assistantBatchFreeze($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/batch/freeze", $body, $query, $extra);
+    }
+
+    /**
+     * 冻结/解冻店员
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/batchFreezeByMerchantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantBatchFreezeByMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/batchFreezeByMerchant", $body, $query, $extra);
     }
 
     /**

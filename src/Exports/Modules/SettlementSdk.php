@@ -465,9 +465,9 @@ class SettlementSdk extends SdkBase
     /**
      * 批量更新付款单银行账号信息
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/CapitalPaymentController/updateOrganizeBankAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function capitalPaymentUpdateOrganizeBank($body, $query = null, $extra = null)
@@ -4039,8 +4039,8 @@ class SettlementSdk extends SdkBase
     }
 
     /**
-     * 申请
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/ApplyAction.md
+     * 新增普通应收
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/applyAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -4049,6 +4049,19 @@ class SettlementSdk extends SdkBase
     public function organizeBillApply($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeBill/apply", $body, $query, $extra);
+    }
+
+    /**
+     * 新增药联理赔单应收
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/applyTpaAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBillApplyTpa($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBill/applyTpa", $body, $query, $extra);
     }
 
     /**
@@ -4808,9 +4821,9 @@ class SettlementSdk extends SdkBase
     /**
      * 新增佣金对账单
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/commissionAddAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementsCommissionAdd($body, $query = null, $extra = null)
@@ -4821,33 +4834,35 @@ class SettlementSdk extends SdkBase
     /**
      * 佣金对账单审核
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/commissionChangeStatusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementsCommissionChangeStatus($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/commission/change/status", $body, $query, $extra);
     }
+
     /**
      * 查询结算账期内佣金数额
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/commissionAmountAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementsCommissionAmount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statements/commission/amount", $body, $query, $extra);
     }
+
     /**
      * 佣金结算明细列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/StatementsController/commissionListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function statementsCommissionList($body, $query = null, $extra = null)
