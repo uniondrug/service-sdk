@@ -863,7 +863,6 @@ class StagnationSdk extends SdkBase
     {
         return $this->restful("POST", "/welfare/create", $body, $query, $extra);
     }
-
     /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareController/pageAction.md
