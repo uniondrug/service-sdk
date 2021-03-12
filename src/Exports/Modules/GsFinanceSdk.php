@@ -17,16 +17,16 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * Class GoFinanceSdk
+ * Class GsFinanceSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class GoFinanceSdk extends SdkBase
+class GsFinanceSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'go-finance';
+    protected $serviceName = 'gs-finance';
 
     /**
      * 新增结算单3.0
