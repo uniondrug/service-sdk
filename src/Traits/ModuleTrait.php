@@ -138,6 +138,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
  * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
