@@ -1500,6 +1500,45 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 新增用户权限
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerRuleCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/rule/create", $body, $query, $extra);
+    }
+
+    /**
+     * 用户权限详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerRuleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/rule/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改用户权限
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerRuleUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/rule/update", $body, $query, $extra);
+    }
+
+    /**
      * 新增商业公司与商户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/createAction.md
      * @param array|object $body  入参类型
