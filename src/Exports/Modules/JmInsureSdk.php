@@ -708,4 +708,30 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/insurePolicy/page", $body);
     }
+
+    /**
+     * 分页查询保单理赔款收款银行流水明细
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/pageReceiptBankItem.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyReceiptPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pageReceiptBankItem", $body);
+    }
+
+    /**
+     * 分页查询费用应收
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/pageFee.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyFeePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pageFee", $body);
+    }
 }
