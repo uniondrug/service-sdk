@@ -190,6 +190,19 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 分页查询可发起药联理赔的保单
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/pageUniondrugPolicy.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function unionDrugClaimPolicyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pageUniondrugPolicy", $body);
+    }
+
+    /**
      * 待理赔池汇总分页查询
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PoolClaimSummaryController/page.md
      * @param array|object $body  入参类型
