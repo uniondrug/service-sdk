@@ -269,7 +269,7 @@ class JavaPurchaseSdk extends SdkBase
      * @return ResponseInterface
      */
     public function queryRatioByPublishProjectId($body, $query = null, $extra = null) {
-        return $this->restful(static::METHOD_POST, '/purchaseProject/queryByPublishProjectId', $body, $query = null, $extra = null);
+        return $this->restful(static::METHOD_POST, '/purchaseProject/queryRatioByPublishProjectId', $body, $query = null, $extra = null);
     }
 
     /**
