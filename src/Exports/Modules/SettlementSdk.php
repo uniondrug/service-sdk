@@ -4869,4 +4869,95 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/statements/commission/list", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionDetailController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionDetailCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/detail/create", $body, $query, $extra);
+    }
+
+    /**
+     * paging
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionDetailController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionDetailPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/detail/paging", $body, $query, $extra);
+    }
+
+    /**
+     * finish
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionController/finishAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionFinish($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/finish", $body, $query, $extra);
+    }
+
+    /**
+     * finishConfirm
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionController/finishConfirmAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionFinishConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/finish/confirm", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/update", $body, $query, $extra);
+    }
 }

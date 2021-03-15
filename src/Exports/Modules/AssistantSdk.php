@@ -4150,4 +4150,56 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/workRecord/complete", $body, $query, $extra);
     }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantRemarkController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantRemarkCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistantRemark/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantRemarkController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantRemarkDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistantRemark/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantRemarkController/idsListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantRemarkIdsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistantRemark/idsList", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workDistributeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workDistribute/create", $body, $query, $extra);
+    }
 }

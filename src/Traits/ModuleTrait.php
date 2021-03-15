@@ -55,7 +55,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaIhcenterSdk            $javaIhcenter
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommissionSdk          $javaCommission
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaComsnSdk               $javaComsn
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk                $javaCoinSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk                $javaCoin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDistributionSdk        $javaDistribution
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk             $javaPromote
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk              $javaErpPay
@@ -140,6 +140,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
  * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
