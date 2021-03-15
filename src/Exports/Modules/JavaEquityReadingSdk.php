@@ -17,7 +17,7 @@ use Uniondrug\ServiceSdk\Bases\ResponseInterface;
  */
 class JavaEquityReadingSdk extends SdkBase
 {
-    protected $serviceName = 'java.equity.reading';
+    protected $serviceName = 'js-equity-reading';
 
     /**
      * 查询分组金额与余额
