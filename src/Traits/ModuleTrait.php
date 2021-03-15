@@ -9,6 +9,7 @@ namespace Uniondrug\ServiceSdk\Traits;
 
 use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityAnalysisSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityReadingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
 
 /**
@@ -135,6 +136,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk               $psFinBillSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk                $jmInsure
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
+ * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
  * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
