@@ -1097,6 +1097,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 核算单位开票详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/unit/detail", $body, $query, $extra);
+    }
+
+    /**
      * 导出商户开票信息
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/exportAction.md
      * @param array|object $body  入参类型
