@@ -1993,11 +1993,24 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 后台邀请店员开通药师
+     * 后台批量邀请店员开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/batchInviteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantBatchInvite($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/batchInvite", $body, $query, $extra);
+    }
+
+    /**
+     * 邀请店员开通药师
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/inviteAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function assistantInvite($body, $query = null, $extra = null)
