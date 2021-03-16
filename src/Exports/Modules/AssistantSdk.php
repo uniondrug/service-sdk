@@ -4191,19 +4191,6 @@ class AssistantSdk extends SdkBase
     }
 
     /**
-     * 撤销
-     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/cancelAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function workDistributeCancel($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/workDistribute/cancel", $body, $query, $extra);
-    }
-
-    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/createAction.md
      * @param array|object $body 入参类型
