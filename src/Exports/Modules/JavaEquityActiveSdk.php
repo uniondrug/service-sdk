@@ -32,4 +32,14 @@ class JavaEquityActiveSdk extends SdkBase
     {
         return $this->restful("POST", "/equity/order/batch", $body);
     }
+
+    /**
+     * 批量激活
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function batchActive($body)
+    {
+        return $this->restful("POST", "/equity/batch/active", $body);
+    }
 }
