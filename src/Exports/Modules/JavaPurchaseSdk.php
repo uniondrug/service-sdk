@@ -282,4 +282,15 @@ class JavaPurchaseSdk extends SdkBase
     public function generatePromote($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseSpecs/generatePromote', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 新增增值服务权益批次
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function createValueAddedService($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchasePile/createValueAddedService', $body, $query = null, $extra = null);
+    }
 }
