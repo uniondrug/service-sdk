@@ -177,4 +177,15 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/queryGoods/getGoodsBySkuNos", $body);
     }
+
+    /**
+     * 商品搜索
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function goodsSearchSku($body)
+    {
+        return $this->restful("POST", "/goodsSearch/sku", $body);
+    }
+
 }

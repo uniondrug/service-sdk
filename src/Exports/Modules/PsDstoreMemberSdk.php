@@ -1991,4 +1991,56 @@ class PsDstoreMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
     }
+
+    /**
+     * 后台邀请店员开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/inviteAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantInvite($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/invite", $body, $query, $extra);
+    }
+
+    /**
+     * 店员是否展示开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/canOpenAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantCanOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/canOpen", $body, $query, $extra);
+    }
+
+    /**
+     * 开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/openAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/open", $body, $query, $extra);
+    }
+
+    /**
+     * 批量查询店员开通药师状态
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/batchQueryOpenStatusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function batchQueryOpenStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/batchQueryOpenStatus", $body, $query, $extra);
+    }
 }
