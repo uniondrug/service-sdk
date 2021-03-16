@@ -1392,6 +1392,19 @@ class PsFinanceDataSdk extends SdkBase
      */
     public function partnerWorkerDetail($body, $query = null, $extra = null)
     {
+        return $this->restful("POST", "/partner/worker/member/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁用户详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerManDetail($body, $query = null, $extra = null)
+    {
         return $this->restful("POST", "/partner/worker/detail", $body, $query, $extra);
     }
 
