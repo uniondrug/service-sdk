@@ -2069,4 +2069,17 @@ class PsDstoreMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/service/rank/list", $body, $query, $extra);
     }
+
+    /**
+     * 店员是否开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/isOpenAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantIsOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/isOpen", $body, $query, $extra);
+    }
 }
