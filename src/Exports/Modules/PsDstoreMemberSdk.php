@@ -1995,9 +1995,9 @@ class PsDstoreMemberSdk extends SdkBase
     /**
      * 后台批量邀请店员开通药师
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/batchInviteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function assistantBatchInvite($body, $query = null, $extra = null)
@@ -2008,9 +2008,9 @@ class PsDstoreMemberSdk extends SdkBase
     /**
      * 邀请店员开通药师
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/inviteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function assistantInvite($body, $query = null, $extra = null)
@@ -2073,13 +2073,26 @@ class PsDstoreMemberSdk extends SdkBase
     /**
      * 店员是否开通药师
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/isOpenAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function assistantIsOpen($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/isOpen", $body, $query, $extra);
+    }
+
+    /**
+     * 已开通药师的店员分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/openPagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantOpenPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/openPaging", $body, $query, $extra);
     }
 }
