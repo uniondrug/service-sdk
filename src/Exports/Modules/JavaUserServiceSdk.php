@@ -202,4 +202,16 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userBasic/batchByIds", $body, $query, $extra);
     }
+
+    /**
+     * 获取用户真实证件信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userCardGetReal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getReal", $body, $query, $extra);
+    }
 }
