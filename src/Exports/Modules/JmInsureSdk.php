@@ -890,4 +890,69 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/feeReceipt/save", $body);
     }
+
+    /**
+     * 创建保单（TPA和PBM)
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/saveForEquity.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policySaveForEquity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/saveForEquity", $body);
+    }
+
+    /**
+     * 根据保司id、保单号 获取保单详情
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/getByInsurerIdAndPolicyNo.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyDetailByInsurerIdAndPolicyNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/getByInsurerIdAndPolicyNo", $body);
+    }
+
+    /**
+     * 变更项目信息（TPA和PBM)
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/changeProject.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyChangeProject($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/changeProject", $body);
+    }
+
+    /**
+     * 统计保司保单数和保费总额
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/getInsurerPolicyStat.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyInsurerStat($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/getInsurerPolicyStatCO", $body);
+    }
+
+    /**
+     * 保司保单分页
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/pageStat.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyPagingInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pageStat", $body);
+    }
 }
