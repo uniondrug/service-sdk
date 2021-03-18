@@ -847,9 +847,9 @@ class JmInsureSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function insuranceCompanyWithholdPaging($body, $query = null, $extra = null)
+    public function insurerWithholdPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/insuranceCompanyWithhold/page", $body);
+        return $this->restful("POST", "/insurerWithhold/page", $body);
     }
 
     /**
