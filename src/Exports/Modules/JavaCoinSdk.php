@@ -539,4 +539,3 @@ class JavaCoinSdk extends SdkBase
         return $this->restful("POST", "/fundRecordDetail/exportStatisticsOrder", $body);
     }
 }
-
