@@ -293,4 +293,15 @@ class JavaPurchaseSdk extends SdkBase
     public function createValueAddedService($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchasePile/createValueAddedService', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 增值服务兑换码列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function unionPurchaseRedeem($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseRedeem/paging', $body, $query = null, $extra = null);
+    }
 }
