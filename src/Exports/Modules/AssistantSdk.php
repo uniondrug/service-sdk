@@ -4230,6 +4230,32 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 用户地区列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserRegionController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userRegionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userRegion/list", $body, $query, $extra);
+    }
+
+    /**
+     * 设置地区
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserRegionController/setAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userRegionSet($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userRegion/set", $body, $query, $extra);
+    }
+
+    /**
      * 批量删除
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/deleteAction.md
      * @param array|object $body  入参类型
