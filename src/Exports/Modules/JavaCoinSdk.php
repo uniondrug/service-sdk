@@ -240,6 +240,7 @@ class JavaCoinSdk extends SdkBase
 
     /**
      * 收款单审核通过
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/master/docs-api/uniondrug-coin-service/ReceiptController/auditSuccess.md
      * @param $body
      * @param $header
      * @return ResponseInterface
@@ -247,6 +248,17 @@ class JavaCoinSdk extends SdkBase
     public function receiptAuditSuccess($body, $header)
     {
         return $this->restful("POST", "/receipt/auditSuccess", $body, null, $header);
+    }
+
+    /**
+     * 批量收款单审核通过
+     * @param $body
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/development/docs-api/uniondrug-coin-service/ReceiptController/batchAuditSuccess.md
+     * @return ResponseInterface
+     */
+    public function receiptBatchAuditSuccess($body)
+    {
+        return $this->restful("POST", "/receipt/batchAuditSuccess", $body, null, null);
     }
 
     /**
