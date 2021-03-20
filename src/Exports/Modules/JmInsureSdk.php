@@ -966,6 +966,19 @@ class JmInsureSdk extends SdkBase
      */
     public function policyPayIndexList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "policyPay/index/list", $body);
+        return $this->restful("POST", "/policyPay/index/list", $body);
+    }
+
+    /**
+     * 分页查询保单理赔收款
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/pageClaimAmount.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyClaimAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pageClaimAmount", $body);
     }
 }
