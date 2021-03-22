@@ -125,7 +125,7 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
-     * 直付理赔单详情
+     * 药联理赔单详情
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/directGet.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
@@ -134,7 +134,7 @@ class JmInsureSdk extends SdkBase
      */
     public function unionDrugClaimDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/ipackage/direct/get", $body);
+        return $this->restful("POST", "/ipackage/uniondrug/get", $body);
     }
 
     /**
