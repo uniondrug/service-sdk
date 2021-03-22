@@ -1097,6 +1097,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 核算单位开票详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/unit/detail", $body, $query, $extra);
+    }
+
+    /**
      * 导出商户开票信息
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/exportAction.md
      * @param array|object $body  入参类型
@@ -1391,6 +1404,19 @@ class PsFinanceDataSdk extends SdkBase
      * @return ResponseInterface
      */
     public function partnerWorkerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/member/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁用户详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerManDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/detail", $body, $query, $extra);
     }
@@ -1783,5 +1809,17 @@ class PsFinanceDataSdk extends SdkBase
     public function announcementPartnerAvailable($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/announcement/partner/available", $body, $query, $extra);
+    }
+
+    /**
+     * 开票信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function billInfoDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/info/detail", $body, $query, $extra);
     }
 }

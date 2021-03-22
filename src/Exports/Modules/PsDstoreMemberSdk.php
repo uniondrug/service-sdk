@@ -186,6 +186,32 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 后台批量邀请店员开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/batchInviteAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantBatchInvite($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/batchInvite", $body, $query, $extra);
+    }
+
+    /**
+     * 店员是否展示开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/canOpenAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantCanOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/canOpen", $body, $query, $extra);
+    }
+
+    /**
      * 店员管理页数据
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/assistantDataAction.md
      * @param array|object $body  入参类型
@@ -238,6 +264,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 邀请店员开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/inviteAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantInvite($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/invite", $body, $query, $extra);
+    }
+
+    /**
      * 判断店员是否在线
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantInfoController/isOnlineAction.md
      * @param array|object $body  入参类型
@@ -248,6 +287,45 @@ class PsDstoreMemberSdk extends SdkBase
     public function assistantIsOnline($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/info/isOnline", $body, $query, $extra);
+    }
+
+    /**
+     * 店员是否开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/isOpenAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantIsOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/isOpen", $body, $query, $extra);
+    }
+
+    /**
+     * 开通药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/openAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/open", $body, $query, $extra);
+    }
+
+    /**
+     * 已开通药师的店员分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/openPagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantOpenPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/openPaging", $body, $query, $extra);
     }
 
     /**
@@ -300,6 +378,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function assistantTransferTotalStatistics($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statistics/assistantTransferTotal", $body, $query, $extra);
+    }
+
+    /**
+     * 批量查询店员开通药师状态
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/batchQueryOpenStatusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function batchQueryOpenStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/batchQueryOpenStatus", $body, $query, $extra);
     }
 
     /**
@@ -417,19 +508,6 @@ class PsDstoreMemberSdk extends SdkBase
     public function careSendLogMessageLimitCheck($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/care/send/log/messageLimitCheck", $body, $query, $extra);
-    }
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareSendLogController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function careSendLogCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/care/send/log/create", $body, $query, $extra);
     }
 
     /**
@@ -924,6 +1002,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function getResponseRateByAssistantIds($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statistics/getResponseRateByAssistantIds", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GlobalConfigController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function globalConfigCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/global/config/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GlobalConfigController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function globalConfigDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/global/config/detail", $body, $query, $extra);
     }
 
     /**
@@ -1798,6 +1902,58 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemMemberController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function systemMemberDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/member/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemMemberController/pageAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function systemMemberPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/member/page", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemMemberController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function systemMemberUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/member/update", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemQuestionController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function systemQuestionDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/question/detail", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/TagController/createAction.md
      * @param array|object $body  入参类型
@@ -1990,58 +2146,6 @@ class PsDstoreMemberSdk extends SdkBase
     public function updateBonusUseLog($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
-    }
-
-    /**
-     * 后台邀请店员开通药师
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/inviteAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function assistantInvite($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/invite", $body, $query, $extra);
-    }
-
-    /**
-     * 店员是否展示开通药师
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/canOpenAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function assistantCanOpen($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/canOpen", $body, $query, $extra);
-    }
-
-    /**
-     * 开通药师
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/openAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function assistantOpen($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/open", $body, $query, $extra);
-    }
-
-    /**
-     * 批量查询店员开通药师状态
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/batchQueryOpenStatusAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function batchQueryOpenStatus($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/batchQueryOpenStatus", $body, $query, $extra);
     }
 
     /**
