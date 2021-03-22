@@ -4256,6 +4256,32 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 新增定位
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPositionController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userPositionCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPosition/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用户定位坐标
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPositionController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userPositionDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPosition/detail", $body, $query, $extra);
+    }
+    
+    /**
      * 批量删除
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/deleteAction.md
      * @param array|object $body  入参类型
