@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-03
- * @time   Wed, 03 Mar 2021 17:20:15 +0800
+ * @date   2021-03-22
+ * @time   Mon, 22 Mar 2021 17:19:54 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -914,6 +914,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 门店/店员好评率
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/feedbackRateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function feedbackRateList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rank/feedback/rate", $body, $query, $extra);
+    }
+
+    /**
      * 获取不同状态活动数量
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/getStatusCountAction.md
      * @param array|object $body  入参类型
@@ -1223,6 +1236,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function memberRelation($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/relation", $body, $query, $extra);
+    }
+
+    /**
+     * 复购数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/repurchaseAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function memberRepurchaseStatictic($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rank/repurchase", $body, $query, $extra);
     }
 
     /**
@@ -1785,6 +1811,22 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * <<<<<<< HEAD
+     * =======
+     * 销售排行
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/saleListAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function saleRankList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rank/sale/list", $body, $query, $extra);
+    }
+
+    /**
+     * >>>>>>> 18c344d7f040061f9e0b196fcfa62f57bc1f5cf4
      * 关注送红包-已废弃
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
      * @param array|object $body  入参类型
@@ -1837,6 +1879,22 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * <<<<<<< HEAD
+     * =======
+     * 服务排行
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/serviceListAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function serviceRankList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rank/service/list", $body, $query, $extra);
+    }
+
+    /**
+     * >>>>>>> 18c344d7f040061f9e0b196fcfa62f57bc1f5cf4
      * 服务汇总数据
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/serviceTotalAction.md
      * @param array|object $body  入参类型
@@ -1899,6 +1957,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function storeRankingList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/rankingList", $body, $query, $extra);
+    }
+
+    /**
+     * listing
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemAssistantMemberMessegeLogController/listingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function systemAssistantMemberMessegeLogListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/systemAssistantMemberMessegeLog/listing", $body, $query, $extra);
     }
 
     /**
@@ -2146,57 +2217,5 @@ class PsDstoreMemberSdk extends SdkBase
     public function updateBonusUseLog($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
-    }
-
-    /**
-     * 服务排行
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/serviceListAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function serviceRankList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/rank/service/list", $body, $query, $extra);
-    }
-
-    /**
-     * 销售排行
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/saleListAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function saleRankList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/rank/sale/list", $body, $query, $extra);
-    }
-
-    /**
-     * 复购数据
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/repurchaseAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function memberRepurchaseStatictic($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/rank/repurchase", $body, $query, $extra);
-    }
-
-    /**
-     * 门店/店员好评率
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/feedbackRateAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function feedbackRateList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/rank/feedback/rate", $body, $query, $extra);
     }
 }
