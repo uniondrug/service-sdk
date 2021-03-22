@@ -2045,8 +2045,8 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/ServiceRankController/listAction.md
+     * 服务排行
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/serviceListAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
@@ -2054,6 +2054,45 @@ class PsDstoreMemberSdk extends SdkBase
      */
     public function serviceRankList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/service/rank/list", $body, $query, $extra);
+        return $this->restful("POST", "/rank/service/list", $body, $query, $extra);
+    }
+
+    /**
+     * 销售排行
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/saleListAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function saleRankList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rank/sale/list", $body, $query, $extra);
+    }
+
+    /**
+     * 复购数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/repurchaseAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function memberRepurchaseStatictic($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rank/repurchase", $body, $query, $extra);
+    }
+
+    /**
+     * 门店/店员好评率
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/Statistic/RankController/feedbackRateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function feedbackRateList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rank/feedback/rate", $body, $query, $extra);
     }
 }
