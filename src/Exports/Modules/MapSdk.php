@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-16
- * @time   Mon, 16 Nov 2020 10:01:51 +0800
+ * @date   2021-03-09
+ * @time   Tue, 09 Mar 2021 16:54:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -40,6 +40,19 @@ class MapSdk extends SdkBase
     public function amapSearch($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/amap/searchmap", $body, $query, $extra);
+    }
+
+    /**
+     * 附近连锁数量
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/SearchPartnerSumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function amapSearchPartnerSum($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/amap/searchmappartnersum", $body, $query, $extra);
     }
 
     /**
@@ -201,8 +214,8 @@ class MapSdk extends SdkBase
     }
 
     /**
-     * 转为坐标系
-     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/ConvertController/convertAction.md
+     * 获取详情
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/Location/DetailController/rowsAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -210,7 +223,7 @@ class MapSdk extends SdkBase
      */
     public function locationConvert($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/location/convert", $body, $query, $extra);
+        return $this->restful("POST", "/location/rows", $body, $query, $extra);
     }
 
     /**
@@ -302,6 +315,19 @@ class MapSdk extends SdkBase
     public function searchAmap($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/amap/search", $body, $query, $extra);
+    }
+
+    /**
+     * 搜索周边
+     * @link https://uniondrug.coding.net/p/module.map/git/blob/development/docs/api/AMapController/searchO2OAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchAmapO2O($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/amap/searcho2o", $body, $query, $extra);
     }
 
     /**

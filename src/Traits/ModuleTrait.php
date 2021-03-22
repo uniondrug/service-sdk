@@ -9,6 +9,7 @@ namespace Uniondrug\ServiceSdk\Traits;
 
 use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityAnalysisSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityReadingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
 
 /**
@@ -54,12 +55,13 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaIhcenterSdk            $javaIhcenter
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommissionSdk          $javaCommission
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaComsnSdk               $javaComsn
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk                $javaCoinSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk                $javaCoin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDistributionSdk        $javaDistribution
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk             $javaPromote
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk              $javaErpPay
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk                $javaPush
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk           $javaUserScore
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JsFinanceReplaceSdk        $jsFinanceReplace
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk                    $jmbs
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JwtSdk                     $jwt
  * @property \Uniondrug\ServiceSdk\Exports\Modules\MapSdk                     $map
@@ -135,9 +137,12 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk               $psFinBillSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk                $jmInsure
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomerSdk
+ * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
  * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

@@ -680,6 +680,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 根据保司名称查询保司ID列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/listByNameAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerListByName($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/list/by/name", $body, $query, $extra);
+    }
+
+    /**
      * 保司分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/InsurerController/pagingAction.md
      * @param array|object $body  入参类型
@@ -703,6 +716,19 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerTree($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/tree", $body, $query, $extra);
+    }
+
+    /**
+     * 保司树形缓存结构
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/treeByRedisAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerTreeByRedis($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/tree/by/redis", $body, $query, $extra);
     }
 
     /**
@@ -1071,6 +1097,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 核算单位开票详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/unit/detail", $body, $query, $extra);
+    }
+
+    /**
      * 导出商户开票信息
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/exportAction.md
      * @param array|object $body  入参类型
@@ -1318,6 +1357,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁树形缓存结构
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/treeByRedisAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTreeByRedis($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tree/by/redis", $body, $query, $extra);
+    }
+
+    /**
      * 统计连锁人员数量
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/countAction.md
      * @param array|object $body 入参类型
@@ -1352,6 +1404,19 @@ class PsFinanceDataSdk extends SdkBase
      * @return ResponseInterface
      */
     public function partnerWorkerDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/member/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁用户详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerManDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/detail", $body, $query, $extra);
     }
@@ -1458,6 +1523,45 @@ class PsFinanceDataSdk extends SdkBase
     public function workerUpdateChecked($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/worker/update/checked", $body, $query, $extra);
+    }
+
+    /**
+     * 新增用户权限
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerRuleCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/rule/create", $body, $query, $extra);
+    }
+
+    /**
+     * 用户权限详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerRuleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/rule/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改用户权限
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerRuleUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/rule/update", $body, $query, $extra);
     }
 
     /**
@@ -1705,5 +1809,17 @@ class PsFinanceDataSdk extends SdkBase
     public function announcementPartnerAvailable($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/announcement/partner/available", $body, $query, $extra);
+    }
+
+    /**
+     * 开票信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function billInfoDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/info/detail", $body, $query, $extra);
     }
 }

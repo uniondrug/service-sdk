@@ -260,4 +260,48 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseStagnation/list', $body, $query = null, $extra = null);
     }
 
+
+    /**
+     * 根据发行项目ID获取采购项目杠杆比例信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function queryRatioByPublishProjectId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/queryRatioByPublishProjectId', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 生成提额单
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function generatePromote($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/generatePromote', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 新增增值服务权益批次
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function createValueAddedService($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchasePile/createValueAddedService', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 增值服务兑换码列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function unionPurchaseRedeem($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseRedeem/paging', $body, $query = null, $extra = null);
+    }
 }

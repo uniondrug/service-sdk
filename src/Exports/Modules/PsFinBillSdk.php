@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-08
- * @time   Mon, 08 Mar 2021 13:57:17 +0800
+ * @date   2021-03-12
+ * @time   Fri, 12 Mar 2021 16:02:32 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -56,6 +56,45 @@ class PsFinBillSdk extends SdkBase
     }
 
     /**
+     * 开票单分页列表
+     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/BillController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 获取开票单对应结算单
+     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/BillController/statementAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billStatement($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/statement", $body, $query, $extra);
+    }
+
+    /**
+     * 提交开票
+     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/BillController/submitBillAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billSubmit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/submitBill", $body, $query, $extra);
+    }
+
+    /**
      * 读取开票单详情
      * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/Direct/BillController/detailAction.md
      * @param array|object $body 入参类型
@@ -65,7 +104,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directBillDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/detail", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/detail", $body, $query, $extra);
     }
 
     /**
@@ -78,7 +117,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directBillGoodsDetailExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/goodsDetailExport", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/goodsDetailExport", $body, $query, $extra);
     }
 
     /**
@@ -91,7 +130,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directBillGoodsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billGoodsPaging", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/billGoodsPaging", $body, $query, $extra);
     }
 
     /**
@@ -104,7 +143,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directBillList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/list", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/list", $body, $query, $extra);
     }
 
     /**
@@ -117,7 +156,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directBillOrderExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billOrderExport", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/billOrderExport", $body, $query, $extra);
     }
 
     /**
@@ -130,20 +169,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directBillOrderPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/billOrderPaging", $body, $query, $extra);
-    }
-
-    /**
-     * 开票单分页列表
-     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/Direct/BillController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function directBillPaging($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/bill/paging", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/billOrderPaging", $body, $query, $extra);
     }
 
     /**
@@ -156,7 +182,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directBillSummary($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/summary", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/summary", $body, $query, $extra);
     }
 
     /**
@@ -169,7 +195,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directExportMemberPagingSql($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/exportMemberPagingSql", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/exportMemberPagingSql", $body, $query, $extra);
     }
 
     /**
@@ -182,7 +208,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directMemberPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/memberPaging", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/memberPaging", $body, $query, $extra);
     }
 
     /**
@@ -195,7 +221,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directOrderDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/orderDetail", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/orderDetail", $body, $query, $extra);
     }
 
     /**
@@ -208,7 +234,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directOrderGoodsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/orderGoodsPaging", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/orderGoodsPaging", $body, $query, $extra);
     }
 
     /**
@@ -221,7 +247,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directSaleGoodsExport($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/saleGoodsExport", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/saleGoodsExport", $body, $query, $extra);
     }
 
     /**
@@ -234,7 +260,7 @@ class PsFinBillSdk extends SdkBase
      */
     public function directSaleGoodsPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/saleGoodsPaging", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/saleGoodsPaging", $body, $query, $extra);
     }
 
     /**
@@ -247,19 +273,6 @@ class PsFinBillSdk extends SdkBase
      */
     public function directSaleListSummary($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/bill/saleListSummary", $body, $query, $extra);
-    }
-
-    /**
-     * 提交开票
-     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/Direct/BillController/submitBillAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function directSubmitBill($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/bill/submitBill", $body, $query, $extra);
+        return $this->restful("POST", "/direct/bill/saleListSummary", $body, $query, $extra);
     }
 }
