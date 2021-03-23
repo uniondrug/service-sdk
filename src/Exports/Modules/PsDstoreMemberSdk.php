@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-03-23
- * @time   Tue, 23 Mar 2021 10:44:49 +0800
+ * @time   Tue, 23 Mar 2021 19:09:41 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -500,9 +500,9 @@ class PsDstoreMemberSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareSendLogController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function careSendLogCreate($body, $query = null, $extra = null)
@@ -1964,6 +1964,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function storeRankingList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/rankingList", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemAssistantMemberMessegeLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemAssistantMemberMessegeLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/systemAssistantMemberMessegeLog/create", $body, $query, $extra);
     }
 
     /**
