@@ -137,7 +137,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk               $psFinBillSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk                $jmInsure
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomerSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomer
  * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
