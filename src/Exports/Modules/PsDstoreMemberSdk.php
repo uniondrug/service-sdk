@@ -498,6 +498,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareSendLogController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function careSendLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/care/send/log/create", $body, $query, $extra);
+    }
+
+    /**
      * 单个用户消息限制
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/CareSendLogController/messageLimitCheckAction.md
      * @param array|object $body  入参类型
