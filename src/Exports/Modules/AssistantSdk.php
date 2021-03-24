@@ -4385,4 +4385,18 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/work/storeDistribution/setting/update", $body, $query, $extra);
     }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userStoreLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userStoresLog/create", $body, $query, $extra);
+    }
+
 }
