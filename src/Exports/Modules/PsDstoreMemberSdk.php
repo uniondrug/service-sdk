@@ -2251,4 +2251,17 @@ class PsDstoreMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
     }
+
+    /**
+     * 拒绝开通药师的店员列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/rejectOpenAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rejectOpenAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/rejectOpenAssistant", $body, $query, $extra);
+    }
 }
