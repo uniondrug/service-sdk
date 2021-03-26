@@ -994,4 +994,17 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/backLog/page", $body);
     }
+
+    /**
+     * 查询保单的手续费开票申请业务单号
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/FeeApplyBillController/pageApplyNo.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function getApplyNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/feeApplyBill/getApplyNo", $body);
+    }
 }
