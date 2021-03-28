@@ -1769,7 +1769,7 @@ class PsFinanceDataSdk extends SdkBase
      */
     public function announcementPartnerReadPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/announcementP/partner/read/paging", $body, $query, $extra);
+        return $this->restful("POST", "/announcement/partner/read/paging", $body, $query, $extra);
     }
 
     /**
