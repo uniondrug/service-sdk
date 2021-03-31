@@ -4230,6 +4230,19 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 修改业务信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/updateInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workDistributeUpdateInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workDistribute/updateInfo", $body, $query, $extra);
+    }
+
+    /**
      * 根据用户ID批量获取负责区域
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserRegionController/getByUserIdsAction.md
      * @param array|object $body 入参类型
