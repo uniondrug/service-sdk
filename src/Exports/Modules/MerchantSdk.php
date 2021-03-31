@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-04
- * @time   Thu, 04 Mar 2021 13:53:25 +0800
+ * @date   2021-03-31
+ * @time   Wed, 31 Mar 2021 17:24:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -875,6 +875,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改健康服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsHealthAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsHealth($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editishealth", $body, $query, $extra);
+    }
+
+    /**
      * 修改商业公司开票状态
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsInvoiceAction.md
      * @param array|object $body 入参类型
@@ -911,6 +924,19 @@ class MerchantSdk extends SdkBase
     public function editIsServiceCollection($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editisservicecollection", $body, $query, $extra);
+    }
+
+    /**
+     * 修改测试
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsTestAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsTest($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editistest", $body, $query, $extra);
     }
 
     /**
@@ -1886,6 +1912,19 @@ class MerchantSdk extends SdkBase
     public function listHealthServicesOrganizeBaseJoin($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasejoin/listhealthservices", $body, $query, $extra);
+    }
+
+    /**
+     * 名称列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseAdviserController/listIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function listIdsAdviser($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebaseadviser/listids", $body, $query, $extra);
     }
 
     /**
