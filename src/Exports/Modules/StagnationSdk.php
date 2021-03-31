@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-02-22
- * @time   Mon, 22 Feb 2021 10:04:00 +0800
+ * @date   2021-03-15
+ * @time   Mon, 15 Mar 2021 16:41:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -108,6 +108,19 @@ class StagnationSdk extends SdkBase
     public function codeDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/code/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 获取累计回收的金额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/getRecycleMoneyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function codeGetRecycleMoney($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/get/recycle/money", $body, $query, $extra);
     }
 
     /**
@@ -433,6 +446,19 @@ class StagnationSdk extends SdkBase
     public function logPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/log/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RechargeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rechargeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recharge/create", $body, $query, $extra);
     }
 
     /**

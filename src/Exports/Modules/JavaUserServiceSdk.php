@@ -180,9 +180,9 @@ class JavaUserServiceSdk extends SdkBase
     /**
      * 获取用户中心数据
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/EquitySerialController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function getRealUserInfo($body, $query = null, $extra = null)
@@ -193,13 +193,37 @@ class JavaUserServiceSdk extends SdkBase
     /**
      * 用ids获取用户
      * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/EquitySerialController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function getByBatchByIds($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/v2/api/userBasic/batchByIds", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用户真实证件信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function userCardGetReal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getReal", $body, $query, $extra);
+    }
+
+    /**
+     * 查询
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function userThirdQuery($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/v2/api/userThird/query", $body, $query, $extra);
     }
 }

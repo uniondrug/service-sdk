@@ -795,4 +795,43 @@ class ClerkSdk extends SdkBase
     {
         return $this->restful("POST", "/index/v1", $body, $query, $extra);
     }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantOperateCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/operate/create", $body, $query, $extra);
+    }
+
+    /**
+     * 开通药师
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/changePharmacistStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function changePharmacistStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/changePharmacistStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 根据开通商保的连锁批量开通药师
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/openPharmacistByMerchantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function openPharmacistByMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/openPharmacistByMerchant", $body, $query, $extra);
+    }
 }

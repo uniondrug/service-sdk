@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-30
- * @time   Wed, 30 Sep 2020 17:34:20 +0800
+ * @date   2021-03-22
+ * @time   Mon, 22 Mar 2021 09:57:01 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -82,6 +82,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 批次详情
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchHandleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/detail", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BillConfirmController/createAction.md
      * @param array|object $body 入参类型
@@ -105,6 +118,19 @@ class CompensateSdk extends SdkBase
     public function BillConfirmList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/billConfirm/list", $body, $query, $extra);
+    }
+
+    /**
+     * 创建批次
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createBatchHandle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/create", $body, $query, $extra);
     }
 
     /**
@@ -1187,19 +1213,6 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 获取执行中项目数量
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByProjectIdsAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function projectCountByProjectIds($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/project/projectCountByProjectIds", $body, $query, $extra);
-    }
-
-    /**
      * 理赔柱状图
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/claimChartAction.md
      * @param array|object $body 入参类型
@@ -1252,6 +1265,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 获取执行中项目数量
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/ProjectController/projectCountByProjectIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectCountByProjectIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/projectCountByProjectIds", $body, $query, $extra);
+    }
+
+    /**
      * 权益概览
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/equityAction.md
      * @param array|object $body 入参类型
@@ -1262,6 +1288,19 @@ class CompensateSdk extends SdkBase
     public function projectEquityStatistic($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/project/statistic/equity", $body, $query, $extra);
+    }
+
+    /**
+     * 分组累计数据
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/groupSumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectGroupSum($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/statistic/groupSum", $body, $query, $extra);
     }
 
     /**
@@ -1512,6 +1551,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 更新批次
+     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateBatchHandle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchhandle/update", $body, $query, $extra);
+    }
+
+    /**
      * 记录发放失败原因
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/RedeemUserController/updateFailReasonAction.md
      * @param array|object $body 入参类型
@@ -1535,44 +1587,5 @@ class CompensateSdk extends SdkBase
     public function workerInfo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/worker/workerInfo", $body, $query, $extra);
-    }
-
-    /**
-     * 创建批次
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function createBatchHandle($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/batchhandle/create", $body, $query, $extra);
-    }
-
-    /**
-     * 更新批次
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function updateBatchHandle($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/batchhandle/update", $body, $query, $extra);
-    }
-
-    /**
-     * 批次详情
-     * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/BatchHandleController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function batchHandleDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/batchhandle/detail", $body, $query, $extra);
     }
 }
