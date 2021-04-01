@@ -92,6 +92,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk              $settlement
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk         $settlementsheet
  * @property \Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk              $stagnation
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPrecheckSdk            $javaPrecheck
  * @property \Uniondrug\ServiceSdk\Exports\Modules\TokenSdk                   $token
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PrivilegeSdk               $privilege
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SchemeSdk                  $scheme
