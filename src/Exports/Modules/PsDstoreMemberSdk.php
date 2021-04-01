@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-23
- * @time   Tue, 23 Mar 2021 19:09:41 +0800
+ * @date   2021-04-01
+ * @time   Thu, 01 Apr 2021 15:12:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -303,7 +303,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 开通药师
+     * 开通/关闭药师
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/openAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -810,6 +810,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 获取门店已离职更换连锁的店员的绑定关系
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/departRelationMemberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function departRelationMember($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/departRelationMember", $body, $query, $extra);
+    }
+
+    /**
      * 常购药品
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/drugListAction.md
      * @param array|object $body 入参类型
@@ -1145,6 +1158,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function imMemberCheckCouponReceive($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/checkCouponReceive", $body, $query, $extra);
+    }
+
+    /**
+     * 已邀请开通药师的店员列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/invitedAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invitedAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/invitedAssistant", $body, $query, $extra);
     }
 
     /**
@@ -1772,6 +1798,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 拒绝开通药师的店员列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/rejectOpenAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rejectOpenAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/rejectOpenAssistant", $body, $query, $extra);
+    }
+
+    /**
      * 根据会员ID获取客户与店员的双向绑定
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/relationByMemberIdAction.md
      * @param array|object $body 入参类型
@@ -2250,31 +2289,5 @@ class PsDstoreMemberSdk extends SdkBase
     public function updateBonusUseLog($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
-    }
-
-    /**
-     * 拒绝开通药师的店员列表
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/rejectOpenAssistantAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function rejectOpenAssistant($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/rejectOpenAssistant", $body, $query, $extra);
-    }
-
-    /**
-     * 已邀请开通药师的店员列表
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/invitedAssistantAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function invitedAssistant($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/invitedAssistant", $body, $query, $extra);
     }
 }
