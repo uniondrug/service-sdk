@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-04-01
- * @time   Thu, 01 Apr 2021 16:25:40 +0800
+ * @time   Thu, 01 Apr 2021 17:29:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -989,6 +989,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function getAssistantData($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/getAssistantData", $body, $query, $extra);
+    }
+
+    /**
+     * 批量获取店员的会员数
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getAssistantMemberCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getAssistantMemberCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/getAssistantMemberCount", $body, $query, $extra);
     }
 
     /**
