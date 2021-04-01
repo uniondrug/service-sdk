@@ -291,4 +291,17 @@ class CustomerserviceSdk extends SdkBase
     {
         return $this->restful("POST", "/workorder/recall", $body, $query, $extra);
     }
+
+    /**
+     * 操作日志分页
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/OperateLogController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function operateLogPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/operate/log/page", $body, $query, $extra);
+    }
 }

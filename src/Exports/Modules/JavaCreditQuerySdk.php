@@ -40,4 +40,15 @@ class JavaCreditQuerySdk extends SdkBase
     {
         return $this->restful("POST", "/creditAccountQuery/memberAccount/query", $body);
     }
+
+    /**
+     * 积分记录列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryPreRecords($body)
+    {
+        return $this->restful("POST", "/creditAccountQuery/queryPreRecords", $body);
+    }
 }
