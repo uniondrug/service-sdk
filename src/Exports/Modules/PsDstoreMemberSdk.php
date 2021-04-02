@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-01
- * @time   Thu, 01 Apr 2021 17:29:55 +0800
+ * @date   2021-04-02
+ * @time   Fri, 02 Apr 2021 13:55:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1041,6 +1041,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function getMerchantOpenList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/merchant/getOpenList", $body, $query, $extra);
+    }
+
+    /**
+     * 获取某个店员下的会员绑定关系
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getRelationByAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getRelationByAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/getRelationByAssistant", $body, $query, $extra);
     }
 
     /**
