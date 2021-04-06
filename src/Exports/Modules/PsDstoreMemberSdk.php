@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-02
- * @time   Fri, 02 Apr 2021 13:55:58 +0800
+ * @date   2021-04-06
+ * @time   Tue, 06 Apr 2021 10:44:28 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -667,6 +667,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 添加明星药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/createStarPharmacistAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createStarPharmacist($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/starPharmacist/createStarPharmacist", $body, $query, $extra);
+    }
+
+    /**
      * 总概览
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/DataAnalysisKpiController/generalOverviewAction.md
      * @param array|object $body 入参类型
@@ -807,6 +820,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function dataAnalysisProcessSessionSuccessRate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/data/analysis/process/session/success/rate", $body, $query, $extra);
+    }
+
+    /**
+     * 删除明星药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/deleteStarPharmacistAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deleteStarPharmacist($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/starPharmacist/deleteStarPharmacist", $body, $query, $extra);
     }
 
     /**
@@ -1067,6 +1093,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function getResponseRateByAssistantIds($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/statistics/getResponseRateByAssistantIds", $body, $query, $extra);
+    }
+
+    /**
+     * 获取转接配置
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/getSwitchConfigAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getSwitchConfig($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/starPharmacist/getSwitchConfig", $body, $query, $extra);
     }
 
     /**
@@ -1980,6 +2019,32 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 明星药师详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/starPharmacistDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function starPharmacistDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/starPharmacist/starPharmacistDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 明星药师列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/starPharmacistListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function starPharmacistList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/starPharmacist/starPharmacistList", $body, $query, $extra);
+    }
+
+    /**
      * 查询特权需要的数据
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StatisticsController/assistantDataAction.md
      * @param array|object $body 入参类型
@@ -2029,6 +2094,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function storeRankingList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/rankingList", $body, $query, $extra);
+    }
+
+    /**
+     * 转接配置
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/switchConfigAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function switchConfig($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/starPharmacist/switchConfig", $body, $query, $extra);
     }
 
     /**
@@ -2315,5 +2393,18 @@ class PsDstoreMemberSdk extends SdkBase
     public function updateBonusUseLog($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
+    }
+
+    /**
+     * 更新明星药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/updateStarPharmacistAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateStarPharmacist($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/starPharmacist/updateStarPharmacist", $body, $query, $extra);
     }
 }
