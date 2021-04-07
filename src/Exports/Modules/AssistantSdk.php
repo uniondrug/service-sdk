@@ -4450,4 +4450,82 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/work/store/distribution/list", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑显示状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/editDisplayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalEditDisplay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/editDisplay", $body, $query, $extra);
+    }
+
+    /**
+     * list列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/page", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/update", $body, $query, $extra);
+    }
 }
