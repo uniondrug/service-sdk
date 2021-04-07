@@ -3916,12 +3916,13 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/approvalTask/workInsuranceVisit", $body, $query, $extra);
     }
+
     /**
      * 完成签约任务
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/completeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignInsuranceComplete($body, $query = null, $extra = null)
@@ -3932,9 +3933,9 @@ class AssistantSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignInsuranceCreate($body, $query = null, $extra = null)
@@ -3945,9 +3946,9 @@ class AssistantSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignInsuranceDetail($body, $query = null, $extra = null)
@@ -3958,9 +3959,9 @@ class AssistantSdk extends SdkBase
     /**
      * 根据workId获取详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/getByWorkIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignInsuranceGetByWorkId($body, $query = null, $extra = null)
@@ -3971,9 +3972,9 @@ class AssistantSdk extends SdkBase
     /**
      * 保司签约任务记录列表 [不分页]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordSignInsuranceController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordSignInsuranceList($body, $query = null, $extra = null)
@@ -3981,13 +3982,12 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/workRecordSignInsurance/list", $body, $query, $extra);
     }
 
-
     /**
      * 完成拜访任务 [保司拜访]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/completeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordVisitInsuranceComplete($body, $query = null, $extra = null)
@@ -3998,9 +3998,9 @@ class AssistantSdk extends SdkBase
     /**
      * 新增拜访任务 [保司拜访]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordVisitInsuranceCreate($body, $query = null, $extra = null)
@@ -4011,9 +4011,9 @@ class AssistantSdk extends SdkBase
     /**
      * 详情 [保司拜访]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordVisitInsuranceDetail($body, $query = null, $extra = null)
@@ -4024,9 +4024,9 @@ class AssistantSdk extends SdkBase
     /**
      * 根据workId获取详情 [保司拜访]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/getByWorkIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordVisitInsuranceGetByWorkId($body, $query = null, $extra = null)
@@ -4037,9 +4037,9 @@ class AssistantSdk extends SdkBase
     /**
      * 拜访任务记录列表 [不分页] [保司拜访]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordVisitInsuranceController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordVisitInsuranceList($body, $query = null, $extra = null)
@@ -4050,9 +4050,9 @@ class AssistantSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordInsuranceDepartmentController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordInsuranceDepartmentCreate($body, $query = null, $extra = null)
@@ -4063,9 +4063,9 @@ class AssistantSdk extends SdkBase
     /**
      * 列表(不分页)
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordInsuranceDepartmentController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordInsuranceDepartmentList($body, $query = null, $extra = null)
@@ -4076,9 +4076,9 @@ class AssistantSdk extends SdkBase
     /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHistoryController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workHistoryCreate($body, $query = null, $extra = null)
@@ -4089,9 +4089,9 @@ class AssistantSdk extends SdkBase
     /**
      * 列表 [分页]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHistoryController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workHistoryPaging($body, $query = null, $extra = null)
@@ -4102,9 +4102,9 @@ class AssistantSdk extends SdkBase
     /**
      * 状态变更
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHistoryController/statusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workHistoryStatus($body, $query = null, $extra = null)
@@ -4115,9 +4115,9 @@ class AssistantSdk extends SdkBase
     /**
      * 列表 [不分页]
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordList($body, $query = null, $extra = null)
@@ -4128,9 +4128,9 @@ class AssistantSdk extends SdkBase
     /**
      * 根据workId获取详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/getByWorkIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordGetByWorkId($body, $query = null, $extra = null)
@@ -4141,9 +4141,9 @@ class AssistantSdk extends SdkBase
     /**
      * 完成任务
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordController/completeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workRecordComplete($body, $query = null, $extra = null)
@@ -4154,9 +4154,9 @@ class AssistantSdk extends SdkBase
     /**
      * 创建
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantRemarkController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function assistantRemarkCreate($body, $query = null, $extra = null)
@@ -4167,9 +4167,9 @@ class AssistantSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantRemarkController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function assistantRemarkDetail($body, $query = null, $extra = null)
@@ -4180,9 +4180,9 @@ class AssistantSdk extends SdkBase
     /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AssistantRemarkController/idsListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function assistantRemarkIdsList($body, $query = null, $extra = null)
@@ -4191,24 +4191,11 @@ class AssistantSdk extends SdkBase
     }
 
     /**
-     * 撤销
-     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/cancelAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function workDistributeCancel($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/workDistribute/cancel", $body, $query, $extra);
-    }
-
-    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workDistributeCreate($body, $query = null, $extra = null)
@@ -4219,9 +4206,9 @@ class AssistantSdk extends SdkBase
     /**
      * 根据workId获取详情
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/getByWorkIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workDistributeGetByWorkId($body, $query = null, $extra = null)
@@ -4232,9 +4219,9 @@ class AssistantSdk extends SdkBase
     /**
      * 编辑
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function workDistributeUpdate($body, $query = null, $extra = null)
@@ -4242,6 +4229,97 @@ class AssistantSdk extends SdkBase
         return $this->restful("POST", "/workDistribute/update", $body, $query, $extra);
     }
 
+    /**
+     * 修改业务信息
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeController/updateInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workDistributeUpdateInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workDistribute/updateInfo", $body, $query, $extra);
+    }
+
+    /**
+     * 根据用户ID批量获取负责区域
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserRegionController/getByUserIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userRegionGetByUserIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userRegion/getByUserIds", $body, $query, $extra);
+    }
+
+    /**
+     * 用户地区列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserRegionController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function userRegionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userRegion/list", $body, $query, $extra);
+    }
+
+    /**
+     * 设置地区
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserRegionController/setAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function userRegionSet($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userRegion/set", $body, $query, $extra);
+    }
+
+    /**
+     * 新增定位
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPositionController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userPositionCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPosition/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用户定位坐标
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPositionController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userPositionDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPosition/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/TmpWorkBatchDistributeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tmpWorkBatchDistributeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tmpWorkBatchDistribute/create", $body, $query, $extra);
+    }
+    
     /**
      * 批量删除
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkController/deleteAction.md
@@ -4266,5 +4344,214 @@ class AssistantSdk extends SdkBase
     public function workFinishCount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/work/finishCount", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHolidayController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workHolidayCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/holiday/create", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkHolidayController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workHolidayList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/holiday/list", $body, $query, $extra);
+    }
+
+    /**
+     * 不分页列表 (支持更多筛选)
+     * v6.7初次对外(财务)提供
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserPartnersController/userPartnerListingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function userPartnerListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPartners/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreDistributionSettingController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workStoreDistributionSettingDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/storeDistribution/setting/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreDistributionSettingController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workStoreDistributionSettingUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/storeDistribution/setting/update", $body, $query, $extra);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userStoreLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userStoresLog/create", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreDistributionController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workStoreDistributionCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/store/distribution/create", $body, $query, $extra);
+    }
+
+    /**
+     * list
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreDistributionController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workStoreDistributionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/store/distribution/list", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑显示状态
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/editDisplayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalEditDisplay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/editDisplay", $body, $query, $extra);
+    }
+
+    /**
+     * list列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/page", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkStoreGoalController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeGoalUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workStoreGoal/update", $body, $query, $extra);
+    }
+
+    /**
+     * 自动分配任务连锁列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserPartnerSumInfoController/autoDistributeListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function autoDistributeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPartnerSumInfo/autoDistributeList", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁ID获取门店负责人列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreOperationInfoEdController/groupOmUserIdListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupOmUserIdList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeOperationInfoEd/groupOmUserIdList", $body, $query, $extra);
     }
 }

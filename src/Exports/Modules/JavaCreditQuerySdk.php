@@ -21,9 +21,9 @@ class JavaCreditQuerySdk extends SdkBase
 
     /**
      * 获取退款列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function getWithdrawRecords($body)
     {
@@ -32,11 +32,33 @@ class JavaCreditQuerySdk extends SdkBase
 
     /**
      * 获取统计金额
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function getMemberAccount($body)
+    {
+        return $this->restful("POST", "/creditAccountQuery/memberAccount/query", $body);
+    }
+
+    /**
+     * 积分记录列表
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function queryPreRecords($body)
+    {
+        return $this->restful("POST", "/creditAccountQuery/queryPreRecords", $body);
+    }
+
+    /**
+     * 用户积分账户金额查询
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function memberAccountQuery($body)
     {
         return $this->restful("POST", "/creditAccountQuery/memberAccount/query", $body);
     }

@@ -61,6 +61,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk              $javaErpPay
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk                $javaPush
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk           $javaUserScore
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JsFinanceReplaceSdk        $jsFinanceReplace
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk                    $jmbs
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JwtSdk                     $jwt
  * @property \Uniondrug\ServiceSdk\Exports\Modules\MapSdk                     $map
@@ -91,6 +92,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk              $settlement
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk         $settlementsheet
  * @property \Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk              $stagnation
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPrecheckSdk            $javaPrecheck
  * @property \Uniondrug\ServiceSdk\Exports\Modules\TokenSdk                   $token
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PrivilegeSdk               $privilege
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SchemeSdk                  $scheme
@@ -136,6 +138,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk               $psFinBillSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk                $jmInsure
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomer
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImWsSdk                $javaImWs
  * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
