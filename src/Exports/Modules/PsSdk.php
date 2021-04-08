@@ -641,4 +641,17 @@ class PsSdk extends SdkBase
     {
         return $this->restful("POST", "/storeOperationInfoEd/groupOmUserIdList", $body, $query, $extra);
     }
+
+    /**
+     * 门店详情信息
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/storeDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workStoreDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/storeDetail", $body, $query, $extra);
+    }
 }
