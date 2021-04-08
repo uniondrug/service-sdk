@@ -459,4 +459,15 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userTag/containsBatch", $body);
     }
+
+    /**
+     * 批量判断标签下所有值是否包含用户
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/usercenter/blob/master/api-docs/uniondrug.usercenter.provider/UserTagApiController/containsTagValuesBatchApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function userTagContainsTagValuesBatch($body)
+    {
+        return $this->restful("POST", "/v2/api/userTag/containsTagValuesBatch", $body);
+    }
 }
