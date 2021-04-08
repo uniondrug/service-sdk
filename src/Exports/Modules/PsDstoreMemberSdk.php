@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-06
- * @time   Tue, 06 Apr 2021 10:44:28 +0800
+ * @date   2021-04-08
+ * @time   Thu, 08 Apr 2021 11:32:56 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1135,6 +1135,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GlobalConfigController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function globalConfigEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/global/config/edit", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupController/createAction.md
      * @param array|object $body 入参类型
@@ -1704,6 +1717,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function noticePage($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/notice/page", $body, $query, $extra);
+    }
+
+    /**
+     * 根据门店ids查询当前在线的药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantInfoController/onlineAssistantsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function onlineAssistants($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/info/onlineAssistants", $body, $query, $extra);
     }
 
     /**
