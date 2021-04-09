@@ -69,19 +69,6 @@ class PsFinBillSdk extends SdkBase
     }
 
     /**
-     * 获取开票单对应结算单
-     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/BillController/statementAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function billStatement($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/bill/statement", $body, $query, $extra);
-    }
-
-    /**
      * 提交开票
      * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/BillController/submitBillAction.md
      * @param array|object $body 入参类型
