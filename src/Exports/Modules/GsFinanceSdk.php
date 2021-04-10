@@ -38,5 +38,14 @@ class GsFinanceSdk extends SdkBase
         return $this->restful("POST", "/direct/statement/create", $body);
     }
 
+    /**
+     * 修改商品税率税额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateItemTax($body)
+    {
+        return $this->restful("POST", "/direct/item/update/tax", $body);
+    }
 }
 

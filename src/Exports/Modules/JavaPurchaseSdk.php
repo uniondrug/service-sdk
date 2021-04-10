@@ -304,4 +304,15 @@ class JavaPurchaseSdk extends SdkBase
     public function unionPurchaseRedeem($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseRedeem/paging', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 项目延期
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseProjectDelay($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/delay', $body, $query = null, $extra = null);
+    }
 }

@@ -498,6 +498,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁开票待审核列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/auditListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoAuditListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/audit/listing", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/DictController/createAction.md
      * @param array|object $body  入参类型
@@ -742,6 +755,32 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/update", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁确认保司信息修改
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/addConfirmLogAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoAddConfirmLog($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/add/confirm/log", $body, $query, $extra);
+    }
+
+    /**
+     * 保司修改确认对比
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/insurerChangeConfirmAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoChangeConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/change/confirm", $body, $query, $extra);
     }
 
     /**
@@ -1084,6 +1123,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁开票审核对比
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/changeConfirmAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoChangeConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/change/confirm", $body, $query, $extra);
+    }
+
+    /**
      * 连锁开票详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/detailAction.md
      * @param array|object $body  入参类型
@@ -1146,6 +1198,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerBillInfoUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/bill/info/update", $body, $query, $extra);
+    }
+
+    /**
+     * 更新连锁开票审核状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/BillInfoController/updateAuditStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerBillInfoUpdateAuditStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/bill/info/update/audit/status", $body, $query, $extra);
     }
 
     /**
@@ -1419,6 +1484,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerWorkerManDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁用户详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerManExist($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/exist", $body, $query, $extra);
     }
 
     /**
