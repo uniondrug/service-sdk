@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-08
- * @time   Thu, 08 Apr 2021 11:32:56 +0800
+ * @date   2021-04-13
+ * @time   Tue, 13 Apr 2021 18:10:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1275,6 +1275,71 @@ class PsDstoreMemberSdk extends SdkBase
     public function listByBatchMerchantIds($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/merchant/listByBatchMerchantIds", $body, $query, $extra);
+    }
+
+    /**
+     * audit
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/auditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseAudit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/audit", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/detail", $body, $query, $extra);
+    }
+
+    /**
+     * listing
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/listing", $body, $query, $extra);
+    }
+
+    /**
+     * open
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/openAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/open", $body, $query, $extra);
     }
 
     /**
