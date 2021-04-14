@@ -61,4 +61,30 @@ class DrugstoreStatisticSdk extends SdkBase
     {
         return $this->restful("POST", "/merchant/statistic/detail", $body);
     }
+
+    /**
+     * 我的会员事件
+     * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/TrackingController/myMemberAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function trackingMyMember($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tracking/my/member", $body, $query, $extra);
+    }
+
+    /**
+     * 交易时长
+     * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/TrackingController/tradeAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function trackingTrade($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tracking/trade", $body, $query, $extra);
+    }
 }
