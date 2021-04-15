@@ -29,4 +29,15 @@ class JavaEquityReadingSdk extends SdkBase
     public function queryGroupForStagnation($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/query/group/stagnation', $body, $query = null, $extra = null);
     }
+    /**
+     * 根据规格id 查询增值服务单个未激活的兑换码
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function queryProjectFindBySpecsId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/query/project/findBySpecsId', $body, $query = null, $extra = null);
+    }
 }
+
