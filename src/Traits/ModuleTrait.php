@@ -140,6 +140,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomer
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImWsSdk                $javaImWs
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\LiveSrvJsSdk               $liveSrvJs
  * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
