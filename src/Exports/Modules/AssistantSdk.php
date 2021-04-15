@@ -4554,4 +4554,30 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/workDistributeAuto/update", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditLog/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取最新一条修改记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditLogController/lastRecordAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditLogLastRecord($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditLog/lastRecord", $body, $query, $extra);
+    }
 }
