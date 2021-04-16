@@ -39,5 +39,17 @@ class JavaEquityReadingSdk extends SdkBase
     public function queryProjectFindBySpecsId($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/query/project/findBySpecsId', $body, $query = null, $extra = null);
     }
+    /**
+     *
+     *
+     * </>
+     * @param array $body 入参类型
+     *
+     * @return ResponseInterface
+     */
+    public function queryProjectFindByCdKeys($body)
+    {
+        return $this->restful("POST", "/query/project/findByCdKeys", $body);
+    }
 }
 
