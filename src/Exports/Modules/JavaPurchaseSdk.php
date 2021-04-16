@@ -141,7 +141,7 @@ class JavaPurchaseSdk extends SdkBase
     }
 
     /**
-     * 规格列表
+     * 规格邮件发送情况列表
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -151,6 +151,16 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseSpecs/listing', $body);
     }
 
+    /**
+     * 规格列表
+     * @param $body
+     * @return ResponseInterface
+     */
+
+    public function specsPaging($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/paging', $body);
+    }
     /**
      * 导出规格
      * @link
