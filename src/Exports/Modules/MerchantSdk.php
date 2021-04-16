@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-31
- * @time   Wed, 31 Mar 2021 17:24:48 +0800
+ * @date   2021-04-15
+ * @time   Thu, 15 Apr 2021 18:25:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2952,6 +2952,45 @@ class MerchantSdk extends SdkBase
     public function synEditInternalErp($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/syneditinternalerp", $body, $query, $extra);
+    }
+
+    /**
+     * 添加转账
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/TransferController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function transferAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/transfer/add", $body, $query, $extra);
+    }
+
+    /**
+     * 修改转账
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/TransferController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function transferEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/transfer/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 列表查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/TransferController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function transferInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/transfer/info", $body, $query, $extra);
     }
 
     /**
