@@ -2511,4 +2511,17 @@ class PsDstoreMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/imSwitch/switchIntroduction", $body, $query, $extra);
     }
+
+    /**
+     * 生成用户和店员的im链接
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getChatLinkAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getChatLink($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/getChatLink", $body, $query, $extra);
+    }
 }
