@@ -186,6 +186,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 同步保司银行账号
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccount/BankAccountController/syncInsurerAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountSyncInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/sync/insurer", $body, $query, $extra);
+    }
+
+    /**
      * 获取待审核列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/toAuditListingAction.md
      * @param array|object $body  入参类型
@@ -794,6 +807,19 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerBillInfoPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/bill/info/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 同步保司开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/syncAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoSync($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/sync", $body, $query, $extra);
     }
 
     /**
