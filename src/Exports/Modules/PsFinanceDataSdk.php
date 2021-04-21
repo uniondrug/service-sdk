@@ -1565,6 +1565,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 关闭连锁用户财税账号
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/financeAccountOpenAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerFinanceAccountClose($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/finance/account/close", $body, $query, $extra);
+    }
+
+    /**
      * 停用连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/disableAction.md
      * @param array|object $body 入参类型
