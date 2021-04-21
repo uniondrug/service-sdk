@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-13
- * @time   Tue, 13 Apr 2021 18:10:51 +0800
+ * @date   2021-04-21
+ * @time   Wed, 21 Apr 2021 17:04:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1031,6 +1031,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 生成用户和店员的im链接
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getChatLinkAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getChatLink($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/getChatLink", $body, $query, $extra);
+    }
+
+    /**
      * getGroupByMemberIds
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/GroupMemberController/getGroupByMemberIdsAction.md
      * @param array|object $body 入参类型
@@ -1291,7 +1304,20 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 新增
+     * collection
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/collectionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseCollection($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/collection", $body, $query, $extra);
+    }
+
+    /**
+     * 申请开课
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/createAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1317,6 +1343,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * join
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/joinAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/join", $body, $query, $extra);
+    }
+
+    /**
      * listing
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/listingAction.md
      * @param array|object $body 入参类型
@@ -1330,6 +1369,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * managerInfo
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/managerInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseManagerInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/managerInfo", $body, $query, $extra);
+    }
+
+    /**
      * open
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/openAction.md
      * @param array|object $body 入参类型
@@ -1340,6 +1392,45 @@ class PsDstoreMemberSdk extends SdkBase
     public function liveCourseOpen($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/live/course/open", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCoursePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/page", $body, $query, $extra);
+    }
+
+    /**
+     * statistic
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/statisticAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseStatistic($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/statistic", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/update", $body, $query, $extra);
     }
 
     /**
@@ -2201,6 +2292,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 转接后发送提示消息
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ImSwitchController/switchIntroductionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function switchIntroduction($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/imSwitch/switchIntroduction", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemAssistantMemberMessegeLogController/createAction.md
      * @param array|object $body 入参类型
@@ -2448,7 +2552,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 店员调店解除与会员的绑定关系
+     * 店员调店处理与会员的绑定关系
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/transferUnbindRelationAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -2497,31 +2601,5 @@ class PsDstoreMemberSdk extends SdkBase
     public function updateStarPharmacist($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/starPharmacist/updateStarPharmacist", $body, $query, $extra);
-    }
-
-    /**
-     * 转接后发送提示消息
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ImSwitchController/switchIntroductionAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function switchIntroduction($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/imSwitch/switchIntroduction", $body, $query, $extra);
-    }
-
-    /**
-     * 生成用户和店员的im链接
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getChatLinkAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function getChatLink($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/member/getChatLink", $body, $query, $extra);
     }
 }
