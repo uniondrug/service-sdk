@@ -4632,4 +4632,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/workChainBlackList/page", $body, $query, $extra);
     }
+
+    /**
+     * 保司信息变更
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskInsuranceEditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskInsuranceEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/insuranceEdit", $body, $query, $extra);
+    }
 }
