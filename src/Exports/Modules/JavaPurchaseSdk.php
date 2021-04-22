@@ -347,4 +347,14 @@ class JavaPurchaseSdk extends SdkBase
     public function cipherDecryptData($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/cipher/decryptData', $body, $query = null, $extra = null);
     }
+    /**
+     * 规格详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function specsDetail($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/detail', $body, $query = null, $extra = null);
+    }
 }
