@@ -158,4 +158,30 @@ class LiveSrvJsSdk extends SdkBase
     {
         return $this->restful("POST", "/live/enableLive", $body, $query, $extra);
     }
+
+    /**
+     * 查询用户在线时长
+     * @link  https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.live/blob/development/docs-api/uniondrug-live-service/%E6%9F%A5%E8%AF%A2%E7%9B%B4%E6%92%AD%E7%94%A8%E6%88%B7%E5%9C%A8%E7%BA%BF%E6%97%B6%E9%95%BF.md
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function chatRoomQueryUserOnlineTime($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/chat/room/queryUserOnlineTime", $body, $query, $extra);
+    }
+
+    /**
+     * 获取安全认证Token
+     * @link  https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.live/blob/development/docs-api/uniondrug-live-service/%E8%8E%B7%E5%8F%96%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81.md
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function userGetToken($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/getToken", $body, $query, $extra);
+    }
 }
