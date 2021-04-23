@@ -367,4 +367,14 @@ class JavaPurchaseSdk extends SdkBase
     public function recovery($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseRecovery/recoveryEquity', $body, $query = null, $extra = null);
     }
+    /**
+     * 通过分组ID查询specsID和pileId
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function querySpecsByGroupId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseRecovery/recoveryEquity', $body, $query = null, $extra = null);
+    }
 }
