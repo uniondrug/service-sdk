@@ -4971,6 +4971,6 @@ class SettlementSdk extends SdkBase
      */
     public function invoiceReceiveTransactionDetailCheck($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/invoice/receive/transaction/detail/cehck", $body, $query, $extra);
+        return $this->restful("POST", "/invoice/receive/transaction/detail/check", $body, $query, $extra);
     }
 }
