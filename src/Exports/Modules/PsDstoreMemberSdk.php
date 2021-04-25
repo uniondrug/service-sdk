@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-22
- * @time   Thu, 22 Apr 2021 16:16:38 +0800
+ * @date   2021-04-25
+ * @time   Sun, 25 Apr 2021 15:59:14 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1444,6 +1444,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function liveCourseStatistic($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/live/course/statistic", $body, $query, $extra);
+    }
+
+    /**
+     * subscribePage
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/subscribePageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseSubscribePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/subscribePage", $body, $query, $extra);
     }
 
     /**
