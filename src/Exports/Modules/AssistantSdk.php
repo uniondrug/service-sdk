@@ -1916,6 +1916,19 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 待审批状态列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/waitedListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approveWaitedList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approve/waitedList", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/detailAction.md
      * @param array $body 入参类型
