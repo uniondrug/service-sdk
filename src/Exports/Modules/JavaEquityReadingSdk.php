@@ -51,5 +51,14 @@ class JavaEquityReadingSdk extends SdkBase
     {
         return $this->restful("POST", "/query/project/findByCdKeys", $body);
     }
+    /**
+     * 发放方式查询
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryRedeemCodeFindGroupAccess($body)
+    {
+        return $this->restful("POST", "/query/redeemCode/findGroupAccess", $body);
+    }
 }
 
