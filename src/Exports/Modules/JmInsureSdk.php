@@ -320,6 +320,19 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 导出指定类型理赔数据
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageLogController/exportClaim.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function exportClaimSheet($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/uniondrug/exportClaimSheet", $body);
+    }
+
+    /**
      * 方案创建
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/SchemeController/save.md
      * @param array|object $body  入参类型
