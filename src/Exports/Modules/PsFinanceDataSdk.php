@@ -2014,6 +2014,18 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 财税服务费配置启用停用
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServiceUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/update/status", $body, $query, $extra);
+    }
+
+    /**
      * 财税VIP新增
      * @param array|object $body  入参类型
      * @param null         $query Query数据
