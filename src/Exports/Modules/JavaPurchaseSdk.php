@@ -375,6 +375,6 @@ class JavaPurchaseSdk extends SdkBase
      * @return ResponseInterface
      */
     public function querySpecsByGroupId($body, $query = null, $extra = null) {
-        return $this->restful(static::METHOD_POST, '/purchaseRecovery/recoveryEquity', $body, $query = null, $extra = null);
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/queryByGroupId', $body, $query = null, $extra = null);
     }
 }
