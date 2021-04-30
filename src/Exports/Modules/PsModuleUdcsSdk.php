@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-04-30
- * @time   Fri, 30 Apr 2021 11:04:36 +0800
+ * @time   Fri, 30 Apr 2021 11:32:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -17,10 +17,10 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * PsUdcsModuleSdk
+ * PsModuleUdcsSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class PsUdcsModuleSdk extends SdkBase
+class PsModuleUdcsSdk extends SdkBase
 {
     /**
      * 服务名称
@@ -31,7 +31,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 基于连锁和批次查询
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/BatchDetailAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/BatchDetailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -44,7 +44,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 认领动作
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/claimStatusAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/claimStatusAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -57,7 +57,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 新增
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/createAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/createAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -70,7 +70,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 详情
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/detailAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/detailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -83,7 +83,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 确认动作
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/finishStatusAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/finishStatusAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -96,7 +96,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 集合
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/CrowdsourcingBatchController/listingAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/CrowdsourcingBatchController/listingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -109,7 +109,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 无法确认动作
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/noStatusAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/noStatusAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -122,7 +122,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 列表
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/pagingAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/pagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -135,7 +135,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 列表
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/CrowdsourcingBatchController/pagingAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/CrowdsourcingBatchController/pagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -148,7 +148,7 @@ class PsUdcsModuleSdk extends SdkBase
 
     /**
      * 修改
-     * @link https://uniondrug.coding.net/p/ps-udcs-module/git/blob/development/docs/api/BatchDetailedController/updateAction.md
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/updateAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
