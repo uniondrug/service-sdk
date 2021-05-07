@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-30
- * @time   Fri, 30 Apr 2021 11:32:31 +0800
+ * @date   2021-05-07
+ * @time   Fri, 07 May 2021 17:25:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -147,6 +147,19 @@ class PsModuleUdcsSdk extends SdkBase
     }
 
     /**
+     * 统计数量
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/CrowdsourcingBatchController/sumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function SumCrowdsourcingBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/crowdsourcingBatch/sum", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/updateAction.md
      * @param array|object $body 入参类型
@@ -157,5 +170,31 @@ class PsModuleUdcsSdk extends SdkBase
     public function updateBatchDetailed($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/batchDetailed/update", $body, $query, $extra);
+    }
+
+    /**
+     * 统计数量
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/userCountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userCountBatchDetailed($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchDetailed/usercount", $body, $query, $extra);
+    }
+
+    /**
+     * 统计金额
+     * @link https://uniondrug.coding.net/p/ps-module-udcs/git/blob/development/docs/api/BatchDetailedController/userSumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userSumBatchDetailed($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batchDetailed/usersum", $body, $query, $extra);
     }
 }
