@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-04-27
- * @time   Tue, 27 Apr 2021 15:17:20 +0800
+ * @date   2021-05-08
+ * @time   Sat, 08 May 2021 10:10:53 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -846,6 +846,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function departAssistantList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/departAssistantList", $body, $query, $extra);
+    }
+
+    /**
+     * 下载二维码
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StorePharmacistCodeController/downloadAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function downloadPharmacistCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storePharmacistCode/download", $body, $query, $extra);
     }
 
     /**
@@ -2201,6 +2214,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 扫码
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StorePharmacistCodeController/scanCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function scanCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storePharmacistCode/scanCode", $body, $query, $extra);
+    }
+
+    /**
      * 关注送红包-已废弃
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
      * @param array|object $body 入参类型
@@ -2341,6 +2367,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function storeData($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/store/storeData", $body, $query, $extra);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StorePharmacistCodeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storePharmacistCodeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storePharmacistCode/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StorePharmacistCodeController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storePharmacistCodePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storePharmacistCode/paging", $body, $query, $extra);
     }
 
     /**
