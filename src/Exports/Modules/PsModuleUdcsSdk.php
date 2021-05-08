@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-05-07
- * @time   Fri, 07 May 2021 17:25:16 +0800
+ * @date   2021-05-08
+ * @time   Sat, 08 May 2021 10:00:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -154,7 +154,7 @@ class PsModuleUdcsSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function SumCrowdsourcingBatch($body, $query = null, $extra = null)
+    public function sumCrowdsourcingBatch($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/crowdsourcingBatch/sum", $body, $query, $extra);
     }
