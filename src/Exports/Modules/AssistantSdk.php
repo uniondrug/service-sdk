@@ -4671,4 +4671,70 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/userstores/bindOnTodayList", $body, $query, $extra);
     }
+
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据门店ID获取最新一条审批
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/getByStoreIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveGetByStoreId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/getByStoreId", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApprovePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 审批
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/statusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/status", $body, $query, $extra);
+    }
 }
