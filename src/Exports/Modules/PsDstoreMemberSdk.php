@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-05-08
- * @time   Sat, 08 May 2021 10:10:53 +0800
+ * @date   2021-05-10
+ * @time   Mon, 10 May 2021 17:35:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -849,19 +849,6 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 下载二维码
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StorePharmacistCodeController/downloadAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function downloadPharmacistCode($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/storePharmacistCode/download", $body, $query, $extra);
-    }
-
-    /**
      * 常购药品
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/drugListAction.md
      * @param array|object $body 入参类型
@@ -1509,6 +1496,32 @@ class PsDstoreMemberSdk extends SdkBase
     public function liveCourseWatch($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/live/course/watch", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveProtocolController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveProtocolDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/protocol/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveProtocolController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveProtocolUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/protocol/update", $body, $query, $extra);
     }
 
     /**
@@ -2214,7 +2227,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 扫码
+     * 扫码返回im会话链接
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StorePharmacistCodeController/scanCodeAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
