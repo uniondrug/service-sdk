@@ -197,4 +197,17 @@ class LiveSrvJsSdk extends SdkBase
     {
         return $this->restful("POST", "/chat/room/userIntoRoomNotify", $body, $query, $extra);
     }
+
+    /**
+     * 结束直播文档
+     * @link  https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.live/blob/development/docs-api/uniondrug-live-service/%E6%89%8B%E5%8A%A8%E7%BB%93%E6%9D%9F%E7%9B%B4%E6%92%AD.md
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function liveEndLiveByBatchNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/endLiveByBatchNo", $body, $query, $extra);
+    }
 }
