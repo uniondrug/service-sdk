@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-05-10
- * @time   Mon, 10 May 2021 10:24:20 +0800
+ * @date   2021-05-12
+ * @time   Wed, 12 May 2021 16:56:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -209,6 +209,19 @@ class MerchantSdk extends SdkBase
     public function addPartners($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partners/add", $body, $query, $extra);
+    }
+
+    /**
+     * 修改门诊挂靠关系
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/addSourceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addSource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/addsource", $body, $query, $extra);
     }
 
     /**
@@ -950,6 +963,19 @@ class MerchantSdk extends SdkBase
     public function editIsTest($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editistest", $body, $query, $extra);
+    }
+
+    /**
+     * 修改联合会员状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsUnionMemberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsUnionMember($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisunionmember", $body, $query, $extra);
     }
 
     /**
@@ -1912,6 +1938,19 @@ class MerchantSdk extends SdkBase
     public function isExistStore($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/stores/isExist", $body, $query, $extra);
+    }
+
+    /**
+     * 门诊引入关系列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/isWholesalePagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function isWholesalePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/iswholesalepaging", $body, $query, $extra);
     }
 
     /**
