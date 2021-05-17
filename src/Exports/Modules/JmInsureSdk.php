@@ -329,7 +329,7 @@ class JmInsureSdk extends SdkBase
      */
     public function exportClaimSheet($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/ipackage/uniondrug/exportClaimSheet", $body);
+        return $this->restful("POST", "/ipackage/exportClaimSheet", $body);
     }
 
     /**
