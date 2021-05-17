@@ -186,6 +186,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 同步保司银行账号
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccount/BankAccountController/syncInsurerAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountSyncInsurer($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/sync/insurer", $body, $query, $extra);
+    }
+
+    /**
      * 获取待审核列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/toAuditListingAction.md
      * @param array|object $body  入参类型
@@ -680,6 +693,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 批量获取连锁自动生成换新结算单配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/getAutoCreateHxMerchantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getAutoCreateHxMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/auto/create/hx/merchant", $body, $query, $extra);
+    }
+
+    /**
      * 保司列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/listingAction.md
      * @param array|object $body 入参类型
@@ -794,6 +820,19 @@ class PsFinanceDataSdk extends SdkBase
     public function insurerBillInfoPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insurer/bill/info/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 同步保司开票
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/syncAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoSync($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/sync", $body, $query, $extra);
     }
 
     /**
@@ -1344,6 +1383,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 换新补贴列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerRenewalListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/renewal/listing", $body, $query, $extra);
+    }
+
+    /**
      * 换新补贴分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/pagingAction.md
      * @param array|object $body  入参类型
@@ -1536,6 +1588,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerWorkerFinanceAccountOpen($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/finance/account/open", $body, $query, $extra);
+    }
+
+    /**
+     * 关闭连锁用户财税账号
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/financeAccountOpenAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerFinanceAccountClose($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/finance/account/close", $body, $query, $extra);
     }
 
     /**
@@ -1912,5 +1977,113 @@ class PsFinanceDataSdk extends SdkBase
     public function billInfoDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/bill/info/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 财税服务费配置分页列表
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServicePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 财税服务费配置新增
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServiceCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/create", $body, $query, $extra);
+    }
+
+    /**
+     * 财税服务费配置详情
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServiceDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 财税服务费配置核算单位详情
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServiceUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/unit/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 财税服务费配置修改
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServiceUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/update", $body, $query, $extra);
+    }
+
+    /**
+     * 财税服务费配置启用停用
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServiceUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/update/status", $body, $query, $extra);
+    }
+
+    /**
+     * 财税VIP新增
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/vip/create", $body, $query, $extra);
+    }
+
+    /**
+     * 财税VIP详情
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/vip/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 财税VIP修改
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function applyVipUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/vip/update", $body, $query, $extra);
     }
 }

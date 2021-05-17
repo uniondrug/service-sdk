@@ -4960,4 +4960,53 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/receive/transaction/update", $body, $query, $extra);
     }
+
+    /**
+     * 检查
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionDetailController/checkAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceReceiveTransactionDetailCheck($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/receive/transaction/detail/check", $body, $query, $extra);
+    }
+
+    /**
+     * 商家待办事项新增
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTodoListCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partnerTodoList/create", $body, $query, $extra);
+    }
+
+    /**
+     * 商家待办事项分页列表
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTodoListPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partnerTodoList/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 商家待办事项编辑
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTodoListUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partnerTodoList/update", $body, $query, $extra);
+    }
 }

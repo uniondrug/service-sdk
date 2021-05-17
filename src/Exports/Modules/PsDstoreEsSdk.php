@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-05-17
- * @time   Mon, 17 May 2021 15:21:51 +0800
+ * @time   Mon, 17 May 2021 15:26:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -44,6 +44,45 @@ class PsDstoreEsSdk extends SdkBase
 
     /**
      * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/AssistantController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/AssistantController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/detail", $body, $query, $extra);
+    }
+
+    /**
+     * ids
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/AssistantController/idsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/ids", $body, $query, $extra);
+    }
+
+    /**
+     * 查询
      * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/AssistantController/pagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据

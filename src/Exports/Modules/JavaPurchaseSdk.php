@@ -141,7 +141,7 @@ class JavaPurchaseSdk extends SdkBase
     }
 
     /**
-     * 规格列表
+     * 规格邮件发送情况列表
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -151,6 +151,16 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseSpecs/listing', $body);
     }
 
+    /**
+     * 规格列表
+     * @param $body
+     * @return ResponseInterface
+     */
+
+    public function specsPaging($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/paging', $body);
+    }
     /**
      * 导出规格
      * @link
@@ -314,5 +324,57 @@ class JavaPurchaseSdk extends SdkBase
      */
     public function purchaseProjectDelay($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseProject/delay', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * aes 加密数据
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function cipherEncryptData($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/cipher/encryptData', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * aes 解密数据
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function cipherDecryptData($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/cipher/decryptData', $body, $query = null, $extra = null);
+    }
+    /**
+     * 规格详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function specsDetail($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/detail', $body, $query = null, $extra = null);
+    }
+    /**
+     * 采购金额回收
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function recovery($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseRecovery/recoveryEquity', $body, $query = null, $extra = null);
+    }
+    /**
+     * 通过分组ID查询specsID和pileId
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function querySpecsByGroupId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/queryByGroupId', $body, $query = null, $extra = null);
     }
 }

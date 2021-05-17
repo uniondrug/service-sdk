@@ -329,6 +329,58 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/create", $body, $query, $extra);
+    }
+
+    /**
+     * 数据转化
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/dataAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionData($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/data", $body, $query, $extra);
+    }
+
+    /**
+     * 短链接码
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/getCodeAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionGetCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/get/code", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/pageAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/page", $body, $query, $extra);
+    }
+
+    /**
      * editAction()
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/editAction.md
      * @param array|object $body  入参类型

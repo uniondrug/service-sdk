@@ -42,6 +42,19 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     }
 
     /**
+     * 添加发票时，检测与系统不一致信息返回
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/checkIntegrityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function checkIntegrity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/checkIntegrity", $body, $query, $extra);
+    }
+
+    /**
      * 删除一个发票
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/deleteAction.md
      * @param object|array $body 入参类型

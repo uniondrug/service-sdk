@@ -654,4 +654,43 @@ class PsSdk extends SdkBase
     {
         return $this->restful("POST", "/work/storeDetail", $body, $query, $extra);
     }
+
+    /**
+     * 无主门店列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreOperationInfoEdController/unclaimedStoreListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function unclaimedStoreList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeOperationInfoEd/unclaimedStoreList", $body, $query, $extra);
+    }
+
+    /**
+     * 无坐标门店分页
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreOperationInfoEdController/locationLackStorePagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function locationLackStorePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeOperationInfoEd/locationLackStorePaging", $body, $query, $extra);
+    }
+
+    /**
+     * 批量获取门店
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreOperationInfoEdController/getByStoreIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getByStoreIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeOperationInfoEd/getByStoreIds", $body, $query, $extra);
+    }
 }

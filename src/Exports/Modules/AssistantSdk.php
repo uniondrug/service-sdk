@@ -1916,6 +1916,19 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 待审批状态列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/ApproveController/waitedListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function approveWaitedList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approve/waitedList", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Notice/NoticeLogController/detailAction.md
      * @param array $body 入参类型
@@ -4540,5 +4553,188 @@ class AssistantSdk extends SdkBase
     public function chainJob($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/workDistributeAuto/chainJob", $body, $query, $extra);
+    }
+
+    /**
+     * 自动派发记录更新
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeAutoController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workDistributeAutoUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workDistributeAuto/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditLog/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取最新一条修改记录
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditLogController/lastRecordAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditLogLastRecord($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditLog/lastRecord", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkChainBlackListController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainBlackListCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workChainBlackList/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkChainBlackListController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainBlackListDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workChainBlackList/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 不分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkChainBlackListController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainBlackListList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workChainBlackList/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/WorkChainBlackListController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainBlackListPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workChainBlackList/page", $body, $query, $extra);
+    }
+
+    /**
+     * 保司信息变更
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskInsuranceEditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskInsuranceEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/insuranceEdit", $body, $query, $extra);
+    }
+
+    /**
+     * 今天绑定的门店列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresController/bindOnTodayListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bindOnTodayList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userstores/bindOnTodayList", $body, $query, $extra);
+    }
+
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据门店ID获取最新一条审批
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/getByStoreIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveGetByStoreId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/getByStoreId", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApprovePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 审批
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/statusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/status", $body, $query, $extra);
     }
 }

@@ -109,6 +109,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaHealthSdk              $javaHealth
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk                   $score
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk          $guaranteeclaimSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ClaimSdk                   $claim
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk                $exchange
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk                $dingtalk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderErpSdk            $javaOrderErp
@@ -141,6 +142,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomer
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImWsSdk                $javaImWs
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\LiveSrvJsSdk               $liveSrvJs
  * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
  * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
