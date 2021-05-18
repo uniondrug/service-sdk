@@ -847,4 +847,17 @@ class ClerkSdk extends SdkBase
     {
         return $this->restful("POST", "/assistant/perfect", $body, $query, $extra);
     }
+
+    /**
+     * 店员完善度
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantPerfectAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function transferApplyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/transfer/apply/create", $body, $query, $extra);
+    }
 }
