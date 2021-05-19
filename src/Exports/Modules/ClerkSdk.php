@@ -860,4 +860,30 @@ class ClerkSdk extends SdkBase
     {
         return $this->restful("POST", "/assistant/transfer/apply/create", $body, $query, $extra);
     }
+
+    /**
+     * 调店申请审核
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/transferApplyCheckAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function transferApplyCheck($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/transfer/apply/check", $body, $query, $extra);
+    }
+
+    /**
+     * 调店申请分页列表
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/transferApplyAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function transferApplyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/transfer/apply/paging", $body, $query, $extra);
+    }
 }
