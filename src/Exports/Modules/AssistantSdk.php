@@ -4761,7 +4761,7 @@ class AssistantSdk extends SdkBase
      */
     public function workCustomerTypeCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/work/customer/create", $body, $query, $extra);
+        return $this->restful("POST", "/work/customerType/create", $body, $query, $extra);
     }
 
     /**
@@ -4774,7 +4774,7 @@ class AssistantSdk extends SdkBase
      */
     public function workCustomerTypeList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/work/customer/list", $body, $query, $extra);
+        return $this->restful("POST", "/work/customerType/list", $body, $query, $extra);
     }
 
     /**
@@ -4787,7 +4787,7 @@ class AssistantSdk extends SdkBase
      */
     public function workCustomerTypeUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/work/customer/update", $body, $query, $extra);
+        return $this->restful("POST", "/work/customerType/update", $body, $query, $extra);
     }
 
     /**
