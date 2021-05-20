@@ -4750,4 +4750,43 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/holidays/list", $body, $query, $extra);
     }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkCustomerTypeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workCustomerTypeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/customer/create", $body, $query, $extra);
+    }
+
+    /**
+     * 列表 (不分页)
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkCustomerTypeController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workCustomerTypeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/customer/list", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkCustomerTypeController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workCustomerTypeUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/customer/update", $body, $query, $extra);
+    }
 }
