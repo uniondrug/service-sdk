@@ -4789,4 +4789,121 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/work/customer/update", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferApproveController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferApproveCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferApprove/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferApproveController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferApproveDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferApprove/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据店员获取待审核的审批
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferApproveController/getByClerkIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferApproveGetByClerkId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferApprove/getByClerkId", $body, $query, $extra);
+    }
+
+    /**
+     * 批量获取审批
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferApproveController/idsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferApproveIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferApprove/ids", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferApproveController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferApprovePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferApprove/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 审批
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferApproveController/statusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferApproveStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferApprove/status", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferLog/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferLogController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferLogDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferLog/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/ClerkTransferLogController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function clerkTransferLogPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clerkTransferLog/paging", $body, $query, $extra);
+    }
 }
