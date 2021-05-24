@@ -377,4 +377,37 @@ class JavaPurchaseSdk extends SdkBase
     public function querySpecsByGroupId($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseSpecs/queryByGroupId', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 通过项目ID查询是否可以更换保单
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function checkGroupCombine($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/checkGroupCombine', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 通过保司ID获取项目列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function projectListByMerchantId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/projectListByMerchantId', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 通知暂停保单
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function notifyFrozenProject($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/notifyFrozenProject', $body, $query = null, $extra = null);
+    }
 }
