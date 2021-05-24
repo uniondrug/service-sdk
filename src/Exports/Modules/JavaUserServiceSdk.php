@@ -226,4 +226,28 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userThird/query", $body, $query, $extra);
     }
+
+    /**
+     * 校验身份
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function containsIdentity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/v2/api/userRole/containsIdentity", $body, $query, $extra);
+    }
+
+    /**
+     * 添加用户身份
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function addIdentity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/v2/api/userRole/addIdentity", $body, $query, $extra);
+    }
 }
