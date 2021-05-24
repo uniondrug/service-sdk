@@ -693,6 +693,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 批量获取连锁自动生成换新结算单配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/getAutoCreateHxMerchantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getAutoCreateHxMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/auto/create/hx/merchant", $body, $query, $extra);
+    }
+
+    /**
      * 保司列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/listingAction.md
      * @param array|object $body 入参类型
@@ -1370,6 +1383,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 换新补贴列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerRenewalListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/renewal/listing", $body, $query, $extra);
+    }
+
+    /**
      * 换新补贴分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/RenewalController/pagingAction.md
      * @param array|object $body  入参类型
@@ -1656,6 +1682,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 用户更新选中系统
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workerUpdateCheckedSystem($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/update/checked/system", $body, $query, $extra);
+    }
+
+    /**
      * 新增用户权限
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/createAction.md
      * @param array|object $body 入参类型
@@ -1692,6 +1731,19 @@ class PsFinanceDataSdk extends SdkBase
     public function workerRuleUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/worker/rule/update", $body, $query, $extra);
+    }
+
+    /**
+     * 用户系统分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerSystemPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/system/paging", $body, $query, $extra);
     }
 
     /**
@@ -2011,6 +2063,18 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerTaxServiceUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/tax/service/update", $body, $query, $extra);
+    }
+
+    /**
+     * 财税服务费配置启用停用
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerTaxServiceUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/tax/service/update/status", $body, $query, $extra);
     }
 
     /**

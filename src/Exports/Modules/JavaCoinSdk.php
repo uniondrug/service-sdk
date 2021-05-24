@@ -550,4 +550,15 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundRecordDetail/exportStatisticsOrder", $body);
     }
+
+    /**
+     * 银行流水认领
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/BankClaimController/pageApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankClaimPaging($body)
+    {
+        return $this->restful("POST", "/bankClaim/page", $body);
+    }
 }
