@@ -561,4 +561,37 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/bankClaim/page", $body);
     }
+
+    /**
+     * 银行流水认领明细
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/BankClaimItemController/pageApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankClaimItemPaging($body)
+    {
+        return $this->restful("POST", "/bankClaimItem/page", $body);
+    }
+
+    /**
+     * 资金业务编码list
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/CoinCodeController/listApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function coinCodeList($body)
+    {
+        return $this->restful("POST", "/coinCode/list", $body);
+    }
+
+    /**
+     * 资金业务编码tree
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/CoinCodeController/listApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function coinCodeTree($body)
+    {
+        return $this->restful("POST", "/coinCode/tree", $body);
+    }
 }
