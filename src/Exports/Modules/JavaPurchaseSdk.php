@@ -410,4 +410,15 @@ class JavaPurchaseSdk extends SdkBase
     public function notifyFrozenProject($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/project/notifyFrozenProject', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 获取更换保单列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function changePolicyNoList($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/changePolicyNoList', $body, $query = null, $extra = null);
+    }
 }
