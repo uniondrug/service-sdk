@@ -1747,6 +1747,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 用户系统更新
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/WorkerRuleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workerSystemUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/worker/system/update/status", $body, $query, $extra);
+    }
+
+    /**
      * 新增商业公司与商户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/createAction.md
      * @param array|object $body  入参类型
@@ -1848,6 +1861,84 @@ class PsFinanceDataSdk extends SdkBase
     public function relationshipUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/relationship/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增税收分类编码
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/create", $body, $query, $extra);
+    }
+
+    /**
+     * 税收分类编码详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 导出税收分类编码
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/exportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodeExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/export", $body, $query, $extra);
+    }
+
+    /**
+     * 批量导入
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/importAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodeImport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/import", $body, $query, $extra);
+    }
+
+    /**
+     * 查询税收分类编码分页
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改税收分类编码
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodeUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/update", $body, $query, $extra);
     }
 
     /**

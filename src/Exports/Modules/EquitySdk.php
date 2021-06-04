@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-02-02
- * @time   Tue, 02 Feb 2021 13:20:38 +0800
+ * @date   2021-05-27
+ * @time   Thu, 27 May 2021 09:47:43 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -516,6 +516,19 @@ class EquitySdk extends SdkBase
     public function equityCombineEquityId($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/equity/combine/getByEquityId", $body, $query, $extra);
+    }
+
+    /**
+     * 权益延期
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/EquityController/delayEquityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function equityDelay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/equity/delay", $body, $query, $extra);
     }
 
     /**
@@ -1703,6 +1716,20 @@ class EquitySdk extends SdkBase
     public function SettlementClaims($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantee/settlementclaims", $body, $query, $extra);
+    }
+
+    /**
+     * 根据项目id 获取 权益列表，
+     * 简单数据
+     * @link https://uniondrug.coding.net/p/module.equity/git/tree/development/module.equity/api/V2/EquityController/simplePagingByProjectIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function simplePagingByProjectIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/V2/equity/simple/paging/projectIds", $body, $query, $extra);
     }
 
     /**
