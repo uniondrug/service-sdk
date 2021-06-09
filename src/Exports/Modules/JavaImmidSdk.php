@@ -141,6 +141,17 @@ class JavaImmidSdk extends SdkBase
     }
 
     /**
+     * 修改群名称
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7IM%E4%BF%A1%E6%81%AF.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function batchModifyGroup($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/chat/batchModifyGroup', $body);
+    }
+
+    /**
      * 解散群聊
      * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7IM%E4%BF%A1%E6%81%AF.md
      * @param array $body
