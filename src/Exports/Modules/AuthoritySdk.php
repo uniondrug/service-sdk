@@ -407,6 +407,19 @@ class AuthoritySdk extends SdkBase
     }
 
     /**
+     * 移除worker下财务共享平台权限
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/deleteBusinessCenterAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function systemWorkerRoleDeleteFinance($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/systemWorkerRole/deleteFinance", $body, $query, $extra);
+    }
+
+    /**
      * 所属系统用户角色详情
      * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/detailAction.md
      * @param array|object $body  入参类型

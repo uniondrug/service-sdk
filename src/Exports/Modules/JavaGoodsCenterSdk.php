@@ -147,4 +147,45 @@ class JavaGoodsCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/service/sku/edit", $body);
     }
+
+    /**
+     * 查询商品用药指导信息
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getDrugRemindV2($body)
+    {
+        return $this->restful("POST", "/drugRemind/getDrugRemindV2", $body);
+    }
+
+    /**
+     * 根据批准文号查询说明书
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function listManualByTitle($body)
+    {
+        return $this->restful("POST", "/queryGoods/listManualByTitle", $body);
+    }
+
+    /**
+     * 商品查询
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGoodsBySkuNos($body)
+    {
+        return $this->restful("POST", "/queryGoods/getGoodsBySkuNos", $body);
+    }
+
+    /**
+     * 商品搜索
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function goodsSearchSku($body)
+    {
+        return $this->restful("POST", "/goodsSearch/sku", $body);
+    }
+
 }

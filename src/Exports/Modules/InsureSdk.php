@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-27
- * @time   Fri, 27 Nov 2020 15:15:11 +0800
+ * @date   2021-03-05
+ * @time   Fri, 05 Mar 2021 16:24:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1265,6 +1265,32 @@ class InsureSdk extends SdkBase
     }
 
     /**
+     * 查询可投保交易
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InsureController/queryDealAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function queryDealInsure($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insure/queryDeal", $body, $query, $extra);
+    }
+
+    /**
+     * 退一个发票
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/InvoiceController/refundAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function refundInvoice($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/refund", $body, $query, $extra);
+    }
+
+    /**
      * 重复申请手续费收款明细
      * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyIncomeItemsController/repeatProceduresAction.md
      * @param array|object $body 入参类型
@@ -1366,6 +1392,19 @@ class InsureSdk extends SdkBase
     public function syncResultInsure($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/insure/syncInsureResult", $body, $query, $extra);
+    }
+
+    /**
+     * 保单修改理赔参数
+     * @link https://uniondrug.coding.net/p/module.insure/git/blob/development/docs/api/PolicyRecordController/updateClaimPropertyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateClaimPropertyPolicyRecord($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyrecord/updateClaimProperty", $body, $query, $extra);
     }
 
     /**

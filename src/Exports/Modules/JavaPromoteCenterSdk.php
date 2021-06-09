@@ -216,6 +216,15 @@ class JavaPromoteCenterSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
+    public function queryActivityByPartnerId($body)
+    {
+        return $this->restful("POST", "/outScheme/queryActivityByPartnerId", $body);
+    }
+
+    /**
+     * @param $body
+     * @return ResponseInterface
+     */
     public function outActivityInfo($body)
     {
         return $this->restful("POST", "/outActivity/queryActivityInfo", $body);
@@ -231,11 +240,52 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
+     * 获取连锁下生效中的优惠权益
      * @param $body
      * @return ResponseInterface
      */
     public function queryAllSchemeByMerchantIdList($body)
     {
         return $this->restful("POST", "/outScheme/queryAllSchemeByMerchantIdList", $body);
+    }
+
+    /**
+     * 获取连锁下生效中的优惠券和运费券
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryAllSchemeListByMerchantIdAndTypeList($body)
+    {
+        return $this->restful("POST", "/outScheme/queryAllSchemeListByMerchantIdAndTypeList", $body);
+    }
+
+    /**
+     * 获取方案的成本方案
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryCouponCostBySchemeId($body)
+    {
+        return $this->restful("POST", "/outScheme/queryCouponCostByschemeId", $body);
+    }
+
+    /**
+     * 批量获取方案详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function detailList($body)
+    {
+        return $this->restful("POST", "/outScheme/detailList", $body);
+    }
+
+    /**
+     * 批量获取方案详情-新
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function querySchemeList($body)
+    {
+        return $this->restful("POST", "/outScheme/querySchemeList", $body);
     }
 }

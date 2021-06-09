@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-24
- * @time   Tue, 24 Nov 2020 11:00:07 +0800
+ * @date   2021-03-15
+ * @time   Mon, 15 Mar 2021 16:41:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -111,6 +111,19 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 获取累计回收的金额
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/getRecycleMoneyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function codeGetRecycleMoney($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/get/recycle/money", $body, $query, $extra);
+    }
+
+    /**
      * 分组发放总额
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/giveOutAmountAction.md
      * @param array|object $body 入参类型
@@ -147,6 +160,19 @@ class StagnationSdk extends SdkBase
     public function configAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/config/add", $body, $query, $extra);
+    }
+
+    /**
+     * 权益新增发放人员配置(支持批量)
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/ConfigController/batchCreateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function configBatchCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/config/batchCreate", $body, $query, $extra);
     }
 
     /**
@@ -293,6 +319,19 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 权益新增驻店宝分组
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/createGroupManageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupManageCreateGroupManage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/manage/createGroupManage", $body, $query, $extra);
+    }
+
+    /**
      * 列表
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/GroupManageController/indexAction.md
      * @param array|object $body 入参类型
@@ -407,6 +446,19 @@ class StagnationSdk extends SdkBase
     public function logPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/log/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/RechargeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rechargeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recharge/create", $body, $query, $extra);
     }
 
     /**
@@ -605,6 +657,19 @@ class StagnationSdk extends SdkBase
     }
 
     /**
+     * 驻店宝员工详情分页列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/accountPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userAccountPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/accountPage", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/addAction.md
      * @param array|object $body 入参类型
@@ -641,6 +706,19 @@ class StagnationSdk extends SdkBase
     public function userEdit($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/user/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 通过手机号查询驻店宝店员是否存在
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/UserController/getByMobileAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function userGetByMobile($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/getByMobile", $body, $query, $extra);
     }
 
     /**
@@ -745,5 +823,70 @@ class StagnationSdk extends SdkBase
     public function userStatus($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/user/status", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareCodeController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCodeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/code/create", $body, $query, $extra);
+    }
+
+    /**
+     * 展示某个采购单下面的某张未领取的兑换码并修改兑换码状态
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareCodeController/displayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCodeDisplay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/code/display", $body, $query, $extra);
+    }
+
+    /**
+     * 统计某个采购单下面的未领取的兑换码数量
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareCodeController/surplusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCodeSurplus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/code/surplus", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfarePage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/page", $body, $query, $extra);
     }
 }

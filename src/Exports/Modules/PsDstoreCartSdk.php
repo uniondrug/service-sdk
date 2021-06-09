@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-11-05
- * @time   Thu, 05 Nov 2020 10:02:06 +0800
+ * @date   2021-04-10
+ * @time   Sat, 10 Apr 2021 20:05:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsDstoreCartSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-cart';
+
+    /**
+     * 删除订单
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/CartRecordsController/orderCancelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cartOrderCancel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cart/records/orderCancel", $body, $query, $extra);
+    }
 
     /**
      * 修改处方单数据
@@ -66,6 +79,19 @@ class PsDstoreCartSdk extends SdkBase
     public function cartRecordsDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/cart/records/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 用tid获取数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/CartRecordsController/detailByTidAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cartRecordsDetailByTid($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cart/records/detailByTid", $body, $query, $extra);
     }
 
     /**

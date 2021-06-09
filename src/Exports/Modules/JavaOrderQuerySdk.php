@@ -120,6 +120,17 @@ class JavaOrderQuerySdk extends SdkBase
     }
 
     /**
+     * 检查erp是否重复
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function orderQueryErpCheck($body)
+    {
+        return $this->restful("POST", "/order/query/erpcheck", $body);
+    }
+
+    /**
      * 订单主订单详情
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -139,5 +150,16 @@ class JavaOrderQuerySdk extends SdkBase
     public function orderQueryCashierCancel($body)
     {
         return $this->restful("POST", "/cashier/cancel/query", $body);
+    }
+
+    /**
+     * 订单memberId查询主订单
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function orderQueryMember($body)
+    {
+        return $this->restful("POST", "/order/query/member", $body);
     }
 }

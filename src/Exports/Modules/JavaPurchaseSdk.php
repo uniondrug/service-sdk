@@ -141,7 +141,7 @@ class JavaPurchaseSdk extends SdkBase
     }
 
     /**
-     * 规格列表
+     * 规格邮件发送情况列表
      * @link
      * @param array $body
      * @return ResponseInterface
@@ -151,6 +151,16 @@ class JavaPurchaseSdk extends SdkBase
         return $this->restful(static::METHOD_POST, '/purchaseSpecs/listing', $body);
     }
 
+    /**
+     * 规格列表
+     * @param $body
+     * @return ResponseInterface
+     */
+
+    public function specsPaging($body)
+    {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/paging', $body);
+    }
     /**
      * 导出规格
      * @link
@@ -226,5 +236,189 @@ class JavaPurchaseSdk extends SdkBase
      */
     public function coinReceiptPage($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseFinance/coinReceiptPage', $body, $query = null, $extra = null);
+    }
+
+
+    /**
+     * 在项目创建/提额时，存入"回款与开票"初稿，在审批通过时，直接发起回款
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseFinanceInitCoinReceiptDraft($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseFinance/initCoinReceiptDraft', $body, $query = null, $extra = null);
+    }
+    /**
+     * 根据权益企业/保司查询历史合同和企业联系人信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseProjectQueryHisContract($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/queryHisContract', $body, $query = null, $extra = null);
+    }
+    /**
+     * 驻店宝用户信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseStagnationList($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseStagnation/list', $body, $query = null, $extra = null);
+    }
+
+
+    /**
+     * 根据发行项目ID获取采购项目杠杆比例信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function queryRatioByPublishProjectId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/queryRatioByPublishProjectId', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 生成提额单
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function generatePromote($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/generatePromote', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 新增增值服务权益批次
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function createValueAddedService($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchasePile/createValueAddedService', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 增值服务兑换码列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function unionPurchaseRedeem($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseRedeem/paging', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 项目延期
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseProjectDelay($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/delay', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * aes 加密数据
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function cipherEncryptData($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/cipher/encryptData', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * aes 解密数据
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function cipherDecryptData($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/cipher/decryptData', $body, $query = null, $extra = null);
+    }
+    /**
+     * 规格详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function specsDetail($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/detail', $body, $query = null, $extra = null);
+    }
+    /**
+     * 采购金额回收
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function recovery($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseRecovery/recoveryEquity', $body, $query = null, $extra = null);
+    }
+    /**
+     * 通过分组ID查询specsID和pileId
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function querySpecsByGroupId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseSpecs/queryByGroupId', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 通过项目ID查询是否可以更换保单
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function checkGroupCombine($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/checkGroupCombine', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 通过保司ID获取项目列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function projectListByMerchantId($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/projectListByMerchantId', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 通知暂停保单
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function notifyFrozenProject($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/notifyFrozenProject', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 获取更换保单列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function changePolicyNoList($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/project/changePolicyNoList', $body, $query = null, $extra = null);
     }
 }

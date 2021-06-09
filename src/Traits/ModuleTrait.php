@@ -8,6 +8,8 @@
 namespace Uniondrug\ServiceSdk\Traits;
 
 use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityAnalysisSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityReadingSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
 
 /**
@@ -53,12 +55,13 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaIhcenterSdk            $javaIhcenter
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommissionSdk          $javaCommission
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaComsnSdk               $javaComsn
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk                $javaCoinSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk                $javaCoin
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDistributionSdk        $javaDistribution
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk             $javaPromote
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk              $javaErpPay
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk                $javaPush
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk           $javaUserScore
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JsFinanceReplaceSdk        $jsFinanceReplace
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk                    $jmbs
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JwtSdk                     $jwt
  * @property \Uniondrug\ServiceSdk\Exports\Modules\MapSdk                     $map
@@ -89,6 +92,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk              $settlement
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk         $settlementsheet
  * @property \Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk              $stagnation
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPrecheckSdk            $javaPrecheck
  * @property \Uniondrug\ServiceSdk\Exports\Modules\TokenSdk                   $token
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PrivilegeSdk               $privilege
  * @property \Uniondrug\ServiceSdk\Exports\Modules\SchemeSdk                  $scheme
@@ -105,6 +109,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaHealthSdk              $javaHealth
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk                   $score
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk          $guaranteeclaimSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ClaimSdk                   $claim
  * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk                $exchange
  * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk                $dingtalk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderErpSdk            $javaOrderErp
@@ -115,21 +120,36 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPmcCashierSdk          $javaPmcCashier
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk     $outreachResourceApiSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaEquityTrialSdk         $javaEquityTrial
- * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk            $vas
- * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk            $sms
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk       $approval
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk  $psDesktoptool
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk       $auditLog
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImpsSdk       $javaImps
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImmidSdk      $javaImmid
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk   $psDstoreCart
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk $psDstoreMember
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk             $ps
- * @property \Uniondrug\ServiceSdk\Exports\Modules\OtcSdk            $otc
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk   $javaPurchase
- * @property \Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk    $inspection
- * @property JavaAdvfrontSdk                                         $javaAdvfront
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                     $vas
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk           $psFinanceData
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImpsSdk                $javaImps
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCreditQuerySdk         $javaCreditQuery
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImmidSdk               $javaImmid
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk          $psDstoreMember
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreEsSdk              $psDstoreEs
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\OtcSdk                     $otc
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk            $javaPurchase
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk              $jsArchives
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JsCleanCenterSdk           $jsCleanCenter
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk              $inspection
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk               $psFinBillSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk                $jmInsure
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomer
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImWsSdk                $javaImWs
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\LiveSrvJsSdk               $liveSrvJs
+ * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
+ * @property JavaAdvfrontSdk                                                  $javaAdvfront
  * @property JavaImSdk                                                        $javaIm
+ * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk         $javaUserService
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

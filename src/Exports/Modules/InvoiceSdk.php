@@ -446,4 +446,41 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/detail", $body);
     }
+
+    /**
+     * 根据保单号找对应开票单的发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceExpress/InvoiceExpressController/billPagingAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function policyInvoicePaging($body)
+    {
+        return $this->restful("POST", "/invoice/policyInvoicePaging", $body);
+    }
+
+    /**
+     * 根据保单号找,药联理赔单（PBM2.0）理赔款应收，对应开票单的发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/policyPBM2InvoicePagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyPBM2InvoicePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/policyPBM2InvoicePaging", $body, $query, $extra);
+    }
+
+    /**
+     * 根据保单号找，保单费用应收，对应开票单的发票列表
+     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/policyHandleFeeInvoicePagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyHandleFeeInvoicePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoice/policyHandleFeeInvoicePaging", $body, $query, $extra);
+    }
 }

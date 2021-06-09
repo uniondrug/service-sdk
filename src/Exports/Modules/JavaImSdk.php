@@ -24,6 +24,28 @@ class JavaImSdk extends SdkBase
     }
 
     /**
+     * 创建im账号
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E5%88%97%E8%A1%A8%E6%9F%A5%E8%AF%A2.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function createAcct($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/acct/createAcct', $body);
+    }
+
+    /**
+     * 修改im账号
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E5%88%97%E8%A1%A8%E6%9F%A5%E8%AF%A2.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function modifyAcct($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/acct/modifyAcct', $body);
+    }
+
+    /**
      * 发送消息
      * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-%E4%B8%AD%E5%8F%B0/%E5%88%97%E8%A1%A8%E6%9F%A5%E8%AF%A2.md
      * @param array $body
@@ -98,5 +120,27 @@ class JavaImSdk extends SdkBase
     public function kickGroupMember($body)
     {
         return $this->restful(static::METHOD_POST, '/group/chat/kickGroupMember', $body);
+    }
+
+    /**
+     * 是否在线
+     * @link https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.imcenter/tree/development/uniondrug-im/doc/uniondrug-im-service
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function queryIsOnline($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/acct/queryIsOnline', $body);
+    }
+
+    /**
+     * IM分页查询会话列表
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/docs-advisor/blob/master/IM-中台/IM%20V1.3/IM分页查询会话列表.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pageQueryMsgNotify($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/msg/pageQueryMsgNotify', $body);
     }
 }

@@ -77,4 +77,14 @@ class JavaDownloadSdk extends SdkBase
     {
         return $this->restful("POST", "/export/api", $body);
     }
+
+    /**
+     * 查询导出结果
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function query($body)
+    {
+        return $this->restful("POST", "/query/excel", $body);
+    }
 }

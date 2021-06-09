@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-09-24
- * @time   Thu, 24 Sep 2020 18:35:29 +0800
+ * @date   2021-06-04
+ * @time   Fri, 04 Jun 2021 16:25:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -160,19 +160,6 @@ class UdappSdk extends SdkBase
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/CashierController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function cashierDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/cashier/detail", $body, $query, $extra);
-    }
-
-    /**
      * 获取门店店员列表
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/AssistantController/listAction.md
      * @param array|object $body 入参类型
@@ -316,6 +303,19 @@ class UdappSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/BlueController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function blueCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/blue/create", $body, $query, $extra);
+    }
+
+    /**
      * 配置
      * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/cacheConfigAction.md
      * @param array|object $body 入参类型
@@ -326,6 +326,71 @@ class UdappSdk extends SdkBase
     public function cacheConfig($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/config/cacheConfig", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/CashierController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function cashierDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/cashier/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/create", $body, $query, $extra);
+    }
+
+    /**
+     * 数据转化
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/dataAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionData($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/data", $body, $query, $extra);
+    }
+
+    /**
+     * 短链接码
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/getCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionGetCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/get/code", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ChannelConversionController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function channelConversionPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/channel/conversion/page", $body, $query, $extra);
     }
 
     /**
@@ -690,6 +755,58 @@ class UdappSdk extends SdkBase
     public function marketingTemplateUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/marketingTemplate/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/MerchantController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/update", $body, $query, $extra);
     }
 
     /**

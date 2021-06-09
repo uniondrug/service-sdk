@@ -67,6 +67,15 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundAccount/getByHolder", $body);
     }
+    /**
+     * 资金流水明细统计-new
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundRecordDetailStatisticsV2($body)
+    {
+        return $this->restful("POST", "/fundRecordDetail/statisticsV2", $body);
+    }
 
     /**
      * 资金池充值
@@ -240,6 +249,7 @@ class JavaCoinSdk extends SdkBase
 
     /**
      * 收款单审核通过
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/master/docs-api/uniondrug-coin-service/ReceiptController/auditSuccess.md
      * @param $body
      * @param $header
      * @return ResponseInterface
@@ -247,6 +257,17 @@ class JavaCoinSdk extends SdkBase
     public function receiptAuditSuccess($body, $header)
     {
         return $this->restful("POST", "/receipt/auditSuccess", $body, null, $header);
+    }
+
+    /**
+     * 批量收款单审核通过
+     * @param $body
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/development/docs-api/uniondrug-coin-service/ReceiptController/batchAuditSuccess.md
+     * @return ResponseInterface
+     */
+    public function receiptBatchAuditSuccess($body)
+    {
+        return $this->restful("POST", "/receipt/batchAuditSuccess", $body, null, null);
     }
 
     /**
@@ -435,16 +456,6 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
-     * 查询待提交的付款单
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function paymentPageForWaitCommit($body)
-    {
-        return $this->restful("POST", "/payment/pageForWaitCommit", $body);
-    }
-
-    /**
      * 资金付款单审批
      * @param $body
      * @param $header
@@ -477,6 +488,17 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 资金付款单执行不通过
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function paymentExecuteRefuse($body, $header)
+    {
+        return $this->restful("POST", "/payment/executeRefuse", $body, null, $header);
+    }
+
+    /**
      * 执行人查询待其执行的付款单
      * @param $body
      * @return ResponseInterface
@@ -495,6 +517,17 @@ class JavaCoinSdk extends SdkBase
     public function paymentUndo($body, $header)
     {
         return $this->restful("POST", "/payment/undo", $body, null, $header);
+    }
+
+    /**
+     * 取消支付
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function paymentAbandon($body, $header)
+    {
+        return $this->restful("POST", "/payment/abandon", $body, null, $header);
     }
 
     /**
@@ -526,5 +559,48 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundRecordDetail/exportStatisticsOrder", $body);
     }
-}
 
+    /**
+     * 银行流水认领
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/BankClaimController/pageApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankClaimPaging($body)
+    {
+        return $this->restful("POST", "/bankClaim/page", $body);
+    }
+
+    /**
+     * 银行流水认领明细
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/BankClaimItemController/pageApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankClaimItemPaging($body)
+    {
+        return $this->restful("POST", "/bankClaimItem/page", $body);
+    }
+
+    /**
+     * 资金业务编码list
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/CoinCodeController/listApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function coinCodeList($body)
+    {
+        return $this->restful("POST", "/coinCode/list", $body);
+    }
+
+    /**
+     * 资金业务编码tree
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/feature_drive/docs-api/uniondrug-coin-service/CoinCodeController/listApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function coinCodeTree($body)
+    {
+        return $this->restful("POST", "/coinCode/tree", $body);
+    }
+}
