@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-12-21
- * @time   Mon, 21 Dec 2020 17:38:59 +0800
+ * @date   2021-06-09
+ * @time   Wed, 09 Jun 2021 16:37:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -300,6 +300,19 @@ class InspectionSdk extends SdkBase
     public function createOrderOpenapi($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/openapi/order/create", $body, $query, $extra);
+    }
+
+    /**
+     * 创建任务
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Dispatch/DispatchController/createTaskAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createTask($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dispatch/createTask", $body, $query, $extra);
     }
 
     /**
@@ -1434,6 +1447,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * Mock任务
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockGenerateReportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function mockGenerateReport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/mock/generate/report", $body, $query, $extra);
+    }
+
+    /**
      * Mock检查任务链路数据
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/MockController/mockInpectionLinkAction.md
      * @param array|object $body 入参类型
@@ -2136,6 +2162,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 保存角色信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/PrivilegesController/saveRoleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function saveRole($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/save/role", $body, $query, $extra);
+    }
+
+    /**
      * 查询商品信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Stock/StockInController/searchCommodityAction.md
      * @param array|object $body 入参类型
@@ -2666,6 +2705,32 @@ class InspectionSdk extends SdkBase
     public function systemUserNurseList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/system/user/nurse/list", $body, $query, $extra);
+    }
+
+    /**
+     * 解除用户城市
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/relieveCityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserRelieveCity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/relieve/city", $body, $query, $extra);
+    }
+
+    /**
+     * 解除用户角色
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/SystemUsersController/relieveRoleAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function systemUserRelieveRole($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/system/user/relieve/role", $body, $query, $extra);
     }
 
     /**
