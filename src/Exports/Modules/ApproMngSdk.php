@@ -367,4 +367,30 @@ class ApproMngSdk extends SdkBase
     {
         return $this->restful("POST", "/apply/applyDoTask", $body, $query, $extra);
     }
+
+    /**
+     * 审批流系统驳回
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/rejectBySystemAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyRejectBySystem($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/rejectBySystem", $body, $query, $extra);
+    }
+
+    /**
+     * 审批流系统同意
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/agreeBySystemAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyAgreeBySystem($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/agreeBySystem", $body, $query, $extra);
+    }
 }
