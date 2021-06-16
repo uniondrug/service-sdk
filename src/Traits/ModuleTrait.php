@@ -149,6 +149,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk         $javaUserService
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementMngSdk        $javaAgreementMngService
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
