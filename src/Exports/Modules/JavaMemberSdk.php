@@ -5,6 +5,7 @@
  * Date: 2020-05-11
  * Time: 10:58
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -469,5 +470,16 @@ class JavaMemberSdk extends SdkBase
     public function userTagContainsTagValuesBatch($body)
     {
         return $this->restful("POST", "/v2/api/userTag/containsTagValuesBatch", $body);
+    }
+
+    /**
+     * 通过证件号码查询用户信息
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/usercenter/blob/master/api-docs/uniondrug.usercenter.provider/UserInfoApiController/getByCarNoApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getByCarNo($body)
+    {
+        return $this->restful("POST", "/v2/api/userInfo/getByCarNo", $body);
     }
 }
