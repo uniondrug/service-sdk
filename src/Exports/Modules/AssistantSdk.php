@@ -4714,6 +4714,19 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 门店ID批量获取审批记录数
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/getCountByStoreIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveGetCountByStoreIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/getCountByStoreIds", $body, $query, $extra);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/pagingAction.md
      * @param array|object $body 入参类型
@@ -4737,6 +4750,19 @@ class AssistantSdk extends SdkBase
     public function storeAddrEditApproveStatus($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/storeAddrEditApprove/status", $body, $query, $extra);
+    }
+
+    /**
+     * 待审核审批列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/StoreAddrEditApproveController/waitedListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeAddrEditApproveWaitedList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeAddrEditApprove/waitedList", $body, $query, $extra);
     }
 
     /**
@@ -4998,5 +5024,18 @@ class AssistantSdk extends SdkBase
     public function workInsuranceCustomerList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/workInsuranceCustomer/list", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ExternalApplyController/detailByApplyIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function externalApplyDetailByApplyId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/externalApply/detailByApplyId", $body, $query, $extra);
     }
 }

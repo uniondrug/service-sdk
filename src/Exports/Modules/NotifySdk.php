@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-06-04
- * @time   Thu, 04 Jun 2020 16:14:51 +0800
+ * @date   2021-06-10
+ * @time   Thu, 10 Jun 2021 17:38:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -71,6 +71,17 @@ class NotifySdk extends SdkBase
     public function messageHasNew($body)
     {
         return $this->restful("POST", "/message/hasNew", $body);
+    }
+
+    /**
+     * 透传
+     * @link https://uniondrug.coding.net/p/module.notify/git/blob/development/docs/api/MessageController/messageUmengAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function messageMessageUmeng($body)
+    {
+        return $this->restful("POST", "/message/messageUmeng", $body);
     }
 
     /**
