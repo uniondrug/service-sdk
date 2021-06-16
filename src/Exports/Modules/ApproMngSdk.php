@@ -393,4 +393,43 @@ class ApproMngSdk extends SdkBase
     {
         return $this->restful("POST", "/apply/agreeBySystem", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TpFormController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpFormCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tpForm/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TpFormController/detailByApproveTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpFormDetailByApproveType($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tpForm/detailByApproveType", $body, $query, $extra);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TpFormController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpFormUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tpForm/update", $body, $query, $extra);
+    }
 }
