@@ -16,7 +16,7 @@ class JavaAgreementMngSdk extends SdkBase
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'java.agreement.mng';
+    protected $serviceName = 'js.agreement.mng';
 
     /**
      * 新增顾客
