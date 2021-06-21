@@ -27,7 +27,7 @@ class JavaAgreementSvrSdk extends SdkBase
      */
     public function addCustomer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/add", $body, $query, $extra);
+        return $this->restful("POST", "/svr/customer/add", $body, $query, $extra);
     }
 
     /**
@@ -39,7 +39,7 @@ class JavaAgreementSvrSdk extends SdkBase
      */
     public function delCustomer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/del", $body, $query, $extra);
+        return $this->restful("POST", "/svr/customer/del", $body, $query, $extra);
     }
 
     /**
@@ -51,7 +51,7 @@ class JavaAgreementSvrSdk extends SdkBase
      */
     public function editCustomer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/edit", $body, $query, $extra);
+        return $this->restful("POST", "/svr/customer/edit", $body, $query, $extra);
     }
 
 }
