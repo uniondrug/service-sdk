@@ -28,7 +28,7 @@ class JavaAgreementQrySdk extends SdkBase
      */
     public function infoCustomer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/info", $body, $query, $extra);
+        return $this->restful("POST", "/qry/customer/info", $body, $query, $extra);
     }
 
     /**
@@ -40,7 +40,7 @@ class JavaAgreementQrySdk extends SdkBase
      */
     public function detailCustomer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/detail", $body, $query, $extra);
+        return $this->restful("POST", "/qry/customer/detail", $body, $query, $extra);
     }
 
     /**
@@ -52,7 +52,7 @@ class JavaAgreementQrySdk extends SdkBase
      */
     public function listByIds($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/ids", $body, $query, $extra);
+        return $this->restful("POST", "/qry/customer/ids", $body, $query, $extra);
     }
 
     /**
@@ -64,7 +64,7 @@ class JavaAgreementQrySdk extends SdkBase
      */
     public function pagingCustomer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/paging", $body, $query, $extra);
+        return $this->restful("POST", "/qry/customer/paging", $body, $query, $extra);
     }
 
     /**
@@ -76,6 +76,6 @@ class JavaAgreementQrySdk extends SdkBase
      */
     public function numberByMerchantId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/customer/number", $body, $query, $extra);
+        return $this->restful("POST", "/qry/customer/number", $body, $query, $extra);
     }
 }
