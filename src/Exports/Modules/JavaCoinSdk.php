@@ -603,4 +603,15 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/coinCode/tree", $body);
     }
+
+    /**
+     * 查询商户资金账户
+     * @param $body
+     * @param $header
+     * @return ResponseInterface
+     */
+    public function fundAccountGet($body, $header)
+    {
+        return $this->restful("POST", "/fundAccount/get", $body, null, $header);
+    }
 }

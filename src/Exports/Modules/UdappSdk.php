@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-04
- * @time   Fri, 04 Jun 2021 16:25:45 +0800
+ * @date   2021-06-21
+ * @time   Mon, 21 Jun 2021 13:19:33 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -508,6 +508,32 @@ class UdappSdk extends SdkBase
     public function downloadPageDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/downloadPage/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DrugSubmitController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function drugSubmitCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugSubmit/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/DrugSubmitController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function drugSubmitPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugSubmit/paging", $body, $query, $extra);
     }
 
     /**
