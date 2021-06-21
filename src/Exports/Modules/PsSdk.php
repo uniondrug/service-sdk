@@ -27,7 +27,7 @@ class PsSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ps.bsdata';
+    protected $serviceName = 'ps-bsdata';
 
     /**
      * 截止当前的剩余可以使用的数量，额度
