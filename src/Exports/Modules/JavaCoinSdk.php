@@ -67,6 +67,7 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundAccount/getByHolder", $body);
     }
+
     /**
      * 资金流水明细统计-new
      * @param $body
@@ -215,6 +216,16 @@ class JavaCoinSdk extends SdkBase
     public function monthPoolStatistics($body)
     {
         return $this->restful("POST", "/fundAccount/statisticsRangeDate", $body);
+    }
+
+    /**
+     * 开户
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function openAccount($body)
+    {
+        return $this->restful("POST", "/fundAccount/create", $body);
     }
 
     /**
@@ -607,11 +618,10 @@ class JavaCoinSdk extends SdkBase
     /**
      * 查询商户资金账户
      * @param $body
-     * @param $header
      * @return ResponseInterface
      */
-    public function fundAccountGet($body, $header)
+    public function fundAccountGet($body)
     {
-        return $this->restful("POST", "/fundAccount/get", $body, null, $header);
+        return $this->restful("POST", "/fundAccount/get", $body);
     }
 }

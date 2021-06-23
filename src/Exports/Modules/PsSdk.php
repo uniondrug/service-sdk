@@ -11,7 +11,7 @@
  * @date   2021-06-21
  * @time   Mon, 21 Jun 2021 17:42:11 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Bsdatas;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -27,7 +27,7 @@ class PsSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ps.bsdata';
+    protected $serviceName = 'ps-bsdata';
 
     /**
      * 截止当前的剩余可以使用的数量，额度
@@ -238,7 +238,7 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 门店列表
+     * 业务出单分布
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/OrderStatisticController/distributionAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -586,6 +586,19 @@ class PsSdk extends SdkBase
     public function storeStatisticPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/storeStatistic/paging", $body, $query, $extra);
+    }
+
+    /**
+     * userOrdStoreSumD不分页列表 (用作门店订单分布导出)
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreStatisticController/userOrdStoreSumDListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserOrdStoreSumDListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/userOrdStoreSumDListing", $body, $query, $extra);
     }
 
     /**
