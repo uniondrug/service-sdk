@@ -219,6 +219,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 开户
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function openAccount($body)
+    {
+        return $this->restful("POST", "/fundAccount/create", $body);
+    }
+
+    /**
      * 创建收款确认单
      * @param $body
      * @return ResponseInterface
