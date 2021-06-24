@@ -134,6 +134,19 @@ class QueryEquitySdk extends SdkBase
     }
 
     /**
+     * 单个账户兑换码详情分页列表
+     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityCardIssueWideEsController/singleRedeemtAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function equityCardIssueWideEsSingleRedeem($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/equity/issue/singleRedeem", $body, $query, $extra);
+    }
+
+    /**
      * 分页列表
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityCardUsageWideEsController/pageAction.md
      * @param array|object $body 入参类型
