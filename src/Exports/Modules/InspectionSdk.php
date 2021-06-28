@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-09
- * @time   Wed, 09 Jun 2021 16:37:21 +0800
+ * @date   2021-06-28
+ * @time   Mon, 28 Jun 2021 17:44:12 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -248,6 +248,71 @@ class InspectionSdk extends SdkBase
     public function commodityTypeList($body, $query = null, $extra = null)
     {
         return $this->restful("GET", "/stock/commodity-type/list", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CompanyController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CompanyController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CompanyController/indexAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyIndex($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/index", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CompanyController/storeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/store", $body, $query, $extra);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CompanyController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/update", $body, $query, $extra);
     }
 
     /**
@@ -1603,6 +1668,97 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderBatchController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderBatchEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/orderBatch/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 依照批次导入订单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderBatchController/importAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderBatchImport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/orderBatch/import", $body, $query, $extra);
+    }
+
+    /**
+     * 按照批次新增订单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderBatchController/storeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderBatchStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/orderBatch/store", $body, $query, $extra);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderBatchController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderBatchUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/orderBatch/update", $body, $query, $extra);
+    }
+
+    /**
+     * 绑定条码
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/bindBarCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderBindBarCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/bindBarCode", $body, $query, $extra);
+    }
+
+    /**
+     * 取消检测
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/cancelInspectionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderCancelInspection($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/cancelInspection", $body, $query, $extra);
+    }
+
+    /**
+     * 打印条码
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/generateBarCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderGenerateBarCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/generateBarCode", $body, $query, $extra);
+    }
+
+    /**
      * 查询订单患者信息
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/patientInfoAction.md
      * @param array|object $body 入参类型
@@ -1613,6 +1769,19 @@ class InspectionSdk extends SdkBase
     public function orderPatientInfo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/patientinfo", $body, $query, $extra);
+    }
+
+    /**
+     * 报告图片列表展示
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/reportListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderReportList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/reportList", $body, $query, $extra);
     }
 
     /**
@@ -2929,6 +3098,19 @@ class InspectionSdk extends SdkBase
     }
 
     /**
+     * 小程序首页日历数据线路列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/calendarDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatCalendarDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/calendar/detail", $body, $query, $extra);
+    }
+
+    /**
      * 小程序首页日历数据接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/indexAction.md
      * @param array|object $body 入参类型
@@ -2939,6 +3121,19 @@ class InspectionSdk extends SdkBase
     public function wechatCalendarIndex($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/wechat/calendar/index", $body, $query, $extra);
+    }
+
+    /**
+     * 小程序首页日历数据线路列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/calendarLineAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatCalendarLine($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/calendar/line", $body, $query, $extra);
     }
 
     /**
@@ -2981,19 +3176,6 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 获取采样短码
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatTaskController/getSamplingSortCodeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function wechatGetSamplingSortCode($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/wechat/task/sampling/sort-code", $body, $query, $extra);
-    }
-
-    /**
      * 线路基本信息接口
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/lineBasicAction.md
      * @param array|object $body 入参类型
@@ -3017,6 +3199,32 @@ class InspectionSdk extends SdkBase
     public function wechatLineDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/wechat/line/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatOrderController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatOrderEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/order/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatOrderController/indexAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatOrderIndex($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/order/index", $body, $query, $extra);
     }
 
     /**
