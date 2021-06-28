@@ -5022,4 +5022,43 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/partnerTodoList/update", $body, $query, $extra);
     }
+
+    /**
+     * 下一条
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/nextAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBillNext($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBill/next", $body, $query, $extra);
+    }
+
+    /**
+     * 上一条
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/prevAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBillPrev($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBill/prev", $body, $query, $extra);
+    }
+
+    /**
+     * 驳回
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/refuseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeBillRefuse($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBill/refuse", $body, $query, $extra);
+    }
 }

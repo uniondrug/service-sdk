@@ -509,4 +509,17 @@ class ClaimSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/policy/no", $body, $query, $extra);
     }
+
+    /**
+     * detailForYDBAction()
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/detailForYDBAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function ydbChangeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/change/detail/ydb", $body, $query, $extra);
+    }
 }

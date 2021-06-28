@@ -379,4 +379,30 @@ class PsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/statements/detailList", $body, $query, $extra);
     }
+
+    /**
+     * 修改订单支付时间
+     * @link https://uniondrug.coding.net/p/statement.fin.ps/git/blob/development/docs/api/OrderController/changePayDateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function changeOrderPayDate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/change/payDate", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/statement.fin.ps/git/blob/development/docs/api/OrderController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function changePayDatePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/paging", $body, $query, $extra);
+    }
 }

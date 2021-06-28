@@ -268,6 +268,19 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 理赔单关联商品分页查询
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageOrderController/page.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function claimGoodsPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/equityGoods/page", $body);
+    }
+
+    /**
      * 理赔操作日志分页查询
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageLogController/page.md
      * @param array|object $body  入参类型
@@ -1084,5 +1097,17 @@ class JmInsureSdk extends SdkBase
     public function reparationsReceiptBatchContinueReceipt($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/reparationsReceipt/batchContinueReceipt", $body);
+    }
+    /**
+     * 批量修改订单支付日期
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_3.5/doc/api/ReparationsReceiptController/batchContinueReceiptApi.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function batchUpdatePaidTime($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/mbs/order/update/orderPaidTime", $body);
     }
 }

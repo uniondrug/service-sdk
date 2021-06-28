@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-15
- * @time   Wed, 15 Apr 2020 17:44:18 +0800
+ * @date   2021-06-10
+ * @time   Thu, 10 Jun 2021 15:37:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,42 +32,61 @@ class DrugstoreStatisticSdk extends SdkBase
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/AssistantStatisticController/personAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantPerson($body)
+    public function assistantPerson($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/person", $body);
+        return $this->restful("POST", "/assistant/person", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/AssistantStatisticController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantPrivilegeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/privilege/detail", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/AssistantStatisticController/storeAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function assistantStore($body)
+    public function assistantStore($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/assistant/store", $body);
+        return $this->restful("POST", "/assistant/store", $body, $query, $extra);
     }
 
     /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/MerchantStatisticController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function merchantDetail($body)
+    public function merchantDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/merchant/statistic/detail", $body);
+        return $this->restful("POST", "/merchant/statistic/detail", $body, $query, $extra);
     }
 
     /**
      * 我的会员事件
      * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/TrackingController/myMemberAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function trackingMyMember($body, $query = null, $extra = null)
@@ -78,9 +97,9 @@ class DrugstoreStatisticSdk extends SdkBase
     /**
      * 页面分析
      * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/TrackingController/pageAnalysisAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function trackingPageAnalysis($body, $query = null, $extra = null)
@@ -91,9 +110,9 @@ class DrugstoreStatisticSdk extends SdkBase
     /**
      * 交易时长
      * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/TrackingController/tradeAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function trackingTrade($body, $query = null, $extra = null)

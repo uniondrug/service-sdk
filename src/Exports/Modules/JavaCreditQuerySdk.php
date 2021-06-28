@@ -62,4 +62,15 @@ class JavaCreditQuerySdk extends SdkBase
     {
         return $this->restful("POST", "/creditAccountQuery/memberAccount/query", $body);
     }
+
+    /**
+     * 积分记录列表
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function recordsPaging($body)
+    {
+        return $this->restful("POST", "/creditAccountQuery/recordsPaging", $body);
+    }
 }
