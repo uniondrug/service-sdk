@@ -160,6 +160,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 理赔汇总列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ClaimController/SummaryPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimSummaryPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/summary", $body, $query, $extra);
+    }
+
+    /**
      * 未激活权益列表（未激活的兑换码列表）
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/EquityController/codePagingAction.md
      * @param array|object $body 入参类型
