@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-28
- * @time   Mon, 28 Jun 2021 17:44:12 +0800
+ * @date   2021-06-30
+ * @time   Wed, 30 Jun 2021 09:55:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -3098,7 +3098,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 小程序首页日历数据线路列表
+     * 小程序首页日历数据线路详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/calendarDetailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -3134,6 +3134,19 @@ class InspectionSdk extends SdkBase
     public function wechatCalendarLine($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/wechat/calendar/line", $body, $query, $extra);
+    }
+
+    /**
+     * 小程序首页日历列表
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Wechat/WechatCalendarController/calendarListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wechatCalendarList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wechat/calendar/list", $body, $query, $extra);
     }
 
     /**
