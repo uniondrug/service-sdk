@@ -4208,6 +4208,19 @@ class SettlementSdk extends SdkBase
     }
 
     /**
+     * 校验理赔单状态
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceExpressController/checkClaimFormStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function invoiceExpressCheckClaimFormStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/invoiceExpress/check/claimFormStatus", $body, $query, $extra);
+    }
+
+    /**
      * 修改开票单状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/updateBillStatusAction.md
      * @param array|object $body  入参类型
