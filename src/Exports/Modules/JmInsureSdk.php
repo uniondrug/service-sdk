@@ -1110,4 +1110,17 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/mbs/order/update/orderPaidTime", $body);
     }
+
+    /**
+     * 配置保单策略
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_strategy_update/doc/api/PolicyController/configurationPolicyStrategy.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyConfigurationPolicyStrategy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/configurationPolicyStrategy", $body);
+    }
 }
