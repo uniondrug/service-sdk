@@ -1098,6 +1098,7 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/reparationsReceipt/batchContinueReceipt", $body);
     }
+
     /**
      * 批量修改订单支付日期
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_3.5/doc/api/ReparationsReceiptController/batchContinueReceiptApi.md
