@@ -108,6 +108,19 @@ class QueryEquitySdk extends SdkBase
     }
 
     /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityCardIssueWideEsController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function equityCardIssueWideEsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/equity/issue/list", $body, $query, $extra);
+    }
+
+    /**
      * 统计某个项目某个分组的用户最后发卡记录
      * @link https://uniondrug.coding.net/p/union.equity.query/git/blob/development/union.equity.query/api/EquityCardIssueWideEsController/lastRecordAction.md
      * @param array|object $body 入参类型

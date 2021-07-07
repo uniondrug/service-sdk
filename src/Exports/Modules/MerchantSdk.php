@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-05-12
- * @time   Wed, 12 May 2021 16:56:52 +0800
+ * @date   2021-06-29
+ * @time   Tue, 29 Jun 2021 13:55:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -83,7 +83,7 @@ class MerchantSdk extends SdkBase
 
     /**
      * 推送门店变动内码
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/AddConversionAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/addConversionAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -118,6 +118,19 @@ class MerchantSdk extends SdkBase
     public function addHealthServicesOrganizeBaseJoin($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasejoin/addhealthservices", $body, $query, $extra);
+    }
+
+    /**
+     * 推送核算单位
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/addIndependentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addIndependentOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/addindependent", $body, $query, $extra);
     }
 
     /**
@@ -836,6 +849,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改核算单位名称
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/editIndependentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIndependentOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/editconversion", $body, $query, $extra);
+    }
+
+    /**
      * 修改开票配置
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/InvoiceController/editAction.md
      * @param array|object $body 入参类型
@@ -911,6 +937,19 @@ class MerchantSdk extends SdkBase
     public function editIsHealth($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editishealth", $body, $query, $extra);
+    }
+
+    /**
+     * 修改商户组织商保新会员服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseDrugStoreController/editIsInsuranceMemberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsInsurancemember($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasedrugstore/editisinsurancemember", $body, $query, $extra);
     }
 
     /**
@@ -1070,6 +1109,32 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 更新门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePlatformController/editOrganizeBaseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editOrganizeBasePlatform($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/editorganizebase", $body, $query, $extra);
+    }
+
+    /**
+     * 更新顶级组织
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePlatformController/editOrganizeBaseRootAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editOrganizeBaseRootPlatform($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/editorganizebaseroot", $body, $query, $extra);
+    }
+
+    /**
      * 修改上级组织
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editParentIdAction.md
      * @param array|object $body 入参类型
@@ -1080,6 +1145,19 @@ class MerchantSdk extends SdkBase
     public function editParentId($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/editparentid", $body, $query, $extra);
+    }
+
+    /**
+     * 修改核算单位关系
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/editParentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editParentOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/editparent", $body, $query, $extra);
     }
 
     /**
@@ -2539,6 +2617,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 业务数据统计
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePlatformController/propertiesSumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function propertiesSumPlatform($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/propertiessum", $body, $query, $extra);
+    }
+
+    /**
      * relationAction()
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerController/relationAction.md
      * @param array|object $body 入参类型
@@ -2939,6 +3030,19 @@ class MerchantSdk extends SdkBase
     public function statusEndRoot($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/statusendroot", $body, $query, $extra);
+    }
+
+    /**
+     * 状态数量统计
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePlatformController/statusSumAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function statusSumPlatform($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/statussum", $body, $query, $extra);
     }
 
     /**
