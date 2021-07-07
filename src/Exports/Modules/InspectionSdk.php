@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-30
- * @time   Wed, 30 Jun 2021 09:55:48 +0800
+ * @date   2021-07-07
+ * @time   Wed, 07 Jul 2021 13:19:24 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -277,7 +277,7 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 列表
+     * 列表(带分页)
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CompanyController/indexAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -287,6 +287,19 @@ class InspectionSdk extends SdkBase
     public function companyIndex($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/company/index", $body, $query, $extra);
+    }
+
+    /**
+     * 列表(不带分页)
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/CompanyController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/list", $body, $query, $extra);
     }
 
     /**
@@ -1668,7 +1681,20 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 详情
+     * 条码查询订单信息
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/barcodeSearchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderBarcodeSearch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/barcodeSearch", $body, $query, $extra);
+    }
+
+    /**
+     * 批次详情
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderBatchController/editAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1743,6 +1769,19 @@ class InspectionSdk extends SdkBase
     public function orderCancelInspection($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/cancelInspection", $body, $query, $extra);
+    }
+
+    /**
+     * 删除订单
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/delete", $body, $query, $extra);
     }
 
     /**
@@ -2110,19 +2149,6 @@ class InspectionSdk extends SdkBase
     }
 
     /**
-     * 检测报告自动导入
-     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/detectionImportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function reportDetectionImport($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/report/detection/import", $body, $query, $extra);
-    }
-
-    /**
      * 检查报告列表
      * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/listAction.md
      * @param array|object $body 入参类型
@@ -2211,6 +2237,19 @@ class InspectionSdk extends SdkBase
     public function reportQualityList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/report/quality/list", $body, $query, $extra);
+    }
+
+    /**
+     * 检测报告导入
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/Detection/ReportController/receiveAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function reportReceive($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/report/receive", $body, $query, $extra);
     }
 
     /**
