@@ -624,4 +624,14 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/fundAccount/get", $body);
     }
+
+    /**
+     * 撤销充值申请
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptRevoke($body)
+    {
+        return $this->restful("POST", "/receipt/auditRetract", $body);
+    }
 }
