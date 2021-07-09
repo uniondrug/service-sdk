@@ -421,4 +421,15 @@ class JavaPurchaseSdk extends SdkBase
     public function changePolicyNoList($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/project/changePolicyNoList', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 重新发起开票
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function invoiceCreate($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseFinance/invoiceCreate', $body, $query = null, $extra = null);
+    }
 }
