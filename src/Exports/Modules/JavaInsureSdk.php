@@ -4,15 +4,14 @@
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 
-use Uniondrug\ServiceSdk\Sdk;
-use Uniondrug\ServiceSdk\ServiceSdkInterface;
+use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 
 /**
  * java 平台的投保理赔系统
  * Class JavaInsureSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class JavaInsureSdk extends Sdk implements ServiceSdkInterface
+class JavaInsureSdk extends SdkBase
 
 {
     protected $serviceName = 'jm-insure';
