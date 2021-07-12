@@ -1124,4 +1124,34 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policy/configurationPolicyStrategy", $body);
     }
+
+    /**
+     * 创建保障投保
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function guaranteeInsureSave($body)
+    {
+        return $this->restful("POST", "/guaranteeInsure/save", $body);
+    }
+
+    /**
+     * 创建保障理赔
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function guaranteeClaimSave($body)
+    {
+        return $this->restful("POST", "/guaranteeClaim/save", $body);
+    }
+
+    /**
+     * 根据保障理赔单号保存支付信息
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function guaranteeClaimPaySaveByGuarantee($body)
+    {
+        return $this->restful("POST", "/guaranteeClaimPay/saveByGuarantee", $body);
+    }
 }

@@ -634,4 +634,15 @@ class JavaCoinSdk extends SdkBase
     {
         return $this->restful("POST", "/receipt/auditRetract", $body);
     }
+
+    /**
+     * 资金池按流水号原路返还
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundAccountRefundBySerial($body)
+    {
+        return $this->restful("POST", "/fundAccount/delBalance", $body);
+    }
+
 }
