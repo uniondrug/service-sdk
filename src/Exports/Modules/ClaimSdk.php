@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-05-28
- * @time   Fri, 28 May 2021 13:24:35 +0800
+ * @date   2021-07-13
+ * @time   Tue, 13 Jul 2021 11:45:50 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -329,6 +329,45 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimPaymentController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimPaymentCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claimPayment/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimPaymentController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimPaymentDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claimPayment/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimPaymentController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimPaymentPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claimPayment/paging", $body, $query, $extra);
+    }
+
+    /**
      * 打款失败
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/payNoAction.md
      * @param array|object $body 入参类型
@@ -482,6 +521,32 @@ class ClaimSdk extends SdkBase
     public function getDataByClaimNos($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/claim/getDataByClaimNos", $body, $query, $extra);
+    }
+
+    /**
+     * 资金池扣减
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/PoolController/deductAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function poolDeduct($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/pool/deduct", $body, $query, $extra);
+    }
+
+    /**
+     * 根据原扣减还原资金池
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/PoolController/returndAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function poolReturnd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/pool/returnd", $body, $query, $extra);
     }
 
     /**
