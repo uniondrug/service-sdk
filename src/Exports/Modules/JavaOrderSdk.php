@@ -56,9 +56,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 取消订单
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderCancel($body)
     {
@@ -67,9 +67,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 取消子订单
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderCancelSub($body)
     {
@@ -78,9 +78,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 商品或主表单退单
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderRefund($body)
     {
@@ -89,9 +89,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 服务退货流程
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderRefundService($body)
     {
@@ -100,9 +100,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单退款
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderCashierRefund($body)
     {
@@ -111,9 +111,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单支付
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderCashierCreate($body)
     {
@@ -122,9 +122,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单主订单查询
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryMain($body)
     {
@@ -133,9 +133,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单子订单详情
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQuerySub($body)
     {
@@ -144,9 +144,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单memberId查询主订单
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryMember($body)
     {
@@ -155,9 +155,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单子订单分页列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryPage($body)
     {
@@ -166,9 +166,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 子订单查询列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryBycondition($body)
     {
@@ -177,9 +177,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 子订单列表检索(已转到 javaOrderQuerySdk.php)
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQuerySubOrderListForAdmin($body)
     {
@@ -199,9 +199,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 根据退单号查询退款商品列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryRefundGoodsListForAdmin($body)
     {
@@ -210,9 +210,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 根据子订单号查询退款单列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryRefundList($body)
     {
@@ -221,9 +221,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 根据子订单号查询退款商品列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryItemListByOrderNo($body)
     {
@@ -232,9 +232,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单退单退款接口
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderRefundCashierExecute($body)
     {
@@ -243,9 +243,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单列表接口
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function queryMainOrderListByTerm($body)
     {
@@ -254,9 +254,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 重复支付主订单退款接口
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function mainOrderRefundCashier($body)
     {
@@ -265,9 +265,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 已撤销有付款信息的子订单退款接口
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function subOrderRefundCashier($body)
     {
@@ -276,9 +276,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 订单退款查询接口
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryCashierCancel($body)
     {
@@ -287,9 +287,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 根据门店id统计审核失败订单数量
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryAuditByStore($body)
     {
@@ -298,9 +298,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 根据主订单号集合获取子订单列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function queryMainOrderNoList($body)
     {
@@ -309,9 +309,9 @@ class JavaOrderSdk extends SdkBase
 
     /**
      * 组合商品退货流程
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderRefundPackage($body)
     {
@@ -337,6 +337,26 @@ class JavaOrderSdk extends SdkBase
     public function deliver($body)
     {
         return $this->restful("POST", "/logistics/deliver/notify", $body);
+    }
+
+    /**
+     * 到家配送发货
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function o2oDeliver($body)
+    {
+        return $this->restful("POST", "/order/deliver/notify", $body);
+    }
+
+    /**
+     * 收货
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function receive($body)
+    {
+        return $this->restful("POST", "/logistics/receive/notify", $body);
     }
 
     /**
