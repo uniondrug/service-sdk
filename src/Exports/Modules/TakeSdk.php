@@ -199,6 +199,19 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 出单量
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/orderQuantityAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function orderQuantity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/order/quantity", $body, $query, $extra);
+    }
+
+    /**
      * 搜索订单
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/searchAction.md
      * @param array|object $body  入参类型
