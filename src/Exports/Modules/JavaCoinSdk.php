@@ -642,7 +642,7 @@ class JavaCoinSdk extends SdkBase
      */
     public function fundAccountRefundBySerial($body)
     {
-        return $this->restful("POST", "/fundAccount/delBalance", $body);
+        return $this->restful("POST", "/fundAccount/refundBySerial", $body);
     }
 
 }
