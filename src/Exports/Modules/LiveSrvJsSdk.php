@@ -210,4 +210,17 @@ class LiveSrvJsSdk extends SdkBase
     {
         return $this->restful("POST", "/live/endLiveByBatchNo", $body, $query, $extra);
     }
+
+    /**
+     * 结束直播文档
+     * @link  https://git.uniondrug.com/code/1/bizcenter/biz-basic/java.middleend.live/blob/development/docs-api/uniondrug-live-service/%E6%A0%B9%E6%8D%AE%E5%9C%BA%E6%AC%A1%E5%8F%B7%E6%89%B9%E9%87%8F%E6%9F%A5%E8%AF%A2.md
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function liveQueryListByBatchNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/queryListByBatchNo", $body, $query, $extra);
+    }
 }
