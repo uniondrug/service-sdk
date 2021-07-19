@@ -149,6 +149,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property JavaImSdk                                                        $javaIm
  * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk            $gsMossWeChat
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk         $javaUserService
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementMngSdk        $javaAgreementMngService
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementQrySdk        $javaAgreementQryService
