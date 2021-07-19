@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-28
- * @time   Mon, 28 Jun 2021 16:28:00 +0800
+ * @date   2021-07-14
+ * @time   Wed, 14 Jul 2021 18:19:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -131,19 +131,6 @@ class PsDstoreMemberSdk extends SdkBase
     public function activityPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/paging", $body, $query, $extra);
-    }
-
-    /**
-     * 停用方案-已废弃
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/setFailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function activitySetFail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/activity/set/fail", $body, $query, $extra);
     }
 
     /**
@@ -1408,6 +1395,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * export
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/exportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function liveCourseExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/live/course/export", $body, $query, $extra);
+    }
+
+    /**
      * 后台详情
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/LiveCourseController/infoAction.md
      * @param array|object $body 入参类型
@@ -2318,7 +2318,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 关注送红包-已废弃
+     * 手动补发红包
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/ActivityController/sendCardAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据

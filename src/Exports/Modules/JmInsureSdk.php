@@ -1098,6 +1098,7 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/reparationsReceipt/batchContinueReceipt", $body);
     }
+
     /**
      * 批量修改订单支付日期
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_3.5/doc/api/ReparationsReceiptController/batchContinueReceiptApi.md
@@ -1109,5 +1110,48 @@ class JmInsureSdk extends SdkBase
     public function batchUpdatePaidTime($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/mbs/order/update/orderPaidTime", $body);
+    }
+
+    /**
+     * 配置保单策略
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_strategy_update/doc/api/PolicyController/configurationPolicyStrategy.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyConfigurationPolicyStrategy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/configurationPolicyStrategy", $body);
+    }
+
+    /**
+     * 创建保障投保
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function guaranteeInsureSave($body)
+    {
+        return $this->restful("POST", "/guaranteeInsure/save", $body);
+    }
+
+    /**
+     * 创建保障理赔
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function guaranteeClaimSave($body)
+    {
+        return $this->restful("POST", "/guaranteeClaim/save", $body);
+    }
+
+    /**
+     * 根据保障理赔单号保存支付信息
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function guaranteeClaimPaySaveByGuarantee($body)
+    {
+        return $this->restful("POST", "/guaranteeClaimPay/saveByGuarantee", $body);
     }
 }

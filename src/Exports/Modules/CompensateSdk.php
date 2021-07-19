@@ -160,7 +160,7 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 理赔汇总列表
+     * 理赔汇总分页列表
      * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ClaimController/SummaryPagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -170,6 +170,32 @@ class CompensateSdk extends SdkBase
     public function claimSummaryPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/claim/summary", $body, $query, $extra);
+    }
+
+    /**
+     * 理赔汇总列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ClaimController/SummaryPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimSummaryList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/summary/list", $body, $query, $extra);
+    }
+
+    /**
+     * 统计理赔单关联的项目下所有用户权益总额
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ClaimController/statisticsEquityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimStatisticsEquity($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/statistics/equity", $body, $query, $extra);
     }
 
     /**
