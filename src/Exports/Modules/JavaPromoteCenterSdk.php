@@ -298,4 +298,14 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/info/queryMerchantStatus", $body);
     }
+
+    /**
+     * 查询营销所有商家活动入口
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function queryActivity($body)
+    {
+        return $this->restful("POST", "/trial/queryActivity", $body);
+    }
 }
