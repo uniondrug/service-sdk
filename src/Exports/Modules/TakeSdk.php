@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-07-08
- * @time   Thu, 08 Jul 2021 17:17:28 +0800
+ * @date   2021-07-20
+ * @time   Tue, 20 Jul 2021 14:02:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -32,9 +32,9 @@ class TakeSdk extends SdkBase
     /**
      * 店员接单
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/acceptOrderAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function assistantAcceptOrder($body, $query = null, $extra = null)
@@ -45,9 +45,9 @@ class TakeSdk extends SdkBase
     /**
      * 店员配送
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/assistantDeliverAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function assistantDeliver($body, $query = null, $extra = null)
@@ -58,9 +58,9 @@ class TakeSdk extends SdkBase
     /**
      * 店员送达
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/assistantFinishAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function assistantFinish($body, $query = null, $extra = null)
@@ -69,24 +69,11 @@ class TakeSdk extends SdkBase
     }
 
     /**
-     * 可接单店员列表
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/assistantListAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function assistantList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/list", $body, $query, $extra);
-    }
-
-    /**
      * 店员拒单
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/rejectOrderAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function assistantRejectOrder($body, $query = null, $extra = null)
@@ -97,9 +84,9 @@ class TakeSdk extends SdkBase
     /**
      * 移交店员
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/transferAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function assistantTransfer($body, $query = null, $extra = null)
@@ -110,9 +97,9 @@ class TakeSdk extends SdkBase
     /**
      * 物流配送
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/expressDeliverAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function expressDeliver($body, $query = null, $extra = null)
@@ -121,24 +108,11 @@ class TakeSdk extends SdkBase
     }
 
     /**
-     * 查看全国订单物流信息
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/nExpressQueryAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function expressQuery($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/deliver/express/query", $body, $query, $extra);
-    }
-
-    /**
      * 获取接单状态
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/getStatusAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function getAssistantStatus($body, $query = null, $extra = null)
@@ -149,9 +123,9 @@ class TakeSdk extends SdkBase
     /**
      * 详情接口
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/NoticeController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function noticeDetail($body, $query = null, $extra = null)
@@ -162,9 +136,9 @@ class TakeSdk extends SdkBase
     /**
      * 列表接口
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/NoticeController/listAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function noticeList($body, $query = null, $extra = null)
@@ -175,9 +149,9 @@ class TakeSdk extends SdkBase
     /**
      * 订单详情
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/detailAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function orderDetail($body, $query = null, $extra = null)
@@ -186,11 +160,11 @@ class TakeSdk extends SdkBase
     }
 
     /**
-     * 订单统计
+     * 待处理订单统计
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/indexAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function orderIndex($body, $query = null, $extra = null)
@@ -201,9 +175,9 @@ class TakeSdk extends SdkBase
     /**
      * 订单列表
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/pagingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function orderPaging($body, $query = null, $extra = null)
@@ -214,9 +188,9 @@ class TakeSdk extends SdkBase
     /**
      * 出单量
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/orderQuantityAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function orderQuantity($body, $query = null, $extra = null)
@@ -225,24 +199,24 @@ class TakeSdk extends SdkBase
     }
 
     /**
-     * 搜索订单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/searchAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * 创建推药记录
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/RecommendController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function orderSearch($body, $query = null, $extra = null)
+    public function recommendCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/search", $body, $query, $extra);
+        return $this->restful("POST", "/recommend/create", $body, $query, $extra);
     }
 
     /**
      * 提货码提货
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/selfFetchAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function selfFetched($body, $query = null, $extra = null)
