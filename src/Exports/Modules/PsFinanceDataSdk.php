@@ -1565,6 +1565,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 核算单位下开启微信推送用户列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerWeChatPushList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/wechat/push/list", $body, $query, $extra);
+    }
+
+    /**
      * 连锁用户更新状态
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/detailAction.md
      * @param array|object $body  入参类型
