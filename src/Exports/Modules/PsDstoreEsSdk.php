@@ -106,4 +106,69 @@ class PsDstoreEsSdk extends SdkBase
     {
         return $this->restful("POST", "/assistant/updateTrainingStatus", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/ApplyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/create", $body, $query, $extra);
+    }
+
+    /**
+     * 创建索引
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/ApplyController/createIndexAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyCreateIndex($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/createIndex", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/ApplyController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 历史数据同步es脚本
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/ApplyController/syncJobAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applySyncJob($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/syncJob", $body, $query, $extra);
+    }
+
+    /**
+     * 更新
+     * @link https://uniondrug.coding.net/p/ps-dstore-es/git/blob/development/docs/api/ApplyController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/update", $body, $query, $extra);
+    }
 }
