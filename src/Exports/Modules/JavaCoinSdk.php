@@ -645,4 +645,13 @@ class JavaCoinSdk extends SdkBase
         return $this->restful("POST", "/fundAccount/refundBySerial", $body);
     }
 
+    /**
+     * 获取可用进行实名认证的证件类型
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function userCardGetType($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getType", $body);
+    }
 }
