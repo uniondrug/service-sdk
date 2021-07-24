@@ -102,9 +102,9 @@ class TakeSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function expressDeliver($body, $query = null, $extra = null)
+    public function chooseDeliver($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/deliver/express", $body, $query, $extra);
+        return $this->restful("POST", "/choose/express", $body, $query, $extra);
     }
 
     /**
@@ -115,9 +115,9 @@ class TakeSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function expressDeliverCreate($body, $query = null, $extra = null)
+    public function deliverCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/deliver/express/create", $body, $query, $extra);
+        return $this->restful("POST", "/deliver/create", $body, $query, $extra);
     }
 
     /**
