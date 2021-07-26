@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-10
- * @time   Thu, 10 Jun 2021 15:37:40 +0800
+ * @date   2021-07-26
+ * @time   Mon, 26 Jul 2021 14:06:39 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -53,6 +53,19 @@ class DrugstoreStatisticSdk extends SdkBase
     public function assistantPrivilegeDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/privilege/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 推药数据
+     * @link https://uniondrug.coding.net/p/module.drugstore.statistic/git/blob/development/docs/api/AssistantStatisticController/recommendAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantRecommend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/recommend", $body, $query, $extra);
     }
 
     /**
