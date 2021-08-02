@@ -615,6 +615,19 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * 大数据表是否更新
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/TableDataController/tablesStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tablesStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/table/status", $body, $query, $extra);
+    }
+
+    /**
      * 无主门店列表
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreOperationInfoEdController/unclaimedStoreListAction.md
      * @param array|object $body 入参类型
