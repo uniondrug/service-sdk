@@ -1128,7 +1128,7 @@ class JmInsureSdk extends SdkBase
     /**
      * 创建保障投保
      * @param $body
-     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     * @return ResponseInterface
      */
     public function guaranteeInsureSave($body)
     {
@@ -1138,7 +1138,7 @@ class JmInsureSdk extends SdkBase
     /**
      * 创建保障理赔
      * @param $body
-     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     * @return ResponseInterface
      */
     public function guaranteeClaimSave($body)
     {
@@ -1148,10 +1148,23 @@ class JmInsureSdk extends SdkBase
     /**
      * 根据保障理赔单号保存支付信息
      * @param $body
-     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     * @return ResponseInterface
      */
     public function guaranteeClaimPaySaveByGuarantee($body)
     {
         return $this->restful("POST", "/guaranteeClaimPay/saveByGuarantee", $body);
+    }
+
+    /**
+     * 保费手费费用
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_feeReceipt_optimization/doc/api/PolicyProceduresController/listFeeBill.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function premiumFeePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyProcedures/listFeeBill", $body);
     }
 }
