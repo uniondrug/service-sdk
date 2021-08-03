@@ -5097,7 +5097,7 @@ class SettlementSdk extends SdkBase
      */
     public function unitBlockInfoList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/unit/block/list", $body, $query, $extra);
+        return $this->restful("POST", "/unitBlockInfo/list", $body, $query, $extra);
     }
 
     /**
@@ -5110,6 +5110,6 @@ class SettlementSdk extends SdkBase
      */
     public function unitBlockInfoUpdate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/unit/block/update", $body, $query, $extra);
+        return $this->restful("POST", "/unitBlockInfo/update", $body, $query, $extra);
     }
 }
