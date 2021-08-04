@@ -5103,4 +5103,43 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/externalApply/detailByApplyId", $body, $query, $extra);
     }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function AttachmentCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/create", $body, $query, $extra);
+    }
+
+    /**
+     * 根据业务ID删除附件
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/delByRelationIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function AttachmentDelByRelationId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/delByRelationId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据业务ID获取附件
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/getByRelationIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function AttachmentGetByRelationId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/getByRelationId", $body, $query, $extra);
+    }
 }
