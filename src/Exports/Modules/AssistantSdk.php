@@ -5112,7 +5112,7 @@ class AssistantSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function AttachmentCreate($body, $query = null, $extra = null)
+    public function attachmentCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/attachment/create", $body, $query, $extra);
     }
@@ -5125,7 +5125,7 @@ class AssistantSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function AttachmentDelByRelationId($body, $query = null, $extra = null)
+    public function attachmentDelByRelationId($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/attachment/delByRelationId", $body, $query, $extra);
     }
@@ -5138,7 +5138,7 @@ class AssistantSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function AttachmentGetByRelationId($body, $query = null, $extra = null)
+    public function attachmentGetByRelationId($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/attachment/getByRelationId", $body, $query, $extra);
     }
