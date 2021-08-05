@@ -41,7 +41,15 @@ class JavaProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/activate/setting/create", $body);
     }
-
+    /**
+     * 创建激活设置
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function activateSettingEdit($body)
+    {
+        return $this->restful("POST", "/activate/setting/edit", $body);
+    }
     /**
      * 查看激活设置详情
      * @param $body
