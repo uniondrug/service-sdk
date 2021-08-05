@@ -808,4 +808,17 @@ class PsSdk extends SdkBase
     {
         return $this->restful("POST", "/merchantOrdSumD/getByMerchantId", $body, $query, $extra);
     }
+
+    /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserMerchantDController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function UMDGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userMerchantD/getByMerchantId", $body, $query, $extra);
+    }
 }
