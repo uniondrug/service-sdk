@@ -5142,4 +5142,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/attachment/getByRelationId", $body, $query, $extra);
     }
+
+    /**
+     * 根据业务ID获取附件 [批量]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/getByRelationIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function attachmentGetByRelationIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/getByRelationIds", $body, $query, $extra);
+    }
 }
