@@ -602,6 +602,19 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * userOrdStoreSumM不分页列表 (用作门店任务派发)
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreStatisticController/userOrdStoreSumMListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserOrdStoreSumMListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/userOrdStoreSumMListing", $body, $query, $extra);
+    }
+
+    /**
      * 大数据各表任务执行情况
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/TableDataController/tableDataAction.md
      * @param array|object $body 入参类型
