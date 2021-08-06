@@ -5168,4 +5168,17 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/customer/create", $body, $query, $extra);
     }
+
+    /**
+     * 带负责人查询分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OrganizeBaseController/pagingWithPartnerAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingWithPartner($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/pagingWithPartner", $body, $query, $extra);
+    }
 }
