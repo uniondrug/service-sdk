@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-03-02
- * @time   Tue, 02 Mar 2021 23:39:53 +0800
+ * @date   2021-08-09
+ * @time   Mon, 09 Aug 2021 10:19:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -121,7 +121,7 @@ class ClerkSdk extends SdkBase
     }
 
     /**
-     * 注销店员
+     * 注销|移除
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/destroyAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
@@ -160,7 +160,7 @@ class ClerkSdk extends SdkBase
     }
 
     /**
-     * 冻结/解冻店员
+     * 冻结|解冻
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/freezeAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
@@ -264,6 +264,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantOperateCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/operate/create", $body, $query, $extra);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/detailAction.md
      * @param array|object $body  入参类型
@@ -326,6 +339,19 @@ class ClerkSdk extends SdkBase
     public function assistantPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 店员完善度
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantPerfectAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantPerfect($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/perfect", $body, $query, $extra);
     }
 
     /**
@@ -537,6 +563,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 开通药师
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/changePharmacistStatusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function changePharmacistStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/changePharmacistStatus", $body, $query, $extra);
+    }
+
+    /**
      * 创建行为
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/LevelController/actionCreateAction.md
      * @param array|object $body  入参类型
@@ -706,6 +745,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 根据开通商保的连锁批量开通药师
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/openPharmacistByMerchantAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function openPharmacistByMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/openPharmacistByMerchant", $body, $query, $extra);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/PayAccountController/detailAction.md
      * @param array|object $body  入参类型
@@ -784,84 +836,6 @@ class ClerkSdk extends SdkBase
     }
 
     /**
-     * v1Action()
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/IndexController/v1Action.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function v1($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/index/v1", $body, $query, $extra);
-    }
-
-    /**
-     * 创建
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/OperateController/createAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function assistantOperateCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/operate/create", $body, $query, $extra);
-    }
-
-    /**
-     * 开通药师
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/changePharmacistStatusAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function changePharmacistStatus($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/changePharmacistStatus", $body, $query, $extra);
-    }
-
-    /**
-     * 根据开通商保的连锁批量开通药师
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/openPharmacistByMerchantAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function openPharmacistByMerchant($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/openPharmacistByMerchant", $body, $query, $extra);
-    }
-
-    /**
-     * 店员完善度
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantPerfectAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function assistantPerfect($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/perfect", $body, $query, $extra);
-    }
-
-    /**
-     * 店员完善度
-     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantPerfectAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function transferApplyCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/assistant/transfer/apply/create", $body, $query, $extra);
-    }
-
-    /**
      * 调店申请审核
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/transferApplyCheckAction.md
      * @param array|object $body  入参类型
@@ -875,6 +849,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * transferApplyCreate
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/transferApplyCreateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function transferApplyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/transfer/apply/create", $body, $query, $extra);
+    }
+
+    /**
      * 调店申请分页列表
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/transferApplyAction.md
      * @param array|object $body  入参类型
@@ -885,5 +872,18 @@ class ClerkSdk extends SdkBase
     public function transferApplyPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/transfer/apply/paging", $body, $query, $extra);
+    }
+
+    /**
+     * v1Action()
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/IndexController/v1Action.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function v1($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/index/v1", $body, $query, $extra);
     }
 }
