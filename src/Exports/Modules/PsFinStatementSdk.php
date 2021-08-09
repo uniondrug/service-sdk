@@ -316,6 +316,19 @@ class PsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 获取应结算金额
+     * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/settledAmountAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function directSettledAmount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/direct/fsDirectSettlement/settledAmount", $body, $query, $extra);
+    }
+
+    /**
      * 更新对账单下订单的状态接口
      * @link https://uniondrug.coding.net/p/ps-fin-statement/git/blob/development/docs/api/Direct/FsDirectSettlementController/updateSettlementStatusAction.md
      * @param array|object $body 入参类型
