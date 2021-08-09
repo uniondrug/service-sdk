@@ -5194,4 +5194,69 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/organizebase/insuranceLevelList", $body, $query, $extra);
     }
+
+    /**
+     * 完成
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/completeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/complete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据workId获取详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/getByWorkIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceGetByWorkId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/getByWorkId", $body, $query, $extra);
+    }
+
+    /**
+     * 列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/list", $body, $query, $extra);
+    }
 }
