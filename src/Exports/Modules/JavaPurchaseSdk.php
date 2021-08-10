@@ -432,4 +432,26 @@ class JavaPurchaseSdk extends SdkBase
     public function invoiceCreate($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchaseFinance/invoiceCreate', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 根据项目 ids 获取采购项目信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseProjectListInfos($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchaseProject/list/infos', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 根据批次 ids 获取采购项目信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchasePileListInfos($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/purchasePile/list/infos', $body, $query = null, $extra = null);
+    }
 }

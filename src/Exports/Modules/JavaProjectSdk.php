@@ -99,4 +99,24 @@ class JavaProjectSdk extends SdkBase
     {
         return $this->restful("POST", "/activate/setting/getByPurchaseProjectIdAndPurchasePileId", $body);
     }
+
+    /**
+     * 根据项目id 获取配置
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function activateSettingGetByPurchaseProjectIds($body)
+    {
+        return $this->restful("POST", "/activate/setting/getByPurchaseProjectIds", $body);
+    }
+
+    /**
+     * 根据批次ids 获取配置
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function activateSettingGetByPurchasePileIds($body)
+    {
+        return $this->restful("POST", "/activate/setting/getByPurchasePileIds", $body);
+    }
 }
