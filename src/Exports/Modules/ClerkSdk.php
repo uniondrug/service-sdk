@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-09
- * @time   Mon, 09 Aug 2021 10:19:19 +0800
+ * @date   2021-08-11
+ * @time   Wed, 11 Aug 2021 15:44:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -105,6 +105,19 @@ class ClerkSdk extends SdkBase
     public function assistantBatchFreezeByMerchant($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/batchFreezeByMerchant", $body, $query, $extra);
+    }
+
+    /**
+     * assistantByMaxAction()
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantByMaxAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantByMax($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/assistantByMax", $body, $query, $extra);
     }
 
     /**
