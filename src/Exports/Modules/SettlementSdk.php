@@ -5086,4 +5086,30 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/payment/syncDirectPayment", $body, $query, $extra);
     }
+
+    /**
+     * 核算单位冻结日期列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/UnitBlockInfoController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function unitBlockInfoList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/unitBlockInfo/list", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/UnitBlockInfoController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function unitBlockInfoUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/unitBlockInfo/update", $body, $query, $extra);
+    }
 }

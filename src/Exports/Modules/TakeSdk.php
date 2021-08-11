@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2019-11-15
- * @time   Fri, 15 Nov 2019 14:23:10 +0800
+ * @date   2021-07-20
+ * @time   Tue, 20 Jul 2021 14:02:34 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -30,321 +30,210 @@ class TakeSdk extends SdkBase
     protected $serviceName = 'take.module';
 
     /**
-     * 拒绝接口
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/assistantRefuseAction.md
-     * @param array $body 入参类型
+     * 店员接单
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/acceptOrderAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function assistantRefuse($body)
+    public function assistantAcceptOrder($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/assistantRefuse", $body);
+        return $this->restful("POST", "/assistant/accept/order", $body, $query, $extra);
     }
 
     /**
-     * 取消订单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/cancelAction.md
-     * @param array $body 入参类型
+     * 店员配送
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/assistantDeliverAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function cancel($body)
+    public function assistantDeliver($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/cancel", $body);
+        return $this->restful("POST", "/deliver/assistant", $body, $query, $extra);
     }
 
     /**
-     * 关闭接单模式
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/closeAction.md
-     * @param array $body 入参类型
+     * 店员送达
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/assistantFinishAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function close($body)
+    public function assistantFinish($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/user/take/close", $body);
+        return $this->restful("POST", "/deliver/assistant/finish", $body, $query, $extra);
     }
 
     /**
-     * 设置接单模式
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/configAction.md
-     * @param array $body 入参类型
+     * 店员拒单
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/rejectOrderAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function config($body)
+    public function assistantRejectOrder($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/user/take/config", $body);
+        return $this->restful("POST", "/assistant/reject/order", $body, $query, $extra);
     }
 
     /**
-     * 确认开启接单模式的店员数量
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/countAction.md
-     * @param array $body 入参类型
+     * 移交店员
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/transferAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function count($body)
+    public function assistantTransfer($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/user/take/count", $body);
+        return $this->restful("POST", "/assistant/transfer", $body, $query, $extra);
     }
 
     /**
-     * 创建订单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/createAction.md
-     * @param array $body 入参类型
+     * 物流配送
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/expressDeliverAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function create($body)
+    public function deliverChoose($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/create", $body);
+        return $this->restful("POST", "/deliver/choose", $body, $query, $extra);
+    }
+
+    /**
+     * 新增物流
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/expressCreateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function deliverCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/deliver/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取接单状态
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/getStatusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function getAssistantStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/assistant/get/status", $body, $query, $extra);
+    }
+
+    /**
+     * 详情接口
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/NoticeController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/notice/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表接口
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/NoticeController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function noticeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/notice/list", $body, $query, $extra);
     }
 
     /**
      * 订单详情
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/detailAction.md
-     * @param array $body 入参类型
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function detail($body)
+    public function orderDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/detail", $body);
+        return $this->restful("POST", "/order/detail", $body, $query, $extra);
     }
 
     /**
-     * 查找所有该门店下的店员的id
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/findAllAction.md
-     * @param array $body 入参类型
+     * 待处理订单统计
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/indexAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function findAll($body)
+    public function orderIndex($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/user/take/findAll", $body);
+        return $this->restful("POST", "/order/index", $body, $query, $extra);
     }
 
     /**
-     * 已完成
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/finishAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function finish($body)
-    {
-        return $this->restful("POST", "/order/finish", $body);
-    }
-
-    /**
-     * 查看该店员是否接单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/getDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getDetail($body)
-    {
-        return $this->restful("POST", "/user/take/getDetail", $body);
-    }
-
-    /**
-     * 新订单详情
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/newDetailAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getOrderDetail($body)
-    {
-        return $this->restful("POST", "/order/new/detail", $body);
-    }
-
-    /**
-     * 新订单分页
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/newPagingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function getOrderPaging($body)
-    {
-        return $this->restful("POST", "/order/new/paging", $body);
-    }
-
-    /**
-     * 商品缺货
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/goodShortageCreateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function goodShortageCreate($body)
-    {
-        return $this->restful("POST", "/order/good/shortage/create", $body);
-    }
-
-    /**
-     * 用户拒绝
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/memberRefuseAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function memberRefuse($body)
-    {
-        return $this->restful("POST", "/order/memberRefuse", $body);
-    }
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/MessageController/createAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messageCreate($body)
-    {
-        return $this->restful("POST", "/message/create", $body);
-    }
-
-    /**
-     * 无分页列表
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/MessageController/listAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messageListing($body)
-    {
-        return $this->restful("POST", "/message/list", $body);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/MessageController/updateAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function messageUpdate($body)
-    {
-        return $this->restful("POST", "/message/update", $body);
-    }
-
-    /**
-     * 批量查询对应门店的接单数量
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/o2oAcceptCountAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function o2oAcceptCount($body)
-    {
-        return $this->restful("POST", "/user/take/o2oAcceptCount", $body);
-    }
-
-    /**
-     * 批量查询对应门店的接单数量
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/User/TakeController/o2oAcceptCountOrganAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function o2oAcceptCountOrgan($body)
-    {
-        return $this->restful("POST", "/user/take/o2oAcceptCountOrgan", $body);
-    }
-
-    /**
-     * 自动处理接单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/orderAutoDriverAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function orderAutoDriver($body)
-    {
-        return $this->restful("POST", "/order/orderAutoDriver", $body);
-    }
-
-    /**
-     * 订单分页
+     * 订单列表
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/pagingAction.md
-     * @param array $body 入参类型
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function paging($body)
+    public function orderPaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/paging", $body);
+        return $this->restful("POST", "/order/paging", $body, $query, $extra);
     }
 
     /**
-     * 拣货
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/pickAction.md
-     * @param array $body 入参类型
+     * 出单量
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/orderQuantityAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function pick($body)
+    public function orderQuantity($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/pick", $body);
+        return $this->restful("POST", "/order/order/quantity", $body, $query, $extra);
     }
 
     /**
-     * 拣单订单号
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/pickOrderNoAction.md
-     * @param array $body 入参类型
+     * 创建推药记录
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/RecommendController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function pickOrderNo($body)
+    public function recommendCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/order/pickOrderNo", $body);
+        return $this->restful("POST", "/recommend/create", $body, $query, $extra);
     }
 
     /**
-     * 连锁列表
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/Partner/PartnerSwitchController/listAction.md
-     * @param array $body 入参类型
+     * 提货码提货
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/DeliverController/selfFetchAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function recordDetail($body)
+    public function selfFetched($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/partner/switch/list", $body);
-    }
-
-    /**
-     * 退款
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/refundAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function refund($body)
-    {
-        return $this->restful("POST", "/order/refund", $body);
-    }
-
-    /**
-     * 骑手接单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/sendAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function send($body)
-    {
-        return $this->restful("POST", "/order/send", $body);
-    }
-
-    /**
-     * 店员已接单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/takeAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function take($body)
-    {
-        return $this->restful("POST", "/order/take", $body);
-    }
-
-    /**
-     * 等待骑手接单
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/waitDrivingAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function waitDriving($body)
-    {
-        return $this->restful("POST", "/order/waitDriving", $body);
-    }
-
-    /**
-     * 等待骑手到店
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/waitStoreAction.md
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     */
-    public function waitStore($body)
-    {
-        return $this->restful("POST", "/order/waitStore", $body);
+        return $this->restful("POST", "/deliver/self/finish", $body, $query, $extra);
     }
 }

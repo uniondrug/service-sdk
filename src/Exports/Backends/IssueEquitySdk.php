@@ -41,4 +41,17 @@ class IssueEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/purchase/log/create", $body, $query, $extra);
     }
+
+    /**
+     * 项目执行情况统计
+     * @link https://uniondrug.coding.net/p/backend.equity.issue/git/tree/development/app/backend.equity.issue/api/Purchase/LogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectExecutionPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/statistics/project/Execution/info/paging", $body, $query, $extra);
+    }
 }

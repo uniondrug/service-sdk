@@ -48,7 +48,7 @@ class JsCleanCenterSdk extends SdkBase
     }
 
     /**
-     * 分页查询订单
+     * 根据主键id查询订单详情
      * @link https://git.uniondrug.com/code/1/finance/shares/js-newcleancenter/blob/development/docs-api/queryController/OrderDetailApi.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据

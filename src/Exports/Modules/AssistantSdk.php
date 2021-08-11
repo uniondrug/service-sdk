@@ -3373,6 +3373,19 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 部门列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/departmentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainGoalDepartment($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/goal/department", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainGoalController/updateAction.md
      * @param array|object $body 入参类型
@@ -3487,6 +3500,19 @@ class AssistantSdk extends SdkBase
     public function workChainDepartmentList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/work/chain/department/list", $body, $query, $extra);
+    }
+
+    /**
+     * 显示/不显示
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkChainDepartmentController/displayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function workChainDepartmentDisplay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/chain/department/display", $body, $query, $extra);
     }
 
     /**
@@ -4270,6 +4296,32 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 获取配置详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeAutoController/getConfAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workDistributeAutoGetConf($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workDistributeAuto/getConf", $body, $query, $extra);
+    }
+
+    /**
+     * 自动派发设置
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkDistributeAutoController/setAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workDistributeAutoSet($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workDistributeAuto/set", $body, $query, $extra);
+    }
+
+    /**
      * 根据用户ID批量获取负责区域
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserRegionController/getByUserIdsAction.md
      * @param array|object $body 入参类型
@@ -5027,6 +5079,19 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 中介渠道拜访任务
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskWorkIntermediaryVisitAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taskWorkIntermediaryVisit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/workIntermediaryVisit", $body, $query, $extra);
+    }
+
+    /**
      * 保司项目客户列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkInsuranceCustomerController/createAction.md
      * @param array|object $body 入参类型
@@ -5050,5 +5115,161 @@ class AssistantSdk extends SdkBase
     public function externalApplyDetailByApplyId($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/externalApply/detailByApplyId", $body, $query, $extra);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function attachmentCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/create", $body, $query, $extra);
+    }
+
+    /**
+     * 根据业务ID删除附件
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/delByRelationIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function attachmentDelByRelationId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/delByRelationId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据业务ID获取附件
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/getByRelationIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function attachmentGetByRelationId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/getByRelationId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据业务ID获取附件 [批量]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/AttachmentController/getByRelationIdsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function attachmentGetByRelationIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/attachment/getByRelationIds", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/DataService/CustomerController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function customerCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/customer/create", $body, $query, $extra);
+    }
+
+    /**
+     * 带负责人查询分页列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OrganizeBaseController/pagingWithPartnerAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pagingWithPartner($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/pagingWithPartner", $body, $query, $extra);
+    }
+
+    /**
+     * 按层级筛选保司列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Merchant/OrganizeBaseController/insuranceLevelListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insuranceLevelList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/insuranceLevelList", $body, $query, $extra);
+    }
+
+    /**
+     * 完成
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/completeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceComplete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/complete", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据workId获取详情
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/getByWorkIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceGetByWorkId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/getByWorkId", $body, $query, $extra);
+    }
+
+    /**
+     * 列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Work/WorkRecordIntermediaryVisitInsuranceController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workRecordIntermediaryVisitInsuranceList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/list", $body, $query, $extra);
     }
 }

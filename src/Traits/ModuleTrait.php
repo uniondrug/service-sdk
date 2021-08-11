@@ -132,6 +132,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk          $psDstoreMember
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreEsSdk              $psDstoreEs
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreReserveSdk         $psDstoreReserve
  * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
  * @property \Uniondrug\ServiceSdk\Exports\Modules\OtcSdk                     $otc
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk            $javaPurchase
@@ -149,6 +150,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
  * @property JavaImSdk                                                        $javaIm
  * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
  * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
+ * @property \Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk            $gsMossWeChat
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk         $javaUserService
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementMngSdk        $javaAgreementMngService
  * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementQrySdk        $javaAgreementQryService

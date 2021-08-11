@@ -602,6 +602,19 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * userOrdStoreSumM不分页列表 (用作门店任务派发)
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreStatisticController/userOrdStoreSumMListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function storeStatisticUserOrdStoreSumMListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/storeStatistic/userOrdStoreSumMListing", $body, $query, $extra);
+    }
+
+    /**
      * 大数据各表任务执行情况
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/TableDataController/tableDataAction.md
      * @param array|object $body 入参类型
@@ -612,6 +625,19 @@ class PsSdk extends SdkBase
     public function tableData($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/table/data", $body, $query, $extra);
+    }
+
+    /**
+     * 大数据表是否更新
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/TableDataController/tablesStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tablesStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/table/status", $body, $query, $extra);
     }
 
     /**
@@ -768,5 +794,70 @@ class PsSdk extends SdkBase
     public function workStoreList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/work/storeList", $body, $query, $extra);
+    }
+
+    /**
+     * 门店任务列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/storeIdsListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function workStoreIdsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/work/storeIdsList", $body, $query, $extra);
+    }
+
+    /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserPartnerSumInfoController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function UPSIGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPartnerSumInfo/getByMerchantId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/MerchantOrdSumDController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function MOSDGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchantOrdSumD/getByMerchantId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserMerchantDController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function UMDGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userMerchantD/getByMerchantId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserMerchantMController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function UMMGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userMerchantM/getByMerchantId", $body, $query, $extra);
     }
 }

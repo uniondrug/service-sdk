@@ -274,4 +274,25 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userRole/addIdentity", $body, $query, $extra);
     }
+
+    /**
+     * 获取可用进行实名认证的证件类型
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function userCardGetType($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getType", $body);
+    }
+
+    /**
+     * 根据memberId 和 证件类型 获取用户的证件信息
+     *
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function userCardGetById($body){
+
+         return $this->restful("POST", "/v2/api/userCard/getById", $body);
+    }
 }
