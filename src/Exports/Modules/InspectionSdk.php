@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-07-07
- * @time   Wed, 07 Jul 2021 13:19:24 +0800
+ * @date   2021-08-11
+ * @time   Wed, 11 Aug 2021 17:55:15 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1821,6 +1821,19 @@ class InspectionSdk extends SdkBase
     public function orderReportList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/reportList", $body, $query, $extra);
+    }
+
+    /**
+     * 查看已生成的条码
+     * @link https://uniondrug.coding.net/p/module.inspection/git/blob/development/docs/api/OrderController/showBarcodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderShowBarcode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/showBarCode", $body, $query, $extra);
     }
 
     /**
