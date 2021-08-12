@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-08-12
- * @time   Thu, 12 Aug 2021 13:20:25 +0800
+ * @time   Thu, 12 Aug 2021 15:29:51 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,32 @@ class PsScrmPulpSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-scrm-pulp';
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/AdminLogController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function adminLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/adminLog/create", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/AdminLogController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function adminLogPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/adminLog/paging", $body, $query, $extra);
+    }
 
     /**
      * 新增
