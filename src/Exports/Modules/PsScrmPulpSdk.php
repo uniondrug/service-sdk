@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-11
- * @time   Wed, 11 Aug 2021 17:22:46 +0800
+ * @date   2021-08-12
+ * @time   Thu, 12 Aug 2021 13:20:25 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -53,6 +53,19 @@ class PsScrmPulpSdk extends SdkBase
     public function memberDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 手机号获取会员信息
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/MemberController/getByMobileAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function memberGetByMobile($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/getByMobile", $body, $query, $extra);
     }
 
     /**
