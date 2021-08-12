@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-08-12
- * @time   Thu, 12 Aug 2021 15:29:51 +0800
+ * @time   Thu, 12 Aug 2021 18:41:29 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -118,5 +118,70 @@ class PsScrmPulpSdk extends SdkBase
     public function memberUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/member/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/PraiseController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function praiseCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/praise/create", $body, $query, $extra);
+    }
+
+    /**
+     * info
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/PraiseController/infoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function praiseInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/praise/info", $body, $query, $extra);
+    }
+
+    /**
+     * 添加组员
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/TeamController/addMemberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function teamAddMember($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/team/addMember", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/VisitController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function visitCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visit/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/VisitController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function visitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/visit/detail", $body, $query, $extra);
     }
 }
