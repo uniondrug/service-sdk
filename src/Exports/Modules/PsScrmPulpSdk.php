@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-08-13
- * @time   Fri, 13 Aug 2021 14:37:56 +0800
+ * @time   Fri, 13 Aug 2021 16:31:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -53,6 +53,19 @@ class PsScrmPulpSdk extends SdkBase
     public function adminLogPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/adminLog/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 获取一张未使用的兑换码
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/ReedomCodeController/notUsedAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function codeNotUsed($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/reedomCode/notUsed", $body, $query, $extra);
     }
 
     /**
@@ -147,6 +160,58 @@ class PsScrmPulpSdk extends SdkBase
     }
 
     /**
+     * 浆站ID获取批次列表
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/PulpPileController/getListByPulpIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pulpPileGetListByPulpId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/pulpPile/getListByPulpId", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/ReedomCodeController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function reedomCodeUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/reedomCode/update", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/SendRecordController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function sendRecordAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/sendRecord/add", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/SendRecordController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function sendRecordPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/sendRecord/page", $body, $query, $extra);
+    }
+
+    /**
      * 添加组员
      * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/TeamController/addMemberAction.md
      * @param array|object $body 入参类型
@@ -209,18 +274,5 @@ class PsScrmPulpSdk extends SdkBase
     public function visitDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/visit/detail", $body, $query, $extra);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/SendRecordController/pageAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function sendRecordPage($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/sendRecord/page", $body, $query, $extra);
     }
 }
