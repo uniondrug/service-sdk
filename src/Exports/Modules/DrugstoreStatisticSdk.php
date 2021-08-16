@@ -17,6 +17,7 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
+ * 
  * DrugstoreStatisticSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
