@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-29
- * @time   Tue, 29 Jun 2021 13:55:55 +0800
+ * @date   2021-08-16
+ * @time   Mon, 16 Aug 2021 13:50:52 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -758,6 +758,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改冷链配送状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editColdDistributionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editColdDistribution($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editcolddistribution", $body, $query, $extra);
+    }
+
+    /**
      * 转换操作
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editConversionAction.md
      * @param array|object $body 入参类型
@@ -768,6 +781,19 @@ class MerchantSdk extends SdkBase
     public function editConversionOrganizeBaseBackend($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editconversion", $body, $query, $extra);
+    }
+
+    /**
+     * 修改商保直赔状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editDirectCompensationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editDirectCompensation($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editdirectcompensation", $body, $query, $extra);
     }
 
     /**
@@ -1054,6 +1080,19 @@ class MerchantSdk extends SdkBase
     public function editMerchant($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/merchant/edit", $body, $query, $extra);
+    }
+
+    /**
+     * 修改商家自配送状态
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editMerchantDistributionAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editMerchantDistribution($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editmerchantdistribution", $body, $query, $extra);
     }
 
     /**
@@ -1733,6 +1772,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 获取所有非此核算单位的门店
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/independentPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function independentPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/independentpaging", $body, $query, $extra);
+    }
+
+    /**
      * 查询账号
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AccountNumberController/infoAction.md
      * @param array|object $body 入参类型
@@ -2266,6 +2318,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * mbs钉钉注销账号
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/mbsDingMemberLeaveAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function mbsDingdingMemberLeave($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/workerman/mbsdingmemberleave", $body, $query, $extra);
+    }
+
+    /**
      * 用户查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/AssistantsController/memberIdInfoAction.md
      * @param array|object $body 入参类型
@@ -2280,7 +2345,7 @@ class MerchantSdk extends SdkBase
 
     /**
      * 通过手机号查询用户
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/MoblieAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/WorkerManController/mobileAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息

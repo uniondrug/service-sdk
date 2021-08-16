@@ -27,7 +27,7 @@ class PsDstoreReserveSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ps.dstore.reserve';
+    protected $serviceName = 'ps-dstore-reserve';
 
     /**
      * 取消
