@@ -27,8 +27,6 @@ class JavaPrecheckSdk extends SdkBase
      */
     public function trial($body)
     {
-        return $this->restful(static::METHOD_POST, '/tcenter/drugstore/trial', $body, null, [
-            'timeout' => 2
-        ]);
+        return $this->restful(static::METHOD_POST, '/tcenter/drugstore/trial', $body, null);
     }
 }
