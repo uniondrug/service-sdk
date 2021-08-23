@@ -5112,4 +5112,43 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/unitBlockInfo/update", $body, $query, $extra);
     }
+
+    /**
+     * 批量获取开票单明细
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/getStatementNoByBillNosAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billGetBatchStatementNos($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/get/batch/statementNos", $body, $query, $extra);
+    }
+
+    /**
+     * 商家回款明细导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/directDetailExportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function paymentDirectDetailExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/payment/direct/detail/export", $body, $query, $extra);
+    }
+
+    /**
+     * 商家回款列表导出
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/directListExportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function paymentDirectListExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/payment/direct/list/export", $body, $query, $extra);
+    }
 }

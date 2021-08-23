@@ -1167,4 +1167,43 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policyProcedures/listFeeBill", $body);
     }
+
+    /**
+     * 药联公司列表
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_3.12/doc/api/InsureController/pageCompany.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function companyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insure/pageCompany", $body);
+    }
+    
+    /**
+     * 分页查询核算单位下赔案回款
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_14212/doc/api/IpackageOrderController/reportPage.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function reportPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackageOrder/reportPage", $body);
+    }
+
+    /**
+     * 分页查询核算单位下赔案回款开票单详情
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_14212/doc/api/IpackageOrderController/reportBillPage.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function reportBillPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackageOrder/reportBillPage", $body);
+    }
 }
