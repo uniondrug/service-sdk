@@ -295,4 +295,15 @@ class JavaUserServiceSdk extends SdkBase
 
          return $this->restful("POST", "/v2/api/userCard/getById", $body);
     }
+
+    /**
+     * 校验大陆身份证
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function userCardCheck($body){
+        return $this->restful("POST", "/v2/api/userCard/check", $body);
+
+    }
+
 }
