@@ -149,4 +149,15 @@ class WeixinSdk extends SdkBase
     {
         return $this->restful("POST", "/program/ticket", $body);
     }
+
+    /**
+     * 创建二维码
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/ProgramController/createQRCodeAction.md
+     * @param object|array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function createQRCode($body)
+    {
+        return $this->restful("POST", "/wx/createQRCode", $body);
+    }
 }
