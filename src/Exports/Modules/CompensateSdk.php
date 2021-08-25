@@ -1317,6 +1317,58 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 分时消费统计列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleDateController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCycleDateListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/date/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 分时消费统计分页
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleDateController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCycleDatePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/date/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 项目执行情况列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCycleListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 项目执行情况分页
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCyclePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/paging", $body, $query, $extra);
+    }
+
+    /**
      * 权益概览
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/equityAction.md
      * @param array|object $body 入参类型
