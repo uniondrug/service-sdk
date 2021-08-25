@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-07-14
- * @time   Wed, 14 Jul 2021 18:19:55 +0800
+ * @date   2021-08-24
+ * @time   Tue, 24 Aug 2021 17:06:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1876,6 +1876,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 关闭商保
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/closeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantApplyClose($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/close", $body, $query, $extra);
+    }
+
+    /**
      * 开通商保新会员
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/openAction.md
      * @param array|object $body 入参类型
@@ -2214,6 +2227,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 推药后发放优惠券
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/recommendDrugSendCouponAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recommendDrugSendCoupon($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/recommendDrugSendCoupon", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/RecommendWhitelistController/createAction.md
      * @param array|object $body 入参类型
@@ -2536,97 +2562,6 @@ class PsDstoreMemberSdk extends SdkBase
     public function switchIntroduction($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/imSwitch/switchIntroduction", $body, $query, $extra);
-    }
-
-    /**
-     * 新增
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemAssistantMemberMessegeLogController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemAssistantMemberMessegeLogCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/systemAssistantMemberMessegeLog/create", $body, $query, $extra);
-    }
-
-    /**
-     * listing
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemAssistantMemberMessegeLogController/listingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemAssistantMemberMessegeLogListing($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/systemAssistantMemberMessegeLog/listing", $body, $query, $extra);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemMemberController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemMemberDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/system/member/detail", $body, $query, $extra);
-    }
-
-    /**
-     * isSystemMemberAction()
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemMemberController/isSystemMemberAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemMemberIsSystemMember($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/system/member/is/system/member", $body, $query, $extra);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemMemberController/pageAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemMemberPage($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/system/member/page", $body, $query, $extra);
-    }
-
-    /**
-     * 修改
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemMemberController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemMemberUpdate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/system/member/update", $body, $query, $extra);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/SystemQuestionController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function systemQuestionDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/system/question/detail", $body, $query, $extra);
     }
 
     /**
