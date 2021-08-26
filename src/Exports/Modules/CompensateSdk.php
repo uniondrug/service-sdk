@@ -1317,16 +1317,16 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 分时消费统计列表
-     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleDateController/listingAction.md
+     * 项目名称列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleDateController/listingByProjectNameAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function projectEquityCycleDateListing($body, $query = null, $extra = null)
+    public function projectEquityCycleDateListingByProjectName($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/project/equity/cycle/date/listing", $body, $query, $extra);
+        return $this->restful("POST", "/project/equity/cycle/date/listing/by/project/name", $body, $query, $extra);
     }
 
     /**
@@ -1343,16 +1343,29 @@ class CompensateSdk extends SdkBase
     }
 
     /**
-     * 项目执行情况列表
-     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/listingAction.md
+     * 客户名称列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/listingByCompanyNameAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function projectEquityCycleListing($body, $query = null, $extra = null)
+    public function projectEquityCycleListingByCompanyName($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/project/equity/cycle/listing", $body, $query, $extra);
+        return $this->restful("POST", "/project/equity/cycle/listing/by/company/name", $body, $query, $extra);
+    }
+
+    /**
+     * 项目名称列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/listingByProjectNameAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCycleListingByProjectName($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/listing/by/project/name", $body, $query, $extra);
     }
 
     /**
