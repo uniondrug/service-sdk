@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-13
- * @time   Fri, 13 Aug 2021 16:31:48 +0800
+ * @date   2021-08-27
+ * @time   Fri, 27 Aug 2021 16:01:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -134,6 +134,45 @@ class PsScrmPulpSdk extends SdkBase
     }
 
     /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/MerchantController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/MerchantController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/MerchantController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function merchantPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/page", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/PraiseController/createAction.md
      * @param array|object $body 入参类型
@@ -183,6 +222,19 @@ class PsScrmPulpSdk extends SdkBase
     public function reedomCodeUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/reedomCode/update", $body, $query, $extra);
+    }
+
+    /**
+     * 发放记录激活
+     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/SendRecordController/activeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function sendRecordActive($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/sendRecord/active", $body, $query, $extra);
     }
 
     /**
@@ -261,18 +313,5 @@ class PsScrmPulpSdk extends SdkBase
     public function visitCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/visit/create", $body, $query, $extra);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/ps-scrm-pulp/git/blob/development/docs/api/VisitController/detailAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function visitDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/visit/detail", $body, $query, $extra);
     }
 }
