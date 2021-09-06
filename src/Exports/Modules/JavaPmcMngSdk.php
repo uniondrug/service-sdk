@@ -30,7 +30,7 @@ class JavaPmcMngSdk extends SdkBase
      */
     public function apply($body)
     {
-        return $this->restful(static::METHOD_POST, '/mng-pmc/payment/pos/apply', $body);
+        return $this->restful(static::METHOD_POST, '/payment/pos/apply', $body);
     }
 
     /**
@@ -41,7 +41,7 @@ class JavaPmcMngSdk extends SdkBase
      */
     public function query($body)
     {
-        return $this->restful(static::METHOD_POST, '/mng-pmc/payment/pos/paging', $body);
+        return $this->restful(static::METHOD_POST, '/payment/pos/paging', $body);
     }
 
     /**
@@ -52,6 +52,6 @@ class JavaPmcMngSdk extends SdkBase
      */
     public function unbind($body)
     {
-        return $this->restful(static::METHOD_POST, '/mng-pmc/payment/pos/unbind', $body);
+        return $this->restful(static::METHOD_POST, '/payment/pos/unbind', $body);
     }
 }
