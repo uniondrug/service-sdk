@@ -5151,4 +5151,17 @@ class SettlementSdk extends SdkBase
     {
         return $this->restful("POST", "/payment/direct/list/export", $body, $query, $extra);
     }
+
+    /**
+     * 药联理赔单应收开票单分页
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/organizeBillPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getClaimOrganizeBillPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/organizeBillPaging", $body, $query, $extra);
+    }
 }
