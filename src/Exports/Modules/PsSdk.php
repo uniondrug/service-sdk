@@ -873,4 +873,30 @@ class PsSdk extends SdkBase
     {
         return $this->restful("POST", "/partnerStatistic/export", $body, $query, $extra);
     }
+
+    /**
+     * 重要业务市场交易规模
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Chain/ChainDataController/tradeSizeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function chainDataTradeSize($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/chainData/tradeSize", $body, $query, $extra);
+    }
+
+    /**
+     * kpi指数
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Chain/ChainDataController/kpiAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function chainDataKpi($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/chainData/kpi", $body, $query, $extra);
+    }
 }
