@@ -1232,4 +1232,17 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/output/reconciliationLetter", $body);
     }
+
+    /**
+     * 对账函下载结果
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_14302/doc/api/OutPutController/getOutPutRecord.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function outputReconciliationLetterResult($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/output/result", $body);
+    }
 }
