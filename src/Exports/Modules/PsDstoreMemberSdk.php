@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-24
- * @time   Tue, 24 Aug 2021 17:06:46 +0800
+ * @date   2021-09-07
+ * @time   Tue, 07 Sep 2021 16:32:04 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1317,6 +1317,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 是否齿科
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/isToothOrganAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function isToothOrgan($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/isToothOrgan", $body, $query, $extra);
+    }
+
+    /**
      * 批量查询连锁信息
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MerchantController/listByBatchMerchantIdsAction.md
      * @param array|object $body 入参类型
@@ -2526,7 +2539,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 获取已离职更换连锁的店员
+     * 获取门店回复率
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StoreController/responseRateAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
