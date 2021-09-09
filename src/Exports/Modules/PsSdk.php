@@ -899,4 +899,17 @@ class PsSdk extends SdkBase
     {
         return $this->restful("POST", "/chainData/kpi", $body, $query, $extra);
     }
+
+    /**
+     * 首页     [全国/我的] - [财险/寿险/未知险]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/insuranceCollectAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticInsuranceCollect($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/insuranceCollect", $body, $query, $extra);
+    }
 }
