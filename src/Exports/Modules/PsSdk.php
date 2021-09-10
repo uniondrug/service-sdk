@@ -11,7 +11,7 @@
  * @date   2021-09-10
  * @time   Fri, 10 Sep 2021 16:37:02 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Bsdatas;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
