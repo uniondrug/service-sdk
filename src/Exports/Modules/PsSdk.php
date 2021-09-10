@@ -8,10 +8,10 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-21
- * @time   Mon, 21 Jun 2021 17:42:11 +0800
+ * @date   2021-09-10
+ * @time   Fri, 10 Sep 2021 16:37:02 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Bsdatas;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -511,7 +511,7 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 明细   [全国/我的] - [业务机构] - [按日期]
+     * 明细   [全国/我的] - [业务机构] - [按日期/发生业务]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationDetailByDateAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -521,6 +521,19 @@ class PsSdk extends SdkBase
     public function policyStatisticOrganizationDetailByDate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policyStatistic/organizationDetailByDate", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [业务机构] - [机构分月数据] - [pc端用]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationMonthDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationMonthDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationMonthDetail", $body, $query, $extra);
     }
 
     /**
