@@ -496,4 +496,17 @@ class InvoiceSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/updateUrl", $body, $query, $extra);
     }
+
+    /**
+     * 获取应收开票单下有效发票图片url列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/getInvoiceUrlAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getInvoiceUrl($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBill/getInvoiceUrl", $body, $query, $extra);
+    }
 }
