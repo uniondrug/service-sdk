@@ -44,9 +44,9 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     /**
      * 添加发票时，检测与系统不一致信息返回
      * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/checkIntegrityAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function checkIntegrity($body, $query = null, $extra = null)
@@ -217,18 +217,5 @@ class InvoiceSdk extends Sdk implements ServiceSdkInterface
     public function cc($body)
     {
         return $this->restful("POST", "/invoice/getPagingByClaimNo", $body);
-    }
-
-    /**
-     * 更新发票url
-     * @link https://uniondrug.coding.net/p/module.invoice/git/blob/development/docs/api/InvoiceController/updateUrlAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function updateUrl($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/invoice/updateUrl", $body, $query, $extra);
     }
 }
