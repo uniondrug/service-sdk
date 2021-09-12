@@ -4210,9 +4210,9 @@ class SettlementSdk extends SdkBase
     /**
      * 校验理赔单状态
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceExpressController/checkClaimFormStatusAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function invoiceExpressCheckClaimFormStatus($body, $query = null, $extra = null)
@@ -4990,9 +4990,9 @@ class SettlementSdk extends SdkBase
     /**
      * 检查
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/InvoiceReceiveTransactionDetailController/checkAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function invoiceReceiveTransactionDetailCheck($body, $query = null, $extra = null)
@@ -5002,9 +5002,9 @@ class SettlementSdk extends SdkBase
 
     /**
      * 商家待办事项新增
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerTodoListCreate($body, $query = null, $extra = null)
@@ -5014,9 +5014,9 @@ class SettlementSdk extends SdkBase
 
     /**
      * 商家待办事项分页列表
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerTodoListPaging($body, $query = null, $extra = null)
@@ -5026,9 +5026,9 @@ class SettlementSdk extends SdkBase
 
     /**
      * 商家待办事项编辑
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function partnerTodoListUpdate($body, $query = null, $extra = null)
@@ -5039,9 +5039,9 @@ class SettlementSdk extends SdkBase
     /**
      * 下一条
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/nextAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeBillNext($body, $query = null, $extra = null)
@@ -5052,9 +5052,9 @@ class SettlementSdk extends SdkBase
     /**
      * 上一条
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/prevAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeBillPrev($body, $query = null, $extra = null)
@@ -5065,21 +5065,22 @@ class SettlementSdk extends SdkBase
     /**
      * 驳回
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/refuseAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function organizeBillRefuse($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeBill/refuse", $body, $query, $extra);
     }
+
     /**
      * 同步批次付款状态-new
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/syncDirectPaymentNewAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function paymentSyncDirectNew($body, $query = null, $extra = null)
@@ -5090,9 +5091,9 @@ class SettlementSdk extends SdkBase
     /**
      * 核算单位冻结日期列表
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/UnitBlockInfoController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function unitBlockInfoList($body, $query = null, $extra = null)
@@ -5103,9 +5104,9 @@ class SettlementSdk extends SdkBase
     /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/UnitBlockInfoController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function unitBlockInfoUpdate($body, $query = null, $extra = null)
@@ -5116,9 +5117,9 @@ class SettlementSdk extends SdkBase
     /**
      * 批量获取开票单明细
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/BillController/getStatementNoByBillNosAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function billGetBatchStatementNos($body, $query = null, $extra = null)
@@ -5129,9 +5130,9 @@ class SettlementSdk extends SdkBase
     /**
      * 商家回款明细导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/directDetailExportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function paymentDirectDetailExport($body, $query = null, $extra = null)
@@ -5142,9 +5143,9 @@ class SettlementSdk extends SdkBase
     /**
      * 商家回款列表导出
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/PaymentController/directListExportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function paymentDirectListExport($body, $query = null, $extra = null)
@@ -5155,9 +5156,9 @@ class SettlementSdk extends SdkBase
     /**
      * 药联理赔单应收开票单分页
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/ClaimController/organizeBillPagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function getClaimOrganizeBillPaging($body, $query = null, $extra = null)
@@ -5168,13 +5169,26 @@ class SettlementSdk extends SdkBase
     /**
      * 更新应收开票单附件
      * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/updateAnnexAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function updateAnnex($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeBill/updateAnnex", $body, $query, $extra);
+    }
+
+    /**
+     * 获取应收开票单下有效发票图片url列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/getInvoiceUrlAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function getInvoiceUrl($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeBill/getInvoiceUrl", $body, $query, $extra);
     }
 }
