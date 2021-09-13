@@ -9,7 +9,7 @@
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-09-13
- * @time   Mon, 13 Sep 2021 16:30:00 +0800
+ * @time   Mon, 13 Sep 2021 18:40:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -498,7 +498,20 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 明细   [全国/我的] - [业务机构] - [按保司] - [仅供app端使用]
+     * 明细   [全国/我的] - [业务机构] - [发生业务] - [pc端用]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationCollectPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationCollectPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationCollectPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [全国/我的] - [业务机构] - [按保司] - [app端用]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationDetailByCompanyAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -511,7 +524,7 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 明细   [全国/我的] - [业务机构] - [按日期/发生业务]
+     * 明细   [全国/我的] - [业务机构] - [按日期] - [app端用]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationDetailByDateAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
