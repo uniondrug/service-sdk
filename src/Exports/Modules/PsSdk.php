@@ -9,9 +9,9 @@
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-09-13
- * @time   Mon, 13 Sep 2021 15:43:22 +0800
+ * @time   Mon, 13 Sep 2021 16:30:00 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Bsdatas;
+namespace Uniondrug\ServiceSdk\Exports\module;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
