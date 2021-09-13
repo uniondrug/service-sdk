@@ -5167,16 +5167,16 @@ class SettlementSdk extends SdkBase
     }
 
     /**
-     * 更新应收开票单附件
-     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/updateAnnexAction.md
+     * 更新应收开票单影像件
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeBillController/updatePdfUrlAction.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function updateAnnex($body, $query = null, $extra = null)
+    public function updatePdfUrl($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/organizeBill/updateAnnex", $body, $query, $extra);
+        return $this->restful("POST", "/organizeBill/updatePdfUrl", $body, $query, $extra);
     }
 
     /**
