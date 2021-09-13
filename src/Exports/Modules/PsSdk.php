@@ -8,10 +8,10 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-09-10
- * @time   Fri, 10 Sep 2021 16:37:02 +0800
+ * @date   2021-09-13
+ * @time   Mon, 13 Sep 2021 15:43:22 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Modules;
+namespace Uniondrug\ServiceSdk\Exports\Bsdatas;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -420,7 +420,7 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 明细   [全国/我的] - [财险/寿险/未知险] - [按保司]
+     * 明细   [全国/我的] - [财险/寿险/未知险] - [按保司,按日期]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/insuranceDetailByCompanyAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -430,19 +430,6 @@ class PsSdk extends SdkBase
     public function policyStatisticInsuranceDetailByCompany($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policyStatistic/insuranceDetailByCompany", $body, $query, $extra);
-    }
-
-    /**
-     * 明细   [全国/我的] - [财险/寿险/未知险] - [按日期]
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/insuranceDetailByDateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function policyStatisticInsuranceDetailByDate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/policyStatistic/insuranceDetailByDate", $body, $query, $extra);
     }
 
     /**
@@ -472,6 +459,19 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * 明细里面机构数对应的保司列表   [全国] - [竞争性市场]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/marketOrganizeListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticMarketOrganizeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/marketOrganizeList", $body, $query, $extra);
+    }
+
+    /**
      * 首页     [全国] - [业务机构]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationCollectAction.md
      * @param array|object $body 入参类型
@@ -498,7 +498,7 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 明细   [全国/我的] - [业务机构] - [按保司]
+     * 明细   [全国/我的] - [业务机构] - [按保司] - [仅供app端使用]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationDetailByCompanyAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
