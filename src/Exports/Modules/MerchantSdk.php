@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-17
- * @time   Tue, 17 Aug 2021 16:26:39 +0800
+ * @date   2021-08-30
+ * @time   Mon, 30 Aug 2021 17:03:42 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1184,6 +1184,19 @@ class MerchantSdk extends SdkBase
     public function editOrganizeBasePlatform($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/editorganizebase", $body, $query, $extra);
+    }
+
+    /**
+     * 更新资质信息
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePlatformController/editOrganizeQualificationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editOrganizeBasePlatformQualification($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/editorganizebaseplatformqualification", $body, $query, $extra);
     }
 
     /**
@@ -2393,6 +2406,45 @@ class MerchantSdk extends SdkBase
     public function moblieWorkerMan($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/workerman/moblie", $body, $query, $extra);
+    }
+
+    /**
+     * 绑定服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationTerminalController/bindAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizationTerminalBindStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizationTerminal/bindStatus", $body, $query, $extra);
+    }
+
+    /**
+     * 组织查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationTerminalController/organizationIdInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizationTerminalOrganizationIdInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizationTerminal/organizationidinfo", $body, $query, $extra);
+    }
+
+    /**
+     * 列表服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizationTerminalController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizationTerminalPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizationTerminal/paging", $body, $query, $extra);
     }
 
     /**

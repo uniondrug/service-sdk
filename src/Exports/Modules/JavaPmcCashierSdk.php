@@ -98,4 +98,38 @@ class JavaPmcCashierSdk extends SdkBase
     {
         return $this->restful("POST", "/cashier/queryCashierAllByOutTradeNo", $body);
     }
+
+
+    /**
+     * 绑定接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function apply($body)
+    {
+        return $this->restful(static::METHOD_POST, '/mng-pmc/payment/pos/apply', $body);
+    }
+
+    /**
+     * 列表接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function query($body)
+    {
+        return $this->restful(static::METHOD_POST, '/mng-pmc/payment/pos/paging', $body);
+    }
+
+    /**
+     * 解绑接口
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function unbind($body)
+    {
+        return $this->restful(static::METHOD_POST, '/mng-pmc/payment/pos/unbind', $body);
+    }
 }

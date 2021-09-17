@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-09
- * @time   Mon, 09 Aug 2021 13:40:59 +0800
+ * @date   2021-08-30
+ * @time   Mon, 30 Aug 2021 11:46:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -264,6 +264,19 @@ class DingtalkSdk extends SdkBase
     }
 
     /**
+     * 查询下级部门
+     * @link https://uniondrug.coding.net/p/module.dingtalk/git/blob/development/docs/api/DingdingDepartmentController/parentIdListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dingdingDepartmentParentIdList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dingdingDepartment/parentidlist", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.dingtalk/git/blob/development/docs/api/DingdingDepartmentController/updateAction.md
      * @param array|object $body 入参类型
@@ -300,6 +313,19 @@ class DingtalkSdk extends SdkBase
     public function dingdingDeptMemberDelete($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/dingdingDeptMember/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 查询部门下人员
+     * @link https://uniondrug.coding.net/p/module.dingtalk/git/blob/development/docs/api/DingdingDeptMemberController/departmentMemberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dingdingDeptMemberdeptIdList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dingdingDeptMember/departmentmemberdeptidlist", $body, $query, $extra);
     }
 
     /**

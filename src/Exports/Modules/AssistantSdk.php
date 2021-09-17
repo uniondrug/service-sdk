@@ -5272,4 +5272,31 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/workRecordIntermediaryVisitInsurance/list", $body, $query, $extra);
     }
+
+
+    /**
+     * 创建 [全国业务数据类型查看权限]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/Insurance/InsuranceStatisticController/viewAuthorityDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insuranceStatisticViewAuthorityDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insuranceStatistic/viewAuthorityDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑 [全国业务数据类型查看权限]
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/Insurance/InsuranceStatisticController/viewAuthorityEditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insuranceStatisticViewAuthorityEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insuranceStatistic/viewAuthorityEdit", $body, $query, $extra);
+    }
 }

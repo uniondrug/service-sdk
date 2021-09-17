@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-13
- * @time   Fri, 13 Aug 2021 16:14:14 +0800
+ * @date   2021-08-30
+ * @time   Mon, 30 Aug 2021 21:03:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -225,6 +225,19 @@ class PrivilegeSdk extends SdkBase
     }
 
     /**
+     * 特权规则编辑
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/getGiftAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeGetGift($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/get/gift", $body, $query, $extra);
+    }
+
+    /**
      * 任务详情
      * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/infoAction.md
      * @param array|object $body 入参类型
@@ -404,5 +417,31 @@ class PrivilegeSdk extends SdkBase
     public function privilegeUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/privilege/update", $body, $query, $extra);
+    }
+
+    /**
+     * 已结束列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/v2FinishListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function v2PrivilegeFinishList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/v2/finishList", $body, $query, $extra);
+    }
+
+    /**
+     * 进行中列表
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/v2ProgressListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function v2PrivilegeProgressList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/v2/progressList", $body, $query, $extra);
     }
 }

@@ -407,6 +407,19 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 理赔撤销
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/refusedAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimRecover($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/recover", $body, $query, $extra);
+    }
+
+    /**
      * 寿险批量驳回新
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/rejectBatchNewAction.md
      * @param array|object $body 入参类型

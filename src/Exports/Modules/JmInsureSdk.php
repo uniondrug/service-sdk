@@ -1206,4 +1206,56 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/ipackageOrder/reportBillPage", $body);
     }
+
+    /**
+     * 分页查询核算单位下赔案回款 保司集合
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_3.12/doc/api/IpackageOrderController/reportInsurerPage.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function reportInsurerPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackageOrder/reportInsurerPage", $body);
+    }
+
+    /**
+     * 发起对账函下载任务
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_14302/doc/api/OutPutController/outputReconciliationLetter.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function outputReconciliationLetter($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/output/reconciliationLetter", $body);
+    }
+
+    /**
+     * 对账函下载结果
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_14302/doc/api/OutPutController/getOutPutRecord.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function outputReconciliationLetterResult($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/output/result", $body);
+    }
+
+    /**
+     * 清除结算理赔重试表
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/Mbs/clearSettleClaimRecord.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function clearSettleClaimRecord($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/mbs/claim/clearSettleClaimRecord", $body);
+    }
 }

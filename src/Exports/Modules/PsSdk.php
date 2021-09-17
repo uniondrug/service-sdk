@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-06-21
- * @time   Mon, 21 Jun 2021 17:42:11 +0800
+ * @date   2021-09-13
+ * @time   Mon, 13 Sep 2021 18:40:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -199,6 +199,32 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * kpi指数
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Chain/ChainDataController/kpiAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function chainDataKpi($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/chainData/kpi", $body, $query, $extra);
+    }
+
+    /**
+     * 重要业务市场交易规模
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Chain/ChainDataController/tradeSizeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function chainDataTradeSize($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/chainData/tradeSize", $body, $query, $extra);
+    }
+
+    /**
      * 批量获取门店（默认返回昨天数据，昨天无数据返回前天数据，前天无数据返回空）
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreOperationInfoEdController/getByStoreIdsAction.md
      * @param array|object $body 入参类型
@@ -238,6 +264,19 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/MerchantOrdSumDController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function MOSDGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchantOrdSumD/getByMerchantId", $body, $query, $extra);
+    }
+
+    /**
      * 业务出单分布
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/OrderStatisticController/distributionAction.md
      * @param array|object $body 入参类型
@@ -261,6 +300,19 @@ class PsSdk extends SdkBase
     public function partnerStatisticDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partnerStatistic/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 商户列表导出
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PartnerStatisticController/exportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerStatisticExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partnerStatistic/export", $body, $query, $extra);
     }
 
     /**
@@ -343,7 +395,7 @@ class PsSdk extends SdkBase
 
     /**
      * 业务汇总
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/CountAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/CountAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -355,8 +407,151 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * 首页     [全国/我的] - [财险/寿险/未知险]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/insuranceCollectAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticInsuranceCollect($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/insuranceCollect", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [全国/我的] - [财险/寿险/未知险] - [按保司,按日期]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/insuranceDetailByCompanyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticInsuranceDetailByCompany($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/insuranceDetailByCompany", $body, $query, $extra);
+    }
+
+    /**
+     * 首页     [全国] - [竞争性市场]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/marketCollectAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticMarketCollect($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/marketCollect", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [全国] - [竞争性市场]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/marketDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticMarketDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/marketDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 明细里面机构数对应的保司列表   [全国] - [竞争性市场]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/marketOrganizeListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticMarketOrganizeList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/marketOrganizeList", $body, $query, $extra);
+    }
+
+    /**
+     * 首页     [全国] - [业务机构]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationCollectAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationCollect($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationCollect", $body, $query, $extra);
+    }
+
+    /**
+     * 首页     [我的] - [业务机构]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationCollectMyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationCollectMy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationCollectMy", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [全国/我的] - [业务机构] - [发生业务] - [pc端用]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationCollectPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationCollectPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationCollectPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [全国/我的] - [业务机构] - [按保司] - [app端用]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationDetailByCompanyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationDetailByCompany($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationDetailByCompany", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [全国/我的] - [业务机构] - [按日期] - [app端用]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationDetailByDateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationDetailByDate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationDetailByDate", $body, $query, $extra);
+    }
+
+    /**
+     * 明细   [业务机构] - [机构分月数据] - [pc端用]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationMonthDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationMonthDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationMonthDetail", $body, $query, $extra);
+    }
+
+    /**
      * 超期理赔
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingOverClaimAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/pagingOverClaimAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -369,7 +564,7 @@ class PsSdk extends SdkBase
 
     /**
      * 保险项目待收款
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingPendClaimRcptAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/pagingPendClaimRcptAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -382,7 +577,7 @@ class PsSdk extends SdkBase
 
     /**
      * 权益采购待收款
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/pagingPendRcvAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/pagingPendRcvAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -395,7 +590,7 @@ class PsSdk extends SdkBase
 
     /**
      * 用户保单业绩数据
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyCountListAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/policyCountListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -408,7 +603,7 @@ class PsSdk extends SdkBase
 
     /**
      * 用户保单业绩数据列表
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyListAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/policyListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -421,7 +616,7 @@ class PsSdk extends SdkBase
 
     /**
      * 覆盖保司列表接口
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyPagingAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/policyPagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -434,7 +629,7 @@ class PsSdk extends SdkBase
 
     /**
      * 用户保单数据状态总数
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/policyStatusCountAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/policyStatusCountAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -447,7 +642,7 @@ class PsSdk extends SdkBase
 
     /**
      * 用户项目业绩数据
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectCountListAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/projectCountListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -460,7 +655,7 @@ class PsSdk extends SdkBase
 
     /**
      * 用户项目业绩数据列表
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectListAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/projectListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -473,7 +668,7 @@ class PsSdk extends SdkBase
 
     /**
      * 用户项目数据
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/projectMoreAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/projectMoreAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -486,7 +681,7 @@ class PsSdk extends SdkBase
 
     /**
      * 待收款
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PolicyStatisticController/userPendCountAction.md
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/userPendCountAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -641,6 +836,32 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserMerchantDController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function UMDGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userMerchantD/getByMerchantId", $body, $query, $extra);
+    }
+
+    /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserMerchantMController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function UMMGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userMerchantM/getByMerchantId", $body, $query, $extra);
+    }
+
+    /**
      * 无主门店列表
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/StoreOperationInfoEdController/unclaimedStoreListAction.md
      * @param array|object $body 入参类型
@@ -651,6 +872,19 @@ class PsSdk extends SdkBase
     public function unclaimedStoreList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/storeOperationInfoEd/unclaimedStoreList", $body, $query, $extra);
+    }
+
+    /**
+     * 根据连锁ID获取记录
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserPartnerSumInfoController/getByMerchantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function UPSIGetByMerchantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/userPartnerSumInfo/getByMerchantId", $body, $query, $extra);
     }
 
     /**
@@ -785,19 +1019,6 @@ class PsSdk extends SdkBase
 
     /**
      * 门店任务列表
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/storeListAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function workStoreList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/work/storeList", $body, $query, $extra);
-    }
-
-    /**
-     * 门店任务列表
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/storeIdsListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -810,67 +1031,15 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 根据连锁ID获取记录
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserPartnerSumInfoController/getByMerchantIdAction.md
+     * 门店任务列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/storeListAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function UPSIGetByMerchantId($body, $query = null, $extra = null)
+    public function workStoreList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/userPartnerSumInfo/getByMerchantId", $body, $query, $extra);
-    }
-
-    /**
-     * 根据连锁ID获取记录
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/MerchantOrdSumDController/getByMerchantIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function MOSDGetByMerchantId($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/merchantOrdSumD/getByMerchantId", $body, $query, $extra);
-    }
-
-    /**
-     * 根据连锁ID获取记录
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserMerchantDController/getByMerchantIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function UMDGetByMerchantId($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/userMerchantD/getByMerchantId", $body, $query, $extra);
-    }
-
-    /**
-     * 根据连锁ID获取记录
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/UserMerchantMController/getByMerchantIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function UMMGetByMerchantId($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/userMerchantM/getByMerchantId", $body, $query, $extra);
-    }
-
-    /**
-     * 商户列表导出
-     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/PartnerStatisticController/exportAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerStatisticExport($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partnerStatistic/export", $body, $query, $extra);
+        return $this->restful("POST", "/work/storeList", $body, $query, $extra);
     }
 }
