@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-09-17
- * @time   Fri, 17 Sep 2021 15:19:34 +0800
+ * @time   Fri, 17 Sep 2021 15:56:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -326,6 +326,19 @@ class UdappSdk extends SdkBase
     public function blueDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/blue/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 机器配置修改
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/BlueController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function blueUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/blue/update", $body, $query, $extra);
     }
 
     /**
