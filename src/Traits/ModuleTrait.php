@@ -7,155 +7,293 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuditSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuthoritySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\AuthSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\BillSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CarSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ClaimSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ClerkSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CommonSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CompanySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\CustomerserviceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DataSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DistsellSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GoPartnersSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\HuoJuExpressSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\InsureRankSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\InsureSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaAdvfrontSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementMngSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementQrySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementSvrSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaAuditLogServiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaCashierSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaCommissionSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaCommonSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaComsnSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaCreditQuerySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaDistributionSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaDownloadSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityAnalysisSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityReadingSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaEquityTrialSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaExchangeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterApiSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterMngSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsReplaceServiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaHealthSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaIhcenterSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaImmidSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaImpsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaImSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaImWsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaInvoiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaMemberSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaMerchantSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaMpacenterSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderErpSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaParserServiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPmcCashierSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPneumaticSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPrecheckSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JmbslSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JsCleanCenterSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JsFinanceEsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JsFinanceReplaceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\LiveSrvJsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MbsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MerchantApplySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MessageSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\MsgSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\NotifySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\OrderSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\OssSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\OtcSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PackageSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PartnersSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PrivilegeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ProductSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PromotionBiddingSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PromotionFinanceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PromotionUserSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreEsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreReserveSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\RobotSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\RuleSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\SchemeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\SettlementLogSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\SmsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\TakeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\UdappSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\UserSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\VasSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
 
 /**
  * Module
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk                $activity
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk            $aiProfitData
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk      $aiProfitStatistics
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AiPushSdk                  $aiPush
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AssistantSdk               $assistant
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditSdk                   $audit
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthoritySdk               $authority
- * @property \Uniondrug\ServiceSdk\Exports\Modules\BillSdk                    $bill
- * @property \Uniondrug\ServiceSdk\Exports\Modules\CarSdk                     $car
- * @property \Uniondrug\ServiceSdk\Exports\Modules\CommonSdk                  $common
- * @property \Uniondrug\ServiceSdk\Exports\Modules\CompensateSdk              $compensate
- * @property \Uniondrug\ServiceSdk\Exports\Modules\CustomerSdk                $customer
- * @property \Uniondrug\ServiceSdk\Exports\Modules\CustomerserviceSdk         $customerservice
- * @property \Uniondrug\ServiceSdk\Exports\Modules\DataSdk                    $data
- * @property \Uniondrug\ServiceSdk\Exports\Modules\DeliverSdk                 $deliver
- * @property \Uniondrug\ServiceSdk\Exports\Modules\NotifySdk                  $notify
- * @property \Uniondrug\ServiceSdk\Exports\Modules\EquitySdk                  $equity
- * @property \Uniondrug\ServiceSdk\Exports\Modules\InsureRankSdk              $insureRank
- * @property \Uniondrug\ServiceSdk\Exports\Modules\InsureSdk                  $insure
- * @property \Uniondrug\ServiceSdk\Exports\Modules\InvoiceSdk                 $invoice
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCashierSdk             $javaCashier
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAuditLogServiceSdk     $javaAuditLogServiceSdk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommonSdk              $javaCommon
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDownloadSdk            $javaDownload
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaExchangeSdk            $javaExchange
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaFinSdk                 $javaFin
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterMngSdk      $javaGoodsCenterMng
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterSdk         $javaGoodsCenter
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsCenterApiSdk      $javaGoodsCenterApi
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaGoodsReplaceServiceSdk $javaGoodsReplace
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderCodeSdk           $javaOrderCode
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderQuerySdk          $javaOrderQuery
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderSdk               $javaOrder
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMemberSdk              $javaMember
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaParserServiceSdk       $javaParserService
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteCenterSdk       $javaPromoteCenter
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPneumaticSdk           $javaPneumatic
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMpacenterSdk           $javaMpacenter
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaIhcenterSdk            $javaIhcenter
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCommissionSdk          $javaCommission
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaComsnSdk               $javaComsn
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCoinSdk                $javaCoin
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaDistributionSdk        $javaDistribution
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPromoteSdk             $javaPromote
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaErpPaySdk              $javaErpPay
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPushSdk                $javaPush
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserScoreSdk           $javaUserScore
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JsFinanceEsSdk             $jsFinanceEs
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JsFinanceReplaceSdk        $jsFinanceReplace
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk                    $jmbs
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JwtSdk                     $jwt
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MapSdk                     $map
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MarketingSdk               $marketing
- * @property \Uniondrug\ServiceSdk\Exports\Modules\Mbs2Sdk                    $mbs2
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MbsSdk                     $mbs
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MerchantApplySdk           $merchantApply
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MerchantSdk                $merchant
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MessageSdk                 $message
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MoreActivitySdk            $moreActivity
- * @property \Uniondrug\ServiceSdk\Exports\Modules\MsgSdk                     $msg
- * @property \Uniondrug\ServiceSdk\Exports\Modules\OrderSdk                   $order
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JmbslSdk                   $jmbsl
- * @property \Uniondrug\ServiceSdk\Exports\Modules\OssSdk                     $oss
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PackageSdk                 $package
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ProductSdk                 $product
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PartnersSdk                $partners
- * @property \Uniondrug\ServiceSdk\Exports\Modules\GoPartnersSdk              $goPartners
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ProjectSdk                 $project
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PromotionBiddingSdk        $promotionBidding
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PromotionFinanceSdk        $promotionFinance
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PromotionUserSdk           $promotionUser
- * @property \Uniondrug\ServiceSdk\Exports\Modules\RobotSdk                   $robot
- * @property \Uniondrug\ServiceSdk\Exports\Modules\HuoJuExpressSdk            $huoJuExpress
- * @property \Uniondrug\ServiceSdk\Exports\Modules\RuleSdk                    $rule
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaMerchantSdk            $javaMerchant
- * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementLogSdk           $settlementLog
- * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk              $settlement
- * @property \Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk         $settlementsheet
- * @property \Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk              $stagnation
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPrecheckSdk            $javaPrecheck
- * @property \Uniondrug\ServiceSdk\Exports\Modules\TokenSdk                   $token
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PrivilegeSdk               $privilege
- * @property \Uniondrug\ServiceSdk\Exports\Modules\SchemeSdk                  $scheme
- * @property \Uniondrug\ServiceSdk\Exports\Modules\TakeSdk                    $take
- * @property \Uniondrug\ServiceSdk\Exports\Modules\UdappSdk                   $udapp
- * @property \Uniondrug\ServiceSdk\Exports\Modules\UserSdk                    $user
- * @property \Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk                  $weixin
- * @property \Uniondrug\ServiceSdk\Exports\Modules\DistsellSdk                $distsell
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ClerkSdk                   $clerk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\WxSdk                      $wx
- * @property \Uniondrug\ServiceSdk\Exports\Modules\CompanySdk                 $company
- * @property \Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk                $ydbResPm
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaInvoiceSdk             $javaInvoice
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaHealthSdk              $javaHealth
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk                   $score
- * @property \Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk          $guaranteeclaimSdk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ClaimSdk                   $claim
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk                $exchange
- * @property \Uniondrug\ServiceSdk\Exports\Modules\DingtalkSdk                $dingtalk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaOrderErpSdk            $javaOrderErp
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk              $zhongSheng
- * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk      $drugstoreStatistic
- * @property \Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk       $drugstoreActivity
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuthSdk                    $auth
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPmcCashierSdk          $javaPmcCashier
- * @property \Uniondrug\ServiceSdk\Exports\Modules\OutreachResourceApiSdk     $outreachResourceApiSdk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaEquityTrialSdk         $javaEquityTrial
- * @property \Uniondrug\ServiceSdk\Exports\Modules\VasSdk                     $vas
- * @property \Uniondrug\ServiceSdk\Exports\Modules\SmsSdk                     $sms
- * @property \Uniondrug\ServiceSdk\Exports\Modules\ApproMngSdk                $approval
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDesktoptoolSdk           $psDesktoptool
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk           $psFinanceData
- * @property \Uniondrug\ServiceSdk\Exports\Modules\AuditLogSdk                $auditLog
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImpsSdk                $javaImps
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaCreditQuerySdk         $javaCreditQuery
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImmidSdk               $javaImmid
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk            $psDstoreCart
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk          $psDstoreMember
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreEsSdk              $psDstoreEs
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreReserveSdk         $psDstoreReserve
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsSdk                      $ps
- * @property \Uniondrug\ServiceSdk\Exports\Modules\OtcSdk                     $otc
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaPurchaseSdk            $javaPurchase
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk              $jsArchives
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JsCleanCenterSdk           $jsCleanCenter
- * @property \Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk              $inspection
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk               $psFinBillSdk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk                $jmInsure
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk          $psFinStatementSdk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk        $psDstoreCustomer
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaImWsSdk                $javaImWs
- * @property \Uniondrug\ServiceSdk\Exports\Modules\LiveSrvJsSdk               $liveSrvJs
- * @property JavaEquityReadingSdk                                             $javaEquityReadingSdk
- * @property JavaAdvfrontSdk                                                  $javaAdvfront
- * @property JavaImSdk                                                        $javaIm
- * @property JavaEquityAnalysisSdk                                            $javaEquityAnalysis
- * @property \Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk               $gsFinanceSdk
- * @property \Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk            $gsMossWeChat
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk         $javaUserService
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementMngSdk        $javaAgreementMngService
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementQrySdk        $javaAgreementQryService
- * @property \Uniondrug\ServiceSdk\Exports\Modules\JavaAgreementSvrSdk        $javaAgreementSvrService
+ * @property ActivitySdk                $activity
+ * @property AiProfitDataSdk            $aiProfitData
+ * @property AiProfitStatisticsSdk      $aiProfitStatistics
+ * @property AiPushSdk                  $aiPush
+ * @property ApproMngSdk                $approMng
+ * @property AssistantSdk               $assistant
+ * @property AuditLogSdk                $auditLog
+ * @property AuditSdk                   $audit
+ * @property AuthoritySdk               $authority
+ * @property AuthSdk                    $auth
+ * @property BillSdk                    $bill
+ * @property CarSdk                     $car
+ * @property ClaimSdk                   $claim
+ * @property ClerkSdk                   $clerk
+ * @property CommonSdk                  $common
+ * @property CompanySdk                 $company
+ * @property CompensateSdk              $compensate
+ * @property CustomerSdk                $customer
+ * @property CustomerserviceSdk         $customerservice
+ * @property DataSdk                    $data
+ * @property DeliverSdk                 $deliver
+ * @property DingtalkSdk                $dingtalk
+ * @property DistsellSdk                $distsell
+ * @property DrugstoreActivitySdk       $drugstoreActivity
+ * @property DrugstoreStatisticSdk      $drugstoreStatistic
+ * @property EquitySdk                  $equity
+ * @property ExchangeSdk                $exchange
+ * @property GoPartnersSdk              $goPartners
+ * @property GsFinanceSdk               $gsFinanceSdk
+ * @property GsMossWeChatSdk            $gsMossWeChat
+ * @property GuaranteeclaimSdk          $guaranteeclaimSdk
+ * @property HuoJuExpressSdk            $huoJuExpress
+ * @property InspectionSdk              $inspection
+ * @property InsureRankSdk              $insureRank
+ * @property InsureSdk                  $insure
+ * @property InvoiceSdk                 $invoice
+ * @property JavaAdvfrontSdk            $javaAdvfront
+ * @property JavaAgreementMngSdk        $javaAgreementMng
+ * @property JavaAgreementQrySdk        $javaAgreementQry
+ * @property JavaAgreementSvrSdk        $javaAgreementSvr
+ * @property JavaAuditLogServiceSdk     $javaAuditLogServiceSdk
+ * @property JavaCashierSdk             $javaCashier
+ * @property JavaCoinSdk                $javaCoin
+ * @property JavaCommissionSdk          $javaCommission
+ * @property JavaCommonSdk              $javaCommon
+ * @property JavaComsnSdk               $javaComsn
+ * @property JavaCreditQuerySdk         $javaCreditQuery
+ * @property JavaDistributionSdk        $javaDistribution
+ * @property JavaDownloadSdk            $javaDownload
+ * @property JavaEquityAnalysisSdk      $javaEquityAnalysis
+ * @property JavaEquityReadingSdk       $javaEquityReadingSdk
+ * @property JavaEquityTrialSdk         $javaEquityTrial
+ * @property JavaErpPaySdk              $javaErpPay
+ * @property JavaExchangeSdk            $javaExchange
+ * @property JavaFinSdk                 $javaFin
+ * @property JavaGoodsCenterApiSdk      $javaGoodsCenterApi
+ * @property JavaGoodsCenterMngSdk      $javaGoodsCenterMng
+ * @property JavaGoodsCenterSdk         $javaGoodsCenter
+ * @property JavaGoodsReplaceServiceSdk $javaGoodsReplaceService
+ * @property JavaHealthSdk              $javaHealth
+ * @property JavaIhcenterSdk            $javaIhcenter
+ * @property JavaImmidSdk               $javaImmid
+ * @property JavaImpsSdk                $javaImps
+ * @property JavaImSdk                  $javaIm
+ * @property JavaImWsSdk                $javaImWs
+ * @property JavaInvoiceSdk             $javaInvoice
+ * @property JavaMemberSdk              $javaMember
+ * @property JavaMerchantSdk            $javaMerchant
+ * @property JavaMpacenterSdk           $javaMpacenter
+ * @property JavaOrderCodeSdk           $javaOrderCode
+ * @property JavaOrderErpSdk            $javaOrderErp
+ * @property JavaOrderQuerySdk          $javaOrderQuery
+ * @property JavaOrderSdk               $javaOrder
+ * @property JavaParserServiceSdk       $javaParserService
+ * @property JavaPmcCashierSdk          $javaPmcCashier
+ * @property JavaPneumaticSdk           $javaPneumatic
+ * @property JavaPrecheckSdk            $javaPrecheck
+ * @property JavaPromoteCenterSdk       $javaPromoteCenter
+ * @property JavaPromoteSdk             $javaPromote
+ * @property JavaPurchaseSdk            $javaPurchase
+ * @property JavaPushSdk                $javaPush
+ * @property JavaUserScoreSdk           $javaUserScore
+ * @property JavaUserServiceSdk         $javaUserService
+ * @property JmbslSdk                   $jmbsl
+ * @property JmbsSdk                    $jmbs
+ * @property JmInsureSdk                $jmInsure
+ * @property JsArchivesSdk              $jsArchives
+ * @property JsCleanCenterSdk           $jsCleanCenter
+ * @property JsFinanceEsSdk             $jsFinanceEs
+ * @property JsFinanceReplaceSdk        $jsFinanceReplace
+ * @property JwtSdk                     $jwt
+ * @property LiveSrvJsSdk               $liveSrvJs
+ * @property MapSdk                     $map
+ * @property MarketingSdk               $marketing
+ * @property Mbs2Sdk                    $mbs2
+ * @property MbsSdk                     $mbs
+ * @property MerchantApplySdk           $merchantApply
+ * @property MerchantSdk                $merchant
+ * @property MessageSdk                 $message
+ * @property MoreActivitySdk            $moreActivity
+ * @property MsgSdk                     $msg
+ * @property NotifySdk                  $notify
+ * @property OrderSdk                   $order
+ * @property OssSdk                     $oss
+ * @property OtcSdk                     $otc
+ * @property OutreachResourceApiSdk     $outreachResourceApiSdk
+ * @property PackageSdk                 $package
+ * @property PartnersSdk                $partners
+ * @property PrivilegeSdk               $privilege
+ * @property ProductSdk                 $product
+ * @property ProjectSdk                 $project
+ * @property PromotionBiddingSdk        $promotionBidding
+ * @property PromotionFinanceSdk        $promotionFinance
+ * @property PromotionUserSdk           $promotionUser
+ * @property PsDesktoptoolSdk           $psDesktoptool
+ * @property PsDstoreCartSdk            $psDstoreCart
+ * @property PsDstoreCustomerSdk        $psDstoreCustomer
+ * @property PsDstoreEsSdk              $psDstoreEs
+ * @property PsDstoreMemberSdk          $psDstoreMember
+ * @property PsDstoreReserveSdk         $psDstoreReserve
+ * @property PsFinanceDataSdk           $psFinanceData
+ * @property PsFinBillSdk               $psFinBillSdk
+ * @property PsFinStatementSdk          $psFinStatementSdk
+ * @property PsSdk                      $ps
+ * @property RobotSdk                   $robot
+ * @property RuleSdk                    $rule
+ * @property SchemeSdk                  $scheme
+ * @property ScoreSdk                   $score
+ * @property SettlementLogSdk           $settlementLog
+ * @property SettlementSdk              $settlement
+ * @property SettlementsheetSdk         $settlementsheet
+ * @property SmsSdk                     $sms
+ * @property StagnationSdk              $stagnation
+ * @property TakeSdk                    $take
+ * @property TokenSdk                   $token
+ * @property UdappSdk                   $udapp
+ * @property UserSdk                    $user
+ * @property VasSdk                     $vas
+ * @property WeixinSdk                  $weixin
+ * @property WxSdk                      $wx
+ * @property YdbResPmSdk                $ydbResPm
+ * @property ZhongShengSdk              $zhongSheng
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
