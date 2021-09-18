@@ -153,45 +153,44 @@ use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
 /**
  * Module
  * @property ActivitySdk                $activity
+ * @property ApproMngSdk                $approval
  * @property AiProfitDataSdk            $aiProfitData
  * @property AiProfitStatisticsSdk      $aiProfitStatistics
  * @property AiPushSdk                  $aiPush
- * @property ApproMngSdk                $approMng
  * @property AssistantSdk               $assistant
- * @property AuditLogSdk                $auditLog
  * @property AuditSdk                   $audit
  * @property AuthoritySdk               $authority
+ * @property AuditLogSdk                $auditLog
  * @property AuthSdk                    $auth
  * @property BillSdk                    $bill
  * @property CarSdk                     $car
- * @property ClaimSdk                   $claim
- * @property ClerkSdk                   $clerk
  * @property CommonSdk                  $common
- * @property CompanySdk                 $company
  * @property CompensateSdk              $compensate
  * @property CustomerSdk                $customer
  * @property CustomerserviceSdk         $customerservice
+ * @property ClaimSdk                   $claim
+ * @property ClerkSdk                   $clerk
+ * @property CompanySdk                 $company
  * @property DataSdk                    $data
- * @property DeliverSdk                 $deliver
  * @property DingtalkSdk                $dingtalk
  * @property DistsellSdk                $distsell
- * @property DrugstoreActivitySdk       $drugstoreActivity
  * @property DrugstoreStatisticSdk      $drugstoreStatistic
- * @property EquitySdk                  $equity
+ * @property DrugstoreActivitySdk       $drugstoreActivity
  * @property ExchangeSdk                $exchange
- * @property GoPartnersSdk              $goPartners
+ * @property GuaranteeclaimSdk          $guaranteeclaimSdk
+ * @property DeliverSdk                 $deliver
+ * @property EquitySdk                  $equity
  * @property GsFinanceSdk               $gsFinanceSdk
  * @property GsMossWeChatSdk            $gsMossWeChat
- * @property GuaranteeclaimSdk          $guaranteeclaimSdk
- * @property HuoJuExpressSdk            $huoJuExpress
- * @property InspectionSdk              $inspection
+ * @property GoPartnersSdk              $goPartners
  * @property InsureRankSdk              $insureRank
  * @property InsureSdk                  $insure
  * @property InvoiceSdk                 $invoice
+ * @property LiveSrvJsSdk               $liveSrvJs
  * @property JavaAdvfrontSdk            $javaAdvfront
- * @property JavaAgreementMngSdk        $javaAgreementMng
- * @property JavaAgreementQrySdk        $javaAgreementQry
- * @property JavaAgreementSvrSdk        $javaAgreementSvr
+ * @property JavaAgreementMngSdk        $javaAgreementMngService
+ * @property JavaAgreementQrySdk        $javaAgreementQryService
+ * @property JavaAgreementSvrSdk        $javaAgreementSvrService
  * @property JavaAuditLogServiceSdk     $javaAuditLogServiceSdk
  * @property JavaCashierSdk             $javaCashier
  * @property JavaCoinSdk                $javaCoin
@@ -207,43 +206,42 @@ use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
  * @property JavaErpPaySdk              $javaErpPay
  * @property JavaExchangeSdk            $javaExchange
  * @property JavaFinSdk                 $javaFin
- * @property JavaGoodsCenterApiSdk      $javaGoodsCenterApi
+ * @property JavaHealthSdk              $javaHealth
  * @property JavaGoodsCenterMngSdk      $javaGoodsCenterMng
  * @property JavaGoodsCenterSdk         $javaGoodsCenter
- * @property JavaGoodsReplaceServiceSdk $javaGoodsReplaceService
- * @property JavaHealthSdk              $javaHealth
+ * @property JavaGoodsCenterApiSdk      $javaGoodsCenterApi
+ * @property JavaGoodsReplaceServiceSdk $javaGoodsReplace
  * @property JavaIhcenterSdk            $javaIhcenter
- * @property JavaImmidSdk               $javaImmid
- * @property JavaImpsSdk                $javaImps
  * @property JavaImSdk                  $javaIm
+ * @property JavaImpsSdk                $javaImps
+ * @property JavaImmidSdk               $javaImmid
  * @property JavaImWsSdk                $javaImWs
  * @property JavaInvoiceSdk             $javaInvoice
  * @property JavaMemberSdk              $javaMember
  * @property JavaMerchantSdk            $javaMerchant
  * @property JavaMpacenterSdk           $javaMpacenter
+ * @property JavaOrderSdk               $javaOrder
  * @property JavaOrderCodeSdk           $javaOrderCode
  * @property JavaOrderErpSdk            $javaOrderErp
  * @property JavaOrderQuerySdk          $javaOrderQuery
- * @property JavaOrderSdk               $javaOrder
+ * @property JavaUserScoreSdk           $javaUserScore
  * @property JavaParserServiceSdk       $javaParserService
  * @property JavaPmcCashierSdk          $javaPmcCashier
  * @property JavaPneumaticSdk           $javaPneumatic
  * @property JavaPrecheckSdk            $javaPrecheck
  * @property JavaPromoteCenterSdk       $javaPromoteCenter
  * @property JavaPromoteSdk             $javaPromote
- * @property JavaPurchaseSdk            $javaPurchase
  * @property JavaPushSdk                $javaPush
- * @property JavaUserScoreSdk           $javaUserScore
+ * @property JavaPurchaseSdk            $javaPurchase
  * @property JavaUserServiceSdk         $javaUserService
- * @property JmbslSdk                   $jmbsl
- * @property JmbsSdk                    $jmbs
- * @property JmInsureSdk                $jmInsure
  * @property JsArchivesSdk              $jsArchives
  * @property JsCleanCenterSdk           $jsCleanCenter
  * @property JsFinanceEsSdk             $jsFinanceEs
  * @property JsFinanceReplaceSdk        $jsFinanceReplace
+ * @property JmbsSdk                    $jmbs
+ * @property JmbslSdk                   $jmbsl
+ * @property JmInsureSdk                $jmInsure
  * @property JwtSdk                     $jwt
- * @property LiveSrvJsSdk               $liveSrvJs
  * @property MapSdk                     $map
  * @property MarketingSdk               $marketing
  * @property Mbs2Sdk                    $mbs2
@@ -253,47 +251,49 @@ use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
  * @property MessageSdk                 $message
  * @property MoreActivitySdk            $moreActivity
  * @property MsgSdk                     $msg
- * @property NotifySdk                  $notify
  * @property OrderSdk                   $order
  * @property OssSdk                     $oss
- * @property OtcSdk                     $otc
- * @property OutreachResourceApiSdk     $outreachResourceApiSdk
  * @property PackageSdk                 $package
- * @property PartnersSdk                $partners
- * @property PrivilegeSdk               $privilege
  * @property ProductSdk                 $product
+ * @property PartnersSdk                $partners
  * @property ProjectSdk                 $project
  * @property PromotionBiddingSdk        $promotionBidding
  * @property PromotionFinanceSdk        $promotionFinance
  * @property PromotionUserSdk           $promotionUser
- * @property PsDesktoptoolSdk           $psDesktoptool
- * @property PsDstoreCartSdk            $psDstoreCart
- * @property PsDstoreCustomerSdk        $psDstoreCustomer
- * @property PsDstoreEsSdk              $psDstoreEs
- * @property PsDstoreMemberSdk          $psDstoreMember
- * @property PsDstoreReserveSdk         $psDstoreReserve
- * @property PsFinanceDataSdk           $psFinanceData
- * @property PsFinBillSdk               $psFinBillSdk
- * @property PsFinStatementSdk          $psFinStatementSdk
- * @property PsSdk                      $ps
  * @property RobotSdk                   $robot
+ * @property HuoJuExpressSdk            $huoJuExpress
  * @property RuleSdk                    $rule
- * @property SchemeSdk                  $scheme
- * @property ScoreSdk                   $score
  * @property SettlementLogSdk           $settlementLog
  * @property SettlementSdk              $settlement
  * @property SettlementsheetSdk         $settlementsheet
- * @property SmsSdk                     $sms
  * @property StagnationSdk              $stagnation
- * @property TakeSdk                    $take
  * @property TokenSdk                   $token
+ * @property PrivilegeSdk               $privilege
+ * @property SchemeSdk                  $scheme
+ * @property TakeSdk                    $take
  * @property UdappSdk                   $udapp
  * @property UserSdk                    $user
- * @property VasSdk                     $vas
  * @property WeixinSdk                  $weixin
  * @property WxSdk                      $wx
  * @property YdbResPmSdk                $ydbResPm
+ * @property ScoreSdk                   $score
  * @property ZhongShengSdk              $zhongSheng
+ * @property OutreachResourceApiSdk     $outreachResourceApiSdk
+ * @property VasSdk                     $vas
+ * @property SmsSdk                     $sms
+ * @property PsDesktoptoolSdk           $psDesktoptool
+ * @property PsFinanceDataSdk           $psFinanceData
+ * @property PsDstoreCartSdk            $psDstoreCart
+ * @property PsDstoreMemberSdk          $psDstoreMember
+ * @property PsDstoreEsSdk              $psDstoreEs
+ * @property PsDstoreReserveSdk         $psDstoreReserve
+ * @property PsSdk                      $ps
+ * @property OtcSdk                     $otc
+ * @property InspectionSdk              $inspection
+ * @property PsFinBillSdk               $psFinBillSdk
+ * @property PsFinStatementSdk          $psFinStatementSdk
+ * @property PsDstoreCustomerSdk        $psDstoreCustomer
+ * @property NotifySdk                  $notify
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
