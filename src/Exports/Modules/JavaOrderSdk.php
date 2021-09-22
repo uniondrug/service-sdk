@@ -400,4 +400,14 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/query/statisticsByMerchant", $body);
     }
+
+    /**
+     * 三方/处方信息同步
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function thirdinfoSync($body)
+    {
+        return $this->restful("POST", "/order/thirdinfo/sync", $body);
+    }
 }
