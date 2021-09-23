@@ -368,6 +368,32 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 店员退款统计
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantRefundCountAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantRefundCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/assistantRefundCount", $body, $query, $extra);
+    }
+
+    /**
+     * 店员退款新增
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantRefundCreateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantRefundCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/assistantRefundCreate", $body, $query, $extra);
+    }
+
+    /**
      * 店员退款风控
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantRefundRiskManageAction.md
      * @param array|object $body  入参类型
