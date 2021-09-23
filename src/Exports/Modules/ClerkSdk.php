@@ -368,6 +368,19 @@ class ClerkSdk extends SdkBase
     }
 
     /**
+     * 店员退款风控
+     * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/assistantRefundRiskManageAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantRefundRiskManage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/assistantRefundRiskManage", $body, $query, $extra);
+    }
+
+    /**
      * 店员pos关闭
      * @link https://uniondrug.coding.net/p/module.clerk/git/blob/development/docs/api/AssistantController/posDisableAction.md
      * @param array|object $body  入参类型
