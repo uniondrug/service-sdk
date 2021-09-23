@@ -29,13 +29,203 @@ class GsStatementSdk extends SdkBase
     protected $serviceName = 'gs-statement';
 
     /**
-     * 新增结算单
+     * 直付结算单-新增
      * @param $body
      * @return ResponseInterface
      */
-    public function createStatement($body)
+    public function directPayoutStatementCreate($body)
     {
         return $this->restful("POST", "/direct/statement/create", $body);
+    }
+
+    /**
+     * 直付结算单-列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementPaging($body)
+    {
+        return $this->restful("POST", "/direct/statement/paging", $body);
+    }
+
+    /**
+     * 直付结算单-导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementExport($body)
+    {
+        return $this->restful("POST", "/direct/statement/export", $body);
+    }
+
+    /**
+     * 直付结算单-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementDetail($body)
+    {
+        return $this->restful("POST", "/direct/statement/detail", $body);
+    }
+
+    /**
+     * 直付结算单-审核通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementAuditAccept($body)
+    {
+        return $this->restful("POST", "/direct/statement/audit/accept", $body);
+    }
+
+    /**
+     * 直付结算单-审核不通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementAuditRefuse($body)
+    {
+        return $this->restful("POST", "/direct/statement/audit/refuse", $body);
+    }
+
+    /**
+     * 直付结算单-账单汇总
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementPayList($body)
+    {
+        return $this->restful("POST", "/direct/statement/pay/list", $body);
+    }
+
+    /**
+     * 直付结算单-统计列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementSummaryPaging($body)
+    {
+        return $this->restful("POST", "/direct/statement/summary/paging", $body);
+    }
+
+    /**
+     * 直付结算单-订单取消结算
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementOrderCancel($body)
+    {
+        return $this->restful("POST", "/direct/statement/order/cancel", $body);
+    }
+
+    /**
+     * 直付结算单-订单取消结算
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementOrderRecover($body)
+    {
+        return $this->restful("POST", "/direct/statement/order/recover", $body);
+    }
+
+    /**
+     * 直付结算单-冻结指定核算单位可结算账期
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementDateBlock($body)
+    {
+        return $this->restful("POST", "/direct/statement/date/block", $body);
+    }
+
+    /**
+     * 直付结算单-指定核算单位冻结账期列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementBlockList($body)
+    {
+        return $this->restful("POST", "/direct/statement/date/list", $body);
+    }
+
+    /**
+     * 直付结算单-商业公司审核通过合并单体店结算单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementSingleAudit($body)
+    {
+        return $this->restful("POST", "/direct/statement/single/audit", $body);
+    }
+
+    /**
+     * 直付结算单-商业公司拒绝合并单体店结算单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementSingleRefuse($body)
+    {
+        return $this->restful("POST", "/direct/statement/single/refuse", $body);
+    }
+
+    /**
+     * 健康服务结算-新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function healthyStatementCreate($body)
+    {
+        return $this->restful("POST", "/healthy/statement/create", $body);
+    }
+
+    /**
+     * 健康服务结算-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function healthyStatementDetail($body)
+    {
+        return $this->restful("POST", "/healthy/statement/detail", $body);
+    }
+
+    /**
+     * 健康服务结算-订单明细添加
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function healthyStatementOrderCreate($body)
+    {
+        return $this->restful("POST", "/healthy/settlement/create", $body);
+    }
+
+    /**
+     * 健康服务结算-审核通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function healthyStatementAuditAccept($body)
+    {
+        return $this->restful("POST", "/healthy/statement/audit/accept", $body);
+    }
+
+    /**
+     * 健康服务结算-审核不通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function healthyStatementAuditRefuse($body)
+    {
+        return $this->restful("POST", "/healthy/statement/audit/refuse", $body);
+    }
+
+    /**
+     * 健康服务结算-开票销货清单生成
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function healthyStatementBillApply($body)
+    {
+        return $this->restful("POST", "/healthy/bill/apply", $body);
     }
 }
 
