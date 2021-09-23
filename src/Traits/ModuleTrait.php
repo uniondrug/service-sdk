@@ -37,6 +37,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GoPartnersSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsStatementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\HuoJuExpressSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk;
@@ -182,6 +183,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
  * @property EquitySdk                  $equity
  * @property GsFinanceSdk               $gsFinanceSdk
  * @property GsMossWeChatSdk            $gsMossWeChat
+ * @property GsStatementSdk             $gsStatement
  * @property GoPartnersSdk              $goPartners
  * @property InsureRankSdk              $insureRank
  * @property InsureSdk                  $insure
