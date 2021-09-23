@@ -2231,6 +2231,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 组织类型
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Organize/OrganizeController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organize/detail", $body, $query, $extra);
+    }
+
+    /**
      * 商户资质校验
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/OrganizeQualificationController/checkAction.md
      * @param array|object $body 入参类型
