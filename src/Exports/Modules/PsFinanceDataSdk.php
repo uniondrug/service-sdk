@@ -264,6 +264,58 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 新增银行大类
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Bank/BankController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/create", $body, $query, $extra);
+    }
+
+    /**
+     * 银行大类详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Bank/BankController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改银行大类
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Bank/BankController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/update", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function bankPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/paging", $body, $query, $extra);
+    }
+
+    /**
      * 城市列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouseController/citiesAction.md
      * @param array|object $body  入参类型
@@ -274,6 +326,32 @@ class PsFinanceDataSdk extends SdkBase
     public function bankHouseCities($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/bankHouse/cities", $body, $query, $extra);
+    }
+
+    /**
+     * 新增银行开户行
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouse/BankHouseController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankHouseCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bankHouse/create", $body, $query, $extra);
+    }
+
+    /**
+     * 修改银行开户行
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankHouse/BankHouseController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankHouseUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bankHouse/update", $body, $query, $extra);
     }
 
     /**
@@ -313,19 +391,6 @@ class PsFinanceDataSdk extends SdkBase
     public function bankHouseProvinces($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/bankHouse/provinces", $body, $query, $extra);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankController/pagingAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function bankPaging($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/bank/paging", $body, $query, $extra);
     }
 
     /**
