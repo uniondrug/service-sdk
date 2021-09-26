@@ -119,7 +119,7 @@ class GsStatementSdk extends SdkBase
     }
 
     /**
-     * 直付结算单-订单取消结算
+     * 直付结算单-订单恢复结算
      * @param $body
      * @return ResponseInterface
      */
