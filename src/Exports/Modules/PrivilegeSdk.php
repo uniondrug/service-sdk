@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-30
- * @time   Mon, 30 Aug 2021 21:03:21 +0800
+ * @date   2021-09-26
+ * @time   Sun, 26 Sep 2021 14:01:05 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -235,6 +235,19 @@ class PrivilegeSdk extends SdkBase
     public function privilegeGetGift($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/privilege/get/gift", $body, $query, $extra);
+    }
+
+    /**
+     * 特权规则编辑
+     * @link https://uniondrug.coding.net/p/module.privilege/git/blob/development/docs/api/Privilege/PrivilegeController/getPointLogAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function privilegeGetPointLog($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/privilege/get/point/log", $body, $query, $extra);
     }
 
     /**
