@@ -1344,6 +1344,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁审核列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DirectorController/auditListingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDirectorAuditListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/director/audit/listing", $body, $query, $extra);
+    }
+
+    /**
      * 连锁负责人列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DirectorController/listAction.md
      * @param array|object $body  入参类型
