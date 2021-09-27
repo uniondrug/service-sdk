@@ -262,4 +262,17 @@ class PsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/bill/saleListSummary", $body, $query, $extra);
     }
+
+    /**
+     * 回款明细分页
+     * @link https://uniondrug.coding.net/p/ps-fin-bill/git/blob/development/docs/api/BillController/receiptedPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function billReceiptedPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bill/receipted/paging", $body, $query, $extra);
+    }
 }
