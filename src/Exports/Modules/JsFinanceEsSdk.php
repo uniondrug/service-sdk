@@ -22,25 +22,25 @@ class JsFinanceEsSdk extends SdkBase
     protected $serviceName = 'js-finance-es';
 
     /**
-     * 分页查询
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/page.md
+     * 应付结算单分页
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/SettlementController/page.md
      * @param $body
      * @return ResponseInterface
      */
-    public function paging($body)
+    public function payoutStatementPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/page", $body);
+        return $this->restful("POST", "/esapi/search/settlement/page", $body);
     }
 
     /**
-     * 详情
+     * 应付结算单详情
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
      * @param $body
      * @return ResponseInterface
      */
-    public function detail($body)
+    public function payoutStatementDetail($body)
     {
-        return $this->restful("POST", "/esapi/search/detail", $body);
+        return $this->restful("POST", "/esapi/search/settlement/detail", $body);
     }
 }
 
