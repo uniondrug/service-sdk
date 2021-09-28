@@ -20,13 +20,13 @@ use Uniondrug\ServiceSdk\Bases\ResponseInterface;
  * Class GsStatementSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class GsStatementSdk extends SdkBase
+class GsFinStatementSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'gs-statement';
+    protected $serviceName = 'gs-fin-statement';
 
     /**
      * 直付结算单-新增
