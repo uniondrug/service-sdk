@@ -29,18 +29,18 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function payoutStatementPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/settlement/page", $body);
+        return $this->restful("POST", "/esapi/search/settlement/payable/page", $body);
     }
 
     /**
-     * 应付结算单详情
+     * 应付结算单-直付结算单订单详情
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
      * @param $body
      * @return ResponseInterface
      */
-    public function payoutStatementDetail($body)
+    public function payoutStatementOrderPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/settlement/detail", $body);
+        return $this->restful("POST", "/esapi/search/settlement/order/page", $body);
     }
 }
 
