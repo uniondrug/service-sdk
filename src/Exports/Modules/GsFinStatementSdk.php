@@ -169,6 +169,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单-付款信息列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementPaymentList($body)
+    {
+        return $this->restful("POST", "direct/payment/list", $body);
+    }
+
+    /**
      * 健康服务结算-新增
      * @param $body
      * @return ResponseInterface
