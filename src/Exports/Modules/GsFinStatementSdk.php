@@ -175,7 +175,17 @@ class GsFinStatementSdk extends SdkBase
      */
     public function directPayoutStatementPaymentList($body)
     {
-        return $this->restful("POST", "direct/payment/list", $body);
+        return $this->restful("POST", "/direct/payment/list", $body);
+    }
+
+    /**
+     * 直付结算单-核算单位扩展信息
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutUnitExtendInfo($body)
+    {
+        return $this->restful("POST", "/direct/unit/extend/info", $body);
     }
 
     /**
