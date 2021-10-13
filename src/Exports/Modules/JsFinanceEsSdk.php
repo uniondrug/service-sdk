@@ -29,7 +29,7 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function payoutStatementPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/payout/statement/page", $body);
+        return $this->restful("POST", "/esapi/search/statement/payout/page", $body);
     }
 
     /**
@@ -40,7 +40,7 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function payoutStatementOrderPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/payout/statement/order/page", $body);
+        return $this->restful("POST", "/esapi/search/statement/payout/order/page", $body);
     }
 
     /**
@@ -62,7 +62,7 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function billSaleListPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/bill/sales/list/page", $body);
+        return $this->restful("POST", "/esapi/search/bill/saleslist/page", $body);
     }
 
     /**
@@ -73,7 +73,7 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function receiveStatementPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/receive/statement/page", $body);
+        return $this->restful("POST", "/esapi/search/statement/receive/page", $body);
     }
 }
 
