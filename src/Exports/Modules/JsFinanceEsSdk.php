@@ -42,5 +42,27 @@ class JsFinanceEsSdk extends SdkBase
     {
         return $this->restful("POST", "/esapi/search/settlement/order/page", $body);
     }
+
+    /**
+     * 开票单-销售清单分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billSaleListPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/settlement/saleslist/page", $body);
+    }
+
+    /**
+     * 应收结算单-分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveStatementPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/settlement/receivable/page", $body);
+    }
 }
 
