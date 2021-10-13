@@ -9,7 +9,7 @@
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-10-13
- * @time   Wed, 13 Oct 2021 10:09:55 +0800
+ * @time   Wed, 13 Oct 2021 15:11:30 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -433,6 +433,19 @@ class PsSdk extends SdkBase
     }
 
     /**
+     * 开票数据   [员工维度] - [财险/寿险/未知险] - [PC端]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/insuranceDetailUsersAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticInsuranceDetailUsers($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/insuranceDetailUsers", $body, $query, $extra);
+    }
+
+    /**
      * 首页     [全国] - [竞争性市场]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/marketCollectAction.md
      * @param array|object $body 入参类型
@@ -511,7 +524,7 @@ class PsSdk extends SdkBase
     }
 
     /**
-     * 首页     [员工维度] - [业务机构]
+     * 业务发生数据     [员工维度] - [业务机构] - [pc端]
      * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationCollectUsersAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
