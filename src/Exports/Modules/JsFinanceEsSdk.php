@@ -29,7 +29,7 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function payoutStatementPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/settlement/payable/page", $body);
+        return $this->restful("POST", "/esapi/search/payout/statement/page", $body);
     }
 
     /**
@@ -40,7 +40,40 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function payoutStatementOrderPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/settlement/order/page", $body);
+        return $this->restful("POST", "/esapi/search/payout/statement/order/page", $body);
+    }
+
+    /**
+     * 开票单-分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/bill/page", $body);
+    }
+
+    /**
+     * 开票单-销售清单分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billSaleListPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/bill/sales/list/page", $body);
+    }
+
+    /**
+     * 应收结算单-分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveStatementPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/receive/statement/page", $body);
     }
 }
 
