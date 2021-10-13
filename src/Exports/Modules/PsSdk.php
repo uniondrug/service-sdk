@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-09-13
- * @time   Mon, 13 Sep 2021 18:40:27 +0800
+ * @date   2021-10-13
+ * @time   Wed, 13 Oct 2021 10:09:55 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -508,6 +508,19 @@ class PsSdk extends SdkBase
     public function policyStatisticOrganizationCollectPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policyStatistic/organizationCollectPaging", $body, $query, $extra);
+    }
+
+    /**
+     * 首页     [员工维度] - [业务机构]
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/PolicyStatisticController/organizationCollectUsersAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function policyStatisticOrganizationCollectUsers($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policyStatistic/organizationCollectUsers", $body, $query, $extra);
     }
 
     /**
