@@ -44,6 +44,17 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
+     * 应收结算单-分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveStatementPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/statement/receive/page", $body);
+    }
+
+    /**
      * 开票单-分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
      * @param $body
@@ -66,14 +77,25 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
-     * 应收结算单-分页列表
+     * 开票单-发票分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
      * @param $body
      * @return ResponseInterface
      */
-    public function receiveStatementPaging($body)
+    public function invoicePaging($body)
     {
-        return $this->restful("POST", "/esapi/search/statement/receive/page", $body);
+        return $this->restful("POST", "/esapi/search/bill/invoice/page", $body);
+    }
+
+    /**
+     * 开票单-发票物流分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/bill/express/page", $body);
     }
 }
 
