@@ -22,7 +22,7 @@ class JsFinanceEsSdk extends SdkBase
     protected $serviceName = 'js-finance-es';
 
     /**
-     * 应付结算单分页
+     * 应付结算单分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/SettlementController/page.md
      * @param $body
      * @return ResponseInterface
@@ -33,7 +33,7 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
-     * 应付结算单-直付结算单订单详情
+     * 应付结算单-直付结算单订单分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
      * @param $body
      * @return ResponseInterface
@@ -41,6 +41,17 @@ class JsFinanceEsSdk extends SdkBase
     public function payoutStatementOrderPaging($body)
     {
         return $this->restful("POST", "/esapi/search/statement/payout/order/page", $body);
+    }
+
+    /**
+     * 应付结算单-直付结算单订单商品分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function payoutStatementOrderGoodsPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/statement/payout/order/goods/page", $body);
     }
 
     /**
