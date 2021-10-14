@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-07-13
- * @time   Tue, 13 Jul 2021 11:45:50 +0800
+ * @date   2021-10-14
+ * @time   Thu, 14 Oct 2021 13:28:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -40,6 +40,19 @@ class ClaimSdk extends SdkBase
     public function changeAudit($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/change/audit", $body, $query, $extra);
+    }
+
+    /**
+     * 回收站初审通过
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ChangeController/compensateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function changeCompensate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/change/compensate", $body, $query, $extra);
     }
 
     /**
@@ -394,6 +407,19 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 理赔撤销
+     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/recoverEquityAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimRecover($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/recover", $body, $query, $extra);
+    }
+
+    /**
      * 理赔拒绝
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/refusedAction.md
      * @param array|object $body 入参类型
@@ -404,19 +430,6 @@ class ClaimSdk extends SdkBase
     public function claimRefused($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/claim/refused", $body, $query, $extra);
-    }
-
-    /**
-     * 理赔撤销
-     * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/ClaimController/refusedAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function claimRecover($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/claim/recover", $body, $query, $extra);
     }
 
     /**
@@ -537,6 +550,7 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 阿美乐专用 只做扣减不做其他
      * 资金池扣减
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/PoolController/deductAction.md
      * @param array|object $body 入参类型
@@ -550,6 +564,7 @@ class ClaimSdk extends SdkBase
     }
 
     /**
+     * 阿美乐专用
      * 根据原扣减还原资金池
      * @link https://uniondrug.coding.net/p/module.claim/git/tree/development/module.claim/api/PoolController/returndAction.md
      * @param array|object $body 入参类型
