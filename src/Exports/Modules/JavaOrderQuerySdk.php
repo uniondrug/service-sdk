@@ -21,9 +21,9 @@ class JavaOrderQuerySdk extends SdkBase
 
     /**
      * 根据主订单号集合获取子订单列表(新，兼容老数据)
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function queryMainOrderList($body)
     {
@@ -32,9 +32,9 @@ class JavaOrderQuerySdk extends SdkBase
 
     /**
      * 子订单查询列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function subOrderList($body)
     {
@@ -43,9 +43,9 @@ class JavaOrderQuerySdk extends SdkBase
 
     /**
      * 子订单查询列表
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function statisticsByMerchant($body)
     {
@@ -56,9 +56,9 @@ class JavaOrderQuerySdk extends SdkBase
 
     /**
      * 退单信息查询
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function queryRefundListByOrderNoForYDB($body)
     {
@@ -66,10 +66,21 @@ class JavaOrderQuerySdk extends SdkBase
     }
 
     /**
-     * 子订单列表检索
-     * @link
+     * 退单信息查询
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
+     */
+    public function orderQueryRefundList($body)
+    {
+        return $this->restful("POST", "/order/query/queryRefundList", $body);
+    }
+
+    /**
+     * 子订单列表检索
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
      */
     public function orderQuerySubOrderListForAdmin($body)
     {
@@ -78,9 +89,9 @@ class JavaOrderQuerySdk extends SdkBase
 
     /**
      * 商品维度的订单列表检索
-     * @link
      * @param $body
      * @return ResponseInterface
+     * @link
      */
     public function orderItemQuery($body)
     {
@@ -143,9 +154,9 @@ class JavaOrderQuerySdk extends SdkBase
 
     /**
      * 订单退款查询接口
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryCashierCancel($body)
     {
@@ -154,9 +165,9 @@ class JavaOrderQuerySdk extends SdkBase
 
     /**
      * 订单memberId查询主订单
-     * @link
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link
      */
     public function orderQueryMember($body)
     {
