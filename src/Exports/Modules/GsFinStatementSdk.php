@@ -189,6 +189,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单-提交开票
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillSubmit($body)
+    {
+        return $this->restful("POST", "/direct/bill/submit", $body);
+    }
+
+    /**
      * 健康服务结算-新增
      * @param $body
      * @return ResponseInterface
