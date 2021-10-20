@@ -22,8 +22,19 @@ class JsFinanceEsSdk extends SdkBase
     protected $serviceName = 'js-finance-es';
 
     /**
+     * 根据文档ID获取详情
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/CommonController/detail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function detail($body)
+    {
+        return $this->restful("POST", "/esapi/search/detail", $body);
+    }
+
+    /**
      * 应付结算单分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/SettlementController/page.md
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/payablePage.md
      * @param $body
      * @return ResponseInterface
      */
@@ -34,7 +45,7 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 应付结算单-直付结算单订单分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/orderPage.md
      * @param $body
      * @return ResponseInterface
      */
@@ -45,7 +56,7 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 应付结算单-直付结算单订单商品分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/orderGoodsPage.md
      * @param $body
      * @return ResponseInterface
      */
@@ -56,7 +67,7 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 应收结算单-分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/receivablePage.md
      * @param $body
      * @return ResponseInterface
      */
@@ -67,7 +78,7 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 开票单-分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/BillController/billPage.md
      * @param $body
      * @return ResponseInterface
      */
@@ -78,7 +89,7 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 开票单-销售清单分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/BillController/salesListPage.md
      * @param $body
      * @return ResponseInterface
      */
@@ -89,7 +100,7 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 开票单-发票分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/BillController/invoicePage.md
      * @param $body
      * @return ResponseInterface
      */
@@ -100,7 +111,7 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 开票单-发票物流分页列表
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/detail.md
+     * @link
      * @param $body
      * @return ResponseInterface
      */
