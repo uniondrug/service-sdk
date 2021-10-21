@@ -2358,4 +2358,16 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/feedback/create", $body, $query, $extra);
     }
+
+    /**
+     * 在线开票协议
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function onlineInvoiceProtocolCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/onlineInvoiceProtocol/create", $body, $query, $extra);
+    }
 }
