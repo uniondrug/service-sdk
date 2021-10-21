@@ -199,6 +199,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 同步更新未完成的付款单账户信息
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccount/BankAccountController/syncCapitalPaymentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountSyncCapitalPayment($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/sync/capital/payment", $body, $query, $extra);
+    }
+
+    /**
      * 获取待审核列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/toAuditListingAction.md
      * @param array|object $body  入参类型
