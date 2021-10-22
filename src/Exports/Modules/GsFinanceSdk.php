@@ -47,5 +47,16 @@ class GsFinanceSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/item/update/tax", $body);
     }
+
+    /**
+     * 手动生成开票单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function manualCreateBill($body)
+    {
+        return $this->restful("POST", "/direct/manual/create/bill", $body);
+    }
+
 }
 
