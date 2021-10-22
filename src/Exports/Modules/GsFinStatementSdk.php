@@ -199,6 +199,26 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单-可结算订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directOrderSummary($body)
+    {
+        return $this->restful("POST", "/direct/order/summary", $body);
+    }
+
+    /**
+     * 直付结算单-结算订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementSummary($body)
+    {
+        return $this->restful("POST", "/direct/statement/summary", $body);
+    }
+
+    /**
      * 健康服务结算-新增
      * @param $body
      * @return ResponseInterface
