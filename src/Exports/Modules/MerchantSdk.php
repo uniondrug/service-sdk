@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-30
- * @time   Mon, 30 Aug 2021 17:03:42 +0800
+ * @date   2021-10-25
+ * @time   Mon, 25 Oct 2021 10:03:22 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2084,6 +2084,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 查询组织id
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePcController/internalCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function internalCodePc($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasepc/internalcode", $body, $query, $extra);
+    }
+
+    /**
      * 通过internalName获取连锁门店
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/internalNameAction.md
      * @param array|object $body 入参类型
@@ -2406,6 +2419,19 @@ class MerchantSdk extends SdkBase
     public function moblieWorkerMan($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/workerman/moblie", $body, $query, $extra);
+    }
+
+    /**
+     * 按名称查询
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/nameListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function nameListBackend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/namelist", $body, $query, $extra);
     }
 
     /**
