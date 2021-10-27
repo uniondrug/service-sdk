@@ -1552,6 +1552,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 订阅助手商户入驻财务数据
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/settledAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSettled($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/settled", $body, $query, $extra);
+    }
+
+    /**
      * 连锁树形结构
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/treeAction.md
      * @param array|object $body 入参类型
