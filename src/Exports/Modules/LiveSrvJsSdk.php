@@ -223,4 +223,16 @@ class LiveSrvJsSdk extends SdkBase
     {
         return $this->restful("POST", "/live/queryListByBatchNo", $body, $query, $extra);
     }
+
+    /**
+     * 获取虚拟人token
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function userGetVirtualToken($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/getVirtualToken", $body, $query, $extra);
+    }
 }
