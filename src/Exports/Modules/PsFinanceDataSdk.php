@@ -1617,6 +1617,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 自动新增连锁用户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerAutoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/auto/create", $body, $query, $extra);
+    }
+
+    /**
      * 编辑连锁用户
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/createAction.md
      * @param array|object $body  入参类型
