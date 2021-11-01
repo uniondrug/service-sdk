@@ -889,4 +889,30 @@ class StagnationSdk extends SdkBase
     {
         return $this->restful("POST", "/welfare/page", $body, $query, $extra);
     }
+
+    /**
+     * 扫码记录
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareCodeController/scannedAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCodeScanned($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/code/scanned", $body, $query, $extra);
+    }
+
+    /**
+     * 查询某个兑换码的扫码情况
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/WelfareCodeController/scanStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function welfareCodeScanStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welfare/code/scanStatus", $body, $query, $extra);
+    }
 }
