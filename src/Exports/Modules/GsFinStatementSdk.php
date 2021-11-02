@@ -347,4 +347,34 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/renew/statement/audit/refuse", $body);
     }
+
+    /**
+     * 药师结算-付款进度
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementPaymentProgress($body)
+    {
+        return $this->restful("POST", "/subsidy/payment/progress", $body);
+    }
+
+    /**
+     * 药师结算-付款单列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementPaymentList($body)
+    {
+        return $this->restful("POST", "/subsidy/payment/list", $body);
+    }
+
+    /**
+     * 药师结算-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementDetail($body)
+    {
+        return $this->restful("POST", "/subsidy/payment/detail", $body);
+    }
 }
