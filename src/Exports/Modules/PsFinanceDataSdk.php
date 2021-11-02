@@ -1214,6 +1214,18 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 连锁简化列表
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSimplifyList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/simplify/list", $body, $query, $extra);
+    }
+
+    /**
      * 修改连锁
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/updateAction.md
      * @param array|object $body 入参类型
