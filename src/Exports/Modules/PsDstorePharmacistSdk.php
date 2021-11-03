@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-11-03
- * @time   Wed, 03 Nov 2021 10:22:26 +0800
+ * @time   Wed, 03 Nov 2021 16:37:29 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsDstorePharmacistSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-pharmacist';
+
+    /**
+     * 获取用户和药师的最新一条会话
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/getLastConversationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getLastConversation($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/conversation/getLastConversation", $body, $query, $extra);
+    }
 
     /**
      * 根据项目类型获取项目详情
@@ -53,6 +66,19 @@ class PsDstorePharmacistSdk extends SdkBase
     public function getProjectJumpUrl($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/project/getProjectJumpUrl", $body, $query, $extra);
+    }
+
+    /**
+     * 创建项目
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/page", $body, $query, $extra);
     }
 
     /**
