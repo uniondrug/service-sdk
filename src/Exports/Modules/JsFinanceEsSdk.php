@@ -66,6 +66,17 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
+     * 应付结算单-服务补贴订单分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/orderGoodsPage.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementOrderPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/statement/subsidy/order/page", $body);
+    }
+
+    /**
      * 应收结算单-分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/receivablePage.md
      * @param $body
