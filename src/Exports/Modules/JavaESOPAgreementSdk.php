@@ -16,4 +16,15 @@ class JavaESOPAgreementSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'js-esop-agreement-mng';
+
+    /**
+     * 查询协议列表
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function agreementList($body)
+    {
+        return $this->restful("POST", "/mng/agreement/list", $body);
+    }
 }
