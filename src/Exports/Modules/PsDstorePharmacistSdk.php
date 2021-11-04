@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-03
- * @time   Wed, 03 Nov 2021 16:37:29 +0800
+ * @date   2021-11-04
+ * @time   Thu, 04 Nov 2021 16:33:08 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,19 +28,6 @@ class PsDstorePharmacistSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-pharmacist';
-
-    /**
-     * 获取用户和药师的最新一条会话
-     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/getLastConversationAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function getLastConversation($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/conversation/getLastConversation", $body, $query, $extra);
-    }
 
     /**
      * 根据项目类型获取项目详情
@@ -66,6 +53,32 @@ class PsDstorePharmacistSdk extends SdkBase
     public function getProjectJumpUrl($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/project/getProjectJumpUrl", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用户和药师的进行中的会话
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/getUnfinishedConversationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getUnfinishedConversation($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/conversation/getUnfinishedConversation", $body, $query, $extra);
+    }
+
+    /**
+     * 创建项目
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectController/logPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectLogPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/log/page", $body, $query, $extra);
     }
 
     /**
