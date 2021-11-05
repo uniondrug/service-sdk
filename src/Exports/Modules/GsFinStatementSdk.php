@@ -375,6 +375,6 @@ class GsFinStatementSdk extends SdkBase
      */
     public function subsidyStatementDetail($body)
     {
-        return $this->restful("POST", "/subsidy/payment/detail", $body);
+        return $this->restful("POST", "/subsidy/statement/detail", $body);
     }
 }
