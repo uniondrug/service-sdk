@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-04
- * @time   Thu, 04 Nov 2021 16:56:56 +0800
+ * @date   2021-11-08
+ * @time   Mon, 08 Nov 2021 11:17:45 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,19 @@ class PsDstorePharmacistSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-pharmacist';
+
+    /**
+     * 根据会话id获取会话
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/getByConversationIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getByConversationId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/conversation/getByConversationId", $body, $query, $extra);
+    }
 
     /**
      * 根据项目类型获取项目详情
@@ -118,5 +131,18 @@ class PsDstorePharmacistSdk extends SdkBase
     public function saveProject($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/project/save", $body, $query, $extra);
+    }
+
+    /**
+     * 更新会话
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/updateConversationAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateConversation($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/conversation/updateConversation", $body, $query, $extra);
     }
 }
