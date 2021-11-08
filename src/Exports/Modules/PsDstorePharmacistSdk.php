@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-11-08
- * @time   Mon, 08 Nov 2021 11:17:45 +0800
+ * @time   Mon, 08 Nov 2021 11:36:35 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,19 +28,6 @@ class PsDstorePharmacistSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-pharmacist';
-
-    /**
-     * 根据会话id获取会话
-     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/getByConversationIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function getByConversationId($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/conversation/getByConversationId", $body, $query, $extra);
-    }
 
     /**
      * 根据项目类型获取项目详情
@@ -79,6 +66,19 @@ class PsDstorePharmacistSdk extends SdkBase
     public function getProjectJumpUrl($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/project/getProjectJumpUrl", $body, $query, $extra);
+    }
+
+    /**
+     * 根据会话id获取会话
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/getSwitchLogByConversationIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getSwitchLogByConversationId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/conversation/getSwitchLogByConversationId", $body, $query, $extra);
     }
 
     /**
@@ -135,14 +135,14 @@ class PsDstorePharmacistSdk extends SdkBase
 
     /**
      * 更新会话
-     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/updateConversationAction.md
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ConversationController/updateConversationSwitchLogAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function updateConversation($body, $query = null, $extra = null)
+    public function updateConversationSwitchLog($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/conversation/updateConversation", $body, $query, $extra);
+        return $this->restful("POST", "/conversation/updateConversationSwitchLog", $body, $query, $extra);
     }
 }
