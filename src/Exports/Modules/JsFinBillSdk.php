@@ -17,16 +17,16 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * Class GsFinBillSdk
+ * Class JsFinBillSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class GsFinBillSdk extends SdkBase
+class JsFinBillSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'gs-fin-bill';
+    protected $serviceName = 'js-fin-bill';
 
     /**
      * 创建开票协议
@@ -55,7 +55,7 @@ class GsFinBillSdk extends SdkBase
      */
     public function invoiceIntegrityCheck($body)
     {
-        return $this->restful("POST", "/invoice/integrity/check", $body);
+        return $this->restful("POST", "/invoice/checkInvoiceData", $body);
     }
 
     /**
@@ -65,16 +65,26 @@ class GsFinBillSdk extends SdkBase
      */
     public function invoiceCreate($body)
     {
-        return $this->restful("POST", "/invoice/business/create", $body);
+        return $this->restful("POST", "/invoice/merchantInputInvoice", $body);
     }
 
     /**
-     * 发票票易通录入
+     * 发票编辑
      * @param $body
      * @return ResponseInterface
      */
-    public function invoiceCreateByXForce($body)
+    public function invoiceUpdate($body)
     {
-        return $this->restful("POST", "/invoice/xforce/create", $body);
+        return $this->restful("POST", "/invoice/edit", $body);
+    }
+
+    /**
+     * 发票删除
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceDelete($body)
+    {
+        return $this->restful("POST", "/invoice/remove", $body);
     }
 }
