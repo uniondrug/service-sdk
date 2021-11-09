@@ -29,17 +29,6 @@ class JavaESBPEquitySVRSdk extends SdkBase
     }
 
     /**
-     * 权益锁定
-     * @param array $body 入参类型
-     * @return ResponseInterface
-     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js-esop-business-svr/PerformanceAgreementController/batchLockEquityApi.md
-     */
-    public function equityBatchLock($body)
-    {
-        return $this->restful("POST", "/perAgr/equity/batchLock", $body);
-    }
-
-    /**
      * 权益取消锁定
      * @param array $body 入参类型
      * @return ResponseInterface
