@@ -189,6 +189,36 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单-提交开票
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillSubmit($body)
+    {
+        return $this->restful("POST", "/direct/bill/submit", $body);
+    }
+
+    /**
+     * 直付结算单-可结算订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directOrderSummary($body)
+    {
+        return $this->restful("POST", "/direct/order/summary", $body);
+    }
+
+    /**
+     * 直付结算单-结算订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementSummary($body)
+    {
+        return $this->restful("POST", "/direct/statement/summary", $body);
+    }
+
+    /**
      * 健康服务结算-新增
      * @param $body
      * @return ResponseInterface
@@ -239,7 +269,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 健康服务结算-开票销货清单生成
+     * 健康服务结算-健康服务结算手动申请开票
      * @param $body
      * @return ResponseInterface
      */
@@ -247,5 +277,104 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/healthy/bill/apply", $body);
     }
-}
 
+    /**
+     * 健康服务结算-健康服务结算创建付款单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function healthyStatementPaymentCreate($body)
+    {
+        return $this->restful("POST", "/healthy/payment/create", $body);
+    }
+
+    /**
+     * 换新结算-发起
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementCreate($body)
+    {
+        return $this->restful("POST", "/renew/statement/create", $body);
+    }
+
+    /**
+     * 换新结算-付款单列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementPaymentList($body)
+    {
+        return $this->restful("POST", "/renew/payment/list", $body);
+    }
+
+    /**
+     * 换新结算-账单汇总
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementSummaryList($body)
+    {
+        return $this->restful("POST", "/renew/summary/list", $body);
+    }
+
+    /**
+     * 换新结算-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementDetail($body)
+    {
+        return $this->restful("POST", "/renew/statement/detail", $body);
+    }
+
+    /**
+     * 换新结算-审核通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementAuditAccept($body)
+    {
+        return $this->restful("POST", "/renew/statement/audit/accept", $body);
+    }
+
+    /**
+     * 换新结算-审核拒绝
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementAuditRefuse($body)
+    {
+        return $this->restful("POST", "/renew/statement/audit/refuse", $body);
+    }
+
+    /**
+     * 药师结算-付款进度
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementPaymentProgress($body)
+    {
+        return $this->restful("POST", "/subsidy/payment/progress", $body);
+    }
+
+    /**
+     * 药师结算-付款单列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementPaymentList($body)
+    {
+        return $this->restful("POST", "/subsidy/payment/list", $body);
+    }
+
+    /**
+     * 药师结算-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementDetail($body)
+    {
+        return $this->restful("POST", "/subsidy/statement/detail", $body);
+    }
+}

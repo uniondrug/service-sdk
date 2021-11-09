@@ -470,4 +470,17 @@ class AuthoritySdk extends SdkBase
     {
         return $this->restful("POST", "/systemWorkerRole/paging", $body, $query, $extra);
     }
+
+    /**
+     * 根据workerId查询改员工的权限列表分页
+     * @link https://uniondrug.coding.net/p/module.authority/git/blob/development/docs/api/SystemWorkerRoleController/pageByWorkerAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function pageByWorker($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/systemWorkerRole/pageByWorker", $body, $query, $extra);
+    }
 }

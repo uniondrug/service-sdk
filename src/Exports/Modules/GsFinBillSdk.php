@@ -17,46 +17,64 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * Class GsFinanceSdk
+ * Class GsFinBillSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class GsFinanceSdk extends SdkBase
+class GsFinBillSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'gs-finance';
+    protected $serviceName = 'gs-fin-bill';
 
     /**
-     * 新增结算单3.0
+     * 创建开票协议
      * @param $body
      * @return ResponseInterface
      */
-    public function createStatement($body)
+    public function billProtocolCreate($body)
     {
-        return $this->restful("POST", "/direct/statement/create", $body);
+        return $this->restful("POST", "/bill/protocol/create", $body);
     }
 
     /**
-     * 修改商品税率税额
+     * 查询开票协议
      * @param $body
      * @return ResponseInterface
      */
-    public function updateItemTax($body)
+    public function billProtocolDetail($body)
     {
-        return $this->restful("POST", "/direct/item/update/tax", $body);
+        return $this->restful("POST", "/bill/protocol/detail", $body);
     }
 
     /**
-     * 手动生成开票单
+     * 发票输入完整性检测
      * @param $body
      * @return ResponseInterface
      */
-    public function manualCreateBill($body)
+    public function invoiceIntegrityCheck($body)
     {
-        return $this->restful("POST", "/direct/manual/create/bill", $body);
+        return $this->restful("POST", "/invoice/integrity/check", $body);
     }
 
+    /**
+     * 发票商家录入
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceCreate($body)
+    {
+        return $this->restful("POST", "/invoice/business/create", $body);
+    }
+
+    /**
+     * 发票票易通录入
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceCreateByXForce($body)
+    {
+        return $this->restful("POST", "/invoice/xforce/create", $body);
+    }
 }
-

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-10-14
- * @time   Thu, 14 Oct 2021 10:37:56 +0800
+ * @date   2021-10-15
+ * @time   Fri, 15 Oct 2021 13:20:48 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1093,6 +1093,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function GetGroupByMemberIds($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/group/member/getGroupByMemberIds", $body, $query, $extra);
+    }
+
+    /**
+     * 批量获取im开方状态
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/getImPrescriptionStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getImPrescriptionStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/getImPrescriptionStatus", $body, $query, $extra);
     }
 
     /**
@@ -2435,6 +2448,19 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
+     * 标记im开方状态为已读
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/setImPrescriptionReadAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function setImPrescriptionRead($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/member/setImPrescriptionRead", $body, $query, $extra);
+    }
+
+    /**
      * 明星药师详情
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/StarPharmacistController/starPharmacistDetailAction.md
      * @param array|object $body 入参类型
@@ -2770,19 +2796,6 @@ class PsDstoreMemberSdk extends SdkBase
     public function updateBonusUseLog($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/activity/updateBonusUseLog", $body, $query, $extra);
-    }
-
-    /**
-     * 更新im用户信息
-     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/MemberController/updateMemberAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function updateMember($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/member/updateMember", $body, $query, $extra);
     }
 
     /**

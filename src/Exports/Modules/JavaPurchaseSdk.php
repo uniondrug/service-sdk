@@ -454,4 +454,26 @@ class JavaPurchaseSdk extends SdkBase
     public function purchasePileListInfos($body, $query = null, $extra = null) {
         return $this->restful(static::METHOD_POST, '/purchasePile/list/infos', $body, $query = null, $extra = null);
     }
+
+    /**
+     * 福联社项目信息列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function purchaseProjectPaging($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/externalPurchaseProject/paging', $body, $query = null, $extra = null);
+    }
+
+    /**
+     * 福联社奖品根据项目编号查询商品信息
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function listSpecsGoodsInfo($body, $query = null, $extra = null) {
+        return $this->restful(static::METHOD_POST, '/externalPurchaseProject/listSpecsGoodsInfo', $body, $query = null, $extra = null);
+    }
 }

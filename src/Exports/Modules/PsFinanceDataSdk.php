@@ -199,6 +199,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 同步更新未完成的付款单账户信息
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccount/BankAccountController/syncCapitalPaymentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountSyncCapitalPayment($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/sync/capital/payment", $body, $query, $extra);
+    }
+
+    /**
      * 获取待审核列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BankAccountController/toAuditListingAction.md
      * @param array|object $body  入参类型
@@ -940,6 +953,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 修改保司开票收件信息
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/BillInfoController/updateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerBillInfoUpdateRecipient($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/bill/info/update/recipient", $body, $query, $extra);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsureConfigController/detailAction.md
      * @param array|object $body 入参类型
@@ -1198,6 +1224,18 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerUnitListing($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/unit/listing", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁简化列表
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSimplifyList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/simplify/list", $body, $query, $extra);
     }
 
     /**
@@ -1539,6 +1577,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 订阅助手商户入驻财务数据
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/settledAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSettled($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/settled", $body, $query, $extra);
+    }
+
+    /**
      * 连锁树形结构
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/treeAction.md
      * @param array|object $body 入参类型
@@ -1588,6 +1639,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerWorkerCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/worker/create", $body, $query, $extra);
+    }
+
+    /**
+     * 自动新增连锁用户
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/WorkerController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerWorkerAutoCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/worker/auto/create", $body, $query, $extra);
     }
 
     /**
@@ -2332,5 +2396,29 @@ class PsFinanceDataSdk extends SdkBase
     public function organizeQualificationCheck($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organize/qualification/check", $body, $query, $extra);
+    }
+
+    /**
+     * 吐槽
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function feedbackCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/feedback/create", $body, $query, $extra);
+    }
+
+    /**
+     * 在线开票协议
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function onlineInvoiceProtocolCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/onlineInvoiceProtocol/create", $body, $query, $extra);
     }
 }

@@ -36,8 +36,9 @@ use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GoPartnersSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
-use Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsFinBillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinStatementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\HuoJuExpressSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\InspectionSdk;
@@ -150,6 +151,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WeixinSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
 
 /**
  * Module
@@ -183,6 +185,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
  * @property EquitySdk                  $equity
  * @property GsMossWeChatSdk            $gsMossWeChat
  * @property GsFinanceSdk               $gsFinanceSdk
+ * @property GsFinBillSdk               $gsFinBill
  * @property GsFinStatementSdk          $gsFinStatement
  * @property GoPartnersSdk              $goPartners
  * @property InsureRankSdk              $insureRank
@@ -296,6 +299,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
  * @property PsFinStatementSdk          $psFinStatementSdk
  * @property PsDstoreCustomerSdk        $psDstoreCustomer
  * @property NotifySdk                  $notify
+ * @property PsAssistantOrgSdk          $psAssistantOrgSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
