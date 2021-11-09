@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-08
- * @time   Mon, 08 Nov 2021 14:02:24 +0800
+ * @date   2021-11-09
+ * @time   Tue, 09 Nov 2021 16:14:15 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -196,6 +196,19 @@ class PsAssistantOrgSdk extends SdkBase
     public function orgOrganizationModuleDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/orgOrganizationModule/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 无分页列表
+     * @link https://git.uniondrug.com/code/1/zhushou/organization/ps-assistant-org/tree/development/docs/api/OrgOrganizationModuleController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orgOrganizationModuleList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/orgOrganizationModule/list", $body, $query, $extra);
     }
 
     /**
