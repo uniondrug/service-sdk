@@ -20,13 +20,13 @@ use Uniondrug\ServiceSdk\Bases\ResponseInterface;
  * Class GsFinBillSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class GsFinBillSdk extends SdkBase
+class JsFinBillSdk extends SdkBase
 {
     /**
      * 服务名称
      * @var string
      */
-    protected $serviceName = 'gs-fin-bill';
+    protected $serviceName = 'js-fin-bill';
 
     /**
      * 创建开票协议
