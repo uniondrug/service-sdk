@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-11-10
- * @time   Wed, 10 Nov 2021 13:33:21 +0800
+ * @time   Wed, 10 Nov 2021 14:00:36 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -196,6 +196,19 @@ class PsDstorePharmacistSdk extends SdkBase
     public function projectAssistantUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/project/assistant/update", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/detail", $body, $query, $extra);
     }
 
     /**
