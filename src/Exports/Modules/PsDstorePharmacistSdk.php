@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-09
- * @time   Tue, 09 Nov 2021 16:58:46 +0800
+ * @date   2021-11-10
+ * @time   Wed, 10 Nov 2021 13:33:21 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,32 @@ class PsDstorePharmacistSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'ps-dstore-pharmacist';
+
+    /**
+     * 获取项目配置的药师列表页宣传图
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectController/getProjectAdvertisingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getProjectAdvertising($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/getProjectAdvertising", $body, $query, $extra);
+    }
+
+    /**
+     * 获取项目下的药师无分页列表
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectAssistantController/getProjectAssistantsAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getProjectAssistants($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/assistant/getProjectAssistants", $body, $query, $extra);
+    }
 
     /**
      * 根据项目类型获取项目详情
