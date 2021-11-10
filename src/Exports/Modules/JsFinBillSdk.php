@@ -87,4 +87,74 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/remove", $body);
     }
+
+    /**
+     * 待邮寄开票单列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressBillList($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/list/bill", $body);
+    }
+
+    /**
+     * 待邮寄开票单检查
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressBillCheck($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/checkBill", $body);
+    }
+
+    /**
+     * 票据邮寄
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressPost($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/post", $body);
+    }
+
+    /**
+     * 手动签收前的校验
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressCheckSign($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/checkSign", $body);
+    }
+
+    /**
+     * 扫码枪签收发票校验
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressScanCheckSign($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/scan/sign/check", $body);
+    }
+
+    /**
+     * 手动签收 物流走向 连锁——>药联
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressUnionDrugReceive($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/invoice/sign", $body);
+    }
+
+    /**
+     * 标记为退票
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceExpressMarkRefund($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/refundInvoice", $body);
+    }
 }
