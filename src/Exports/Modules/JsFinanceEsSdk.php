@@ -110,25 +110,25 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
-     * 开票单-发票分页列表
+     * 发票-分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/BillController/invoicePage.md
      * @param $body
      * @return ResponseInterface
      */
     public function invoicePaging($body)
     {
-        return $this->restful("POST", "/esapi/search/bill/invoice/page", $body);
+        return $this->restful("POST", "/esapi/search/invoice/page", $body);
     }
 
     /**
-     * 开票单-发票物流分页列表
+     * 物流-分页列表
      * @link
      * @param $body
      * @return ResponseInterface
      */
     public function invoiceExpressPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/bill/express/page", $body);
+        return $this->restful("POST", "/esapi/search/express/page", $body);
     }
 }
 
