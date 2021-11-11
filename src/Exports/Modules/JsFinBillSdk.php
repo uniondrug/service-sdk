@@ -157,4 +157,24 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/invoiceExpress/refundInvoice", $body);
     }
+
+    /**
+     * 查询票据邮寄待邮寄数据列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceNeedSendPaging($body)
+    {
+        return $this->restful("POST", "/invoice/needPost/statistics/page", $body);
+    }
+
+    /**
+     * 查询票据邮寄待邮寄数据详情列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceNeedSendDetailPaging($body)
+    {
+        return $this->restful("POST", "/invoice/needPost/detail/page", $body);
+    }
 }
