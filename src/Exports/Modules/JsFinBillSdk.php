@@ -93,9 +93,9 @@ class JsFinBillSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function invoiceExpressBillList($body)
+    public function invoiceExpressBillListPaging($body)
     {
-        return $this->restful("POST", "/invoiceExpress/list/bill", $body);
+        return $this->restful("POST", "/invoiceExpress/page/bill", $body);
     }
 
     /**
