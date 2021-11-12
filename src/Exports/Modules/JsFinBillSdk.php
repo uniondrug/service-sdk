@@ -187,4 +187,14 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/bill/express/page", $body);
     }
+
+    /**
+     * 发票分页查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoicePaging($body)
+    {
+        return $this->restful("POST", "/invoice/page", $body);
+    }
 }
