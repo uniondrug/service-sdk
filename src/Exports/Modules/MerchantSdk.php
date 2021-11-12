@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-10-25
- * @time   Mon, 25 Oct 2021 10:03:22 +0800
+ * @date   2021-11-12
+ * @time   Fri, 12 Nov 2021 10:40:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2552,6 +2552,32 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * paging
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeModuleController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeModuleCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeModule/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeModuleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeModuleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeModule/detail", $body, $query, $extra);
+    }
+
+    /**
      * 商户资质新增
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeQualificationController/createAction.md
      * @param array|object $body 入参类型
@@ -3329,6 +3355,58 @@ class MerchantSdk extends SdkBase
     public function synEditInternalErp($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebase/syneditinternalerp", $body, $query, $extra);
+    }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/TenantInfoController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tenantCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tenantInfo/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/TenantInfoController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tenantDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tenantInfo/detail", $body, $query, $extra);
+    }
+
+    /**
+     * paging
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/TenantInfoController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tenantPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tenantInfo/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/TenantInfoController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tenantUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tenantInfo/update", $body, $query, $extra);
     }
 
     /**
