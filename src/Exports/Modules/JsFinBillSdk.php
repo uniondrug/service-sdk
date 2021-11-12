@@ -95,7 +95,7 @@ class JsFinBillSdk extends SdkBase
      */
     public function invoiceExpressBillPaging($body)
     {
-        return $this->restful("POST", "/invoiceExpress/page/bill", $body);
+        return $this->restful("POST", "/invoiceExpress/bill/page", $body);
     }
 
     /**
