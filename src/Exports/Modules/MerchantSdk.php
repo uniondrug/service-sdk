@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2021-11-15
- * @time   Mon, 15 Nov 2021 10:17:19 +0800
+ * @time   Mon, 15 Nov 2021 10:51:49 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2552,19 +2552,6 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * paging
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeModuleController/pagingAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function organizeModuleCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/organizeModule/paging", $body, $query, $extra);
-    }
-
-    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeModuleController/detailAction.md
      * @param array|object $body 入参类型
@@ -2575,6 +2562,19 @@ class MerchantSdk extends SdkBase
     public function organizeModuleDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeModule/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeModuleController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeModulePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeModule/paging", $body, $query, $extra);
     }
 
     /**
