@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-12
- * @time   Fri, 12 Nov 2021 10:40:44 +0800
+ * @date   2021-11-15
+ * @time   Mon, 15 Nov 2021 10:17:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2653,6 +2653,32 @@ class MerchantSdk extends SdkBase
     public function organizeQualificationUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizeQualification/update", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeRelationModuleController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeRelationModuleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeRelationModule/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeRelationModuleController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizeRelationModuleUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeRelationModule/update", $body, $query, $extra);
     }
 
     /**
