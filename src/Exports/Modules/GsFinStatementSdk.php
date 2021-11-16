@@ -349,7 +349,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 药师结算-付款进度
+     * 服务补贴结算-付款进度
      * @param $body
      * @return ResponseInterface
      */
@@ -359,7 +359,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 药师结算-付款单列表
+     * 服务补贴结算-付款单列表
      * @param $body
      * @return ResponseInterface
      */
@@ -369,12 +369,32 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 药师结算-详情
+     * 服务补贴结算-详情
      * @param $body
      * @return ResponseInterface
      */
     public function subsidyStatementDetail($body)
     {
         return $this->restful("POST", "/subsidy/statement/detail", $body);
+    }
+
+    /**
+     * 服务补贴结算-确认对账函
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementConfirm($body)
+    {
+        return $this->restful("POST", "/subsidy/pdf/confirm", $body);
+    }
+
+    /**
+     * 服务补贴结算-操作日志列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatementLogPaging($body)
+    {
+        return $this->restful("POST", "/subsidy/statement/log/paging", $body);
     }
 }
