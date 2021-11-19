@@ -197,4 +197,26 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/page", $body);
     }
+
+    /**
+     * 财务审核协议
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/development/doc/api/BillProtocolController/audit.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billProtocolAudit($body)
+    {
+        return $this->restful("POST", "/billProtocol/audit", $body);
+    }
+
+    /**
+     * 分页查询C端开票单协议
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/development/doc/api/BillProtocolController/clientPage.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billProtocolClientPaging($body)
+    {
+        return $this->restful("POST", "/billProtocol/client/page", $body);
+    }
 }
