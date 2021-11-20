@@ -28,4 +28,13 @@ class JavaEquityTrialSdk extends SdkBase
         return $this->restful("POST", "/trial/equity", $body);
     }
 
+    /**
+     * 多权益试算
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function multipleTrialEquity($body)
+    {
+        return $this->restful("POST", "/multiple/trial/equity", $body);
+    }
 }
