@@ -36,6 +36,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GoPartnersSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaNewEquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinBillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinStatementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk;
@@ -185,6 +186,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
  * @property EquitySdk                  $equity
  * @property GsMossWeChatSdk            $gsMossWeChat
  * @property GsFinanceSdk               $gsFinanceSdk
+ * @property JavaNewEquitySdk           $javaNewEquity
  * @property GsFinStatementSdk          $gsFinStatement
  * @property GoPartnersSdk              $goPartners
  * @property InsureRankSdk              $insureRank
