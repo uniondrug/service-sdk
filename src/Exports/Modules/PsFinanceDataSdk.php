@@ -433,6 +433,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 修改药联公司
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/CompanyController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function companyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/company/update", $body, $query, $extra);
+    }
+
+    /**
      * 新增药联公司开票
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/BillInfoController/createAction.md
      * @param array|object $body 入参类型
