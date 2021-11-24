@@ -359,42 +359,42 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 服务补贴结算-付款单列表
+     * 应付结算-付款单列表
      * @param $body
      * @return ResponseInterface
      */
-    public function subsidyStatementPaymentList($body)
+    public function payoutStatementPaymentList($body)
     {
-        return $this->restful("POST", "/subsidy/payment/paging", $body);
+        return $this->restful("POST", "/payout/payment/paging", $body);
     }
 
     /**
-     * 服务补贴结算-详情
+     * 应付结算-详情
      * @param $body
      * @return ResponseInterface
      */
-    public function subsidyStatementDetail($body)
+    public function payoutStatementDetail($body)
     {
-        return $this->restful("POST", "/subsidy/statement/detail", $body);
+        return $this->restful("POST", "/payout/statement/detail", $body);
     }
 
     /**
-     * 服务补贴结算-确认对账函
+     * 应付结算-确认对账函
      * @param $body
      * @return ResponseInterface
      */
-    public function subsidyStatementConfirm($body)
+    public function payoutStatementPdfConfirm($body)
     {
-        return $this->restful("POST", "/subsidy/pdf/confirm", $body);
+        return $this->restful("POST", "/payout/statement/pdf/confirm", $body);
     }
 
     /**
-     * 服务补贴结算-操作日志列表
+     * 结算单-操作日志列表
      * @param $body
      * @return ResponseInterface
      */
-    public function subsidyStatementLogPaging($body)
+    public function statementLogPaging($body)
     {
-        return $this->restful("POST", "/subsidy/statement/log/paging", $body);
+        return $this->restful("POST", "/statement/log/paging", $body);
     }
 }
