@@ -11,7 +11,6 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -360,31 +359,31 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 应付结算-付款单列表
+     * 服务补贴结算-付款单列表
      * @param $body
      * @return ResponseInterface
      */
-    public function payoutStatementPaymentList($body)
+    public function subsidyStatementPaymentList($body)
     {
-        return $this->restful("POST", "/payout/payment/paging", $body);
+        return $this->restful("POST", "/subsidy/payment/paging", $body);
     }
 
     /**
-     * 应付结算-详情
+     * 服务补贴结算-详情
      * @param $body
      * @return ResponseInterface
      */
-    public function payoutStatementDetail($body)
+    public function subsidyStatementDetail($body)
     {
-        return $this->restful("POST", "/payout/statement/detail", $body);
+        return $this->restful("POST", "/subsidy/statement/detail", $body);
     }
 
     /**
-     * 应付结算-确认对账函
+     * 应付结算单-确认对账函
      * @param $body
      * @return ResponseInterface
      */
-    public function payoutStatementPdfConfirm($body)
+    public function payoutStatementConfirm($body)
     {
         return $this->restful("POST", "/payout/statement/pdf/confirm", $body);
     }
