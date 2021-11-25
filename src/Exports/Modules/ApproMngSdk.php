@@ -395,6 +395,19 @@ class ApproMngSdk extends SdkBase
     }
 
     /**
+     * 活动审核通过调用接口
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/taskActivityApplyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskActivityApply($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/taskActivityApply", $body, $query, $extra);
+    }
+
+    /**
      * 新增
      * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TpFormController/createAction.md
      * @param array|object $body 入参类型
