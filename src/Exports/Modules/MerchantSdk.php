@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-16
- * @time   Tue, 16 Nov 2021 15:33:02 +0800
+ * @date   2021-11-27
+ * @time   Sat, 27 Nov 2021 10:24:56 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -2552,6 +2552,45 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeHealthcareSecurityController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function OrganizeHealthcareSecurityCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeHealthcareSecurity/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeHealthcareSecurityController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function OrganizeHealthcareSecurityDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeHealthcareSecurity/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 解绑
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeHealthcareSecurityController/unbindAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function OrganizeHealthcareSecurityUnbid($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeHealthcareSecurity/unbind", $body, $query, $extra);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeModuleController/detailAction.md
      * @param array|object $body 入参类型
@@ -2565,7 +2604,7 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 详情
+     * 详情明细
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeModuleController/infoOverallAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
