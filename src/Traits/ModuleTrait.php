@@ -34,6 +34,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\DrugstoreActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\DrugstoreStatisticSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\EquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ExpressCallbackSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GoPartnersSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaNewEquitySdk;
@@ -180,10 +181,11 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
  * @property DistsellSdk                $distsell
  * @property DrugstoreStatisticSdk      $drugstoreStatistic
  * @property DrugstoreActivitySdk       $drugstoreActivity
+ * @property EquitySdk                  $equity
  * @property ExchangeSdk                $exchange
+ * @property ExpressCallbackSdk         $expressCallbackSdk
  * @property GuaranteeclaimSdk          $guaranteeclaimSdk
  * @property DeliverSdk                 $deliver
- * @property EquitySdk                  $equity
  * @property GsMossWeChatSdk            $gsMossWeChat
  * @property GsFinanceSdk               $gsFinanceSdk
  * @property JavaNewEquitySdk           $javaNewEquity
