@@ -19,7 +19,7 @@ class ExpressCallbackSdk extends SdkBase
      * 新物流系统V2.0
      * @var string
      */
-    protected $serviceName = 'backend.express.callback';
+    protected $serviceName = 'express.callback';
 
     /**
      * 物流跟踪信息查询
@@ -30,5 +30,16 @@ class ExpressCallbackSdk extends SdkBase
     public function tracking($body)
     {
         return $this->restful("POST", "/api/tracking/info", $body);
+    }
+
+    /**
+     * 物流公司列表查询
+     * @link http://doc.oschina.net/module.outreach.express?t=349293
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function expressList($body)
+    {
+        return $this->restful("POST", "/api/tracking/expressList", $body);
     }
 }
