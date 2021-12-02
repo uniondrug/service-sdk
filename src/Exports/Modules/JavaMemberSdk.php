@@ -489,9 +489,9 @@ class JavaMemberSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function addCard($body)
+    public function addNoCheck($body)
     {
-        return $this->restful("POST", "/v2/api/userCard/addCard", $body);
+        return $this->restful("POST", "/v2/api/userCard/addNoCheck", $body);
     }
 
     /**
