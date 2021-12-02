@@ -493,4 +493,15 @@ class JavaMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userBasic/addByCardNo", $body);
     }
+
+    /**
+     * 实名
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/usercenter/blob/master/api-docs/uniondrug.usercenter.provider/UserInfoApiController/getByCarNoApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function addCard($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/addCard", $body);
+    }
 }
