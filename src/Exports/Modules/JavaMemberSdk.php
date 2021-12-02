@@ -484,17 +484,6 @@ class JavaMemberSdk extends SdkBase
     }
 
     /**
-     * 根据身份证添加
-     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/usercenter/blob/master/api-docs/uniondrug.usercenter.provider/UserInfoApiController/getByCarNoApi.md
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function addByCardNo($body)
-    {
-        return $this->restful("POST", "/v2/api/userBasic/addByCardNo", $body);
-    }
-
-    /**
      * 实名
      * @link https://git.uniondrug.com/docs/1/docs-bizcenter/usercenter/blob/master/api-docs/uniondrug.usercenter.provider/UserInfoApiController/getByCarNoApi.md
      * @param $body
@@ -503,5 +492,16 @@ class JavaMemberSdk extends SdkBase
     public function addCard($body)
     {
         return $this->restful("POST", "/v2/api/userCard/addCard", $body);
+    }
+
+    /**
+     * 通过证件号码查询实名的用户信息
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/usercenter/blob/master/api-docs/uniondrug.usercenter.provider/UserInfoApiController/getByCarNoApi.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getRealByCarNo($body)
+    {
+        return $this->restful("POST", "/v2/api/userInfo/getRealByCarNo", $body);
     }
 }
