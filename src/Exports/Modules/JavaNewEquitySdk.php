@@ -50,4 +50,14 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/trail/multiple/trial/equity", $body);
     }
+
+    /**
+     * 单权益延期
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function equityDelay($body)
+    {
+        return $this->restful("POST", "/svr/equity/delay", $body);
+    }
 }
