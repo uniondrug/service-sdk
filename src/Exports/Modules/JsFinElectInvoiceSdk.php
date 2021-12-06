@@ -1,6 +1,6 @@
 <?php
 /**
- * @name   JsFinanceEsSdk
+ * @name   JsFinElectInvoiceSdk
  * @date   2021-09-18
  * @time   Tue, 04 Dec 2021 14:15:57 +0800
  */
