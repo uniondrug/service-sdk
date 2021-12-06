@@ -101,6 +101,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsCleanCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinanceEsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinanceReplaceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JsFinElectInvoiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JwtSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\LiveSrvJsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\MapSdk;
@@ -245,6 +246,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
  * @property JsArchivesSdk              $jsArchives
  * @property JsCleanCenterSdk           $jsCleanCenter
  * @property JsFinBillSdk               $jsFinBill
+ * @property JsFinElectInvoiceSdk       $jsFinElectInvoice
  * @property JsFinanceEsSdk             $jsFinanceEs
  * @property JsFinanceReplaceSdk        $jsFinanceReplace
  * @property JmbsSdk                    $jmbs
