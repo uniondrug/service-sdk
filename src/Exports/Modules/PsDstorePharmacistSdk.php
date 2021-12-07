@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-10
- * @time   Wed, 10 Nov 2021 15:11:22 +0800
+ * @date   2021-12-07
+ * @time   Tue, 07 Dec 2021 16:00:16 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -92,6 +92,19 @@ class PsDstorePharmacistSdk extends SdkBase
     public function getProjectJumpUrl($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/project/getProjectJumpUrl", $body, $query, $extra);
+    }
+
+    /**
+     * 获取转接药师
+     * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectController/getSwitchAssistantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getSwitchAssistant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/getSwitchAssistant", $body, $query, $extra);
     }
 
     /**
@@ -225,7 +238,7 @@ class PsDstorePharmacistSdk extends SdkBase
     }
 
     /**
-     * 创建项目
+     * 日志列表
      * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectController/logPagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -251,7 +264,7 @@ class PsDstorePharmacistSdk extends SdkBase
     }
 
     /**
-     * 创建项目
+     * 项目列表
      * @link https://uniondrug.coding.net/p/ps-dstore-pharmacist/git/blob/development/docs/api/ProjectController/pagingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
