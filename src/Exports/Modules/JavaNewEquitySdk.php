@@ -55,9 +55,21 @@ class JavaNewEquitySdk extends SdkBase
      * 单权益延期
      * @param array $body 入参类型
      * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esbp.parent/js-esbp-equity-svr/api/EquitySvrController/delay.md
      */
     public function equityDelay($body)
     {
         return $this->restful("POST", "/svr/equity/delay", $body);
+    }
+
+    /**
+     * 兑换码详情
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-qry/CodeQryController/detail.md
+     */
+    public function codeDetail($body)
+    {
+        return $this->restful("POST", "/qry/code/detail", $body);
     }
 }
