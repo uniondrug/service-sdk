@@ -179,6 +179,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单-手动创建付款单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPayoutStatementPaymentCreate($body)
+    {
+        return $this->restful("POST", "/direct/payment/create", $body);
+    }
+
+    /**
      * 直付结算单-核算单位扩展信息
      * @param $body
      * @return ResponseInterface
