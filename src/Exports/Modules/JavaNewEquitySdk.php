@@ -72,4 +72,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/qry/code/detail", $body);
     }
+
+    /**
+     * 获取采购单明细
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-mng/PurchaseController/detail.md
+     */
+    public function purchaseDetail($body)
+    {
+        return $this->restful("POST", "/mng/purchase/detail", $body);
+    }
 }
