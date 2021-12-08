@@ -219,4 +219,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billProtocol/client/page", $body);
     }
+
+    /**
+     * 电子开票单 补开发票
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_elec_invoice/doc/api/BillController/electricBillRetry.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function electricBillRetry($body)
+    {
+        return $this->restful("POST", "/bill/electricBillRetry", $body);
+    }
 }
