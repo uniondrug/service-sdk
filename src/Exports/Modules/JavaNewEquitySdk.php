@@ -57,9 +57,9 @@ class JavaNewEquitySdk extends SdkBase
      * @return ResponseInterface
      * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esbp.parent/js-esbp-equity-svr/api/EquitySvrController/delay.md
      */
-    public function equityDelay($body)
+    public function eqsvrEquityDelay($body)
     {
-        return $this->restful("POST", "/svr/equity/delay", $body);
+        return $this->restful("POST", "/eqsvr/svr/equity/delay", $body);
     }
 
     /**
@@ -68,9 +68,9 @@ class JavaNewEquitySdk extends SdkBase
      * @return ResponseInterface
      * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-qry/CodeQryController/detail.md
      */
-    public function codeDetail($body)
+    public function agrqryCodeDetail($body)
     {
-        return $this->restful("POST", "/qry/code/detail", $body);
+        return $this->restful("POST", "/agrqry/qry/code/detail", $body);
     }
 
     /**
@@ -79,8 +79,8 @@ class JavaNewEquitySdk extends SdkBase
      * @return ResponseInterface
      * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-mng/PurchaseController/detail.md
      */
-    public function purchaseDetail($body)
+    public function agrmngPurchaseDetail($body)
     {
-        return $this->restful("POST", "/mng/purchase/detail", $body);
+        return $this->restful("POST", "/agrmng/mng/purchase/detail", $body);
     }
 }
