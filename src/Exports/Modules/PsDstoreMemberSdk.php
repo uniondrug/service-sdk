@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-10-15
- * @time   Fri, 15 Oct 2021 13:20:48 +0800
+ * @date   2021-12-08
+ * @time   Wed, 08 Dec 2021 15:50:57 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -277,7 +277,7 @@ class PsDstoreMemberSdk extends SdkBase
     }
 
     /**
-     * 店员是否开通药师
+     * 店员是否以个人维度开通药师
      * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/isOpenAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -287,6 +287,19 @@ class PsDstoreMemberSdk extends SdkBase
     public function assistantIsOpen($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/isOpen", $body, $query, $extra);
+    }
+
+    /**
+     * 店员是否开通商保
+     * @link https://uniondrug.coding.net/p/ps-dstore-member/git/blob/development/docs/api/AssistantController/isOpenInsuranceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantIsOpenInsurance($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/isOpenInsurance", $body, $query, $extra);
     }
 
     /**
