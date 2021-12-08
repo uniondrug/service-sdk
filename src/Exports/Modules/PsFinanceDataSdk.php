@@ -1642,19 +1642,6 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 连锁配置线下投保列表
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/listByInsureTypeOfflineAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerSettingListByInsureTypeOffline($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partner/setting/list/by/insure/type/offline", $body, $query, $extra);
-    }
-
-    /**
      * 修改连锁配置
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/updateAction.md
      * @param array|object $body  入参类型
@@ -1665,19 +1652,6 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerSettingUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/setting/update", $body, $query, $extra);
-    }
-
-    /**
-     * 批量修改投保方式
-     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/updateInsureTypeAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function partnerSettingUpdateInsureType($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/partner/setting/update/insure/type", $body, $query, $extra);
     }
 
     /**
