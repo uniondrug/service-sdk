@@ -62,7 +62,7 @@ class JsFinanceEsSdk extends SdkBase
      */
     public function payoutStatementOrderGoodsPaging($body)
     {
-        return $this->restful("POST", "/esapi/search/statement/payout/order/goods/page", $body);
+        return $this->restful("POST", "/esapi/search/statement/payout/ordergoods/page", $body);
     }
 
     /**
