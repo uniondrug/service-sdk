@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -386,6 +387,16 @@ class GsFinStatementSdk extends SdkBase
     public function subsidyStatementDetail($body)
     {
         return $this->restful("POST", "/subsidy/statement/detail", $body);
+    }
+
+    /**
+     * 应付结算单-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function payoutStatementDetail($body)
+    {
+        return $this->restful("POST", "/payout/statement/detail", $body);
     }
 
     /**
