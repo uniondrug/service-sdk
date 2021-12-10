@@ -471,4 +471,30 @@ class ApproMngSdk extends SdkBase
     {
         return $this->restful("POST", "/template/update", $body, $query, $extra);
     }
+
+    /**
+     * 条件列表
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TpConditionController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpConditionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tpCondition/list", $body, $query, $extra);
+    }
+
+    /**
+     * 设置条件
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/TpConditionController/setAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpConditionSet($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tpCondition/set", $body, $query, $extra);
+    }
 }
