@@ -93,4 +93,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/agrmng/mng/agreement/getDetail", $body);
     }
+
+    /**
+     * 获取合并卡记录
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esbp.parent/js-esbp-equity-qry/api/EquityQryController/getCombineLists.md
+     */
+    public function eqqryEquityGetCombineLists($body)
+    {
+        return $this->restful("POST", "/eqqry/qry/equity/getCombineLists", $body);
+    }
 }
