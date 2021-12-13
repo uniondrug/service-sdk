@@ -5,7 +5,6 @@
  * @Time   10:49:27
  * @Email qinguofeng@uniondrug.cn
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -82,5 +81,16 @@ class JavaNewEquitySdk extends SdkBase
     public function agrmngPurchaseDetail($body)
     {
         return $this->restful("POST", "/agrmng/mng/purchase/detail", $body);
+    }
+
+    /**
+     * 查询协议明细
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-mng/AgreementController/getAgreementDetail.md
+     */
+    public function agrmngAgreementGetDetail($body)
+    {
+        return $this->restful("POST", "/agrmng/mng/agreement/getDetail", $body);
     }
 }
