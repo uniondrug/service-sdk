@@ -2559,4 +2559,48 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/apply/online/paging", $body, $query, $extra);
     }
+
+    /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/createAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function organizeAuthorityCreate($body)
+    {
+        return $this->restful("POST", "/organizeAuthority/create", $body);
+    }
+
+    /**
+     * 商家详情
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/merchantDetailAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function organizeAuthorityMerchantDetail($body)
+    {
+        return $this->restful("POST", "/organizeAuthority/merchantDetail", $body);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/pagingAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function organizeAuthorityPaging($body)
+    {
+        return $this->restful("POST", "/organizeAuthority/paging", $body);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.settlement/git/blob/development/docs/api/OrganizeAuthorityController/updateStatusAction.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function organizeAuthorityUpdateStatus($body)
+    {
+        return $this->restful("POST", "/organizeAuthority/updateStatus", $body);
+    }
 }
