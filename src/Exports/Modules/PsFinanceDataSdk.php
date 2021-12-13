@@ -2499,4 +2499,64 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/onlineInvoiceProtocol/create", $body, $query, $extra);
     }
+
+    /**
+     * 在线开票申请
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyOnlineCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/online/create", $body, $query, $extra);
+    }
+
+    /**
+     * 在线开票申请详情
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyOnlineDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/online/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 在线开票申请核算单位详情
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyOnlineUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/online/unit/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 在线开票申请编辑
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyOnlineUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/online/update", $body, $query, $extra);
+    }
+
+    /**
+     * 在线开票申请列表
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyOnlinePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/online/paging", $body, $query, $extra);
+    }
 }
