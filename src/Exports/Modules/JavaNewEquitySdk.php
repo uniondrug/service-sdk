@@ -115,4 +115,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/eqqry/qry/equity/getCombineBySourceEquityId", $body);
     }
+
+    /**
+     * 查询个人有效余额和有效卡
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esbp.parent/js-esbp-equity-qry/api/EquityQryController/getAdminMemberIdCount.md
+     */
+    public function eqqryEquityGetAdminMemberIdCount($body)
+    {
+        return $this->restful("POST", "/eqqry/qry/equity/getCombineBySourceEquityId", $body);
+    }
 }
