@@ -360,6 +360,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 换新结算-订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementSummary($body)
+    {
+        return $this->restful("POST", " /renew/statement/summary", $body);
+    }
+
+    /**
      * 服务补贴结算-付款进度
      * @param $body
      * @return ResponseInterface
