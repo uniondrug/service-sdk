@@ -2613,4 +2613,34 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/businessCenterVersion/detail", $body);
     }
+
+    /**
+     * 商家待办事项新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function partnerTodoListCreate($body)
+    {
+        return $this->restful("POST", "/partnerTodoList/create", $body);
+    }
+
+    /**
+     * 商家待办事项分页列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function partnerTodoListPaging($body)
+    {
+        return $this->restful("POST", "/partnerTodoList/paging", $body);
+    }
+
+    /**
+     * 商家待办事项编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function partnerTodoListUpdate($body)
+    {
+        return $this->restful("POST", "/partnerTodoList/update", $body);
+    }
 }
