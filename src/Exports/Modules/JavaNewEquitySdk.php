@@ -124,6 +124,6 @@ class JavaNewEquitySdk extends SdkBase
      */
     public function eqqryEquityGetAdminMemberIdCount($body)
     {
-        return $this->restful("POST", "/eqqry/qry/equity/getCombineBySourceEquityId", $body);
+        return $this->restful("POST", "/eqqry/qry/equity/getAdminMemberIdCount", $body);
     }
 }
