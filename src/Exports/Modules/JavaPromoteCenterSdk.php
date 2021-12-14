@@ -69,6 +69,17 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
+     * 优惠
+     * @link
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function marketCouponTrial($body)
+    {
+        return $this->restful(static::METHOD_POST, '/coupon/marketCouponTrial', $body);
+    }
+
+    /**
      * 卡订单号
      * @link
      * @param array $body
@@ -122,6 +133,16 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
+     * 运费券试算
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function freightCouponTrial($body)
+    {
+        return $this->restful(static::METHOD_POST, '/deductCoupon/freightCouponTrial', $body);
+    }
+
+    /**
      * 抵扣券抵扣
      * @param $body
      * @return ResponseInterface
@@ -130,6 +151,17 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/deductCoupon/couponTrial', $body);
     }
+
+    /**
+     * 抵扣券列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function couponTrialForOrder($body)
+    {
+        return $this->restful(static::METHOD_POST, '/deductCoupon/couponTrialForOrder', $body);
+    }
+
 
     /**
      * 查询卡列表接口--微信
@@ -307,5 +339,15 @@ class JavaPromoteCenterSdk extends SdkBase
     public function queryActivity($body)
     {
         return $this->restful("POST", "/trial/queryActivity", $body);
+    }
+
+    /**
+     * 活动试算
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function activityTrial($body)
+    {
+        return $this->restful("POST", "/trial/activityTrial", $body);
     }
 }
