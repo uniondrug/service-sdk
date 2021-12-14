@@ -270,16 +270,6 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 健康服务结算-订单明细添加
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function healthyStatementOrderCreate($body)
-    {
-        return $this->restful("POST", "/healthy/settlement/create", $body);
-    }
-
-    /**
      * 健康服务结算-审核通过
      * @param $body
      * @return ResponseInterface
@@ -300,23 +290,13 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 健康服务结算-健康服务结算手动申请开票
+     * 健康服务结算-健康服务结算订单明细分页
      * @param $body
      * @return ResponseInterface
      */
-    public function healthyStatementBillApply($body)
+    public function healthyStatementOrderPaging($body)
     {
-        return $this->restful("POST", "/healthy/bill/apply", $body);
-    }
-
-    /**
-     * 健康服务结算-健康服务结算创建付款单
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function healthyStatementPaymentCreate($body)
-    {
-        return $this->restful("POST", "/healthy/payment/create", $body);
+        return $this->restful("POST", "/healthy/settlement/paging", $body);
     }
 
     /**
