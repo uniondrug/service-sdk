@@ -420,6 +420,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 应付结算单-付款进度
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function payoutStatementPaymentProgress($body)
+    {
+        return $this->restful("POST", "/payout/payment/progress", $body);
+    }
+
+    /**
      * 结算单-操作日志列表
      * @param $body
      * @return ResponseInterface
