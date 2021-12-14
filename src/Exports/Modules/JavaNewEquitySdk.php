@@ -95,6 +95,17 @@ class JavaNewEquitySdk extends SdkBase
     }
 
     /**
+     * 根据采购单IDs查询采购单信息列表
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-mng/PurchaseController/listPurchase.md
+     */
+    public function agrmngPurchaseListPurchase($body)
+    {
+        return $this->restful("POST", "/agrmng/mng/purchase/listPurchase", $body);
+    }
+
+    /**
      * 获取合并卡记录
      * @param array $body 入参类型
      * @return ResponseInterface
