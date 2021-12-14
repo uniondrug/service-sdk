@@ -240,6 +240,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单-指定核算单位冻结账期列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementBlockList($body)
+    {
+        return $this->restful("POST", "/direct/statement/block/list", $body);
+    }
+
+    /**
      * 健康服务结算-新增
      * @param $body
      * @return ResponseInterface
