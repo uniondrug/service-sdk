@@ -11,7 +11,7 @@
  * @date   2021-12-14
  * @time   Tue, 14 Dec 2021 15:20:07 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Pms;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -27,7 +27,7 @@ class ApproMngSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'appro.mng.pm';
+    protected $serviceName = 'appro-mng-pm';
 
     /**
      * 新增
