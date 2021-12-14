@@ -2603,4 +2603,14 @@ class PsFinanceDataSdk extends SdkBase
     {
         return $this->restful("POST", "/organizeAuthority/updateStatus", $body);
     }
+
+    /**
+     * 商家服务平台版本详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function businessCenterVersionDetail($body)
+    {
+        return $this->restful("POST", "/businessCenterVersion/detail", $body);
+    }
 }
