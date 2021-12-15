@@ -458,4 +458,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/create/bill", $body);
     }
+
+    /**
+     * 查询子结算单结算明细
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directSingleSettlementList($body)
+    {
+        return $this->restful("POST", "/direct/single/settlement/list", $body);
+    }
 }
