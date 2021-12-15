@@ -366,7 +366,7 @@ class GsFinStatementSdk extends SdkBase
      */
     public function renewStatementSummary($body)
     {
-        return $this->restful("POST", " /renew/statement/summary", $body);
+        return $this->restful("POST", "/renew/statement/summary", $body);
     }
 
     /**
