@@ -2097,6 +2097,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 商业公司与单体店的配置关系
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/unitDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function relationshipUnitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/relationship/unit/detail", $body, $query, $extra);
+    }
+
+    /**
      * 更新商业公司与商户比例
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Relationship/RelationshipController/updateAction.md
      * @param array|object $body  入参类型
