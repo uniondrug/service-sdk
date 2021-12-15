@@ -155,6 +155,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\WxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsKingdeeSdk;
 
 /**
  * Module
@@ -306,6 +307,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
  * @property PsDstoreCustomerSdk        $psDstoreCustomer
  * @property NotifySdk                  $notify
  * @property PsAssistantOrgSdk          $psAssistantOrgSdk
+ * @property PsKingdeeSdk               $psKingdeeSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
