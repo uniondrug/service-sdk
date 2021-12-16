@@ -22,14 +22,23 @@ class GsFinExportSdk extends SdkBase
     protected $serviceName = 'gs-fin-export';
 
     /**
-     * 根据文档ID获取详情
-     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/CommonController/detail.md
+     * 创建下载任务
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function create($body)
+    {
+        return $this->restful("POST", "/export/create", $body);
+    }
+
+    /**
+     * 查询下载进度
      * @param $body
      * @return ResponseInterface
      */
     public function detail($body)
     {
-        return $this->restful("POST", "/esapi/search/detail", $body);
+        return $this->restful("POST", "/export/detail", $body);
     }
 }
 
