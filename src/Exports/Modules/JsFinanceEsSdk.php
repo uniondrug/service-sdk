@@ -141,5 +141,16 @@ class JsFinanceEsSdk extends SdkBase
     {
         return $this->restful("POST", "/esapi/search/express/page", $body);
     }
+
+    /**
+     * 销售清单-分页列表
+     * @link
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billSalePaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/bill/saleslist/page", $body);
+    }
 }
 
