@@ -450,13 +450,23 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 直付结算单-手动创建开票单
+     * 直付结算单-创建开票单
      * @param $body
      * @return ResponseInterface
      */
     public function directBillCreate($body)
     {
         return $this->restful("POST", "/direct/create/bill", $body);
+    }
+
+    /**
+     * 直付结算单-手动创建开票单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directManualBillCreate($body)
+    {
+        return $this->restful("POST", "/direct/manual/create/bill", $body);
     }
 
     /**
