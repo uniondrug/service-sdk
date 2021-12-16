@@ -37,6 +37,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\ExchangeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ExpressCallbackSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GoPartnersSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsFinExportSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaNewEquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinBillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinStatementSdk;
@@ -190,7 +191,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsKingdeeSdk;
  * @property DeliverSdk                 $deliver
  * @property GsMossWeChatSdk            $gsMossWeChat
  * @property GsFinanceSdk               $gsFinanceSdk
- * @property JavaNewEquitySdk           $javaNewEquity
+ * @property GsFinExportSdk             $gsFinExport
  * @property GsFinStatementSdk          $gsFinStatement
  * @property GoPartnersSdk              $goPartners
  * @property InsureRankSdk              $insureRank
@@ -230,6 +231,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsKingdeeSdk;
  * @property JavaMemberSdk              $javaMember
  * @property JavaMerchantSdk            $javaMerchant
  * @property JavaMpacenterSdk           $javaMpacenter
+ * @property JavaNewEquitySdk           $javaNewEquity
  * @property JavaOrderSdk               $javaOrder
  * @property JavaOrderCodeSdk           $javaOrderCode
  * @property JavaOrderErpSdk            $javaOrderErp
