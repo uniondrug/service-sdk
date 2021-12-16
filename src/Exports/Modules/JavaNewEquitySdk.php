@@ -5,6 +5,7 @@
  * @Time   10:49:27
  * @Email qinguofeng@uniondrug.cn
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -30,6 +31,16 @@ class JavaNewEquitySdk extends SdkBase
     }
 
     /**
+     * 能使用权益列表
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function multipleTrialCanUsedList($body)
+    {
+        return $this->restful("POST", "/multiple/trial/canUsed/list", $body);
+    }
+
+    /**
      * 获取权益列表
      * @param array $body 入参类型
      * @return ResponseInterface
@@ -47,7 +58,7 @@ class JavaNewEquitySdk extends SdkBase
      */
     public function trailMultipleTrialEquity($body)
     {
-        return $this->restful("POST", "/trail/multiple/trial/equity", $body);
+        return $this->restful("POST", "/multiple/trial/equity", $body);
     }
 
     /**
