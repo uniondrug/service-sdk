@@ -468,4 +468,24 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/single/settlement/list", $body);
     }
+
+    /**
+     * 拒绝合并单体店结算单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementSingleRefuse($body)
+    {
+        return $this->restful("POST", "/direct/statement/single/refuse", $body);
+    }
+
+    /**
+     * 拒绝合并单体店结算单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementSingleAudit($body)
+    {
+        return $this->restful("POST", "/direct/statement/single/audit", $body);
+    }
 }
