@@ -240,6 +240,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单-指定核算单位冻结账期列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementBlockList($body)
+    {
+        return $this->restful("POST", "/direct/statement/block/list", $body);
+    }
+
+    /**
      * 健康服务结算-新增
      * @param $body
      * @return ResponseInterface
@@ -257,16 +267,6 @@ class GsFinStatementSdk extends SdkBase
     public function healthyStatementDetail($body)
     {
         return $this->restful("POST", "/healthy/statement/detail", $body);
-    }
-
-    /**
-     * 健康服务结算-订单明细添加
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function healthyStatementOrderCreate($body)
-    {
-        return $this->restful("POST", "/healthy/settlement/create", $body);
     }
 
     /**
@@ -290,23 +290,13 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 健康服务结算-健康服务结算手动申请开票
+     * 健康服务结算-健康服务结算订单明细分页
      * @param $body
      * @return ResponseInterface
      */
-    public function healthyStatementBillApply($body)
+    public function healthyStatementOrderPaging($body)
     {
-        return $this->restful("POST", "/healthy/bill/apply", $body);
-    }
-
-    /**
-     * 健康服务结算-健康服务结算创建付款单
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function healthyStatementPaymentCreate($body)
-    {
-        return $this->restful("POST", "/healthy/payment/create", $body);
+        return $this->restful("POST", "/healthy/settlement/paging", $body);
     }
 
     /**
@@ -367,6 +357,16 @@ class GsFinStatementSdk extends SdkBase
     public function renewStatementAuditRefuse($body)
     {
         return $this->restful("POST", "/renew/statement/audit/refuse", $body);
+    }
+
+    /**
+     * 换新结算-订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementSummary($body)
+    {
+        return $this->restful("POST", "/renew/statement/summary", $body);
     }
 
     /**
@@ -447,5 +447,55 @@ class GsFinStatementSdk extends SdkBase
     public function statementLogPaging($body)
     {
         return $this->restful("POST", "/statement/log/paging", $body);
+    }
+
+    /**
+     * 直付结算单-创建开票单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillCreate($body)
+    {
+        return $this->restful("POST", "/direct/create/bill", $body);
+    }
+
+    /**
+     * 直付结算单-手动创建开票单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directManualBillCreate($body)
+    {
+        return $this->restful("POST", "/direct/manual/create/bill", $body);
+    }
+
+    /**
+     * 查询子结算单结算明细
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directSingleSettlementList($body)
+    {
+        return $this->restful("POST", "/direct/single/settlement/list", $body);
+    }
+
+    /**
+     * 拒绝合并单体店结算单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementSingleRefuse($body)
+    {
+        return $this->restful("POST", "/direct/statement/single/refuse", $body);
+    }
+
+    /**
+     * 拒绝合并单体店结算单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementSingleAudit($body)
+    {
+        return $this->restful("POST", "/direct/statement/single/audit", $body);
     }
 }

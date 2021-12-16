@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Pms`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-12-14
- * @time   Tue, 14 Dec 2021 15:20:07 +0800
+ * @date   2021-12-15
+ * @time   Wed, 15 Dec 2021 15:10:41 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -521,5 +521,31 @@ class ApproMngSdk extends SdkBase
     public function tpFormUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/template/tpForm/update", $body, $query, $extra);
+    }
+
+    /**
+     * 审批流模板 [详情]
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/Template/TpProcessController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpProcessDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/template/tpProcess/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 审批流模板 [修改]
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/Template/TpProcessController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpProcessEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/template/tpProcess/edit", $body, $query, $extra);
     }
 }

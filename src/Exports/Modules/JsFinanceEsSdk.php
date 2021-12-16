@@ -77,6 +77,17 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
+     * 应付结算单-换新订单分页列表
+     * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/orderGoodsPage.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function renewStatementOrderPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/statement/renew/order/page", $body);
+    }
+
+    /**
      * 应收结算单-分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/StatementController/receivablePage.md
      * @param $body
@@ -129,6 +140,17 @@ class JsFinanceEsSdk extends SdkBase
     public function invoiceExpressPaging($body)
     {
         return $this->restful("POST", "/esapi/search/express/page", $body);
+    }
+
+    /**
+     * 销售清单-分页列表
+     * @link
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billSalePaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/bill/saleslist/page", $body);
     }
 }
 

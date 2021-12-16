@@ -117,6 +117,28 @@ class JavaNewEquitySdk extends SdkBase
     }
 
     /**
+     * 查询es（权益和兑换码宽表列表）
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-mng/CodeController/getCodePurchase.md
+     */
+    public function agrmngCodeGetCodePurchase($body)
+    {
+        return $this->restful("POST", "/agrmng/mng/code/getCodePurchase", $body);
+    }
+
+    /**
+     * 查询es详情 （权益和兑换码宽表）
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-mng/CodeController/getCodePurchaseDetail.md
+     */
+    public function agrmngCodeGetCodePurchaseDetail($body)
+    {
+        return $this->restful("POST", "/agrmng/mng/code/getCodePurchaseDetail", $body);
+    }
+
+    /**
      * 获取合并卡记录
      * @param array $body 入参类型
      * @return ResponseInterface
