@@ -11,7 +11,6 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -497,5 +496,25 @@ class GsFinStatementSdk extends SdkBase
     public function directStatementSingleAudit($body)
     {
         return $this->restful("POST", "/direct/statement/single/audit", $body);
+    }
+
+    /**
+     * 采购结算单明细分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function purchaseSettlementPaging($body)
+    {
+        return $this->restful("POST", "/purchase/settlement/paging", $body);
+    }
+
+    /**
+     * 直付结算手动创建付款单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directPaymentCreate($body)
+    {
+        return $this->restful("POST", "/direct/payment/create", $body);
     }
 }
