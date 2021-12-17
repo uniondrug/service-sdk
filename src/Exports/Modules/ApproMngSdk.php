@@ -548,4 +548,69 @@ class ApproMngSdk extends SdkBase
     {
         return $this->restful("POST", "/template/tpProcess/edit", $body, $query, $extra);
     }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/getByAppIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterGetByAppId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/getByAppId", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/update", $body, $query, $extra);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/application/create", $body, $query, $extra);
+    }
 }
