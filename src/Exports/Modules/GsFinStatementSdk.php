@@ -507,14 +507,4 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/purchase/settlement/paging", $body);
     }
-
-    /**
-     * 直付结算手动创建付款单
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function directPaymentCreate($body)
-    {
-        return $this->restful("POST", "/direct/payment/create", $body);
-    }
 }
