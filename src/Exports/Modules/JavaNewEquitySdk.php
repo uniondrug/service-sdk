@@ -37,7 +37,7 @@ class JavaNewEquitySdk extends SdkBase
      */
     public function multipleTrialCanUsedList($body)
     {
-        return $this->restful("POST", "/multiple/trial/canUsed/list", $body);
+        return $this->restful("POST", "/trial/multiple/trial/canUsed/list", $body);
     }
 
     /**
@@ -58,7 +58,7 @@ class JavaNewEquitySdk extends SdkBase
      */
     public function trailMultipleTrialEquity($body)
     {
-        return $this->restful("POST", "/multiple/trial/equity", $body);
+        return $this->restful("POST", "/trial/multiple/trial/equity", $body);
     }
 
     /**
