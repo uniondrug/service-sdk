@@ -509,7 +509,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 采购结算单明细详情
+     * 采购结算单详情
      * @param $body
      * @return ResponseInterface
      */
