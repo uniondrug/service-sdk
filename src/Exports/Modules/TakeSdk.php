@@ -27,7 +27,7 @@ class TakeSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'take.module';
+    protected $serviceName = 'take-module';
 
     /**
      * 店员接单

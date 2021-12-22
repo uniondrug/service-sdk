@@ -507,4 +507,24 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/purchase/settlement/paging", $body);
     }
+
+    /**
+     * 采购结算单详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function purchaseStatementDetail($body)
+    {
+        return $this->restful("POST", "/purchase/statement/detail", $body);
+    }
+
+    /**
+     * 根据结算单号获取开票单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getBillNosByStatementNo($body)
+    {
+        return $this->restful("POST", "/payout/statement/bills", $body);
+    }
 }

@@ -29,26 +29,6 @@ class JsFinBillSdk extends SdkBase
     protected $serviceName = 'js-fin-bill';
 
     /**
-     * 创建开票协议
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function billProtocolCreate($body)
-    {
-        return $this->restful("POST", "/bill/protocol/create", $body);
-    }
-
-    /**
-     * 查询开票协议
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function billProtocolDetail($body)
-    {
-        return $this->restful("POST", "/bill/protocol/detail", $body);
-    }
-
-    /**
      * 发票输入完整性检测
      * @param $body
      * @return ResponseInterface
@@ -271,5 +251,27 @@ class JsFinBillSdk extends SdkBase
     public function listInvoiceByIpackageNos($body)
     {
         return $this->restful("POST", "/invoice/listInvoiceByIpackageNos", $body);
+    }
+
+    /**
+     * 商家服务平台（直付开票单） 协议 校验
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.1/doc/api/BillProtocolController/merchantProtocolCheck.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billProtocolCheck($body)
+    {
+        return $this->restful("POST", "/billProtocol/merchant/check", $body);
+    }
+
+    /**
+     * 商家服务平台（直付开票单） 协议 创建
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.1/doc/api/BillProtocolController/merchantProtocolCheck.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billProtocolCreate($body)
+    {
+        return $this->restful("POST", "/billProtocol/merchant/singMerchantProtocol", $body);
     }
 }

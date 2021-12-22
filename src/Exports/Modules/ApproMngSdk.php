@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Pms`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-12-17
- * @time   Fri, 17 Dec 2021 15:41:41 +0800
+ * @date   2021-12-21
+ * @time   Tue, 21 Dec 2021 13:56:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -69,7 +69,7 @@ class ApproMngSdk extends SdkBase
     }
 
     /**
-     * 详情
+     * 根据应用ID配置列表
      * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/getByAppIdAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -625,5 +625,18 @@ class ApproMngSdk extends SdkBase
     public function tpProcessGetNode($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/template/tpProcess/getNode", $body, $query, $extra);
+    }
+
+    /**
+     * 审批流模板 [不分页列表]
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/Template/TpProcessController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function tpProcessList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/template/tpProcess/list", $body, $query, $extra);
     }
 }

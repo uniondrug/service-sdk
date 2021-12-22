@@ -41,4 +41,3 @@ class GsFinExportSdk extends SdkBase
         return $this->restful("POST", "/export/detail", $body);
     }
 }
-
