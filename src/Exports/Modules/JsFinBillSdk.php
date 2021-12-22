@@ -69,6 +69,16 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 取消关联在开票单下的发票
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceCancelRelate($body)
+    {
+        return $this->restful("POST", "/invoice/cancelRelate", $body);
+    }
+
+    /**
      * 发票编辑
      * @param $body
      * @return ResponseInterface
@@ -196,6 +206,16 @@ class JsFinBillSdk extends SdkBase
     public function invoicePaging($body)
     {
         return $this->restful("POST", "/invoice/page", $body);
+    }
+
+    /**
+     * 关联发票到开票单下
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceRelatedInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/relatedInvoice", $body);
     }
 
     /**

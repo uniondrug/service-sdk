@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Pms`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-12-15
- * @time   Wed, 15 Dec 2021 15:10:41 +0800
+ * @date   2021-12-21
+ * @time   Tue, 21 Dec 2021 13:56:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -28,6 +28,71 @@ class ApproMngSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'appro-mng-pm';
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/application/create", $body, $query, $extra);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 根据应用ID配置列表
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/getByAppIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterGetByAppId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/getByAppId", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applicationPromoterUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applicationPromoter/update", $body, $query, $extra);
+    }
 
     /**
      * 新增
@@ -550,67 +615,28 @@ class ApproMngSdk extends SdkBase
     }
 
     /**
-     * 添加
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/createAction.md
+     * 审批流模板 [详情]
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/Template/TpProcessController/getNodeAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function applicationPromoterCreate($body, $query = null, $extra = null)
+    public function tpProcessGetNode($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/applicationPromoter/create", $body, $query, $extra);
+        return $this->restful("POST", "/template/tpProcess/getNode", $body, $query, $extra);
     }
 
     /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/detailAction.md
+     * 审批流模板 [不分页列表]
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/Template/TpProcessController/listAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function applicationPromoterDetail($body, $query = null, $extra = null)
+    public function tpProcessList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/applicationPromoter/detail", $body, $query, $extra);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/getByAppIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function applicationPromoterGetByAppId($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/applicationPromoter/getByAppId", $body, $query, $extra);
-    }
-
-    /**
-     * 编辑
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationPromoterController/updateAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function applicationPromoterUpdate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/applicationPromoter/update", $body, $query, $extra);
-    }
-
-    /**
-     * 添加
-     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplicationController/createAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function applicationCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/application/create", $body, $query, $extra);
+        return $this->restful("POST", "/template/tpProcess/list", $body, $query, $extra);
     }
 }
