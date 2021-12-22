@@ -250,4 +250,26 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/bill/electricBillRetry", $body);
     }
+
+    /**
+     *
+     * 根据理赔单号，查询保司对应购方（连锁）下的发票列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function listMerchantInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/listMerchantInvoice", $body);
+    }
+
+    /**
+     *
+     * 根据理赔单号，按时间倒序排序的发票列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function listInvoiceByIpackageNos($body)
+    {
+        return $this->restful("POST", "/invoice/listInvoiceByIpackageNos", $body);
+    }
 }
