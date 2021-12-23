@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-27
- * @time   Sat, 27 Nov 2021 10:24:56 +0800
+ * @date   2021-12-23
+ * @time   Thu, 23 Dec 2021 10:05:59 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -589,6 +589,32 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupRelationsController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function createOrganizeGroupRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupRelations/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupRelationsController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function deleteOrganizeGroupRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupRelations/delete", $body, $query, $extra);
+    }
+
+    /**
      * 删除商户
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/MerchantController/delAction.md
      * @param array|object $body 入参类型
@@ -651,6 +677,19 @@ class MerchantSdk extends SdkBase
     public function detailBalance($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/balance/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupRelationsController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function DetailParentOrganizeGroupRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupRelations/detail", $body, $query, $extra);
     }
 
     /**
@@ -979,6 +1018,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改集团服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsGroupAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsGroup($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisgroup", $body, $query, $extra);
+    }
+
+    /**
      * 修改健康服务
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsHealthAction.md
      * @param array|object $body 入参类型
@@ -1236,6 +1288,19 @@ class MerchantSdk extends SdkBase
     public function editParentOrganizeBaseJoin($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasejoin/editparent", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupRelationsController/editParentAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editParentOrganizeGroupRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupRelations/editparent", $body, $query, $extra);
     }
 
     /**
@@ -2786,6 +2851,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupRelationsController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function PagingParentOrganizeGroupRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupRelations/editparent", $body, $query, $extra);
+    }
+
+    /**
      * 读取商户列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/PartnersController/pagingAction.md
      * @param array|object $body 入参类型
@@ -2991,6 +3069,19 @@ class MerchantSdk extends SdkBase
     public function roleIdEditWorkerMan($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/workerman/roleidedit", $body, $query, $extra);
+    }
+
+    /**
+     * 查询组织列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBasePcController/rootPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function rootPagingPc($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasepc/rootpaging", $body, $query, $extra);
     }
 
     /**
