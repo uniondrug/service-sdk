@@ -862,6 +862,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 批量获取连锁自动生成换新开票单配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/autoCreateHxBillMerchantAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getAutoCreateHxBillMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/auto/create/hx/bill/merchant", $body, $query, $extra);
+    }
+
+    /**
      * 保司列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/listingAction.md
      * @param array|object $body 入参类型
