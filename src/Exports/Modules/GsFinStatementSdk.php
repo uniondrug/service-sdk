@@ -557,4 +557,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/bill/cashed/paging", $body);
     }
+
+    /**
+     * 回款保司下拉
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillCashedInsurerList($body)
+    {
+        return $this->restful("POST", "/direct/bill/cashed/insurer/list", $body);
+    }
 }
