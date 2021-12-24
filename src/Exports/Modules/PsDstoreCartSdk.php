@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-12-22
- * @time   Wed, 22 Dec 2021 14:54:24 +0800
+ * @date   2021-12-24
+ * @time   Fri, 24 Dec 2021 10:55:32 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -235,6 +235,19 @@ class PsDstoreCartSdk extends SdkBase
     public function trolleyResourceCompute($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/trolley/resourceCompute", $body, $query, $extra);
+    }
+
+    /**
+     * 更新订单状态
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/updateOrderStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function updateTrolleyOrderStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/trolley/updateOrderStatus", $body, $query, $extra);
     }
 
     /**
