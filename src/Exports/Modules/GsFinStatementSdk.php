@@ -547,4 +547,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/order/pay/time/change/execute", $body);
     }
+
+    /**
+     * 回款明细查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillCashedPaging($body)
+    {
+        return $this->restful("POST", "/direct/bill/cashed/paging", $body);
+    }
 }
