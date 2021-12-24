@@ -243,7 +243,6 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
-     *
      * 根据理赔单号，按时间倒序排序的发票列表
      * @param $body
      * @return ResponseInterface
@@ -273,5 +272,16 @@ class JsFinBillSdk extends SdkBase
     public function billProtocolCreate($body)
     {
         return $this->restful("POST", "/billProtocol/merchant/singMerchantProtocol", $body);
+    }
+
+    /**
+     * 发票明细票据中心-发票明细
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.1/doc/api/InvoiceController/pageInvoiceDetail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceDetailPaging($body)
+    {
+        return $this->restful("POST", "/invoice/invoiceDetail/page", $body);
     }
 }
