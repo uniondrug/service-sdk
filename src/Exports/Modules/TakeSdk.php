@@ -223,4 +223,17 @@ class TakeSdk extends SdkBase
     {
         return $this->restful("POST", "/deliver/self/finish", $body, $query, $extra);
     }
+
+    /**
+     * 订单搜索
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/searchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderSearch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/search", $body, $query, $extra);
+    }
 }
