@@ -37,6 +37,16 @@ class JavaInsureSdk extends SdkBase
     }
 
     /**
+     * 创建保障理赔记录投保
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function guaranteeInsureClaimRecordSave($body)
+    {
+        return $this->restful("POST", "/guaranteeInsure/saveClaimRecord", $body);
+    }
+
+    /**
      * 根据保障理赔单号保存支付信息
      * @param $body
      * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
