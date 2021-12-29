@@ -238,7 +238,6 @@ class PsDstoreCartSdk extends SdkBase
     }
 
     /**
-<<<<<<< HEAD
      * 修改预订单
      * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/updateAction.md
      * @param array|object $body 入参类型
@@ -252,8 +251,6 @@ class PsDstoreCartSdk extends SdkBase
     }
 
     /**
-=======
->>>>>>> 5e9985a2de28af8a01f8133542e49668d34e0feb
      * 更新订单状态
      * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/updateOrderStatusAction.md
      * @param array|object $body 入参类型
