@@ -153,4 +153,14 @@ class JavaImSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/im/record/deleteNewestRecord', $body);
     }
+
+    /**
+     * 提醒框推送/失效
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function pushTooltip($body)
+    {
+        return $this->restful(static::METHOD_POST, '/im/tooltip/pushTooltip', $body);
+    }
 }

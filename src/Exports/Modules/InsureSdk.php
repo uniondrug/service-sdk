@@ -1458,4 +1458,16 @@ class InsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policyrecord/view", $body, $query, $extra);
     }
+
+    /**
+     * 根据开票号查询直付理赔单
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function directClaimByBillNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/direct/pageByBillNos", $body, $query, $extra);
+    }
 }

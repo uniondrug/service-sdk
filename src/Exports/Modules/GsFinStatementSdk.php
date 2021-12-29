@@ -527,4 +527,44 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/payout/statement/bills", $body);
     }
+
+    /**
+     * 直付刷订单支付日期-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directOrderPayTimeChangePaging($body)
+    {
+        return $this->restful("POST", "/direct/order/pay/time/change/paging", $body);
+    }
+
+    /**
+     * 直付刷订单支付日期-执行
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directOrderPayTimeChangeExecute($body)
+    {
+        return $this->restful("POST", "/direct/order/pay/time/change/execute", $body);
+    }
+
+    /**
+     * 回款明细查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillCashedPaging($body)
+    {
+        return $this->restful("POST", "/direct/bill/cashed/paging", $body);
+    }
+
+    /**
+     * 回款保司下拉
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillCashedInsurerList($body)
+    {
+        return $this->restful("POST", "/direct/bill/cashed/insurer/list", $body);
+    }
 }
