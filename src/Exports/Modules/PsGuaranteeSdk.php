@@ -38,7 +38,7 @@ class PsGuaranteeSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function ActiveGuarantee($body, $query = null, $extra = null)
+    public function activeGuarantee($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/guarantee/active", $body, $query, $extra);
     }

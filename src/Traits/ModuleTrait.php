@@ -136,6 +136,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreReserveSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeClaimSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RobotSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RuleSdk;
@@ -297,6 +299,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsKingdeeSdk;
  * @property SmsSdk                     $sms
  * @property PsDesktoptoolSdk           $psDesktoptool
  * @property PsFinanceDataSdk           $psFinanceData
+ * @property PsGuaranteeSdk             $psGuarantee
+ * @property PsGuaranteeClaimSdk        $psGuaranteeClaim
  * @property PsDstoreCartSdk            $psDstoreCart
  * @property PsDstoreMemberSdk          $psDstoreMember
  * @property PsDstoreEsSdk              $psDstoreEs
