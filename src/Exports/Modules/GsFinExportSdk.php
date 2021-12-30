@@ -32,6 +32,16 @@ class GsFinExportSdk extends SdkBase
     }
 
     /**
+     * 创建多sheet下载任务
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function batchCreate($body)
+    {
+        return $this->restful("POST", "/export/batch/create", $body);
+    }
+
+    /**
      * 查询下载进度
      * @param $body
      * @return ResponseInterface
