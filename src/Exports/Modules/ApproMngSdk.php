@@ -432,6 +432,20 @@ class ApproMngSdk extends SdkBase
         return $this->restful("POST", "/groupApply/detail", $body, $query, $extra);
     }
 
+
+    /**
+     * 批量编辑
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/batchUpdateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyDraftBatchUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApplyDraft/batchUpdate", $body, $query, $extra);
+    }
+
     /**
      * 添加
      * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/createAction.md
