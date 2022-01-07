@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Pms`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-01-06
- * @time   Thu, 06 Jan 2022 15:16:36 +0800
+ * @date   2022-01-07
+ * @time   Fri, 07 Jan 2022 14:13:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -183,6 +183,19 @@ class ApproMngSdk extends SdkBase
     public function applyCount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/apply/applyCount", $body, $query, $extra);
+    }
+
+    /**
+     * 商品数据
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyDataController/applyDataGoodsAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyDataGoodsAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyData/goodsAdd", $body, $query, $extra);
     }
 
     /**
@@ -431,7 +444,6 @@ class ApproMngSdk extends SdkBase
     {
         return $this->restful("POST", "/groupApply/detail", $body, $query, $extra);
     }
-
 
     /**
      * 批量编辑
