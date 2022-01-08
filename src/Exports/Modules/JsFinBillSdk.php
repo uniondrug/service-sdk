@@ -284,4 +284,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/invoice/invoiceDetail/page", $body);
     }
+
+    /**
+     * 获取销售清单列表导出sql
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.1/doc/api/BillSaleController/getSaleListSql.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billSaleExportSql($body)
+    {
+        return $this->restful("POST", "/billSale/export", $body);
+    }
 }

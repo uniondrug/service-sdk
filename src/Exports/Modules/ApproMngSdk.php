@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Pms`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-12-21
- * @time   Tue, 21 Dec 2021 13:56:47 +0800
+ * @date   2022-01-07
+ * @time   Fri, 07 Jan 2022 14:13:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -183,6 +183,32 @@ class ApproMngSdk extends SdkBase
     public function applyCount($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/apply/applyCount", $body, $query, $extra);
+    }
+
+    /**
+     * 商品数据
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyDataController/applyDataGoodsAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyDataGoodsAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyData/goodsAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 门店数据
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyDataController/applyDataStoreAddAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyDataStoreAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyData/storeAdd", $body, $query, $extra);
     }
 
     /**
@@ -391,6 +417,162 @@ class ApproMngSdk extends SdkBase
     public function approveUserUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/approveUser/update", $body, $query, $extra);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApply/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApply/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 批量编辑
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/batchUpdateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyDraftBatchUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApplyDraft/batchUpdate", $body, $query, $extra);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyDraftCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApplyDraft/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyDraftDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApplyDraft/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyDraftList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApplyDraft/list", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyDraftUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApplyDraft/update", $body, $query, $extra);
+    }
+
+    /**
+     * 翻页列表
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApply/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupApplyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/groupApply/update", $body, $query, $extra);
+    }
+
+    /**
+     * 添加
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/update", $body, $query, $extra);
     }
 
     /**
