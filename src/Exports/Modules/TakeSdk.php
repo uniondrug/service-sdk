@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-11-09
- * @time   Tue, 09 Nov 2021 15:28:25 +0800
+ * @date   2022-01-08
+ * @time   Sat, 08 Jan 2022 13:02:19 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -27,7 +27,7 @@ class TakeSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'take-module';
+    protected $serviceName = 'take.module';
 
     /**
      * 店员接单
@@ -134,6 +134,19 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 查询设置的商品信息特殊接口
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/GoodController/purchaseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function goodPurchase($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/good/purchase", $body, $query, $extra);
+    }
+
+    /**
      * 订单详情
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/detailAction.md
      * @param array|object $body 入参类型
@@ -186,6 +199,19 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 订单搜索
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/searchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderSearch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/search", $body, $query, $extra);
+    }
+
+    /**
      * 创建推药记录
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/RecommendController/createAction.md
      * @param array|object $body 入参类型
@@ -222,18 +248,5 @@ class TakeSdk extends SdkBase
     public function selfFetched($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/deliver/self/finish", $body, $query, $extra);
-    }
-
-    /**
-     * 订单搜索
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/searchAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function orderSearch($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/order/search", $body, $query, $extra);
     }
 }
