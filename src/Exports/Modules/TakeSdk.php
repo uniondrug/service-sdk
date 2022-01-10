@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-01-08
- * @time   Sat, 08 Jan 2022 13:02:19 +0800
+ * @date   2022-01-10
+ * @time   Mon, 10 Jan 2022 13:36:56 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -79,6 +79,19 @@ class TakeSdk extends SdkBase
     public function assistantRejectOrder($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/reject/order", $body, $query, $extra);
+    }
+
+    /**
+     * 门店信息
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AssistantController/storeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function assistantStore($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/assistant/store", $body, $query, $extra);
     }
 
     /**
