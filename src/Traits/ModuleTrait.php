@@ -132,6 +132,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCartSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreCustomerSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreEsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreMemberSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDstorePharmacistSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreReserveSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk;
@@ -159,6 +160,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsKingdeeSdk;
+use Uniondrug\ServiceSdk\Exports\Orders\PsDpspTcSdk;
 
 /**
  * Module
@@ -314,6 +316,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsKingdeeSdk;
  * @property NotifySdk                  $notify
  * @property PsAssistantOrgSdk          $psAssistantOrgSdk
  * @property PsKingdeeSdk               $psKingdeeSdk
+ * @property PsDstorePharmacistSdk      $psDstorePharmacist
+ * @property PsDpspTcSdk                $psDpspTcOrder
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
