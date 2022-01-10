@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Pms`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-01-07
- * @time   Fri, 07 Jan 2022 14:13:44 +0800
+ * @date   2022-01-10
+ * @time   Mon, 10 Jan 2022 11:17:40 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -199,6 +199,19 @@ class ApproMngSdk extends SdkBase
     }
 
     /**
+     * applyDataGoodsPagingAction()
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyDataController/applyDataGoodsPagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyDataGoodsPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyData/goodsPaging", $body, $query, $extra);
+    }
+
+    /**
      * 门店数据
      * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyDataController/applyDataStoreAddAction.md
      * @param array|object $body 入参类型
@@ -209,6 +222,19 @@ class ApproMngSdk extends SdkBase
     public function applyDataStoreAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/applyData/storeAdd", $body, $query, $extra);
+    }
+
+    /**
+     * applyDataStorePagingAction()
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyDataController/applyDataStorePagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyDataStorePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyData/storePaging", $body, $query, $extra);
     }
 
     /**
