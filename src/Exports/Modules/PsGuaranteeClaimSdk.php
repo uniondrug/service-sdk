@@ -55,4 +55,17 @@ class PsGuaranteeClaimSdk extends SdkBase
     {
         return $this->restful("POST", "/claim/guarantee/record/insure", $body, $query, $extra);
     }
+
+    /**
+     * 理赔详情
+     * @link https://uniondrug.coding.net/p/ps-guarantee-claim/git/tree/development/docs/api/ClaimController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function claimDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/claim/detail", $body, $query, $extra);
+    }
 }
