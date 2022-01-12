@@ -29,7 +29,77 @@ class GsReportSdk extends SdkBase
     protected $serviceName = 'gs-report';
 
     /**
-     * 报表列表
+     * 新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportAdd($body)
+    {
+        return $this->restful("GET", "/report/add", $body);
+    }
+
+    /**
+     * 编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportEdit($body)
+    {
+        return $this->restful("GET", "/report/edit", $body);
+    }
+
+    /**
+     * 删除
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportDel($body)
+    {
+        return $this->restful("GET", "/report/del", $body);
+    }
+
+    /**
+     * 刷新
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportFlush($body)
+    {
+        return $this->restful("GET", "/report/flush", $body);
+    }
+
+    /**
+     * 启动
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportStart($body)
+    {
+        return $this->restful("GET", "/report/start", $body);
+    }
+
+    /**
+     * 停用
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportStop($body)
+    {
+        return $this->restful("GET", "/report/stop", $body);
+    }
+
+    /**
+     * 测试
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportTest($body)
+    {
+        return $this->restful("GET", "/report/test", $body);
+    }
+
+    /**
+     * 列表
      * @param $body
      * @return ResponseInterface
      */
