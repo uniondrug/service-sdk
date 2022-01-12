@@ -198,7 +198,7 @@ use Uniondrug\ServiceSdk\Exports\Orders\PsDpspTcSdk;
  * @property GsFinanceSdk               $gsFinanceSdk
  * @property GsFinExportSdk             $gsFinExport
  * @property GsFinStatementSdk          $gsFinStatement
- * @property GsReportSdk                $gsReportSdk
+ * @property GsReportSdk                $gsReport
  * @property GoPartnersSdk              $goPartners
  * @property InsureRankSdk              $insureRank
  * @property InsureSdk                  $insure
