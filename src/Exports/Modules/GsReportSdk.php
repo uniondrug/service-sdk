@@ -35,7 +35,7 @@ class GsReportSdk extends SdkBase
      */
     public function reportAdd($body)
     {
-        return $this->restful("GET", "/report/add", $body);
+        return $this->restful("POST", "/report/add", $body);
     }
 
     /**
@@ -45,7 +45,7 @@ class GsReportSdk extends SdkBase
      */
     public function reportEdit($body)
     {
-        return $this->restful("GET", "/report/edit", $body);
+        return $this->restful("POST", "/report/edit", $body);
     }
 
     /**
@@ -55,7 +55,7 @@ class GsReportSdk extends SdkBase
      */
     public function reportDel($body)
     {
-        return $this->restful("GET", "/report/del", $body);
+        return $this->restful("POST", "/report/del", $body);
     }
 
     /**
@@ -65,7 +65,7 @@ class GsReportSdk extends SdkBase
      */
     public function reportFlush($body)
     {
-        return $this->restful("GET", "/report/flush", $body);
+        return $this->restful("POST", "/report/flush", $body);
     }
 
     /**
@@ -75,7 +75,7 @@ class GsReportSdk extends SdkBase
      */
     public function reportStart($body)
     {
-        return $this->restful("GET", "/report/start", $body);
+        return $this->restful("POST", "/report/start", $body);
     }
 
     /**
@@ -85,7 +85,7 @@ class GsReportSdk extends SdkBase
      */
     public function reportStop($body)
     {
-        return $this->restful("GET", "/report/stop", $body);
+        return $this->restful("POST", "/report/stop", $body);
     }
 
     /**
@@ -95,7 +95,7 @@ class GsReportSdk extends SdkBase
      */
     public function reportTest($body)
     {
-        return $this->restful("GET", "/report/test", $body);
+        return $this->restful("POST", "/report/test", $body);
     }
 
     /**
