@@ -37,4 +37,34 @@ class GsReportSdk extends SdkBase
     {
         return $this->restful("GET", "/report/list", $body);
     }
+
+    /**
+     * 已删除列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportListDeleted($body)
+    {
+        return $this->restful("GET", "/report/list/deleted", $body);
+    }
+
+    /**
+     * 已启用列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportListEnabled($body)
+    {
+        return $this->restful("GET", "/report/list/enabled", $body);
+    }
+
+    /**
+     * 已停用列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportListDisabled($body)
+    {
+        return $this->restful("GET", "/report/list/disabled", $body);
+    }
 }
