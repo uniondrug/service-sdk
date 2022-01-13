@@ -350,4 +350,26 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/trial/activityTrial", $body);
     }
+
+    /**
+     * 创建营销卡方案
+     * @link  https://git.uniondrug.com/docs/1/docs-bizcenter/docs-promote/blob/master/营销服务接口文档/营销中心v4.10外部创建营销卡方案接口文档.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function createScheme($body)
+    {
+        return $this->restful(static::METHOD_POST, '/outScheme/createScheme', $body);
+    }
+
+    /**
+     * 批量导入商品信息
+     * @link  https://git.uniondrug.com/docs/1/docs-bizcenter/docs-promote/blob/master/营销服务接口文档/批量导入商品信息.md
+     * @param array $body
+     * @return ResponseInterface
+     */
+    public function batchAddGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goods/batchAddGoods', $body);
+    }
 }
