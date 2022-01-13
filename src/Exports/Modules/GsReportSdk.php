@@ -29,7 +29,7 @@ class GsReportSdk extends SdkBase
     protected $serviceName = 'gs-report';
 
     /**
-     * 新增
+     * 数据报表-新增
      * @param $body
      * @return ResponseInterface
      */
@@ -39,7 +39,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 编辑
+     * 数据报表-编辑
      * @param $body
      * @return ResponseInterface
      */
@@ -49,7 +49,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 删除
+     * 数据报表-删除
      * @param $body
      * @return ResponseInterface
      */
@@ -59,7 +59,17 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 刷新
+     * 数据报表-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportDetail($body)
+    {
+        return $this->restful("POST", "/report/detail", $body);
+    }
+
+    /**
+     * 数据报表-刷新
      * @param $body
      * @return ResponseInterface
      */
@@ -69,7 +79,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 启动
+     * 数据报表-启动
      * @param $body
      * @return ResponseInterface
      */
@@ -79,7 +89,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 停用
+     * 数据报表-停用
      * @param $body
      * @return ResponseInterface
      */
@@ -89,7 +99,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 测试
+     * 数据报表-测试
      * @param $body
      * @return ResponseInterface
      */
@@ -99,7 +109,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 列表
+     * 数据报表-列表
      * @param $body
      * @return ResponseInterface
      */
@@ -109,7 +119,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 已删除列表
+     * 数据报表-已删除列表
      * @param $body
      * @return ResponseInterface
      */
@@ -119,7 +129,7 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 已启用列表
+     * 数据报表-已启用列表
      * @param $body
      * @return ResponseInterface
      */
@@ -129,12 +139,82 @@ class GsReportSdk extends SdkBase
     }
 
     /**
-     * 已停用列表
+     * 数据报表-已停用列表
      * @param $body
      * @return ResponseInterface
      */
     public function reportListDisabled($body)
     {
         return $this->restful("GET", "/report/list/disabled", $body);
+    }
+
+    /**
+     * 数据表格-新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tableAdd($body)
+    {
+        return $this->restful("POST", "/table/add", $body);
+    }
+
+    /**
+     * 数据表格-编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tableEdit($body)
+    {
+        return $this->restful("POST", "/table/edit", $body);
+    }
+
+    /**
+     * 数据表格-删除
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tableDel($body)
+    {
+        return $this->restful("POST", "/table/del", $body);
+    }
+
+    /**
+     * 数据表格-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tableDetail($body)
+    {
+        return $this->restful("POST", "/table/detail", $body);
+    }
+
+    /**
+     * 数据表格-列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tableList($body)
+    {
+        return $this->restful("GET", "/table/list", $body);
+    }
+
+    /**
+     * 数据表格-启动
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tableStart($body)
+    {
+        return $this->restful("POST", "/table/start", $body);
+    }
+
+    /**
+     * 数据表格-停用
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tableStop($body)
+    {
+        return $this->restful("POST", "/table/stop", $body);
     }
 }
