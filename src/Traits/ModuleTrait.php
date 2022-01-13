@@ -160,7 +160,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\YdbResPmSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ZhongShengSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsAssistantOrgSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsKingdeeSdk;
-use Uniondrug\ServiceSdk\Exports\Orders\PsDpspTcSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcSdk;
 
 /**
  * Module
