@@ -20,7 +20,7 @@ use Uniondrug\ServiceSdk\Bases\ResponseInterface;
  * PsGdspSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class PsGdspSdk extends SdkBase
+class PsGdspOrderSdk extends SdkBase
 {
     /**
      * 服务名称
