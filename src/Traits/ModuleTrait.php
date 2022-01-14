@@ -138,6 +138,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreReserveSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsGdspOrderSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGdspSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeClaimSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeSdk;
@@ -321,7 +322,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsKingdeeSdk               $psKingdeeSdk
  * @property PsDstorePharmacistSdk      $psDstorePharmacist
  * @property PsDpspTcOrderSdk           $psDpspTcOrder
- * @property PsGdspSdk                  $PsGdsp
+ * @property PsGdspOrderSdk             $psGdspOrder
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
