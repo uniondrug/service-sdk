@@ -32,9 +32,9 @@ class PsDpspTcOrderSdk extends SdkBase
     /**
      * 添加/修改用药人
      * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/addAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function addDrugUser($body, $query = null, $extra = null)
@@ -45,9 +45,9 @@ class PsDpspTcOrderSdk extends SdkBase
     /**
      * 删除用药人
      * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/deleteAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function deleteDrugUser($body, $query = null, $extra = null)
@@ -58,13 +58,39 @@ class PsDpspTcOrderSdk extends SdkBase
     /**
      * 用药人列表
      * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/listAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function drugUserList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/drugUser/list", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function page($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/page", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/listAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function detail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/detail", $body, $query, $extra);
     }
 }
