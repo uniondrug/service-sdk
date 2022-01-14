@@ -138,6 +138,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDstoreReserveSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinanceDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinBillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsFinStatementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsGdspSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeClaimSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsSdk;
@@ -309,17 +310,18 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsDstoreMemberSdk          $psDstoreMember
  * @property PsDstoreEsSdk              $psDstoreEs
  * @property PsDstoreReserveSdk         $psDstoreReserve
- * @property PsSdk                 $ps
- * @property OtcSdk                $otc
- * @property InspectionSdk         $inspection
- * @property PsFinBillSdk          $psFinBillSdk
- * @property PsFinStatementSdk     $psFinStatementSdk
- * @property PsDstoreCustomerSdk   $psDstoreCustomer
- * @property NotifySdk             $notify
- * @property PsAssistantOrgSdk     $psAssistantOrgSdk
- * @property PsKingdeeSdk          $psKingdeeSdk
- * @property PsDstorePharmacistSdk $psDstorePharmacist
- * @property PsDpspTcOrderSdk      $psDpspTcOrder
+ * @property PsSdk                      $ps
+ * @property OtcSdk                     $otc
+ * @property InspectionSdk              $inspection
+ * @property PsFinBillSdk               $psFinBillSdk
+ * @property PsFinStatementSdk          $psFinStatementSdk
+ * @property PsDstoreCustomerSdk        $psDstoreCustomer
+ * @property NotifySdk                  $notify
+ * @property PsAssistantOrgSdk          $psAssistantOrgSdk
+ * @property PsKingdeeSdk               $psKingdeeSdk
+ * @property PsDstorePharmacistSdk      $psDstorePharmacist
+ * @property PsDpspTcOrderSdk           $psDpspTcOrder
+ * @property PsGdspSdk                  $PsGdsp
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
