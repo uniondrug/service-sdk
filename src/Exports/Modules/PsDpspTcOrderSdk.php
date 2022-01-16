@@ -76,7 +76,7 @@ class PsDpspTcOrderSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function page($body, $query = null, $extra = null)
+    public function orderPage($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/page", $body, $query, $extra);
     }
@@ -89,8 +89,34 @@ class PsDpspTcOrderSdk extends SdkBase
      * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
-    public function detail($body, $query = null, $extra = null)
+    public function orderDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/order/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 日志创建
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/logCreateAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function orderLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/log/create", $body, $query, $extra);
+    }
+
+    /**
+     * 日志列表
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/logPageAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function orderLogPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/log/page", $body, $query, $extra);
     }
 }
