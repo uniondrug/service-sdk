@@ -217,4 +217,24 @@ class GsReportSdk extends SdkBase
     {
         return $this->restful("POST", "/table/stop", $body);
     }
+
+    /**
+     * 执行历史-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function historyPaging($body)
+    {
+        return $this->restful("POST", "/history/paging", $body);
+    }
+
+    /**
+     * 执行历史-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function historyDetail($body)
+    {
+        return $this->restful("GET", "/history/detail", $body);
+    }
 }
