@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-01-10
- * @time   Mon, 10 Jan 2022 13:36:56 +0800
+ * @date   2022-01-18
+ * @time   Tue, 18 Jan 2022 13:45:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -248,6 +248,32 @@ class TakeSdk extends SdkBase
     public function recommendDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/recommend/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 获取推药记录
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/RecommendController/phoneCreateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recommendPhoneCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommend/phone/create", $body, $query, $extra);
+    }
+
+    /**
+     * 获取推药记录
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/RecommendController/phoneDelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function recommendPhoneDel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommend/phone/del", $body, $query, $extra);
     }
 
     /**
