@@ -169,6 +169,46 @@ class GsReportSdk extends SdkBase
     }
 
     /**
+     * 实例-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsDetail($body)
+    {
+        return $this->restful("GET", "/rds/detail", $body);
+    }
+
+    /**
+     * 实例-添加
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsAdd($body)
+    {
+        return $this->restful("POST", "/rds/add", $body);
+    }
+
+    /**
+     * 实例-修改
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsEdit($body)
+    {
+        return $this->restful("POST", "/rds/edit", $body);
+    }
+
+    /**
+     * 实例-删除
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsDel($body)
+    {
+        return $this->restful("POST", "/rds/del", $body);
+    }
+
+    /**
      * 数据表格-新增
      * @param $body
      * @return ResponseInterface
