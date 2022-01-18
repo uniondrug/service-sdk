@@ -9,7 +9,7 @@
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2022-01-18
- * @time   Tue, 18 Jan 2022 13:45:07 +0800
+ * @time   Tue, 18 Jan 2022 14:36:27 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -105,6 +105,32 @@ class TakeSdk extends SdkBase
     public function assistantTransfer($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistant/transfer", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AutomaticAcceptConfigController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function automaticAcceptConfigDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/automatic/accept/config/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 修改
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/AutomaticAcceptConfigController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function automaticAcceptConfigUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/automatic/accept/config/update", $body, $query, $extra);
     }
 
     /**
