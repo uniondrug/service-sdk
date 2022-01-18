@@ -159,6 +159,16 @@ class GsReportSdk extends SdkBase
     }
 
     /**
+     * 实例-列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsList($body)
+    {
+        return $this->restful("GET", "/rds/list", $body);
+    }
+
+    /**
      * 数据表格-新增
      * @param $body
      * @return ResponseInterface
