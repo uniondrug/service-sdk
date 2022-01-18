@@ -109,6 +109,16 @@ class GsReportSdk extends SdkBase
     }
 
     /**
+     * 数据报表-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportPaging($body)
+    {
+        return $this->restful("POST", "/report/paging", $body);
+    }
+
+    /**
      * 数据报表-列表
      * @param $body
      * @return ResponseInterface
@@ -186,6 +196,16 @@ class GsReportSdk extends SdkBase
     public function tableDetail($body)
     {
         return $this->restful("POST", "/table/detail", $body);
+    }
+
+    /**
+     * 数据表格-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tablePaging($body)
+    {
+        return $this->restful("POST", "/table/paging", $body);
     }
 
     /**
