@@ -347,4 +347,44 @@ class GsReportSdk extends SdkBase
     {
         return $this->restful("POST", "/dingtalk/paging", $body);
     }
+
+    /**
+     * 联系人-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atDetail($body)
+    {
+        return $this->restful("GET", "/at/detail", $body);
+    }
+
+    /**
+     * 联系人-新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atAdd($body)
+    {
+        return $this->restful("POST", "/at/add", $body);
+    }
+
+    /**
+     * 联系人-编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atEdit($body)
+    {
+        return $this->restful("POST", "/at/edit", $body);
+    }
+
+    /**
+     * 联系人-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atPaging($body)
+    {
+        return $this->restful("POST", "/at/paging", $body);
+    }
 }
