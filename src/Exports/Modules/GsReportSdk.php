@@ -307,4 +307,44 @@ class GsReportSdk extends SdkBase
     {
         return $this->restful("GET", "/history/detail", $body);
     }
+
+    /**
+     * 钉钉机器人-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkDetail($body)
+    {
+        return $this->restful("GET", "/dingtalk/detail", $body);
+    }
+
+    /**
+     * 钉钉机器人-新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkAdd($body)
+    {
+        return $this->restful("POST", "/dingtalk/add", $body);
+    }
+
+    /**
+     * 钉钉机器人-编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkEdit($body)
+    {
+        return $this->restful("POST", "/dingtalk/edit", $body);
+    }
+
+    /**
+     * 钉钉机器人-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkPaging($body)
+    {
+        return $this->restful("POST", "/dingtalk/paging", $body);
+    }
 }
