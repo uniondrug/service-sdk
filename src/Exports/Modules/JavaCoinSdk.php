@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -273,8 +274,8 @@ class JavaCoinSdk extends SdkBase
     /**
      * 批量收款单审核通过
      * @param $body
-     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/development/docs-api/uniondrug-coin-service/ReceiptController/batchAuditSuccess.md
      * @return ResponseInterface
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/development/docs-api/uniondrug-coin-service/ReceiptController/batchAuditSuccess.md
      */
     public function receiptBatchAuditSuccess($body)
     {
@@ -433,6 +434,17 @@ class JavaCoinSdk extends SdkBase
     public function paymentPage($body)
     {
         return $this->restful("POST", "/payment/page", $body);
+    }
+
+    /**
+     * 资金付款单list查询
+     * @param $body
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/code/1/finance/js-coin/blob/V1.25/docs-api/uniondrug-coin-service/PaymentController/listPayments.md
+     */
+    public function paymentList($body)
+    {
+        return $this->restful("POST", "/payment/list", $body);
     }
 
     /**
