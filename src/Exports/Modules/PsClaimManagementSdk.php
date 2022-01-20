@@ -54,4 +54,56 @@ class PsClaimManagementSdk extends SdkBase
     {
         return $this->restful("POST", "/order/info/supply", $body, $query, $extra);
     }
+
+    /**
+     * 添加项目
+     * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/ProjectController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function projectCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/create", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/ProjectController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function projectDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/ProjectController/pagingAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function projectPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 状态更改
+     * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/ProjectController/statusAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function projectStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/status", $body, $query, $extra);
+    }
 }
