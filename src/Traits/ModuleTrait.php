@@ -323,7 +323,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsKingdeeSdk               $psKingdeeSdk
  * @property PsDstorePharmacistSdk      $psDstorePharmacist
  * @property PsDpspTcOrderSdk           $psDpspTcOrder
- * @property PsClaimManagementSdk       $psClaimManagementSdk
+ * @property PsClaimManagementSdk       $psClaimManagement
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
