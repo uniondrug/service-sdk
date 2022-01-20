@@ -7,6 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Managements\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
@@ -322,6 +323,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsKingdeeSdk               $psKingdeeSdk
  * @property PsDstorePharmacistSdk      $psDstorePharmacist
  * @property PsDpspTcOrderSdk           $psDpspTcOrder
+ * @property PsClaimManagementSdk       $psClaimManagementSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
