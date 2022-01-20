@@ -119,4 +119,17 @@ class PsDpspTcOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/log/page", $body, $query, $extra);
     }
+
+    /**
+     * 用药人详情
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function drugUserDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/detail", $body, $query, $extra);
+    }
 }

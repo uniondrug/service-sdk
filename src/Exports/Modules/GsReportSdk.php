@@ -109,6 +109,16 @@ class GsReportSdk extends SdkBase
     }
 
     /**
+     * 数据报表-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportPaging($body)
+    {
+        return $this->restful("POST", "/report/paging", $body);
+    }
+
+    /**
      * 数据报表-列表
      * @param $body
      * @return ResponseInterface
@@ -146,6 +156,56 @@ class GsReportSdk extends SdkBase
     public function reportListDisabled($body)
     {
         return $this->restful("GET", "/report/list/disabled", $body);
+    }
+
+    /**
+     * 实例-列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsList($body)
+    {
+        return $this->restful("GET", "/rds/list", $body);
+    }
+
+    /**
+     * 实例-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsDetail($body)
+    {
+        return $this->restful("GET", "/rds/detail", $body);
+    }
+
+    /**
+     * 实例-添加
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsAdd($body)
+    {
+        return $this->restful("POST", "/rds/add", $body);
+    }
+
+    /**
+     * 实例-修改
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsEdit($body)
+    {
+        return $this->restful("POST", "/rds/edit", $body);
+    }
+
+    /**
+     * 实例-删除
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function rdsDel($body)
+    {
+        return $this->restful("POST", "/rds/del", $body);
     }
 
     /**
@@ -189,6 +249,16 @@ class GsReportSdk extends SdkBase
     }
 
     /**
+     * 数据表格-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function tablePaging($body)
+    {
+        return $this->restful("POST", "/table/paging", $body);
+    }
+
+    /**
      * 数据表格-列表
      * @param $body
      * @return ResponseInterface
@@ -216,5 +286,105 @@ class GsReportSdk extends SdkBase
     public function tableStop($body)
     {
         return $this->restful("POST", "/table/stop", $body);
+    }
+
+    /**
+     * 执行历史-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function historyPaging($body)
+    {
+        return $this->restful("POST", "/history/paging", $body);
+    }
+
+    /**
+     * 执行历史-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function historyDetail($body)
+    {
+        return $this->restful("GET", "/history/detail", $body);
+    }
+
+    /**
+     * 钉钉机器人-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkDetail($body)
+    {
+        return $this->restful("GET", "/dingtalk/detail", $body);
+    }
+
+    /**
+     * 钉钉机器人-新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkAdd($body)
+    {
+        return $this->restful("POST", "/dingtalk/add", $body);
+    }
+
+    /**
+     * 钉钉机器人-编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkEdit($body)
+    {
+        return $this->restful("POST", "/dingtalk/edit", $body);
+    }
+
+    /**
+     * 钉钉机器人-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function dingtalkPaging($body)
+    {
+        return $this->restful("POST", "/dingtalk/paging", $body);
+    }
+
+    /**
+     * 联系人-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atDetail($body)
+    {
+        return $this->restful("GET", "/at/detail", $body);
+    }
+
+    /**
+     * 联系人-新增
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atAdd($body)
+    {
+        return $this->restful("POST", "/at/add", $body);
+    }
+
+    /**
+     * 联系人-编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atEdit($body)
+    {
+        return $this->restful("POST", "/at/edit", $body);
+    }
+
+    /**
+     * 联系人-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function atPaging($body)
+    {
+        return $this->restful("POST", "/at/paging", $body);
     }
 }
