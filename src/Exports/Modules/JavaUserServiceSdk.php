@@ -287,13 +287,12 @@ class JavaUserServiceSdk extends SdkBase
 
     /**
      * 根据memberId 和 证件类型 获取用户的证件信息
-     *
      * @param $body
      * @return ResponseInterface
      */
-    public function userCardGetById($body){
-
-         return $this->restful("POST", "/v2/api/userCard/getById", $body);
+    public function userCardGetById($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/getById", $body);
     }
 
     /**
@@ -301,9 +300,18 @@ class JavaUserServiceSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function userCardCheck($body){
+    public function userCardCheck($body)
+    {
         return $this->restful("POST", "/v2/api/userCard/check", $body);
-
     }
 
+    /**
+     * 查询证件列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function userCardQueryBy($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/queryBy", $body);
+    }
 }
