@@ -179,6 +179,16 @@ class JavaGoodsCenterSdk extends SdkBase
     }
 
     /**
+     * 商品单条查询
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGoodsBySkuNo($body)
+    {
+        return $this->restful("POST", "/queryGoods/getGoodsBySkuNo", $body);
+    }
+
+    /**
      * 商品搜索
      * @param $body
      * @return ResponseInterface
