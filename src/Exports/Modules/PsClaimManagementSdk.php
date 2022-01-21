@@ -106,4 +106,17 @@ class PsClaimManagementSdk extends SdkBase
     {
         return $this->restful("POST", "/project/status", $body, $query, $extra);
     }
+
+    /**
+     * 初始必传内容结构
+     * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/ProjectController/defaultRulesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectDefaultRules($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/defaultRules", $body, $query, $extra);
+    }
 }
