@@ -7,7 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
-use Uniondrug\ServiceSdk\Exports\Managements\PsClaimManagementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitStatisticsSdk;
