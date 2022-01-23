@@ -30,11 +30,24 @@ class PsClaimManagementSdk extends SdkBase
     protected $serviceName = 'ps-claim-management';
 
     /**
+     * getByOrderNosAction()
+     * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/OrderInfoSupplyController/getByOrderNosAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function getOrderInfoByOrderNos($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/info/by/orderNos", $body, $query, $extra);
+    }
+
+    /**
      * 批量订单号获取规则
      * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/OrderRuleController/getByOrderNosAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function getOrderRuleByOrderNos($body, $query = null, $extra = null)
@@ -123,9 +136,9 @@ class PsClaimManagementSdk extends SdkBase
     /**
      * 初始必传内容结构
      * @link https://uniondrug.coding.net/p/management.claim.ps/git/blob/development/docs/api/ProjectController/defaultRulesAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function projectDefaultRules($body, $query = null, $extra = null)
