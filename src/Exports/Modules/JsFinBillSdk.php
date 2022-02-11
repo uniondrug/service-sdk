@@ -295,4 +295,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billSale/export", $body);
     }
+
+    /**
+     * 上传开票单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_1.2/doc/api/OnlineInvoicingController/invoicing.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function uploadBill($body)
+    {
+        return $this->restful("POST", "/online/invoicing", $body);
+    }
 }
