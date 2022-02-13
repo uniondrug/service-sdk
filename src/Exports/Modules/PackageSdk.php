@@ -1069,4 +1069,30 @@ class PackageSdk extends SdkBase
     {
         return $this->restful("POST", "/tags/update", $body, $query, $extra);
     }
+
+    /**
+     * 详情（带产品ID）
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesSpecsController/availableDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteesSpecsAvailableDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteesSpecs/availableDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 可用保障分页（带产品ID）
+     * @link https://uniondrug.coding.net/p/module.package/git/blob/development/docs/api/GuaranteesSpecsController/availablePagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function guaranteesSpecsAvailablePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/guaranteesSpecs/availablePaging", $body, $query, $extra);
+    }
 }
