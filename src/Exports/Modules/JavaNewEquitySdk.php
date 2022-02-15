@@ -170,4 +170,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/eqqry/qry/equity/getAdminMemberIdCount", $body);
     }
+
+    /**
+     * 查询协议列表
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-qry/AgreementQryController/listAgreement.md
+     */
+    public function agrqryAgreementList($body)
+    {
+        return $this->restful("POST", "/agrqry/qry/agreement/list", $body);
+    }
 }
