@@ -567,4 +567,25 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/bill/cashed/insurer/list", $body);
     }
+
+    /**
+     * 在线开票替换进度列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillOnlinePaging($body)
+    {
+        return $this->restful("POST", "/direct/bill/online/paging", $body);
+    }
+
+    /**
+     * 在线开票替换失败重新执行
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillOnlineOperation($body)
+    {
+        return $this->restful("POST", "/direct/bill/online/operation", $body);
+    }
+
 }
