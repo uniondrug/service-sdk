@@ -191,4 +191,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/agrqry/qry/purchase/listPage", $body);
     }
+
+    /**
+     * 分页查询采购商品
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-qry/PurchaseGoodsQryController/listPagePurchaseGoods.md
+     */
+    public function agrqryGoodsListPage($body)
+    {
+        return $this->restful("POST", "/agrqry/qry/purchase/goods/listPage", $body);
+    }
 }
