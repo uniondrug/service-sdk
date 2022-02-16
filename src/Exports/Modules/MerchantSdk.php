@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-02-10
- * @time   Thu, 10 Feb 2022 13:44:25 +0800
+ * @date   2022-02-16
+ * @time   Wed, 16 Feb 2022 15:59:07 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -745,7 +745,7 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 详情
+     * 组织id查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupTitleRelationsController/detailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -1119,6 +1119,19 @@ class MerchantSdk extends SdkBase
     public function editIsGroup($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editisgroup", $body, $query, $extra);
+    }
+
+    /**
+     * 修改商户集团属性
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/editIsGroupAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsGroupOrganizeBase($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/editisgroup", $body, $query, $extra);
     }
 
     /**
@@ -2396,6 +2409,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 集合
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupTitleController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function listingOrganizeGroupTitle($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupTitle/listing", $body, $query, $extra);
+    }
+
+    /**
      * ROOT下独立结算组织查询
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listIsIndependentAction.md
      * @param array|object $body 入参类型
@@ -2601,6 +2627,19 @@ class MerchantSdk extends SdkBase
     public function nameListBackend($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/namelist", $body, $query, $extra);
+    }
+
+    /**
+     * 基于绑定组织的标签详情
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupTitleRelationsController/organizationidDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function organizationidDetailOrganizeGroupTitleRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupTitleRelations/organizationiddetail", $body, $query, $extra);
     }
 
     /**
