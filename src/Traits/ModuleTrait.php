@@ -7,6 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
@@ -287,6 +288,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property HuoJuExpressSdk            $huoJuExpress
  * @property RuleSdk                    $rule
  * @property SettlementLogSdk           $settlementLog
+ * @property JavaDataSdk                $javaData
  * @property SettlementSdk              $settlement
  * @property SettlementsheetSdk         $settlementsheet
  * @property StagnationSdk              $stagnation
