@@ -1,4 +1,5 @@
 <?php
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -15,9 +16,9 @@ class JavaPromoteCenterSdk extends SdkBase
 
     /**
      * 创建卡
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function sendCard($body)
     {
@@ -26,9 +27,9 @@ class JavaPromoteCenterSdk extends SdkBase
 
     /**
      * 卡列表
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryMyRecord($body)
     {
@@ -37,9 +38,9 @@ class JavaPromoteCenterSdk extends SdkBase
 
     /**
      * 卡列表-分页
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function pageCardList($body)
     {
@@ -48,9 +49,9 @@ class JavaPromoteCenterSdk extends SdkBase
 
     /**
      * 卡详情
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryCardDetail($body)
     {
@@ -59,9 +60,9 @@ class JavaPromoteCenterSdk extends SdkBase
 
     /**
      * 卡消费记录
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryCouponList($body)
     {
@@ -70,9 +71,9 @@ class JavaPromoteCenterSdk extends SdkBase
 
     /**
      * 优惠
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function marketCouponTrial($body)
     {
@@ -81,9 +82,9 @@ class JavaPromoteCenterSdk extends SdkBase
 
     /**
      * 卡订单号
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function queryCardOrder($body)
     {
@@ -91,9 +92,9 @@ class JavaPromoteCenterSdk extends SdkBase
     }
 
     /**
-     * @link
      * @param array $body
      * @return ResponseInterface
+     * @link
      */
     public function querySchemeInfo($body)
     {
@@ -371,5 +372,35 @@ class JavaPromoteCenterSdk extends SdkBase
     public function batchAddGoods($body)
     {
         return $this->restful(static::METHOD_POST, '/goods/batchAddGoods', $body);
+    }
+
+    /**
+     * 根据卡号查询卡详情
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function queryCardDetailByCardId($body)
+    {
+        return $this->restful(static::METHOD_POST, '/card/queryCardDetailByCardId', $body);
+    }
+
+    /**
+     * 多名单方案查询接口
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function multiDiscountDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/multiDiscount/detail', $body);
+    }
+
+    /**
+     * 方案内白名单商品查询接口
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function schemeWhiteListGoods($body)
+    {
+        return $this->restful(static::METHOD_POST, '/goods/queryWhiteListGoodsPage', $body);
     }
 }
