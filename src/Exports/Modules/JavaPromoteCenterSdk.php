@@ -403,4 +403,14 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/goods/queryWhiteListGoodsPage', $body);
     }
+
+    /**
+     * 方案查询详情
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function schemeInfo($body)
+    {
+        return $this->restful(static::METHOD_POST,'/outScheme/schemeInfo',$body);
+    }
 }
