@@ -242,6 +242,19 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 更新投保方式
+     * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_3.25/doc/api/PoolClaimSummaryController/updateInsureMethod.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimSummaryUpdateInsureMethod($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaimSummary/updateInsureMethod", $body);
+    }
+
+    /**
      * 理赔数据分页查询（只查询未取消的理赔数据）理赔情况查询
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/ClaimController/page.md
      * @param array|object $body  入参类型
