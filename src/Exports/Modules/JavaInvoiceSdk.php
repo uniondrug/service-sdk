@@ -20,6 +20,7 @@ class JavaInvoiceSdk extends SdkBase
      * @var string
      */
     protected $serviceName = 'java.invoice.module';
+
     /**
      * 发票详情
      * @link
@@ -29,5 +30,16 @@ class JavaInvoiceSdk extends SdkBase
     public function invoiceDetail($body)
     {
         return $this->restful("POST", "/invoice/detail", $body);
+    }
+
+    /**
+     * 发票列表
+     * @link
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function invoiceList($body)
+    {
+        return $this->restful("POST", "/invoice/list", $body);
     }
 }
