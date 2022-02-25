@@ -2490,6 +2490,58 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 新增结算费率规则
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Balance/BalanceController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function balanceCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/balance/create", $body, $query, $extra);
+    }
+
+    /**
+     * 结算费率规则详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Balance/BalanceController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function balanceDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/balance/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 结算费率规则分页
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Balance/BalanceController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function balancePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/balance/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改结算费率规则
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Balance/BalanceController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function balanceUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/balance/update", $body, $query, $extra);
+    }
+
+    /**
      * 组织类型
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Organize/OrganizeController/detailAction.md
      * @param array|object $body 入参类型
