@@ -152,6 +152,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\ScoreSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementLogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\ShopSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SmsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TakeSdk;
@@ -326,6 +327,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsDstorePharmacistSdk      $psDstorePharmacist
  * @property PsDpspTcOrderSdk           $psDpspTcOrder
  * @property PsClaimManagementSdk       $psClaimManagement
+ * @property ShopSdk                    $shop
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
