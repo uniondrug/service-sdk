@@ -1668,6 +1668,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 订阅商户中心连锁回推扣率
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/syncPushBalanceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSettingSyncPushBalance($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/sync/push/balance", $body, $query, $extra);
+    }
+
+    /**
      * 订阅助手商户入驻财务数据
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/settledAction.md
      * @param array|object $body 入参类型
