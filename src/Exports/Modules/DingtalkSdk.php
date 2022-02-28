@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-08-30
- * @time   Mon, 30 Aug 2021 11:46:47 +0800
+ * @date   2022-02-28
+ * @time   Mon, 28 Feb 2022 13:48:38 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -277,6 +277,19 @@ class DingtalkSdk extends SdkBase
     }
 
     /**
+     * 查询上级树
+     * @link https://uniondrug.coding.net/p/module.dingtalk/git/blob/development/docs/api/DingdingDepartmentController/rootIdListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dingdingDepartmentRootIdList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dingdingDepartment/rootidlist", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/module.dingtalk/git/blob/development/docs/api/DingdingDepartmentController/updateAction.md
      * @param array|object $body 入参类型
@@ -534,6 +547,19 @@ class DingtalkSdk extends SdkBase
     public function dingdingMemberPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/dingdingMember/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/module.dingtalk/git/blob/development/docs/api/DingdingMemberController/pagingMemberAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function dingdingMemberPagingMember($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dingdingMember/pagingmebmer", $body, $query, $extra);
     }
 
     /**
