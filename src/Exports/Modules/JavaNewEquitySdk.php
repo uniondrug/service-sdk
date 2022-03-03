@@ -224,4 +224,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/agrqry/qry/purchase/getById", $body);
     }
+
+    /**
+     * 接口模式创建兑换码
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-mng/CodeController/createCode.md
+     */
+    public function agrmngCodeCreateCode($body)
+    {
+        return $this->restful("POST", "/agrmng/mng/code/createCode", $body);
+    }
 }
