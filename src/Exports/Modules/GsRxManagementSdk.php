@@ -11,6 +11,7 @@
  * @date   2022-01-20
  * @time   Thu, 20 Jan 2022 10:17:13 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -51,6 +52,30 @@ class GsRxManagementSdk extends SdkBase
     public function rxUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/rx/update", $body, $query, $extra);
+    }
+
+    /**
+     * 处方分页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function rxPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/rx/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 处方详情
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function rxDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/rx/detail", $body, $query, $extra);
     }
 
     /**
