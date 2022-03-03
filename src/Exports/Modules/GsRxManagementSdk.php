@@ -11,7 +11,6 @@
  * @date   2022-01-20
  * @time   Thu, 20 Jan 2022 10:17:13 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -88,5 +87,89 @@ class GsRxManagementSdk extends SdkBase
     public function ruleCreate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/rule/create", $body, $query, $extra);
+    }
+
+    /**
+     * 规则详情
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function ruleDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 规则修改
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function ruleUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/update", $body, $query, $extra);
+    }
+
+    /**
+     * 规则删除
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function ruleDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 规则翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function rulePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 规则条目列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function ruleItemList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/item/list", $body, $query, $extra);
+    }
+
+    /**
+     * 规则条件列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function ruleItemConditionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/item/condition/list", $body, $query, $extra);
+    }
+
+    /**
+     * 规则选项列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function ruleItemOptionList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/item/option/list", $body, $query, $extra);
     }
 }

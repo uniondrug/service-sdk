@@ -329,7 +329,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsDpspTcOrderSdk           $psDpspTcOrder
  * @property PsClaimManagementSdk       $psClaimManagement
  * @property ShopSdk                    $shop
- * @property GsRxManagementSdk          $gsRxManagementSdk
+ * @property GsRxManagementSdk          $gsRxManagement
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
