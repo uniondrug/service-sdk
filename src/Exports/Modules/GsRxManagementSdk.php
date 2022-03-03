@@ -98,7 +98,7 @@ class GsRxManagementSdk extends SdkBase
      */
     public function ruleDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rule/detail", $body, $query, $extra);
+        return $this->restful("GET", "/rule/detail", $body, $query, $extra);
     }
 
     /**
@@ -134,7 +134,7 @@ class GsRxManagementSdk extends SdkBase
      */
     public function rulePaging($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rule/paging", $body, $query, $extra);
+        return $this->restful("GET", "/rule/paging", $body, $query, $extra);
     }
 
     /**
@@ -146,7 +146,7 @@ class GsRxManagementSdk extends SdkBase
      */
     public function ruleItemList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rule/item/list", $body, $query, $extra);
+        return $this->restful("GET", "/rule/item/list", $body, $query, $extra);
     }
 
     /**
@@ -158,7 +158,7 @@ class GsRxManagementSdk extends SdkBase
      */
     public function ruleItemConditionList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rule/item/condition/list", $body, $query, $extra);
+        return $this->restful("GET", "/rule/item/condition/list", $body, $query, $extra);
     }
 
     /**
@@ -170,6 +170,6 @@ class GsRxManagementSdk extends SdkBase
      */
     public function ruleItemOptionList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/rule/item/option/list", $body, $query, $extra);
+        return $this->restful("GET", "/rule/item/option/list", $body, $query, $extra);
     }
 }
