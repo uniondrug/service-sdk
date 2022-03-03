@@ -172,4 +172,16 @@ class GsRxManagementSdk extends SdkBase
     {
         return $this->restful("GET", "/rule/item/option/list", $body, $query, $extra);
     }
+
+    /**
+     * 供应商列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function supplierList($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/rx/supplier/list", $body, $query, $extra);
+    }
 }
