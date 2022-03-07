@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-02-16
- * @time   Wed, 16 Feb 2022 15:59:07 +0800
+ * @date   2022-03-07
+ * @time   Mon, 07 Mar 2022 14:49:46 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -352,6 +352,32 @@ class MerchantSdk extends SdkBase
     public function assistantsSumMember($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/assistants/summember", $body, $query, $extra);
+    }
+
+    /**
+     * 修改集团服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsGroupAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function backEndEditIsGroup($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisgroup", $body, $query, $extra);
+    }
+
+    /**
+     * 修改统一社会信用码
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editUnifiedSocialCreditCodeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function backEndEditUnifiedSocialCreditCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editunifiedSocialCreditCode", $body, $query, $extra);
     }
 
     /**
@@ -1106,19 +1132,6 @@ class MerchantSdk extends SdkBase
     public function editIsDirectRenewal($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editisDirectRenewal", $body, $query, $extra);
-    }
-
-    /**
-     * 修改集团服务
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsGroupAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function editIsGroup($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/organizebasebackend/editisgroup", $body, $query, $extra);
     }
 
     /**
@@ -2370,6 +2383,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 商户枚举列表
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/listDictionariesAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function listDictionariesOrganizeBase($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/listdictionaries", $body, $query, $extra);
+    }
+
+    /**
      * 查询村医组织列表
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/ListHealthServicesAction.md
      * @param array|object $body 入参类型
@@ -2631,7 +2657,7 @@ class MerchantSdk extends SdkBase
 
     /**
      * 基于绑定组织的标签详情
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupTitleRelationsController/organizationidDetailAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupTitleRelationsController/organizationIdDetailAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
