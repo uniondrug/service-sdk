@@ -50,4 +50,44 @@ class GsFinExportSdk extends SdkBase
     {
         return $this->restful("POST", "/export/detail", $body);
     }
+
+    /**
+     * 创建任务
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function taskCreate($body)
+    {
+        return $this->restful("POST", "/task/create", $body);
+    }
+
+    /**
+     * 任务列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function taskPaging($body)
+    {
+        return $this->restful("POST", "/task/paging", $body);
+    }
+
+    /**
+     * 生成日志
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function taskLogCreate($body)
+    {
+        return $this->restful("POST", "/task/log/create", $body);
+    }
+
+    /**
+     * 日志列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function taskLogPaging($body)
+    {
+        return $this->restful("POST", "/task/log/paging", $body);
+    }
 }

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-02-17
- * @time   Thu, 17 Feb 2022 17:52:19 +0800
+ * @date   2022-03-04
+ * @time   Fri, 04 Mar 2022 11:12:32 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -316,6 +316,19 @@ class StagnationSdk extends SdkBase
     public function groupManageAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/group/manage/add", $body, $query, $extra);
+    }
+
+    /**
+     * 根据codeId获取驻店宝分组信息
+     * @link https://uniondrug.coding.net/p/module.stagnation/git/blob/development/docs/api/CodeController/groupManageByCodeIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function groupManageByCodeId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/group/manage", $body, $query, $extra);
     }
 
     /**
