@@ -306,4 +306,26 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/online/invoicing", $body);
     }
+
+    /**
+     * 校验快递单号正确性
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.3/doc/api/ExpressController/checkAndReturnExpressNoCode.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function checkExpressNo($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/checkExpressNo", $body);
+    }
+
+    /**
+     * 更新快递单号
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.3/doc/api/ExpressController/updateExpressNo.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateExpressNo($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/updateExpressNo", $body);
+    }
 }
