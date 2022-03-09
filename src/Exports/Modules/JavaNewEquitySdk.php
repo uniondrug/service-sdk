@@ -244,6 +244,6 @@ class JavaNewEquitySdk extends SdkBase
      */
     public function agrsrvCodeRecycle($body)
     {
-        return $this->restful("POST", "/agrsrv/srv/code/recycle", $body);
+        return $this->restful("POST", "/agrsvr/srv/code/recycle", $body);
     }
 }
