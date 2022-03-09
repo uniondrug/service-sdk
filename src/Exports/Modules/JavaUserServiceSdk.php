@@ -79,6 +79,17 @@ class JavaUserServiceSdk extends SdkBase
     }
 
     /**
+     * 查询用户详情
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/usercenter/blob/master/api-docs/uniondrug.usercenter.provider/UserBasicApiController/pageApi.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function queryUserBasicPage($body)
+    {
+        return $this->restful("POST", "/v2/api/userBasic/page", $body);
+    }
+
+    /**
      * 重置密码
      * @link https://uniondrug.coding.net/p/java.middlend.usercenter/d/java.middlend.usercenter/git/tree/feature_api_v1.0.2/api-docs/uniondrug.usercenter.provider/UserLoginApiController/resetCredentialsApi.md
      * @param array|object $body 入参类型
