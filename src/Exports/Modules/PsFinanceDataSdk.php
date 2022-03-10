@@ -1551,6 +1551,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 指定连锁日期的协议扣率详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/detailByTimeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDiscountDetailByTime($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/discount/detail/by/time", $body, $query, $extra);
+    }
+
+    /**
      * 折扣率分页列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/pagingAction.md
      * @param array|object $body  入参类型
