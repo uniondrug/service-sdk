@@ -328,4 +328,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/invoiceExpress/updateExpressNo", $body);
     }
+
+    /**
+     * 协议审核失效
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.3/doc/api/ExpressController/updateExpressNo.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billProtocolInvalid($body)
+    {
+        return $this->restful("POST", "/billProtocol/client/invalid", $body);
+    }
 }
