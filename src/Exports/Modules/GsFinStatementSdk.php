@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -586,6 +587,48 @@ class GsFinStatementSdk extends SdkBase
     public function directBillOnlineOperation($body)
     {
         return $this->restful("POST", "/direct/bill/online/operation", $body);
+    }
+
+    //====== 数组中心-报表-回款 ========
+
+    /**
+     * 回款-列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportCashedPaging($body)
+    {
+        return $this->restful("POST", "/report/cashed/tracking/paging", $body);
+    }
+
+    /**
+     * 回款-导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportCashedExport($body)
+    {
+        return $this->restful("POST", "/report/cashed/tracking/export", $body);
+    }
+
+    /**
+     * 回款详情列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportCashedDetailPaging($body)
+    {
+        return $this->restful("POST", "/report/cashed/tracking/detail/paging", $body);
+    }
+
+    /**
+     * 回款详情导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function reportCashedDetailExport($body)
+    {
+        return $this->restful("POST", "/report/cashed/tracking/detail/export", $body);
     }
 
 }
