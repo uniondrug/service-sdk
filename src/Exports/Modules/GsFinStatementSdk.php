@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -629,7 +630,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 回款-列表
+     * 回款跟踪-列表
      * @param $body
      * @return ResponseInterface
      */
@@ -639,7 +640,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 回款-导出
+     * 回款跟踪-导出
      * @param $body
      * @return ResponseInterface
      */
@@ -649,7 +650,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 回款详情列表
+     * 回款跟踪-详情列表
      * @param $body
      * @return ResponseInterface
      */
@@ -659,7 +660,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 回款详情导出
+     * 回款跟踪-详情导出
      * @param $body
      * @return ResponseInterface
      */
