@@ -47,5 +47,15 @@ class GsMossWeChatSdk extends SdkBase
     {
         return $this->restful("POST", "/subscribe/create", $body);
     }
+
+    /**
+     * 获取用户关注状态
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subscribeStatus($body)
+    {
+        return $this->restful("GET", "/subscribe/status", $body);
+    }
 }
 
