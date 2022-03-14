@@ -588,4 +588,43 @@ class GsFinStatementSdk extends SdkBase
         return $this->restful("POST", "/direct/bill/online/operation", $body);
     }
 
+    /**
+     * 开票跟踪列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingPaging($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/paging", $body);
+    }
+
+    /**
+     * 开票跟踪列表导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingExport($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/export", $body);
+    }
+
+    /**
+     * 开票跟踪明细列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingDetailPaging($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/detail/paging", $body);
+    }
+
+    /**
+     * 开票跟踪明细列表导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingDetailExport($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/detail/export", $body);
+    }
 }
