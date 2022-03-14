@@ -11,7 +11,6 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -589,7 +588,45 @@ class GsFinStatementSdk extends SdkBase
         return $this->restful("POST", "/direct/bill/online/operation", $body);
     }
 
-    //====== 数组中心-报表-回款 ========
+    /**
+     * 开票跟踪列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingPaging($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/paging", $body);
+    }
+
+    /**
+     * 开票跟踪列表导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingExport($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/export", $body);
+    }
+
+    /**
+     * 开票跟踪明细列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingDetailPaging($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/detail/paging", $body);
+    }
+
+    /**
+     * 开票跟踪明细列表导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billTrackingDetailExport($body)
+    {
+        return $this->restful("POST", "/report/bill/tracking/detail/export", $body);
+    }
 
     /**
      * 回款-列表

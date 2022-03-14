@@ -4726,6 +4726,32 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 保险产品支持
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskInsuranceSupportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskInsuranceSupport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/insuranceSupport", $body, $query, $extra);
+    }
+
+    /**
+     * 保险部回款
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Approval/ApprovalTaskController/taskMoneyBackAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taskMoneyBack($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/approvalTask/moneyBack", $body, $query, $extra);
+    }
+
+    /**
      * 今天绑定的门店列表
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/UserStoresController/bindOnTodayListAction.md
      * @param array|object $body 入参类型
@@ -5379,6 +5405,19 @@ class AssistantSdk extends SdkBase
     }
 
     /**
+     * 绩效审核
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/Insurance/KpiStatisticController/auditAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiApplyAudit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/apply/audit", $body, $query, $extra);
+    }
+
+    /**
      * 反馈提交
      * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/Insurance/KpiStatisticController/feedbackAddAction.md
      * @param array|object $body 入参类型
@@ -5390,4 +5429,18 @@ class AssistantSdk extends SdkBase
     {
         return $this->restful("POST", "/kpiStatistic/feedback/add", $body, $query, $extra);
     }
+
+    /**
+     * kpi用户列表
+     * @link https://uniondrug.coding.net/p/module.assistant/git/tree/development/docs/api/Statistic/Insurance/KpiStatisticController/userListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/user/list", $body, $query, $extra);
+    }
+
 }
