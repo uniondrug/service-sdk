@@ -11,7 +11,7 @@
  * @date   2022-03-15
  * @time   Tue, 15 Mar 2022 13:38:47 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Bsdatas;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -27,7 +27,7 @@ class PsSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ps.bsdata';
+    protected $serviceName = 'ps-bsdata';
 
     /**
      * 截止当前的剩余可以使用的数量，额度
