@@ -9,7 +9,7 @@
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
  * @date   2022-03-15
- * @time   Tue, 15 Mar 2022 13:38:47 +0800
+ * @time   Tue, 15 Mar 2022 16:30:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -365,6 +365,19 @@ class PsSdk extends SdkBase
     public function kpiOwnBusinessSalesPage($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/kpiStatistic/own/business/sales/page", $body, $query, $extra);
+    }
+
+    /**
+     * 首页数据
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/homeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiStatisticHome($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/home", $body, $query, $extra);
     }
 
     /**
