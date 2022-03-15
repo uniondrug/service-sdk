@@ -246,4 +246,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/agrsvr/srv/code/recycle", $body);
     }
+
+    /**
+     * 权益列表
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://git.uniondrug.com/docs/1/docs-bizcenter/php-docs/blob/master/js.esop.parent/api/js-esop-agreement-svr/CodeSvrController/recycleCode.md
+     */
+    public function equityQryList($body)
+    {
+        return $this->restful("POST", "/bizsvr/equity/qry/list", $body);
+    }
 }
