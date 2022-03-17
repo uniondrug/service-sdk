@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-01-18
- * @time   Tue, 18 Jan 2022 14:36:27 +0800
+ * @date   2022-03-17
+ * @time   Thu, 17 Mar 2022 17:06:31 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -212,6 +212,19 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 获取立减规则
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/expressRuleAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function orderExpressRule($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/expressRule", $body, $query, $extra);
+    }
+
+    /**
      * 待处理订单统计
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/indexAction.md
      * @param array|object $body  入参类型
@@ -264,6 +277,45 @@ class TakeSdk extends SdkBase
     }
 
     /**
+     * 新增
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/PartnerExpressLoadController/createAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerExpressLoadCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/express/load/create", $body, $query, $extra);
+    }
+
+    /**
+     * del
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/PartnerExpressLoadController/delAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerExpressLoadDel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/express/load/del", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/PartnerExpressLoadController/detailAction.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerExpressLoadDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/express/load/detail", $body, $query, $extra);
+    }
+
+    /**
      * 创建推药记录
      * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/RecommendController/createAction.md
      * @param array|object $body  入参类型
@@ -313,19 +365,6 @@ class TakeSdk extends SdkBase
     public function recommendPhoneDel($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/recommend/phone/del", $body, $query, $extra);
-    }
-
-    /**
-     * 获取立减规则
-     * @link https://uniondrug.coding.net/p/module.take/git/tree/development/app/docs/api/OrderController/expressRuleAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function orderExpressRule($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/order/expressRule", $body, $query, $extra);
     }
 
     /**
