@@ -29,4 +29,100 @@ class JavaDataSdk extends SdkBase
     {
         return $this->restful("POST", "/goodsSearch/queryAllGoods", $body);
     }
+
+    /**
+     * 联想词搜索
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function suggester($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wordSuggester/suggester", $body, $query, $extra);
+    }
+
+    /**
+     * 多店搜索(条码聚合)
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchUnify($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsSearch/searchUnify", $body, $query, $extra);
+    }
+
+    /**
+     * 单店搜索
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function search($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsSearch/search", $body, $query, $extra);
+    }
+
+    /**
+     * 基于地理位置搜索oto商品(条码聚合)
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchGoodsGeo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsSearch/searchGoodsGeo", $body, $query, $extra);
+    }
+
+    /**
+     * 全国搜索商品
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchGoodsAll($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsSearch/searchGoodsAll", $body, $query, $extra);
+    }
+
+    /**
+     * 搜索DTP商品(条码聚合)
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchDtpGoods($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsSearch/searchDtpGoods", $body, $query, $extra);
+    }
+
+    /**
+     * 根据条码基于地理位置搜索全国商品
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchGoodsByTradeCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsSearch/searchGoodsByTradeCode", $body, $query, $extra);
+    }
+
+    /**
+     * 根据多个条码基于地理位置搜索
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchGoodsByTradeCodes($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goodsSearch/searchGoodsByTradeCodes", $body, $query, $extra);
+    }
 }

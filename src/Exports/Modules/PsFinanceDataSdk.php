@@ -1512,6 +1512,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 订阅商户中心连锁协议扣率
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/syncAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDiscountSync($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/discount/sync", $body, $query, $extra);
+    }
+
+    /**
      * 添加折扣率
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/createAction.md
      * @param array|object $body  入参类型
@@ -1535,6 +1548,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerDiscountDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/discount/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 指定连锁日期的协议扣率详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/DiscountController/detailByTimeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDiscountDetailByTime($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/discount/detail/by/time", $body, $query, $extra);
     }
 
     /**

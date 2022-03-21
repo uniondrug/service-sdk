@@ -134,6 +134,20 @@ class ApproMngSdk extends SdkBase
     }
 
     /**
+     * 列表
+     * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/apply/list", $body, $query, $extra);
+    }
+
+
+    /**
      * 审批简介 脚本
      * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/ApplyController/briefAction.md
      * @param array|object $body 入参类型

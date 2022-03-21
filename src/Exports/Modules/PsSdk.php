@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Bsdatas`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2021-10-13
- * @time   Wed, 13 Oct 2021 15:11:30 +0800
+ * @date   2022-03-15
+ * @time   Tue, 15 Mar 2022 16:30:11 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -248,6 +248,162 @@ class PsSdk extends SdkBase
     public function groupOmUserIdList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/storeOperationInfoEd/groupOmUserIdList", $body, $query, $extra);
+    }
+
+    /**
+     * 业务健康度列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/businessHealthListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiBusinessHealthList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/business/health/list", $body, $query, $extra);
+    }
+
+    /**
+     * 保司财寿险业务发生机构明细列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/businessOrganizationPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiBusinessOrganizationPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/business/organization/page", $body, $query, $extra);
+    }
+
+    /**
+     * 手续收入分页
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/businessProcessPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiBusinessProcessPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/business/process/page", $body, $query, $extra);
+    }
+
+    /**
+     * 合作业务销售分页列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/businessSalesPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiBusinessSalesPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/business/sales/page", $body, $query, $extra);
+    }
+
+    /**
+     * 竞争性市场数据，城市数据分页
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/cityMarketPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiCityMarketPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/city/market/page", $body, $query, $extra);
+    }
+
+    /**
+     * 营收收入分页列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/incomeDetailPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiIncomeDetailPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/income/detail/page", $body, $query, $extra);
+    }
+
+    /**
+     * 营收收入占比
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/incomeTotalRatioAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiIncomeTotalRatio($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/income/total/ratio", $body, $query, $extra);
+    }
+
+    /**
+     * 竞争性市场点击机构数出现的明细
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/marketDetailListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiMarketDetailList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/market/detail/list", $body, $query, $extra);
+    }
+
+    /**
+     * 自营业务销量分页列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/ownBusinessSalesPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiOwnBusinessSalesPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/own/business/sales/page", $body, $query, $extra);
+    }
+
+    /**
+     * 首页数据
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/homeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiStatisticHome($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/home", $body, $query, $extra);
+    }
+
+    /**
+     * 合作业务销售交易额占比
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/tradeAmountRatioAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiTradeAmountRatio($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/tradeAmount/ratio", $body, $query, $extra);
+    }
+
+    /**
+     * 合作业务销售量占比
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/Insurance/KpiStatisticController/tradeNumRatioAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function kpiTradeNumRatio($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/kpiStatistic/tradeNum/ratio", $body, $query, $extra);
     }
 
     /**
