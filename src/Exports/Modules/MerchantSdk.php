@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-03-07
- * @time   Mon, 07 Mar 2022 14:49:46 +0800
+ * @date   2022-03-21
+ * @time   Mon, 21 Mar 2022 13:21:44 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1132,6 +1132,19 @@ class MerchantSdk extends SdkBase
     public function editIsDirectRenewal($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editisDirectRenewal", $body, $query, $extra);
+    }
+
+    /**
+     * 修改财税平台
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsFinanceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsfinance($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editisfinance", $body, $query, $extra);
     }
 
     /**
