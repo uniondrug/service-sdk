@@ -413,4 +413,14 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST,'/outScheme/schemeInfo',$body);
     }
+
+    /**
+     * 获取可用列表
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function queryCardListByPartner($body)
+    {
+        return $this->restful(static::METHOD_POST,'/card/queryCardListByPartner',$body);
+    }
 }
