@@ -669,4 +669,13 @@ class GsFinStatementSdk extends SdkBase
         return $this->restful("POST", "/report/cashed/tracking/detail/export", $body);
     }
 
+    /**
+     * 直付结算单发起前置校验
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementCreateCheck($body)
+    {
+        return $this->restful("POST", "/direct/statement/create/check", $body);
+    }
 }

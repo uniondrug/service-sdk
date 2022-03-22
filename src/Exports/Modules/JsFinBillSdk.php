@@ -339,4 +339,37 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billProtocol/client/invalid", $body);
     }
+
+    /**
+     * 将ofd文件转成pdf
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.4/doc/api/ApiCompatibleController/ofdToPdf.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function ofdToPdf($body)
+    {
+        return $this->restful("POST", "/api/compatible/ofdToPdf", $body);
+    }
+
+    /**
+     * 将ofd文件转成pdf/img
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.4/doc/api/ApiCompatibleController/ofdToTargetFile.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function ofdToTargetFile($body)
+    {
+        return $this->restful("POST", "/api/compatible/ofdToTargetFile", $body);
+    }
+
+    /**
+     * 将PDF转图片 接口
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.4/doc/api/ApiCompatibleController/pdfToImg.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function pdfToImg($body)
+    {
+        return $this->restful("POST", "/api/compatible/pdfToImg", $body);
+    }
 }
