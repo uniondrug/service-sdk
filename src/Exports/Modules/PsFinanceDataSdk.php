@@ -1057,6 +1057,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 校验保司发票盒编码
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/checkInvoiceBoxNoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerCheckInvoiceBoxNo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/check/invoice/box/no", $body, $query, $extra);
+    }
+
+    /**
      * 详情
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsureConfigController/detailAction.md
      * @param array|object $body 入参类型
