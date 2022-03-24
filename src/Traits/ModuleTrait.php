@@ -7,6 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
@@ -203,6 +204,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsMossWeChatSdk            $gsMossWeChat
  * @property GsFinanceSdk               $gsFinanceSdk
  * @property GsFinExportSdk             $gsFinExport
+ * @property GsFinJobSdk                $gsFinJob
  * @property GsFinStatementSdk          $gsFinStatement
  * @property GsReportSdk                $gsReport
  * @property GoPartnersSdk              $goPartners
