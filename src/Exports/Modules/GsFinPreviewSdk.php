@@ -23,6 +23,12 @@ use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 class GsFinPreviewSdk extends SdkBase
 {
     /**
+     * 服务名称
+     * @var string
+     */
+    protected $serviceName = 'gs-fin-preview';
+
+    /**
      * 订单详情
      * @param $body
      * @return ResponseInterface
