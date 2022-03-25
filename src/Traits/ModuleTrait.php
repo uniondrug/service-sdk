@@ -7,6 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
@@ -334,6 +335,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsClaimManagementSdk       $psClaimManagement
  * @property ShopSdk                    $shop
  * @property GsRxManagementSdk          $gsRxManagement
+ * @property GsDpspGsCatalogSdk         $gsDpspGsCatalogSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
