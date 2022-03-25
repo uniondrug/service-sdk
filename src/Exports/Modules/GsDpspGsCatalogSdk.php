@@ -198,6 +198,19 @@ class GsDpspGsCatalogSdk extends SdkBase
     }
 
     /**
+     * 目录删除
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function catalogDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/catalog/delete", $body, $query, $extra);
+    }
+
+
+    /**
      * 目录翻页列表
      * @param      $body
      * @param null $query
