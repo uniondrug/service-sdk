@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Orders`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-01-08
- * @time   Sat, 08 Jan 2022 17:47:48 +0800
+ * @date   2022-03-28
+ * @time   Mon, 28 Mar 2022 11:27:58 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -27,14 +27,14 @@ class PsDpspTcOrderSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ps-dpsp-tc-order';
+    protected $serviceName = 'ps.dpsp.tc.order';
 
     /**
      * 添加/修改用药人
      * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/addAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function addDrugUser($body, $query = null, $extra = null)
@@ -45,79 +45,14 @@ class PsDpspTcOrderSdk extends SdkBase
     /**
      * 删除用药人
      * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/deleteAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
      * @return ResponseInterface
      */
     public function deleteDrugUser($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/drugUser/delete", $body, $query, $extra);
-    }
-
-    /**
-     * 用药人列表
-     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/listAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function drugUserList($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/drugUser/list", $body, $query, $extra);
-    }
-
-    /**
-     * 分页列表
-     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/listAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function orderPage($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/order/page", $body, $query, $extra);
-    }
-
-    /**
-     * 详情
-     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/listAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function orderDetail($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/order/detail", $body, $query, $extra);
-    }
-
-    /**
-     * 日志创建
-     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/logCreateAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function orderLogCreate($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/order/log/create", $body, $query, $extra);
-    }
-
-    /**
-     * 日志列表
-     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/logPageAction.md
-     * @param array|object $body  入参类型
-     * @param null         $query Query数据
-     * @param null         $extra 请求头信息
-     * @return ResponseInterface
-     */
-    public function orderLogPage($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/order/log/page", $body, $query, $extra);
     }
 
     /**
@@ -131,5 +66,83 @@ class PsDpspTcOrderSdk extends SdkBase
     public function drugUserDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/drugUser/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 用药人列表
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function drugUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/list", $body, $query, $extra);
+    }
+
+    /**
+     * 区域详情
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/orderAreaDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderAreaDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/orderAreaDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 日志创建
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/logCreateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderLogCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/log/create", $body, $query, $extra);
+    }
+
+    /**
+     * 日志列表
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/logPageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderLogPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/log/page", $body, $query, $extra);
+    }
+
+    /**
+     * 分页列表
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/Order/OrderController/pageAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function orderPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/order/page", $body, $query, $extra);
     }
 }
