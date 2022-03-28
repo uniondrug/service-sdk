@@ -7,7 +7,10 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GwMpTradeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
@@ -44,6 +47,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\GsFinExportSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaNewEquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinBillSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinStatementSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsFinPreviewSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsReportSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsMossWeChatSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GuaranteeclaimSdk;
@@ -203,7 +207,9 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsMossWeChatSdk            $gsMossWeChat
  * @property GsFinanceSdk               $gsFinanceSdk
  * @property GsFinExportSdk             $gsFinExport
+ * @property GsFinJobSdk                $gsFinJob
  * @property GsFinStatementSdk          $gsFinStatement
+ * @property GsFinPreviewSdk            $gsFinPreview
  * @property GsReportSdk                $gsReport
  * @property GoPartnersSdk              $goPartners
  * @property InsureRankSdk              $insureRank
@@ -330,6 +336,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PsClaimManagementSdk       $psClaimManagement
  * @property ShopSdk                    $shop
  * @property GsRxManagementSdk          $gsRxManagement
+ * @property GsDpspGsCatalogSdk         $gsDpspGsCatalog
+ * @property GwMpTradeSdk               $gwMpTradeSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
