@@ -27,7 +27,7 @@ class PsDpspTcOrderSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'ps.dpsp.tc.order';
+    protected $serviceName = 'ps-dpsp-tc-order';
 
     /**
      * 添加/修改用药人
