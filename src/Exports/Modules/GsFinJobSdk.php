@@ -37,4 +37,94 @@ class GsFinJobSdk extends SdkBase
     {
         return $this->restful("POST", "/job/paging", $body);
     }
+
+    /**
+     * 任务-详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function jobDetail($body)
+    {
+        return $this->restful("POST", "/job/detail", $body);
+    }
+
+    /**
+     * 任务-添加
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function jobAdd($body)
+    {
+        return $this->restful("POST", "/job/add", $body);
+    }
+
+    /**
+     * 任务-编辑
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function jobEdit($body)
+    {
+        return $this->restful("POST", "/job/add", $body);
+    }
+
+    /**
+     * 任务-删除
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function jobDel($body)
+    {
+        return $this->restful("POST", "/job/del", $body);
+    }
+
+    /**
+     * 任务-执行
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function jobTest($body)
+    {
+        return $this->restful("POST", "/job/test", $body);
+    }
+
+    /**
+     * 任务-启用
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function jobStart($body)
+    {
+        return $this->restful("POST", "/job/start", $body);
+    }
+
+    /**
+     * 任务-停用
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function jobStop($body)
+    {
+        return $this->restful("POST", "/job/stop", $body);
+    }
+
+    /**
+     * 历史日志-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function historyPaging($body)
+    {
+        return $this->restful("POST", "/history/paging", $body);
+    }
+
+    /**
+     * 系统来源-分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function sourcePaging($body)
+    {
+        return $this->restful("POST", "/source/paging", $body);
+    }
 }
