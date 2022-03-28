@@ -90,6 +90,31 @@ class GsDpspGsCatalogSdk extends SdkBase
     }
 
     /**
+     * 疾病药品关联
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function diseaseRelate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/disease/relate", $body, $query, $extra);
+    }
+
+
+    /**
+     * 疾病下药品翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function diseaseDrugPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/disease/drug/paging", $body, $query, $extra);
+    }
+
+    /**
      * 药品新增
      * @param      $body
      * @param null $query
@@ -147,6 +172,18 @@ class GsDpspGsCatalogSdk extends SdkBase
     public function drugPaging($body, $query = null, $extra = null)
     {
         return $this->restful("GET", "/drug/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 药品下疾病翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function drugDiseasePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/drug/disease/paging", $body, $query, $extra);
     }
 
     /**
