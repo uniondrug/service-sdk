@@ -184,4 +184,28 @@ class GsRxManagementSdk extends SdkBase
     {
         return $this->restful("GET", "/rx/supplier/list", $body, $query, $extra);
     }
+
+    /**
+     * 处方申请
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function rxApply($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rx/apply", $body, $query, $extra);
+    }
+
+    /**
+     * 合理用药规则验证
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function ruleVerify($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rule/verify", $body, $query, $extra);
+    }
 }
