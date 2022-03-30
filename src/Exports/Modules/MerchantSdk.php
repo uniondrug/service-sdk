@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-03-21
- * @time   Mon, 21 Mar 2022 13:21:44 +0800
+ * @date   2022-03-30
+ * @time   Wed, 30 Mar 2022 13:59:47 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -1226,6 +1226,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改独立补贴
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupRelationsController/editIsSubsidyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editIsSubsidyParentOrganizeGroupRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupRelations/editissubsidy", $body, $query, $extra);
+    }
+
+    /**
      * 修改测试
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsTestAction.md
      * @param array|object $body 入参类型
@@ -2159,6 +2172,19 @@ class MerchantSdk extends SdkBase
     public function infoInvoice($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/invoice/info", $body, $query, $extra);
+    }
+
+    /**
+     * 查询独立补贴
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeGroupRelationsController/infoIsSubsidyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function infoIsSubsidyParentOrganizeGroupRelations($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizeGroupRelations/infoissubsidy", $body, $query, $extra);
     }
 
     /**
