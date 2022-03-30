@@ -50,6 +50,6 @@ class GwMpTradeSdk extends SdkBase
      */
     public function feeTrial($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/svr/delivery/fee/trial", $body, $query, $extra);
+        return $this->restful("POST", "/lcsvr/svr/delivery/fee/trial", $body, $query, $extra);
     }
 }
