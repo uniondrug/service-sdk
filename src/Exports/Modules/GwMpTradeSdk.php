@@ -40,4 +40,16 @@ class GwMpTradeSdk extends SdkBase
     {
         return $this->restful("POST", "/lcsvr/svr/delivery/method/trial", $body, $query, $extra);
     }
+
+    /**
+     * 运费试算
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function feeTrial($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/svr/delivery/fee/trial", $body, $query, $extra);
+    }
 }
