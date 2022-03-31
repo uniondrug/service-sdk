@@ -65,7 +65,7 @@ class GsFinJobSdk extends SdkBase
      */
     public function jobEdit($body)
     {
-        return $this->restful("POST", "/job/add", $body);
+        return $this->restful("POST", "/job/edit", $body);
     }
 
     /**
