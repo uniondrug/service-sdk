@@ -115,6 +115,18 @@ class GsDpspGsCatalogSdk extends SdkBase
     }
 
     /**
+     * 疾病下药品批量新增
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function diseaseDrugBatchAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/disease/drug/batch/add", $body, $query, $extra);
+    }
+
+    /**
      * 药品新增
      * @param      $body
      * @param null $query
