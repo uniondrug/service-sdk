@@ -670,12 +670,14 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 直付结算单发起开票前置校验
+     * 商家结算统计
      * @param $body
      * @return ResponseInterface
      */
-    public function directStatementCreateBillCheck($body)
+    public function directUnitStatistics($body)
     {
-        return $this->restful("POST", "/direct/statement/create/bill/check", $body);
+        return $this->restful("POST", "/direct/unit/statistics", $body);
     }
+
+
 }
