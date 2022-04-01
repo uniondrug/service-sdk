@@ -101,6 +101,18 @@ class GsDpspGsCatalogSdk extends SdkBase
         return $this->restful("POST", "/disease/relate", $body, $query, $extra);
     }
 
+    /**
+     * 疾病药品删除关联
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function diseaseDelRelate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/disease/del/relate", $body, $query, $extra);
+    }
+
 
     /**
      * 疾病下药品翻页列表
