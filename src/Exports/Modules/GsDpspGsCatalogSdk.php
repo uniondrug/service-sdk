@@ -102,6 +102,18 @@ class GsDpspGsCatalogSdk extends SdkBase
     }
 
     /**
+     * 疾病药品关联数量
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function diseaseRelateNums($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/disease/relate/nums", $body, $query, $extra);
+    }
+
+    /**
      * 疾病药品删除关联
      * @param      $body
      * @param null $query
@@ -112,7 +124,6 @@ class GsDpspGsCatalogSdk extends SdkBase
     {
         return $this->restful("POST", "/disease/del/relate", $body, $query, $extra);
     }
-
 
     /**
      * 疾病下药品翻页列表
@@ -269,7 +280,6 @@ class GsDpspGsCatalogSdk extends SdkBase
     {
         return $this->restful("GET", "/catalog/delete", $body, $query, $extra);
     }
-
 
     /**
      * 目录翻页列表
