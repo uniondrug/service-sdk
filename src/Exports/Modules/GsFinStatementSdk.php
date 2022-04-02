@@ -11,7 +11,6 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -670,6 +669,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 直付结算单发起开票前置校验
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directStatementCreateBillCheck($body)
+    {
+        return $this->restful("POST", "/direct/statement/create/bill/check", $body);
+    }
+
+    /**
      * 商家结算统计
      * @param $body
      * @return ResponseInterface
@@ -678,6 +687,4 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/unit/statistics", $body);
     }
-
-
 }
