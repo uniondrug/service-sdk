@@ -7,6 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
@@ -338,6 +339,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsRxManagementSdk          $gsRxManagement
  * @property GsDpspGsCatalogSdk         $gsDpspGsCatalog
  * @property GwMpTradeSdk               $gwMpTrade
+ * @property GmRxGatewaySdk             $gmRxGateway
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
