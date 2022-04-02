@@ -301,4 +301,17 @@ class PsDstoreCartSdk extends SdkBase
     {
         return $this->restful("POST", "/trolley/getByMemberIdAndAssistantId", $body, $query, $extra);
     }
+
+    /**
+     * 获取订单处方开发供应商
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/getRxApplySupplierAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getRxApplySupplier($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/trolley/getRxApplySupplier", $body, $query, $extra);
+    }
 }
