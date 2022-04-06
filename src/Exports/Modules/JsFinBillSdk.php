@@ -372,4 +372,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/api/compatible/pdfToImg", $body);
     }
+
+    /**
+     * 电子票 失败后补偿操作 接口
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.6/doc/api/BillController/electricOperate.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function operate($body)
+    {
+        return $this->restful("POST", "/bill/electric/operate", $body);
+    }
 }
