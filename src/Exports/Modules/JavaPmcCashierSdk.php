@@ -139,7 +139,7 @@ class JavaPmcCashierSdk extends SdkBase
      */
     public function paymentCreate($body)
     {
-        return $this->restful(static::METHOD_POST, ' /payment/create', $body);
+        return $this->restful(static::METHOD_POST, '/payment/create', $body);
     }
 
     /**
@@ -149,7 +149,7 @@ class JavaPmcCashierSdk extends SdkBase
      */
     public function paymentPrepay($body)
     {
-        return $this->restful(static::METHOD_POST, ' /payment/prepay', $body);
+        return $this->restful(static::METHOD_POST, '/payment/prepay', $body);
     }
 
     /**
@@ -159,7 +159,7 @@ class JavaPmcCashierSdk extends SdkBase
      */
     public function paymentConsume($body)
     {
-        return $this->restful(static::METHOD_POST, ' /payment/consume', $body);
+        return $this->restful(static::METHOD_POST, '/payment/consume', $body);
     }
 
     /**
@@ -169,7 +169,7 @@ class JavaPmcCashierSdk extends SdkBase
      */
     public function paymentCancel($body)
     {
-        return $this->restful(static::METHOD_POST, ' /payment/cancel', $body);
+        return $this->restful(static::METHOD_POST, '/payment/cancel', $body);
     }
 
     /**
@@ -179,6 +179,6 @@ class JavaPmcCashierSdk extends SdkBase
      */
     public function paymentDetail($body)
     {
-        return $this->restful(static::METHOD_POST, ' /payment/payment/detail', $body);
+        return $this->restful(static::METHOD_POST, '/payment/payment/detail', $body);
     }
 }
