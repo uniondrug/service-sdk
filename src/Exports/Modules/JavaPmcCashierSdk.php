@@ -181,4 +181,14 @@ class JavaPmcCashierSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/payment/payment/detail', $body);
     }
+
+    /**
+     * pos支付回调
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function notifyPaymentPosDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/notify/payment/pos', $body);
+    }
 }
