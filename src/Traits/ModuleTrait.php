@@ -14,6 +14,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GwMpTradeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PmOtoAppointSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
@@ -342,6 +343,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GwMpTradeSdk               $gwMpTrade
  * @property GmRxGatewaySdk             $gmRxGateway
  * @property GsDpspOpenApiSdk           $gsDpspOpenApiSdk
+ * @property PmOtoAppointSdk            $pmOtoAppoint
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
