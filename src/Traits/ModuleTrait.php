@@ -7,6 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\ErpsvrBmpisJsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspOpenApiSdk;
@@ -343,6 +344,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GwMpTradeSdk               $gwMpTrade
  * @property GmRxGatewaySdk             $gmRxGateway
  * @property GsDpspOpenApiSdk           $gsDpspOpenApiSdk
+ * @property ErpsvrBmpisJsSdk           $erpsvrBmpisJsSdk
  * @property PmOtoAppointSdk            $pmOtoAppoint
  * @package Uniondrug\ServiceSdk\Traits
  */
