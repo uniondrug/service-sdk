@@ -7,11 +7,15 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\ErpsvrBmpisJsSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspOpenApiSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GwMpTradeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PmOtoAppointSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\AiProfitDataSdk;
@@ -338,6 +342,10 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsRxManagementSdk          $gsRxManagement
  * @property GsDpspGsCatalogSdk         $gsDpspGsCatalog
  * @property GwMpTradeSdk               $gwMpTrade
+ * @property GmRxGatewaySdk             $gmRxGateway
+ * @property GsDpspOpenApiSdk           $gsDpspOpenApiSdk
+ * @property ErpsvrBmpisJsSdk           $erpsvrBmpisJsSdk
+ * @property PmOtoAppointSdk            $pmOtoAppoint
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

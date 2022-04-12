@@ -99,7 +99,6 @@ class JavaPmcCashierSdk extends SdkBase
         return $this->restful("POST", "/cashier/queryCashierAllByOutTradeNo", $body);
     }
 
-
     /**
      * 绑定接口
      * @link
@@ -131,5 +130,65 @@ class JavaPmcCashierSdk extends SdkBase
     public function unbind($body)
     {
         return $this->restful(static::METHOD_POST, '/mng-pmc/payment/pos/unbind', $body);
+    }
+
+    /**
+     * 创建预支付单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentCreate($body)
+    {
+        return $this->restful(static::METHOD_POST, '/payment/create', $body);
+    }
+
+    /**
+     * 创建预支付-唤起支付信息
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentPrepay($body)
+    {
+        return $this->restful(static::METHOD_POST, '/payment/prepay', $body);
+    }
+
+    /**
+     * 消费支付收银
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentConsume($body)
+    {
+        return $this->restful(static::METHOD_POST, '/payment/consume', $body);
+    }
+
+    /**
+     * 撤销支付单
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentCancel($body)
+    {
+        return $this->restful(static::METHOD_POST, '/payment/cancel', $body);
+    }
+
+    /**
+     * 支付单查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function paymentDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/payment/payment/detail', $body);
+    }
+
+    /**
+     * pos支付回调
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function notifyPaymentPosDetail($body)
+    {
+        return $this->restful(static::METHOD_POST, '/notify/payment/pos', $body);
     }
 }

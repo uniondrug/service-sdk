@@ -208,4 +208,15 @@ class GsRxManagementSdk extends SdkBase
     {
         return $this->restful("POST", "/rule/verify", $body, $query, $extra);
     }
+
+    /**
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function rxApplySupplier($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rx/apply/supplier", $body, $query, $extra);
+    }
 }
