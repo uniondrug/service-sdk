@@ -887,4 +887,17 @@ class ApproMngSdk extends SdkBase
     {
         return $this->restful("POST", "/template/tpProcess/list", $body, $query, $extra);
     }
+
+    /**
+     * 分公司数据新增
+     * @link
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyDataCompanyAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyData/companyAdd", $body, $query, $extra);
+    }
 }
