@@ -737,4 +737,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/common/claim/statement/log/paging", $body);
     }
+
+    /**
+     * 结算单优先投保退回
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function commonClaimStatementReturn($body)
+    {
+        return $this->restful("POST", "/common/claim/statement/return", $body);
+    }
 }
