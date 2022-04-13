@@ -687,4 +687,54 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/direct/unit/statistics", $body);
     }
+
+    /**
+     * 结算单优先投保分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function commonClaimStatementPaging($body)
+    {
+        return $this->restful("POST", "/common/claim/statement/paging", $body);
+    }
+
+    /**
+     * 结算单优先投保选择
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function commonClaimStatementChoice($body)
+    {
+        return $this->restful("POST", "/common/claim/statement/choice", $body);
+    }
+
+    /**
+     * 结算单优先投保提交
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function commonClaimStatementCommit($body)
+    {
+        return $this->restful("POST", "/common/claim/statement/commit", $body);
+    }
+
+    /**
+     * 结算单优先投保取消
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function commonClaimStatementCancel($body)
+    {
+        return $this->restful("POST", "/common/claim/statement/cancel", $body);
+    }
+
+    /**
+     * 结算单优先投保操作日志分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function commonClaimStatementLogPaging($body)
+    {
+        return $this->restful("POST", "/common/claim/statement/log/paging", $body);
+    }
 }
