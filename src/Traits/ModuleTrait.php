@@ -343,6 +343,8 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsDpspGsCatalogSdk         $gsDpspGsCatalog
  * @property GwMpTradeSdk               $gwMpTrade
  * @property GmRxGatewaySdk             $gmRxGateway
+ * @property GsDpspOpenApiSdk           $gsDpspOpenApi
+ * @property ErpsvrBmpisJsSdk           $erpsvrBmpisJsSdk
  * @property GsDpspOpenApiSdk           $gsDpspOpenApiSdk
  * @property ErpsvrBmpisJsSdk           $erpsvrBmpisJs
  * @property PmOtoAppointSdk            $pmOtoAppoint
