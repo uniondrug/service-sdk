@@ -325,4 +325,14 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userCard/queryBy", $body);
     }
+
+    /**
+     * 通过证件号码查询用户信息
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function getByCarNo($body)
+    {
+        return $this->restful("POST", "/v2/api/userInfo/getByCarNo", $body);
+    }
 }
