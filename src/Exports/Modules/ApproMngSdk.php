@@ -575,7 +575,7 @@ class ApproMngSdk extends SdkBase
     {
         return $this->restful("POST", "/groupApplyDraft/forward", $body, $query, $extra);
     }
-    
+
     /**
      * 编辑
      * @link https://uniondrug.coding.net/p/module.approval/git/tree/development/docs/api/GroupApplyDraftController/updateAction.md
@@ -912,5 +912,18 @@ class ApproMngSdk extends SdkBase
     public function applyDataCompanyAdd($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/applyData/companyAdd", $body, $query, $extra);
+    }
+
+    /**
+     * 分公司数据新增
+     * @link
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function applyDataCompanyList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/applyData/companyList", $body, $query, $extra);
     }
 }
