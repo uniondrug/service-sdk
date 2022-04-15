@@ -243,7 +243,6 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
-     *
      * 根据理赔单号，查询保司对应购方（连锁）下的发票列表
      * @param $body
      * @return ResponseInterface
@@ -374,6 +373,17 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 电子票 失败后补偿操作 接口
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.6/doc/api/BillController/electricOperate.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function operate($body)
+    {
+        return $this->restful("POST", "/bill/electric/operate", $body);
+    }
+
+    /**
      * 将PDF转图片 接口
      * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.4/doc/api/ApiCompatibleController/pdfToImg.md
      * @param $body
@@ -385,13 +395,24 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
-     * 电子票 失败后补偿操作 接口
-     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.6/doc/api/BillController/electricOperate.md
+     * 电子发票打印
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.7/doc/api/PrintController/electronicPrint.md
      * @param $body
      * @return ResponseInterface
      */
-    public function operate($body)
+    public function printElectronicPrint($body)
     {
-        return $this->restful("POST", "/bill/electric/operate", $body);
+        return $this->restful("POST", "/print/electronicPrint", $body);
+    }
+
+    /**
+     * 获取打印结果
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.7/doc/api/PrintController/getTask.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function printGetTask($body)
+    {
+        return $this->restful("POST", "/print/getTask", $body);
     }
 }
