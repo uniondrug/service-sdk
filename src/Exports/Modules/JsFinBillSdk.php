@@ -243,6 +243,17 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 应收开票单审批通过
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.7/doc/api/BillController/cancelBillApply.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billApproval($body)
+    {
+        return $this->restful("POST", "/bill/billApproval", $body);
+    }
+
+    /**
      * 根据理赔单号，查询保司对应购方（连锁）下的发票列表
      * @param $body
      * @return ResponseInterface
