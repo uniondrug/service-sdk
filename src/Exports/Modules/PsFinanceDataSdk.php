@@ -1720,6 +1720,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 批量修改报案理赔状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SettingController/updateReportClaimStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSettingUpdateReportClaimStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/setting/update/report/claim/status", $body, $query, $extra);
+    }
+
+    /**
      * 订阅助手商户入驻财务数据
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/settledAction.md
      * @param array|object $body 入参类型
