@@ -31,7 +31,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁开通会员服务
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -43,7 +43,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁会员卡列表
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -55,7 +55,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁会员卡详情
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -67,7 +67,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁会员卡更新
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -79,7 +79,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁会员卡方案列表
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -91,7 +91,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁会员卡方案详情
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -103,7 +103,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁会员卡方案更新
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -111,5 +111,149 @@ class GsDpspUsMemberSdk extends SdkBase
     public function schemeUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/scheme/update", $body, $query, $extra);
+    }
+
+    /**
+     * 会员新增
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/create", $body, $query, $extra);
+    }
+
+    /**
+     * 会员详情
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 会员翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 会员统计
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/count", $body, $query, $extra);
+    }
+
+    /**
+     * 会员卡列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCardList($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/card/list", $body, $query, $extra);
+    }
+
+    /**
+     * 会员卡购买翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCardOrderPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/card/order/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 会员订单翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userOrderPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/order/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 会员礼包列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userPackageList($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/package/list", $body, $query, $extra);
+    }
+
+    /**
+     * 会员省钱翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userReducePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/reduce/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 会员省钱统计
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userReduceCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/reduce/count", $body, $query, $extra);
+    }
+
+    /**
+     * 会员权益列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userRightList($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/right/list", $body, $query, $extra);
+    }
+
+    /**
+     * 会员权益使用记录列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userRightUsedPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/right/used/paging", $body, $query, $extra);
     }
 }
