@@ -228,9 +228,9 @@ class GsDpspUsMemberSdk extends SdkBase
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
      */
-    public function userReduceCount($body, $query = null, $extra = null)
+    public function userReduceTotal($body, $query = null, $extra = null)
     {
-        return $this->restful("GET", "/user/reduce/count", $body, $query, $extra);
+        return $this->restful("GET", "/user/reduce/total", $body, $query, $extra);
     }
 
     /**
@@ -256,4 +256,5 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("GET", "/user/right/used/paging", $body, $query, $extra);
     }
+
 }
