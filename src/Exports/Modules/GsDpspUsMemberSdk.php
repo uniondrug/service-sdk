@@ -257,4 +257,16 @@ class GsDpspUsMemberSdk extends SdkBase
         return $this->restful("GET", "/user/right/used/paging", $body, $query, $extra);
     }
 
+    /**
+     * 会员权益到账记录列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userRightReceivePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/right/receive/paging", $body, $query, $extra);
+    }
+
 }
