@@ -269,4 +269,27 @@ class GsDpspUsMemberSdk extends SdkBase
         return $this->restful("GET", "/user/right/receive/paging", $body, $query, $extra);
     }
 
+    /**
+     * 连锁会员方案上架/下架
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function schemeStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/scheme/status", $body, $query, $extra);
+    }
+
+    /**
+     * 会员方案购买统计
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCardOrderSchemeCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/card/order/scheme/count", $body, $query, $extra);
+    }
 }
