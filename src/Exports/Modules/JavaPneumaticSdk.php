@@ -67,4 +67,14 @@ class JavaPneumaticSdk extends SdkBase
             'timeout' => 1
         ]);
     }
+
+    /**
+     * 新权益风控
+     * @param $body
+     */
+    public function riskControlVerify($body){
+        return $this->restful(static::METHOD_POST, '/riskControl/verify', $body, null, [
+            'timeout' => 1
+        ]);
+    }
 }
