@@ -11,7 +11,7 @@
  * @date   2022-04-25
  * @time   Mon, 25 Apr 2022 14:07:27 +0800
  */
-namespace Uniondrug\ServiceSdk\Exports\Orders;
+namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
