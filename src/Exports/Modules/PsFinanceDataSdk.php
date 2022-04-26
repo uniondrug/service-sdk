@@ -2266,6 +2266,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 通过Excel批量导入
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/importByExcelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodeImportByExcel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/import/by/excel", $body, $query, $extra);
+    }
+
+    /**
      * 查询税收分类编码分页
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/pagingAction.md
      * @param array|object $body 入参类型
