@@ -747,4 +747,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/common/claim/statement/return", $body);
     }
+
+    /**
+     * 商家首页服务补贴统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyStatistics($body)
+    {
+        return $this->restful("POST", "/subsidy/unit/statistics", $body);
+    }
 }
