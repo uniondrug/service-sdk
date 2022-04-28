@@ -1746,6 +1746,71 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 新增连锁服务补贴配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSubsidyCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/subsidy/create", $body, $query, $extra);
+    }
+
+    /**
+     * 删除连锁服务补贴配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/deleteAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSubsidyDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/subsidy/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁服务补贴配置详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSubsidyDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/subsidy/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁服务补贴配置分页
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSubsidyPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/subsidy/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改连锁服务补贴配置
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/updateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSubsidyUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/subsidy/update", $body, $query, $extra);
+    }
+
+    /**
      * 连锁树形结构
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/treeAction.md
      * @param array|object $body 入参类型
