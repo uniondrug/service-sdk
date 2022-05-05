@@ -191,4 +191,14 @@ class JavaPmcCashierSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/notify/payment', $body);
     }
+
+    /**
+     * 根据终端号获取pos终端信息
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function posTerminalQueryByTerminalNo($body)
+    {
+        return $this->restful(static::METHOD_POST, '/pos/terminal/queryByTerminalNo', $body);
+    }
 }
