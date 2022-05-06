@@ -420,6 +420,45 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 新增批次
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BatchController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batch/create", $body, $query, $extra);
+    }
+
+    /**
+     * 批次详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BatchController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batch/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 更新批次状态
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/BatchController/updateStatusAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchUpdateStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/batch/update/status", $body, $query, $extra);
+    }
+
+    /**
      * 停用药联公司
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Company/CompanyController/disableAction.md
      * @param array|object $body  入参类型
@@ -1808,6 +1847,32 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerSubsidyUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/subsidy/update", $body, $query, $extra);
+    }
+
+    /**
+     * 通过批次号批量导入
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/importBatchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSubsidyImportBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/subsidy/import/batch", $body, $query, $extra);
+    }
+
+    /**
+     * 通过Excel批量导入
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/importExcelAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerSubsidyImportExcel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/subsidy/import/excel", $body, $query, $extra);
     }
 
     /**
