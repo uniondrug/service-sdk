@@ -307,6 +307,17 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 根据id查询发票
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.1/doc/api/InvoiceController/pageInvoiceDetail.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceGetById($body)
+    {
+        return $this->restful("POST", "/invoice/getById", $body);
+    }
+
+    /**
      * 获取销售清单列表导出sql
      * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.1/doc/api/BillSaleController/getSaleListSql.md
      * @param $body
