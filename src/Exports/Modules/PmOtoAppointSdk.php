@@ -32,13 +32,25 @@ class PmOtoAppointSdk extends SdkBase
     /**
      * 天津人保授权
      * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/CartRecordsController/orderCancelAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
      * @return ResponseInterface
      */
     public function auth($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/user/auth", $body, $query, $extra);
+    }
+
+    /**
+     * 获取微信小程序二维码
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function openWxCode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/open/wx/code", $body, $query, $extra);
     }
 }
