@@ -376,4 +376,16 @@ class GsDpspGsCatalogSdk extends SdkBase
     {
         return $this->restful("GET", "/catalog/del/drug", $body, $query, $extra);
     }
+
+    /**
+     * 目录中是否关联药品检查
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function catalogCheckDrug($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/catalog/check/drug", $body, $query, $extra);
+    }
 }
