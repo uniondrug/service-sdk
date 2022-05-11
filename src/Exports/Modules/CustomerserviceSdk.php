@@ -353,4 +353,43 @@ class CustomerserviceSdk extends SdkBase
     {
         return $this->restful("POST", "/workorder/recall", $body, $query, $extra);
     }
+
+    /**
+     * 叮当订单申请退单
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/openApplyRefundAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function openApplyRefund($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/refundapply/open/apply/refund", $body, $query, $extra);
+    }
+
+    /**
+     * 退单的时候判断下单的商户是否是叮当商户
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/checkOpenOrderAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function checkOpenOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/refundapply/check/open/order", $body, $query, $extra);
+    }
+
+    /**
+     * 查询退单信息同步到叮当的结果
+     * @link https://uniondrug.coding.net/p/module.customerservice/git/blob/development/docs/api/Refund/ApplyController/checkOpenResultAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function checkOpenResult($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/refundapply/check/open/result", $body, $query, $extra);
+    }
 }
