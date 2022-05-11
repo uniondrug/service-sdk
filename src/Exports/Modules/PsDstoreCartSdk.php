@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-01-01
- * @time   Sat, 01 Jan 2022 17:18:50 +0800
+ * @date   2022-05-11
+ * @time   Wed, 11 May 2022 15:38:41 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -160,6 +160,32 @@ class PsDstoreCartSdk extends SdkBase
     }
 
     /**
+     * 获取用户在某个药师下的推药订单
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/getByMemberIdAndAssistantIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getByMemberIdAndAssistantId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/trolley/getByMemberIdAndAssistantId", $body, $query, $extra);
+    }
+
+    /**
+     * 通过方案获取配置
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/getProjectResourceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getProjectResource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/trolley/getProjectResource", $body, $query, $extra);
+    }
+
+    /**
      * 创建预订单
      * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/createAction.md
      * @param array|object $body 入参类型
@@ -238,6 +264,19 @@ class PsDstoreCartSdk extends SdkBase
     }
 
     /**
+     * 用订单号获取数据
+     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/orderNosAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function trolleyOrderNos($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/trolley/orderNos", $body, $query, $extra);
+    }
+
+    /**
      * 资源试算
      * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/resourceComputeAction.md
      * @param array|object $body 入参类型
@@ -287,44 +326,5 @@ class PsDstoreCartSdk extends SdkBase
     public function v1($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/index/v1", $body, $query, $extra);
-    }
-
-    /**
-     * 获取用户在某个药师下的推药订单
-     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/getByMemberIdAndAssistantIdAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function getByMemberIdAndAssistantId($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/trolley/getByMemberIdAndAssistantId", $body, $query, $extra);
-    }
-
-    /**
-     * 获取订单处方开发供应商
-     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/getRxApplySupplierAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function getRxApplySupplier($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/trolley/getRxApplySupplier", $body, $query, $extra);
-    }
-
-    /**
-     * 通过方案获取配置
-     * @link https://uniondrug.coding.net/p/ps-dstore-cart/ps-dstore-cart/docs/api/TrolleyController/getProjectResourceAction.md
-     * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
-     * @return ResponseInterface
-     */
-    public function getProjectResource($body, $query = null, $extra = null)
-    {
-        return $this->restful("POST", "/trolley/getProjectResource", $body, $query, $extra);
     }
 }
