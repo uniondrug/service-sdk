@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-05-07
- * @time   Sat, 07 May 2022 11:46:27 +0800
+ * @date   2022-05-10
+ * @time   Tue, 10 May 2022 20:22:41 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -144,6 +144,19 @@ class MerchantSdk extends SdkBase
     public function addInvoice($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/invoice/add", $body, $query, $extra);
+    }
+
+    /**
+     * 新增组织推送
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/addJoinAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addJoinOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/addjoin", $body, $query, $extra);
     }
 
     /**
@@ -355,7 +368,7 @@ class MerchantSdk extends SdkBase
     }
 
     /**
-     * 修改
+     * 修改小程序类型
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editAppletServiceAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
@@ -404,6 +417,19 @@ class MerchantSdk extends SdkBase
     public function backEndEditOnePlatform($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editoneplatform", $body, $query, $extra);
+    }
+
+    /**
+     * 修改纳税人资质
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/EditTaxpayerTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function backEndEditTaxpayerType($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/edittaxpayerttype", $body, $query, $extra);
     }
 
     /**
@@ -1301,6 +1327,19 @@ class MerchantSdk extends SdkBase
     public function editIsUnionMember($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/organizebasebackend/editisunionmember", $body, $query, $extra);
+    }
+
+    /**
+     * 修改组织推送
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseJoinController/editJoinAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function editJoinOrganizeBaseJoin($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasejoin/editjoin", $body, $query, $extra);
     }
 
     /**
