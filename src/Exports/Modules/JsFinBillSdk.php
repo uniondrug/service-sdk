@@ -340,6 +340,17 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 在线开票校验发票类型
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9/doc/api/OnlineInvoicingController/checkGeneralInvoice.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function onlineInvoicingGeneralCheck($body)
+    {
+        return $this->restful("POST", "/online/invoicing/general/check", $body);
+    }
+
+    /**
      * 校验快递单号正确性
      * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.3/doc/api/ExpressController/checkAndReturnExpressNoCode.md
      * @param $body
