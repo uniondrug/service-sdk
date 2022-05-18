@@ -51,6 +51,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinExportSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaNewEquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinBillSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JsF2cPaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinStatementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinPreviewSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsReportSdk;
@@ -272,6 +273,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JsArchivesSdk              $jsArchives
  * @property JsCleanCenterSdk           $jsCleanCenter
  * @property JsFinBillSdk               $jsFinBill
+ * @property JsF2cPaySdk                $jsF2cPay
  * @property JsFinElectInvoiceSdk       $jsFinElectInvoice
  * @property JsFinanceEsSdk             $jsFinanceEs
  * @property JsFinanceReplaceSdk        $jsFinanceReplace
