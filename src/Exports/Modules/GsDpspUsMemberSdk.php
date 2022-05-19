@@ -338,6 +338,6 @@ class GsDpspUsMemberSdk extends SdkBase
      */
     public function appConfigWordsDelete($body, $query = null, $extra = null)
     {
-        return $this->restful("GET", "/appConfig/words/delete", $body, $query, $extra);
+        return $this->restful("POST", "/appConfig/words/delete", $body, $query, $extra);
     }
 }
