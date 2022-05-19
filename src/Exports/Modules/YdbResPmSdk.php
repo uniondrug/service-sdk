@@ -340,4 +340,18 @@ class YdbResPmSdk extends SdkBase
     {
         return $this->restful("POST", "/group/detailByOrganId", $body, $query, $extra);
     }
+
+
+    /**
+     * 门店绑定map列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/organListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupOrganList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/organList", $body, $query, $extra);
+    }
 }
