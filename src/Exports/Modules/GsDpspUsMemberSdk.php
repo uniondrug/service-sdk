@@ -340,4 +340,16 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/appConfig/words/delete", $body, $query, $extra);
     }
+
+    /**
+     * 排序 [小程序搜索页热词]
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function appConfigWordsSort($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appConfig/words/sort", $body, $query, $extra);
+    }
 }
