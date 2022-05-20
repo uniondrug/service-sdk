@@ -166,6 +166,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ShopSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SmsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\TaxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TakeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UdappSdk;
@@ -310,6 +311,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property TokenSdk                   $token
  * @property PrivilegeSdk               $privilege
  * @property SchemeSdk                  $scheme
+ * @property TaxSdk                     $tax
  * @property TakeSdk                    $take
  * @property UdappSdk                   $udapp
  * @property UserSdk                    $user
