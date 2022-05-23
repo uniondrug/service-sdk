@@ -182,4 +182,186 @@ class YdbResPmSdk extends SdkBase
     {
         return $this->restful("POST", "/resource/update", $body);
     }
+
+    /**
+     * 绑定商户
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/bindOrganAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupBindOrgan($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/bindOrgan", $body, $query, $extra);
+    }
+
+    /**
+     * 取消绑定商户
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/cancelBindOrganAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupCancelBindOrgan($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/cancelBindOrgan", $body, $query, $extra);
+    }
+
+    /**
+     * 复制
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/copyAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupCopy($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/copy", $body, $query, $extra);
+    }
+
+    /**
+     * 创建
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/createAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/create", $body, $query, $extra);
+    }
+
+    /**
+     * 设为默认
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/defaultAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupDefault($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/default", $body, $query, $extra);
+    }
+
+    /**
+     * 详情
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/detailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 列表 [分页]
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/pagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 修改状态
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/statusUpdateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupStatusUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/statusUpdate", $body, $query, $extra);
+    }
+
+    /**
+     * 绑定资源
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/bindResourceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupBindResource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/bindResource", $body, $query, $extra);
+    }
+
+    /**
+     * 取消绑定资源
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/cancelBindResourceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupCancelBindResource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/cancelBindResource", $body, $query, $extra);
+    }
+
+    /**
+     * 列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/listAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/list", $body, $query, $extra);
+    }
+
+    /**
+     * 详情 [根据门店ID]
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/detailByOrganIdAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupDetailByOrganId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/detailByOrganId", $body, $query, $extra);
+    }
+
+    /**
+     * 门店绑定map列表 [不分页]
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/organListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupOrganList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/organList", $body, $query, $extra);
+    }
+
+    /**
+     * 编辑
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/GroupController/editAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceGroupEdit($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/group/edit", $body, $query, $extra);
+    }
 }

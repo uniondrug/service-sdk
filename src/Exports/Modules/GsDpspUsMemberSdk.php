@@ -304,4 +304,52 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/merchantUserRightDict/list", $body, $query, $extra);
     }
+
+    /**
+     * 添加 [小程序搜索页热词]
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function appConfigWordsAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appConfig/words/add", $body, $query, $extra);
+    }
+
+    /**
+     * 列表 [小程序搜索页热词]
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function appConfigWordsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/appConfig/words/list", $body, $query, $extra);
+    }
+
+    /**
+     * 删除 [小程序搜索页热词]
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function appConfigWordsDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appConfig/words/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 排序 [小程序搜索页热词]
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function appConfigWordsSort($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/appConfig/words/sort", $body, $query, $extra);
+    }
 }

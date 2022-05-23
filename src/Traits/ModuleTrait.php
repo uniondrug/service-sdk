@@ -51,6 +51,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\GsFinanceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinExportSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaNewEquitySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinBillSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JsF2cPaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinStatementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinPreviewSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsReportSdk;
@@ -165,6 +166,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\SettlementsheetSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ShopSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\SmsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\StagnationSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\TaxSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TakeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\TokenSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\UdappSdk;
@@ -272,6 +274,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JsArchivesSdk              $jsArchives
  * @property JsCleanCenterSdk           $jsCleanCenter
  * @property JsFinBillSdk               $jsFinBill
+ * @property JsF2cPaySdk                $jsF2cPay
  * @property JsFinElectInvoiceSdk       $jsFinElectInvoice
  * @property JsFinanceEsSdk             $jsFinanceEs
  * @property JsFinanceReplaceSdk        $jsFinanceReplace
@@ -308,6 +311,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property TokenSdk                   $token
  * @property PrivilegeSdk               $privilege
  * @property SchemeSdk                  $scheme
+ * @property TaxSdk                     $tax
  * @property TakeSdk                    $take
  * @property UdappSdk                   $udapp
  * @property UserSdk                    $user

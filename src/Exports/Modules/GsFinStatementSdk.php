@@ -767,4 +767,24 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/subsidy/settle/statistics", $body);
     }
+
+    /**
+     * 核算单位票据信息审核通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billInfoAuditAccept($body)
+    {
+        return $this->restful("POST", "/mq/bill/info/audit/accept", $body);
+    }
+
+    /**
+     * 核算单位银行账号信息审核通过
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function accountInfoAuditAccept($body)
+    {
+        return $this->restful("POST", "/mq/account/info/audit/accept", $body);
+    }
 }
