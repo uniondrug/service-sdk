@@ -351,6 +351,28 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 分页查询在线开票申请记录
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.8.1/doc/api/OnlineInvoicingController/pageApply.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function onlineInvoiceApplyPage($body)
+    {
+        return $this->restful("POST", "/online/invoice/apply/page", $body);
+    }
+
+    /**
+     * 作废在线开票申请单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.8.1/doc/api/OnlineInvoicingController/invalidateApply.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function onlineInvoiceApplyInvalidate($body)
+    {
+        return $this->restful("POST", "/online/invoice/apply/invalidate", $body);
+    }
+
+    /**
      * 校验快递单号正确性
      * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.3/doc/api/ExpressController/checkAndReturnExpressNoCode.md
      * @param $body
