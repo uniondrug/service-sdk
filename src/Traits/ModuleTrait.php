@@ -10,6 +10,7 @@ namespace Uniondrug\ServiceSdk\Traits;
 use Uniondrug\ServiceSdk\Exports\Modules\ErpsvrBmpisJsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspMiniProgramSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspOpenApiSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspUsMemberSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
@@ -354,6 +355,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property ErpsvrBmpisJsSdk           $erpsvrBmpisJs
  * @property PmOtoAppointSdk            $pmOtoAppoint
  * @property GsDpspUsMemberSdk          $gsDpspUsMember
+ * @property GsDpspMiniProgramSdk       $gsDpspMiniProgram
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
