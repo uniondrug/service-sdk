@@ -787,4 +787,24 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/mq/account/info/audit/accept", $body);
     }
+
+    /**
+     * 服务补贴发起结算
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyCreate($body)
+    {
+        return $this->restful("POST", "/subsidy/statement/create", $body);
+    }
+
+    /**
+     * 获取服务补贴最小可结算日期
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function settleMinDate($body)
+    {
+        return $this->restful("POST", "/subsidy/settle/min/date", $body);
+    }
 }
