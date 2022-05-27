@@ -1380,4 +1380,17 @@ class UdappSdk extends SdkBase
     {
         return $this->restful("POST", "/withdraw/record/detail", $body, $query, $extra);
     }
+
+    /**
+     * 查询某个连锁某种类型开关
+     * @link https://uniondrug.coding.net/p/module.udapp/git/blob/development/docs/api/ConfigController/getPartnerTypeConfigAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getPartnerTypeConfig($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/config/getPartnerTypeConfig", $body, $query, $extra);
+    }
 }
