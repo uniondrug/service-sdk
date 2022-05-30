@@ -470,4 +470,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/print/getTask", $body);
     }
+
+    /**
+     * 重新生成开票单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9/doc/api/BillSaleController/updateSaleList.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateSaleList($body)
+    {
+        return $this->restful("POST", "/billSale/updateSaleList", $body);
+    }
 }
