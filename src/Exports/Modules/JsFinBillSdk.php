@@ -481,4 +481,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billSale/updateSaleList", $body);
     }
+
+    /**
+     * 查询当前开票单销售清单是否满足下载条件
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9/doc/api/BillSaleController/updateSaleList.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function checkBillSaleUpdateStatus($body)
+    {
+        return $this->restful("POST", "/billSale/checkUpdateStatus", $body);
+    }
 }
