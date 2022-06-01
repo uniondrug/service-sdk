@@ -492,4 +492,14 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billSale/checkUpdateStatus", $body);
     }
+
+    /**
+     * 开票单详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function detailByBillNo($body)
+    {
+        return $this->restful("POST", "/billInfo/detailByBillNo", $body);
+    }
 }
