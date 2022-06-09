@@ -41,4 +41,16 @@ class GsDpspMiniProgramSdk extends SdkBase
     {
         return $this->restful("POST", "/wx/send/message", $body, $query, $extra);
     }
+
+    /**
+     * 生成二维码
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function wxMakeQrcode($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wx/make/qrcode", $body, $query, $extra);
+    }
 }
