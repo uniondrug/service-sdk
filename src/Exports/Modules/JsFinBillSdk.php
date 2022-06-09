@@ -502,4 +502,26 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billInfo/detailByBillNo", $body);
     }
+
+    /**
+     * 单个修改销售清单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/updateBillSale.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateBillSale($body)
+    {
+        return $this->restful("POST", "/billSale/updateBillSale", $body);
+    }
+
+    /**
+     * 校验销售清单中是否有超长字符
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/verifyStr.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function verifyStr($body)
+    {
+        return $this->restful("POST", "/billSale/verifyStr", $body);
+    }
 }
