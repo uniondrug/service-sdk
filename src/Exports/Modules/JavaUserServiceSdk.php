@@ -345,4 +345,26 @@ class JavaUserServiceSdk extends SdkBase
     {
         return $this->restful("POST", "/v2/api/userInfo/query", $body);
     }
+
+    /**
+     * 通过memberId更新证件信息
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function updateInfo($body)
+    {
+        return $this->restful("POST", "/v2/api/userCard/updateInfo", $body);
+    }
+
+    /**
+     * 添加或修改签名
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function userRuleAddSign($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/v2/api/userRule/addSign", $body, $query, $extra);
+    }
 }
