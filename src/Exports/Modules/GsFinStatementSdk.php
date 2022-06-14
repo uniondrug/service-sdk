@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -836,5 +837,15 @@ class GsFinStatementSdk extends SdkBase
     public function receiveRenewSettleSummary($body)
     {
         return $this->restful("POST", "/receive/renew/settle/summary", $body);
+    }
+
+    /**
+     * 根据应收结算单号获取开票单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getBillNosByReceiveStatementNo($body)
+    {
+        return $this->restful("POST", "/receive/statement/bills", $body);
     }
 }
