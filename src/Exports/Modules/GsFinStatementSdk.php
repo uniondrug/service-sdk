@@ -840,6 +840,36 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 换新应收结算单创建
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementCreate($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/create", $body);
+    }
+
+    /**
+     * 换新应收结算单详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementDetail($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/detail", $body);
+    }
+
+    /**
+     * 换新应收结算单分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementPaging($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/paging", $body);
+    }
+
+    /**
      * 根据应收结算单号获取开票单号
      * @param $body
      * @return ResponseInterface
