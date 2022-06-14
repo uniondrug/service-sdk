@@ -807,4 +807,34 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/subsidy/settle/min/date", $body);
     }
+
+    /**
+     * 应收结算订单分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettlePaging($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/paging", $body);
+    }
+
+    /**
+     * 应收结算订单导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettleExport($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/export", $body);
+    }
+
+    /**
+     * 应收结算订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettleSummary($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/summary", $body);
+    }
 }
