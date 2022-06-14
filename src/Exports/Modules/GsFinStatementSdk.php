@@ -520,7 +520,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 根据结算单号获取开票单号
+     * 根据应付结算单号获取开票单号
      * @param $body
      * @return ResponseInterface
      */
