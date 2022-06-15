@@ -17,8 +17,14 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 class JmWebMossSdk extends SdkBase
 {
     /**
+     * 服务名称
+     * @var string
+     */
+    protected $serviceName = 'uniondrug-moss-web';
+
+    /**
      * 连锁用户分页
-     * @param array $body
+     * @param $body
      * @return ResponseInterface
      * @link
      */
@@ -28,14 +34,8 @@ class JmWebMossSdk extends SdkBase
     }
 
     /**
-     * 服务名称
-     * @var string
-     */
-    protected $serviceName = 'uniondrug-moss-web';
-
-    /**
      * 连锁用户分页
-     * @param array $body
+     * @param $body
      * @return ResponseInterface
      * @link
      */
@@ -46,7 +46,7 @@ class JmWebMossSdk extends SdkBase
 
     /**
      * 连锁用户详情
-     * @param array $body
+     * @param $body
      * @return ResponseInterface
      * @link
      */
