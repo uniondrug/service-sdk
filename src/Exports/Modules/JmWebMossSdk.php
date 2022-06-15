@@ -23,8 +23,19 @@ class JmWebMossSdk extends SdkBase
     protected $serviceName = 'uniondrug-moss-web';
 
     /**
-     * 连锁财税用户分页
-     * @param array $body
+     * 连锁用户分页
+     * @param $body
+     * @return ResponseInterface
+     * @link
+     */
+    public function workerPageByOrganization($body)
+    {
+        return $this->restful(static::METHOD_POST, '/worker/pageByOrganization', $body);
+    }
+
+    /**
+     * 连锁用户分页
+     * @param $body
      * @return ResponseInterface
      * @link
      */
@@ -34,8 +45,8 @@ class JmWebMossSdk extends SdkBase
     }
 
     /**
-     * 连锁财税用户详情
-     * @param array $body
+     * 连锁用户详情
+     * @param $body
      * @return ResponseInterface
      * @link
      */
