@@ -10,6 +10,7 @@ namespace Uniondrug\ServiceSdk\Traits;
 use Uniondrug\ServiceSdk\Exports\Modules\ErpsvrBmpisJsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspMiniProgramSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspOpenApiSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspUsMemberSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
@@ -112,6 +113,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmbslSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JmWebMossSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsCleanCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinanceEsSdk;
@@ -281,6 +283,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JmbsSdk                    $jmbs
  * @property JmbslSdk                   $jmbsl
  * @property JmInsureSdk                $jmInsure
+ * @property JmWebMossSdk               $jmWebMoss
  * @property JwtSdk                     $jwt
  * @property MapSdk                     $map
  * @property MarketingSdk               $marketing
@@ -354,6 +357,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property ErpsvrBmpisJsSdk           $erpsvrBmpisJs
  * @property PmOtoAppointSdk            $pmOtoAppoint
  * @property GsDpspUsMemberSdk          $gsDpspUsMember
+ * @property GsDpspMiniProgramSdk       $gsDpspMiniProgram
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

@@ -8,8 +8,8 @@
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
  *    的`src/Exports/Modules`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2022-05-10
- * @time   Tue, 10 May 2022 20:22:41 +0800
+ * @date   2022-06-13
+ * @time   Mon, 13 Jun 2022 13:33:10 +0800
  */
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
@@ -381,6 +381,19 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改门慢服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editChronicDiseaseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function backEndEditChronicDisease($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editchronicdisease", $body, $query, $extra);
+    }
+
+    /**
      * 修改集团服务
      * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editIsGroupAction.md
      * @param array|object $body 入参类型
@@ -420,8 +433,21 @@ class MerchantSdk extends SdkBase
     }
 
     /**
+     * 修改门慢回推服务
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editPushChronicDiseaseAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function backEndEditPushChronicDisease($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebasebackend/editpushchronicdisease", $body, $query, $extra);
+    }
+
+    /**
      * 修改纳税人资质
-     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/EditTaxpayerTypeAction.md
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseBackendController/editTaxpayerTypeAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
@@ -898,6 +924,19 @@ class MerchantSdk extends SdkBase
     public function disableWorkerMan($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/workerman/disable", $body, $query, $extra);
+    }
+
+    /**
+     * 汇总省市区
+     * @link https://uniondrug.coding.net/p/module.merchant/git/blob/development/docs/api/OrganizeBaseController/districtOrderByAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function districtOrderby($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organizebase/districtorderby", $body, $query, $extra);
     }
 
     /**

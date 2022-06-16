@@ -3,6 +3,7 @@
  * @author wsfuyibing <websearch@163.com>
  * @date   2020-01-07
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
@@ -60,7 +61,7 @@ class JmbsSdk extends Mbs2Sdk
             }
         }
         // 2. 转成Java入参
-        $uuid = md5(json_encode($body, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+        $uuid = md5(uniqid() . json_encode($body, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
         $body['tag'] = isset($body['topicTag']) && is_string($body['topicTag']) && $body['topicTag'] !== '' ? $body['topicTag'] : '';
         $body['topic'] = isset($body['topicName']) && is_string($body['topicName']) && $body['topicName'] !== '' ? $body['topicName'] : '';
         $body['reqNo'] = $uuid;

@@ -351,6 +351,28 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 分页查询在线开票申请记录
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.8.1/doc/api/OnlineInvoicingController/pageApply.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function onlineInvoiceApplyPage($body)
+    {
+        return $this->restful("POST", "/online/invoice/apply/page", $body);
+    }
+
+    /**
+     * 作废在线开票申请单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.8.1/doc/api/OnlineInvoicingController/invalidateApply.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function onlineInvoiceApplyInvalidate($body)
+    {
+        return $this->restful("POST", "/online/invoice/apply/invalidate", $body);
+    }
+
+    /**
      * 校验快递单号正确性
      * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_v1.3/doc/api/ExpressController/checkAndReturnExpressNoCode.md
      * @param $body
@@ -447,5 +469,59 @@ class JsFinBillSdk extends SdkBase
     public function printGetTask($body)
     {
         return $this->restful("POST", "/print/getTask", $body);
+    }
+
+    /**
+     * 重新生成开票单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9/doc/api/BillSaleController/updateSaleList.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateSaleList($body)
+    {
+        return $this->restful("POST", "/billSale/updateSaleList", $body);
+    }
+
+    /**
+     * 查询当前开票单销售清单是否满足下载条件
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9/doc/api/BillSaleController/updateSaleList.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function checkBillSaleUpdateStatus($body)
+    {
+        return $this->restful("POST", "/billSale/checkUpdateStatus", $body);
+    }
+
+    /**
+     * 开票单详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function detailByBillNo($body)
+    {
+        return $this->restful("POST", "/billInfo/detailByBillNo", $body);
+    }
+
+    /**
+     * 单个修改销售清单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/updateBillSale.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function updateBillSale($body)
+    {
+        return $this->restful("POST", "/billSale/updateBillSale", $body);
+    }
+
+    /**
+     * 校验销售清单中是否有超长字符
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/verifyStr.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function verifyStr($body)
+    {
+        return $this->restful("POST", "/billSale/verifyStr", $body);
     }
 }

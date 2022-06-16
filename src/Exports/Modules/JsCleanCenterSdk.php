@@ -59,4 +59,15 @@ class JsCleanCenterSdk extends SdkBase
     {
         return $this->restful("POST", "/clean/query/queryById", $body);
     }
+
+    /**
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function cleanOrderBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/clean/query/cleanOrderBatch", $body, $query, $extra);
+    }
 }

@@ -84,4 +84,41 @@ class JsFinanceReplaceSdk extends SdkBase
     {
         return $this->restful("POST", "/rate/redeal", $body);
     }
+
+    /**
+     * 保存基础商品库数据
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function goodsSave($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goods/save", $body);
+    }
+
+    /**
+     * 分页查询基础商品库数据
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function goodsPage($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goods/page", $body);
+    }
+
+    /**
+     * 删除指定的基础商品库数据
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function goodsDel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/goods/del", $body);
+    }
 }
+

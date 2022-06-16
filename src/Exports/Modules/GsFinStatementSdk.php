@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -519,7 +520,7 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 根据结算单号获取开票单号
+     * 根据应付结算单号获取开票单号
      * @param $body
      * @return ResponseInterface
      */
@@ -786,5 +787,95 @@ class GsFinStatementSdk extends SdkBase
     public function accountInfoAuditAccept($body)
     {
         return $this->restful("POST", "/mq/account/info/audit/accept", $body);
+    }
+
+    /**
+     * 服务补贴发起结算
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function subsidyCreate($body)
+    {
+        return $this->restful("POST", "/subsidy/statement/create", $body);
+    }
+
+    /**
+     * 获取服务补贴最小可结算日期
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function settleMinDate($body)
+    {
+        return $this->restful("POST", "/subsidy/settle/min/date", $body);
+    }
+
+    /**
+     * 应收结算订单分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettlePaging($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/paging", $body);
+    }
+
+    /**
+     * 应收结算订单导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettleExport($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/export", $body);
+    }
+
+    /**
+     * 应收结算订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettleSummary($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/summary", $body);
+    }
+
+    /**
+     * 换新应收结算单创建
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementCreate($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/create", $body);
+    }
+
+    /**
+     * 换新应收结算单详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementDetail($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/detail", $body);
+    }
+
+    /**
+     * 换新应收结算单分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementPaging($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/paging", $body);
+    }
+
+    /**
+     * 根据应收结算单号获取开票单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getBillNosByReceiveStatementNo($body)
+    {
+        return $this->restful("POST", "/receive/statement/bills", $body);
     }
 }
