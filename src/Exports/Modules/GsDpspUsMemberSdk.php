@@ -186,6 +186,18 @@ class GsDpspUsMemberSdk extends SdkBase
     }
 
     /**
+     * 会员卡订单修改退单状态
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCardOrderRefund($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/card/order/refund", $body, $query, $extra);
+    }
+
+    /**
      * 会员订单翻页列表
      * @param      $body
      * @param null $query
