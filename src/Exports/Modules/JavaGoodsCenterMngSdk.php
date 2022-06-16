@@ -95,7 +95,7 @@ class JavaGoodsCenterMngSdk extends SdkBase
      */
     public function getGoodsManagementListV2($body)
     {
-        return $this->restful("GET", "/goodscenter/getGoodsManagementListV2", $body);
+        return $this->restful("POST", "/goodscenter/getGoodsManagementListV2", $body);
     }
 
 }
