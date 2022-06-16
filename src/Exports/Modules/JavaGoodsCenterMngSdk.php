@@ -86,4 +86,16 @@ class JavaGoodsCenterMngSdk extends SdkBase
     {
         return $this->restful("GET", "/standardGoods/queryGoodsDosage", $body);
     }
+
+    /**
+     * 查询商品
+     * @link https://uniondrug.coding.net/p/docs/d/docs/git/tree/development/java/goods-center/%E5%95%86%E5%93%81%E4%B8%AD%E5%BF%833.2/%E6%9F%A5%E8%AF%A2%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E7%9A%84%E6%A0%87%E5%87%86%E5%95%86%E5%93%81.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getGoodsManagementListV2($body)
+    {
+        return $this->restful("GET", "/goodscenter/getGoodsManagementListV2", $body);
+    }
+
 }
