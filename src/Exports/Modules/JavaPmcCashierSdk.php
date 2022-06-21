@@ -201,4 +201,14 @@ class JavaPmcCashierSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST, '/pos/terminal/queryByTerminalNo', $body);
     }
+
+    /**
+     * 根据订单号查询各个订单的总金额和已支付金额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function cashierQueryPaidAmount ($body)
+    {
+        return $this->restful(static::METHOD_POST, '/cashier/queryPaidAmount ', $body);
+    }
 }

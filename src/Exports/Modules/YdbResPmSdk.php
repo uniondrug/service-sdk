@@ -364,4 +364,17 @@ class YdbResPmSdk extends SdkBase
     {
         return $this->restful("POST", "/group/edit", $body, $query, $extra);
     }
+
+    /**
+     * 小程序配置列表
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/ResourceController/miniAppListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function resourceMiniAppList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/resource/miniApp/list", $body, $query, $extra);
+    }
 }

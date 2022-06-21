@@ -113,6 +113,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmbslSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JmWebMossSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsCleanCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinanceEsSdk;
@@ -282,6 +283,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JmbsSdk                    $jmbs
  * @property JmbslSdk                   $jmbsl
  * @property JmInsureSdk                $jmInsure
+ * @property JmWebMossSdk               $jmWebMoss
  * @property JwtSdk                     $jwt
  * @property MapSdk                     $map
  * @property MarketingSdk               $marketing
