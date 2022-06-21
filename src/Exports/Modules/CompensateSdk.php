@@ -1369,6 +1369,32 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 收款方式列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/listingByPaymentTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCycleListingByPaymentType($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/listing/by/payment/type", $body, $query, $extra);
+    }
+
+    /**
+     * 理赔方式列表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/listingByClaimMethodAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCycleListingByClaimMethod($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/listing/by/claim/method", $body, $query, $extra);
+    }
+
+    /**
      * 项目执行情况分页
      * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/pagingAction.md
      * @param array|object $body 入参类型
