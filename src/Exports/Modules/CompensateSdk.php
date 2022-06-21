@@ -1408,6 +1408,19 @@ class CompensateSdk extends SdkBase
     }
 
     /**
+     * 项目执行情况导出
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/ProjectEquityCycleController/exportAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function projectEquityCycleExport($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/project/equity/cycle/export", $body, $query, $extra);
+    }
+
+    /**
      * 权益概览
      * @link https://uniondrug.coding.net/p/module.compensate/git/blob/development/docs/api/Statistic/ProjectController/equityAction.md
      * @param array|object $body 入参类型
