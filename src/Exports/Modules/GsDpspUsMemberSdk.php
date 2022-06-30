@@ -364,4 +364,28 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/appConfig/words/sort", $body, $query, $extra);
     }
+
+    /**
+     * 会员服务-开通
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantProtocolOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/protocol/open", $body, $query, $extra);
+    }
+
+    /**
+     * 会员服务-开通列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantProtocolList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/protocol/list", $body, $query, $extra);
+    }
 }

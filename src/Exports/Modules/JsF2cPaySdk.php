@@ -37,4 +37,24 @@ class JsF2cPaySdk extends SdkBase
     {
         return $this->restful("POST", "/feiyi/withdraw/callback", $body);
     }
+
+    /**
+     * 工猫提现结果回调处理
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function gongMallWithdrawCallback($body)
+    {
+        return $this->restful("POST", "/gongmall/withdraw/callback", $body);
+    }
+
+    /**
+     * 工猫电签结果回调处理
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function gongMallSignContractCallback($body)
+    {
+        return $this->restful("POST", "/gongmall/signContract/callBack", $body);
+    }
 }

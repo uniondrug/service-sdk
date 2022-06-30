@@ -207,8 +207,18 @@ class JavaPmcCashierSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function cashierQueryPaidAmount ($body)
+    public function cashierQueryPaidAmount($body)
     {
-        return $this->restful(static::METHOD_POST, '/cashier/queryPaidAmount ', $body);
+        return $this->restful(static::METHOD_POST, '/cashier/queryPaidAmount', $body);
+    }
+
+    /**
+     * 根据流水号获取订单号等信息
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function cashierQueryRecord($body)
+    {
+        return $this->restful(static::METHOD_POST, '/cashier/query/record', $body);
     }
 }
