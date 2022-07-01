@@ -159,6 +159,16 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 电子发票退回
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceElectronicRefundInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/electronic/refundInvoice", $body);
+    }
+
+    /**
      * 查询票据邮寄待邮寄数据列表
      * @param $body
      * @return ResponseInterface
