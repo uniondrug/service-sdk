@@ -47,6 +47,19 @@ class JsFinanceReplaceSdk extends SdkBase
     }
 
     /**
+     * 查询替换商品（将中广核实物商品替换成家庭服务医生，其他按照订单数据输出）
+     * @link https://git.uniondrug.com/code/1/finance/shares/js-financereplace/blob/feature_houtai/docs-api/js-financereplace/queryController/QueryControllerApi.md
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function replaceQueryOrderGoodItems($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/replace/query/queryOrderGoodItems", $body);
+    }
+
+    /**
      * 分页查询无税率异常数据
      * @link https://git.uniondrug.com/code/1/finance/shares/js-financereplace/blob/feature_houtai/docs-api/js-financereplace/taxrate/noRatePageApi.md
      * @param array|object $body  入参类型
