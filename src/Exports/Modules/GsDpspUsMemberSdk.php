@@ -283,7 +283,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 连锁会员方案上架/下架
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -295,7 +295,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 会员方案购买统计
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -307,7 +307,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 会员权益字典列表
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -319,7 +319,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 添加 [小程序搜索页热词]
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -331,7 +331,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 列表 [小程序搜索页热词]
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -343,7 +343,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 删除 [小程序搜索页热词]
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -355,7 +355,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 排序 [小程序搜索页热词]
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -367,7 +367,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 会员服务-开通
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -379,7 +379,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 会员服务-开通列表
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -391,7 +391,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 会员服务-切换连锁会员推荐位状态
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -403,7 +403,7 @@ class GsDpspUsMemberSdk extends SdkBase
 
     /**
      * 会员服务-批量获取连锁会员推荐位
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -412,10 +412,10 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/merchant/recommend/ids", $body, $query, $extra);
     }
-    
+
     /**
      * 会员服务-获取连锁会员推荐位详情
-     * @param $body
+     * @param      $body
      * @param null $query
      * @param null $extra
      * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
@@ -423,5 +423,113 @@ class GsDpspUsMemberSdk extends SdkBase
     public function merchantRecommendDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/merchant/recommend/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 人群包翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userGroupPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/group/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 人群包详情
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userGroupDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/group/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 人群包创建
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userGroupCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/group/create", $body, $query, $extra);
+    }
+
+    /**
+     * 人群包修改
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userGroupUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/group/update", $body, $query, $extra);
+    }
+
+    /**
+     * 人群包修改
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userGroupDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/user/group/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 消息翻页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function messagePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/message/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 消息创建
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function messageCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/message/create", $body, $query, $extra);
+    }
+
+    /**
+     * 消息详情
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function messageDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("GET", "/message/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 消息修改
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function messageUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/message/update", $body, $query, $extra);
     }
 }
