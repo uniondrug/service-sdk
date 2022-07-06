@@ -388,4 +388,28 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/merchant/protocol/list", $body, $query, $extra);
     }
+
+    /**
+     * 会员服务-切换连锁会员推荐位状态
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantRecommendUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/recommend/update", $body, $query, $extra);
+    }
+
+    /**
+     * 会员服务-批量获取连锁会员推荐位
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantRecommendIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/recommend/ids", $body, $query, $extra);
+    }
 }
