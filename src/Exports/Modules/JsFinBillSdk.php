@@ -338,6 +338,17 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
+     * 校验是否存在纸质票
+     * @link http://torna.uniondrug.cn/#/view/P81PQg2q
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceIpackageNoCheckExistPaperInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/ipackageNo/checkExistPaperInvoice", $body);
+    }
+
+    /**
      * 获取销售清单列表导出sql
      * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.1/doc/api/BillSaleController/getSaleListSql.md
      * @param $body
