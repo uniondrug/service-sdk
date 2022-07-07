@@ -1,8 +1,5 @@
 <?php
-
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
-
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 
@@ -12,7 +9,6 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
 class JavaInsureSdk extends SdkBase
-
 {
     protected $serviceName = 'jm-insure';
 
@@ -56,7 +52,23 @@ class JavaInsureSdk extends SdkBase
         return $this->restful("POST", "/guaranteeClaimPay/saveByGuarantee", $body);
     }
 
+    /**
+     * 提交直付理赔单（待邮寄）
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function ipackageDirectCommitWaitPosted($body)
+    {
+        return $this->restful("POST", "/ipackage/direct/commitWaitPosted", $body);
+    }
 
-
-
+    /**
+     * 理赔情况统计
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\ResponseInterface
+     */
+    public function ipackageStatistics($body)
+    {
+        return $this->restful("POST", "/ipackage/statistics", $body);
+    }
 }
