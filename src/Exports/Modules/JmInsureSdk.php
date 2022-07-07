@@ -756,6 +756,32 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 保单退保（并提交审核）
+     * @link https://torna.uniondrug.cn/#/view/VzNq0pXY
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyCancel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/cancel", $body);
+    }
+
+    /**
+     * 保单退保确认（保单退保审核）
+     * @link https://torna.uniondrug.cn/#/view/PzmPYbXJ
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyCancelConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/cancelConfirm", $body);
+    }
+
+    /**
      * 已变更保单列表
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/PolicyController/pageChange.md
      * @param array|object $body  入参类型
