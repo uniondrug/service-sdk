@@ -359,6 +359,26 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 提交直付理赔单（待邮寄）
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function ipackageDirectCommitWaitPosted($body)
+    {
+        return $this->restful("POST", "/ipackage/direct/commitWaitPosted", $body);
+    }
+
+    /**
+     * 理赔情况统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function ipackageStatistics($body)
+    {
+        return $this->restful("POST", "/ipackage/statistics", $body);
+    }
+
+    /**
      * 撤销理赔单
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/undo.md
      * @param array|object $body  入参类型
