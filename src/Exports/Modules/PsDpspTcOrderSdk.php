@@ -184,4 +184,30 @@ class PsDpspTcOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/drugUser/healthInfo", $body, $query, $extra);
     }
+
+    /**
+     * 根据资源查询是否需要用药人
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/isNeedByResourceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function isNeedDrugUserByResource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/isNeedByResource", $body, $query, $extra);
+    }
+
+    /**
+     * 获取默认需选择的用药人
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/getDefaultDrugUserAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getDefaultDrugUser($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/getDefaultDrugUser", $body, $query, $extra);
+    }
 }
