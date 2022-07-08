@@ -236,4 +236,17 @@ class PsDpspTcOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/drugUser/healthInfoDetail", $body, $query, $extra);
     }
+
+    /**
+     * 获取用药人签名身份证等信息
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/getUserInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getUserInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/getUserInfo", $body, $query, $extra);
+    }
 }
