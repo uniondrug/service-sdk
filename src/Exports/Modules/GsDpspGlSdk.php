@@ -32,15 +32,15 @@ class GsDpspGlSdk extends SdkBase
 
 
     /**
-     * 用户授权
+     * 推药记录
      * @param $body
      * @param null $query
      * @param null $extra
      * @return ResponseInterface
      */
-    public function authorize($body, $query = null, $extra = null)
+    public function recommendCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/api/authorize", $body, $query, $extra);
+        return $this->restful("POST", "/recommend/create", $body, $query, $extra);
     }
 
 }
