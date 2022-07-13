@@ -359,7 +359,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PmOtoAppointSdk            $pmOtoAppoint
  * @property GsDpspUsMemberSdk          $gsDpspUsMember
  * @property GsDpspMiniProgramSdk       $gsDpspMiniProgram
- * @property GsDpspGlSdk                $gsDpspGlSdk
+ * @property GsDpspGlSdk                $gsDpspGl
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
