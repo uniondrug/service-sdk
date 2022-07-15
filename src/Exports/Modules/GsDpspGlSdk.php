@@ -43,4 +43,16 @@ class GsDpspGlSdk extends SdkBase
         return $this->restful("POST", "/recommend/create", $body, $query, $extra);
     }
 
+    /**
+     * 推药记录详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function recommendDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/recommend/detail", $body, $query, $extra);
+    }
+
 }
