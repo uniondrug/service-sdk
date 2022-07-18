@@ -1224,4 +1224,43 @@ class PsSdk extends SdkBase
     {
         return $this->restful("POST", "/work/storeList", $body, $query, $extra);
     }
+
+    /**
+     * 核算单位列表
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/unitListAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function unitList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dtpFee/unitList", $body, $query, $extra);
+    }
+
+    /**
+     * 核算单位Total
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/unitTotalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function unitTotal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dtpFee/unitTotal", $body, $query, $extra);
+    }
+
+    /**
+     * 核算单位详情
+     * @link https://uniondrug.coding.net/p/bsdata.ps/git/blob/development/docs/api/WorkController/unitDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function unitDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/dtpFee/unitDetail", $body, $query, $extra);
+    }
 }
