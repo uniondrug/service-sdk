@@ -275,7 +275,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JavaPushSdk                $javaPush
  * @property JavaPurchaseSdk            $javaPurchase
  * @property JavaUserServiceSdk         $javaUserService
- * @property JavaSsopSdk                $javaSsopSdk
+ * @property JavaSsopSdk                $javaSsop
  * @property JsArchivesSdk              $jsArchives
  * @property JsCleanCenterSdk           $jsCleanCenter
  * @property JsFinBillSdk               $jsFinBill
