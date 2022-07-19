@@ -137,4 +137,16 @@ class JavaDataSdk extends SdkBase
     {
         return $this->restful("POST", "/partnerGoodsSearch/searchSchemeGoods", $body, $query, $extra);
     }
+
+    /**
+     * 根据连锁id+商品内码查询方案下的商品
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function SearchSsbpSchemeGoods($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ssbpSchemeGoods/search", $body, $query, $extra);
+    }
 }
