@@ -18,6 +18,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GwMpTradeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaSsopSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PmOtoAppointSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
@@ -274,6 +275,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JavaPushSdk                $javaPush
  * @property JavaPurchaseSdk            $javaPurchase
  * @property JavaUserServiceSdk         $javaUserService
+ * @property JavaSsopSdk                $javaSsopSdk
  * @property JsArchivesSdk              $jsArchives
  * @property JsCleanCenterSdk           $jsCleanCenter
  * @property JsFinBillSdk               $jsFinBill
