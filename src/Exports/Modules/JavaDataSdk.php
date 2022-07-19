@@ -145,7 +145,7 @@ class JavaDataSdk extends SdkBase
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function SearchSsbpSchemeGoods($body, $query = null, $extra = null)
+    public function searchSsbpSchemeGoods($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/ssbpSchemeGoods/search", $body, $query, $extra);
     }
