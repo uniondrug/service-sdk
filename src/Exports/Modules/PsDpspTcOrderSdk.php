@@ -249,4 +249,17 @@ class PsDpspTcOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/drugUser/getUserInfo", $body, $query, $extra);
     }
+
+    /**
+     * 根据memberId和身份证号获取
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/getByMemberIdAndIdCardAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getByMemberIdAndIdCard($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/getByMemberIdAndIdCard", $body, $query, $extra);
+    }
 }
