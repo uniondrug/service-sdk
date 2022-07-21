@@ -1266,7 +1266,20 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
-     * 列表
+     * 快递公司分页
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Dict/CourierController/PagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function courierPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/courier/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 快递公司列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Dict/CourierController/listingAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
