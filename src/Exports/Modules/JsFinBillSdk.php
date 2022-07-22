@@ -566,4 +566,26 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billSale/verifyStr", $body);
     }
+
+    /**
+     * 关联流水核销
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/verifyStr.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptBankClaimVerify($body)
+    {
+        return $this->restful("POST", "/billReceipt/bankClaim/verify", $body);
+    }
+
+    /**
+     * 核销收款单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/verifyStr.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptReceiptVerify($body)
+    {
+        return $this->restful("POST", "/billReceipt/receipt/verify", $body);
+    }
 }
