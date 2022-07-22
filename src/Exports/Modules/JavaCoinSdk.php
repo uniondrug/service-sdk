@@ -648,6 +648,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 预收收款单分页查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptAdvancePage($body)
+    {
+        return $this->restful("POST", "/receipt/advance/page", $body);
+    }
+
+    /**
      * 资金池按流水号原路返还
      * @param $body
      * @return ResponseInterface
