@@ -1382,4 +1382,17 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/mbs/claim/clearSettleClaimRecord", $body);
     }
+
+    /**
+     * 药联理赔单批量导出理赔明细
+     * @link http://torna.uniondrug.cn/#/view/VzNgbx2Y
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function batchExportClaim($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/uniondrug/batchExportClaim", $body);
+    }
 }
