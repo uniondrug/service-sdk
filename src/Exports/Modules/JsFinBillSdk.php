@@ -588,4 +588,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/billReceipt/receipt/verify", $body);
     }
+
+    /**
+     * 开票单详情
+     * @link https://torna.uniondrug.cn/#/view/YX0xvWXx
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function detail($body)
+    {
+        return $this->restful("POST", "/bill/payout/get", $body);
+    }
 }
