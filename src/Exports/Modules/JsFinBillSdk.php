@@ -11,7 +11,6 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
-
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -621,5 +620,16 @@ class JsFinBillSdk extends SdkBase
     public function incomeBillDetail($body)
     {
         return $this->restful("POST", "/bill/income/get", $body);
+    }
+
+    /**
+     * 取消（退回）应收开票单
+     * @link http://torna.uniondrug.cn/#/view/bXKNyY87
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function incomeBillCancel($body)
+    {
+        return $this->restful("POST", "/bill/income/cancel", $body);
     }
 }
