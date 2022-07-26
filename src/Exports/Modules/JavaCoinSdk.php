@@ -668,4 +668,15 @@ class JavaCoinSdk extends SdkBase
     }
 
 
+    /**
+     * 银行流水认领-根据付款方查询分页
+     * @link http://torna.uniondrug.cn/#/view/nzDvDy8p
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankClaimPagingByPayer($body)
+    {
+        return $this->restful("POST", "/bankClaim/pageByPayer", $body);
+    }
+
 }
