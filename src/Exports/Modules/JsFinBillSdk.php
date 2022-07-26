@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -587,6 +588,17 @@ class JsFinBillSdk extends SdkBase
     public function billReceiptReceiptVerify($body)
     {
         return $this->restful("POST", "/billReceipt/receipt/verify", $body);
+    }
+
+    /**
+     * 开票单-收款单分页
+     * @link https://torna.uniondrug.cn/#/view/Wz3MYj8R
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptPaging($body)
+    {
+        return $this->restful("POST", "/billReceipt/page", $body);
     }
 
     /**
