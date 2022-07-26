@@ -602,13 +602,24 @@ class JsFinBillSdk extends SdkBase
     }
 
     /**
-     * 开票单详情
+     * 应付开票单详情
      * @link https://torna.uniondrug.cn/#/view/YX0xvWXx
      * @param $body
      * @return ResponseInterface
      */
-    public function detail($body)
+    public function payoutBillDetail($body)
     {
         return $this->restful("POST", "/bill/payout/get", $body);
+    }
+
+    /**
+     * 应收开票单详情
+     * @link https://torna.uniondrug.cn/#/view/nzdNg08j
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function incomeBillDetail($body)
+    {
+        return $this->restful("POST", "/bill/income/get", $body);
     }
 }
