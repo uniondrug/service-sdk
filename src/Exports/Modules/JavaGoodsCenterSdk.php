@@ -150,17 +150,6 @@ class JavaGoodsCenterSdk extends SdkBase
     }
 
     /**
-     * 批量编辑SKU税率
-     * @link http://torna.uniondrug.cn/#/view/d8xGpL2g
-     * @param array|object $body 入参类型
-     * @return ResponseInterface
-     */
-    public function updateSkuTaxRateInBatch($body)
-    {
-        return $this->restful("POST", "/configsku/saveTaxRate", $body);
-    }
-
-    /**
      * 查询商品用药指导信息
      * @param array|object $body 入参类型
      * @return ResponseInterface
