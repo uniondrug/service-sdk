@@ -5,6 +5,7 @@
  * Date: 2019-05-09
  * Time: 15:09
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -146,6 +147,17 @@ class JavaGoodsCenterSdk extends SdkBase
     public function updateSkuInBatch($body)
     {
         return $this->restful("POST", "/service/sku/edit", $body);
+    }
+
+    /**
+     * 批量编辑SKU税率
+     * @link http://torna.uniondrug.cn/#/view/d8xGpL2g
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function updateSkuTaxRateInBatch($body)
+    {
+        return $this->restful("POST", "/configsku/saveTaxRate", $body);
     }
 
     /**
