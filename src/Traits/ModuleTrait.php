@@ -159,6 +159,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsGdspOrderSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGdspSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeClaimSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsIspSuperviseSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RobotSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RuleSdk;
@@ -362,6 +363,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsDpspUsMemberSdk          $gsDpspUsMember
  * @property GsDpspMiniProgramSdk       $gsDpspMiniProgram
  * @property GsDpspGlSdk                $gsDpspGl
+ * @property PsIspSuperviseSdk          $psIspSupervise
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
