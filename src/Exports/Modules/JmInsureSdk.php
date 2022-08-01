@@ -1395,4 +1395,17 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/ipackage/uniondrug/batchExportClaim", $body);
     }
+
+    /**
+     * 分页查询费用应收收款单
+     * @link https://torna.uniondrug.cn/#/view/P81jgaXq
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function pageFeeCoinReceipt($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pageFeeCoinReceipt", $body);
+    }
 }
