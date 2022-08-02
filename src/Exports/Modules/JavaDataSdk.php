@@ -161,4 +161,28 @@ class JavaDataSdk extends SdkBase
     {
         return $this->restful("POST", "/queryGoods/queryGoodsBaseInfo", $body, $query, $extra);
     }
+
+    /**
+     * 直付权益条码商品查询
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchTradeCodeGoods($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/esopPurchaseGoods/searchTradeCodeGoods", $body, $query, $extra);
+    }
+
+    /**
+     * 营销方案条码商品查询
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function searchSchemeTradeCodeGoods($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partnerGoodsSearch/searchSchemeTradeCodeGoods", $body, $query, $extra);
+    }
 }
