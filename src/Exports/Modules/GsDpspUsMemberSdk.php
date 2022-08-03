@@ -532,4 +532,88 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/message/update", $body, $query, $extra);
     }
+
+    /**
+     * 发券-任务新增
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponTaskCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/task/create", $body, $query, $extra);
+    }
+
+    /**
+     * 发券-任务详情
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponTaskDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/task/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 发券-任务分页列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponTaskPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/task/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 发券-任务状态更新
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponTaskUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/task/update", $body, $query, $extra);
+    }
+
+    /**
+     * 发券-优惠券领取列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponReceivePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/receive/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 发券-会员优惠券发放列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponGivePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/give/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 发券-批量插入优惠券待发放会员
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponUserAddBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/user/add/batch", $body, $query, $extra);
+    }
 }
