@@ -616,4 +616,76 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/coupon/user/add/batch", $body, $query, $extra);
     }
+
+    /**
+     * 获取连锁企微开通状态
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantWeComStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/weCom/status", $body, $query, $extra);
+    }
+
+    /**
+     * 批量获取连锁企微服务
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantWeComBatchQuery($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/weCom/batch/query", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁开通企微
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantWeComOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/weCom/open", $body, $query, $extra);
+    }
+
+    /**
+     * 门店开通企微
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function storeWeComOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/weCom/open", $body, $query, $extra);
+    }
+
+    /**
+     * 门店关闭企微
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function storeWeComClose($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/weCom/close", $body, $query, $extra);
+    }
+
+    /**
+     * 批量查询门店企微服务
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function storeWeComBatchQuery($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/weCom/batch/query", $body, $query, $extra);
+    }
 }
