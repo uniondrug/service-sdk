@@ -606,6 +606,18 @@ class GsDpspUsMemberSdk extends SdkBase
     }
 
     /**
+     * 发券-会员优惠券发放列表不分页
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function couponGiveList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/give/list", $body, $query, $extra);
+    }
+
+    /**
      * 发券-批量插入优惠券待发放会员
      * @param      $body
      * @param null $query
