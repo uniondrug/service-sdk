@@ -162,6 +162,30 @@ class GsDpspUsMemberSdk extends SdkBase
     }
 
     /**
+     * 手机号/memberId + 商户Id批量查会员Id
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userBatchUsers($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/batch/users", $body, $query, $extra);
+    }
+
+    /**
+     * 手机号+merchantId批量查会员数量
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCountMobiles($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/count/mobiles", $body, $query, $extra);
+    }
+
+    /**
      * 会员卡列表
      * @param      $body
      * @param null $query
