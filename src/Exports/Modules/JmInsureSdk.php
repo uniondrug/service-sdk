@@ -1408,4 +1408,17 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policy/pageFeeCoinReceipt", $body);
     }
+
+    /**
+     * 批量变更保单的追溯期
+     * @link http://torna.uniondrug.cn/#/view/L2kgjd2P
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function updateRetroactivePeriod($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/updateRetroactivePeriod", $body);
+    }
 }
