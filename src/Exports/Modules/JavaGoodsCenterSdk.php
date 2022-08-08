@@ -199,4 +199,14 @@ class JavaGoodsCenterSdk extends SdkBase
         return $this->restful("POST", "/goodsSearch/sku", $body);
     }
 
+    /**
+     * 根据SkuNo查询连锁药品税率
+     * @link http://torna.uniondrug.cn/#/view/xx
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function findTaxRateBySkuNo($body)
+    {
+        return $this->restful("POST", "/service/sku/findTaxRateBySkuNo", $body);
+    }
 }
