@@ -148,13 +148,13 @@ class TaxSdk extends SdkBase
 
     /**
      * 按父级-分页列表
-     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/pagingByParentCodeAction.md
+     * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/taxCodePagingByParentCodeAction.md
      * @param array|object $body 入参类型
      * @param null $query  Query数据
      * @param null $extra  请求头信息
      * @return ResponseInterface
      */
-    public function pagingByParentCode($body, $query = null, $extra = null)
+    public function taxCodePagingByParentCode($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/taxCode/paging/by/parentCode", $body, $query, $extra);
     }
