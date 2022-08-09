@@ -724,4 +724,28 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/store/weCom/batch/query", $body, $query, $extra);
     }
+
+    /**
+     * 门店批量开启企微服务
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function storeWeComBatchOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/weCom/batch/open", $body, $query, $extra);
+    }
+
+    /**
+     * 批量查询连锁下开启企微的门店数量及席位分配数量
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function openCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/merchant/weCom/open/count", $body, $query, $extra);
+    }
 }
