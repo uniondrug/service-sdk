@@ -182,7 +182,19 @@ class GsDpspUsMemberSdk extends SdkBase
      */
     public function userCountMobiles($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/count/mobiles", $body, $query, $extra);
+        return $this->restful("POST", "/user/count/mobiles", $body, $query, $extra);
+    }
+
+    /**
+     * 会员领券
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userReceiveCoupon($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/receive/coupon", $body, $query, $extra);
     }
 
     /**
