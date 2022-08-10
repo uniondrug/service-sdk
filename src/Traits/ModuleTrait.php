@@ -15,6 +15,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\GsDpspMiniProgramSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspOpenApiSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspUsMemberSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsNrspUdchSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GwMpTradeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
@@ -364,6 +365,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsDpspMiniProgramSdk       $gsDpspMiniProgram
  * @property GsDpspGlSdk                $gsDpspGl
  * @property PsIspSuperviseSdk          $psIspSupervise
+ * @property GsNrspUdchSdk              $gsNrspUdch
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
