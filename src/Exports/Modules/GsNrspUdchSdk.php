@@ -40,4 +40,16 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/token/auth/url", $body, $query, $extra);
     }
+
+    /**
+     * 连锁开通企微
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function merchantOpen($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/token/permanent/code/create", $body, $query, $extra);
+    }
 }
