@@ -750,6 +750,18 @@ class GsDpspUsMemberSdk extends SdkBase
     }
 
     /**
+     * 门店批量关闭企微服务
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function storeWeComBatchClose($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/weCom/batch/close", $body, $query, $extra);
+    }
+
+    /**
      * 批量查询连锁下开启企微的门店数量及席位分配数量
      * @param      $body
      * @param null $query
