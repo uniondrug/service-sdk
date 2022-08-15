@@ -796,4 +796,16 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/store/weCom/bind/seat", $body, $query, $extra);
     }
+
+    /**
+     * 获取企微用户席位绑定详情
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function getSeat($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/store/weCom/get/seat", $body, $query, $extra);
+    }
 }
