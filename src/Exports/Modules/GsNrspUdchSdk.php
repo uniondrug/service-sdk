@@ -62,7 +62,7 @@ class GsNrspUdchSdk extends SdkBase
      */
     public function departmentList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/department/list", $body, $query, $extra);
+        return $this->restful("POST", "/organization/department/list", $body, $query, $extra);
     }
 
     /**
