@@ -133,6 +133,6 @@ class GsNrspUdchSdk extends SdkBase
      */
     public function oauthLoginInfo($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/oauth/login/url", $body, $query, $extra);
+        return $this->restful("POST", "/oauth/login/info", $body, $query, $extra);
     }
 }
