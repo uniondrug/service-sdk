@@ -52,4 +52,28 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/token/permanent/code/create", $body, $query, $extra);
     }
+
+    /**
+     * 部门列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function departmentList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/department/list", $body, $query, $extra);
+    }
+
+    /**
+     * 部门下成员列表
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function departmentUserList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organization/user/list", $body, $query, $extra);
+    }
 }
