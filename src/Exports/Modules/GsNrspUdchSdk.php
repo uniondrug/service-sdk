@@ -111,4 +111,28 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/external/user/stat", $body, $query, $extra);
     }
+
+    /**
+     * 获取登录链接
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function oauthAuthUrl($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/oauth/auth/url", $body, $query, $extra);
+    }
+
+    /**
+     * 获取登录信息
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function oauthLoginInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/oauth/login/url", $body, $query, $extra);
+    }
 }
