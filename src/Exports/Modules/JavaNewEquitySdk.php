@@ -268,4 +268,15 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/bizsvr/equity/batch/debit", $body);
     }
+
+    /**
+     * 智赔扣款撤销
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrEquityBatchRejectDebit($body)
+    {
+        return $this->restful("POST", "/bizsvr/equity/batch/rejectDebit", $body);
+    }
 }
