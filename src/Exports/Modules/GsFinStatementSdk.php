@@ -878,4 +878,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/receive/statement/bills", $body);
     }
+
+    /**
+     * 资金充值业务-创建开票单（先款后票/先票后款）
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRechargeBillCreate($body)
+    {
+        return $this->restful("POST", "/receive/recharge/bill/create", $body);
+    }
 }
