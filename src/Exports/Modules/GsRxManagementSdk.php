@@ -219,4 +219,16 @@ class GsRxManagementSdk extends SdkBase
     {
         return $this->restful("POST", "/rx/apply/supplier", $body, $query, $extra);
     }
+
+    /**
+     * 批量查询处方药品
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function rxDrugList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/rx/drug/list", $body, $query, $extra);
+    }
 }
