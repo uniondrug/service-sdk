@@ -638,6 +638,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 查询资金池账户余额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundAccountQueryBalance($body)
+    {
+        return $this->restful("POST", "/fundAccount/queryBalance", $body);
+    }
+
+    /**
      * 撤销充值申请
      * @param $body
      * @return ResponseInterface
