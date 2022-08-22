@@ -1421,4 +1421,82 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/policy/updateRetroactivePeriod", $body);
     }
+
+    /**
+     * 结算单暂缓投保
+     * @link http://torna.uniondrug.cn/#/view/K8M3drzl
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimSuspendStatement($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/suspendStatement", $body);
+    }
+
+    /**
+     * 订单暂缓投保
+     * @link http://torna.uniondrug.cn/#/view/W2okYR2D
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimSuspendOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/suspendOrder", $body);
+    }
+
+    /**
+     * 恢复所有暂缓投保订单
+     * @link http://torna.uniondrug.cn/#/view/K2Zvbv2v
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimResumeAllSuspend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/resumeAllSuspend", $body);
+    }
+
+    /**
+     * 查询延暂投保订单数
+     * @link http://torna.uniondrug.cn/#/view/bXKApQ27
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimGetSuspendOrderNum($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/getSuspendOrderNum", $body);
+    }
+
+    /**
+     * 结算单恢复投保
+     * @link http://torna.uniondrug.cn/#/view/ez7gmwza
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimResumeStatement($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/resumeStatement", $body);
+    }
+
+    /**
+     * 订单恢复投保
+     * @link http://torna.uniondrug.cn/#/view/NzvndwzD
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimResumeOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/resumeOrder", $body);
+    }
 }
