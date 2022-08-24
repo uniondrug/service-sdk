@@ -1512,4 +1512,17 @@ class JmInsureSdk extends SdkBase
     {
         return $this->restful("POST", "/ipackage/uniondrug/invoiceApply/check", $body);
     }
+
+    /**
+     * 查询PBM2保单的项目
+     * @link https://torna.uniondrug.cn/#/view/aXY79E2r
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyListPbm2Project($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/listPbm2Project", $body);
+    }
 }
