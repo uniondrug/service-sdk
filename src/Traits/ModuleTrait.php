@@ -9,6 +9,7 @@ namespace Uniondrug\ServiceSdk\Traits;
 
 use Uniondrug\ServiceSdk\Exports\Modules\ErpsvrBmpisJsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspConfigSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGlSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspMiniProgramSdk;
@@ -366,6 +367,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property GsDpspGlSdk                $gsDpspGl
  * @property PsIspSuperviseSdk          $psIspSupervise
  * @property GsNrspUdchSdk              $gsNrspUdch
+ * @property GsDpspConfigSdk            $gsDpspConfig
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait
