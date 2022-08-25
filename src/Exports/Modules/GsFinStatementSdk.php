@@ -888,4 +888,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/receive/recharge/bill/create", $body);
     }
+
+    /**
+     * 根据结算充值业务单号，查询资金收款单业务单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRechargeBusinessNoPaging($body)
+    {
+        return $this->restful("POST", "/receive/recharge/businessNo/paging", $body);
+    }
 }
