@@ -894,8 +894,8 @@ class GsFinStatementSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function receiveRechargeBusinessNoPaging($body)
+    public function receiveRechargeBusinessNoListing($body)
     {
-        return $this->restful("POST", "/receive/recharge/business/no/paging", $body);
+        return $this->restful("POST", "/receive/recharge/business/no/listing", $body);
     }
 }
