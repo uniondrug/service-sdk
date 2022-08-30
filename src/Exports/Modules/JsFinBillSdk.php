@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -631,5 +632,16 @@ class JsFinBillSdk extends SdkBase
     public function incomeBillCancel($body)
     {
         return $this->restful("POST", "/bill/income/cancel", $body);
+    }
+
+    /**
+     * 获取票易通加密入参数据
+     * @link http://torna.uniondrug.cn/#/view/P81xQ62q
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function xforceEncrypt($body)
+    {
+        return $this->restful("POST", "/xforce/encrypt", $body);
     }
 }
