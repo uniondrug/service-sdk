@@ -11,6 +11,7 @@
  * @date   2020-08-12
  * @time   Wed, 12 Aug 2020 15:16:52 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -33,8 +34,8 @@ class TaxSdk extends SdkBase
      * 新增
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/Invoice/InvoiceController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function invoiceCreate($body, $query = null, $extra = null)
@@ -46,8 +47,8 @@ class TaxSdk extends SdkBase
      * 新增
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/InvoiceDetails/InvoiceDetailsController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function invoiceDetailsCreate($body, $query = null, $extra = null)
@@ -59,8 +60,8 @@ class TaxSdk extends SdkBase
      * 新增
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantGoodsCreate($body, $query = null, $extra = null)
@@ -72,8 +73,8 @@ class TaxSdk extends SdkBase
      * 详情
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/detailAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantGoodsDetail($body, $query = null, $extra = null)
@@ -85,8 +86,8 @@ class TaxSdk extends SdkBase
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/pagingAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantGoodsPaging($body, $query = null, $extra = null)
@@ -98,8 +99,8 @@ class TaxSdk extends SdkBase
      * 修改
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/updateAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantGoodsUpdate($body, $query = null, $extra = null)
@@ -111,8 +112,8 @@ class TaxSdk extends SdkBase
      * 批量修改
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/MerchantGoods/MerchantGoodsController/updateInBatchAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function merchantGoodsUpdateInBatch($body, $query = null, $extra = null)
@@ -124,8 +125,8 @@ class TaxSdk extends SdkBase
      * 创建
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxCodeCreate($body, $query = null, $extra = null)
@@ -137,8 +138,8 @@ class TaxSdk extends SdkBase
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/pagingAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxCodePaging($body, $query = null, $extra = null)
@@ -150,8 +151,8 @@ class TaxSdk extends SdkBase
      * 按父级-分页列表
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/taxCodePagingByParentCodeAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxCodePagingByParentCode($body, $query = null, $extra = null)
@@ -163,8 +164,8 @@ class TaxSdk extends SdkBase
      * 树形结构
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxCode/TaxCodeController/treeAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxCodeTree($body, $query = null, $extra = null)
@@ -176,8 +177,8 @@ class TaxSdk extends SdkBase
      * 新增
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxRateCreate($body, $query = null, $extra = null)
@@ -189,8 +190,8 @@ class TaxSdk extends SdkBase
      * 列表
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/listingAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxRateListing($body, $query = null, $extra = null)
@@ -202,8 +203,8 @@ class TaxSdk extends SdkBase
      * 分页列表
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/pagingAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxRatePaging($body, $query = null, $extra = null)
@@ -215,8 +216,8 @@ class TaxSdk extends SdkBase
      * 修改
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/updateAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxRateUpdate($body, $query = null, $extra = null)
@@ -228,8 +229,8 @@ class TaxSdk extends SdkBase
      * 修改状态
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/TaxRate/TaxRateController/updateStatusAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function taxRateUpdateStatus($body, $query = null, $extra = null)
@@ -241,8 +242,8 @@ class TaxSdk extends SdkBase
      * 新增
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/UploadBillLog/UploadBillLogController/createAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function uploadBillLogCreate($body, $query = null, $extra = null)
@@ -254,8 +255,8 @@ class TaxSdk extends SdkBase
      * 接收开票单上传状态
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/receiveBillStatusAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function xForcePlusReceiveBillStatus($body, $query = null, $extra = null)
@@ -267,8 +268,8 @@ class TaxSdk extends SdkBase
      * 接收回传的发票
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/receiveInvoiceAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function xForcePlusReceiveInvoice($body, $query = null, $extra = null)
@@ -280,8 +281,8 @@ class TaxSdk extends SdkBase
      * 上传开票单信息
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/sendBillAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function xForcePlusUploadBill($body, $query = null, $extra = null)
@@ -293,12 +294,24 @@ class TaxSdk extends SdkBase
      * 上传企业信息
      * @link https://uniondrug.coding.net/p/module.tax/git/blob/development/docs/api/XForcePlus/XForcePlusController/uploadMerchantAction.md
      * @param array|object $body 入参类型
-     * @param null $query  Query数据
-     * @param null $extra  请求头信息
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
      * @return ResponseInterface
      */
     public function xForcePlusUploadMerchant($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/xForcePlus/uploadMerchant", $body, $query, $extra);
+    }
+
+    /**
+     * 获取菜单
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function xForcePlusMenu($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/xForcePlus/menu", $body, $query, $extra);
     }
 }
