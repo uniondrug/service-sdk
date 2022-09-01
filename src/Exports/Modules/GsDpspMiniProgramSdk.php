@@ -53,4 +53,15 @@ class GsDpspMiniProgramSdk extends SdkBase
     {
         return $this->restful("POST", "/wx/make/qrcode", $body, $query, $extra);
     }
+
+    /**
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function wxAccessToken($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wx/access/token", $body, $query, $extra);
+    }
 }
