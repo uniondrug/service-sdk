@@ -820,4 +820,16 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/store/weCom/batch/get/seat", $body, $query, $extra);
     }
+
+    /**
+     * 会员积分同步
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userIntegralSync($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/integral/sync", $body, $query, $extra);
+    }
 }
