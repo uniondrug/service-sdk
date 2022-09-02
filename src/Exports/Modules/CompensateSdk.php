@@ -1744,4 +1744,43 @@ class CompensateSdk extends SdkBase
     {
         return $this->restful("POST", "/worker/workerInfo", $body, $query, $extra);
     }
+
+    /**
+     * 额度柱状图-日
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/AiV40/AgreementDataController/dayAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function agreementDataDay($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/agreement/data/day", $body, $query, $extra);
+    }
+
+    /**
+     * 额度柱状图-月
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/AiV40/AgreementDataController/monthAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function agreementDataMonth($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/agreement/data/month", $body, $query, $extra);
+    }
+
+    /**
+     * 额度统计百分比
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/AiV40/AgreementDataController/totalAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function agreementDataTotal($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/agreement/data/total", $body, $query, $extra);
+    }
 }
