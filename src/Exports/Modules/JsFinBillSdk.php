@@ -633,15 +633,4 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/bill/income/cancel", $body);
     }
-
-    /**
-     * 获取票易通加密入参数据
-     * @link http://torna.uniondrug.cn/#/view/P81xQ62q
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function xforceEncrypt($body)
-    {
-        return $this->restful("POST", "/xforce/encrypt", $body);
-    }
 }
