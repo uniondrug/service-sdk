@@ -43,6 +43,18 @@ class JavaDataSdk extends SdkBase
     }
 
     /**
+     * 是否存在
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function wordSuggesterExist($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/wordSuggester/exist", $body, $query, $extra);
+    }
+
+    /**
      * 多店搜索(条码聚合)
      * @param array|object $body 入参类型
      * @param null $query  Query数据
