@@ -444,4 +444,13 @@ class JavaPromoteCenterSdk extends SdkBase
     {
         return $this->restful(static::METHOD_POST,'/card/queryCardListByPartner',$body);
     }
+
+    /**
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function marketCouponTrialNew($body)
+    {
+        return $this->restful(static::METHOD_POST,'/coupon/marketCouponTrialNew',$body);
+    }
 }
