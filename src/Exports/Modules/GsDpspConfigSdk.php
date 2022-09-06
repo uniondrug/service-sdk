@@ -187,4 +187,52 @@ class GsDpspConfigSdk extends SdkBase
         return $this->restful("POST", "/hot/search/keyword/list", $body, $query, $extra);
     }
 
+    /**
+     * 配置化详情 [根据contractFulfillmentId]
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractGetById($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/id", $body, $query, $extra);
+    }
+
+    /**
+     * 配置化详情 [根据资源ID查]
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractGetBySchemeId($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/schemeid", $body, $query, $extra);
+    }
+
+    /**
+     * 项目配置连锁/门店范围筛选
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractFilterMerchant($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/filter/merchant", $body, $query, $extra);
+    }
+
+    /**
+     * 项目配置Banner
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractBannerList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/banner/list", $body, $query, $extra);
+    }
+
 }
