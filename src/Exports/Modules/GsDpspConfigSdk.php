@@ -151,4 +151,40 @@ class GsDpspConfigSdk extends SdkBase
         return $this->restful("POST", "/classify/goods/list", $body, $query, $extra);
     }
 
+    /**
+     * 添加/编辑热搜词
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function saveHotSearchKeyword($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/hot/search/keyword/save", $body, $query, $extra);
+    }
+
+    /**
+     * 删除热搜词
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function deleteHotSearchKeyword($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/hot/search/keyword/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 热搜词列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function hotSearchKeywordList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/hot/search/keyword/list", $body, $query, $extra);
+    }
+
 }
