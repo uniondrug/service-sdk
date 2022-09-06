@@ -122,6 +122,17 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
+     * 开票单-状态汇总
+     * @link https://torna.uniondrug.cn/#/view/E8rEEGv2
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billStatusGroupCount($body)
+    {
+        return $this->restful("POST", "/esapi/search/bill/status/group/count", $body);
+    }
+
+    /**
      * 开票单-销售清单分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/BillController/salesListPage.md
      * @param $body
