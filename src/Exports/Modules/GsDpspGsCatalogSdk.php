@@ -388,4 +388,16 @@ class GsDpspGsCatalogSdk extends SdkBase
     {
         return $this->restful("GET", "/catalog/check/drug", $body, $query, $extra);
     }
+
+    /**
+     * 根据目录id批量查询目录下药品数量
+     * @param      $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function catalogDrugCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/catalog/drug/count", $body, $query, $extra);
+    }
 }
