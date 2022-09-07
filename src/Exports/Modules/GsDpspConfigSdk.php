@@ -196,7 +196,7 @@ class GsDpspConfigSdk extends SdkBase
      */
     public function contractGetById($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/contract/id", $body, $query, $extra);
+        return $this->restful("GET", "/contract/id", $body, $query, $extra);
     }
 
     /**
