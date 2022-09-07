@@ -208,7 +208,7 @@ class GsDpspConfigSdk extends SdkBase
      */
     public function contractGetBySchemeId($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/contract/schemeid", $body, $query, $extra);
+        return $this->restful("GET", "/contract/schemeid", $body, $query, $extra);
     }
 
     /**
@@ -220,7 +220,7 @@ class GsDpspConfigSdk extends SdkBase
      */
     public function contractFilterMerchant($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/contract/filter/merchant", $body, $query, $extra);
+        return $this->restful("GET", "/contract/filter/merchant", $body, $query, $extra);
     }
 
     /**
@@ -232,7 +232,7 @@ class GsDpspConfigSdk extends SdkBase
      */
     public function contractBannerList($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/contract/banner/list", $body, $query, $extra);
+        return $this->restful("GET", "/contract/banner/list", $body, $query, $extra);
     }
 
 }
