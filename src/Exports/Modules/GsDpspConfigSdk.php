@@ -235,4 +235,15 @@ class GsDpspConfigSdk extends SdkBase
         return $this->restful("GET", "/contract/banner/list", $body, $query, $extra);
     }
 
+    /**
+     * 配置化分页查询
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/paging", $body, $query, $extra);
+    }
 }
