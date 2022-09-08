@@ -246,4 +246,40 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/paging", $body, $query, $extra);
     }
+
+    /**
+     * 添加/编辑项目资源
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function saveContractResource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/resource/save", $body, $query, $extra);
+    }
+
+    /**
+     * 删除项目资源
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function deleteContractResource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/resource/delete", $body, $query, $extra);
+    }
+
+    /**
+     * 项目资源列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractResourceList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/resource/list", $body, $query, $extra);
+    }
 }
