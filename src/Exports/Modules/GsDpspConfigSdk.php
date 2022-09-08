@@ -282,4 +282,16 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/resource/list", $body, $query, $extra);
     }
+
+    /**
+     * 项目资源详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractResourceDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/resource/detail", $body, $query, $extra);
+    }
 }
