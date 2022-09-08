@@ -294,4 +294,16 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/resource/detail", $body, $query, $extra);
     }
+
+    /**
+     * 根据项目ids查询
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function getContractByIds($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/ids", $body, $query, $extra);
+    }
 }
