@@ -1783,4 +1783,43 @@ class CompensateSdk extends SdkBase
     {
         return $this->restful("POST", "/agreement/data/total", $body, $query, $extra);
     }
+
+    /**
+     * 添加表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/AiV40/AiExcelController/addAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function aiexcelAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiexcel/add", $body, $query, $extra);
+    }
+
+    /**
+     * 表详情
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/AiV40/AiExcelController/InfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function aiexcelInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiexcel/info", $body, $query, $extra);
+    }
+
+    /**
+     * 更新表
+     * @link https://uniondrug.coding.net/p/compensate.module/git/blob/development/docs/api/AiV40/AiExcelController/UpdateAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function aiexcelUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/aiexcel/update", $body, $query, $extra);
+    }
 }
