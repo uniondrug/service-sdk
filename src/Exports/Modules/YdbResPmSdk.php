@@ -377,4 +377,17 @@ class YdbResPmSdk extends SdkBase
     {
         return $this->restful("POST", "/resource/miniApp/list", $body, $query, $extra);
     }
+
+    /**
+     * 根据资源类型批量更新
+     * @link https://uniondrug.coding.net/p/module.pm.res.ydb/git/blob/development/docs/api/ResourceController/batchUpdateByTypeAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function batchUpdateByType($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/resource/batchUpdateByType", $body, $query, $extra);
+    }
 }
