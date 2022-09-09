@@ -21,7 +21,7 @@ class GsFinCompensateSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function accountCreate($body)
+    public function accountDetail($body)
     {
         return $this->restful("POST", "/account/detail", $body);
     }
