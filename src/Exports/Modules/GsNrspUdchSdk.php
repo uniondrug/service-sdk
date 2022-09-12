@@ -135,4 +135,100 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/oauth/login/info", $body, $query, $extra);
     }
+
+    /**
+     * 标签同步
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagSync($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/sync", $body, $query, $extra);
+    }
+
+    /**
+     * 标签创建
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/create", $body, $query, $extra);
+    }
+
+    /**
+     * 标签详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 标签更新
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/update", $body, $query, $extra);
+    }
+
+    /**
+     * 标签组删除
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagGroupDel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/group/del", $body, $query, $extra);
+    }
+
+    /**
+     * 标签列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/list", $body, $query, $extra);
+    }
+
+    /**
+     * 标签排序
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagSort($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/sort", $body, $query, $extra);
+    }
+
+    /**
+     * 标签同步状态
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function tagSyncStatus($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tag/sync/status", $body, $query, $extra);
+    }
 }
