@@ -342,4 +342,16 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/resource/quality/goods/delete", $body, $query, $extra);
     }
+
+    /**
+     * 热搜词排序
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function sortHotSearchKeyword($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/hot/search/keyword/sort", $body, $query, $extra);
+    }
 }
