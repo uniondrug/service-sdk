@@ -306,4 +306,40 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/ids", $body, $query, $extra);
     }
+
+    /**
+     * 品质商品分页查询
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function PostQualityGoodsPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/resource/quality/goods/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 添加品质商品
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function PostQualityGoodsList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/resource/quality/goods/save", $body, $query, $extra);
+    }
+
+    /**
+     * 删除品质商品
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function PostQualityGoodsDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/resource/quality/goods/delete", $body, $query, $extra);
+    }
 }
