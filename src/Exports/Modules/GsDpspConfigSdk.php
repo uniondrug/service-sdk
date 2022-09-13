@@ -314,7 +314,7 @@ class GsDpspConfigSdk extends SdkBase
      * @param null $extra
      * @return ResponseInterface
      */
-    public function PostQualityGoodsPaging($body, $query = null, $extra = null)
+    public function qualityGoodsPaging($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/contract/resource/quality/goods/paging", $body, $query, $extra);
     }
@@ -326,7 +326,7 @@ class GsDpspConfigSdk extends SdkBase
      * @param null $extra
      * @return ResponseInterface
      */
-    public function PostQualityGoodsList($body, $query = null, $extra = null)
+    public function qualityGoodsSave($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/contract/resource/quality/goods/save", $body, $query, $extra);
     }
@@ -338,7 +338,7 @@ class GsDpspConfigSdk extends SdkBase
      * @param null $extra
      * @return ResponseInterface
      */
-    public function PostQualityGoodsDelete($body, $query = null, $extra = null)
+    public function qualityGoodsDelete($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/contract/resource/quality/goods/delete", $body, $query, $extra);
     }
