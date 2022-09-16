@@ -231,4 +231,16 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/tag/sync/status", $body, $query, $extra);
     }
+
+    /**
+     * 图片上传
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function mediaImgUpload($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/media/img/upload", $body, $query, $extra);
+    }
 }
