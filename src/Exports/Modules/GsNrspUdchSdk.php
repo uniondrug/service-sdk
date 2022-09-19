@@ -78,6 +78,18 @@ class GsNrspUdchSdk extends SdkBase
     }
 
     /**
+     * 开通席位的成员列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function departmentUserSeatList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/organization/user/seat/list", $body, $query, $extra);
+    }
+
+    /**
      * 部门下成员详情
      * @param      $body
      * @param null $query
