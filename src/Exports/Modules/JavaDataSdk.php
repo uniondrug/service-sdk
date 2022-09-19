@@ -115,6 +115,18 @@ class JavaDataSdk extends SdkBase
     }
 
     /**
+     * 获取最低价 最高价
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function queryGoodsPrice($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/otoManage/queryGoodsPrice", $body, $query, $extra);
+    }
+    
+    /**
      * 根据条码基于地理位置搜索全国商品
      * @param array|object $body 入参类型
      * @param null $query  Query数据
