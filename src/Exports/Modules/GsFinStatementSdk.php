@@ -898,4 +898,44 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/receive/recharge/business/no/listing", $body);
     }
+
+    /**
+     * 医保资料汇总列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialSummaryList($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/summary/list", $body);
+    }
+
+    /**
+     * 医保资料明细列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialDetailList($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/detail/list", $body);
+    }
+
+    /**
+     * 医保门店列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialStoreList($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/store/list", $body);
+    }
+
+    /**
+     * 医保资料导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialExport($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/export", $body);
+    }
 }
