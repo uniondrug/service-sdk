@@ -100,6 +100,7 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/oauth/user/detail", $body, $query, $extra);
     }
+
     /**
      * 客户列表
      * @param      $body
@@ -110,6 +111,30 @@ class GsNrspUdchSdk extends SdkBase
     public function externalUserList($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/external/user/list", $body, $query, $extra);
+    }
+
+    /**
+     * 批量获取客户详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function externalBatchUserInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/external/batch/user/info", $body, $query, $extra);
+    }
+
+    /**
+     * 获取客户详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function externalUserInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/external/user/info", $body, $query, $extra);
     }
 
     /**
