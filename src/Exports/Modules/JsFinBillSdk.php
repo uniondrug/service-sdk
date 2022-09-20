@@ -633,4 +633,26 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/bill/income/cancel", $body);
     }
+
+    /**
+     * 物流批量导出邮寄
+     * @link http://torna.uniondrug.cn/#/view/Wz3V6xkX
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function expressImportPost($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/import/post", $body);
+    }
+
+    /**
+     * 物流导入任务分页查询
+     * @link http://torna.uniondrug.cn/#/view/VzNm3jVX
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function expressImportTaskPage($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/importTask/page", $body);
+    }
 }
