@@ -1172,7 +1172,7 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
-     * 根据保单号查询开票单号
+     * 费用应收，根据保单号查询开票单号
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_billV1.7/doc/api/FeeApplyBillController/listBillNoByPolicyNo.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
@@ -1185,7 +1185,7 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
-     * 根据理赔单号查询开票号集合
+     * 非费用应收，根据理赔单号查询开票号集合
      * @link https://torna.uniondrug.cn/#/view/PzmxlGxX
      * @param array|object $body  入参类型
      * @param null         $query Query数据
@@ -1195,6 +1195,19 @@ class JmInsureSdk extends SdkBase
     public function listBillNoByIpackageNo ($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/ipackage/listBillNoByIpackageNo", $body);
+    }
+
+    /**
+     * 非费用应收，根据保单id查询开票号集合
+     * @link https://torna.uniondrug.cn/#/view/xxx
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function listBillNoByPolicyId ($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/listBillNoByPolicyId", $body);
     }
 
     /**
