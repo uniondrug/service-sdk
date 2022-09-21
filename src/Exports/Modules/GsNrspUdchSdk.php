@@ -282,6 +282,18 @@ class GsNrspUdchSdk extends SdkBase
     }
 
     /**
+     * 图片保存
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function mediaImgCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/media/img/create", $body, $query, $extra);
+    }
+
+    /**
      * 群发消息创建
      * @param $body
      * @param null $query
@@ -339,5 +351,17 @@ class GsNrspUdchSdk extends SdkBase
     public function msgDel($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/msg/del", $body, $query, $extra);
+    }
+
+    /**
+     * 获取token
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function accessToken($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/token/access/token", $body, $query, $extra);
     }
 }
