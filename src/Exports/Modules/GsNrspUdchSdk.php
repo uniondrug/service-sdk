@@ -280,4 +280,64 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/media/img/upload", $body, $query, $extra);
     }
+
+    /**
+     * 群发消息创建
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function msgCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/msg/create", $body, $query, $extra);
+    }
+
+    /**
+     * 群发消息列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function msgPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/msg/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 群发消息统计
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function msgStat($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/msg/stat", $body, $query, $extra);
+    }
+
+    /**
+     * 群发消息详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function msgDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/msg/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 群发消息删除
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function msgDel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/msg/del", $body, $query, $extra);
+    }
 }
