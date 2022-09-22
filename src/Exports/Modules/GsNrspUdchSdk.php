@@ -354,6 +354,18 @@ class GsNrspUdchSdk extends SdkBase
     }
 
     /**
+     * 成员群发任务列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function msgUserTaskList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/msg/user/task/list", $body, $query, $extra);
+    }
+
+    /**
      * 获取token
      * @param $body
      * @param null $query
@@ -363,5 +375,101 @@ class GsNrspUdchSdk extends SdkBase
     public function accessToken($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/token/access/token", $body, $query, $extra);
+    }
+
+    /**
+     * 新建欢迎语
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomeCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/create", $body, $query, $extra);
+    }
+
+    /**
+     * 欢迎语分页列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 欢迎语总数
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomeCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/count", $body, $query, $extra);
+    }
+
+    /**
+     * 欢迎语详情
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 欢迎语删除
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomeDel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/del", $body, $query, $extra);
+    }
+
+    /**
+     * 成员绑定的欢迎语记录
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomeUserBind($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/user/bind", $body, $query, $extra);
+    }
+
+    /**
+     * 欢迎语使用统计
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomeUseCount($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/use/count", $body, $query, $extra);
+    }
+
+    /**
+     * 欢迎语更新
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function welcomeUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/welcome/update", $body, $query, $extra);
     }
 }
