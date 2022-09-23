@@ -938,4 +938,14 @@ class GsFinStatementSdk extends SdkBase
     {
         return $this->restful("POST", "/common/medical/insurance/material/export", $body);
     }
+
+    /**
+     * 直付开票单-赔案认领银行流水分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillCashedBankClaimPaging($body)
+    {
+        return $this->restful("POST", "/direct/bill/cashed/bank/claim/paging", $body);
+    }
 }
