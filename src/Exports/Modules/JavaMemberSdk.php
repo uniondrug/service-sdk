@@ -5,6 +5,7 @@
  * Date: 2020-05-11
  * Time: 10:58
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -512,5 +513,15 @@ class JavaMemberSdk extends SdkBase
     public function getRealByCarNo($body)
     {
         return $this->restful("POST", "/v2/api/userInfo/getRealByCarNo", $body);
+    }
+
+    /**
+     * 通过手机号码批量查询用户信息
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function batchByAccounts($body)
+    {
+        return $this->restful("POST", "/v2/api/userBasic/batchByAccounts", $body);
     }
 }
