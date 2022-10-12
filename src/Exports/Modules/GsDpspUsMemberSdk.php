@@ -832,4 +832,16 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/user/integral/sync", $body, $query, $extra);
     }
+
+    /**
+     * 创建好药小程序会员
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function hyUserAddBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/user/hy/add/batch", $body, $query, $extra);
+    }
 }
