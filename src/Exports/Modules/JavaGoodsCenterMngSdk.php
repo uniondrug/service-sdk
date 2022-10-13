@@ -109,4 +109,15 @@ class JavaGoodsCenterMngSdk extends SdkBase
     {
         return $this->restful("POST", "/configsku/saveTaxRate", $body);
     }
+    
+    /**
+     * 获取图文
+     * @link http://torna.uniondrug.cn/#/view/d8xGpL2g
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goodsSpuDetailsQuery($body)
+    {
+        return $this->restful("POST", "/goodsSpuDetails/query", $body);
+    }
 }
