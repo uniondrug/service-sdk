@@ -530,6 +530,16 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
+     * 根据应付结算单号获取回款开票单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getCashedBillNosByStatementNo($body)
+    {
+        return $this->restful("POST", "/payout/statement/cashed/bills", $body);
+    }
+
+    /**
      * 直付刷订单支付日期-分页
      * @param $body
      * @return ResponseInterface
