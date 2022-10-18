@@ -7,6 +7,7 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\CompensateTmpSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ErpsvrBmpisJsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspConfigSdk;
@@ -204,6 +205,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property CarSdk                     $car
  * @property CommonSdk                  $common
  * @property CompensateSdk              $compensate
+ * @property CompensateTmpSdk           $compensateTmp
  * @property CustomerSdk                $customer
  * @property CustomerserviceSdk         $customerservice
  * @property ClaimSdk                   $claim
