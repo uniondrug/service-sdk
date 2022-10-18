@@ -844,4 +844,16 @@ class GsDpspUsMemberSdk extends SdkBase
     {
         return $this->restful("POST", "/user/hy/add/batch", $body, $query, $extra);
     }
+
+    /**
+     * 发券创建
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function userCouponGiveCreat($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/coupon/give/create", $body, $query, $extra);
+    }
 }
