@@ -472,4 +472,44 @@ class GsNrspUdchSdk extends SdkBase
     {
         return $this->restful("POST", "/welcome/update", $body, $query, $extra);
     }
+
+    public function codeGroupAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/group/add", $body, $query, $extra);
+    }
+
+    public function codeGroupList($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/group/list", $body, $query, $extra);
+    }
+
+    public function codeAdd($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/add", $body, $query, $extra);
+    }
+
+    public function codeDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/detail", $body, $query, $extra);
+    }
+
+    public function codeWelcomeAts($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/welcome/ats", $body, $query, $extra);
+    }
+
+    public function codeUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/update", $body, $query, $extra);
+    }
+
+    public function codePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/paging", $body, $query, $extra);
+    }
+
+    public function codeStaffs($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/code/staffs", $body, $query, $extra);
+    }
 }
