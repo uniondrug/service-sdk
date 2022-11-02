@@ -377,4 +377,28 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/getbyschemes", $body, $query, $extra);
     }
+    
+    /**
+     * 获取方案分页
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function schemePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/schemepaging", $body, $query, $extra);
+    }
+    
+    /**
+     * 修改方案状态
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function schemeUpdate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/schemeupdate", $body, $query, $extra);
+    }
 }
