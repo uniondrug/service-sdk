@@ -354,7 +354,7 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/hot/search/keyword/sort", $body, $query, $extra);
     }
-    
+
     /**
      * 创建方案
      * @param $body
@@ -366,6 +366,7 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/create/scheme", $body, $query, $extra);
     }
+
     /**
      * 用方案获取数据
      * @param $body
@@ -377,7 +378,7 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/getbyschemes", $body, $query, $extra);
     }
-    
+
     /**
      * 获取方案分页
      * @param $body
@@ -389,7 +390,7 @@ class GsDpspConfigSdk extends SdkBase
     {
         return $this->restful("POST", "/contract/schemepaging", $body, $query, $extra);
     }
-    
+
     /**
      * 修改方案状态
      * @param $body
@@ -400,5 +401,41 @@ class GsDpspConfigSdk extends SdkBase
     public function schemeUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/contract/schemeupdate", $body, $query, $extra);
+    }
+
+    /**
+     * 配置项-服务包推荐-服务包创建
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractServicepackageCreate($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/servicepackage/create", $body, $query, $extra);
+    }
+
+    /**
+     * 配置项-服务包推荐-服务包分页列表
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractServicepackagePaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/servicepackage/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 配置项-服务包推荐-服务包删除
+     * @param $body
+     * @param null $query
+     * @param null $extra
+     * @return ResponseInterface
+     */
+    public function contractServicepackageDelete($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/contract/servicepackage/delete", $body, $query, $extra);
     }
 }
