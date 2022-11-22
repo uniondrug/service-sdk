@@ -120,4 +120,14 @@ class JavaGoodsCenterMngSdk extends SdkBase
     {
         return $this->restful("POST", "/goodsSpuDetails/query", $body);
     }
+
+    /**
+     * 商品查询批量（SKU）
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function goodsQueryBySkuNos($body)
+    {
+        return $this->restful("POST", "/goods/queryBySkuNos", $body);
+    }
 }
