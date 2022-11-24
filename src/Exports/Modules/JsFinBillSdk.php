@@ -655,4 +655,15 @@ class JsFinBillSdk extends SdkBase
     {
         return $this->restful("POST", "/invoiceExpress/importTask/page", $body);
     }
+
+    /**
+     * 取消核销收款单
+     * @link https://torna.uniondrug.cn/#/view/JzAMvdEz
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptCancel($body)
+    {
+        return $this->restful("POST", "/billReceipt/receipt/verify/cancel", $body);
+    }
 }

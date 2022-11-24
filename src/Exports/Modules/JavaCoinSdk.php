@@ -677,7 +677,6 @@ class JavaCoinSdk extends SdkBase
         return $this->restful("POST", "/fundAccount/refundBySerial", $body);
     }
 
-
     /**
      * 银行流水认领-根据付款方查询分页
      * @link http://torna.uniondrug.cn/#/view/nzDvDy8p
@@ -689,4 +688,14 @@ class JavaCoinSdk extends SdkBase
         return $this->restful("POST", "/bankClaim/pageByPayer", $body);
     }
 
+    /**
+     * 收款认领银行流水明细查询
+     * @link https://torna.uniondrug.cn/#/view/L2kqMPMX
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function pageReceiptBankItem($body)
+    {
+        return $this->restful("POST", "/receiptChaimItem/pageReceiptBankItem", $body);
+    }
 }
