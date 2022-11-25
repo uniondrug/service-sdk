@@ -694,8 +694,8 @@ class JavaCoinSdk extends SdkBase
      * @param $body
      * @return ResponseInterface
      */
-    public function pageReceiptBankItem($body)
+    public function pageByReceiptCode($body)
     {
-        return $this->restful("POST", "/receiptChaimItem/pageReceiptBankItem", $body);
+        return $this->restful("POST", "/receiptChaimItem/pageByReceiptCode", $body);
     }
 }
