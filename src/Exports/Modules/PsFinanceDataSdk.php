@@ -1136,6 +1136,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 保司根组织详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/InsurerController/detailForRootAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function insurerDetailForRoot($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/insurer/detail/for/root", $body, $query, $extra);
+    }
+
+    /**
      * 保司负责人列表
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Insurer/DirectorController/listAction.md
      * @param array|object $body 入参类型
@@ -1266,6 +1279,32 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 快递公司分页
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Dict/CourierController/PagingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function courierPaging($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/courier/paging", $body, $query, $extra);
+    }
+
+    /**
+     * 快递公司列表
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Dict/CourierController/listingAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function courierListing($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/courier/listing", $body, $query, $extra);
+    }
+
+    /**
      * 修改
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/MerchantController/updateAction.md
      * @param array|object $body 入参类型
@@ -1355,6 +1394,19 @@ class PsFinanceDataSdk extends SdkBase
     public function partnerDetail($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/partner/detail", $body, $query, $extra);
+    }
+
+    /**
+     * 连锁根组织详情
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/PartnerController/detailForRootAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function partnerDetailForRoot($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/partner/detail/for/root", $body, $query, $extra);
     }
 
     /**
@@ -2410,6 +2462,19 @@ class PsFinanceDataSdk extends SdkBase
     }
 
     /**
+     * 通过批次号批量导入
+     * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/Partner/SubsidyController/importBatchAction.md
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function taxClassificationEncodeImportBatch($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/tax/classification/encode/import/batch", $body, $query, $extra);
+    }
+
+    /**
      * 查询税收分类编码分页
      * @link https://uniondrug.coding.net/p/ps-finance-data/git/blob/development/docs/api/TaxClassificationEncode/TaxClassificationEncodeController/pagingAction.md
      * @param array|object $body 入参类型
@@ -2898,5 +2963,18 @@ class PsFinanceDataSdk extends SdkBase
     public function taxClassificationRuleUpdate($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/tax/classification/rule/update", $body, $query, $extra);
+    }
+
+    /**
+     * 检查组织下银行账号是否开通银企直联
+     * @link http://torna.uniondrug.cn/#/view/32QmJPB2
+     * @param array|object $body 入参类型
+     * @param null $query Query数据
+     * @param null $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function bankAccountCheckOnline($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/bank/account/check/online", $body, $query, $extra);
     }
 }

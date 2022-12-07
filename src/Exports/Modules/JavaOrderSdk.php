@@ -97,6 +97,18 @@ class JavaOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/order/refund/service", $body);
     }
+    
+    /**
+     * 新版创建订单
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link
+     */
+    public function orderV2Create($body)
+    {
+        return $this->restful("POST", "/order/v2/create", $body);
+    }
+   
 
     /**
      * 订单退款

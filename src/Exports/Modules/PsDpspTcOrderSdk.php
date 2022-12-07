@@ -171,4 +171,95 @@ class PsDpspTcOrderSdk extends SdkBase
     {
         return $this->restful("POST", "/drugUser/addOcrFail", $body, $query, $extra);
     }
+
+    /**
+     * 健康信息列表
+     * @link https://uniondrug.coding.net/p/order.tc.dpsp.ps/git/blob/development/docs/api/User/DrugUsersController/healthInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function healthInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/healthInfo", $body, $query, $extra);
+    }
+
+    /**
+     * 根据资源查询是否需要用药人
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/isNeedByResourceAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function isNeedDrugUserByResource($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/isNeedByResource", $body, $query, $extra);
+    }
+
+    /**
+     * 获取默认需选择的用药人
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/getDefaultDrugUserAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getDefaultDrugUser($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/getDefaultDrugUser", $body, $query, $extra);
+    }
+
+    /**
+     * 添加/编辑用药人健康信息
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/addHealthInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function addHealthInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/addHealthInfo", $body, $query, $extra);
+    }
+
+    /**
+     * 用药人健康信息
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/healthInfoDetailAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function healthInfoDetail($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/healthInfoDetail", $body, $query, $extra);
+    }
+
+    /**
+     * 获取用药人签名身份证等信息
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/getUserInfoAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getUserInfo($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/getUserInfo", $body, $query, $extra);
+    }
+
+    /**
+     * 根据memberId和身份证号获取
+     * @link https://uniondrug.coding.net/p/ps-dpsp-tc-order/git/blob/development/docs/api/User/DrugUsersController/getByMemberIdAndIdCardAction.md
+     * @param array|object $body 入参类型
+     * @param null $query  Query数据
+     * @param null $extra  请求头信息
+     * @return ResponseInterface
+     */
+    public function getByMemberIdAndIdCard($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/drugUser/getByMemberIdAndIdCard", $body, $query, $extra);
+    }
 }

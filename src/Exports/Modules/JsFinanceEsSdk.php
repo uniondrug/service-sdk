@@ -4,6 +4,7 @@
  * @date   2021-09-18
  * @time   Tue, 04 Dec 2021 14:15:57 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -121,6 +122,17 @@ class JsFinanceEsSdk extends SdkBase
     }
 
     /**
+     * 开票单-状态汇总
+     * @link https://torna.uniondrug.cn/#/view/E8rEEGv2
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billStatusGroupCount($body)
+    {
+        return $this->restful("POST", "/esapi/search/bill/status/group/count", $body);
+    }
+
+    /**
      * 开票单-销售清单分页列表
      * @link https://git.uniondrug.com/code/1/finance/others/jx-finance-esapi/blob/development/doc-api/es-api/BillController/salesListPage.md
      * @param $body
@@ -144,9 +156,9 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 物流-分页列表
-     * @link
      * @param $body
      * @return ResponseInterface
+     * @link
      */
     public function invoiceExpressPaging($body)
     {
@@ -155,13 +167,24 @@ class JsFinanceEsSdk extends SdkBase
 
     /**
      * 销售清单-分页列表
-     * @link
      * @param $body
      * @return ResponseInterface
+     * @link
      */
     public function billSalePaging($body)
     {
         return $this->restful("POST", "/esapi/search/bill/saleslist/page", $body);
+    }
+
+    /**
+     * 资金收款单-分页列表
+     * @link https://torna.uniondrug.cn/#/view/K8MM3g8l
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptPaging($body)
+    {
+        return $this->restful("POST", "/esapi/search/coin/receipt/page", $body);
     }
 }
 

@@ -6,55 +6,53 @@
  * 2. 本脚本在生成时, 依赖所在项目的Controller有 `@Sdk method`定义,
  *    同时, 项目根目录下的`postman.json`需有`sdk`、`sdkLink`定义
  * 3. 发布SDK，请将本文件放到`uniondrug/service-sdk`项目
- *    的`src/Exports/Modules`目录下，并发重新发布release版本.
+ *    的`src/Exports/Managements`目录下，并发重新发布release版本.
  * @author PostmanCommand
- * @date   2020-04-02
- * @time   Thu, 02 Apr 2020 01:00:11 +0800
+ * @date   2022-01-20
+ * @time   Thu, 20 Jan 2022 10:17:13 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * Class JsF2cPaySdk
+ * Class GsDpspGlSdk
  * @package Uniondrug\ServiceSdk\Exports\Modules
  */
-class JsF2cPaySdk extends SdkBase
+class GsDpspGlSdk extends SdkBase
 {
     /**
      * 服务名称
+     * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'js-f2cpay';
+    protected $serviceName = 'gs-dpsp-gl';
+
 
     /**
-     * 申请提现后飞亿回调的地址
+     * 推药记录
      * @param $body
+     * @param null $query
+     * @param null $extra
      * @return ResponseInterface
      */
-    public function feiyiWithdrawCallback($body)
+    public function recommendCreate($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/feiyi/withdraw/callback", $body);
+        return $this->restful("POST", "/recommend/create", $body, $query, $extra);
     }
 
     /**
-     * 工猫提现结果回调处理
+     * 推药记录详情
      * @param $body
+     * @param null $query
+     * @param null $extra
      * @return ResponseInterface
      */
-    public function gongMallWithdrawCallback($body)
+    public function recommendDetail($body, $query = null, $extra = null)
     {
-        return $this->restful("POST", "/gongmall/withdraw/callback", $body);
+        return $this->restful("POST", "/recommend/detail", $body, $query, $extra);
     }
 
-    /**
-     * 工猫电签结果回调处理
-     * @param $body
-     * @return ResponseInterface
-     */
-    public function gongMallSignContractCallback($body)
-    {
-        return $this->restful("POST", "/gongmall/signContract/callBack", $body);
-    }
 }

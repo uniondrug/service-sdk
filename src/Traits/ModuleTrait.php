@@ -7,16 +7,22 @@
  */
 namespace Uniondrug\ServiceSdk\Traits;
 
+use Uniondrug\ServiceSdk\Exports\Modules\CompensateTmpSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ErpsvrBmpisJsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GmRxGatewaySdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspConfigSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGlSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspGsCatalogSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspMiniProgramSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspOpenApiSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsDpspUsMemberSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsFinCompensateSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsFinJobSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\GsNrspUdchSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GsRxManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\GwMpTradeSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JavaDataSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JavaSsopSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PmOtoAppointSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsClaimManagementSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\ActivitySdk;
@@ -113,6 +119,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\JavaUserServiceSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmbslSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmbsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JmInsureSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\JmWebMossSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsArchivesSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsCleanCenterSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\JsFinanceEsSdk;
@@ -156,6 +163,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsGdspOrderSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGdspSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeClaimSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsGuaranteeSdk;
+use Uniondrug\ServiceSdk\Exports\Modules\PsIspSuperviseSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\PsSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RobotSdk;
 use Uniondrug\ServiceSdk\Exports\Modules\RuleSdk;
@@ -197,6 +205,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property CarSdk                     $car
  * @property CommonSdk                  $common
  * @property CompensateSdk              $compensate
+ * @property CompensateTmpSdk           $compensateTmp
  * @property CustomerSdk                $customer
  * @property CustomerserviceSdk         $customerservice
  * @property ClaimSdk                   $claim
@@ -272,6 +281,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JavaPushSdk                $javaPush
  * @property JavaPurchaseSdk            $javaPurchase
  * @property JavaUserServiceSdk         $javaUserService
+ * @property JavaSsopSdk                $javaSsop
  * @property JsArchivesSdk              $jsArchives
  * @property JsCleanCenterSdk           $jsCleanCenter
  * @property JsFinBillSdk               $jsFinBill
@@ -282,6 +292,7 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property JmbsSdk                    $jmbs
  * @property JmbslSdk                   $jmbsl
  * @property JmInsureSdk                $jmInsure
+ * @property JmWebMossSdk               $jmWebMoss
  * @property JwtSdk                     $jwt
  * @property MapSdk                     $map
  * @property MarketingSdk               $marketing
@@ -356,6 +367,11 @@ use Uniondrug\ServiceSdk\Exports\Modules\PsDpspTcOrderSdk;
  * @property PmOtoAppointSdk            $pmOtoAppoint
  * @property GsDpspUsMemberSdk          $gsDpspUsMember
  * @property GsDpspMiniProgramSdk       $gsDpspMiniProgram
+ * @property GsDpspGlSdk                $gsDpspGl
+ * @property PsIspSuperviseSdk          $psIspSupervise
+ * @property GsNrspUdchSdk              $gsNrspUdch
+ * @property GsDpspConfigSdk            $gsDpspConfig
+ * @property GsFinCompensateSdk         $gsFinCompensateSdk
  * @package Uniondrug\ServiceSdk\Traits
  */
 trait ModuleTrait

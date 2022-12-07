@@ -17,17 +17,17 @@ use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
 use Uniondrug\ServiceSdk\Bases\ResponseInterface;
 
 /**
- * CompensateSdk
+ * CompensateTmpSdk
  * @package Uniondrug\ServiceSdk\Modules
  */
-class CompensateSdk extends SdkBase
+class CompensateTmpSdk extends SdkBase
 {
     /**
      * 服务名称
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'compensate.module';
+    protected $serviceName = 'module-compensate-tmp';
 
     /**
      * 新增

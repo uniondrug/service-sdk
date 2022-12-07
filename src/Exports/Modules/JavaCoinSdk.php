@@ -638,6 +638,16 @@ class JavaCoinSdk extends SdkBase
     }
 
     /**
+     * 查询资金池账户余额
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function fundAccountQueryBalance($body)
+    {
+        return $this->restful("POST", "/fundAccount/queryBalance", $body);
+    }
+
+    /**
      * 撤销充值申请
      * @param $body
      * @return ResponseInterface
@@ -645,6 +655,16 @@ class JavaCoinSdk extends SdkBase
     public function receiptRevoke($body)
     {
         return $this->restful("POST", "/receipt/auditRetract", $body);
+    }
+
+    /**
+     * 预收收款单分页查询
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiptAdvancePage($body)
+    {
+        return $this->restful("POST", "/receipt/advance/page", $body);
     }
 
     /**
@@ -657,5 +677,25 @@ class JavaCoinSdk extends SdkBase
         return $this->restful("POST", "/fundAccount/refundBySerial", $body);
     }
 
+    /**
+     * 银行流水认领-根据付款方查询分页
+     * @link http://torna.uniondrug.cn/#/view/nzDvDy8p
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function bankClaimPagingByPayer($body)
+    {
+        return $this->restful("POST", "/bankClaim/pageByPayer", $body);
+    }
 
+    /**
+     * 收款认领银行流水明细查询
+     * @link https://torna.uniondrug.cn/#/view/L2kqMPMX
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function pageByReceiptCode($body)
+    {
+        return $this->restful("POST", "/receiptChaimItem/pageByReceiptCode", $body);
+    }
 }

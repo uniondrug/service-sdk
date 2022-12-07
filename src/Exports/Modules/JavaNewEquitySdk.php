@@ -257,4 +257,114 @@ class JavaNewEquitySdk extends SdkBase
     {
         return $this->restful("POST", "/bizsvr/equity/qry/list", $body);
     }
+
+    /**
+     * 智赔扣款
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/42GnOezW
+     */
+    public function bizsvrEquityBatchDebit($body)
+    {
+        return $this->restful("POST", "/bizsvr/equity/batch/debit", $body);
+    }
+
+    /**
+     * 智赔扣款撤销
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrEquityBatchRejectDebit($body)
+    {
+        return $this->restful("POST", "/bizsvr/equity/batch/rejectDebit", $body);
+    }
+
+    /**
+     * 智赔单个扣款撤销
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpEquityRejectDebit($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/equity/rejectDebit", $body);
+    }
+
+    /**
+     * 智赔单权益冻结
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpEquityFreeze($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/equity/freeze", $body);
+    }
+
+    /**
+     * 智赔单权益解冻
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpEquityUnfreeze($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/equity/unfreeze", $body);
+    }
+
+    /**
+     * 智赔 单权益/单兑换码 回收
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpEquityRecycle($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/equity/recycle", $body);
+    }
+
+    /**
+     * 智赔 单账户扣款
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpEquityDebit($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/equity/debit", $body);
+    }
+
+    /**
+     * 智赔 单账户冻结
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpAccountFreeze($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/account/freeze", $body);
+    }
+
+    /**
+     * 智赔 单账户解冻
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpAccountUnfreeze($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/account/unfreeze", $body);
+    }
+
+    /**
+     * 智赔 发放权益
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     * @link https://torna.uniondrug.cn/#/view/K2ZB602v
+     */
+    public function bizsvrZpPurchaseCreate($body)
+    {
+        return $this->restful("POST", "/bizsvr/zp/purchase/create", $body);
+    }
 }

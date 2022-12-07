@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -519,13 +520,23 @@ class GsFinStatementSdk extends SdkBase
     }
 
     /**
-     * 根据结算单号获取开票单号
+     * 根据应付结算单号获取开票单号
      * @param $body
      * @return ResponseInterface
      */
     public function getBillNosByStatementNo($body)
     {
         return $this->restful("POST", "/payout/statement/bills", $body);
+    }
+
+    /**
+     * 根据应付结算单号获取回款开票单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getCashedBillNosByStatementNo($body)
+    {
+        return $this->restful("POST", "/payout/statement/cashed/bills", $body);
     }
 
     /**
@@ -806,5 +817,145 @@ class GsFinStatementSdk extends SdkBase
     public function settleMinDate($body)
     {
         return $this->restful("POST", "/subsidy/settle/min/date", $body);
+    }
+
+    /**
+     * 应收结算订单分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettlePaging($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/paging", $body);
+    }
+
+    /**
+     * 应收结算订单导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettleExport($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/export", $body);
+    }
+
+    /**
+     * 应收结算订单统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewSettleSummary($body)
+    {
+        return $this->restful("POST", "/receive/renew/settle/summary", $body);
+    }
+
+    /**
+     * 换新应收结算单创建
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementCreate($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/create", $body);
+    }
+
+    /**
+     * 换新应收结算单详情
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementDetail($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/detail", $body);
+    }
+
+    /**
+     * 换新应收结算单分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRenewStatementPaging($body)
+    {
+        return $this->restful("POST", "/receive/renew/statement/paging", $body);
+    }
+
+    /**
+     * 根据应收结算单号获取开票单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function getBillNosByReceiveStatementNo($body)
+    {
+        return $this->restful("POST", "/receive/statement/bills", $body);
+    }
+
+    /**
+     * 资金充值业务-创建开票单（先款后票/先票后款）
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRechargeBillCreate($body)
+    {
+        return $this->restful("POST", "/receive/recharge/bill/create", $body);
+    }
+
+    /**
+     * 根据结算充值业务单号，查询资金收款单业务单号
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function receiveRechargeBusinessNoListing($body)
+    {
+        return $this->restful("POST", "/receive/recharge/business/no/listing", $body);
+    }
+
+    /**
+     * 医保资料汇总列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialSummaryList($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/summary/list", $body);
+    }
+
+    /**
+     * 医保资料明细列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialDetailList($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/detail/list", $body);
+    }
+
+    /**
+     * 医保门店列表
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialStoreList($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/store/list", $body);
+    }
+
+    /**
+     * 医保资料导出
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function medicalInsuranceMaterialExport($body)
+    {
+        return $this->restful("POST", "/common/medical/insurance/material/export", $body);
+    }
+
+    /**
+     * 直付开票单-赔案认领银行流水分页
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function directBillCashedBankClaimPaging($body)
+    {
+        return $this->restful("POST", "/direct/bill/cashed/bank/claim/paging", $body);
     }
 }

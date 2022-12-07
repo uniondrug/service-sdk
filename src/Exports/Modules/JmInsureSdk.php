@@ -359,6 +359,26 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
+     * 提交直付理赔单（待邮寄）
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function ipackageDirectCommitWaitPosted($body)
+    {
+        return $this->restful("POST", "/ipackage/direct/commitWaitPosted", $body);
+    }
+
+    /**
+     * 理赔情况统计
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function ipackageStatistics($body)
+    {
+        return $this->restful("POST", "/ipackage/statistics", $body);
+    }
+
+    /**
      * 撤销理赔单
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/development/doc/api/IpackageController/undo.md
      * @param array|object $body  入参类型
@@ -733,6 +753,32 @@ class JmInsureSdk extends SdkBase
     public function policyModify($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/policy/change", $body);
+    }
+
+    /**
+     * 保单退保（并提交审核）
+     * @link https://torna.uniondrug.cn/#/view/VzNq0pXY
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyCancel($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/cancel", $body);
+    }
+
+    /**
+     * 保单退保确认（保单退保审核）
+     * @link https://torna.uniondrug.cn/#/view/PzmPYbXJ
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyCancelConfirm($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/cancelConfirm", $body);
     }
 
     /**
@@ -1126,7 +1172,7 @@ class JmInsureSdk extends SdkBase
     }
 
     /**
-     * 根据保单号查询开票单号
+     * 费用应收，根据保单号查询开票单号
      * @link https://git.uniondrug.com/code/1/finance/shares/insure3/blob/feature_billV1.7/doc/api/FeeApplyBillController/listBillNoByPolicyNo.md
      * @param array|object $body  入参类型
      * @param null         $query Query数据
@@ -1136,6 +1182,32 @@ class JmInsureSdk extends SdkBase
     public function listBillNoByPolicyNo($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/feeApplyBill/listBillNoByPolicyNo", $body);
+    }
+
+    /**
+     * 非费用应收，根据理赔单号查询开票号集合
+     * @link https://torna.uniondrug.cn/#/view/PzmxlGxX
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function listBillNoByIpackageNo ($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/listBillNoByIpackageNo", $body);
+    }
+
+    /**
+     * 非费用应收，根据保单id查询开票号集合
+     * @link https://torna.uniondrug.cn/#/view/xxx
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function listBillNoByPolicyId ($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/listBillNoByPolicyId", $body);
     }
 
     /**
@@ -1335,5 +1407,148 @@ class JmInsureSdk extends SdkBase
     public function clearSettleClaimRecord($body, $query = null, $extra = null)
     {
         return $this->restful("POST", "/mbs/claim/clearSettleClaimRecord", $body);
+    }
+
+    /**
+     * 药联理赔单批量导出理赔明细
+     * @link http://torna.uniondrug.cn/#/view/VzNgbx2Y
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function batchExportClaim($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/uniondrug/batchExportClaim", $body);
+    }
+
+    /**
+     * 分页查询费用应收收款单
+     * @link https://torna.uniondrug.cn/#/view/P81jgaXq
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function pageFeeCoinReceipt($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/pageFeeCoinReceipt", $body);
+    }
+
+    /**
+     * 批量变更保单的追溯期
+     * @link http://torna.uniondrug.cn/#/view/L2kgjd2P
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function updateRetroactivePeriod($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/updateRetroactivePeriod", $body);
+    }
+
+    /**
+     * 结算单暂缓投保
+     * @link http://torna.uniondrug.cn/#/view/K8M3drzl
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimSuspendStatement($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/suspendStatement", $body);
+    }
+
+    /**
+     * 订单暂缓投保
+     * @link http://torna.uniondrug.cn/#/view/W2okYR2D
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimSuspendOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/suspendOrder", $body);
+    }
+
+    /**
+     * 恢复所有暂缓投保订单
+     * @link http://torna.uniondrug.cn/#/view/K2Zvbv2v
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimResumeAllSuspend($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/resumeAllSuspend", $body);
+    }
+
+    /**
+     * 查询延暂投保订单数
+     * @link http://torna.uniondrug.cn/#/view/bXKApQ27
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimGetSuspendOrderNum($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/getSuspendOrderNum", $body);
+    }
+
+    /**
+     * 结算单恢复投保
+     * @link http://torna.uniondrug.cn/#/view/ez7gmwza
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimResumeStatement($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/resumeStatement", $body);
+    }
+
+    /**
+     * 订单恢复投保
+     * @link http://torna.uniondrug.cn/#/view/NzvndwzD
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function poolClaimResumeOrder($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/poolClaim/resumeOrder", $body);
+    }
+
+    /**
+     * 药联理赔单开票申请校验
+     * @link http://torna.uniondrug.cn/#/view/BXgWvmXG
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function ipackageUniondrugInvoiceApplyCheck($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/ipackage/uniondrug/invoiceApply/check", $body);
+    }
+
+    /**
+     * 查询PBM2保单的项目
+     * @link https://torna.uniondrug.cn/#/view/aXY79E2r
+     * @param array|object $body  入参类型
+     * @param null         $query Query数据
+     * @param null         $extra 请求头信息
+     * @return ResponseInterface
+     */
+    public function policyListPbm2Project($body, $query = null, $extra = null)
+    {
+        return $this->restful("POST", "/policy/listPbm2Project", $body);
     }
 }

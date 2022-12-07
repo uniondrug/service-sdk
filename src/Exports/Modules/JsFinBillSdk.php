@@ -11,6 +11,7 @@
  * @date   2020-04-02
  * @time   Thu, 02 Apr 2020 01:00:11 +0800
  */
+
 namespace Uniondrug\ServiceSdk\Exports\Modules;
 
 use Uniondrug\ServiceSdk\Exports\Abstracts\SdkBase;
@@ -76,6 +77,16 @@ class JsFinBillSdk extends SdkBase
     public function invoiceDelete($body)
     {
         return $this->restful("POST", "/invoice/remove", $body);
+    }
+
+    /**
+     * 发票退回
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceRefund($body)
+    {
+        return $this->restful("POST", "/invoice/refund", $body);
     }
 
     /**
@@ -146,6 +157,16 @@ class JsFinBillSdk extends SdkBase
     public function invoiceExpressMarkRefund($body)
     {
         return $this->restful("POST", "/invoiceExpress/refundInvoice", $body);
+    }
+
+    /**
+     * 电子发票退回
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceElectronicRefundInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/electronic/refundInvoice", $body);
     }
 
     /**
@@ -315,6 +336,28 @@ class JsFinBillSdk extends SdkBase
     public function invoiceGetById($body)
     {
         return $this->restful("POST", "/invoice/getById", $body);
+    }
+
+    /**
+     * 校验是否存在纸质票
+     * @link http://torna.uniondrug.cn/#/view/P81PQg2q
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceIpackageNoCheckExistPaperInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/ipackageNo/checkExistPaperInvoice", $body);
+    }
+
+    /**
+     * 批量校验是否存在纸质票
+     * @link http://torna.uniondrug.cn/#/view/aXYZlkzr
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function invoiceIpackageNoBatchCheckExistPaperInvoice($body)
+    {
+        return $this->restful("POST", "/invoice/ipackageNo/batch/checkExistPaperInvoice", $body);
     }
 
     /**
@@ -523,5 +566,104 @@ class JsFinBillSdk extends SdkBase
     public function verifyStr($body)
     {
         return $this->restful("POST", "/billSale/verifyStr", $body);
+    }
+
+    /**
+     * 关联流水核销
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/verifyStr.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptBankClaimVerify($body)
+    {
+        return $this->restful("POST", "/billReceipt/bankClaim/verify", $body);
+    }
+
+    /**
+     * 核销收款单
+     * @link https://git.uniondrug.com/code/1/finance/shares/bill/blob/feature_V1.9.1/doc/api/BillSaleController/verifyStr.md
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptReceiptVerify($body)
+    {
+        return $this->restful("POST", "/billReceipt/receipt/verify", $body);
+    }
+
+    /**
+     * 开票单-收款单分页
+     * @link https://torna.uniondrug.cn/#/view/Wz3MYj8R
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptPaging($body)
+    {
+        return $this->restful("POST", "/billReceipt/page", $body);
+    }
+
+    /**
+     * 应付开票单详情
+     * @link https://torna.uniondrug.cn/#/view/YX0xvWXx
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function payoutBillDetail($body)
+    {
+        return $this->restful("POST", "/bill/payout/get", $body);
+    }
+
+    /**
+     * 应收开票单详情
+     * @link https://torna.uniondrug.cn/#/view/nzdNg08j
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function incomeBillDetail($body)
+    {
+        return $this->restful("POST", "/bill/income/get", $body);
+    }
+
+    /**
+     * 取消（退回）应收开票单
+     * @link http://torna.uniondrug.cn/#/view/bXKNyY87
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function incomeBillCancel($body)
+    {
+        return $this->restful("POST", "/bill/income/cancel", $body);
+    }
+
+    /**
+     * 物流批量导出邮寄
+     * @link http://torna.uniondrug.cn/#/view/Wz3V6xkX
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function expressImportPost($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/import/post", $body);
+    }
+
+    /**
+     * 物流导入任务分页查询
+     * @link http://torna.uniondrug.cn/#/view/VzNm3jVX
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function expressImportTaskPage($body)
+    {
+        return $this->restful("POST", "/invoiceExpress/importTask/page", $body);
+    }
+
+    /**
+     * 取消核销收款单
+     * @link https://torna.uniondrug.cn/#/view/JzAMvdEz
+     * @param $body
+     * @return ResponseInterface
+     */
+    public function billReceiptCancel($body)
+    {
+        return $this->restful("POST", "/billReceipt/receipt/verify/cancel", $body);
     }
 }

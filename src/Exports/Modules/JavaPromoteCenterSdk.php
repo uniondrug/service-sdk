@@ -15,6 +15,17 @@ class JavaPromoteCenterSdk extends SdkBase
     protected $serviceName = 'java.promote.center';
 
     /**
+     * 获取卡信息
+     * @param array $body
+     * @return ResponseInterface
+     * @link
+     */
+    public function queryCardAndRule($body)
+    {
+        return $this->restful(static::METHOD_POST, 'card/queryCardAndRule', $body);
+    }
+
+    /**
      * 创建卡
      * @param array $body
      * @return ResponseInterface
@@ -432,5 +443,14 @@ class JavaPromoteCenterSdk extends SdkBase
     public function queryCardListByPartner($body)
     {
         return $this->restful(static::METHOD_POST,'/card/queryCardListByPartner',$body);
+    }
+
+    /**
+     * @param $body
+     * @return \Uniondrug\ServiceSdk\Bases\Response|ResponseInterface
+     */
+    public function marketCouponTrialNew($body)
+    {
+        return $this->restful(static::METHOD_POST,'/coupon/marketCouponTrialNew',$body);
     }
 }

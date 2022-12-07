@@ -149,4 +149,125 @@ class OutreachExpressSdk extends SdkBase
     {
         return $this->restful("POST", "/api/order/reAddOrder", $body);
     }
+
+    /**
+     * 运费计算
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfCountryFeeFreight($body)
+    {
+        return $this->restful("POST", "/selfCountryFee/freight", $body);
+    }
+
+    /**
+     * 全国运费配置列表
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfCountryFeeList($body)
+    {
+        return $this->restful("POST", "/selfCountryFee/list", $body);
+    }
+
+    /**
+     * 全国运费配置新增
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfCountryFeeCreate($body)
+    {
+        return $this->restful("POST", "/selfCountryFee/create", $body);
+    }
+
+    /**
+     * 全国运费配置修改
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfCountryFeeUpdate($body)
+    {
+        return $this->restful("POST", "/selfCountryFee/update", $body);
+    }
+
+    /**
+     * 同城运费配置新增
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfFeeCreate($body)
+    {
+        return $this->restful("POST", "/selfFee/create", $body);
+    }
+
+    /**
+     * 同城运费配置详情
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfFeeDetail($body)
+    {
+        return $this->restful("POST", "/selfFee/detail", $body);
+    }
+
+    /**
+     * 同城运费配置删除
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfFeeDelete($body)
+    {
+        return $this->restful("POST", "/selfFee/delete", $body);
+    }
+
+    /**
+     * 门店开通 新增/修改
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfStoresCreate($body)
+    {
+        return $this->restful("POST", "/selfStores/create", $body);
+    }
+
+    /**
+     * 门店开通 无分页列表
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfStoresList($body)
+    {
+        return $this->restful("POST", "/selfStores/list", $body);
+    }
+
+    /**
+     * 门店开通 门店IDS获取
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfStoresStoreList($body)
+    {
+        return $this->restful("POST", "/selfStores/storeList", $body);
+    }
+
+    /**
+     * 门店开通 分页列表
+     * @link https://uniondrug.coding.net/p/module.express.outreach/git/blob/development/docs/api/Api/Order/OrderController/reAddOrderAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function selfStoresPaging($body)
+    {
+        return $this->restful("POST", "/selfStores/paging", $body);
+    }
 }
