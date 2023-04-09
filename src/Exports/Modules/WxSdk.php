@@ -134,7 +134,7 @@ class WxSdk extends SdkBase
      * @param array|object $body 入参类型
      * @return ResponseInterface
      */
-    public function SendCustomMessageRequest($body)
+    public function SendCustomMessage($body)
     {
         return $this->restful("POST", "/wx/sendCustomMessage", $body);
     }
