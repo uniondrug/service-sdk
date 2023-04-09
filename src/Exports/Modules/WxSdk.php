@@ -127,4 +127,17 @@ class WxSdk extends SdkBase
     {
         return $this->restful("POST", "/wx/token", $body);
     }
+
+    /**
+     * 发送客服消息接口
+     * @link https://uniondrug.coding.net/p/module.sketch/git/tree/development/app/docs/api/WxController/sendCustomMessageAction.md
+     * @param array|object $body 入参类型
+     * @return ResponseInterface
+     */
+    public function SendCustomMessageRequest($body)
+    {
+        return $this->restful("POST", "/wx/sendCustomMessage", $body);
+    }
+
+
 }

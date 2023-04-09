@@ -18,7 +18,7 @@ class JavaMemberSdk extends SdkBase
      * 自来`postman.json`文件定义的`sdkService`值
      * @var string
      */
-    protected $serviceName = 'java-member';
+    protected $serviceName = 'java.member';
 
     /**
      * 用户注册
