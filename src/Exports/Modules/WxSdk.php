@@ -139,5 +139,13 @@ class WxSdk extends SdkBase
         return $this->restful("POST", "/wx/sendCustomMessage", $body);
     }
 
+    /**
+     * 获取微信公众号信息接口
+     */
+    public function getWxAccountInfo($body)
+    {
+        return $this->restful("POST", "/wx/getWxAccountInfo", $body);
+    }
+
 
 }
