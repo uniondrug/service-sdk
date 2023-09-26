@@ -63,6 +63,17 @@ class AuthSdk extends SdkBase
     }
 
     /**
+     * 获取token
+     * @link https://uniondrug.coding.net/p/module.auth/git/blob/development/docs/api/AuthController/getTokenAction.md
+     * @param array $body 入参类型
+     * @return ResponseInterface
+     */
+    public function getToken($body)
+    {
+        return $this->restful("POST", "/auth/getToken", $body);
+    }
+
+    /**
      * 万达用户信息
      * @link https://uniondrug.coding.net/p/module.auth/git/blob/development/docs/api/MemberController/wandaAction.md
      * @param array $body 入参类型
