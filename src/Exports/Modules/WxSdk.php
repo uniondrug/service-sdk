@@ -152,5 +152,10 @@ class WxSdk extends SdkBase
         return $this->restful("POST", "/qyWx/getUserDetail", $body);
     }
 
+    public function getAccountByAppId($body)
+    {
+        return $this->restful("POST", "/wx/getAccountByAppId", $body);
+    }
+
 
 }
