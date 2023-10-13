@@ -160,4 +160,9 @@ class WeixinSdk extends SdkBase
     {
         return $this->restful("POST", "/wx/createQRCode", $body);
     }
+
+    public function getUserinfo3rd($body)
+    {
+        return $this->restful("POST", "/qyWx/getUserinfo3rd", $body);
+    }
 }
